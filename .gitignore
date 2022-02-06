@@ -1,0 +1,5 @@
+# The directory NPM downloads your dependencies sources to.
+/node_modules/
+
+# Tailwind CSS output file
+/public/style.css
