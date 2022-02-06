@@ -19,7 +19,8 @@
   },
   "scripts": {
     "build": "npx tailwindcss -o public/style.css",
-    "serve": "npm run watch & npx autoreload-server -d ./public/ -p 3000 -b",
+    "serve": "npm-run-all --parallel watch simple-autoreload-server",
+    "simple-autoreload-server": "npx autoreload-server -d ./public/ -p 3000 -b",
     "test": "npm-run-all build wdio-test",
     "watch": "npm run build -- --watch",
     "wdio-test": "npx wdio run wdio.conf.js"
