@@ -5,8 +5,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  test_and_deploy:
-    name: Test and Deploy to GitHub Pages
+  test:
+    name: Test
     runs-on: ubuntu-latest
 
     steps:
@@ -27,10 +27,37 @@ jobs:
       - name: Install Node dependencies
         run: npm ci
 
-      - name: Build and run tests
+      - name: Run tests
         run: |
           npx prettier -c .
           npm run test
+
+  deploy:
+    name: Deploy to GitHub Pages
+    needs: test
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request' && needs.test.result == 'success'
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 16.x
+
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install Node dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
