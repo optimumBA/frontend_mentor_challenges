@@ -1,0 +1,51 @@
+const { readdirSync } = require('fs')
+
+const getDirectories = (source) =>
+  readdirSync(source, { withFileTypes: true })
+    .filter((dirent) => dirent.isDirectory())
+    .map((dirent) => dirent.name)
+
+const foreachChallenge = (command) => {
+  return ['.']
+    .concat(getDirectories('challenges'))
+    .map((dir) => command.replaceAll('DIRECTORY', dir))
+}
+
+const watch = process.argv.slice(2) == '--watch'
+
+const commands = []
+  .concat(foreachChallenge('mkdir -p public/DIRECTORY'))
+  .concat(
+    foreachChallenge(
+      'npx cpx-fixed "challenges/DIRECTORY/**/*.{html,jpg,png,svg}" public/DIRECTORY/' +
+        (watch ? ' --watch' : '')
+    )
+  )
+  .concat(
+    foreachChallenge(
+      'npx tailwindcss -c challenges/DIRECTORY/tailwind.config.js -i challenges/DIRECTORY/style.css -o public/DIRECTORY/style.css' +
+        (watch ? ' --watch' : '')
+    )
+  )
+  .join(watch ? ' & ' : ' && ')
+
+const { exec, execSync } = require('child_process')
+
+var shell = (cmd) => {
+  if (watch) {
+    /*
+     * Enables waiting for long-running commands and
+     * printing their output to the console.
+     * See https://stackoverflow.com/a/38317377/920303
+     */
+    let child = exec(cmd)
+    child.stdout.removeAllListeners('data')
+    child.stderr.removeAllListeners('data')
+    child.stdout.pipe(process.stdout)
+    child.stderr.pipe(process.stderr)
+  } else {
+    execSync(cmd, { encoding: 'utf8' })
+  }
+}
+
+shell(commands)
