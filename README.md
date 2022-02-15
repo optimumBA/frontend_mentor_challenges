@@ -7,15 +7,19 @@ Exercises are based on [Frontend Mentor challenges](https://www.frontendmentor.i
 ## Getting started
 
 1. fork this repo
-2. create an exercise branch based on remote branch (e.g. `qr_code_component`)
-3. edit files inside challenge directory (e.g. `challenges/qr_code_component`) and add any images to its own `images` subdirectory while previewing it on the server (execute `npm run serve` command)
-4. make sure your solution passes tests (execute `npm run test` command)
-5. create PR to the matching upstream branch
-6. make sure it passes code review
-7. merge your exercise branch with your main branch
-8. update main `index.html` file to include link to the newest challenge solution
-9. enable GitHub Actions for your repo to enable deployment to GitHub Pages
-10. repeat steps 2-8 for each exercise
-11. you can also improve main `index.html` file
+2. enable GitHub Actions for your fork
+3. create an exercise branch based on remote branch (e.g. `qr_code_component`)
+4. find corresponding challenge on https://www.frontendmentor.io/challenges and download starter files
+5. read the instructions
+6. edit files inside challenge directory (e.g. `challenges/qr_code_component`) and add any images to its own `images` subdirectory while previewing it on the server (execute `npm run serve` command)
+7. make sure your solution passes tests (execute `npm run test` command)
+8. create PR to the matching upstream branch
+9. make sure it passes code review
+10. merge your exercise branch with your main branch
+11. update main `index.html` file (`challenges/index.html`) in your `main` branch to include link to the newest challenge solution
+12. repeat steps 3-11 for each exercise
+13. you can also improve UI of the main `index.html` file
+14. set `gh-pages` branch as GitHub Pages Source
+15. open your site at https://USERNAME.github.io/frontend_mentor_challenges/
 
 Each challenge has its own directory inside `challenges` that contains HTML file, Tailwind CSS config file and input CSS file just like Tailwind Playground does. Directory `public` is for output only and can be ignored.
