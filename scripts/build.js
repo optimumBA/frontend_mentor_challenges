@@ -8,6 +8,7 @@ const getDirectories = (source) =>
 const foreachChallenge = (command) => {
   return ['.']
     .concat(getDirectories('challenges'))
+    .filter((dir) => dir != 'images')
     .map((dir) => command.replaceAll('DIRECTORY', dir))
 }
 
@@ -17,7 +18,7 @@ const commands = []
   .concat(foreachChallenge('mkdir -p public/DIRECTORY'))
   .concat(
     foreachChallenge(
-      'npx cpx-fixed "challenges/DIRECTORY/**/*.{html,jpg,png,svg}" public/DIRECTORY/' +
+      'npx cpx-fixed "challenges/DIRECTORY/**/*.{html,ico,jpg,png,svg,webmanifest}" public/DIRECTORY/' +
         (watch ? ' --watch' : '')
     )
   )
