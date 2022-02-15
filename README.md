@@ -8,9 +8,9 @@ Exercises are based on [Frontend Mentor challenges](https://www.frontendmentor.i
 
 1. fork this repo
 2. enable GitHub Actions for your fork
-3. create an exercise branch based on remote branch (e.g. `qr_code_component`)
-4. find corresponding challenge on https://www.frontendmentor.io/challenges and download starter files
-5. read the instructions
+3. find appropriate challenge in GitHub Issues
+4. create an exercise branch based on remote branch (e.g. `qr_code_component`)
+5. download starter files from the corresponding challenge and read the instructions
 6. edit files inside challenge directory (e.g. `challenges/qr_code_component`) and add any images to its own `images` subdirectory while previewing it on the server (execute `npm run serve` command)
 7. make sure your solution passes tests (execute `npm run test` command)
 8. create PR to the matching upstream branch
