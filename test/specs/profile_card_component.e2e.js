@@ -6,10 +6,13 @@ describe('Profile card component', () => {
       'Profile card component • Frontend Mentor Challenges • Optimum BH Internship'
     )
     await expect($('body')).toHaveTextContaining('Frontend Mentor challenge')
-    await expect($('a')).toHaveHref(
+    await expect($('=Frontend Mentor challenge')).toHaveHref(
       'https://www.frontendmentor.io/challenges/profile-card-component-cfArpWshJ'
     )
     await expect($('body')).toHaveTextContaining('for Optimum BH Internship')
     await expect($('body')).toHaveTextContaining('Source code')
+    await expect($('=Source code')).toHaveHrefContaining(
+      '/frontend_mentor_challenges/tree/profile_card_component/challenges/profile_card_component'
+    )
   })
 })
