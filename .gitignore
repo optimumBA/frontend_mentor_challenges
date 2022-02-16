@@ -6,3 +6,7 @@
 
 # macOS artifacts
 .DS_Store
+
+# Screenshots made during the tests
+/screenshots/**/*
+!/screenshots/.gitkeep
