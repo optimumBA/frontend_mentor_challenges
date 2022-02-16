@@ -99,7 +99,7 @@ exports.config = {
   baseUrl: 'http://localhost:4567',
   //
   // Default timeout for all waitFor* commands.
-  waitforTimeout: 10000,
+  waitforTimeout: 1000,
   //
   // Default timeout in milliseconds for request
   // if browser driver or grid doesn't send response
@@ -113,6 +113,7 @@ exports.config = {
   // your test setup with almost no effort. Unlike plugins, they don't add new
   // commands. Instead, they hook themselves up into the test process.
   services: [
+    'chromedriver',
     [
       'static-server',
       {
@@ -193,8 +194,23 @@ exports.config = {
    * @param {Array.<String>} specs        List of spec file paths that are to be run
    * @param {Object}         browser      instance of created browser/device session
    */
-  // before: function (capabilities, specs) {
-  // },
+  before: function (capabilities, specs) {
+    /*
+     * Takes full page screenshot and saves it in screenshots directory.
+     * See https://stackoverflow.com/a/64286853/920303
+     */
+    browser.addCommand('takeFullPageScreenshot', function (filename) {
+      return browser.call(async () => {
+        const path = require('path')
+        const filePath = path.resolve('./screenshots/' + filename + '.png')
+
+        const puppeteer = await browser.getPuppeteer()
+        const pages = await puppeteer.pages()
+
+        return pages[0].screenshot({ fullPage: true, path: filePath })
+      })
+    })
+  },
   /**
    * Runs before a WebdriverIO command gets executed.
    * @param {String} commandName hook command name
@@ -235,8 +251,21 @@ exports.config = {
    * @param {Boolean} result.passed    true if test has passed, otherwise false
    * @param {Object}  result.retries   informations to spec related retries, e.g. `{ attempts: 0, limit: 0 }`
    */
-  // afterTest: function(test, context, { error, result, duration, passed, retries }) {
-  // },
+  afterTest: function (
+    test,
+    context,
+    { error, result, duration, passed, retries }
+  ) {
+    if (passed) return
+
+    const testName = [test.parent, test.title]
+      .map((name) => name.toLowerCase().replace(/\s+/g, '_'))
+      .join('_')
+
+    const filename = encodeURIComponent(`${testName}-failure.png`)
+
+    return browser.takeFullPageScreenshot(filename)
+  },
 
   /**
    * Hook that gets executed after the suite has ended
