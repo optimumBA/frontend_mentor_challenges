@@ -16,7 +16,7 @@
   /* 2 */
   border-style: solid;
   /* 2 */
-  border-color: currentColor;
+  border-color: #e5e7eb;
   /* 2 */
 }
 
@@ -468,8 +468,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-backdrop-sepia:  ;
 }
 
-.m-auto {
-  margin: auto;
+.m-0 {
+  margin: 0px;
 }
 
 .mt-3 {
@@ -480,8 +480,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   display: flex;
 }
 
-.h-full {
-  height: 100%;
+.h-\[100vh\] {
+  height: 100vh;
 }
 
 .w-full {
@@ -492,16 +492,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   flex-direction: column;
 }
 
-.content-center {
-  align-content: center;
-}
-
-.content-between {
-  align-content: space-between;
-}
-
-.justify-center {
-  justify-content: center;
+.place-content-center {
+  place-content: center;
 }
 
 .text-center {
