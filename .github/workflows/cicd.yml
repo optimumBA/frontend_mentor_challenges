@@ -32,6 +32,12 @@ jobs:
           npx prettier -c .
           npm run test
 
+      - name: Save screenshots
+        uses: actions/upload-artifact@v2
+        with:
+          name: screenshots
+          path: screenshots/
+
   deploy:
     name: Deploy to GitHub Pages
     needs: test
