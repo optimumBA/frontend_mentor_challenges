@@ -17,6 +17,8 @@ jobs:
           node-version: 16.x
 
       - uses: browser-actions/setup-chrome@latest
+        with:
+          chrome-version: stable
 
       - name: Cache dependencies
         uses: actions/cache@v2
