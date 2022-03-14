@@ -24,6 +24,7 @@
     "simple-autoreload-server": "npx autoreload-server -d ./public/ -p 3000 -b",
     "test": "npm-run-all build wdio-test",
     "watch": "npm run build -- --watch",
-    "wdio-test": "npx wdio run wdio.conf.js"
+    "wdio-test": "npx wdio run wdio.conf.js",
+    "pretty": "prettier --write 'challenges'"
   }
 }
