@@ -2,12 +2,43 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
     <title>
       QR code component &bullet; Frontend Mentor Challenges &bullet; Optimum BH
       Internship
     </title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: #3e52a3;
+      }
+      .attribution white {
+        color: hsl(0, 0%, 100%);
+      }
+      .attribution lg {
+        color: #d6e2f0;
+      }
+      .attribution gb {
+        color: #7b879d;
+      }
+      .attribution db {
+        color: #1f3251;
+      }
+    </style>
     <link
       rel="apple-touch-icon"
       sizes="180x180"
@@ -25,39 +56,43 @@
       sizes="16x16"
       href="../images/favicon-16x16.png"
     />
-    <link rel="manifest" href="../site.webmanifest" />
-    <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="m-0">
+  <body class="font-Outfit bg-lightgray text-base">
     <div
-      class="flex h-[100vh] w-full flex-col place-content-center text-center"
+      class="mr-auto ml-auto mt-28 grid w-80 place-items-center rounded-2xl bg-white p-4 text-center"
     >
-      <div>
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://www.frontendmentor.io/challenges/qr-code-component-iux_sIO_H"
-          target="_blank"
-          >Frontend Mentor challenge</a
-        >
-      </div>
-      <div>
-        for
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA"
-          target="_blank"
-          >Optimum BH</a
-        >
-        Internship.
-      </div>
+      <img src="images/image-qr-code.png" class="h-auto rounded-xl" alt="" />
 
-      <div class="mt-3">
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA/frontend_mentor_challenges/tree/qr_code_component/challenges/qr_code_component"
-          >Source code</a
-        >
-      </div>
+      <span class="mt-5 mb-4 text-lg font-black"
+        >Improve your front-end skills by building projects
+      </span>
+
+      <span class="mb-4 block text-center text-sm text-gray-500"
+        >Scan the QR code to visit Frontend Mentor and take your coding skills
+        to the next level
+      </span>
+    </div>
+
+    <div class="attribution mt-32 justify-end text-left">
+      <a
+        href="https://www.frontendmentor.io/challenges/qr-code-component-iux_sIO_H "
+        target="_blank"
+        >Frontend Mentor challenge</a
+      >
+      by
+      <a class="text-optimum-darkblue" href="https://www.frontendmentor.io"
+        >Frontend Mentor</a
+      >
+      for
+      <a href="https://github.com/optimumBA" target="_blank">Optimum BH </a>
+      Internship
+      <a
+        class="text-optimum-blue hover:text-optimum-darkblue block"
+        target="_blank"
+        href="https://github.com /frontend_mentor_challenges/tree/qr_code_component/challenges/qr_code_component"
+      >
+        Source code</a
+      >
     </div>
   </body>
 </html>
