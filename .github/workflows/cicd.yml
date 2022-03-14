@@ -28,7 +28,9 @@ jobs:
         run: npm ci
 
       - name: Run tests
+        uses: browser-actions/setup-chrome@latest
         run: |
+          chrome --version
           npx prettier --write challenges
           npx prettier -c .
           npm run test
