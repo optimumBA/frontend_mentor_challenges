@@ -24,8 +24,5 @@
     "test": "npm-run-all build wdio-test",
     "watch": "npm run build -- --watch",
     "wdio-test": "npx wdio run wdio.conf.js"
-  },
-  "dependencies": {
-    "chromedriver": "^99.0.0"
   }
 }
