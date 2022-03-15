@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="text-[15px]" >
+<html lang="en" class="text-[15px]">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -29,37 +29,56 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body class="m-0">
-
-    <div class="flex justify-center items-center min-h-screen bg-very-dark-blue py-9" >
-
-      <div class="rounded-lg elative border-transparent overflow-hidden w-5/6 text-center md:text-left bg-darkDesaturatedBlue md:flex md:flex-row-reverse" >
-        <div class="relative md:w-1/2" >
+    <div
+      class="bg-very-dark-blue flex min-h-screen items-center justify-center py-9"
+    >
+      <div
+        class="elative bg-darkDesaturatedBlue w-5/6 overflow-hidden rounded-lg border-transparent text-center md:flex md:flex-row-reverse md:text-left"
+      >
+        <div class="relative md:w-1/2">
           <picture>
-            <source media="(min-width: 768px)" srcset="./images/image-header-desktop.jpg">
-            <img class="mx-auto w-full h-full" src="./images/image-header-mobile.jpg" alt="header" >
-          </picture> 
-         
-          <div class="absolute top-0 bottom-0 right-0 left-0 bg-softViolet bg-opacity-50" >
-          </div>
+            <source
+              media="(min-width: 768px)"
+              srcset="./images/image-header-desktop.jpg"
+            />
+            <img
+              class="mx-auto h-full w-full"
+              src="./images/image-header-mobile.jpg"
+              alt="header"
+            />
+          </picture>
+
+          <div
+            class="bg-softViolet absolute top-0 bottom-0 right-0 left-0 bg-opacity-50"
+          ></div>
         </div>
-        <div class="p-7 text-white md:w-1/2 md:py-12 md:px-16 " >
-          <h1 class="my-5 text-4xl font-bold font-lexend " >
-            Get <span class="text-softViolet" > insights </span> that help your business grow.
+        <div class="p-7 text-white md:w-1/2 md:py-12 md:px-16">
+          <h1 class="font-lexend my-5 text-4xl font-bold">
+            Get <span class="text-softViolet"> insights </span> that help your
+            business grow.
           </h1>
-          <p class="font-inter text-mainPara text-lg " >
-            Discover the benefits of data analytics and make better decisions regarding revenue, customer 
-            experience, and overall efficiency.
+          <p class="font-inter text-mainPara text-lg">
+            Discover the benefits of data analytics and make better decisions
+            regarding revenue, customer experience, and overall efficiency.
           </p>
-          <div class="font-inter flex flex-col justify-center uppercase text-stats mt-7 text-sm md:flex md:flex-row md:justify-between md:mr-9 md:mt-16">
-            <span class="mb-3"> <strong class="strong" >10k+</strong> companies</span>
-            <span class="mb-3"> <strong class="strong" >314</strong> templates</span>
-            <span class="mb-3"> <strong class="strong" >12m+</strong> queries</span>
+          <div
+            class="font-inter text-stats mt-7 flex flex-col justify-center text-sm uppercase md:mr-9 md:mt-16 md:flex md:flex-row md:justify-between"
+          >
+            <span class="mb-3">
+              <strong class="strong">10k+</strong> companies</span
+            >
+            <span class="mb-3">
+              <strong class="strong">314</strong> templates</span
+            >
+            <span class="mb-3">
+              <strong class="strong">12m+</strong> queries</span
+            >
           </div>
         </div>
       </div>
 
       <div
-        class="absolute top-0 z-30 text-xs text-white gap-2 flex w-full place-content-center text-center"
+        class="absolute top-0 z-30 flex w-full place-content-center gap-2 text-center text-xs text-white"
       >
         <div>
           <a
@@ -88,8 +107,6 @@
           >
         </div>
       </div>
-
     </div>
-
   </body>
 </html>
