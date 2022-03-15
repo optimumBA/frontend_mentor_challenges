@@ -6,5 +6,5 @@
 @tailwind utilities;
 
 .strong {
-  @apply block text-lg lowercase text-white;
+  @apply block text-lg text-white;
 }
