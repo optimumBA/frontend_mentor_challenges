@@ -34,7 +34,6 @@ jobs:
       - name: Run tests
         run: |
           chrome --version
-          npx prettier --write challenges
           npx prettier -c .
           npm run test
 
