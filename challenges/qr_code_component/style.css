@@ -8,11 +8,3 @@
     box-shadow: 0 6px 18px 0 #b4c7df;
   }
 }
-
-.colors {
-  color: hwb(0 100% 0%); /* card bg */
-  color: #d6e2f0; /* preview bg */
-  color: #7b879d; /* paragrapg color */
-  color: #1f3251; /* title color */
-  background-color: #b4c7df;
-}

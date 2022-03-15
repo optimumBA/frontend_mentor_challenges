@@ -18,7 +18,8 @@ module.exports = {
         'outfit': ['Outfit', ...defaultTheme.fontFamily.sans],
       },
       screens: {
-        'mob-sm': '360px',
+        'mobile': '375px',
+        'desktop': '1440px'
         // => @media (min-width: 360px) { ... }
       },
     },
