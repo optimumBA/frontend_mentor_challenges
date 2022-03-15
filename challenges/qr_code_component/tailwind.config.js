@@ -15,11 +15,11 @@ module.exports = {
         'card-desc': '15px',
       },
       fontFamily: {
-        'outfit': ['Outfit', ...defaultTheme.fontFamily.sans],
+        outfit: ['Outfit', ...defaultTheme.fontFamily.sans],
       },
       screens: {
-        'mobile': '375px',
-        'desktop': '1440px'
+        mobile: '375px',
+        desktop: '1440px',
         // => @media (min-width: 360px) { ... }
       },
     },
