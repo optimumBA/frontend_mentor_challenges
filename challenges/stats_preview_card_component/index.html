@@ -1,95 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="stylesheet" href="style.css">
-  <title>
-    Stats preview card component &bullet; Frontend Mentor Challenges &bullet;
-    Optimum BH Internship
-  </title>
-  <link
-    rel="apple-touch-icon"
-    sizes="180x180"
-    href="../images/apple-touch-icon.png"
-  />
-  <link
-    rel="icon"
-    type="image/png"
-    sizes="32x32"
-    href="../images/favicon-32x32.png"
-  />
-  <link
-    rel="icon"
-    type="image/png"
-    sizes="16x16"
-    href="../images/favicon-16x16.png"
-  />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>
+      Stats preview card component &bullet; Frontend Mentor Challenges &bullet;
+      Optimum BH Internship
+    </title>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../images/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../images/favicon-16x16.png"
+    />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-    
-  </style>
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body class="bg-verydarkblue font-Inter">
+    <div
+      class="container flex text-center sm:mr-auto sm:ml-auto sm:mt-10 sm:flex-col-reverse sm:p-5 lg:mt-44 lg:flex-row lg:gap-0"
+    >
+      <div
+        class="bg-darkdesaturedblue lg,md:rounded-tl-md lg,md:rounded-bl-md sm:flex-col-reverse sm:rounded-bl-md sm:rounded-br-md sm:p-3 sm:text-base md:w-1/2 md:p-4 lg:grid lg:w-1/2 lg:p-4 lg:text-center"
+      >
+        <span
+          class="flex-wrap break-words font-bold tracking-wide text-white sm:m-auto sm:p-3 sm:text-center sm:text-2xl lg:mt-10 lg:ml-8 lg:mr-4 lg:p-3 lg:text-left lg:text-4xl"
+        >
+          Get <strong class="text-softviolet">insights </strong>that help your
+          business grow.
+        </span>
+        <span
+          class="text-slightlytrwhite75 sm:block sm:p-3 md:text-left md:tracking-wide lg:ml-7 lg:mr-6 lg:text-left lg:align-baseline lg:text-base"
+        >
+          Discover the benefits of data analytics and make better decisions
+          regarding revenue, customer experience, and overall efficiency.
+        </span>
 
-</head>
-<body class="bg-verydarkblue font-Inter ">
-
-  <div class=" container lg:mt-44   flex lg:flex-row text-center lg:gap-0 sm:flex-col-reverse sm:mr-auto sm:ml-auto  sm:mt-10 sm:p-5 "  >
- <div class="lg:grid lg:text-center md:p-4 lg:p-4 lg:w-1/2 md:w-1/2 bg-darkdesaturedblue lg,md:rounded-tl-md lg,md:rounded-bl-md sm:rounded-bl-md  sm:rounded-br-md sm:flex-col-reverse sm:p-3 sm:text-base">
-   <span class="text-white lg:mt-10 font-bold lg:text-4xl sm:text-2xl  lg:ml-8 flex-wrap lg:mr-4 break-words lg:p-3 sm:m-auto   sm:p-3 sm:text-center lg:text-left tracking-wide"> Get <strong class="text-softviolet">insights </strong>that help your business grow. 
-    
-  </span>
-  <span class="lg:ml-7 lg:mr-6 lg:text-left lg:align-baseline  lg:text-base sm:p-3 sm:block md:text-left md:tracking-wide text-slightlytrwhite75">
-    Discover the benefits of data analytics and make better decisions regarding revenue, customer experience, and overall efficiency. 
-  </span>
-   
-  <div class=" card md:justify-around lg:justify-around md:flex-row sm:flex-col md:text-left sm:text-center sm:align-middle sm:p-3 sm:justify-center sm:justify-items-center ">
-    <div class="companies">
-      <div class="number">10k+</div>
-      <div class="name">companies</div>
+        <div
+          class="card sm:flex-col sm:justify-center sm:justify-items-center sm:p-3 sm:text-center sm:align-middle md:flex-row md:justify-around md:text-left lg:justify-around"
+        >
+          <div class="companies">
+            <div class="number">10k+</div>
+            <div class="name">companies</div>
+          </div>
+          <div class="templates">
+            <div class="number">314</div>
+            <div class="name">templates</div>
+          </div>
+          <div class="queries">
+            <div class="number">12M+</div>
+            <div class="name">queries</div>
+          </div>
+        </div>
+      </div>
+      <div class="bg-softviolet div-img md:w-1/2 lg:w-1/2">
+        <img
+          src="./images/image-header-desktop.jpg"
+          class="img bg- text-left"
+          alt=""
+        />
+      </div>
     </div>
-    <div class="templates">
-      <div class="number">314</div>
-      <div class="name">templates</div>
-    </div>
-    <div class="queries">
-      <div class="number">12M+</div>
-      <div class="name">queries</div>
-    </div>
-  </div>
- 
 
-  </div>
-  <div class="  bg-softviolet div-img lg:w-1/2 md:w-1/2" >
-   
-   <img src="./images/image-header-desktop.jpg" class="text-left  img bg-"alt=""> 
-  
-  </div>
-</div>
- 
-
-   <div class="attribution text-white">
-    <a
-    href="https://www.frontendmentor.io/challenges/stats-preview-card-component-8JqbgoU62 "
-    target="_blank" >Frontend Mentor challenge</a>
-    by
-    <a class="text-optimum-darkblue" href="https://www.frontendmentor.io"
+    <div class="attribution text-white">
+      <a
+        href="https://www.frontendmentor.io/challenges/stats-preview-card-component-8JqbgoU62 "
+        target="_blank"
+        >Frontend Mentor challenge</a
+      >
+      by
+      <a class="text-optimum-darkblue" href="https://www.frontendmentor.io"
         >Frontend Mentor</a
       >
-    for
-    <a href="https://github.com/optimumBA" target="_blank">Optimum BH </a>
-    Internship <br>
-    <a
-      class="text-optimum-blue hover:text-optimum-darkblue block"
-      target="_blank" 
-      href="https://github.com /frontend_mentor_challenges/tree/stats_preview_card_component/challenges/stats_preview_card_component"
-    >
-      Source code</a
-    >
-  </div>
-</body>
+      for
+      <a href="https://github.com/optimumBA" target="_blank">Optimum BH </a>
+      Internship <br />
+      <a
+        class="text-optimum-blue hover:text-optimum-darkblue block"
+        target="_blank"
+        href="https://github.com /frontend_mentor_challenges/tree/stats_preview_card_component/challenges/stats_preview_card_component"
+      >
+        Source code</a
+      >
+    </div>
+  </body>
 </html>

@@ -502,20 +502,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
 }
 
-.mr-5 {
-  margin-right: 1.25rem;
-}
-
 .block {
   display: block;
 }
 
 .flex {
   display: flex;
-}
-
-.w-1\/2 {
-  width: 50%;
 }
 
 .grow {
@@ -593,36 +585,36 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Inter:wght@400;700&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Outfit:wght@400;700&family=Space+Mono&display=swap');
 
-.card{
-  display:flex;
-  flex-direction:row;
+.card {
+  display: flex;
+  flex-direction: row;
   justify-content: space-around;
-  color:white;
-  text-align:left;
+  color: white;
+  text-align: left;
 }
 
-.name{
+.name {
   text-transform: uppercase;
 }
 
-.number{
-  font-size:20px;
-  font-weight:bold;
+.number {
+  font-size: 20px;
+  font-weight: bold;
 }
 
-.img{
-  mix-blend-mode:multiply;
+.img {
+  mix-blend-mode: multiply;
 }
 
-.div-img{
+.div-img {
   border-top-right-radius: 6px;
   border-bottom-right-radius: 6px;
 }
 
-.container{
-  max-width:1100px;
-  margin-right:auto;
-  margin-left:auto;
+.container {
+  max-width: 1100px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .attribution {
@@ -684,20 +676,12 @@ Ensure the default browser behavior of the `hidden` attribute.
     border-bottom-right-radius: 0.375rem;
   }
 
-  .sm\:p-4 {
-    padding: 1rem;
-  }
-
-  .sm\:p-3 {
-    padding: 0.75rem;
-  }
-
   .sm\:p-5 {
     padding: 1.25rem;
   }
 
-  .sm\:text-left {
-    text-align: left;
+  .sm\:p-3 {
+    padding: 0.75rem;
   }
 
   .sm\:text-center {
