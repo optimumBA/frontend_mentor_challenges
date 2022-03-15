@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.0.22 | MIT License | https://tailwindcss.com
+! tailwindcss v3.0.23 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -483,8 +483,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-left: auto;
 }
 
-.mt-40 {
-  margin-top: 10rem;
+.mt-28 {
+  margin-top: 7rem;
 }
 
 .mt-5 {
@@ -495,28 +495,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: 1rem;
 }
 
-.mt-7 {
-  margin-top: 1.75rem;
-}
-
-.mt-10 {
-  margin-top: 2.5rem;
-}
-
-.mt-16 {
-  margin-top: 4rem;
-}
-
-.mt-20 {
-  margin-top: 5rem;
-}
-
-.mt-32 {
-  margin-top: 8rem;
-}
-
-.mt-28 {
-  margin-top: 7rem;
+.mt-2 {
+  margin-top: 0.5rem;
 }
 
 .block {
@@ -529,10 +509,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .h-auto {
   height: auto;
-}
-
-.w-80 {
-  width: 20rem;
 }
 
 .place-items-center {
@@ -597,6 +573,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: rgb(107 114 128 / var(--tw-text-opacity));
 }
 
+.text-optimum-darkblue {
+  --tw-text-opacity: 1;
+  color: rgb(3 137 225 / var(--tw-text-opacity));
+}
+
 .text-optimum-blue {
   --tw-text-opacity: 1;
   color: rgb(0 158 252 / var(--tw-text-opacity));
@@ -611,6 +592,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .attribution:hover {
   opacity: 1;
   margin-bottom: 60px;
+}
+
+.card {
+  width: 280px;
 }
 
 .hover\:text-optimum-darkblue:hover {
