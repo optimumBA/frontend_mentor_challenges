@@ -25,6 +25,8 @@
     "test": "npm-run-all build wdio-test",
     "watch": "npm run build -- --watch",
     "wdio-test": "npx wdio run wdio.conf.js",
-    "pretty": "prettier --write 'challenges'"
+    "pretty": "prettier --write 'challenges'",
+    "cpx": "npx cpx-fixed 'challenges/DIRECTORY/**/*.{html,ico,jpg,png,svg,webmanifest}' public/DIRECTORY/ --watch",
+    "tailwind": "npx tailwindcss -c challenges/DIRECTORY/tailwind.config.js -i challenges/DIRECTORY/style.css -o public/DIRECTORY/style.css"
   }
 }
