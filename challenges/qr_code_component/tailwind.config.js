@@ -1,3 +1,5 @@
+const defaultTheme = require('tailwindcss/defaultTheme')
+
 module.exports = {
   content: ['./challenges/qr_code_component/index.html'],
   theme: {
@@ -5,6 +7,19 @@ module.exports = {
       colors: {
         'optimum-blue': '#009efc',
         'optimum-darkblue': '#0389e1',
+        'preview-bg': '#d6e2f0',
+        'desc-text': '#7b879d',
+        'title-text': '#1f3251',
+      },
+      fontSize: {
+        'card-desc': '15px',
+      },
+      fontFamily: {
+        'outfit': ['Outfit', ...defaultTheme.fontFamily.sans],
+      },
+      screens: {
+        'mob-sm': '360px',
+        // => @media (min-width: 360px) { ... }
       },
     },
   },
