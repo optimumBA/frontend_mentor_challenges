@@ -6,6 +6,10 @@ module.exports = {
         'optimum-blue': '#009efc',
         'optimum-darkblue': '#0389e1',
       },
+      screens: {
+        'mob-sm': '360px',
+        // => @media (min-width: 360px) { ... }
+      },
     },
   },
   plugins: [],
