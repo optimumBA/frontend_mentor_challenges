@@ -19,13 +19,20 @@ module.exports = {
       },
       fontSize: {
         'body-copy': '15px',
+        'card-header-11': '2.25rem',
+        'card-header-22': '1.8rem',
       },
       fontFamily: {
-        inter: ['Inter', 'Lexend Deca', ...defaultTheme.fontFamily.sans],
+        inter: ['Inter', ...defaultTheme.fontFamily.sans],
         'lexend-deca': ['Lexend Deca', ...defaultTheme.fontFamily.sans],
+      },
+      backgroundImage: {
+        mobile: "url('../images/image-header-mobile.jpg')",
+        desktop: "url('../images/image-header-desktop.jpg')",
       },
       width: {
         desktop: '70rem',
+        mobile: '95%',
       },
       screens: {
         mobile: '375px',

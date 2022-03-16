@@ -1,3 +1,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .challemge-item {
+    margin: 10px;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 1.1em;
+    line-height: 24px;
+    background-color: rgb(212, 212, 212);
+  }
+
+  .challemge-item:hover {
+    cursor: pointer;
+    color: white;
+    background: linear-gradient(to right, #4535aa, #ed639e);
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.25);
+    transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
+  }
+}
+
+.ff {
+  background-color: rgb(212, 212, 212);
+}

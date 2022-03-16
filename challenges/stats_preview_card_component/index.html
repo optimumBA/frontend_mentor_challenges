@@ -40,40 +40,78 @@
     <link rel="stylesheet" href="style.css" />
   </head>
 
-  <body class="font-inter m-0">
+  <body class="font-inter bg-primary-very-dark-blue m-0">
     <div
-      class="bg-primary-very-dark-blue flex h-[100vh] w-full flex-col items-center justify-center text-center"
+      class="relative flex h-[100vh] w-full flex-col items-center justify-center p-4 text-center"
     >
+      <!-- Preview card wrapper -->
       <div
-        class="tablet:flex-row desktop:w-desktop flex w-11/12 flex-col overflow-hidden rounded-lg"
+        class="w-mobile desktop:w-desktop tablet:flex-row flex flex-col-reverse overflow-hidden rounded-lg"
       >
+        <!-- Header side -->
         <div
-          class="bg-primary-dark-desaturated-blue flex flex-shrink basis-1/2 flex-col items-center justify-center p-12"
+          class="tablet:p-16 bg-primary-dark-desaturated-blue flex flex-shrink basis-1/2 flex-col justify-evenly px-4 py-8"
         >
-          <h2 class="text-4xl font-bold text-white">
-            Get <span class="text-primary-soft-violet">insights</span> that help
-            your business grow.
-          </h2>
-          <p class="text-neutral-transp-white-1 mt-4 mb-8">
-            Discover the benefits of data analytics and make better decisions
-            regarding revenue, customer experience, and overall efficiency.
-          </p>
+          <div>
+            <h2
+              class="card-header-2 mobile:card-header tablet:text-left text-center font-bold text-white"
+            >
+              Get <span class="text-primary-soft-violet">insights</span> that
+              help your business grow.
+            </h2>
+            <p
+              class="tablet:mt-8 text-neutral-transp-white-1 tablet:text-left tablet:mr-8 mt-4 mb-8 text-center tracking-wide"
+            >
+              Discover the benefits of data analytics and make better decisions
+              regarding revenue, customer experience, and overall efficiency.
+            </p>
+          </div>
+
+          <div class="tablet:flex-row flex flex-col justify-start gap-8">
+            <div class="tablet:text-left flex flex-col text-center">
+              <h2 class="text-2xl font-bold text-white">10k+</h2>
+              <p
+                class="font-lexend-deca text-neutral-transp-white-2 mt-1 text-xs uppercase tracking-wide"
+              >
+                companies
+              </p>
+            </div>
+            <div class="tablet:text-left flex flex-col text-center">
+              <h2 class="text-2xl font-bold text-white">314</h2>
+              <p
+                class="font-lexend-deca text-neutral-transp-white-2 mt-1 text-xs uppercase tracking-wide"
+              >
+                templates
+              </p>
+            </div>
+            <div class="tablet:text-left flex flex-col text-center">
+              <h2 class="text-2xl font-bold text-white">12M+</h2>
+              <p
+                class="font-lexend-deca text-neutral-transp-white-2 mt-1 text-xs uppercase tracking-wide"
+              >
+                queries
+              </p>
+            </div>
+          </div>
         </div>
-        <div class="bg-primary-soft-violet flex-shrink basis-1/2 p-0">
+        <!-- Image side -->
+        <div class="bg-primary-soft-violet flex-shrink basis-1/2">
           <img
             src="../images/image-header-mobile.jpg"
             alt="Image Header"
-            class="tablet:hidden block h-full w-full max-w-full opacity-75 mix-blend-multiply"
+            class="tablet:hidden block h-full max-h-full w-full max-w-full object-cover opacity-75 mix-blend-multiply"
           />
           <img
             src="../images/image-header-desktop.jpg"
             alt="Image Header"
-            class="tablet:block hidden h-full w-full max-w-full opacity-75 mix-blend-multiply"
+            class="tablet:block hidden h-full max-h-full w-full max-w-full object-cover opacity-75 mix-blend-multiply"
           />
         </div>
       </div>
 
-      <footer class="absolute bottom-8 text-white">
+      <footer
+        class="tablet:opacity-100 tablet:bottom-8 absolute text-white opacity-0"
+      >
         <div class="text-inherit">
           <a
             class="text-optimum-blue hover:text-optimum-darkblue"
@@ -96,7 +134,8 @@
         <div class="mt-3">
           <a
             class="text-optimum-blue hover:text-optimum-darkblue"
-            href="https://github.com/optimumBA/frontend_mentor_challenges/tree/stats_preview_card_component/challenges/stats_preview_card_component"
+            target="_blank"
+            href="https://github.com/Daniel4lm/frontend_mentor_challenges/tree/stats_preview_card_component/challenges/stats_preview_card_component"
             >Source code</a
           >
         </div>
