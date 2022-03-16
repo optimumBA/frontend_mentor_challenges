@@ -2,8 +2,16 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
     <title>
       Profile card component &bullet; Frontend Mentor Challenges &bullet;
       Optimum BH Internship
@@ -25,39 +33,76 @@
       sizes="16x16"
       href="../images/favicon-16x16.png"
     />
-    <link rel="manifest" href="../site.webmanifest" />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body class="m-0">
-    <div
-      class="flex h-[100vh] w-full flex-col place-content-center text-center"
-    >
-      <div>
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://www.frontendmentor.io/challenges/profile-card-component-cfArpWshJ"
-          target="_blank"
-          >Frontend Mentor challenge</a
-        >
-      </div>
-      <div>
-        for
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA"
-          target="_blank"
-          >Optimum BH</a
-        >
-        Internship.
-      </div>
 
-      <div class="mt-3">
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA/frontend_mentor_challenges/tree/profile_card_component/challenges/profile_card_component"
-          >Source code</a
-        >
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  </head>
+  <body class="bg-darkcyan text-center align-middle">
+    <div
+      class="container grid place-items-center font-KumbhSans text-lg text-center mr-auto ml-auto mt-44"
+    >
+      <div class="wrapper bg-white rounded-xl overflow-auto">
+        <img
+          src="images/bg-pattern-card.svg"
+          class="img rounded-t-xl overflow-visible"
+          alt=""
+        />
+        <div class="content">
+          <img
+            src="images/image-victor.jpg"
+            class="mr-auto ml-auto -mt-12 rounded-full w-max inline border-4 border-solid overflow-visible border-white"
+            alt=""
+          />
+          <h2 class="font-bold text-base mb-2">
+            Victor Crest
+            <span class="font-light text-darkgrayishblue">&nbsp26</span>
+          </h2>
+          <p class="mb-6 text-base text-darkgrayishblue">London</p>
+          <div
+            class="footer flex flex-row justify-around p-4 text-darkgrayishblue text-base"
+          >
+            <div>
+              <p class="num font-extrabold text-black text-lg">80k</p>
+              <p class="text-xs">Followers</p>
+            </div>
+            <div>
+              <p class="num font-extrabold text-black text-lg">830k</p>
+              <p class="text-xs">Likes</p>
+            </div>
+            <div>
+              <p class="num font-extrabold text-black text-lg">1.4k</p>
+              <p class="text-xs">Photos</p>
+            </div>
+          </div>
+        </div>
       </div>
+    </div>
+
+    <div class="attribution mt-4">
+      <a
+        href="https://www.frontendmentor.io/challenges/profile-card-component-cfArpWshJ"
+        target="_blank"
+        class="text-blue-900"
+        >Frontend Mentor challenge</a
+      >
+      by
+      <a class="text-blue-900" href="https://www.frontendmentor.io"
+        >Frontend Mentor</a
+      >
+      for
+      <a
+        href="https://github.com/optimumBA"
+        class="text-blue-900"
+        target="_blank"
+        >Optimum BH
+      </a>
+      Internship <br />
+      <a
+        class="block text-blue-900"
+        target="_blank"
+        href="https://github.com/optimumBA/frontend_mentor_challenges/tree/profile_card_component/challenges/profile_card_component"
+      >
+        Source code</a
+      >
     </div>
   </body>
 </html>

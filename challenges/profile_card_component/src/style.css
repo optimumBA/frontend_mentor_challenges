@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Inter:wght@400;700&family=Kumbh+Sans:wght@400;700&family=Lexend+Deca&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Outfit:wght@400;700&family=Space+Mono&display=swap');
+
+.img {
+  margin: auto;
+}
+.img2 {
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: -48px;
+  display: inline;
+}
+.footer {
+  border-top: 1px solid hsla(227, 10%, 46%, 0.2);
+}
+body {
+  background-image: url(https://digitshack.com/codepen/mentor4/bg-pattern-top.svg),
+    url(https://digitshack.com/codepen/mentor4/bg-pattern-bottom.svg);
+  background-repeat: no-repeat, no-repeat;
+  background-position: right 48vw bottom 40vh, left 45vw top 44vh;
+}
+
+.attribution {
+  opacity: 0.3;
+}
+.attribution:hover {
+  opacity: 1;
+  margin-bottom: 60px;
+}
