@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.attribution {
+  opacity: 0.3;
+}
+.attribution:hover {
+  opacity: 1;
+  margin-bottom: 60px;
+}
