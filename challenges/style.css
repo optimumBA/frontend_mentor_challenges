@@ -20,7 +20,3 @@
     transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
   }
 }
-
-.ff {
-  background-color: rgb(212, 212, 212);
-}
