@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+
+.set-w {
+  width: 220px;
+}
+.font-fix {
+  font-size: 0.5rem;
+}
+.left-messages {
+  line-height: normal;
+}
+.attribution {
+  opacity: 0.3;
+}
+.attribution:hover {
+  opacity: 1;
+  margin-bottom: 60px;
+}
