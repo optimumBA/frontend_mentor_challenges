@@ -16,10 +16,6 @@ jobs:
         with:
           node-version: 16.x
 
-      - uses: browser-actions/setup-chrome@latest
-        with:
-          chrome-version: stable
-
       - name: Cache dependencies
         uses: actions/cache@v2
         with:
@@ -33,7 +29,6 @@ jobs:
 
       - name: Run tests
         run: |
-          chrome --version
           npx prettier -c .
           npm run test
 
