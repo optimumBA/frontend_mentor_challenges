@@ -1,63 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-      Profile card component &bullet; Frontend Mentor Challenges &bullet;
-      Optimum BH Internship
-    </title>
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="../images/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="../images/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="../images/favicon-16x16.png"
-    />
-    <link rel="manifest" href="../site.webmanifest" />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body class="m-0">
-    <div
-      class="flex h-[100vh] w-full flex-col place-content-center text-center"
-    >
-      <div>
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://www.frontendmentor.io/challenges/profile-card-component-cfArpWshJ"
-          target="_blank"
-          >Frontend Mentor challenge</a
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>
+    Profile card component &bullet; Frontend Mentor Challenges &bullet;
+    Optimum BH Internship
+  </title>
+  <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16x16.png" />
+  <!-- Google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="manifest" href="../site.webmanifest" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="m-0 font-kumbh-sans">
+
+  <div class="flex h-[100vh] w-full flex-col justify-center items-center bg-primary-dark-cyan text-center">
+
+    <section class="bg-white w-[90%] card-shadow mobile:w-88 h-96 rounded-2xl overflow-hidden flex flex-col">
+      
+      <div class="header-bg w-full flex-shrink basis-[38%]"></div>
+      <div class="relative flex-shrink basis-[62%] flex flex-col justify-end">
+
+        <img 
+          src="./images/image-victor.jpg" 
+          alt="Profile Image" 
+          class="absolute rounded-full top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 border-[5px] border-white"
         >
+
+        <div class="">
+          <h2 class="text-xl font-bold text-primary-very-dark-dt">Victor Crest 
+            <span class="text-primary-dark-grayish-blue font-normal">26</span>
+          </h2>
+          <p class="my-2 text-primary-dark-grayish-blue text-sm tracking-wide">London</p>
+        </div>
+
+        <div class="border-t mt-4 p-4 border-gray-200 flex justify-around text-center">
+          <div>
+            <h2 class="text-xl font-bold text-primary-very-dark-dt">80K</h2>
+            <p class="mt-2 text-primary-dark-grayish-blue text-xs tracking-wide">Followers</p>
+          </div>
+          <div>
+            <h2 class="text-xl font-bold text-primary-very-dark-dt">803K</h2>
+            <p class="mt-2 text-primary-dark-grayish-blue text-xs tracking-wide">Likes</p>
+          </div>
+          <div>
+            <h2 class="text-xl font-bold text-primary-very-dark-dt">1.4K</h2>
+            <p class="mt-2 text-primary-dark-grayish-blue text-xs tracking-wide">Photos</p>
+          </div>
+        </div>        
+      </div>
+    </section>
+
+    <!-- Footer section -->
+    <footer class="absolute bottom-8 bg-white rounded-md p-6">
+      <div>
+        <a class="text-optimum-blue hover:text-optimum-darkblue"
+          href="https://www.frontendmentor.io/challenges/profile-card-component-cfArpWshJ" target="_blank">Frontend
+          Mentor
+          challenge</a>
       </div>
       <div>
         for
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA"
-          target="_blank"
-          >Optimum BH</a
-        >
+        <a class="text-optimum-blue hover:text-optimum-darkblue" href="https://github.com/optimumBA"
+          target="_blank">Optimum BH</a>
         Internship.
       </div>
 
       <div class="mt-3">
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA/frontend_mentor_challenges/tree/profile_card_component/challenges/profile_card_component"
-          >Source code</a
-        >
+        <a class="text-optimum-blue hover:text-optimum-darkblue"
+          href="https://github.com/optimumBA/frontend_mentor_challenges/tree/profile_card_component/challenges/profile_card_component">Source
+          code</a>
       </div>
-    </div>
-  </body>
+    </footer>
+  </div>
+</body>
+
 </html>
