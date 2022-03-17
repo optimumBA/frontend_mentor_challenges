@@ -27,10 +27,52 @@
     />
     <link rel="manifest" href="../site.webmanifest" />
     <link rel="stylesheet" href="style.css" />
+    <link href="./dist/output.css" rel="stylesheet">
   </head>
-  <body class="m-0">
-    <div
-      class="flex h-[100vh] w-full flex-col place-content-center text-center"
+
+  <body class="mx-auto sm:w-full lg:w-full bg-black lg:bg-main-bg-color">
+
+      <figure
+      class="mt-5 mx-auto flex max-h-full max-w-[350px] 
+            flex-col rounded-sm bg-main-bg-color p-5 
+            lg:relative lg:max-w-7xl lg:my-auto lg:max-h-full lg:p-0 lg:mt-52"
+      >
+
+      <div class="mt-16 mb-8 bg-card-bg-color rounded-lg overflow-hidden">
+
+        <div class="bg-soft-violet overflow-hidden lg:absolute lg:right-0 lg:max-h-full lg:rounded-r-md">
+          <img src="images/image-header-desktop.jpg" alt="Office picture" class="rounded-t-md object-cover opacity-30" />
+        </div>
+
+          <div class="lg:w-1/2 py-12 lg:max-w-lg">
+            <div>
+              <h1
+                class="text-white font-inter mt-5 px-8 py-5 text-center text-2xl font-bold 
+                      lg:text-4xl lg:text-left lg:ml-20 lg:p-0 lg:mb-8"
+              >
+                Get <span class="text-soft-violet">insights</span> that help your business grow.
+              </h1>
+              <p
+                class="font-lexend-deca text-slightly-transparent-white-75 px-4 pb-10 text-center text-[15px] font-normal
+                      lg:text-left lg:ml-20 lg:p-0 mb-[59px] lg:text-[16px]"
+              >
+                Discover the benefits of data analytics and make better decisions regarding
+                revenue, customer experience, and overall efficiency.
+              </p>
+            </div>
+          <div class="text-center font-inter font-bold text-2xl lg:flex lg:justify-between lg:w-3/4 lg:ml-20 lg:mt-14">
+            <p class="text-white"> 10k+ <span class="sm:block text-slightly-transparent-white-60 text-[15px] font-normal font-lexend-deca text-sm mb-8 pt-1">COMPANIES</span></p>
+            <p class="text-white"> 314 <span class="sm:block text-slightly-transparent-white-60 text-[15px] font-normal font-lexend-deca text-sm mb-8 pt-1">TEMPLATES</span></p>
+            <p class="text-white"> 12M+ <span class="sm:block text-slightly-transparent-white-60 text-[15px] font-normal font-lexend-deca text-sm pt-1">QUERIES</span></p>
+          </div>
+        </div>
+
+      </div>
+      
+    </figure>
+    
+    <footer
+      class="flex h-[60px] w-full text-sm flex-col place-content-center text-center absolute mt-52 text-white"
     >
       <div>
         <a
@@ -58,6 +100,7 @@
           >Source code</a
         >
       </div>
-    </div>
+    </footer>
+
   </body>
 </html>
