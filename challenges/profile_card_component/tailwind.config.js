@@ -1,4 +1,4 @@
-const defaultTheme = require('tailwindcss/defaultTheme');
+const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
   content: ['./challenges/profile_card_component/index.html'],
@@ -13,7 +13,7 @@ module.exports = {
           'dark-grayish-blue': '#6a6f81',
         },
         neutral: {
-          'dark-gray': "#969696"
+          'dark-gray': '#969696',
         },
       },
       fontSize: {
@@ -27,25 +27,25 @@ module.exports = {
         '2/7': '28.5714286%',
       },
       width: {
-        '88': '22rem',
-        '104': '26rem',
-        '112': '28rem',
-        '128': '32rem',
-        '136': '34rem',
+        88: '22rem',
+        104: '26rem',
+        112: '28rem',
+        128: '32rem',
+        136: '34rem',
       },
       borderWidth: {
-        '2': '2px',
-        '3': '3px',
-        '4': '4px',
-        '6': '6px',
-        '8': '8px',
+        2: '2px',
+        3: '3px',
+        4: '4px',
+        6: '6px',
+        8: '8px',
       },
       backgroundImage: {
         'bg-pattern-top': "url('/images/bg-pattern-top.svg')",
         'bg-pattern-bottom': "url('/images/bg-pattern-bottom.png')",
       },
-      screens: { /* Responsive breakpoints */
-        mobile: '375px',
+      screens: {
+        /* Responsive breakpoints */ mobile: '375px',
         // => @media (min-width: 375px) { ... }
         tablet: '768px',
         // => @media (min-width: 768px) { ... }

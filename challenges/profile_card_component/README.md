@@ -1,6 +1,6 @@
 # Frontend Mentor - Profile card component solution 👋
 
-This is a solution to the [Profile card component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/profile-card-component-cfArpWshJ). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is a solution to the [Profile card component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/profile-card-component-cfArpWshJ). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
 ## Table of contents
 
@@ -51,7 +51,6 @@ This is a solution to the [Profile card component challenge on Frontend Mentor](
 - Mobile friendly responsive design
 - Tailwind utility-first CSS framework (ver. 3+)
 
-
 ### What I learned
 
 - [x] Improved my existing HTML/CSS knownledge
@@ -63,6 +62,7 @@ To see how you can add code snippets, see below:
 ### **Example:**
 
 > **Creating your own classes:**
+
 ```css
 /* your input style.css */
 @tailwind base;
@@ -78,6 +78,7 @@ To see how you can add code snippets, see below:
 ```
 
 > **Usage:**
+
 ```html
 <!-- Inside html file -->
 ...
@@ -86,6 +87,7 @@ To see how you can add code snippets, see below:
 ```
 
 > **Tailwind configuration file:**
+
 ```js
 module.exports = {
   content: ['./index.html'],
@@ -103,11 +105,9 @@ module.exports = {
 }
 ```
 
-
 ### Continued development
 
-___
-
+---
 
 ### Useful resources
 
