@@ -5,27 +5,25 @@
 
 @layer components {
 
-    .card-bg {
-        
+    .card-bg-mob {
+        background-image: url('./images/bg-pattern-top.svg'), url('./images/bg-pattern-bottom.svg');
+        background-position: left -740px top -600px, right -740px bottom -620px;
+        background-repeat: no-repeat, no-repeat;
+        background-size: auto, auto;
     }
-
+    
+    .card-bg-desktop {
+        background-image: url('./images/bg-pattern-top.svg'), url('./images/bg-pattern-bottom.svg');
+        background-position: left -21vw top -37vw, right -18vw bottom -46vw;
+        background-repeat: no-repeat, no-repeat;
+        background-size: 70%, 70%;
+    }
+    
     .header-bg {
         background-image: url('./images/bg-pattern-card.svg') ;
-        /*background-size: cover;*/
     }
 
     .card-shadow {
         box-shadow: 6px 6px 16px 0 rgba(0,0,0,0.15);
     }
 } 
-
-/*
-.colors {
-    color: #19a2ae;
-    color: #19a2ae;
-    color: #2d3248;
-    color: #6a6f81;
-
-    color: #969696;
-}
-*/
