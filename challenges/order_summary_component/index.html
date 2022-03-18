@@ -25,39 +25,119 @@
       sizes="16x16"
       href="../images/favicon-16x16.png"
     />
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap"
+      rel="stylesheet"
+    />
+
     <link rel="manifest" href="../site.webmanifest" />
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body class="m-0">
     <div
-      class="flex h-[100vh] w-full flex-col place-content-center text-center"
+      class="bg-primary-pale-blue flex h-[100vh] w-full flex-col items-center justify-center text-center"
     >
-      <div>
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://www.frontendmentor.io/challenges/order-summary-component-QlPmajDUj"
-          target="_blank"
-          >Frontend Mentor challenge</a
-        >
-      </div>
-      <div>
-        for
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA"
-          target="_blank"
-          >Optimum BH</a
-        >
-        Internship.
-      </div>
+      <section
+        class="font-red-hat mobile:max-w-md card-shadow flex w-[87%] flex-col overflow-hidden rounded-[1.4rem] bg-white"
+      >
+        <div>
+          <img
+            src="./images/illustration-hero.svg"
+            alt="Hero image"
+            class="h-full w-full bg-auto"
+          />
+        </div>
 
-      <div class="mt-3">
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA/frontend_mentor_challenges/tree/order_summary_component/challenges/order_summary_component"
-          >Source code</a
+        <div
+          class="mobile:p-8 flex flex-col items-center justify-center px-6 py-4"
         >
-      </div>
+          <h2
+            class="mobile:mt-1 mobile:text-[28px] text-neutral-dark-blue mt-4 text-[22px] font-extrabold"
+          >
+            Order Summary
+          </h2>
+
+          <p
+            class="mobile:mt-3 mobile:text-lg text-body-prg text-neutral-desat-blue mt-4 text-[14px]"
+          >
+            You can now listen to millions of songs, audiobooks, and podcasts on
+            any device anywhere you like!
+          </p>
+
+          <div
+            class="mobile:w-[90%] mobile:p-6 bg-neutral-very-pale-blue my-6 flex w-full items-center justify-between rounded-2xl p-4"
+          >
+            <div class="flex items-center">
+              <img src="./images/icon-music.svg" alt="Music icon" />
+              <div class="ml-5">
+                <h4
+                  class="mobile:text-lg text-neutral-dark-blue text-sm font-bold"
+                >
+                  Annual Plan
+                </h4>
+                <p
+                  class="mobile:text-base text-body-prg text-neutral-desat-blue text-sm tracking-wide"
+                >
+                  $59.99/year
+                </p>
+              </div>
+            </div>
+            <span
+              class="mobile:text-base text-primary-bright-blue hover:text-hover cursor-pointer text-[12px] font-semibold underline hover:no-underline"
+            >
+              Change
+            </span>
+          </div>
+
+          <button
+            type="button"
+            class="mobile:w-[90%] mobile:my-2 mobile:tracking-normal mobile:text-base btn-shadow bg-primary-bright-blue hover:bg-hover w-full rounded-xl py-[0.9rem] text-center text-sm font-bold tracking-wide text-white"
+          >
+            Proceed to Payment
+          </button>
+
+          <button
+            type="button"
+            class="mobile:mt-2 mobile:mb-0 text-neutral-desat-blue hover:text-neutral-dark-blue mt-3 mb-0 w-max bg-transparent py-[0.9rem] text-center text-sm font-extrabold"
+          >
+            Cancel Order
+          </button>
+        </div>
+      </section>
+
+      <!-- Footer section -->
+      <footer class="tablet:opacity-100 absolute bottom-4 right-4 opacity-0">
+        <div>
+          <a
+            class="text-optimum-blue hover:text-optimum-darkblue"
+            href="https://www.frontendmentor.io/challenges/order-summary-component-QlPmajDUj"
+            target="_blank"
+            >Frontend Mentor challenge</a
+          >
+        </div>
+        <div>
+          for
+          <a
+            class="text-optimum-blue hover:text-optimum-darkblue"
+            href="https://github.com/optimumBA"
+            target="_blank"
+            >Optimum BH</a
+          >
+          Internship.
+        </div>
+
+        <div class="mt-3">
+          <a
+            class="text-optimum-blue hover:text-optimum-darkblue"
+            href="https://github.com/optimumBA/frontend_mentor_challenges/tree/order_summary_component/challenges/order_summary_component"
+            >Source code</a
+          >
+        </div>
+      </footer>
     </div>
   </body>
 </html>

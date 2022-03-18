@@ -1,3 +1,29 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .header-bg {
+    background-image: url('./images/illustration-hero.svg');
+  }
+
+  .card-shadow {
+    box-shadow: 0px 1rem 2rem -0.2rem hsl(224deg 23% 55% / 30%);
+  }
+
+  .btn-shadow {
+    box-shadow: 0px 1rem 2rem -0.4rem hsl(224deg 23% 55% / 55%);
+  }
+}
+
+/*
+.colors {
+
+    color: hsl(225, 100%, 94%);
+    color: #3829e0;
+    color: #f5f7ff;
+
+    color: hsl(224, 23%, 55%);
+    color: #1f2f56;
+}
+*/
