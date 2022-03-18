@@ -45,7 +45,7 @@ module.exports = {
         'bg-pattern-bottom': "url('/images/bg-pattern-bottom.png')",
       },
       screens: {
-        /* Responsive breakpoints */ mobile: '375px',
+        /* Responsive breakpoints */ mobile: '376px',
         // => @media (min-width: 375px) { ... }
         tablet: '768px',
         // => @media (min-width: 768px) { ... }
