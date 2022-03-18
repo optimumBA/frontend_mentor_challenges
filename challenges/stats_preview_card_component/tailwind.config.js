@@ -35,7 +35,7 @@ module.exports = {
         mobile: '95%',
       },
       screens: {
-        mobile: '375px',
+        mobile: '376px',
         // => @media (min-width: 375px) { ... }
         tablet: '768px',
         // => @media (min-width: 768px) { ... }

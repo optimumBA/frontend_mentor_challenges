@@ -30,11 +30,11 @@ Users should be able to:
 
 - Desktop design
 
-![Desktop design preview for the QR code component coding challenge](./design/desktop_design.png)
+![Desktop design preview for the Stats preview card component coding challenge](./design/desktop_design.png)
 
 - Mobile responsive design
 
-![Mobile design preview for the QR code component coding challenge](./design/mobile_design.png)
+![Mobile design preview for the Stats preview card component coding challenge](./design/mobile_design.png)
 
 ---
 
