@@ -18,9 +18,12 @@ module.exports = {
         outfit: ['Outfit', ...defaultTheme.fontFamily.sans],
       },
       screens: {
-        mobile: '375px',
+        mobile: '376px',
+        // => @media (min-width: 375px) { ... }
+        tablet: '768px',
+        // => @media (min-width: 768px) { ... }
         desktop: '1440px',
-        // => @media (min-width: 360px) { ... }
+        // => @media (min-width: 1440px) { ... }
       },
     },
   },
