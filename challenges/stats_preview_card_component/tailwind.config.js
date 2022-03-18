@@ -15,7 +15,7 @@ module.exports = {
         'slightly-transparent-white-60': 'hsla(0, 0%, 100%, 0.6)',
       },
       fontFamily: {
-        'inter': ['Inter', 'sans-serif'],
+        inter: ['Inter', 'sans-serif'],
         'lexend-deca': ['Lexend Deca', 'sans-serif'],
       },
     },
@@ -26,7 +26,7 @@ module.exports = {
       md: '960px',
       // => @media (min-width: 960px) { ... }
 
-      lg: '1440px',
+      lg: '1024px',
       // => @media (min-width: 1440px) { ... }
 
       tv: '2560px',
