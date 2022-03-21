@@ -1,6 +1,6 @@
 module.exports = {
-  // content: ['./challenges/profile_card_component/index.html'],
-  content: ['./*.html'],
+  content: ['./challenges/profile_card_component/index.html'],
+  // content: ['./*.html'],
   theme: {
     extend: {
       colors: {
@@ -13,10 +13,14 @@ module.exports = {
       },
       screens: {
         'vsm': '375px',
+        // very small
       },
       fontFamily: {
         'kumbh': ['Kumbh Sans', 'sans-serif',]
       },
+      backgroundImage: {
+        'bg-pattern-card': "url('images/bg-pattern-card')",
+      }
     },
   },
   plugins: [
