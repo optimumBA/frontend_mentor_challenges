@@ -30,9 +30,26 @@
     <link rel="stylesheet" href="./dist/output.css" />
   </head>
 
-  <body class="m-0 h-full w-full bg-[url('images/bg-pattern-card')] bg-cover">
+  <body class="m-0 bg-dark-cyan font-kumbh text-very-dark-desaturated-blue lg:max-w-[100vw] lg:h-[95vh]">
+    <img src="images/bg-pattern-top.svg" alt="" class="absolute -left-48 -top-40 lg:-left-[50px] lg:-top-[450px]">
+    <section class="max-h-[400px] max-w-[300px] rounded-2xl overflow-hidden text-center mx-auto mt-64 z-10 relative">
+      <div class="bg-white">
+        <img src="images/bg-pattern-card.svg" alt="Cover picture of the profile card" class="rounded-t-2xl">
+        <div class="">
+          <img src="images/image-victor.jpg" alt="User profile picture" class="rounded-full border-4 border-white relative left-[100px] -top-14">
+          <p class="font-bold text-lg -mt-8">Victor Crest <span class="text-dark-grayish-blue font-normal">26</span></p>
+          <p class="font-normal text-sm pb-7 pt-1 text-dark-grayish-blue">London</p>
+          <hr>
+        </div>
+        <div class="flex justify-between p-6 rounded-b-2xl">
+          <p class="font-bold text-lg">80K <span class="block font-normal text-xs text-dark-gray">Followers</span></p>
+          <p class="font-bold text-lg">803K <span class="block font-normal text-xs text-dark-gray">Likes</span></p>
+          <p class="font-bold text-lg">1.4K <span class="block font-normal text-xs text-dark-gray">Photos</span></p>
+        </div>
+      </div>
+    </section>
     <footer
-      class="absolute bottom-0 flex h-[100vh] w-full flex-col place-content-center text-center"
+      class="flex w-full flex-col place-content-center text-center mt-[270px] text-white"
     >
       <div>
         <a
@@ -61,5 +78,6 @@
         >
       </div>
     </footer>
+    <img src="images/bg-pattern-bottom.svg" alt="" class="absolute -right-[230px] -bottom-12 lg:-right-[30px] lg:-bottom-[500px]">
   </body>
 </html>
