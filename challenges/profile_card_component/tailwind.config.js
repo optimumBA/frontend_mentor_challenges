@@ -12,19 +12,17 @@ module.exports = {
         'dark-gray': 'hsl(0, 0%, 59%)',
       },
       screens: {
-        'vsm': '375px',
+        vsm: '375px',
         // very small
       },
       fontFamily: {
-        'kumbh': ['Kumbh Sans', 'sans-serif',]
+        kumbh: ['Kumbh Sans', 'sans-serif'],
       },
       backgroundImage: {
         'bg-pattern-card': "url('images/bg-pattern-card')",
-      }
+      },
     },
   },
-  plugins: [
-    require('autoprefixer'),
-  ],
+  plugins: [],
   variants: {},
 }
