@@ -4,7 +4,7 @@
 
 @layer components {
   .qr-card {
-    @apply flex w-max flex-col items-center justify-center rounded-[1.2rem] bg-white p-4;
+    @apply mobile:w-max flex w-[85%] flex-col items-center justify-center rounded-[1.2rem] bg-white p-4;
     box-shadow: 0 6px 18px 0 #b4c7df;
   }
 }

@@ -41,10 +41,12 @@
       class="bg-preview-bg flex h-[100vh] w-full flex-col items-center justify-center text-center"
     >
       <div class="qr-card">
-        <div class="relative w-[280px] overflow-hidden rounded-lg">
+        <div
+          class="mobile:w-[280px] relative w-full overflow-hidden rounded-lg"
+        >
           <img src="./images/image-qr-code.png" alt="QR Code" />
         </div>
-        <div class="mt-4 w-64">
+        <div class="mobile:w-64 mt-4 w-full">
           <h2
             class="text-title-text mt-1 mb-3 px-0 text-center text-[22px] font-bold"
           >
@@ -58,7 +60,7 @@
         </div>
       </div>
 
-      <footer class="tablet:opacity-100 absolute bottom-8 opacity-0">
+      <footer class="mobile:text-base my-8 text-xs">
         <div>
           <a
             class="text-optimum-blue hover:text-optimum-darkblue"
