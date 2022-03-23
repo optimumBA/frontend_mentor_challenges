@@ -5,9 +5,9 @@ module.exports = {
       colors: {
         'optimum-blue': '#009efc',
         'optimum-darkblue': '#0389e1',
-        lightgray: '#D6E2F0',
-        grayishgray: '#7B879D',
-        darkblue: '#1f3251',
+        'light-gray': '#D6E2F0',
+        'dark-gray': '#7B879D',
+        'dark-blue': '#1f3251',
         primary: '#FF6363',
         secondary: {
           100: '#E2E2D5',
@@ -17,11 +17,9 @@ module.exports = {
           Outfit: ['Outfit'],
         },
         screens: {
-          sm: '375px',
-          // => @media (min-width: 640px) { ... }
-
+          desktop: '1200px',
+          mobile: '370px',
           lg: '1440px',
-          // => @media (min-width: 1024px) { ... }
         },
       },
     },
