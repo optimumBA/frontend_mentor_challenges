@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
     <link
       rel="icon"
       type="image/png"
@@ -32,51 +31,27 @@
       sizes="16x16"
       href="../images/favicon-16x16.png"
     />
-
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-    <style>
-      .attribution {
-        font-size: 11px;
-        text-align: center;
-      }
-      .attribution a {
-        color: #3e52a3;
-      }
-      .attribution pale-blue {
-        color: #e0e8ff;
-      }
-      .attribution bright-blue {
-        color: #3829e0;
-      }
-      .attribution very-pale-blue {
-        color: #f5f7ff;
-      }
-      .attribution desatured-blue {
-        color: #7280a7;
-      }
-      .attribution dark-blue {
-        color: #1f2f56;
-      }
-    </style>
   </head>
   <body
     class="font-red-hat-display bg-bright-blue bg-hero-pattern h-screen bg-contain bg-no-repeat text-base"
   >
     <div
-      class="lg:w-400 md:m-w-400 sm:w-350p container mr-auto ml-auto mt-24 grid max-w-md place-items-center overflow-hidden rounded-lg bg-white text-center"
+      class="lg:w-400 mobile:w-[90%] rounded-[20px] container mr-auto ml-auto mt-24 grid max-w-md place-items-center overflow-hidden bg-white text-center"
     >
       <div class="hero">
         <img src="images/illustration-hero.svg" alt="Illustration hero" />
       </div>
-      <div class="content p-4">
-        <h1 class="text-dark-blue mb-5 text-lg font-semibold">Order Summary</h1>
-        <p class="mb-5 text-gray-400">
+      <div class="content text-center p-4">
+        <h1 class="text-dark-blue text-2xl font-semibold mobile:text-xl p-5">
+          Order Summary
+        </h1>
+        <p class="mb-5 m-auto w-[90%] mobile:w-[85%] text-gray-500">
           You can now listen to millions of songs, audiobooks, and podcasts on
           any device anywhere you like!
         </p>
       </div>
       <div
-        class="box bg-very-pale-blue w-350 flex justify-between rounded-xl p-6 text-left"
+        class="box bg-very-pale-blue mobile:mr-5% w-[80%] flex justify-between rounded-xl p-6 text-left"
       >
         <div class="left flex gap-3">
           <img src="images/icon-music.svg" class="inline" alt="" />
@@ -86,17 +61,21 @@
           </div>
         </div>
 
-        <a href="#" class="text-dark-blue hover:text-req-blue">Change</a>
+        <a
+          href="#"
+          class="text-[#3829e0] hover:text-req-blue underline text-sm mr-0 mt-auto mb-auto ml-auto hover:no-underline"
+          >Change</a
+        >
       </div>
 
       <a
         href="#"
-        class="btn-1 display-block bg-req-blue hover:bg-req-blue w-350 mt-5 rounded-lg p-4 font-bold text-white hover:text-gray-400"
+        class="btn-1 shadow-md shadow-desatured-blue mobile:mr-5% text-sm display-block bg-req-blue hover:bg-[#766cf1] w-[80%] mt-5 rounded-lg p-4 font-bold text-white"
         >Proceed to Payment</a
       >
       <a
         href="#"
-        class="btn-2 text-desatured-blue hover:text-req-blue w-350 m-5"
+        class="btn-2 text-gray-600 font-semibold text-sm hover:text-req-blue w-350 mb-10 m-5 hover:text-black"
         >Cancel Order</a
       >
     </div>
@@ -107,10 +86,6 @@
         target="_blank"
         class="text-blue-900"
         >Frontend Mentor challenge</a
-      >
-      by
-      <a class="text-blue-900" href="https://www.frontendmentor.io"
-        >Frontend Mentor</a
       >
       for
       <a

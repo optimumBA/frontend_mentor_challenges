@@ -1,5 +1,5 @@
 module.exports = {
-  content: ['./*html'],
+  content: ['./challenges/order_summary_component/index.html'],
   theme: {
     extend: {
       fontFamily: {
@@ -14,7 +14,7 @@ module.exports = {
         'req-blue': ' #382ae1',
       },
       screens: {
-        sm: '375px',
+        mobile: '370px',
         md: '768px',
         lg: '1440px',
       },
