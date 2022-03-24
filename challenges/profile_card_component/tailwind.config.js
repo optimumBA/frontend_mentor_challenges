@@ -1,6 +1,14 @@
 module.exports = {
-  content: ['./*html'],
+  content: ['./challenges/profile_card_component/index.html'],
   theme: {
+    fontSize: {
+      xs: [
+        '11px',
+        {
+          letterSpacing: '2px',
+        },
+      ],
+    },
     extend: {
       colors: {
         darkcyan: '#19a2ae',
@@ -11,7 +19,12 @@ module.exports = {
         'optimum-darkblue': '#0389e1',
       },
       fontFamily: {
-        KumbhSans: ['Kubmh Sans'],
+        'Kumbh-Sans': ['Kumbh+Sans'],
+      },
+      screens: {
+        desktop: '1200px',
+        mobile: '370px',
+        lg: '1440px',
       },
     },
   },
