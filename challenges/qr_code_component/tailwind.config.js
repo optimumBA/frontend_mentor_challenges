@@ -11,7 +11,7 @@ module.exports = {
         darkBlue: 'hsl(218, 44%, 22%)',
       },
       fontFamily: {
-        rubik: ['Rubik'],
+        outfit: ['Outfit'],
       },
     },
   },
