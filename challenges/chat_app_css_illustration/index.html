@@ -44,148 +44,158 @@
 
   <body class="m-0">
     <div
-      class="font-rubik tablet:flex-row tablet:h-[100vh] relative flex w-full flex-col items-center justify-center gap-[8%] overflow-hidden bg-[#fafafa] p-8"
+      class="font-rubik relative flex min-h-[100vh] w-full flex-col items-center justify-center overflow-hidden bg-[#fafafa] p-8"
     >
-      <section class="mob-app-wrapper mobile:w-[350px] z-[100] h-max w-[95%]">
-        <div class="mob-app-header mobile:h-[94px] relative h-[74px]">
-          <div class="mobile:gap-2 flex items-center gap-1">
-            <span class="material-icons mobile:text-xl text-base text-white"
-              >chevron_left</span
-            >
-            <div class="mobile:gap-3 flex items-center gap-1">
-              <img
-                src="./images/avatar.jpg"
-                alt="Avatar"
-                class="mobile:w-8 w-7 rounded-full border-2 border-slate-100"
-              />
-              <div>
-                <h4
-                  class="mobile:text-base text-sm font-medium leading-none text-slate-100"
-                >
-                  Samuel Green
-                </h4>
-                <p class="text-grad-light-magenta mobile:text-xs text-[10px]">
-                  Available to Walk
-                </p>
+      <div
+        class="tablet:gap-[8%] tablet:flex-row flex w-full flex-col items-center justify-center"
+      >
+        <section class="mob-app-wrapper mobile:w-[350px] z-[100] h-max w-[95%]">
+          <div class="mob-app-header mobile:h-[94px] relative h-[74px]">
+            <div class="mobile:gap-2 flex items-center gap-1">
+              <span class="material-icons mobile:text-xl text-base text-white"
+                >chevron_left</span
+              >
+              <div class="mobile:gap-3 flex items-center gap-1">
+                <img
+                  src="./images/avatar.jpg"
+                  alt="Avatar"
+                  class="mobile:w-8 w-7 rounded-full border-2 border-slate-100"
+                />
+                <div>
+                  <h4
+                    class="mobile:text-base text-sm font-medium leading-none text-slate-100"
+                  >
+                    Samuel Green
+                  </h4>
+                  <p class="text-grad-light-magenta mobile:text-xs text-[10px]">
+                    Available to Walk
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-          <span class="material-icons p-2 text-lg text-slate-100"
-            >more_vert</span
-          >
-          <div class="mob-app-top"></div>
-        </div>
-
-        <div class="p-3">
-          <div
-            class="animate-chat-left chat-left mobile:max-w-[60%] my-3 w-max max-w-[68%] p-2"
-          >
-            That sounds great. I'd be happy with that.
+            <span class="material-icons p-2 text-lg text-slate-100"
+              >more_vert</span
+            >
+            <div class="mob-app-top"></div>
           </div>
 
-          <div
-            class="animate-chat-left chat-left mobile:max-w-[60%] my-3 w-max max-w-[68%] p-2"
-          >
-            Could you send over some pictures of your dog, please?
-          </div>
-
-          <div class="mt-4 mb-1 flex justify-end gap-3">
-            <img
-              src="./images/dog-image-1.jpg"
-              alt="Dog IMage 1"
-              class="animate-pics mobile:w-12 w-11 rounded-xl opacity-0"
-            />
-            <img
-              src="./images/dog-image-2.jpg"
-              alt="Dog IMage 2"
-              class="animate-pics mobile:w-12 w-11 rounded-xl opacity-0"
-            />
-            <img
-              src="./images/dog-image-3.jpg"
-              alt="Dog IMage 3"
-              class="animate-pics mobile:w-12 w-11 rounded-xl opacity-0"
-            />
-          </div>
-
-          <div class="flex justify-end">
+          <div class="p-3">
             <div
-              class="animate-chat-right chat-right mobile:max-w-[60%] my-2 w-max w-max max-w-[68%] p-2"
+              class="animate-chat-left chat-left mobile:max-w-[60%] my-3 w-max max-w-[68%] p-2"
             >
-              Here are a few picturs. She's a happy girl.
+              That sounds great. I'd be happy with that.
             </div>
-          </div>
 
-          <div class="flex justify-end">
             <div
-              class="animate-chat-right chat-right mobile:max-w-[60%] my-2 w-max w-max max-w-[68%] p-2"
+              class="animate-chat-left chat-left mobile:max-w-[60%] my-3 w-max max-w-[68%] p-2"
             >
-              Can you make it?
+              Could you send over some pictures of your dog, please?
             </div>
-          </div>
 
-          <div
-            class="animate-chat-left chat-left mobile:max-w-[60%] my-3 w-max max-w-[68%] p-2"
-          >
-            She looks so happy. The time we discussed works. How long shall I
-            take her out for?
-          </div>
+            <div class="mt-4 mb-1 flex justify-end gap-3">
+              <img
+                src="./images/dog-image-1.jpg"
+                alt="Dog Image 1"
+                class="animate-pics mobile:w-12 w-11 rounded-xl opacity-0"
+              />
+              <img
+                src="./images/dog-image-2.jpg"
+                alt="Dog Image 2"
+                class="animate-pics mobile:w-12 w-11 rounded-xl opacity-0"
+              />
+              <img
+                src="./images/dog-image-3.jpg"
+                alt="Dog Image 3"
+                class="animate-pics mobile:w-12 w-11 rounded-xl opacity-0"
+              />
+            </div>
 
-          <div
-            class="animate-chat-left chat-left-offer my-3 flex w-[75%] items-center justify-between p-2"
-          >
-            <div class="mobile:ml-4 flex items-center">
+            <div class="flex justify-end">
               <div
-                class="m-0 h-4 w-4 rounded-full border-2 border-pink-400 bg-transparent"
-              ></div>
-              <span class="ml-2">30 minute walk</span>
+                class="animate-chat-right chat-right mobile:max-w-[60%] my-2 w-max max-w-[68%] p-2"
+              >
+                Here are a few picturs. She's a happy girl.
+              </div>
             </div>
-            <p class="mobile:mr-4 mobile:text-base mr-2 text-sm font-semibold">
-              $29
-            </p>
-          </div>
 
-          <div
-            class="animate-chat-left chat-left-offer my-3 flex w-[75%] items-center justify-between p-2"
-          >
-            <div class="mobile:ml-4 flex items-center">
+            <div class="flex justify-end">
               <div
-                class="m-0 h-4 w-4 rounded-full border-2 border-pink-400 bg-transparent"
-              ></div>
-              <span class="ml-2">1 hour walk</span>
+                class="animate-chat-right chat-right mobile:max-w-[60%] my-2 w-max max-w-[68%] p-2"
+              >
+                Can you make it?
+              </div>
             </div>
-            <p class="mobile:mr-4 mobile:text-base mr-2 text-sm font-semibold">
-              $49
-            </p>
-          </div>
 
-          <div class="flex items-center justify-between rounded-full bg-white">
-            <p class="mobile:text-sm ml-6 text-xs text-slate-300">
-              Type a message...
-            </p>
-            <span
-              class="material-icons bg-sec-very-dark-des-violet mobile:p-1 m-2 w-max rounded-full p-0 text-white"
+            <div
+              class="animate-chat-left chat-left mobile:max-w-[60%] my-3 w-max max-w-[68%] p-2"
             >
-              chevron_right
-            </span>
-          </div>
-        </div>
-      </section>
+              She looks so happy. The time we discussed works. How long shall I
+              take her out for?
+            </div>
 
-      <section
-        class="tablet:pt-0 tablet:w-[490px] tablet:text-left z-[100] pt-[18%] text-center"
-      >
-        <h1
-          class="text-prim-very-dark-des-violet tablet:text-[2.5rem] text-3xl font-medium"
+            <div
+              class="animate-chat-left chat-left-offer my-3 flex w-[75%] items-center justify-between p-2"
+            >
+              <div class="mobile:ml-4 flex items-center">
+                <div
+                  class="m-0 h-4 w-4 rounded-full border-2 border-pink-400 bg-transparent"
+                ></div>
+                <span class="ml-2">30 minute walk</span>
+              </div>
+              <p
+                class="mobile:mr-4 mobile:text-base mr-2 text-sm font-semibold"
+              >
+                $29
+              </p>
+            </div>
+
+            <div
+              class="animate-chat-left chat-left-offer my-3 flex w-[75%] items-center justify-between p-2"
+            >
+              <div class="mobile:ml-4 flex items-center">
+                <div
+                  class="m-0 h-4 w-4 rounded-full border-2 border-pink-400 bg-transparent"
+                ></div>
+                <span class="ml-2">1 hour walk</span>
+              </div>
+              <p
+                class="mobile:mr-4 mobile:text-base mr-2 text-sm font-semibold"
+              >
+                $49
+              </p>
+            </div>
+
+            <div
+              class="flex items-center justify-between rounded-full bg-white"
+            >
+              <p class="mobile:text-sm ml-6 text-xs text-slate-300">
+                Type a message...
+              </p>
+              <span
+                class="material-icons bg-sec-very-dark-des-violet mobile:p-1 m-2 w-max rounded-full p-0 text-white"
+              >
+                chevron_right
+              </span>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="tablet:pt-0 tablet:w-[490px] tablet:text-left z-[100] pt-[18%] text-center"
         >
-          Simple booking
-        </h1>
-        <p class="text-prim-dark-gr-violet mobile:text-lg pt-6 text-base">
-          Stay in touch with our dog walkers through the chat interface. This
-          makes it easy to discuss arrangements and make bookings.Once the walk
-          has been completed you can rate your walker and book again all through
-          the chat.
-        </p>
-      </section>
+          <h1
+            class="text-prim-very-dark-des-violet tablet:text-[2.5rem] text-3xl font-medium"
+          >
+            Simple booking
+          </h1>
+          <p class="text-prim-dark-gr-violet mobile:text-lg pt-6 text-base">
+            Stay in touch with our dog walkers through the chat interface. This
+            makes it easy to discuss arrangements and make bookings.Once the
+            walk has been completed you can rate your walker and book again all
+            through the chat.
+          </p>
+        </section>
+      </div>
 
       <div
         class="tablet:h-[90%] tablet:w-[38%] tablet:-left-[12%] absolute -left-[55%] top-0 h-[55%] w-full rounded-bl-full rounded-br-full bg-[#ad7bff]"
@@ -195,9 +205,7 @@
         class="tablet:h-[90%] tablet:w-[38%] tablet:-right-[12%] absolute -right-[55%] bottom-0 h-[55%] w-full rounded-tl-full rounded-tr-full bg-[#f1f1f1]"
       ></div>
 
-      <footer
-        class="tablet:opacity-100 absolute bottom-4 text-center opacity-0"
-      >
+      <footer class="mobile:text-base z-[100] my-8 text-center text-sm">
         <div>
           <a
             class="text-optimum-blue hover:text-optimum-darkblue"
