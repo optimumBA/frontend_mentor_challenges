@@ -28,9 +28,142 @@
     <link rel="manifest" href="../site.webmanifest" />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="m-0">
+  <body class="m-0 h-[900px] w-[380px] bg-white">
     <div
-      class="flex h-[100vh] w-full flex-col place-content-center text-center"
+      class="from-light-magenta to-light-violet absolute -left-12 z-0 h-[490px] w-[250px] rounded-br-full bg-gradient-to-bl lg:left-0 lg:h-[900px] lg:w-[600px] lg:rounded-bl-full"
+    ></div>
+    <main>
+      <!-- Article with the Chat app presentation -->
+      <article
+        class="bg-light-grayish-violet absolute left-0 right-0 top-8 z-10 mx-auto mt-10 max-h-[520px] max-w-[300px] overflow-hidden rounded-3xl border-[10px] border-white lg:left-[165px] lg:top-64 lg:h-full lg:w-1/2 lg:shadow-2xl"
+      >
+        <div
+          class="from-light-violet to-light-magenta flex flex-col bg-gradient-to-r px-3 pb-3"
+        >
+          <div
+            class="relative -top-4 left-11 mt-0 w-2/3 rounded-3xl bg-white py-5"
+          ></div>
+          <div class="flex flex-row items-center">
+            <img
+              src="images/angle-left-free-icon-font.png"
+              alt="Arrow icon"
+              class="mr-1 w-4"
+            />
+            <img
+              src="images/avatar.jpg"
+              alt="Chat Avatar of Samuel Green"
+              class="mr-4 w-7 rounded-full border-2 border-white"
+            />
+            <p class="mr-20 text-[12px] font-medium text-white">
+              Samuel Green<span
+                class="text-pale-violet block text-[9px] font-normal"
+              >
+                Available to Walk</span
+              >
+            </p>
+            <img
+              src="images/menu-dots-vertical-free-icon-font.png"
+              alt="Dots icon"
+              class="flex-end w-4"
+            />
+          </div>
+        </div>
+        <div class="text-[8px]">
+          <p
+            class="bg-light-grayish-violet-message text-moderate-violet m-2 h-8 max-w-[55%] rounded-xl pl-3 pr-8 pt-1"
+          >
+            That sounds great. I'd be happy to discuss more.
+          </p>
+          <p
+            class="bg-light-grayish-violet-message text-moderate-violet m-2 h-8 max-w-[55%] rounded-xl p-3 pr-6 pt-1"
+          >
+            Could you send over some pictures of your dog, please?
+          </p>
+        </div>
+        <div class="flex flex-col text-[8px]">
+          <div class="flex justify-end">
+            <img
+              src="images/dog-image-1.jpg"
+              alt="First image of the dog"
+              class="mr-3 h-11 w-12 rounded-xl"
+            />
+            <img
+              src="images/dog-image-2.jpg"
+              alt="Second image of the dog"
+              class="mr-3 h-11 w-12 rounded-xl"
+            />
+            <img
+              src="images/dog-image-3.jpg"
+              alt="Third image of the dog"
+              class="mr-3 h-11 w-12 rounded-xl"
+            />
+          </div>
+          <div class="flex max-w-[100%] flex-col">
+            <p
+              class="text-desaturated-dark-violet m-1 ml-[42%] h-8 max-w-[55%] rounded-xl bg-white pl-3 pt-1 pr-6"
+            >
+              Here are a few pictures. She's a happy girl!
+            </p>
+            <p
+              class="text-desaturated-dark-violet m-1 ml-[64%] h-5 w-[33%] justify-center rounded-xl bg-white pl-3 pt-1"
+            >
+              Can you make it?
+            </p>
+          </div>
+        </div>
+        <div class="text-[8px]">
+          <p
+            class="bg-light-grayish-violet-message h-13 text-moderate-violet m-2 max-w-[50%] rounded-xl py-1 pl-3 pr-3"
+          >
+            She looks so happy! The time we discussed works. How long shall I
+            take her out for?
+          </p>
+          <p
+            class="from-light-magenta to-light-violet m-2 w-[65%] rounded-xl bg-gradient-to-r py-2 pl-5 text-[10px] text-white"
+          >
+            30 minute walk
+            <span class="ml-10 text-[14px] font-bold text-white">$29</span>
+          </p>
+          <p
+            class="from-light-magenta to-light-violet m-2 w-[65%] rounded-xl bg-gradient-to-r py-2 pl-5 text-[10px] text-white"
+          >
+            1 hour walk
+            <span class="ml-14 text-[14px] font-bold text-white">$49</span>
+          </p>
+        </div>
+        <div>
+          <input
+            type="text"
+            placeholder="Type a message..."
+            class="placeholder:text-grayish-blue mx-2 mt-2 mb-16 h-9 w-[92%] rounded-2xl bg-[url('images/angle-circle-right.png')] bg-contain bg-right bg-no-repeat pl-4 placeholder:text-[10px]"
+          />
+        </div>
+      </article>
+      <!-- Section part with the description of the Chat app -->
+      <section
+        class="absolute -bottom-44 left-0 right-0 z-20 mx-auto lg:top-[470px] lg:-right-0 lg:-bottom-0 lg:left-[950px] lg:w-1/2 lg:text-left"
+      >
+        <h1
+          class="text-very-dark-desaturated-violet mb-2 text-center text-3xl font-semibold lg:mb-10 lg:text-left lg:text-5xl"
+        >
+          Simple booking
+        </h1>
+        <p
+          class="text-dark-grayish-violet px-6 text-center leading-7 lg:ml-0 lg:pl-0 lg:pr-[15px] lg:text-left lg:text-xl lg:leading-9"
+        >
+          Stay in touch with our dog walkers through the chat interface. This
+          makes it easy to discuss arrangements and make bookings.Once the walk
+          has been completed you can rate your walker and book again all through
+          the chat.
+        </p>
+      </section>
+    </main>
+    <div
+      class="bg-light-grayish-violet absolute -bottom-[250px] right-0 z-0 h-[500px] w-[280px] rounded-tl-full lg:-right-[800px] lg:h-[950px] lg:w-[550px] lg:rounded-tr-full"
+    ></div>
+    <!-- Footer with links -->
+    <footer
+      class="absolute -bottom-[235px] z-10 mt-4 w-full flex-col place-content-center text-center text-xs lg:left-[350px]"
     >
       <div>
         <a
@@ -51,13 +184,13 @@
         Internship.
       </div>
 
-      <div class="mt-3">
+      <div>
         <a
           class="text-optimum-blue hover:text-optimum-darkblue"
           href="https://github.com/optimumBA/frontend_mentor_challenges/tree/chat_app_css_illustration/challenges/chat_app_css_illustration"
           >Source code</a
         >
       </div>
-    </div>
+    </footer>
   </body>
 </html>
