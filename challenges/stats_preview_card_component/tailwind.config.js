@@ -1,5 +1,5 @@
 module.exports = {
-  content: ['./*html'],
+  content: ['./challenges/stats_preview_card_component/index.html'],
   theme: {
     extend: {
       colors: {
@@ -22,12 +22,9 @@ module.exports = {
         desktop: 'url(../images/image-header-desktop.jpg)',
       },
       screens: {
-        sm: '375px',
-        md: '768px',
-        // => @media (min-width: 768px) { ... }
-
+        mobile: '375px',
+        desktop: '1200px',
         lg: '1440px',
-        // => @media (min-width: 1024px) { ... }
       },
     },
   },
