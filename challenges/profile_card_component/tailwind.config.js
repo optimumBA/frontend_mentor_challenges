@@ -8,6 +8,8 @@ module.exports = {
           letterSpacing: '2px',
         },
       ],
+     
+    
     },
     extend: {
       colors: {
@@ -25,7 +27,7 @@ module.exports = {
         desktop: '1200px',
         mobile: '370px',
         lg: '1440px',
-      },
+      }
     },
   },
   plugins: [],
