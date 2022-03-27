@@ -35,53 +35,58 @@
   </head>
   <body class="bg-verydarkblue font-Inter">
     <div
-      class="desktop:flex-row container flex text-center sm:mr-auto sm:ml-auto sm:mt-10 sm:flex-col-reverse sm:p-5 lg:mt-44 lg:flex-row lg:gap-0"
+      class="desktop:flex-row mobile:mr-auto mobile:ml-auto mobile:flex-col-reverse mobile:p-5 container mt-10 flex text-center lg:mt-44 lg:flex-row lg:gap-0"
     >
       <div
-        class="bg-darkdesaturedblue lg,md:rounded-tl-md lg,md:rounded-bl-md mobile:p-4 grid w-1/2 p-4 sm:flex-col-reverse sm:rounded-bl-md sm:rounded-br-md sm:p-3 sm:text-base lg:text-center"
+        class="bg-darkdesaturedblue desktop:rounded-bl-[6px] desktop:rounded-tl-[6px] desktop:rounded-br-none mobile:rounded-t-none mobile:rounded-b-[6px] mobile:p-4 desktop:w-1/2 mobile:flex-col-reverse mobile:w-auto mobile:p-3 grid p-4 sm:text-base lg:text-center"
       >
         <span
-          class="mt-10 ml-8 mr-4 flex-wrap break-words p-3 text-left text-4xl font-bold text-white"
+          class="desktop:mt-10 mobile:mt-2 mobile:w-[82%] desktop:text-left desktop:text-4xl mobile:text-[25px] mobile:text-center ml-8 mr-4 flex-wrap break-words p-3 font-bold text-white"
         >
           Get <strong class="text-softviolet">insights </strong>that help your
           business grow.
         </span>
         <span
-          class="text-slightlytrwhite75 ml-7 mr-6 w-[83%] text-left align-baseline text-base sm:block sm:p-3 md:text-left md:tracking-wide"
+          class="text-slightlytrwhite75 desktop:ml-7 mobile:ml-1 desktop:w-[83%] mobile:w-[100%] desktop:text-left mobile:block mobile:p-3 mobile:text-center mobile:tracking-wide mr-6 align-baseline text-base md:text-left"
         >
           Discover the benefits of data analytics and make better decisions
           regarding revenue, customer experience, and overall efficiency.
         </span>
 
         <div
-          class="card w-[97%] justify-around sm:flex-col sm:justify-center sm:justify-items-center sm:p-3 sm:text-center sm:align-middle md:flex-row md:justify-around md:text-left"
+          class="card text-slightlytrwhite75 desktop:w-[92%] mobile:w-[97%] desktop:justify-around mobile:justify-items-center desktop:text-left mobile:text-center desktop:flex-row mobile:flex-col"
         >
-          <div class="companies">
-            <div class="number text-lg">10k+</div>
-            <div class="name slightlytrwhite65 text-xs tracking-widest">
-              companies
-            </div>
+          <div class="templates">
+            <div class="number">10k+</div>
+            <div class="name">companies</div>
           </div>
           <div class="templates">
             <div class="number">314</div>
-            <div class="name slightlytrwhite65 text-xs tracking-widest">
-              templates
-            </div>
+            <div class="name">templates</div>
           </div>
-          <div class="queries">
+          <div class="templates">
             <div class="number">12M+</div>
-            <div class="name text-xs tracking-widest text-[#ffffffbf]">
-              queries
-            </div>
+            <div class="name">queries</div>
           </div>
         </div>
       </div>
-      <div class="bg-softviolet div-img md:w-1/2 lg:w-1/2">
-        <img
-          src="./images/image-header-desktop.jpg"
-          class="img bg- text-left"
-          alt=""
-        />
+      <div
+        class="bg-softviolet div-img desktop:rounded-tr-[6px] desktop:rounded-br-[6px] desktop:rounded-tl-none mobile:rounded-b-none mobile:rounded-t-[6px] md:w-1/2 lg:w-1/2"
+      >
+        <div class="desktop:visible mobile:hidden desktop:flex">
+          <img
+            src="./images/image-header-desktop.jpg"
+            class="img desktop:visible"
+            alt="Image not found!"
+          />
+        </div>
+        <div class="desktop:hidden mobile:visible">
+          <img
+            src="./images/image-header-mobile.jpg"
+            class="img"
+            alt="Image not found!"
+          />
+        </div>
       </div>
     </div>
 

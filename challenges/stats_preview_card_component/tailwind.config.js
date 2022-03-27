@@ -15,11 +15,11 @@ module.exports = {
 
       fontFamily: {
         Inter: ['Inter'],
-        LexendDeca: ['Lexend Deca'],
+        LexendDeca: ['Lexend+Deca'],
       },
       backgroundImage: {
-        mobile: 'url(./images/image-header-mobile.jpg)',
-        desktop: 'url(../images/image-header-desktop.jpg)',
+        'img-mobile': 'url(./images/image-header-mobile.jpg)',
+        'img-desktop': 'url(../images/image-header-desktop.jpg)',
       },
       screens: {
         mobile: '375px',

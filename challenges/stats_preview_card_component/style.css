@@ -11,21 +11,10 @@
   text-align: left;
 }
 
-.name {
-  text-transform: uppercase;
-  font: Lexend;
-}
-.number {
-  font-size: 23px;
-  font-weight: bold;
-}
 .img {
   mix-blend-mode: multiply;
 }
-.div-img {
-  border-top-right-radius: 6px;
-  border-bottom-right-radius: 6px;
-}
+
 .container {
   max-width: 1100px;
   margin-right: auto;
@@ -44,4 +33,16 @@
 
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+.templates {
+  padding: 15px;
+}
+
+@layer components {
+  .name {
+    @apply text-slightlytrwhite75 text-xs uppercase tracking-widest;
+  }
+  .number {
+    @apply p-[1px] text-[23px] font-bold;
+  }
 }
