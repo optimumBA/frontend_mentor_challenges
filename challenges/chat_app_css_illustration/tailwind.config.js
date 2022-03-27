@@ -1,11 +1,10 @@
 module.exports = {
-  content: ['./*html'],
+  content: ['./challenges/chat_app_css_illustration/index.html'],
   theme: {
     extend: {
       screens: {
-        sm: '375px',
-        md: '768px',
-        lg: '1440px',
+         mobile: '375px',
+         desktop:'1200px'
       },
       colors: {
         'optimum-blue': '#009efc',
@@ -18,7 +17,6 @@ module.exports = {
         'dark-grayish-violet': 'hsl(270, 7%, 64%)',
         'light-magenta': 'hsl(293, 100%, 63%)',
         'light-violet': 'hsl(264, 100%, 61%)',
-        White: 'hsl(0, 0%, 100%)',
         'light-grayish-violet': 'hsl(270, 20%, 96%)',
         'very-dark-desaturated-violet': 'hsl(271, 36%, 24%)',
         'very-light-magenta': 'hsl(289, 100%, 72%)',
