@@ -7,8 +7,6 @@ module.exports = {
         darkdesaturedblue: '#1b1938',
         softviolet: '#aa5cdb',
         white: '#ffffff',
-        slightlytrwhite75: '#ffffffbf',
-        slightlytrwhite65: '#ffffff99',
         'optimum-blue': '#009efc',
         'optimum-darkblue': '#0389e1',
       },
@@ -16,10 +14,6 @@ module.exports = {
       fontFamily: {
         Inter: ['Inter'],
         LexendDeca: ['Lexend+Deca'],
-      },
-      backgroundImage: {
-        'img-mobile': 'url(./images/image-header-mobile.jpg)',
-        'img-desktop': 'url(../images/image-header-desktop.jpg)',
       },
       screens: {
         mobile: '375px',
