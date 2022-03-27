@@ -40,7 +40,7 @@
 
 @layer components {
   .name {
-    @apply text-[#ffffffbf] text-xs uppercase tracking-widest;
+    @apply text-xs uppercase tracking-widest text-[#ffffffbf];
   }
   .number {
     @apply p-[1px] text-[23px] font-bold;
