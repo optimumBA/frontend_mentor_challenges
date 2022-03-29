@@ -28,9 +28,53 @@
     <link rel="manifest" href="../site.webmanifest" />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="m-0">
-    <div
-      class="flex h-[100vh] w-full flex-col place-content-center text-center"
+  <body class="bg-pale-blue m-0 w-full">
+    <section
+      class="font-red-hat mx-auto mt-52 max-h-[700px] max-w-[320px] overflow-hidden rounded-2xl bg-white text-center"
+    >
+      <img
+        src="images/illustration-hero.svg"
+        alt="Cover image of the Order summary card"
+      />
+      <div>
+        <h1 class="text-dark-blue mt-7 mb-3 text-2xl font-bold">
+          Order Summary
+        </h1>
+        <p class="text-desaturated-blue mb-7 px-8 text-[16px]">
+          You can now listen to millions of songs, audiobooks, and podcasts on
+          any device anywhere you like!
+        </p>
+        <div
+          class="bg-very-pale-blue mx-7 mb-6 flex items-center rounded-lg p-2 text-[16px]"
+        >
+          <img src="images/icon-music.svg" alt="Image of the music symbol" />
+          <p class="ml-4 mr-7 font-semibold">
+            Annual Plan
+            <span class="text-desaturated-blue block font-normal"
+              >$59.99/year</span
+            >
+          </p>
+          <a
+            href="#"
+            class="text-bright-blue underline active:text-violet-700 active:no-underline"
+            >Change</a
+          >
+        </div>
+        <button
+          class="bg-bright-blue rounded-xl px-16 py-3 text-[16px] font-semibold text-white active:bg-violet-700"
+        >
+          <a>Proceed to Payment</a>
+        </button>
+        <button
+          class="text-desaturated-blue active:text-dark-blue mx-auto mt-1 mb-6 block px-16 py-4 font-semibold"
+        >
+          <a>Cancel Order</a>
+        </button>
+      </div>
+    </section>
+
+    <footer
+      class="mt-20 flex h-[10vh] w-full flex-col place-content-center text-center"
     >
       <div>
         <a
@@ -58,6 +102,6 @@
           >Source code</a
         >
       </div>
-    </div>
+    </footer>
   </body>
 </html>
