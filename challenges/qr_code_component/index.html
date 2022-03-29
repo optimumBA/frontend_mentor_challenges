@@ -28,11 +28,43 @@
     <link rel="manifest" href="../site.webmanifest" />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="m-0">
-    <div
-      class="flex h-[100vh] w-full flex-col place-content-center text-center"
+  <body class="bg-light-gray mx-auto w-[375px]">
+    <!-- Section with the image of QR code and description of the location where it goes -->
+    <section
+      class="tv:my-52 tv:max-w-[500px] tv:max-h-[600px] tv:p-6 my-16 mx-auto flex max-h-[500px] max-w-[300px] flex-col rounded-2xl bg-white p-4 lg:my-32"
     >
+      <img
+        src="images/image-qr-code.png"
+        alt="Picture of the QR code"
+        class="rounded-xl"
+      />
       <div>
+        <h1
+          class="text-dark-blue font-outfit tv:text-3xl mt-5 pb-5 text-center text-xl font-bold"
+        >
+          Improve your front-end
+          <!-- <span class="block"> -->
+          skills by building projects
+          <!-- </span> -->
+        </h1>
+        <p
+          class="font-outfit text-grayish-blue tv:text-[20px] pb-10 text-center text-[15px] font-normal"
+        >
+          Scan the QR code to visit Frontend Mentor and take your coding skills
+          to
+          <!-- <span class="tv:inline-block block"> -->
+          the next level
+          <!-- </span> -->
+        </p>
+      </div>
+    </section>
+
+    <footer
+      class="flex h-[10vh] w-full flex-col place-content-center text-center text-xs"
+    >
+      <div>Front-end development challenges</div>
+      <div>
+        by
         <a
           class="text-optimum-blue hover:text-optimum-darkblue"
           href="https://www.frontendmentor.io/challenges/qr-code-component-iux_sIO_H"
@@ -58,6 +90,6 @@
           >Source code</a
         >
       </div>
-    </div>
+    </footer>
   </body>
 </html>
