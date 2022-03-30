@@ -61,7 +61,7 @@
         </div>
 
         <div
-          x-data="{ faqCollection }"
+          x-data="{ faqCollection, handleClick }"
           class="relative z-50 mt-5 lg:w-[70%] lg:pr-10"
         >
           <h1 class="my-5 text-center text-3xl font-bold lg:text-left">FAQ</h1>
@@ -70,14 +70,14 @@
             <!-- Index as key for this example is enough -->
             <div class="border-lightGrayishBlue border-b-[1px]">
               <div
-                @click="faq.open = !faq.open"
+                @click="handleClick(faq)"
                 class="flex items-center justify-between py-3 hover:cursor-pointer"
               >
-                <p
+                <a
                   x-text="faq.question"
                   :class="!faq.open || 'font-bold' "
                   class="text-veryDarkGrayishBlue text-lg"
-                ></p>
+                ></a>
                 <img
                   src="./images/icon-arrow-down.svg"
                   :class="!faq.open || 'rotate-180' "
@@ -145,7 +145,7 @@
           open: false,
           question: 'How do I reset my password?',
           answer:
-            "Click “Forgot password” from the login page or 'Change password' from your profile page.A reset link will be emailed to you.",
+            'Click “Forgot password” from the login page or “Change password” from your profile page. A reset link will be emailed to you.',
         },
         {
           open: false,
@@ -160,6 +160,13 @@
             'Chat and email support is available 24/7. Phone lines are open during normal business hours.',
         },
       ]
+
+      function handleClick(faq) {
+        this.faqCollection.forEach((e) => {
+          e.open = false
+        })
+        faq.open = !faq.open
+      }
     </script>
   </body>
 </html>
