@@ -1,3 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap');
+
+.attribution {
+  opacity: 0.3;
+}
+.attribution:hover {
+  opacity: 1;
+  margin-bottom: 60px;
+}
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.btn-2 {
+  margin-right: 3%;
+}
