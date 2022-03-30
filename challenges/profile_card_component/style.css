@@ -1,3 +1,33 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&&display=swap');
+
+.img {
+  margin: auto;
+}
+.img2 {
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: -48px;
+  display: inline;
+}
+.footer {
+  border-top: 1px solid hsla(227, 10%, 46%, 0.2);
+}
+body {
+  background-repeat: no-repeat, no-repeat;
+  background-position: right 48vw bottom 40vh, left 45vw top 44vh;
+}
+
+.attribution {
+  opacity: 0.3;
+}
+.attribution:hover {
+  opacity: 1;
+  margin-bottom: 60px;
+}
+.num {
+  font-size: 17px;
+}
