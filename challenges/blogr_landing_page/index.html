@@ -45,153 +45,181 @@
           class="mb-20 flex items-center justify-between md:justify-start"
         >
           <img src="./images/logo.svg" alt="logo" />
-          <img
-            @click="open = !open"
-            id="mobile-menu-toggle"
-            :class="!open || 'hidden'"
-            class="h-[20px] w-[20px] hover:cursor-pointer md:hidden"
-            src="./images/icon-hamburger.svg"
-            alt="menu icon"
-          />
-          <img
-            @click="open = !open"
-            x-cloak
-            :class="open || 'hidden'"
-            class="h-[20px] w-[20px] hover:cursor-pointer md:hidden"
-            src="./images/icon-close.svg"
-            alt="menu icon"
-          />
+          <div id="mobile-menu-toggle" @click="open = !open">
+            <img
+              :class="!open || 'hidden'"
+              class="h-[20px] w-[20px] hover:cursor-pointer md:hidden"
+              src="./images/icon-hamburger.svg"
+              alt="menu icon"
+            />
+            <img
+              x-cloak
+              :class="open || 'hidden'"
+              class="h-[20px] w-[20px] hover:cursor-pointer md:hidden"
+              src="./images/icon-close.svg"
+              alt="menu icon"
+            />
+          </div>
 
-          <nav
-            :class="open || 'hidden'"
-            x-cloak
-            class="text-veryDarkBlue absolute top-24 left-10 right-10 z-10 rounded-lg bg-white py-10 md:static md:ml-10 md:flex md:w-full md:gap-9 md:bg-transparent md:py-0"
+          <template
+            x-if="open"
+            x-init="open = window.innerWidth > 768"
+            @resize.window="open = window.innerWidth > 768"
           >
-            <div class="relative mb-2">
-              <div>
-                <span
-                  @click="toggle($refs.product, $refs.productArrow)"
-                  class="hover:cursor-pointer md:text-white md:hover:underline"
-                >
-                  Product
-                </span>
-                <picture>
-                  <source
-                    media="(min-width:768px)"
-                    srcset="./images/icon-arrow-light.svg"
-                  />
-                  <img
-                    x-ref="productArrow"
-                    class="inline-block"
-                    src="./images/icon-arrow-dark.svg"
-                    alt="arrow"
-                  />
-                </picture>
-              </div>
-              <div
-                x-ref="product"
-                class="mx-10 hidden grid-rows-5 gap-2 rounded-md bg-gray-100 p-3 md:absolute md:-left-16 md:top-9 md:text-left"
-              >
-                <span class="hover:cursor-pointer hover:font-bold">
-                  Overview
-                </span>
-                <span class="hover:cursor-pointer hover:font-bold">
-                  Pricing
-                </span>
-                <span class="hover:cursor-pointer hover:font-bold">
-                  Marketplace
-                </span>
-                <span class="hover:cursor-pointer hover:font-bold">
-                  Features
-                </span>
-                <span class="hover:cursor-pointer hover:font-bold">
-                  Integrations
-                </span>
-              </div>
-            </div>
-
-            <div class="relative mb-2">
-              <span
-                @click="toggle($refs.company, $refs.companyArrow)"
-                class="hover:cursor-pointer md:text-white md:hover:underline"
-              >
-                Company
-                <picture>
-                  <source
-                    media="(min-width:768px)"
-                    srcset="./images/icon-arrow-light.svg"
-                  />
-                  <img
-                    x-ref="companyArrow"
-                    class="inline-block"
-                    src="./images/icon-arrow-dark.svg"
-                    alt="arrow"
-                  />
-                </picture>
-              </span>
-              <div
-                x-ref="company"
-                class="mx-10 hidden grid-rows-4 gap-2 rounded-md bg-gray-100 p-3 md:absolute md:-left-11 md:top-9 md:text-left"
-              >
-                <span class="hover:cursor-pointer hover:font-bold">
-                  About
-                </span>
-                <span class="hover:cursor-pointer hover:font-bold"> Team </span>
-                <span class="hover:cursor-pointer hover:font-bold"> Blog </span>
-                <span class="hover:cursor-pointer hover:font-bold">
-                  Careers
-                </span>
-              </div>
-            </div>
-
-            <div class="relative mb-2">
-              <span
-                @click="toggle($refs.connect, $refs.connectArrow)"
-                class="hover:cursor-pointer md:text-white md:hover:underline"
-              >
-                Connect
-                <picture>
-                  <source
-                    media="(min-width:768px)"
-                    srcset="./images/icon-arrow-light.svg"
-                  />
-                  <img
-                    x-ref="connectArrow"
-                    class="inline-block"
-                    src="./images/icon-arrow-dark.svg"
-                    alt="arrow"
-                  />
-                </picture>
-              </span>
-              <div
-                x-ref="connect"
-                class="mx-10 hidden grid-rows-3 gap-2 rounded-md bg-gray-100 p-3 md:absolute md:-left-14 md:top-9 md:text-left"
-              >
-                <span class="hover:cursor-pointer hover:font-bold">
-                  Contact
-                </span>
-                <span class="hover:cursor-pointer hover:font-bold">
-                  Newsletter
-                </span>
-                <span class="hover:cursor-pointer hover:font-bold">
-                  LinkedIn
-                </span>
-              </div>
-            </div>
-
-            <div
-              class="relative grid grid-rows-2 border-t-[1px] md:absolute md:right-10 md:grid-cols-2 md:grid-rows-1 md:border-none"
+            <nav
+              x-data="{ openArray: [ false, false, false  ], handleOpen }"
+              class="text-veryDarkBlue absolute top-24 left-10 right-10 z-10 rounded-lg bg-white py-10 md:static md:ml-10 md:flex md:w-full md:gap-9 md:bg-transparent md:py-0"
             >
-              <button class="w-[100px] justify-self-center md:text-white">
-                Login
-              </button>
-              <button
-                class="from-veryLightRed to-lightRed md:text-lightRed md:hover:bg-lightRed w-[100px] justify-self-center rounded-lg bg-gradient-to-r p-2 text-white md:bg-white md:bg-none md:hover:text-white"
+              <div class="relative mb-2">
+                <div>
+                  <!-- <a
+                    @click="toggle($refs.product, $refs.productArrow)"
+                    class="hover:cursor-pointer md:text-white md:hover:underline"
+                  > -->
+                  <a
+                    @click="handleOpen(0)"
+                    class="hover:cursor-pointer md:text-white md:hover:underline"
+                  >
+                    Product
+                  </a>
+                  <picture>
+                    <source
+                      media="(min-width:768px)"
+                      srcset="./images/icon-arrow-light.svg"
+                    />
+                    <img
+                      x-ref="productArrow"
+                      class="inline-block"
+                      src="./images/icon-arrow-dark.svg"
+                      alt="arrow"
+                    />
+                  </picture>
+                </div>
+                <template x-if="openArray[0]">
+                  <div
+                    x-ref="product"
+                    class="mx-10 grid-rows-5 gap-2 rounded-md bg-gray-100 p-3 md:absolute md:-left-16 md:top-9 md:text-left"
+                  >
+                    <a class="hover:cursor-pointer hover:font-bold">
+                      Overview
+                    </a>
+                    <a class="hover:cursor-pointer hover:font-bold">
+                      Pricing
+                    </a>
+                    <a class="hover:cursor-pointer hover:font-bold">
+                      Marketplace
+                    </a>
+                    <a class="hover:cursor-pointer hover:font-bold">
+                      Features
+                    </a>
+                    <a class="hover:cursor-pointer hover:font-bold">
+                      Integrations
+                    </a>
+                  </div>
+                </template>
+              </div>
+
+              <div class="relative mb-2">
+                <div>
+                  <!-- <a
+                    @click="toggle($refs.company, $refs.companyArrow)"
+                    class="hover:cursor-pointer md:text-white md:hover:underline"
+                  >
+                    Company
+                  </a> -->
+                  <a
+                    @click="handleOpen(1)"
+                    class="hover:cursor-pointer md:text-white md:hover:underline"
+                  >
+                    Company
+                  </a>
+                  <picture>
+                    <source
+                      media="(min-width:768px)"
+                      srcset="./images/icon-arrow-light.svg"
+                    />
+                    <img
+                      x-ref="companyArrow"
+                      class="inline-block"
+                      src="./images/icon-arrow-dark.svg"
+                      alt="arrow"
+                    />
+                  </picture>
+                </div>
+                <template x-if="openArray[1]">
+                  <div
+                    x-ref="company"
+                    class="mx-10 grid-rows-4 gap-2 rounded-md bg-gray-100 p-3 md:absolute md:-left-11 md:top-9 md:text-left"
+                  >
+                    <a class="hover:cursor-pointer hover:font-bold"> About </a>
+                    <a class="hover:cursor-pointer hover:font-bold"> Team </a>
+                    <a class="hover:cursor-pointer hover:font-bold"> Blog </a>
+                    <a class="hover:cursor-pointer hover:font-bold">
+                      Careers
+                    </a>
+                  </div>
+                </template>
+              </div>
+
+              <div class="relative mb-2">
+                <div>
+                  <!-- <a
+                    @click="toggle($refs.connect, $refs.connectArrow)"
+                    class="hover:cursor-pointer md:text-white md:hover:underline"
+                  >
+                    Connect
+                  </a> -->
+                  <a
+                    @click="handleOpen(2)"
+                    class="hover:cursor-pointer md:text-white md:hover:underline"
+                  >
+                    Connect
+                  </a>
+                  <picture>
+                    <source
+                      media="(min-width:768px)"
+                      srcset="./images/icon-arrow-light.svg"
+                    />
+                    <img
+                      x-ref="connectArrow"
+                      class="inline-block"
+                      src="./images/icon-arrow-dark.svg"
+                      alt="arrow"
+                    />
+                  </picture>
+                </div>
+                <template x-if="openArray[2]">
+                  <div
+                    x-ref="connect"
+                    class="mx-10 grid-rows-3 gap-2 rounded-md bg-gray-100 p-3 md:absolute md:-left-14 md:top-9 md:text-left"
+                  >
+                    <a class="hover:cursor-pointer hover:font-bold">
+                      Contact
+                    </a>
+                    <a class="hover:cursor-pointer hover:font-bold">
+                      Newsletter
+                    </a>
+                    <a class="hover:cursor-pointer hover:font-bold">
+                      LinkedIn
+                    </a>
+                  </div>
+                </template>
+              </div>
+
+              <div
+                class="relative grid grid-rows-2 border-t-[1px] md:absolute md:right-10 md:grid-cols-2 md:grid-rows-1 md:border-none"
               >
-                Sign Up
-              </button>
-            </div>
-          </nav>
+                <button class="w-[100px] justify-self-center md:text-white">
+                  Login
+                </button>
+                <button
+                  class="from-veryLightRed to-lightRed md:text-lightRed md:hover:bg-lightRed w-[100px] justify-self-center rounded-lg bg-gradient-to-r p-2 text-white md:bg-white md:bg-none md:hover:text-white"
+                >
+                  Sign Up
+                </button>
+              </div>
+            </nav>
+          </template>
         </div>
 
         <h1 class="p-3 text-4xl">A modern publishing platform</h1>
@@ -373,19 +401,27 @@
     </footer>
 
     <script>
-      function toggle(el, arrowEl) {
-        if ([...el.classList].includes('hidden')) {
-          el.classList.remove('hidden')
-          el.classList.add('grid')
-
-          arrowEl.style.transform = 'rotate(180deg)'
-        } else {
-          el.classList.add('hidden')
-          el.classList.remove('grid')
-
-          arrowEl.style.transform = 'rotate(0deg)'
-        }
+      function handleOpen(p) {
+        this.openArray = this.openArray.map((e, i) => {
+          if (i != p) {
+            return false
+          } else return !this.openArray[p]
+        })
       }
+
+      // function toggle(el, arrowEl) {
+      //   if ([...el.classList].includes('hidden')) {
+      //     el.classList.remove('hidden')
+      //     el.classList.add('grid')
+
+      //     arrowEl.style.transform = 'rotate(180deg)'
+      //   } else {
+      //     el.classList.add('hidden')
+      //     el.classList.remove('grid')
+
+      //     arrowEl.style.transform = 'rotate(0deg)'
+      //   }
+      // }
     </script>
   </body>
 </html>
