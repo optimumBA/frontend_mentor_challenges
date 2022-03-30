@@ -1,63 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-      Blogr landing page &bullet; Frontend Mentor Challenges &bullet; Optimum BH
-      Internship
-    </title>
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="../images/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="../images/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="../images/favicon-16x16.png"
-    />
-    <link rel="manifest" href="../site.webmanifest" />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body class="m-0">
-    <div
-      class="flex h-[100vh] w-full flex-col place-content-center text-center"
-    >
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>
+    Blogr landing page &bullet; Frontend Mentor Challenges &bullet; Optimum BH
+    Internship
+  </title>
+  <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16x16.png" />
+  <!-- Google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&family=Ubuntu:wght@400;500;700&display=swap"
+    rel="stylesheet">
+  <!-- Alpine.js  -->
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+  <link rel="manifest" href="../site.webmanifest" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body x-data="{ ...menuToggle() }" class="m-0 min-h-[100vh] flex flex-col">
+
+  <header role="header" class="relative z-[100] w-full font-ubuntu flex-1 px-6 tablet:px-[165px]  rounded-bl-[5rem] overflow-hidden">
+
+    <div class="absolute -z-[1] bg-mobile intro-mobile tablet:hidden ">
+      <img src="./images/bg-pattern-intro-mobile.svg" alt="Mobile Pattern">
+    </div>
+    <div class="absolute hidden -z-[1] bg-desktop intro-desktop tablet:block ">
+      <img src="./images/bg-pattern-intro-desktop.svg" alt="Mobile Pattern">
+    </div>
+
+    <nav role="navigation" class="my-[45px] tablet:my-[60px] flex justify-between">
+
+      <div class="flex items-center gap-14">
+        <!-- app logo -->
+        <div>
+          <img class="w-[80%] tablet:w-full" src="./images/logo.svg" alt="Logo">
+        </div>
+        <!-- nav menu -->
+        <ul class="hidden tablet:flex tablet:items-center tablet:gap-8">
+          <li class="relative flex items-center link-item cursor-pointer">
+            <a class="font-bold text-slate-200 hover:text-white" href="#product">Product</a>
+            <img class="pl-2" src="./images/icon-arrow-light.svg" alt="Icon arrow">
+            <ul class="hidden-menu">
+              <div class="flex flex-col gap-2 bg-white rounded-md text-black mt-2 py-6 px-4 hidden-menu-content">
+                <li class="hover:font-bold"><a>Overview</a></li>
+                <li class="hover:font-bold"><a>About</a></li>
+                <li class="hover:font-bold"><a>Contact</a></li>
+              </div>
+            </ul>
+          </li>
+          <li class="relative flex items-center link-item cursor-pointer">
+            <a class="font-bold text-slate-200 hover:text-white" href="#company">Company</a>
+            <img class="pl-2" src="./images/icon-arrow-light.svg" alt="Icon arrow">
+            <ul class="hidden-menu">
+              <div class="flex flex-col gap-2 bg-white rounded-md text-black mt-2 py-6 px-4 hidden-menu-content">
+                <li class="hover:font-bold"><a>Overview</a></li>
+                <li class="hover:font-bold"><a>About</a></li>
+                <li class="hover:font-bold"><a>Contact</a></li>
+              </div>
+            </ul>
+          </li>
+          <li class="relative flex items-center link-item cursor-pointer">
+            <a class="font-bold text-slate-200 hover:text-white" href="#connect">Connect</a>
+            <img class="pl-2" src="./images/icon-arrow-light.svg" alt="Icon arrow">
+            <ul class="hidden-menu">
+              <div class="flex flex-col gap-2 bg-white rounded-md text-black mt-2 py-6 px-4 hidden-menu-content">
+                <li class="hover:font-bold"><a>Overview</a></li>
+                <li class="hover:font-bold"><a>About</a></li>
+                <li class="hover:font-bold"><a>Contact</a></li>
+              </div>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <!-- hamburger button -->
+      <a id="mobile-menu-toggle" x-on:click="onToggle" class="flex items-center tablet:hidden cursor-pointer">
+        <template x-if="menuToggle">
+          <img src="./images/icon-close.svg" alt="Hambuger Icon">
+        </template>
+        <template x-if="!menuToggle">
+          <img src="./images/icon-hamburger.svg" alt="Hambuger Icon">
+        </template>
+      </a>
+      <!-- sign-in & sign-up menu -->
+      <ul class="hidden tablet:flex tablet:items-center tablet:gap-8">
+        <li class="flex items-center cursor-pointer">
+          <a class="font-bold text-slate-200 hover:text-white" href="#product">Login</a>
+        </li>
+        <li>
+          <button class="signup__button.round.active.wider">
+            Sign Up
+          </button>
+        </li>
+      </ul>
+    </nav>
+    <!-- Intro section -->
+    <section class=" font-overpass text-center my-[7.8rem]">
+      <h1 class="text-[2.2rem] tablet:text-6xl text-white font-bold mb-4">A modern publishing platform</h1>
+      <p class="text-slate-200 text-xl font-normal">Grow your audience and build your online brend</p>
+      <div class="flex items-center justify-center gap-4 mt-12 font-ubuntu">
+        <button class="start__button.round.active">
+          Start for Free
+        </button>
+        <button class="more__button.round.border">
+          Learn More
+        </button>
+      </div>
+    </section>
+
+  </header>
+
+  <main role="FAQ page section" class=" relative flex-[2]">
+
+    
+
+
+  </main>
+
+  <footer role="footer" class="flex-1">
+    <div class="text-white mobile:text-base m-auto my-8 w-max rounded-lg p-4 text-center text-xs">
       <div>
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://www.frontendmentor.io/challenges/blogr-landing-page-EX2RLAApP"
-          target="_blank"
-          >Frontend Mentor challenge</a
-        >
+        <a class="text-optimum-blue hover:text-optimum-darkblue"
+          href="https://www.frontendmentor.io/challenges/blogr-landing-page-EX2RLAApP" target="_blank">Frontend Mentor
+          challenge</a>
       </div>
       <div>
         for
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA"
-          target="_blank"
-          >Optimum BH</a
-        >
+        <a class="text-optimum-blue hover:text-optimum-darkblue" href="https://github.com/optimumBA"
+          target="_blank">Optimum BH</a>
         Internship.
       </div>
 
       <div class="mt-3">
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA/frontend_mentor_challenges/tree/blogr_landing_page/challenges/blogr_landing_page"
-          >Source code</a
-        >
+        <a class="text-optimum-blue hover:text-optimum-darkblue"
+          href="https://github.com/optimumBA/frontend_mentor_challenges/tree/blogr_landing_page/challenges/blogr_landing_page">Source
+          code</a>
       </div>
     </div>
-  </body>
+  </footer>
+
+  <script>
+
+    document.addEventListener('alpine:init', () => {
+      Alpine.data('menuToggle', () => ({
+        menuToggle: false,
+        onToggle() {
+          this.menuToggle = !this.menuToggle;
+        },
+        setToggle(newStatus) {
+          this.menuToggle = newStatus;
+        }
+      }))
+    });
+
+  </script>
+
+</body>
+
 </html>
