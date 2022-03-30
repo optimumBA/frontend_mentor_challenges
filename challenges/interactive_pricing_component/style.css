@@ -1,3 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+input[type='range'] {
+  -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+  @apply bg-lightGrayishBlue my-3 h-2 w-80 rounded-2xl hover:cursor-pointer;
+}
+
+input[type='range']::-moz-range-progress {
+  @apply bg-strongCyan h-full rounded-2xl;
+}
+input[type='range']::-moz-range-track {
+  @apply bg-lightGrayishBlue rounded-2xl;
+}
+
+input[type='range']::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  @apply bg-softCyan h-2 rounded-2xl;
+}
+
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+  @apply bg-slider bg-strongCyan -mt-[10px] h-7 w-7 rounded-full border-none bg-contain bg-center bg-no-repeat p-2 hover:cursor-move;
+}
+
+/* All the same stuff for Firefox */
+input[type='range']::-moz-range-thumb {
+  @apply bg-slider bg-strongCyan rounded-full border-none bg-contain bg-center bg-no-repeat p-2 hover:cursor-move;
+}
