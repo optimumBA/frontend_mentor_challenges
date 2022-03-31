@@ -25,9 +25,9 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 
-<body x-data="{ ...menuToggle() }" class="m-0 min-h-[100vh] flex flex-col">
+<body x-data="{ ...menuToggle() }" class="m-0 min-h-[100vh] flex flex-col overflow-x-hidden">
 
-  <header role="header" class="relative z-[100] w-full font-ubuntu flex-1 px-6 tablet:px-[165px]  rounded-bl-[5rem] overflow-hidden">
+  <header role="header" class="relative z-[100] w-full font-ubuntu flex-1 px-6 tablet:px-[165px] rounded-bl-[5rem] overflow-hidden">
 
     <div class="absolute -z-[1] bg-mobile intro-mobile tablet:hidden ">
       <img src="./images/bg-pattern-intro-mobile.svg" alt="Mobile Pattern">
@@ -119,7 +119,48 @@
 
   <main role="FAQ page section" class=" relative flex-[2]">
 
-    
+    <section class="text-prim-very-dark-blue future my-[100px] px-2 tablet:my-[160px] tablet:px-0 mx-6 tablet:mx-[165px]">
+      <h2 class="text-center text-[28px] mb-10 font-normal tablet:text-4xl tablet:font-medium tablet:my-8">Designed for the future</h2>
+
+      <div class="flex flex-col items-center tablet:flex-row-reverse tablet:items-start gap-14">
+
+        <div class="w-max tablet:min-w-[44%] tablet:basis-[44%] overflow-visible">
+          <img class="block tablet:hidden" src="images/illustration-editor-mobile.svg" alt="Illustration Editor Mobile">
+
+          <img class="hidden tablet:block -mt-[155px] tablet:min-w-[925px]" src="images/illustration-editor-desktop.svg" alt="Illustration Editor Desktop">
+        </div>
+
+        <div class="tablet:my-8 text-center basis-[56%] tablet:text-left">
+          <div class="my-12">
+            <h3 class="text-[28px] font-normal tablet:font-medium my-6">
+              Introducing an extensible editor
+            </h3>
+            <p class="text-base tracking-wider font-light leading-7">
+              Blogr features an exceedingly intuitive interface which lets you
+              focus on one thing: creating content. The editor supports
+              management of multiple blogs and allows easy manipulation of
+              embeds such as images, videos, and Markdown. Extensibility with
+              plugins and themes provide easy ways to add functionality or
+              change the looks of a blog.
+            </p>
+          </div>
+
+          <div class="my-12">
+            <h3 class="text-[28px] font-normal tablet:font-medium my-6">
+              Robust content management
+            </h3>
+            <p class="text-base tracking-wider font-light leading-7">
+              Flexible content management enables users to easily move through
+              posts. Increase the usability of your blog by adding customized
+              categories, sections, format, or flow. With this functionality,
+              you’re in full control.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
 
 
   </main>
