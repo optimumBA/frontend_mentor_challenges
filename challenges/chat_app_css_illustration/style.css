@@ -8,13 +8,13 @@
   width: 220px;
 }
 .font-fix {
-  font-size: 0.5rem;
+  font-size: 0.55rem;
 }
 .left-messages {
   line-height: normal;
 }
 .attribution {
-  opacity: 0.3;
+  opacity: 0.7;
   font-size: 11px;
   text-align: center;
 }
@@ -25,4 +25,10 @@
 .attribution:hover {
   opacity: 1;
   margin-bottom: 60px;
+}
+
+@layer components {
+  .bg {
+    @apply desktop:max-w-[40%] mobile:max-w-[54%] absolute h-[78%] w-[480px] from-[#cc41ff]  to-[#983bfe] lg:h-[800px] lg:w-[700px];
+  }
 }

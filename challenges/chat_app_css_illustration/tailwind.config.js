@@ -3,8 +3,10 @@ module.exports = {
   theme: {
     extend: {
       screens: {
-         mobile: '375px',
-         desktop:'1200px'
+        mobile: '375px',
+        desktop: '1200px',
+        large: '1400px',
+        larger: '1500px',
       },
       colors: {
         'optimum-blue': '#009efc',
@@ -24,28 +26,16 @@ module.exports = {
       fontFamily: {
         Rubik: ['Rubik', 'sans-serif'],
       },
-      width: {
-        240: '240px',
-        230: '230px',
-        'phone-w': '280px',
-        240: '240px',
-        'phone-header': '260px',
-        booking: '540px',
-        'bg-width': '700px',
-      },
+
       height: {
-        496: '496px',
-        'phone-h': '530px',
-        'bg-height': '600px',
+        'phone-h': '535px',
       },
       borderWidth: {
         10: '10px',
       },
       margin: {
-        '298px': '-294px',
         5: '5px',
         440: '-440px',
-        '39rem': '39rem',
       },
       fontSize: {
         'text-xxs': '.5rem',
