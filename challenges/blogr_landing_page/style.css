@@ -76,6 +76,10 @@
     transition: all 0.2s ease-in-out;
 }
 
+.footer-list > li:hover {
+  text-decoration: underline;
+}
+
 @keyframes arrow-rotate-up {
     0% {
     }

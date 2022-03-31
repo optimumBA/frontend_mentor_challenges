@@ -27,7 +27,8 @@
 
 <body x-data="{ ...menuToggle() }" class="m-0 min-h-[100vh] flex flex-col overflow-x-hidden">
 
-  <header role="header" class="relative z-[100] w-full font-ubuntu flex-1 px-6 tablet:px-[165px] rounded-bl-[5rem] overflow-hidden">
+  <header role="header"
+    class="relative z-[100] w-full font-ubuntu flex-1 px-6 tablet:px-[165px] rounded-bl-[5rem] overflow-hidden">
 
     <div class="absolute -z-[1] bg-mobile intro-mobile tablet:hidden ">
       <img src="./images/bg-pattern-intro-mobile.svg" alt="Mobile Pattern">
@@ -119,15 +120,18 @@
 
   <main role="FAQ page section" class=" relative flex-[2]">
 
-    <section class="text-prim-very-dark-blue future my-[100px] px-2 tablet:my-[160px] tablet:px-0 mx-6 tablet:mx-[165px]">
-      <h2 class="text-center text-[28px] mb-10 font-normal tablet:text-4xl tablet:font-medium tablet:my-8">Designed for the future</h2>
+    <section
+      class="text-prim-very-dark-blue future my-[100px] px-2 tablet:my-[160px] tablet:px-0 mx-6 tablet:mx-[165px]">
+      <h2 class="text-center text-[28px] mb-10 font-normal tablet:text-4xl tablet:font-medium tablet:my-8">Designed for
+        the future</h2>
 
       <div class="flex flex-col items-center tablet:flex-row-reverse tablet:items-start gap-14">
 
         <div class="w-max tablet:min-w-[44%] tablet:basis-[44%] overflow-visible">
           <img class="block tablet:hidden" src="images/illustration-editor-mobile.svg" alt="Illustration Editor Mobile">
 
-          <img class="hidden tablet:block -mt-[155px] tablet:min-w-[925px]" src="images/illustration-editor-desktop.svg" alt="Illustration Editor Desktop">
+          <img class="hidden tablet:block -mt-[155px] tablet:min-w-[925px]" src="images/illustration-editor-desktop.svg"
+            alt="Illustration Editor Desktop">
         </div>
 
         <div class="tablet:my-8 text-center basis-[56%] tablet:text-left">
@@ -165,21 +169,62 @@
 
   </main>
 
-  <footer role="footer" class="flex-1">
-    <div class="text-white mobile:text-base m-auto my-8 w-max rounded-lg p-4 text-center text-xs">
-      <div>
+  <footer role="footer" class="flex-1 px-6 tablet:px-[165px] py-16 text-white bg-neutral-very-dark-black-blue rounded-tr-[5rem]">
+
+    <div class=" flex flex-col items-center tablet:flex-row tablet:justify-start tablet:items-start">
+      <div class="tablet:mr-[15%] mb-16 block">
+        <img class="block" src="./images/logo.svg" alt="Logo">
+      </div>
+
+      <div class="tablet:mr-[15%] text-center tablet:text-left">
+        <p class="text-lg font-medium">Product</p>
+
+        <ul class="footer-list text-neutral-grayish-blue my-8 flex flex-col gap-4">
+          <li><a href="#">Overview</a></li>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">Marketplace</a></li>
+          <li><a href="#">Features</a></li>
+          <li><a href="#">Integrations</a></li>
+        </ul>
+      </div>
+
+      <div class="tablet:mr-[15%] text-center tablet:text-left">
+        <p class="text-lg font-medium">Company</p>
+
+        <ul class="footer-list text-neutral-grayish-blue my-8 flex flex-col gap-4">
+          <li><a href="#">About</a></li>
+          <li><a href="#">Team</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
+      </div>
+
+      <div class="text-center tablet:text-left">
+        <p class="text-lg font-medium">Connect</p>
+
+        <ul class="footer-list text-neutral-grayish-blue my-8 flex flex-col gap-4">
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Newsletter</a></li>
+          <li><a href="#">LinkedIn</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="flex flex-col tablet:flex-row tablet: items-center text-white mobile:text-base m-auto w-max mt-10 text-center text-xs">
+      <div class="mx-2">
         <a class="text-optimum-blue hover:text-optimum-darkblue"
           href="https://www.frontendmentor.io/challenges/blogr-landing-page-EX2RLAApP" target="_blank">Frontend Mentor
           challenge</a>
       </div>
-      <div>
+      <div class="mx-2">
         for
         <a class="text-optimum-blue hover:text-optimum-darkblue" href="https://github.com/optimumBA"
           target="_blank">Optimum BH</a>
         Internship.
       </div>
 
-      <div class="mt-3">
+      <div class="mx-2">
         <a class="text-optimum-blue hover:text-optimum-darkblue"
           href="https://github.com/optimumBA/frontend_mentor_challenges/tree/blogr_landing_page/challenges/blogr_landing_page">Source
           code</a>
