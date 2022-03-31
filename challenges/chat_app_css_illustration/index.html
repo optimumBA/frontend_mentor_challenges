@@ -2,8 +2,14 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css" />
     <title>
       Chat app CSS illustration &bullet; Frontend Mentor Challenges &bullet;
       Optimum BH Internship
@@ -25,39 +31,250 @@
       sizes="16x16"
       href="../images/favicon-16x16.png"
     />
-    <link rel="manifest" href="../site.webmanifest" />
-    <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="m-0">
+  <body class="bg-light-grayish-violet font-Rubik text-base antialiased">
+    <!--Background -->
     <div
-      class="flex h-[100vh] w-full flex-col place-content-center text-center"
+      class="bg desktop:w-[700px] desktop:h-[698px] mobile:h-[55%] mobile:rounded-br-full desktop:left-[-80px] desktop:z-0 desktop:rounded-b-full mobile:h-96 mobile:left-[-20px] top-0 bg-gradient-to-tr from-[#953bff] to-[#cb41ff]"
+    ></div>
+    s
+    <!--Overall container-->
+    <div
+      class="z-1 mobile:absolute larger:ml-[34rem] large:ml-[25rem] desktop:ml-[20.2rem] desktop:fixed mobile:ml-0 lg:relative"
     >
-      <div>
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://www.frontendmentor.io/challenges/chat-app-css-illustration-O5auMkFqY"
-          target="_blank"
-          >Frontend Mentor challenge</a
+      <div
+        class="mobile:flex-col desktop:flex-row mobile:space-x-5 larger:space-x-32 flex items-center justify-center md:space-x-32 lg:flex-row"
+      >
+        <div
+          class="large:pt-[11rem] desktop:pt-[12rem] grid place-items-center"
         >
-      </div>
-      <div>
-        for
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA"
-          target="_blank"
-          >Optimum BH</a
+          <!------- Phone container ------>
+          <div
+            class="h-phone-h border-10 w-[280px] rounded-3xl border-white bg-gray-50 shadow-xl"
+          ></div>
+          <!--Phone header-->
+          <div
+            class="from-light-violet to-light-magenta mt-440 absolute h-16 w-[260px] rounded-t-2xl rounded-b-md bg-gradient-to-r"
+          >
+            <!--White inside border-->
+            <div class="mx-auto h-4 w-32 rounded-b-xl bg-white"></div>
+            <!--Phone header -->
+            <div class="flex items-center justify-between px-4">
+              <!--Profile info -->
+              <div class="mt-5 flex items-center space-x-1">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-4 w-6 text-white"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M11 19l-7-7 7-7m8 14l-7-7 7-7"
+                  />
+                </svg>
+                <img
+                  src="images/avatar.jpg"
+                  alt="Image not found"
+                  class="h-6 w-6 rounded-full border border-white"
+                />
+                <div class="pl-1">
+                  <p class="text-xs font-semibold text-white">Samuel Green</p>
+                  <p class="font-fix text-white opacity-30">
+                    Available to Walk
+                  </p>
+                </div>
+              </div>
+              <div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-4 text-white"
+                  className="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth="{2}"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"
+                  />
+                </svg>
+              </div>
+            </div>
+            <!--Chat box-->
+            <div class="flex flex-col space-y-2 p-2">
+              <!--Left side message-->
+              <div
+                class="left-messages text text-moderate-violet font-fix h-auto w-32 rounded-md bg-gray-200 p-2 pt-2"
+              >
+                <p>That sounds great. I’d be happy with that.</p>
+              </div>
+              <div
+                class="left-messages text-moderate-violet font-fix h-auto w-32 rounded-md bg-gray-200 p-2 pt-2"
+              >
+                <!--Left side message-->
+                <p>Could you send over some pictures of your dog, please?</p>
+              </div>
+              <!--Right side messages-->
+              <div class="flex justify-center space-x-3 self-end">
+                <img
+                  src="images/dog-image-1.jpg"
+                  class="h-10 w-10 rounded-md"
+                  alt="Dog image not found!"
+                />
+                <img
+                  src="images/dog-image-2.jpg"
+                  class="h-10 w-10 rounded-md"
+                  alt="Dog image not found!"
+                />
+                <img
+                  src="images/dog-image-3.jpg"
+                  class="h-10 w-10 rounded-md"
+                  alt="Dog image not found!"
+                />
+              </div>
+              <div
+                class="right-side left-messages text font-fix h-auto w-32 self-end rounded-md bg-white p-2 pt-2 text-gray-700 shadow-md"
+              >
+                Here are a few pictures. She’s a happy girl!
+              </div>
+              <div
+                class="right-side left-messages w-22 text font-fix h-auto self-end rounded-md bg-white p-2 pt-2 text-gray-700 shadow-md"
+              >
+                Can you make it?
+              </div>
+              <!--Left side-->
+              <div
+                class="left-messages text text-moderate-violet font-fix h-auto w-32 rounded-md bg-gray-200 p-2 pt-2"
+              >
+                <p>
+                  She looks so happy! The time we discussed works. How long
+                  shall I take her out for?
+                </p>
+              </div>
+              <!--Left side messages-->
+              <div
+                class="flex w-40 items-center justify-between rounded-md rounded-bl-none bg-gradient-to-l from-purple-600 to-pink-500 p-3 pl-2 text-white"
+              >
+                <div class="flex space-x-1">
+                  <span
+                    class="inline-block h-3 w-3 rounded-full border border-white opacity-50"
+                  ></span>
+                  <p class="font-fix justify-start pl-1 text-xs">
+                    30 minute walk
+                  </p>
+                </div>
+                <div class="">
+                  <p
+                    class="text-xs font-bold ordinal slashed-zero tabular-nums"
+                  >
+                    $29
+                  </p>
+                </div>
+              </div>
+              <div
+                class="flex w-40 items-center justify-between rounded-md rounded-bl-none bg-gradient-to-l from-purple-600 to-pink-500 p-3 pl-2 text-white"
+              >
+                <div class="flex space-x-1">
+                  <span
+                    class="inline-block h-3 w-3 rounded-full border border-white opacity-50"
+                  ></span>
+                  <p class="font-fix justify-start pl-1 text-xs">1 hour walk</p>
+                </div>
+                <div class="">
+                  <p
+                    class="text-xs font-bold ordinal slashed-zero tabular-nums"
+                  >
+                    $49
+                  </p>
+                </div>
+              </div>
+              <!--Box for sending message-->
+              <div class="mt-2">
+                <div
+                  class="p1 font-fix mt-1 flex h-8 w-full items-center justify-between rounded-full bg-white text-left text-gray-400 shadow-sm"
+                >
+                  <p class="p-2">Type a message...</p>
+                  <div
+                    class="bg-very-dark-desaturated-violet mr-2 h-6 w-6 items-center justify-center rounded-full text-white"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-6"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M9 5l7 7-7 7"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--Text region-->
+        <div
+          class="text text mobile:mt-5 desktop:mt-[158px] mobile:mr-6 mobile:text-center desktop:ml-20 items-center text-base lg:ml-[30px] lg:w-[540px]"
         >
-        Internship.
+          <h1
+            class="text-bold mobile:mt-[40px] desktop:ml-[68px] text-very-dark-desaturated-violet mobile:text-centar desktop:text-left mobile:text-3xl large:text-[40px] desktop:text-[40px] mb-3 font-[600] md:text-left lg:ml-auto lg:text-left"
+          >
+            Simple booking
+          </h1>
+          <p
+            class="text-dark-grayish-violet mobile:text-centar desktop:text-left desktop:ml-auto desktop:mr-auto mobile:mr-auto mobile:ml-auto mobile:max-w-[89%] large:w-[103%] desktop:max-w-[79%] mt-[1.75rem] leading-[2rem] lg:text-left"
+          >
+            Stay in touch with our dog walkers through the chat interface. This
+            makes it easy to discuss arrangements and make bookings.Once the
+            walk has been completed you can rate your walker and book again all
+            through the chat.
+          </p>
+        </div>
       </div>
+      <div
+        class="attribution mobile:ml-auto mobile:mr-auto mt-3 ml-56 items-center text-center"
+      >
+        <div>
+          <a
+            class="text-optimum-blue hover:text-optimum-darkblue"
+            href="https://www.frontendmentor.io/challenges/chat-app-css-illustration-O5auMkFqY"
+            target="_blank"
+            >Frontend Mentor challenge</a
+          >
+        </div>
+        <div>
+          for
+          <a
+            class="text-optimum-blue hover:text-optimum-darkblue"
+            href="https://github.com/optimumBA"
+            target="_blank"
+            >Optimum BH</a
+          >
+          Internship.
+        </div>
 
-      <div class="mt-3">
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA/frontend_mentor_challenges/tree/chat_app_css_illustration/challenges/chat_app_css_illustration"
-          >Source code</a
-        >
+        <div class="">
+          <a
+            class="text-optimum-blue hover:text-optimum-darkblue"
+            href="https://github.com/adnamaric/frontend_mentor_challenges/tree/chat_app_css_illustration/challenges/chat_app_css_illustration"
+            >Source code</a
+          >
+        </div>
       </div>
     </div>
+    <div
+      class="bg larger:right-[-80px] large:right-[-318px] desktop:right-[-318px] large:h-[800px] larger:h-[900px] larger:w-[29%] mobile:hidden desktop:flex bottom-[0] rounded-t-full bg-gradient-to-b bg-left-bottom opacity-5"
+    ></div>
   </body>
 </html>
