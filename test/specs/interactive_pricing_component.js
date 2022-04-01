@@ -1,3 +1,9 @@
+const setSliderValue = (value) => {
+  const priceSlider = document.getElementById('price-slider')
+  priceSlider.value = value
+  priceSlider.dispatchEvent(new Event('input'))
+}
+
 describe('Interactive pricing component', () => {
   it('should open page in desktop viewport size and expand menu items', async () => {
     await browser.url(`http://localhost:4567/interactive_pricing_component`)
@@ -31,23 +37,23 @@ describe('Interactive pricing component', () => {
     await expect($('body')).toHaveTextContaining('100K PAGEVIEWS')
     await expect($('body')).toHaveTextContaining('$16.00')
 
-    await $('#price-slider').setValue(1)
+    await browser.execute(setSliderValue, 1)
     await expect($('body')).toHaveTextContaining('10K PAGEVIEWS')
     await expect($('body')).toHaveTextContaining('$8.00')
 
-    await $('#price-slider').setValue(2)
+    await browser.execute(setSliderValue, 2)
     await expect($('body')).toHaveTextContaining('50K PAGEVIEWS')
     await expect($('body')).toHaveTextContaining('$12.00')
 
-    await $('#price-slider').setValue(3)
+    await browser.execute(setSliderValue, 3)
     await expect($('body')).toHaveTextContaining('100K PAGEVIEWS')
     await expect($('body')).toHaveTextContaining('$16.00')
 
-    await $('#price-slider').setValue(4)
+    await browser.execute(setSliderValue, 4)
     await expect($('body')).toHaveTextContaining('500K PAGEVIEWS')
     await expect($('body')).toHaveTextContaining('$24.00')
 
-    await $('#price-slider').setValue(5)
+    await browser.execute(setSliderValue, 5)
     await expect($('body')).toHaveTextContaining('1M PAGEVIEWS')
     await expect($('body')).toHaveTextContaining('$36.00')
 
@@ -55,19 +61,19 @@ describe('Interactive pricing component', () => {
     await expect($('body')).toHaveTextContaining('1M PAGEVIEWS')
     await expect($('body')).toHaveTextContaining('$27.00')
 
-    await $('#price-slider').setValue(4)
+    await browser.execute(setSliderValue, 4)
     await expect($('body')).toHaveTextContaining('500K PAGEVIEWS')
     await expect($('body')).toHaveTextContaining('$18.00')
 
-    await $('#price-slider').setValue(3)
+    await browser.execute(setSliderValue, 3)
     await expect($('body')).toHaveTextContaining('100K PAGEVIEWS')
     await expect($('body')).toHaveTextContaining('$12.00')
 
-    await $('#price-slider').setValue(2)
+    await browser.execute(setSliderValue, 2)
     await expect($('body')).toHaveTextContaining('50K PAGEVIEWS')
     await expect($('body')).toHaveTextContaining('$9.00')
 
-    await $('#price-slider').setValue(1)
+    await browser.execute(setSliderValue, 1)
     await expect($('body')).toHaveTextContaining('10K PAGEVIEWS')
     await expect($('body')).toHaveTextContaining('$6.00')
   })
@@ -103,23 +109,23 @@ describe('Interactive pricing component', () => {
     await expect($('body')).toHaveTextContaining('100K PAGEVIEWS')
     await expect($('body')).toHaveTextContaining('$16.00')
 
-    await $('#price-slider').setValue(1)
+    await browser.execute(setSliderValue, 1)
     await expect($('body')).toHaveTextContaining('10K PAGEVIEWS')
     await expect($('body')).toHaveTextContaining('$8.00')
 
-    await $('#price-slider').setValue(2)
+    await browser.execute(setSliderValue, 2)
     await expect($('body')).toHaveTextContaining('50K PAGEVIEWS')
     await expect($('body')).toHaveTextContaining('$12.00')
 
-    await $('#price-slider').setValue(3)
+    await browser.execute(setSliderValue, 3)
     await expect($('body')).toHaveTextContaining('100K PAGEVIEWS')
     await expect($('body')).toHaveTextContaining('$16.00')
 
-    await $('#price-slider').setValue(4)
+    await browser.execute(setSliderValue, 4)
     await expect($('body')).toHaveTextContaining('500K PAGEVIEWS')
     await expect($('body')).toHaveTextContaining('$24.00')
 
-    await $('#price-slider').setValue(5)
+    await browser.execute(setSliderValue, 5)
     await expect($('body')).toHaveTextContaining('1M PAGEVIEWS')
     await expect($('body')).toHaveTextContaining('$36.00')
 
@@ -127,19 +133,19 @@ describe('Interactive pricing component', () => {
     await expect($('body')).toHaveTextContaining('1M PAGEVIEWS')
     await expect($('body')).toHaveTextContaining('$27.00')
 
-    await $('#price-slider').setValue(4)
+    await browser.execute(setSliderValue, 4)
     await expect($('body')).toHaveTextContaining('500K PAGEVIEWS')
     await expect($('body')).toHaveTextContaining('$18.00')
 
-    await $('#price-slider').setValue(3)
+    await browser.execute(setSliderValue, 3)
     await expect($('body')).toHaveTextContaining('100K PAGEVIEWS')
     await expect($('body')).toHaveTextContaining('$12.00')
 
-    await $('#price-slider').setValue(2)
+    await browser.execute(setSliderValue, 2)
     await expect($('body')).toHaveTextContaining('50K PAGEVIEWS')
     await expect($('body')).toHaveTextContaining('$9.00')
 
-    await $('#price-slider').setValue(1)
+    await browser.execute(setSliderValue, 1)
     await expect($('body')).toHaveTextContaining('10K PAGEVIEWS')
     await expect($('body')).toHaveTextContaining('$6.00')
   })
