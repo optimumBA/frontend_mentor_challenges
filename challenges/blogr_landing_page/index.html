@@ -72,10 +72,6 @@
             >
               <div class="relative mb-2">
                 <div>
-                  <!-- <a
-                    @click="toggle($refs.product, $refs.productArrow)"
-                    class="hover:cursor-pointer md:text-white md:hover:underline"
-                  > -->
                   <a
                     @click="handleOpen(0)"
                     class="hover:cursor-pointer md:text-white md:hover:underline"
@@ -98,7 +94,7 @@
                 <template x-if="openArray[0]">
                   <div
                     x-ref="product"
-                    class="mx-10 grid-rows-5 gap-2 rounded-md bg-gray-100 p-3 md:absolute md:-left-16 md:top-9 md:text-left"
+                    class="mx-10 flex flex-col gap-2 rounded-md bg-gray-100 p-3 md:absolute md:-left-16 md:top-9 md:text-left"
                   >
                     <a class="hover:cursor-pointer hover:font-bold">
                       Overview
@@ -121,12 +117,6 @@
 
               <div class="relative mb-2">
                 <div>
-                  <!-- <a
-                    @click="toggle($refs.company, $refs.companyArrow)"
-                    class="hover:cursor-pointer md:text-white md:hover:underline"
-                  >
-                    Company
-                  </a> -->
                   <a
                     @click="handleOpen(1)"
                     class="hover:cursor-pointer md:text-white md:hover:underline"
@@ -149,7 +139,7 @@
                 <template x-if="openArray[1]">
                   <div
                     x-ref="company"
-                    class="mx-10 grid-rows-4 gap-2 rounded-md bg-gray-100 p-3 md:absolute md:-left-11 md:top-9 md:text-left"
+                    class="mx-10 flex flex-col gap-2 rounded-md bg-gray-100 p-3 md:absolute md:-left-11 md:top-9 md:text-left"
                   >
                     <a class="hover:cursor-pointer hover:font-bold"> About </a>
                     <a class="hover:cursor-pointer hover:font-bold"> Team </a>
@@ -163,12 +153,6 @@
 
               <div class="relative mb-2">
                 <div>
-                  <!-- <a
-                    @click="toggle($refs.connect, $refs.connectArrow)"
-                    class="hover:cursor-pointer md:text-white md:hover:underline"
-                  >
-                    Connect
-                  </a> -->
                   <a
                     @click="handleOpen(2)"
                     class="hover:cursor-pointer md:text-white md:hover:underline"
@@ -191,7 +175,7 @@
                 <template x-if="openArray[2]">
                   <div
                     x-ref="connect"
-                    class="mx-10 grid-rows-3 gap-2 rounded-md bg-gray-100 p-3 md:absolute md:-left-14 md:top-9 md:text-left"
+                    class="mx-10 flex flex-col gap-2 rounded-md bg-gray-100 p-3 md:absolute md:-left-14 md:top-9 md:text-left"
                   >
                     <a class="hover:cursor-pointer hover:font-bold">
                       Contact
@@ -408,20 +392,6 @@
           } else return !this.openArray[p]
         })
       }
-
-      // function toggle(el, arrowEl) {
-      //   if ([...el.classList].includes('hidden')) {
-      //     el.classList.remove('hidden')
-      //     el.classList.add('grid')
-
-      //     arrowEl.style.transform = 'rotate(180deg)'
-      //   } else {
-      //     el.classList.add('hidden')
-      //     el.classList.remove('grid')
-
-      //     arrowEl.style.transform = 'rotate(0deg)'
-      //   }
-      // }
     </script>
   </body>
 </html>
