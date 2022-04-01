@@ -99,9 +99,9 @@ describe('Blogr landing page', () => {
 
     await $('#mobile-menu-toggle').click()
 
-    await expect($$('=Product')).toBeElementsArrayOfSize(1)
-    await expect($$('=Company')).toBeElementsArrayOfSize(1)
-    await expect($$('=Connect')).toBeElementsArrayOfSize(1)
+    await expect($$('=Product')).toBeElementsArrayOfSize(0)
+    await expect($$('=Company')).toBeElementsArrayOfSize(0)
+    await expect($$('=Connect')).toBeElementsArrayOfSize(0)
 
     await expect($$('=Overview')).toBeElementsArrayOfSize(1)
     await expect($$('=About')).toBeElementsArrayOfSize(1)
