@@ -1,3 +1,98 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .mob-app-wrapper {
+    @apply bg-sec-light-gr-violet phone-shadow overflow-hidden rounded-[2rem] border-[10px] border-white;
+  }
+
+  .mob-app-top {
+    @apply mobile:h-6 absolute left-1/2 top-0 h-5 w-[60%] -translate-x-1/2 rounded-bl-2xl rounded-br-2xl bg-white;
+  }
+
+  .mob-app-header {
+    @apply mobile:px-3 mobile:pt-7 flex w-full items-center justify-between rounded-md px-2 pt-5;
+    background-image: linear-gradient(
+      to left,
+      hsl(293, 100%, 63%),
+      hsl(264, 100%, 61%)
+    );
+  }
+
+  .chat-left {
+    @apply mobile:text-xs bg-chat-bg-l text-prim-mod-violet rounded-tl-[0.85rem] rounded-tr-[0.85rem] rounded-br-[0.85rem] rounded-bl-md text-[9px] opacity-0;
+  }
+
+  .chat-right {
+    @apply mobile:text-xs text-prim-des-dark-violet r-chat-shadow rounded-tl-[0.85rem] rounded-tr-[0.85rem] rounded-br-md rounded-bl-[0.85rem] bg-white text-[9px] opacity-0;
+  }
+
+  .chat-left-offer {
+    @apply mobile:text-xs rounded-tl-[0.85rem] rounded-tr-[0.85rem] rounded-br-[0.85rem] rounded-bl-md text-[9px] text-white opacity-0;
+    background-image: linear-gradient(
+      to right,
+      hsl(293, 100%, 63%),
+      hsl(264, 100%, 61%)
+    );
+  }
+
+  .phone-shadow {
+    box-shadow: 1.2rem 2rem 3.4rem 0 hsl(224deg 23% 55% / 25%);
+  }
+
+  .r-chat-shadow {
+    box-shadow: 0px 15px 10px -6px hsl(224deg 23% 55% / 15%);
+  }
+}
+
+.animate-chat-left {
+  animation: animate-left 0.4s ease-in-out 0.1s forwards;
+}
+
+.animate-chat-right {
+  animation: animate-right 0.4s ease-in-out 0.3s forwards;
+}
+
+.animate-pics {
+  animation: animate-pics 0.2s ease-in-out 0.5s forwards;
+}
+
+@keyframes animate-pics {
+  0% {
+    opacity: 0.5;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes animate-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes animate-right {
+  0% {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
