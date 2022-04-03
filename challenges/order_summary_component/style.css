@@ -1,3 +1,28 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .card-bg-mobile {
+    background-image: url('./images/pattern-background-mobile.svg');
+    background-repeat: no-repeat;
+  }
+
+  .card-bg-desktop {
+    background-image: url('./images/pattern-background-desktop.svg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }
+
+  .header-bg {
+    background-image: url('./images/illustration-hero.svg');
+  }
+
+  .card-shadow {
+    box-shadow: 0px 1rem 2rem -0.2rem hsl(224deg 23% 55% / 30%);
+  }
+
+  .btn-shadow {
+    box-shadow: 0px 1rem 2rem -0.4rem hsl(224deg 23% 55% / 55%);
+  }
+}
