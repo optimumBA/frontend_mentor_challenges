@@ -25,12 +25,105 @@
       sizes="16x16"
       href="../images/favicon-16x16.png"
     />
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Alpine.js  -->
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+
     <link rel="manifest" href="../site.webmanifest" />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="m-0">
-    <div
-      class="flex h-[100vh] w-full flex-col place-content-center text-center"
+
+  <body class="m-0 flex min-h-[100vh] flex-col">
+    <main
+      role="FAQ page section"
+      class="flex flex-col items-center justify-center px-6 py-10"
+    >
+      <section
+        x-data="faqList()"
+        class="faq-card-shadow font-kumbh-sans tablet:max-w-[57rem] tablet:min-h-[32rem] tablet:p-0 tablet:pr-[6rem] relative z-[100] mt-[105px] mb-8 flex w-full rounded-3xl bg-white p-6"
+      >
+        <div
+          class="tablet:w-auto tablet:left-0 tablet:top-1/2 tablet:-translate-x-[50%] tablet:-translate-y-[24%] absolute top-0 left-[50%] z-[105] w-[85px] -translate-x-[140%] -translate-y-[45%]"
+        >
+          <img src="./images/illustration-box-desktop.svg" alt="" />
+        </div>
+
+        <div
+          class="tablet:py-12 tablet:flex-row tablet:justify-end tablet:overflow-hidden relative flex w-full flex-col items-center rounded-3xl pt-[5rem] pb-6"
+        >
+          <!-- bg pattern images -->
+          <div
+            class="bg-illustration tablet:w-auto tablet:left-0 tablet:top-1/2 tablet:-translate-x-[16%] tablet:-translate-y-[50%] absolute left-[50%] top-0 z-[104] w-[240px] -translate-x-[50%] -translate-y-[75%]"
+          >
+            <img
+              src="./images/illustration-woman-online-desktop.svg"
+              alt="Pattern desktop image"
+            />
+          </div>
+          <div
+            class="bg-illustration tablet:w-[120%] tablet:left-0 tablet:top-1/2 tablet:-translate-x-[58%] tablet:-translate-y-[58%] absolute absolute left-[50%] top-0 z-[102] w-[240px] -translate-x-[50%] -translate-y-[70%]"
+          >
+            <img
+              src="./images/bg-pattern-desktop.svg"
+              alt="Pattern desktop image"
+            />
+          </div>
+          <!-- faq accordions section -->
+          <div
+            class="tablet:basis-[40%] flex w-full flex-col justify-between gap-4 transition-all duration-200 ease-in-out"
+          >
+            <h1 class="tablet:text-left text-center text-[32px] font-[700]">
+              FAQ
+            </h1>
+
+            <div>
+              <template x-for="faq in faqs" :key="faq.id">
+                <section
+                  class="w-full overflow-hidden border-b border-b-slate-200 bg-transparent"
+                >
+                  <div
+                    x-on:click="setOpen(faq.id)"
+                    class="hover:text-prim-soft-red flex cursor-pointer items-center justify-between py-4"
+                  >
+                    <a
+                      class="tablet:text-[15px] text-sm transition-colors duration-200 ease-in-out"
+                      x-bind:class="faq.open ? 'font-bold' : 'font-normal'"
+                      x-text="faq.question"
+                    ></a>
+                    <div class="pl-4">
+                      <img
+                        x-bind:class="faq.open ? 'arrow-rotate-up' : 'arrow-rotate-down'"
+                        src="./images/icon-arrow-down.svg"
+                        alt="Arrow icon"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="faq-item tablet:pb-4 tablet:text-[14px] max-h-[100vh] pb-3 text-xs font-light"
+                    x-bind:class="!faq.open ? 'is-closed' : ''"
+                  >
+                    <span x-text="!faq.open ? '' : faq.answer"></span>
+                  </div>
+                </section>
+              </template>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer
+      role="footer"
+      class="mobile:text-base m-auto my-8 w-max rounded-lg bg-slate-100 p-4 text-center text-xs"
     >
       <div>
         <a
@@ -54,10 +147,62 @@
       <div class="mt-3">
         <a
           class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA/frontend_mentor_challenges/tree/faq_accordion_card/challenges/faq_accordion_card"
+          href="https://github.com/Daniel4lm/frontend_mentor_challenges/tree/faq_accordion_card/challenges/faq_accordion_card"
           >Source code</a
         >
       </div>
-    </div>
+    </footer>
+
+    <script>
+      document.addEventListener('alpine:init', () => {
+        Alpine.data('faqList', () => ({
+          faqs: [
+            {
+              id: 1,
+              question: 'How many team members can I invite?',
+              answer:
+                'You can invite up to 2 additional users on the Free plan. There is no limit on team members for the Premium plan.',
+              open: true,
+            },
+            {
+              id: 2,
+              question: 'What is the maximum file upload size?',
+              answer:
+                'No more than 2GB. All files in your account must fit your allotted storage space.',
+              open: false,
+            },
+            {
+              id: 3,
+              question: 'How do I reset my password?',
+              answer:
+                'Click “Forgot password” from the login page or “Change password” from your profile page. A reset link will be emailed to you.',
+              open: false,
+            },
+            {
+              id: 4,
+              question: 'Can I cancel my subscription?',
+              answer: 'You can allways consider to use our new ...',
+              open: false,
+            },
+            {
+              id: 5,
+              question: 'Do you provide additional support?',
+              answer:
+                'Details about our additional support you can find under section ...',
+              open: false,
+            },
+          ],
+          setOpen(id) {
+            this.faqs = this.faqs.map((faq) => {
+              if (faq.id === id) {
+                return { ...faq, ...{ open: faq.open ? false : true } }
+              } else {
+                return { ...faq, ...{ open: false } }
+              }
+            })
+          },
+        }))
+      })
+    </script>
   </body>
 </html>

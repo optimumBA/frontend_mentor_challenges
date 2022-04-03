@@ -1,3 +1,54 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    background-image: linear-gradient(to bottom, #af67e9, #6565e7);
+  }
+}
+
+@layer components {
+  .faq-item {
+    transition: all 0.4s ease-in-out;
+  }
+
+  .faq-item.is-closed {
+    height: 0;
+    max-height: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .faq-card-shadow {
+    box-shadow: 0 2.4rem 4.4rem -1rem rgba(26, 27, 27, 0.45);
+  }
+
+  .arrow-rotate-up {
+    transform-origin: center center;
+    animation: rotate-up forwards 0.4s ease-in-out;
+  }
+
+  .arrow-rotate-down {
+    transform-origin: center center;
+    animation: rotate-down forwards 0.4s ease-in-out;
+  }
+
+  @keyframes rotate-up {
+    0% {
+    }
+    100% {
+      transform: rotate(180deg);
+    }
+  }
+
+  @keyframes rotate-down {
+    0% {
+      transform: rotate(180deg);
+    }
+    100% {
+    }
+  }
+}
