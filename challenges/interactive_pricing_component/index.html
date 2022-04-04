@@ -25,12 +25,133 @@
       sizes="16x16"
       href="../images/favicon-16x16.png"
     />
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&family=Overpass:wght@300;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Alpine.js  -->
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
     <link rel="manifest" href="../site.webmanifest" />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="m-0">
-    <div
-      class="flex h-[100vh] w-full flex-col place-content-center text-center"
+
+  <body class="font-manrope text-neutral-dark-desat-blue m-0 min-h-[100vh] p-6">
+    <div class="header-bg m-auto w-auto py-14 text-center">
+      <h1 class="py-4 text-[26px] font-bold md:text-3xl">
+        Simple, traffic-based pricing
+      </h1>
+      <p class="text-neutral-grayish-blue text-base md:flex-row">
+        Sign-up for our 30-day trial. No credit card required.
+      </p>
+    </div>
+
+    <section
+      x-data="priceToggle()"
+      x-init="mobileLayout = window.innerWidth < 750"
+      @resize.window="mobileLayout = window.innerWidth < 750"
+      class="price-card-shadow m-auto my-4 h-max w-auto overflow-hidden rounded-lg bg-white md:w-[40rem]"
+    >
+      <div
+        class="grid grid-cols-1 grid-rows-4 gap-5 p-6 md:grid-cols-2 md:grid-rows-3 md:gap-3 md:px-12 md:py-8"
+      >
+        <!-- pageviews -->
+        <div class="flex items-center justify-center md:justify-start">
+          <p
+            class="text-neutral-grayish-blue text-base font-bold capitalize tracking-widest"
+            x-text="getPageview(rangeValue)"
+          ></p>
+        </div>
+        <!-- price -->
+        <div class="flex items-center justify-center gap-2">
+          <h2
+            class="text-[35px] font-bold md:text-[45px]"
+            x-text="`$${getPriceValue(rangeValue)}.00`"
+          ></h2>
+          <p class="text-neutral-grayish-blue text-base">/ month</p>
+        </div>
+        <!-- slider -->
+        <div
+          class="row-start-2 row-end-3 flex items-center justify-center md:col-start-1 md:col-end-3"
+        >
+          <input
+            type="range"
+            min="1"
+            max="5"
+            value="3"
+            class="price-slider"
+            id="price-slider"
+            x-model="rangeValue"
+          />
+        </div>
+        <!-- toggle -->
+        <div
+          class="flex items-center justify-center gap-2 text-xs md:col-start-1 md:col-end-3 md:gap-4 md:text-sm"
+        >
+          <span class="text-neutral-grayish-blue">Montly Billing</span>
+          <a id="yearly-billing-toggle">
+            <label class="relative inline-block h-[25px] w-[50px]">
+              <input
+                type="checkbox"
+                class="billing-switch"
+                checked="yearBill"
+                value="yearBill"
+                x-model="yearBill"
+              />
+              <span class="billing-toggle round"></span>
+            </label>
+          </a>
+
+          <span class="text-neutral-grayish-blue">Yearly Billing</span>
+          <span
+            class="text-prim-light-red bg-prim-light-grayish-red rounded-full py-1 px-2 text-[12px]"
+            x-text="!mobileLayout ? '25% discount' : '-25%'"
+            @re
+          ></span>
+        </div>
+      </div>
+
+      <div
+        class="flex flex-col gap-4 border-t border-t-slate-200 p-6 md:flex-row md:justify-between md:p-12"
+      >
+        <!-- CTA list -->
+        <div class="text-neutral-grayish-blue text-sm">
+          <ul
+            class="flex flex-col items-center gap-3 py-4 md:items-start md:py-0"
+          >
+            <li class="flex items-center gap-4">
+              <img src="./images/icon-check.svg" alt="Check Icon" />
+              <span>Unlimited websites</span>
+            </li>
+            <li class="flex items-center gap-4">
+              <img src="./images/icon-check.svg" alt="Check Icon" />
+              <span>100% data ownership</span>
+            </li>
+            <li class="flex items-center gap-4">
+              <img src="./images/icon-check.svg" alt="Check Icon" />
+              <span>Email reports</span>
+            </li>
+          </ul>
+        </div>
+        <!-- CTA button -->
+        <div class="flex items-center justify-center">
+          <button
+            class="text-prim-pale-blue bg-neutral-dark-desat-blue rounded-full py-3 px-12 text-sm font-bold hover:text-white"
+          >
+            Start my trial
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <footer
+      role="footer"
+      class="m-auto my-8 w-max rounded-lg p-4 text-center text-xs md:text-base"
     >
       <div>
         <a
@@ -54,10 +175,42 @@
       <div class="mt-3">
         <a
           class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA/frontend_mentor_challenges/tree/interactive_pricing_component/challenges/interactive_pricing_component"
+          href="https://github.com/Daniel4lm/frontend_mentor_challenges/tree/interactive_pricing_component/challenges/interactive_pricing_component"
           >Source code</a
         >
       </div>
-    </div>
+    </footer>
+
+    <script>
+      document.addEventListener('alpine:init', () => {
+        Alpine.data('priceToggle', () => ({
+          montlyPrices: [8, 12, 16, 24, 36],
+          pageviews: [
+            '10K PAGEVIEWS',
+            '50K PAGEVIEWS',
+            '100K PAGEVIEWS',
+            '500K PAGEVIEWS',
+            '1M PAGEVIEWS',
+          ],
+          yearlyPrices: [6, 9, 12, 18, 27],
+          rangeValue: 3,
+          mobileLayout: false,
+          setRange(val) {
+            this.rangeValue = val
+          },
+          getPriceValue(val) {
+            if (!this.yearBill) {
+              return this.montlyPrices[val - 1]
+            } else {
+              return this.yearlyPrices[val - 1]
+            }
+          },
+          getPageview(val) {
+            return this.pageviews[val - 1]
+          },
+          yearBill: false,
+        }))
+      })
+    </script>
   </body>
 </html>
