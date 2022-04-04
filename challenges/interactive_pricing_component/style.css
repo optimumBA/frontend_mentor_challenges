@@ -57,7 +57,7 @@
     border: none;
     border-radius: 50%;
     background-color: #11d8c5;
-    background-image: url('contrasticon.png');
+    background-image: url('./images/icon-slider.svg');
     background-repeat: no-repeat;
     background-size: auto;
     background-position: center;
