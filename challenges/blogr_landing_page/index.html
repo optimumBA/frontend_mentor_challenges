@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="text-[16px]">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -27,37 +27,371 @@
     />
     <link rel="manifest" href="../site.webmanifest" />
     <link rel="stylesheet" href="style.css" />
+
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
   </head>
   <body class="m-0">
-    <div
-      class="flex h-[100vh] w-full flex-col place-content-center text-center"
+    <header
+      class="font-ubuntu from-veryLightRed to-lightRed overflow-hidden rounded-bl-[15%] bg-gradient-to-b text-center text-white"
     >
-      <div>
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://www.frontendmentor.io/challenges/blogr-landing-page-EX2RLAApP"
-          target="_blank"
-          >Frontend Mentor challenge</a
+      <div
+        class="bg-mobilePattern md:bg-desktopPattern bg-[length:300%_300%] bg-center bg-no-repeat px-5 pt-10 pb-20"
+      >
+        <div
+          x-data="{ open: false }"
+          class="mb-20 flex items-center justify-between md:justify-start"
         >
+          <img src="./images/logo.svg" alt="logo" />
+          <div id="mobile-menu-toggle" @click="open = !open">
+            <img
+              :class="!open || 'hidden'"
+              class="h-[20px] w-[20px] hover:cursor-pointer md:hidden"
+              src="./images/icon-hamburger.svg"
+              alt="menu icon"
+            />
+            <img
+              x-cloak
+              :class="open || 'hidden'"
+              class="h-[20px] w-[20px] hover:cursor-pointer md:hidden"
+              src="./images/icon-close.svg"
+              alt="menu icon"
+            />
+          </div>
+
+          <template
+            x-if="open"
+            x-init="open = window.innerWidth > 768"
+            @resize.window="open = window.innerWidth > 768"
+          >
+            <nav
+              x-data="{ openArray: [ false, false, false  ], handleOpen }"
+              class="text-veryDarkBlue absolute top-24 left-10 right-10 z-10 rounded-lg bg-white py-10 md:static md:ml-10 md:flex md:w-full md:gap-9 md:bg-transparent md:py-0"
+            >
+              <div class="relative mb-2">
+                <div>
+                  <a
+                    @click="handleOpen(0)"
+                    class="hover:cursor-pointer md:text-white md:hover:underline"
+                  >
+                    Product
+                  </a>
+                  <picture>
+                    <source
+                      media="(min-width:768px)"
+                      srcset="./images/icon-arrow-light.svg"
+                    />
+                    <img
+                      x-ref="productArrow"
+                      class="inline-block"
+                      src="./images/icon-arrow-dark.svg"
+                      alt="arrow"
+                    />
+                  </picture>
+                </div>
+                <template x-if="openArray[0]">
+                  <div
+                    x-ref="product"
+                    class="mx-10 flex flex-col gap-2 rounded-md bg-gray-100 p-3 md:absolute md:-left-16 md:top-9 md:text-left"
+                  >
+                    <a class="hover:cursor-pointer hover:font-bold">
+                      Overview
+                    </a>
+                    <a class="hover:cursor-pointer hover:font-bold">
+                      Pricing
+                    </a>
+                    <a class="hover:cursor-pointer hover:font-bold">
+                      Marketplace
+                    </a>
+                    <a class="hover:cursor-pointer hover:font-bold">
+                      Features
+                    </a>
+                    <a class="hover:cursor-pointer hover:font-bold">
+                      Integrations
+                    </a>
+                  </div>
+                </template>
+              </div>
+
+              <div class="relative mb-2">
+                <div>
+                  <a
+                    @click="handleOpen(1)"
+                    class="hover:cursor-pointer md:text-white md:hover:underline"
+                  >
+                    Company
+                  </a>
+                  <picture>
+                    <source
+                      media="(min-width:768px)"
+                      srcset="./images/icon-arrow-light.svg"
+                    />
+                    <img
+                      x-ref="companyArrow"
+                      class="inline-block"
+                      src="./images/icon-arrow-dark.svg"
+                      alt="arrow"
+                    />
+                  </picture>
+                </div>
+                <template x-if="openArray[1]">
+                  <div
+                    x-ref="company"
+                    class="mx-10 flex flex-col gap-2 rounded-md bg-gray-100 p-3 md:absolute md:-left-11 md:top-9 md:text-left"
+                  >
+                    <a class="hover:cursor-pointer hover:font-bold"> About </a>
+                    <a class="hover:cursor-pointer hover:font-bold"> Team </a>
+                    <a class="hover:cursor-pointer hover:font-bold"> Blog </a>
+                    <a class="hover:cursor-pointer hover:font-bold">
+                      Careers
+                    </a>
+                  </div>
+                </template>
+              </div>
+
+              <div class="relative mb-2">
+                <div>
+                  <a
+                    @click="handleOpen(2)"
+                    class="hover:cursor-pointer md:text-white md:hover:underline"
+                  >
+                    Connect
+                  </a>
+                  <picture>
+                    <source
+                      media="(min-width:768px)"
+                      srcset="./images/icon-arrow-light.svg"
+                    />
+                    <img
+                      x-ref="connectArrow"
+                      class="inline-block"
+                      src="./images/icon-arrow-dark.svg"
+                      alt="arrow"
+                    />
+                  </picture>
+                </div>
+                <template x-if="openArray[2]">
+                  <div
+                    x-ref="connect"
+                    class="mx-10 flex flex-col gap-2 rounded-md bg-gray-100 p-3 md:absolute md:-left-14 md:top-9 md:text-left"
+                  >
+                    <a class="hover:cursor-pointer hover:font-bold">
+                      Contact
+                    </a>
+                    <a class="hover:cursor-pointer hover:font-bold">
+                      Newsletter
+                    </a>
+                    <a class="hover:cursor-pointer hover:font-bold">
+                      LinkedIn
+                    </a>
+                  </div>
+                </template>
+              </div>
+
+              <div
+                class="relative grid grid-rows-2 border-t-[1px] md:absolute md:right-10 md:grid-cols-2 md:grid-rows-1 md:border-none"
+              >
+                <button class="w-[100px] justify-self-center md:text-white">
+                  Login
+                </button>
+                <button
+                  class="from-veryLightRed to-lightRed md:text-lightRed md:hover:bg-lightRed w-[100px] justify-self-center rounded-lg bg-gradient-to-r p-2 text-white md:bg-white md:bg-none md:hover:text-white"
+                >
+                  Sign Up
+                </button>
+              </div>
+            </nav>
+          </template>
+        </div>
+
+        <h1 class="p-3 text-4xl">A modern publishing platform</h1>
+        <h5>Grow your audience and build your online brand</h5>
+
+        <div class="my-10">
+          <button
+            class="text-lightRed mr-2 rounded-2xl border-[1px] border-white bg-white px-3 py-1 font-bold hover:bg-transparent hover:text-white"
+          >
+            Start for Free
+          </button>
+          <button
+            class="hover:text-lightRed rounded-2xl border-[1px] border-white px-3 py-1 font-bold hover:bg-white"
+          >
+            Learn More
+          </button>
+        </div>
       </div>
-      <div>
-        for
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA"
-          target="_blank"
-          >Optimum BH</a
+    </header>
+
+    <main
+      class="font-overpass my-20 overflow-hidden text-center leading-7 md:text-left"
+    >
+      <section>
+        <h3 class="text-veryDarkBlue text-center">Designed for the future</h3>
+
+        <div class="md:grid md:grid-cols-2 md:items-center">
+          <picture>
+            <source
+              media="(min-width:768px)"
+              srcset="./images/illustration-editor-desktop.svg"
+            />
+            <img
+              class="relative mx-auto md:-right-[27%] md:col-start-2"
+              src="./images/illustration-editor-mobile.svg"
+              alt="editor"
+            />
+          </picture>
+
+          <div class="px-10 md:row-start-1 md:pl-40">
+            <h4 class="text-veryDarkBlue">Introducing an extensible editor</h4>
+            <p>
+              Blogr features an exceedingly intuitive interface which lets you
+              focus on one thing: creating content. The editor supports
+              management of multiple blogs and allows easy manipulation of
+              embeds such as images, videos, and Markdown. Extensibility with
+              plugins and themes provide easy ways to add functionality or
+              change the looks of a blog.
+            </p>
+
+            <h4 class="text-veryDarkBlue">Robust content management</h4>
+            <p>
+              Flexible content management enables users to easily move through
+              posts. Increase the usability of your blog by adding customized
+              categories, sections, format, or flow. With this functionality,
+              you’re in full control.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="from-veryDarkGrayBlue to-veryDarkDesaturatedBlue relative mt-56 rounded-bl-[15%] rounded-tr-[15%] bg-gradient-to-b text-white md:my-20"
+      >
+        <div
+          class="bg-circles bg-contain bg-[center_top_-100px] bg-no-repeat pt-56 pb-32 md:grid md:grid-cols-2 md:bg-[left_top_-100px] md:pt-16 md:pb-16"
         >
-        Internship.
+          <img
+            class="absolute -top-[40%] w-[400px] sm:left-[10%] md:left-0 md:top-[-20%]"
+            src="./images/illustration-phones.svg"
+            alt="phones"
+          />
+
+          <div class="px-10 md:col-start-2 md:pr-40">
+            <h2 class="py-3 text-2xl">State of the Art Infrastructure</h2>
+            <p class="text-white">
+              With reliability and speed in mind, worldwide data centers provide
+              the backbone for ultra-fast connectivity. This ensures your site
+              will load instantly, no matter where your readers are, keeping
+              your site competitive.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="md:grid md:grid-cols-2 md:items-center">
+        <picture>
+          <source
+            media="(min-width:768px)"
+            srcset="./images/illustration-laptop-desktop.svg"
+          />
+          <img
+            class="relative mx-auto md:-left-[29%]"
+            src="./images/illustration-laptop-mobile.svg"
+            alt="laptop"
+          />
+        </picture>
+
+        <div class="px-10 md:pr-40">
+          <h4 class="text-veryDarkBlue">Free, open, simple</h4>
+          <p>
+            Blogr is a free and open source application backed by a large
+            community of helpful developers. It supports features such as code
+            syntax highlighting, RSS feeds, social media integration,
+            third-party commenting tools, and works seamlessly with Google
+            Analytics. The architecture is clean and is relatively easy to
+            learn.
+          </p>
+
+          <h4 class="text-veryDarkBlue">Powerful tooling</h4>
+          <p>
+            Batteries included. We built a simple and straightforward CLI tool
+            that makes customization and deployment a breeze, but capable of
+            producing even the most complicated sites.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer
+      class="bg-veryDarkBlue text-grayishBlue relative grid gap-7 rounded-tr-[15%] py-10 text-center md:grid-cols-4"
+    >
+      <img class="mx-auto" src="./images/logo.svg" alt="logo" />
+
+      <div class="grid gap-1">
+        <span class="footer-sec"> Product </span>
+        <a href="#"> Overview </a>
+        <a href="#"> Pricing </a>
+        <a href="#"> Marketplace </a>
+        <a href="#"> Features </a>
+        <a href="#"> Integrations </a>
       </div>
 
-      <div class="mt-3">
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA/frontend_mentor_challenges/tree/blogr_landing_page/challenges/blogr_landing_page"
-          >Source code</a
-        >
+      <div class="grid gap-1">
+        <span class="footer-sec"> Company </span>
+        <a href="#"> About </a>
+        <a href="#"> Team </a>
+        <a href="#"> Blog </a>
+        <a href="#"> Careers </a>
       </div>
-    </div>
+
+      <div class="grid gap-1">
+        <span class="footer-sec"> Connect </span>
+        <a href="#"> Contact </a>
+        <a href="#"> Newsletter </a>
+        <a href="#"> LinkedIn </a>
+      </div>
+
+      <div
+        class="w-fullplace-content-center absolute bottom-0 flex text-center text-[10px]"
+      >
+        <div>
+          <a
+            class="text-optimum-blue hover:text-optimum-darkblue"
+            href="https://www.frontendmentor.io/challenges/blogr-landing-page-EX2RLAApP"
+            target="_blank"
+            >Frontend Mentor challenge</a
+          >
+        </div>
+        <div>
+          for
+          <a
+            class="text-optimum-blue hover:text-optimum-darkblue"
+            href="https://github.com/optimumBA"
+            target="_blank"
+            >Optimum BH</a
+          >
+          Internship.
+        </div>
+
+        <div>
+          <a
+            class="text-optimum-blue hover:text-optimum-darkblue"
+            href="https://github.com/optimumBA/frontend_mentor_challenges/tree/blogr_landing_page/challenges/blogr_landing_page"
+            >Source code</a
+          >
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      function handleOpen(p) {
+        this.openArray = this.openArray.map((e, i) => {
+          if (i != p) {
+            return false
+          } else return !this.openArray[p]
+        })
+      }
+    </script>
   </body>
 </html>
