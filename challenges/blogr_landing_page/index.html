@@ -25,39 +25,486 @@
       sizes="16x16"
       href="../images/favicon-16x16.png"
     />
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&family=Ubuntu:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Alpine.js  -->
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+
     <link rel="manifest" href="../site.webmanifest" />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="m-0">
-    <div
-      class="flex h-[100vh] w-full flex-col place-content-center text-center"
+  <!-- overflow-x-hidden -->
+  <body
+    x-data="{ ...menuToggle() }"
+    class="m-0 flex min-h-[100vh] flex-col"
+    x-init="menuToggle = window.innerWidth > 900"
+    @resize.window="menuToggle = window.innerWidth > 900"
+  >
+    <header
+      role="header"
+      class="font-ubuntu desktop:px-[165px] relative z-[100] w-full flex-1 rounded-bl-[5rem] px-6 sm:px-[80px] md:px-[100px]"
     >
-      <div>
+      <div
+        class="bg-mobile tablet:hidden absolute -z-[1] rounded-bl-[5rem]"
+      ></div>
+      <div
+        class="bg-desktop tablet:block absolute -z-[1] hidden rounded-bl-[5rem]"
+      ></div>
+
+      <nav
+        role="navigation"
+        class="tablet:my-[60px] my-[45px] flex justify-between"
+      >
+        <!-- app logo -->
+        <div>
+          <img
+            class="tablet:w-full w-[80%]"
+            src="./images/logo.svg"
+            alt="Logo"
+          />
+        </div>
+        <template x-if="menuToggle">
+          <div
+            class="nav-menu-mobile-shadow tablet2:relative tablet2:left-0 tablet2:ml-14 tablet2:flex-1 tablet2:flex-row tablet2:justify-between tablet2:bg-transparent tablet2:p-0 tablet2:shadow-none absolute left-[5%] top-0 flex w-[90%] flex-col items-center rounded-md bg-white p-6"
+            x-bind:class="(menuToggle & window.innerWidth < 900) && 'show-mob-menu'"
+            x-on:click.outside="(menuToggle & window.innerWidth < 900) && setToggle(false)"
+          >
+            <!-- nav menu -->
+            <ul
+              class="tablet2:flex tablet2:items-center tablet2:gap-8 tablet2:w-max w-full"
+            >
+              <li
+                class="link-item tablet2:my-0 tablet2:hover:text-white relative my-6 flex cursor-pointer flex-col items-center"
+                x-on:click="onMenuClick('product')"
+              >
+                <div class="flex items-center">
+                  <a
+                    class="tablet2:text-slate-200 tablet2:hover:text-white tablet2:hover:underline font-bold text-slate-800"
+                    >Product</a
+                  >
+                  <img
+                    class="tablet2:block hidden pl-2"
+                    x-bind:class="activeMenu === 'product' && 'arrow-hover'"
+                    src="./images/icon-arrow-light.svg"
+                    alt="Icon arrow"
+                  />
+                  <img
+                    class="tablet2:hidden pl-2"
+                    x-bind:class="activeMenu === 'product' && 'arrow-hover'"
+                    src="./images/icon-arrow-dark.svg"
+                    alt="Icon arrow"
+                  />
+                </div>
+                <template x-if="activeMenu === 'product'">
+                  <div
+                    class="hidden-submenu tablet2:absolute tablet2:left-0 tablet2:top-[25px] tablet2:w-[160%] tablet2:-translate-x-[20%] tablet2:bg-white tablet2:text-black my-4 w-full rounded-md bg-slate-200 text-slate-600"
+                  >
+                    <ul
+                      class="tablet2:hidden-menu-content tablet2:mt-2 tablet2:items-start flex flex-col items-center gap-4 py-6 px-4"
+                    >
+                      <li class="hover:font-bold"><a>Overview</a></li>
+                      <li class="hover:font-bold"><a>Pricing</a></li>
+                      <li class="hover:font-bold"><a>Marketplace</a></li>
+                      <li class="hover:font-bold"><a>Features</a></li>
+                      <li class="hover:font-bold"><a>Integrations</a></li>
+                    </ul>
+                  </div>
+                </template>
+              </li>
+              <li
+                class="link-item tablet2:my-0 tablet2:hover:text-white relative my-6 flex cursor-pointer flex-col items-center"
+                x-on:click="onMenuClick('company')"
+              >
+                <div class="flex items-center">
+                  <a
+                    class="tablet2:text-slate-200 tablet2:hover:text-white font-bold text-slate-800"
+                    >Company</a
+                  >
+                  <img
+                    class="tablet2:block hidden pl-2"
+                    x-bind:class="activeMenu === 'company' && 'arrow-hover'"
+                    src="./images/icon-arrow-light.svg"
+                    alt="Icon arrow"
+                  />
+                  <img
+                    class="tablet2:hidden pl-2"
+                    x-bind:class="activeMenu === 'company' && 'arrow-hover'"
+                    src="./images/icon-arrow-dark.svg"
+                    alt="Icon arrow"
+                  />
+                </div>
+                <template x-if="activeMenu === 'company'">
+                  <div
+                    class="hidden-submenu tablet2:absolute tablet2:left-0 tablet2:top-[25px] tablet2:w-[160%] tablet2:-translate-x-[20%] tablet2:bg-white tablet2:text-black my-4 w-full rounded-md bg-slate-200 text-slate-500"
+                  >
+                    <ul
+                      class="tablet2:hidden-menu-content tablet2:mt-2 tablet2:items-start flex flex-col items-center gap-4 py-6 px-4"
+                    >
+                      <li class="hover:font-bold"><a>About</a></li>
+                      <li class="hover:font-bold"><a>Team</a></li>
+                      <li class="hover:font-bold"><a>Blog</a></li>
+                      <li class="hover:font-bold"><a>Careers</a></li>
+                    </ul>
+                  </div>
+                </template>
+              </li>
+              <li
+                class="link-item tablet2:my-0 tablet2:hover:text-white relative my-6 flex cursor-pointer flex-col items-center"
+                x-on:click="onMenuClick('connect')"
+              >
+                <div class="flex items-center">
+                  <a
+                    class="tablet2:text-slate-200 tablet2:hover:text-white font-bold text-slate-800"
+                    >Connect</a
+                  >
+                  <img
+                    class="tablet2:block hidden pl-2"
+                    x-bind:class="activeMenu === 'connect' && 'arrow-hover'"
+                    src="./images/icon-arrow-light.svg"
+                    alt="Icon arrow"
+                  />
+                  <img
+                    class="tablet2:hidden pl-2"
+                    x-bind:class="activeMenu === 'connect' && 'arrow-hover'"
+                    src="./images/icon-arrow-dark.svg"
+                    alt="Icon arrow"
+                  />
+                </div>
+                <template x-if="activeMenu === 'connect'">
+                  <div
+                    class="hidden-submenu tablet2:absolute tablet2:left-0 tablet2:top-[25px] tablet2:w-[160%] tablet2:-translate-x-[20%] tablet2:bg-white tablet2:text-black my-4 w-full rounded-md bg-slate-200 text-slate-500"
+                  >
+                    <ul
+                      class="tablet2:hidden-menu-content tablet2:mt-2 tablet2:items-start flex flex-col items-center gap-4 py-6 px-4"
+                    >
+                      <li class="hover:font-bold"><a>Contact</a></li>
+                      <li class="hover:font-bold"><a>Newsletter</a></li>
+                      <li class="hover:font-bold"><a>LinkedIn</a></li>
+                    </ul>
+                  </div>
+                </template>
+              </li>
+            </ul>
+            <hr class="tablet2:hidden w-full" />
+            <!-- sign-in & sign-up menu -->
+            <ul
+              class="tablet2:flex-row tablet2:items-center tablet2:gap-8 flex flex-col items-center"
+            >
+              <li class="tablet2:my-0 my-6 flex cursor-pointer items-center">
+                <a
+                  class="tablet2:text-slate-200 tablet2:hover:text-white font-bold text-slate-800"
+                  href="#product"
+                  >Login</a
+                >
+              </li>
+              <li>
+                <button
+                  class="signup__button.round.active.wider tablet2:block hidden"
+                >
+                  Sign Up
+                </button>
+                <button
+                  class="signup__button.round.active.wider.spec tablet2:hidden"
+                >
+                  Sign Up
+                </button>
+              </li>
+            </ul>
+          </div>
+        </template>
+        <!-- hamburger button -->
         <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://www.frontendmentor.io/challenges/blogr-landing-page-EX2RLAApP"
-          target="_blank"
-          >Frontend Mentor challenge</a
+          id="mobile-menu-toggle"
+          x-on:click="onToggle"
+          class="tablet2:hidden flex cursor-pointer items-center"
         >
-      </div>
-      <div>
-        for
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA"
-          target="_blank"
-          >Optimum BH</a
+          <template x-if="menuToggle">
+            <img src="./images/icon-close.svg" alt="Hambuger Icon" />
+          </template>
+          <template x-if="!menuToggle">
+            <img src="./images/icon-hamburger.svg" alt="Hambuger Icon" />
+          </template>
+        </a>
+      </nav>
+
+      <!-- Intro section -->
+      <section class="font-overpass my-[7.8rem] text-center">
+        <h1 class="tablet:text-6xl mb-4 text-[2.2rem] font-bold text-white">
+          A modern publishing platform
+        </h1>
+        <p class="text-xl font-normal text-slate-200">
+          Grow your audience and build your online brend
+        </p>
+        <div class="font-ubuntu mt-12 flex items-center justify-center gap-4">
+          <button class="start__button.round.active">Start for Free</button>
+          <button class="more__button.round.border">Learn More</button>
+        </div>
+      </section>
+    </header>
+
+    <main role="FAQ page section" class="relative flex-[2]">
+      <!-- Future section -->
+      <section
+        class="text-prim-very-dark-blue mx-6 mt-[100px] overflow-x-hidden px-2 md:ml-6 md:ml-[165px] md:px-0 md:pl-2 md:pt-[60px]"
+      >
+        <h2
+          class="tablet:text-4xl tablet:font-medium tablet:my-8 mb-10 text-center text-[28px] font-normal"
         >
-        Internship.
+          Designed for the future
+        </h2>
+
+        <div
+          class="tablet:flex-row-reverse tablet:items-start flex flex-col items-center gap-14"
+        >
+          <div class="tablet:min-w-[44%] tablet:basis-[44%] w-full">
+            <img
+              class="tablet:hidden m-auto block"
+              src="images/illustration-editor-mobile.svg"
+              alt="Illustration Editor Mobile"
+            />
+
+            <img
+              class="tablet:block tablet:min-w-[925px] -mt-[155px] hidden"
+              src="images/illustration-editor-desktop.svg"
+              alt="Illustration Editor Desktop"
+            />
+          </div>
+
+          <div class="tablet:my-8 tablet:text-left basis-[56%] text-center">
+            <div class="my-12">
+              <h3 class="tablet:font-medium my-6 text-[28px] font-normal">
+                Introducing an extensible editor
+              </h3>
+              <p class="text-base font-light leading-7 tracking-wider">
+                Blogr features an exceedingly intuitive interface which lets you
+                focus on one thing: creating content. The editor supports
+                management of multiple blogs and allows easy manipulation of
+                embeds such as images, videos, and Markdown. Extensibility with
+                plugins and themes provide easy ways to add functionality or
+                change the looks of a blog.
+              </p>
+            </div>
+
+            <div class="my-12">
+              <h3 class="tablet:font-medium my-6 text-[28px] font-normal">
+                Robust content management
+              </h3>
+              <p class="text-base font-light leading-7 tracking-wider">
+                Flexible content management enables users to easily move through
+                posts. Increase the usability of your blog by adding customized
+                categories, sections, format, or flow. With this functionality,
+                you’re in full control.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="tablet:px-[165px] tablet:my-14 section-gradient relative z-[120] mt-[160px] mb-16 flex justify-center rounded-tr-[5rem] rounded-bl-[5rem] py-12 px-6"
+      >
+        <div class="tablet:block section-bg absolute -z-[1] hidden"></div>
+        <div
+          class="section-bg-mob tablet:hidden absolute -z-[1] rounded-tr-[5rem] rounded-bl-[5rem]"
+        ></div>
+        <!--  -->
+        <div
+          class="tablet:items-center tablet:flex-row tablet:justify-center flex flex-col justify-center"
+        >
+          <div
+            class="tablet:block tablet:max-h-[300px] tablet:basis-[44%] hidden overflow-visible"
+          >
+            <img
+              class="tablet:min-w-[552px] tablet:max-h-[579px] tablet:-mt-[120px] block w-max"
+              src="./images/illustration-phones.svg"
+              alt="Illustration Phones"
+            />
+          </div>
+
+          <div
+            class="tablet:hidden absolute left-1/2 top-0 min-w-[90%] -translate-x-1/2 -translate-y-1/2 overflow-visible"
+          >
+            <img
+              class="block"
+              src="./images/illustration-phones.svg"
+              alt="Illustration Phones"
+            />
+          </div>
+
+          <div
+            class="tablet:px-0 tablet:py-0 tablet:basis-[56%] tablet:text-left px-4 pt-[180px] pb-14 text-center"
+          >
+            <h3 class="tablet:font-medium mb-6 text-3xl font-normal text-white">
+              State of the Art Infrastructure
+            </h3>
+            <p class="text-base font-light leading-7 tracking-wider text-white">
+              With reliability and speed in mind, worldwide data centers provide
+              the backbone for ultra-fast connectivity. This ensures your site
+              will load instantly, no matter where your readers are, keeping
+              your site competitive.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="text-prim-very-dark-blue mx-6 mb-[80px] mt-[100px] px-2 sm:ml-0 md:mt-[160px] md:mr-[165px] md:px-0 lg:ml-[165px]"
+      >
+        <div class="flex flex-col items-center md:flex-row md:gap-14">
+          <div class="tablet:min-w-[44%] w-full overflow-visible bg-slate-200">
+            <img
+              class="tablet:hidden m-auto block"
+              src="images/illustration-laptop-mobile.svg"
+              alt="Illustration Editor Mobile"
+            />
+
+            <img
+              class="tablet:block tablet:min-w-[974px] -mt-[60px] -ml-[420px] hidden w-max"
+              src="images/illustration-laptop-desktop.svg"
+              alt="Illustration Editor Desktop"
+            />
+          </div>
+
+          <div class="tablet:my-8 tablet:text-left basis-[56%] text-center">
+            <div class="my-12">
+              <h3 class="tablet:font-medium my-6 text-[28px] font-normal">
+                Free, open, simple
+              </h3>
+              <p class="text-base font-light leading-7 tracking-wider">
+                Blogr is a free and open source application backed by a large
+                community of helpful developers. It supports features such as
+                code syntax highlighting, RSS feeds, social media integration,
+                third-party commenting tools, and works seamlessly with Google
+                Analytics. The architecture is clean and is relatively easy to
+                learn.
+              </p>
+            </div>
+
+            <div class="my-12">
+              <h3 class="tablet:font-medium my-6 text-[28px] font-normal">
+                Powerful tooling
+              </h3>
+              <p class="text-base font-light leading-7 tracking-wider">
+                Batteries included. We built a simple and straightforward CLI
+                tool that makes customization and deployment a breeze, but
+                capable of producing even the most complicated sites.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer
+      role="footer"
+      class="tablet:px-[165px] bg-neutral-very-dark-black-blue flex-1 rounded-tr-[5rem] px-6 py-16 text-white"
+    >
+      <div
+        class="tablet:flex-row tablet:justify-start tablet:items-start flex flex-col items-center"
+      >
+        <div class="tablet:mr-[15%] mb-16 block">
+          <img class="block" src="./images/logo.svg" alt="Logo" />
+        </div>
+
+        <div class="tablet:mr-[15%] tablet:text-left text-center">
+          <p class="text-lg font-medium">Product</p>
+
+          <ul
+            class="footer-list text-neutral-grayish-blue my-8 flex flex-col gap-4"
+          >
+            <li><a href="#">Overview</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#"> Marketplace</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Integrations</a></li>
+          </ul>
+        </div>
+
+        <div class="tablet:mr-[15%] tablet:text-left text-center">
+          <p class="text-lg font-medium">Company</p>
+          <ul
+            class="footer-list text-neutral-grayish-blue my-8 flex flex-col gap-4"
+          >
+            <li><a href="#">About</a></li>
+            <li><a href="#">Team</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Careers</a></li>
+          </ul>
+        </div>
+
+        <div class="tablet:text-left text-center">
+          <p class="text-lg font-medium">Connect</p>
+
+          <ul
+            class="footer-list text-neutral-grayish-blue my-8 flex flex-col gap-4"
+          >
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Newsletter</a></li>
+            <li><a href="#">LinkedIn</a></li>
+          </ul>
+        </div>
       </div>
 
-      <div class="mt-3">
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA/frontend_mentor_challenges/tree/blogr_landing_page/challenges/blogr_landing_page"
-          >Source code</a
-        >
+      <div
+        class="tablet:flex-row tablet: mobile:text-base m-auto mt-10 flex w-max flex-col items-center text-center text-xs text-white"
+      >
+        <div class="mx-2">
+          <a
+            class="text-optimum-blue hover:text-optimum-darkblue"
+            href="https://www.frontendmentor.io/challenges/blogr-landing-page-EX2RLAApP"
+            target="_blank"
+            >Frontend Mentor challenge</a
+          >
+        </div>
+        <div class="mx-2">
+          for
+          <a
+            class="text-optimum-blue hover:text-optimum-darkblue"
+            href="https://github.com/optimumBA"
+            target="_blank"
+            >Optimum BH</a
+          >
+          Internship.
+        </div>
+
+        <div class="mx-2">
+          <a
+            class="text-optimum-blue hover:text-optimum-darkblue"
+            href="https://github.com/Daniel4lm/frontend_mentor_challenges/tree/blogr_landing_page/challenges/blogr_landing_page"
+            >Source code</a
+          >
+        </div>
       </div>
-    </div>
+    </footer>
+
+    <script>
+      document.addEventListener('alpine:init', () => {
+        Alpine.data('menuToggle', () => ({
+          menuToggle: false,
+          activeMenu: '',
+          onToggle() {
+            this.menuToggle = !this.menuToggle
+          },
+          setToggle(newStatus) {
+            this.menuToggle = newStatus
+          },
+          onMenuClick(menuName) {
+            if (this.activeMenu === menuName) {
+              this.activeMenu = ''
+              return
+            }
+            this.activeMenu = menuName
+          },
+        }))
+      })
+    </script>
   </body>
 </html>
