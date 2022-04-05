@@ -27,14 +27,164 @@
     />
     <link rel="manifest" href="../site.webmanifest" />
     <link rel="stylesheet" href="style.css" />
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.9.3/dist/cdn.min.js"
+    ></script>
   </head>
-  <body class="m-0">
-    <div
-      class="flex h-[100vh] w-full flex-col place-content-center text-center"
+  <body
+    class="from-soft-violet to-soft-blue m-0 flex h-full w-[375px] flex-col bg-gradient-to-b lg:h-[100vh] lg:w-full"
+    x-data="{ opened_question: 0 }"
+  >
+    <section
+      class="font-kumbh text-very-dark-grayish-blue mx-auto mt-28 flex max-h-[600px] w-[300px] flex-col rounded-3xl bg-white px-5 text-left text-[13px] lg:my-auto lg:mb-0 lg:mt-48 lg:max-h-[450px] lg:w-[750px] lg:flex-row lg:content-center lg:overflow-hidden lg:pr-20"
+    >
+      <div class="lg:w-1/2">
+        <img
+          src="images/illustration-woman-online-mobile.svg"
+          class="relative bottom-24 left-[50%] w-52 translate-x-[-50%] lg:bottom-0 lg:left-[26%] lg:hidden lg:w-full lg:translate-y-[33%]"
+        />
+        <img
+          src="images/bg-pattern-mobile.svg"
+          class="relative bottom-40 left-[50%] w-52 translate-x-[-50%] lg:hidden"
+        />
+        <!--Desktop pattern bg-->
+        <img
+          src="images/illustration-woman-online-desktop.svg"
+          class="relative bottom-24 left-[50%] hidden w-52 translate-x-[-50%] lg:bottom-0 lg:left-[26%] lg:block lg:w-full lg:translate-y-[33%]"
+        />
+        <img
+          src="images/illustration-box-desktop.svg"
+          class="absolute left-[155px] bottom-[395px] hidden w-36 lg:block lg:overflow-visible"
+        />
+        <img
+          src="images/bg-pattern-desktop.svg"
+          class="relative bottom-40 left-[50%] hidden w-52 translate-x-[-50%] lg:left-[25%] lg:block lg:h-96 lg:w-full lg:-translate-y-[15%]"
+        />
+      </div>
+
+      <div class="my-auto lg:w-1/2">
+        <p
+          class="text-very-dark-desaturated-blue mb-4 -mt-32 text-center text-3xl font-bold lg:my-8 lg:text-left"
+        >
+          FAQ
+        </p>
+        <!--First question-->
+        <div
+          @click=" opened_question = opened_question == 0 ? null : 0 "
+          :class="{ 'font-bold text-very-dark-desaturated-blue': opened_question == 0 }"
+          class="active:text-soft-red my-4 hover:cursor-pointer"
+        >
+          How many team members can I invite?
+          <img
+            src="images/icon-arrow-down.svg"
+            :class="{ 'rotate-180' : opened_question == 0}"
+            class="float-right mt-1"
+          />
+          <p
+            x-show="opened_question == 0"
+            class="text-dark-grayish-blue pt-2 pr-4 text-[11.5px] font-normal"
+          >
+            You can invite up to 2 additional users on the Free plan. There is
+            no limit on team members for the Premium plan.
+          </p>
+        </div>
+        <hr />
+
+        <!--Second question-->
+        <div
+          @click=" opened_question = opened_question == 1 ? null : 1 "
+          :class="{ 'font-bold text-very-dark-desaturated-blue': opened_question == 1 }"
+          class="active:text-soft-red my-4 hover:cursor-pointer"
+        >
+          <a href="#"> What is the maximum file upload size? </a>
+          <img
+            src="images/icon-arrow-down.svg"
+            :class="{ 'rotate-180' : opened_question == 1}"
+            class="float-right mt-1"
+          />
+          <p
+            x-show="opened_question == 1"
+            class="text-dark-grayish-blue pt-2 pr-4 text-[11.5px] font-normal"
+          >
+            No more than 2GB. All files in your account must fit your allotted
+            storage space.
+          </p>
+        </div>
+        <hr />
+
+        <!--Third question-->
+        <div
+          @click=" opened_question = opened_question == 2 ? null : 2 "
+          :class="{ 'font-bold text-very-dark-desaturated-blue': opened_question == 2}"
+          class="active:text-soft-red my-4 hover:cursor-pointer"
+        >
+          <a href="#"> How do I reset my password? </a>
+          <img
+            src="images/icon-arrow-down.svg"
+            :class=" {'rotate-180' : opened_question == 2} "
+            class="float-right mt-1"
+          />
+          <p
+            x-show="opened_question == 2"
+            class="text-dark-grayish-blue pt-2 pr-4 text-[11.5px] font-normal"
+          >
+            Click “Forgot password” from the login page or “Change password”
+            from your profile page. A reset link will be emailed to you.
+          </p>
+        </div>
+        <hr />
+
+        <!--Fourth question-->
+        <div
+          @click=" opened_question = opened_question == 3 ? null : 3 "
+          :class=" {'font-bold text-very-dark-desaturated-blue': opened_question == 3} "
+          class="active:text-soft-red my-4 hover:cursor-pointer"
+        >
+          Can I cancel my subscription?
+          <img
+            src="images/icon-arrow-down.svg"
+            :class=" {'rotate-180' : opened_question == 3} "
+            class="float-right mt-1"
+          />
+          <p
+            x-show="opened_question == 3"
+            class="text-dark-grayish-blue pt-2 pr-4 text-[11.5px] font-normal"
+          >
+            Hmm
+          </p>
+        </div>
+        <hr />
+
+        <!--Fifth question-->
+        <div
+          @click=" opened_question = opened_question == 4 ? null : 4 "
+          :class="{ 'font-bold text-very-dark-desaturated-blue': opened_question == 4 }"
+          class="active:text-soft-red my-4 hover:cursor-pointer"
+        >
+          Do you provide additional support?
+          <img
+            src="images/icon-arrow-down.svg"
+            :class=" {'rotate-180' : opened_question == 4} "
+            class="float-right mt-1"
+          />
+          <p
+            x-show="opened_question == 4"
+            class="text-dark-grayish-blue pt-2 pr-4 text-[11.5px] font-normal"
+          >
+            Everyday
+          </p>
+        </div>
+        <hr class="mb-12 lg:mb-16" />
+      </div>
+    </section>
+
+    <footer
+      class="mt-auto flex h-[11vh] w-full flex-col place-content-center text-center text-sm text-white"
     >
       <div>
         <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
+          class="hover:text-gray-800"
           href="https://www.frontendmentor.io/challenges/faq-accordion-card-XlyjD0Oam"
           target="_blank"
           >Frontend Mentor challenge</a
@@ -43,7 +193,7 @@
       <div>
         for
         <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
+          class="hover:text-gray-800"
           href="https://github.com/optimumBA"
           target="_blank"
           >Optimum BH</a
@@ -51,13 +201,13 @@
         Internship.
       </div>
 
-      <div class="mt-3">
+      <div class="mt-1">
         <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA/frontend_mentor_challenges/tree/faq_accordion_card/challenges/faq_accordion_card"
+          class="hover:text-gray-800"
+          href="https://github.com/nedimkarcic/frontend_mentor_challenges/tree/faq_accordion_card/challenges/faq_accordion_card"
           >Source code</a
         >
       </div>
-    </div>
+    </footer>
   </body>
 </html>
