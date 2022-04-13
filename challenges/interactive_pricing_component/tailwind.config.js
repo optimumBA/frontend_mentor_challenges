@@ -10,7 +10,6 @@ module.exports = {
         'light-grayish-red': 'hsl(14, 92%, 95%)',
         'light-red': 'hsl(15, 100%, 70%)',
         'pale-blue': 'hsl(226, 100%, 87%)',
-        'white': 'hsl (0, 0%, 100%)',
         'very-pale-blue': 'hsl(230, 100%, 99%)',
         'light-grayish-blue': 'hsl(224, 65%, 95%)',
         'light-grayish-blue-2': 'hsl(223, 50%, 87%)',
@@ -18,7 +17,7 @@ module.exports = {
         'dark-desaturated-blue': 'hsl(227, 35%, 25%)',
       },
       fontFamily: {
-        'manrope': ['Manrope', 'sans-serif',]
+        manrope: ['Manrope', 'sans-serif'],
       },
     },
   },
