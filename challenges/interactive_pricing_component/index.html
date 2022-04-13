@@ -59,6 +59,7 @@
           max="5"
           step="1"
           class="slider mx-auto lg:col-span-2"
+          id="price-slider"
         />
         <div
           class="text-dark-desaturated-blue my-6 text-3xl font-extrabold lg:col-start-2 lg:row-start-1"
@@ -78,7 +79,7 @@
           <input
             type="checkbox"
             class="peer absolute left-1/2 h-full w-full -translate-x-1/2 appearance-none rounded-md"
-            id="billingChange"
+            id="yearly-billing-toggle"
           />
           <span
             class="bg-light-grayish-blue-2 peer-checked:bg-strong-cyan ml-2 flex h-7 w-14 flex-shrink-0 items-center rounded-full p-1 duration-300 ease-in-out after:h-5 after:w-5 after:rounded-full after:bg-slate-50 after:shadow-md after:duration-300 group-hover:after:translate-x-1 peer-checked:after:translate-x-6"
@@ -151,7 +152,7 @@
       let pageviewsChange = ['10K', '50K', '100K', '500K', '1M']
 
       let input = document.getElementById('input')
-      let billingChange = document.getElementById('billingChange')
+      let billingChange = document.getElementById('yearly-billing-toggle')
       let pageviewsOutput = document.getElementById('pageviews-output')
       output = document.getElementById('output')
 
