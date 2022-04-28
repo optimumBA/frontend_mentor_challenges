@@ -25,39 +25,77 @@
       sizes="16x16"
       href="../images/favicon-16x16.png"
     />
+    <!--Google font by style-guide.md-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
     <link rel="manifest" href="../site.webmanifest" />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="m-0">
-    <div
-      class="flex h-[100vh] w-full flex-col place-content-center text-center"
-    >
-      <div>
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://www.frontendmentor.io/challenges/qr-code-component-iux_sIO_H"
-          target="_blank"
-          >Frontend Mentor challenge</a
-        >
-      </div>
-      <div>
-        for
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA"
-          target="_blank"
-          >Optimum BH</a
-        >
-        Internship.
+
+  <!--Body Tag-->
+  <body class="bg-mine-bg">
+    <main>
+      <!--Default Frontend Mentor Challenge Stuff-->
+      <div class="grid h-12 w-full grid-cols-3 gap-4 bg-red-600 text-center">
+        <div>
+          <a
+            class="text-optimum-blue hover:text-optimum-darkblue"
+            href="https://www.frontendmentor.io/challenges/qr-code-component-iux_sIO_H"
+            target="_blank"
+            >Frontend Mentor challenge</a
+          >
+        </div>
+
+        <div>
+          for
+          <a
+            class="text-optimum-blue hover:text-optimum-darkblue"
+            href="https://github.com/optimumBA"
+            target="_blank"
+            >Optimum BH</a
+          >
+          Internship.
+        </div>
+
+        <div>
+          <a
+            class="text-optimum-blue hover:text-optimum-darkblue"
+            href="https://github.com/optimumBA/frontend_mentor_challenges/tree/qr_code_component/challenges/qr_code_component"
+            >Source code</a
+          >
+        </div>
       </div>
 
-      <div class="mt-3">
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA/frontend_mentor_challenges/tree/qr_code_component/challenges/qr_code_component"
-          >Source code</a
-        >
+      <!--Main Content-->
+      <div class="flex h-screen items-center justify-center">
+        <!--Parent Div-->
+        <div class="grid-cols-0 grid h-fit w-96 gap-0 rounded-xl bg-gray-50">
+          <!--Img Div-->
+          <div class="mx-auto h-80 w-80 rounded-lg pt-4">
+            <img
+              src="images/image-qr-code.png"
+              alt="QR Code"
+              class="rounded-xl"
+            />
+          </div>
+
+          <!--Text Div-->
+          <div class="pb-8 pt-8 text-center">
+            <h2 class="font-outfit pb-6 pr-12 pl-12 text-2xl font-bold">
+              Improve your front-end skills by building projects
+            </h2>
+            <p class="pr-12 pl-12 text-sm font-thin text-slate-900">
+              Scan the QR code to visit Frontend Mentor and take your coding
+              skills to the next level
+            </p>
+          </div>
+        </div>
       </div>
-    </div>
+    </main>
   </body>
 </html>
