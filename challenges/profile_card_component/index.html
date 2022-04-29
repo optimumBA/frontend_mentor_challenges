@@ -25,39 +25,49 @@
       sizes="16x16"
       href="../images/favicon-16x16.png"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"> 
     <link rel="manifest" href="../site.webmanifest" />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="m-0">
-    <div
-      class="flex h-[100vh] w-full flex-col place-content-center text-center"
-    >
-      <div>
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://www.frontendmentor.io/challenges/profile-card-component-cfArpWshJ"
-          target="_blank"
-          >Frontend Mentor challenge</a
-        >
-      </div>
-      <div>
-        for
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA"
-          target="_blank"
-          >Optimum BH</a
-        >
-        Internship.
+  <body class="bg-dgb">
+
+    <!--Div to center items-->
+    <div class="">
+
+      <!--Div to wrap 3 divs-->
+      <div class="rounded-xl bg-slate-50">
+
+        <!--Div sa bg slikom gdje treba prekrit pola diva visinom-->
+        <div></div>
+        
+        <!--Div za stats-->
+        <div class="grid grid-cols-3 items-center border-t-2 font-kumbh text-center">
+
+          <!--prvi-->
+          <div>
+            <h2 class="font-18 font-semibold text-gray-600">80K</h2>
+            <p class="font-extralight text-xs text-gray-500">Followers</p>
+          </div>
+
+          <!--drugi-->
+          <div>
+            <h2 class="font-18 font-semibold text-gray-600">803K</h2>
+            <p class="font-extralight text-xs text-gray-500">Likes</p>
+          </div>
+
+          <!--treci-->
+          <div>
+            <h2 class="font-18 font-semibold text-gray-600">1.4K</h2>
+            <p class="font-extralight text-xs text-gray-500">Photos</p>
+          </div>
+
+        </div>
+
       </div>
 
-      <div class="mt-3">
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA/frontend_mentor_challenges/tree/profile_card_component/challenges/profile_card_component"
-          >Source code</a
-        >
-      </div>
     </div>
+
   </body>
 </html>
