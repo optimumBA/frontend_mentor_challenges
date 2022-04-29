@@ -25,38 +25,75 @@
       sizes="16x16"
       href="../images/favicon-16x16.png"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@;400;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="manifest" href="../site.webmanifest" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="m-0">
-    <div
-      class="flex h-[100vh] w-full flex-col place-content-center text-center"
-    >
-      <div>
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://www.frontendmentor.io/challenges/stats-preview-card-component-8JqbgoU62"
-          target="_blank"
-          >Frontend Mentor challenge</a
-        >
-      </div>
-      <div>
-        for
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA"
-          target="_blank"
-          >Optimum BH</a
-        >
-        Internship.
-      </div>
 
-      <div class="mt-3">
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA/frontend_mentor_challenges/tree/stats_preview_card_component/challenges/stats_preview_card_component"
-          >Source code</a
-        >
+  <body class="bg-very-dark-blue">
+    <!--Div Position-->
+    <div class="flex h-screen items-center justify-center">
+      <!--Div main-->
+      <div class="grid h-fit w-fit grid-cols-2 p-52">
+        <!--Desni dio-->
+        <div class="bg-dark-desa grid items-center rounded-l-xl text-gray-50">
+          <!--Div za h-->
+          <div class="font-Inter pl-20 pr-20 text-left text-4xl font-bold">
+            <h2 class="">
+              Get <span class="text-soft-violet">insights</span> that help your
+              buisiness grow.
+            </h2>
+          </div>
+
+          <!--Div za p-->
+          <div class="text-15 font-Deca pl-20 pr-40 text-left">
+            <p>
+              Discover the benefits of data analytics and make better decisions
+              regarding revenue, customer experience, and overall effeciency.
+            </p>
+          </div>
+
+          <!--Div for Status elements-->
+          <div class="grid grid-cols-3 gap-0 pl-20 pr-20 text-left">
+            <!--1. element-->
+            <div>
+              <h2 class="font-Inter text-2xl font-bold">10k+</h2>
+              <p class="text-15 font-Deca">COMPANMIES</p>
+            </div>
+
+            <!--2. element-->
+            <div>
+              <h2 class="font-Inter text-2xl font-bold">314</h2>
+              <p class="text-15 font-Deca">TEMPLATES</p>
+            </div>
+
+            <!--3. element-->
+            <div>
+              <h2 class="font-Inter text-2xl font-bold">12M+</h2>
+              <p class="text-15 font-Deca">QUERIES</p>
+            </div>
+          </div>
+        </div>
+
+        <!--Lijevi dio (slika) -->
+        <div class="bg-soft-violet h-full w-full rounded-r-xl">
+          <img
+            src="images/image-header-desktop.jpg"
+            alt="Status Preview"
+            class="h-full w-full rounded-r-xl opacity-40"
+          />
+        </div>
       </div>
     </div>
   </body>
