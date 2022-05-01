@@ -32,76 +32,66 @@
     <link rel="stylesheet" href="style.css" />
   </head>
 
-  <body class="bg-dgb font-kumbh">
+  <body class="bg-dc font-kumbh">
+  
+    <!--Div to center main div-->
+  <div class="flex h-[100vh] w-full flex-col items-center justify-center">
 
-    <!--Div to center bg and main div in center-->
-    <div class="bg-dc flex h-[100vh] w-full flex-col items-center justify-center text-center">
+    <!--main div-->
+    <div class="absolute rounded-xl bg-gray-50 flex w-[320px] flex-col items-center justify-center">
 
-      <!--main div-->
-      <div class="bg-white flex-col overflow-hidden rounded-xl mobile:w-80 flex h-[375px] w-[88%]">
+      <!--svg div-->
+      <div class="card-bg w-full h-[80px] rounded-t-xl">
+      </div>
 
-        <!--profile positioning-->
-        <div class="w-full basis-[35%]"></div>
+      <!--img div-->
+      <div class="bg-gray-50">
+        <img src="images/image-victor.jpg" alt="Viktor" class="rounded-full border-2">
+      </div>
 
-        <!--div for img center over profile bg-->
-        <div class="relative flex flex-shrink basis-[68%] flex-col justify-end">
+      <!--viktor-->
+      <div class="text-center text-xl pt-4 pb-4 font-semibold">
+        Victor Crest <span class="text-slate-500 font-medium"> 26 </span>
+      </div>
 
-          <!--img-->
-          <img src="./images/image-victor.jpg" alt="Profile Image" class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border-[3px] border-white"/>
+      <!--stats div-->
+      <div class="bg-gray-50 w-full h-[80px] border-t-2 flex justify-around items-center text-center rounded-b-xl">
 
-          <!--Viktor's Div-->
-          <div>
-            <h2 class="text-vddb text-xl font-semibold">
-              Victor Crest
-              <span class="text-dgb font-normal">
-                26
-              </span>
-            </h2>
-            <p class="text-dgb my-2 text-sm tracking-wide">
-              London
-            </p>
-          </div>
+        <!--Prvi-->
+        <div>
+          <h2 class="font-extrabold text-xl">
+            80K
+          </h2>
+          <p class="text-gray-600 text-sm tracking-wide">
+            Followers
+          </p>
+        </div>
 
-          <!--div for stats-->
-          <div class="mt-4 flex justify-around border-t border-gray-200 p-4 text-center">
+        <!--drugi-->
+        <div>
+          <h2 class="font-extrabold text-xl">
+            804K
+          </h2>
+          <p class="text-gray-600 text-sm tracking-wide">
+            Likes
+          </p>
+        </div>
 
-            <!--first-->
-            <div>
-              <h2 class="text-vddb text-xl font-bold">
-                80K
-              </h2>
-              <p class="text-dgb mt-2 text-xs tracking-wide">
-                Followers
-              </p>
-            </div>
-
-            <!--secound-->
-            <div>
-              <h2 class="text-vddb text-xl font-bold">
-                803K
-              </h2>
-              <p class="text-dgb mt-2 text-xs tracking-wide">
-                Likes
-              </p>
-            </div>
-
-            <!--third-->
-            <div>
-              <h2 class="text-vddb text-xl font-bold">
-                1.4K
-              </h2>
-              <p class="text-dgb mt-2 text-xs tracking-wide">
-                Photos
-              </p>
-            </div>
-
-          </div>
-
+        <!--treci-->
+        <div>
+          <h2 class="font-extrabold text-xl">
+            1.4K
+          </h2>
+          <p class="text-gray-600 text-sm tracking-wide">
+            Pictures
+          </p>
         </div>
 
       </div>
 
     </div>
 
-  </body>
+  </div>
+  
+</body>
 </html>

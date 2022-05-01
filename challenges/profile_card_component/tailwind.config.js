@@ -22,7 +22,10 @@ module.exports = {
         mobile: '375px',
         desktop: '1440px',
       },
-      
+      backgroundImage: {
+        'bg-pattern-top': "url('/images/bg-pattern-top.svg')",
+        'bg-pattern-bottom': "url('/images/bg-pattern-bottom.png')",
+      },
     },
   },
   plugins: [],
