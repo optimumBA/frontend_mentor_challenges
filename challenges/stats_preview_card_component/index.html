@@ -42,30 +42,30 @@
   </head>
 
   <body class="bg-very-dark-blue">
+
     <!--Div Position-->
-    <div class="flex h-screen items-center justify-center">
+    <div class="flex h-[100vh] w-full flex-col items-center justify-center">
+
       <!--Div main-->
-      <div class="grid h-fit w-fit grid-cols-2 p-52">
+      <div class="flex flex-row">
+
         <!--Desni dio-->
-        <div class="bg-dark-desa grid items-center rounded-l-xl text-gray-50">
+        <div class="bg-dark-desa text-gray-50 flex h-[350px] w-[450px] flex-col items-start justify-start rounded-l-xl">
+
           <!--Div za h-->
-          <div class="font-Inter pl-20 pr-20 text-left text-4xl font-bold">
-            <h2 class="">
+          <div class="h-full w-full font-Inter text-left text-4xl font-bold pt-10 mx-4">
               Get <span class="text-soft-violet">insights</span> that help your
               buisiness grow.
-            </h2>
           </div>
 
           <!--Div za p-->
-          <div class="text-15 font-Deca pl-20 pr-40 text-left">
-            <p>
+          <div class="w-full h-full text-15 font-Deca text-left pt-10 pr-10 mx-4">
               Discover the benefits of data analytics and make better decisions
               regarding revenue, customer experience, and overall effeciency.
-            </p>
           </div>
 
           <!--Div for Status elements-->
-          <div class="grid grid-cols-3 gap-0 pl-20 pr-20 text-left">
+          <div class="flex w-full h-full flex-row justify-around items-center pb-5">
             <!--1. element-->
             <div>
               <h2 class="font-Inter text-2xl font-bold">10k+</h2>
@@ -83,18 +83,23 @@
               <h2 class="font-Inter text-2xl font-bold">12M+</h2>
               <p class="text-15 font-Deca">QUERIES</p>
             </div>
+
           </div>
+
         </div>
 
         <!--Lijevi dio (slika) -->
-        <div class="bg-soft-violet h-full w-full rounded-r-xl">
+        <div class="bg-soft-violet h-fit w-fit rounded-r-xl">
           <img
             src="images/image-header-desktop.jpg"
             alt="Status Preview"
-            class="h-full w-full rounded-r-xl opacity-40"
-          />
+            class="h-[350px] w-[350px] rounded-r-xl opacity-40"/>
+
         </div>
+
       </div>
+
     </div>
+
   </body>
 </html>
