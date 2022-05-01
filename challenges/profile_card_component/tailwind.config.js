@@ -12,16 +12,17 @@ module.exports = {
         'dg': '#969696',
       },
       fontFamily: {
-        outfit: ['Outfit', ...defaultTheme.fontFamily.sans],
         kumbh: ['Kumbh Sans', ...defaultTheme.fontFamily.sans],
       },
-      fontSize: {
-        '18': '18px'
+      backgroundImage: {
+        'bg-pattern-bottom': "url('/images/bg-pattern-bottom.png')",
+        'bg-pattern-top': "url('/images/bg-pattern-top.svg')",
       },
       screens: {
         mobile: '375px',
         desktop: '1440px',
       },
+      
     },
   },
   plugins: [],

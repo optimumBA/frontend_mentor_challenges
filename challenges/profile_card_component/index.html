@@ -27,40 +27,74 @@
     />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet"> 
     <link rel="manifest" href="../site.webmanifest" />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="bg-dgb">
 
-    <!--Div to center items-->
-    <div class="">
+  <body class="bg-dgb font-kumbh">
 
-      <!--Div to wrap 3 divs-->
-      <div class="rounded-xl bg-slate-50">
+    <!--Div to center bg and main div in center-->
+    <div class="bg-dc flex h-[100vh] w-full flex-col items-center justify-center text-center">
 
-        <!--Div sa bg slikom gdje treba prekrit pola diva visinom-->
-        <div></div>
-        
-        <!--Div za stats-->
-        <div class="grid grid-cols-3 items-center border-t-2 font-kumbh text-center">
+      <!--main div-->
+      <div class="bg-white flex-col overflow-hidden rounded-xl mobile:w-80 flex h-[375px] w-[88%]">
 
-          <!--prvi-->
+        <!--profile positioning-->
+        <div class="w-full basis-[35%]"></div>
+
+        <!--div for img center over profile bg-->
+        <div class="relative flex flex-shrink basis-[68%] flex-col justify-end">
+
+          <!--img-->
+          <img src="./images/image-victor.jpg" alt="Profile Image" class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border-[3px] border-white"/>
+
+          <!--Viktor's Div-->
           <div>
-            <h2 class="font-18 font-semibold text-gray-600">80K</h2>
-            <p class="font-extralight text-xs text-gray-500">Followers</p>
+            <h2 class="text-vddb text-xl font-semibold">
+              Victor Crest
+              <span class="text-dgb font-normal">
+                26
+              </span>
+            </h2>
+            <p class="text-dgb my-2 text-sm tracking-wide">
+              London
+            </p>
           </div>
 
-          <!--drugi-->
-          <div>
-            <h2 class="font-18 font-semibold text-gray-600">803K</h2>
-            <p class="font-extralight text-xs text-gray-500">Likes</p>
-          </div>
+          <!--div for stats-->
+          <div class="mt-4 flex justify-around border-t border-gray-200 p-4 text-center">
 
-          <!--treci-->
-          <div>
-            <h2 class="font-18 font-semibold text-gray-600">1.4K</h2>
-            <p class="font-extralight text-xs text-gray-500">Photos</p>
+            <!--first-->
+            <div>
+              <h2 class="text-vddb text-xl font-bold">
+                80K
+              </h2>
+              <p class="text-dgb mt-2 text-xs tracking-wide">
+                Followers
+              </p>
+            </div>
+
+            <!--secound-->
+            <div>
+              <h2 class="text-vddb text-xl font-bold">
+                803K
+              </h2>
+              <p class="text-dgb mt-2 text-xs tracking-wide">
+                Likes
+              </p>
+            </div>
+
+            <!--third-->
+            <div>
+              <h2 class="text-vddb text-xl font-bold">
+                1.4K
+              </h2>
+              <p class="text-dgb mt-2 text-xs tracking-wide">
+                Photos
+              </p>
+            </div>
+
           </div>
 
         </div>
