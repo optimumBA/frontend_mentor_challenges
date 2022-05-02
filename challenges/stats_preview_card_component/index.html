@@ -25,63 +25,56 @@
       sizes="16x16"
       href="../images/favicon-16x16.png"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Outfit:wght@;400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="manifest" href="../site.webmanifest" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Kumbh+Sans:wght@500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
   </head>
 
   <body class="bg-very-dark-blue">
 
     <!--Div Position-->
-    <div class="flex h-[100vh] w-full flex-col items-center justify-center">
+    <div class="flex h-[100vh] w-full flex-col items-center justify-center p-4">
 
       <!--Div main-->
-      <div class="flex flex-row">
+      <div class="desktop:flex desktop:flex-row mobile:flex mobile:flex-col-reverse mobile overflow-hidden rounded-lg">
 
-        <!--Desni dio-->
-        <div class="bg-dark-desa text-gray-50 flex h-[350px] w-[450px] flex-col items-start justify-start rounded-l-xl">
+        <!--Div Text-->
+        <div class="bg-dark-desa text-gray-50 desktop:flex desktop:h-[350px] desktop:w-[450px] desktop:flex-col desktop:items-start desktop:justify-start desktop:overflow-hidden
+        mobile:flex mobile:h-[500px] mobile:w-[350px] mobile:flex-col mobile:item-center mobile:justify-center mobile:text-center">
 
           <!--Div za h-->
-          <div class="h-full w-full font-Inter text-left text-4xl font-bold pt-10 mx-4">
+          <div class="h-full w-full desktop:font-inter desktop:text-left desktop:text-4xl desktop:font-extrabold desktop:pt-10 desktop:mx-4
+          mobile:text-3xl mobile:font-bold">
               Get <span class="text-soft-violet">insights</span> that help your
               buisiness grow.
           </div>
 
           <!--Div za p-->
-          <div class="w-full h-full text-15 font-Deca text-left pt-10 pr-10 mx-4">
+          <div class="w-full h-full text-15 font-deca text-left pt-10 pr-10 mx-4">
               Discover the benefits of data analytics and make better decisions
               regarding revenue, customer experience, and overall effeciency.
           </div>
 
           <!--Div for Status elements-->
-          <div class="flex w-full h-full flex-row justify-around items-center pb-5">
+          <div class="desktop:flex desktop:w-full desktop:h-full desktop:flex-row desktop:justify-around desktop:items-center desktop:pb-5
+          mobile:flex mobile:w-full mobile:h-full mobile:flex-col mobile:items-center mobile:justify-center mobile:item-center mobile:pb-8">
             <!--1. element-->
             <div>
-              <h2 class="font-Inter text-2xl font-bold">10k+</h2>
-              <p class="text-15 font-Deca">COMPANMIES</p>
+              <h2 class="font-inter text-2xl font-extrabold">10k+</h2>
+              <p class="text-15 font-deca">COMPANMIES</p>
             </div>
 
             <!--2. element-->
             <div>
-              <h2 class="font-Inter text-2xl font-bold">314</h2>
-              <p class="text-15 font-Deca">TEMPLATES</p>
+              <h2 class="font-inter text-2xl font-extrabold">314</h2>
+              <p class="text-15 font-deca">TEMPLATES</p>
             </div>
 
             <!--3. element-->
             <div>
-              <h2 class="font-Inter text-2xl font-bold">12M+</h2>
-              <p class="text-15 font-Deca">QUERIES</p>
+              <h2 class="font-inter text-2xl font-extrabold">12M+</h2>
+              <p class="text-15 font-deca">QUERIES</p>
             </div>
 
           </div>
@@ -89,11 +82,11 @@
         </div>
 
         <!--Lijevi dio (slika) -->
-        <div class="bg-soft-violet h-fit w-fit rounded-r-xl">
+        <div class="bg-soft-violet mobile:h-[200px] mobile:w-[350px] desktop:h-[350px] desktop:w-[350px]">
           <img
             src="images/image-header-desktop.jpg"
             alt="Status Preview"
-            class="h-[350px] w-[350px] rounded-r-xl opacity-40"/>
+            class="mobile:h-full mobile:w-full desktop:h-[350px] desktop:w-[350px] opacity-60"/>
 
         </div>
 

@@ -4,8 +4,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        Inter: ['Inter', ...defaultTheme.fontFamily.sans],
-        Deca: ['Lexend Deca', ...defaultTheme.fontFamily.sans],
+        'inter': ['Inter', ...defaultTheme.fontFamily.sans],
+        'deca': ['Lexend Deca', ...defaultTheme.fontFamily.sans],
       },
 
       fontSize: {
