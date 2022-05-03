@@ -25,74 +25,111 @@
       sizes="16x16"
       href="../images/favicon-16x16.png"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Kumbh+Sans:wght@500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter&family=Kumbh+Sans:wght@500&family=Outfit:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
 
-  <body class="bg-very-dark-blue">
+  <body class="bg-very-dark-blue font-inter">
+    <!--Frontend Mentor Challenge OptimumBH-->
+    <div
+      class="desktop:absolute desktop:grid desktop:grid-cols-3 desktop:gap-1"
+    >
+      <div>
+        <a
+          class="text-optimum-blue hover:text-optimum-darkblue"
+          href="https://www.frontendmentor.io/challenges/stats-preview-card-component-8JqbgoU62"
+          target="_blank"
+          >Frontend Mentor challenge</a
+        >
+      </div>
+      <div class="text-gray-50">
+        for
+        <a
+          class="text-optimum-blue hover:text-optimum-darkblue"
+          href="https://github.com/optimumBA"
+          target="_blank"
+          >Optimum BH</a
+        >
+        Internship.
+      </div>
+
+      <div class="">
+        <a
+          class="text-optimum-blue hover:text-optimum-darkblue"
+          href="https://github.com/oki-imamovic/frontend_mentor_challenges/tree/stats_preview_card_component/challenges/stats_preview_card_component"
+          >Source code</a
+        >
+      </div>
+    </div>
 
     <!--Div Position-->
     <div class="flex h-[100vh] w-full flex-col items-center justify-center p-4">
-
       <!--Div main-->
-      <div class="desktop:flex desktop:flex-row mobile:flex mobile:flex-col-reverse mobile overflow-hidden rounded-lg">
-
+      <div
+        class="desktop:flex desktop:flex-row mobile:flex mobile:flex-col-reverse mobile overflow-hidden rounded-lg"
+      >
         <!--Div Text-->
-        <div class="bg-dark-desa text-gray-50 desktop:flex desktop:h-[350px] desktop:w-[450px] desktop:flex-col desktop:items-start desktop:justify-start desktop:overflow-hidden
-        mobile:flex mobile:h-[500px] mobile:w-[350px] mobile:flex-col mobile:item-center mobile:justify-center mobile:text-center">
-
+        <div
+          class="bg-dark-desa desktop:flex desktop:h-[350px] desktop:w-[450px] desktop:flex-col desktop:items-start desktop:justify-start desktop:overflow-hidden mobile:flex mobile:h-[500px] mobile:w-[350px] mobile:flex-col mobile:item-center mobile:justify-center mobile:text-center mobile:p-4 text-gray-50"
+        >
           <!--Div za h-->
-          <div class="h-full w-full desktop:font-inter desktop:text-left desktop:text-4xl desktop:font-extrabold desktop:pt-10 desktop:mx-4
-          mobile:text-3xl mobile:font-bold">
-              Get <span class="text-soft-violet">insights</span> that help your
-              buisiness grow.
+          <div
+            class="font-extraextrabold desktop:text-left desktop:text-4xl desktop:pt-10 desktop:mx-4 mobile:text-3xl mobile: mobile:pt-4 h-full w-full"
+          >
+            Get <span class="text-soft-violet">insights</span> that help your
+            buisiness grow.
           </div>
 
           <!--Div za p-->
-          <div class="w-full h-full text-15 font-deca text-left pt-10 pr-10 mx-4">
-              Discover the benefits of data analytics and make better decisions
-              regarding revenue, customer experience, and overall effeciency.
+          <div
+            class="text-15 font-deca mobile:-my-40 mobile:text-center mobile:pl-8 mobile:pr-8 desktop:text-left desktop:pl-0 desktop:pt-10 desktop:pr-12 desktop:mx-4 desktop:-my-4 h-full w-full font-normal text-gray-400"
+          >
+            Discover the benefits of data analytics and make better decisions
+            regarding revenue, customer experience, and overall effeciency.
           </div>
 
           <!--Div for Status elements-->
-          <div class="desktop:flex desktop:w-full desktop:h-full desktop:flex-row desktop:justify-around desktop:items-center desktop:pb-5
-          mobile:flex mobile:w-full mobile:h-full mobile:flex-col mobile:items-center mobile:justify-center mobile:item-center mobile:pb-8">
+          <div
+            class="desktop:flex desktop:flex-row desktop:justify-around desktop:items-center desktop:pb-5 desktop:pt-5 mobile:flex mobile:flex-col mobile:items-center mobile:justify-center mobile:item-center h-full w-full"
+          >
             <!--1. element-->
             <div>
-              <h2 class="font-inter text-2xl font-extrabold">10k+</h2>
-              <p class="text-15 font-deca">COMPANMIES</p>
+              <h2 class="font-extraextrabold text-2xl">10k+</h2>
+              <p class="text-15 font-deca text-gray-400">COMPANMIES</p>
             </div>
 
             <!--2. element-->
-            <div>
-              <h2 class="font-inter text-2xl font-extrabold">314</h2>
-              <p class="text-15 font-deca">TEMPLATES</p>
+            <div
+              class="desktop:pt-0 desktop:pb-0 desktop:pr-0 desktop:pl-0 mobile:pb-8 mobile:pt-8"
+            >
+              <h2 class="font-extraextrabold text-2xl">314</h2>
+              <p class="text-15 font-deca text-gray-400">TEMPLATES</p>
             </div>
 
             <!--3. element-->
             <div>
-              <h2 class="font-inter text-2xl font-extrabold">12M+</h2>
-              <p class="text-15 font-deca">QUERIES</p>
+              <h2 class="font-extraextrabold text-2xl">12M+</h2>
+              <p class="text-15 font-deca text-gray-400">QUERIES</p>
             </div>
-
           </div>
-
         </div>
 
         <!--Lijevi dio (slika) -->
-        <div class="bg-soft-violet mobile:h-[200px] mobile:w-[350px] desktop:h-[350px] desktop:w-[350px]">
+        <div
+          class="bg-soft-violet mobile:h-[250px] mobile:w-[350px] desktop:h-[350px] desktop:w-[350px]"
+        >
           <img
             src="images/image-header-desktop.jpg"
             alt="Status Preview"
-            class="mobile:h-full mobile:w-full desktop:h-[350px] desktop:w-[350px] opacity-60"/>
-
+            class="mobile:h-full mobile:w-full desktop:h-[350px] desktop:w-[350px] opacity-60"
+          />
         </div>
-
       </div>
-
     </div>
-
   </body>
 </html>

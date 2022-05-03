@@ -3,9 +3,13 @@ module.exports = {
   content: ['./challenges/stats_preview_card_component/index.html'],
   theme: {
     extend: {
+      fontWeight: {
+        extraextrabold: 900,
+      },
+
       fontFamily: {
-        'inter': ['Inter', ...defaultTheme.fontFamily.sans],
-        'deca': ['Lexend Deca', ...defaultTheme.fontFamily.sans],
+        inter: ['Inter', ...defaultTheme.fontFamily.sans],
+        deca: ['Lexend Deca', ...defaultTheme.fontFamily.sans],
       },
 
       fontSize: {
