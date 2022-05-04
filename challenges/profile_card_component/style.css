@@ -4,7 +4,7 @@
 @layer components {
 
   .div-status{
-    @apply -my-16 grid w-full grid-cols-3 items-center justify-center gap-2 border-t-[1px] border-gray-300 p-8 text-center
+    @apply text-center border-t-[1px] border-gray-300 items-center justify-center desktop:grid desktop:w-full desktop:grid-cols-3 desktop:gap-2 desktop:p-8 desktop:-my-16 mobile:flex mobile:flex-row mobile:gap-6 mobile:p-4 mobile:-my-12 mobile:w-full
   }
 
   .p-elements{
@@ -16,7 +16,7 @@
   }
 
   .div-victor{
-    @apply my-14 w-full items-center justify-center p-6 text-center
+    @apply w-full items-center justify-center text-center desktop:my-14  desktop:p-6 mobile:my-16
   }
 
   .h-victor{
@@ -32,7 +32,7 @@
   }
 
   .div-img{
-    @apply h-fit w-fit rounded-full border-4 border-gray-50 desktop:absolute desktop:my-[70px] mobile:absolute mobile:my-[30px]
+    @apply h-fit w-fit rounded-full border-4 border-gray-50 desktop:absolute desktop:my-[70px] mobile:absolute mobile:my-[40px]
   }
 
   .div-svg{
@@ -40,6 +40,6 @@
   }
 
   .div-main{
-    @apply font-kumbh desktop:w-[350px] desktop:h-[390px] mobile:w-[280px] mobile:h-[320px] flex flex-col items-center overflow-hidden rounded-2xl bg-slate-50 text-gray-900
+    @apply font-kumbh desktop:w-[350px] desktop:h-[390px] mobile:w-[280px] mobile:h-[300px] flex flex-col items-center overflow-hidden rounded-2xl bg-slate-50 text-gray-900
   }
 }
