@@ -3,6 +3,22 @@
 @tailwind utilities;
 @layer components {
 
+  .bg-mobile {
+    background-image: url('./images/bg-pattern-top.svg'),
+      url('./images/bg-pattern-bottom.svg');
+    background-position: left -740px top -600px, right -740px bottom -620px;
+    background-repeat: no-repeat, no-repeat;
+    background-size: auto, auto;
+  }
+
+  .bg-desktop {
+    background-image: url('./images/bg-pattern-top.svg'),
+      url('./images/bg-pattern-bottom.svg');
+    background-position: left -21vw top -37vw, right -18vw bottom -46vw;
+    background-repeat: no-repeat, no-repeat;
+    background-size: 70%, 70%;
+  }
+
   .div-status{
     @apply text-center border-t-[1px] border-gray-300 items-center justify-center desktop:grid desktop:w-full desktop:grid-cols-3 desktop:gap-2 desktop:p-8 desktop:-my-16 mobile:flex mobile:flex-row mobile:gap-6 mobile:p-4 mobile:-my-12 mobile:w-full
   }
@@ -12,7 +28,7 @@
   }
 
   .h-elements{
-    @apply font-bold text-gray-800 desktop:text-2xl mobile:text-lg
+    @apply font-bold text-gray-700 desktop:text-2xl mobile:text-lg
   }
 
   .div-victor{
@@ -20,7 +36,7 @@
   }
 
   .h-victor{
-    @apply font-bold text-gray-800 desktop:text-2xl mobile:text-xl
+    @apply font-bold text-gray-700 desktop:text-2xl mobile:text-xl
   }
 
   .span-victor{
