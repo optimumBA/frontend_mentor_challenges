@@ -11,6 +11,10 @@ module.exports = {
       fontFamily: {
         outfit: ['Outfit', ...defaultTheme.fontFamily.sans],
       },
+      screens: {
+        mobile: '375px',
+        desktop: '1440px',
+      },
     },
   },
   plugins: [],

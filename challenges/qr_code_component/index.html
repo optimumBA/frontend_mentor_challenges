@@ -38,64 +38,65 @@
   </head>
 
   <!--Body Tag-->
-  <body class="bg-mine-bg">
-    <main>
-      <!--Default Frontend Mentor Challenge Stuff-->
-      <div class="grid h-12 w-full grid-cols-3 gap-4 bg-red-600 text-center">
-        <div>
-          <a
-            class="text-optimum-blue hover:text-optimum-darkblue"
-            href="https://www.frontendmentor.io/challenges/qr-code-component-iux_sIO_H"
-            target="_blank"
-            >Frontend Mentor challenge</a
-          >
-        </div>
-
-        <div>
-          for
-          <a
-            class="text-optimum-blue hover:text-optimum-darkblue"
-            href="https://github.com/optimumBA"
-            target="_blank"
-            >Optimum BH</a
-          >
-          Internship.
-        </div>
-
-        <div>
-          <a
-            class="text-optimum-blue hover:text-optimum-darkblue"
-            href="https://github.com/optimumBA/frontend_mentor_challenges/tree/qr_code_component/challenges/qr_code_component"
-            >Source code</a
-          >
-        </div>
+  <body class="bg-mine-bg font-outfit">
+    <div
+      class="desktop:absolute desktop:grid desktop:grid-cols-3 desktop:gap-1"
+    >
+      <div>
+        <a
+          class="text-optimum-blue hover:text-optimum-darkblue"
+          href="https://www.frontendmentor.io/challenges/qr-code-component-iux_sIO_H"
+          target="_blank"
+          >Frontend Mentor challenge</a
+        >
       </div>
 
-      <!--Main Content-->
-      <div class="flex h-screen items-center justify-center">
-        <!--Parent Div-->
-        <div class="grid-cols-0 grid h-fit w-96 gap-0 rounded-xl bg-gray-50">
-          <!--Img Div-->
-          <div class="mx-auto h-80 w-80 rounded-lg pt-4">
-            <img
-              src="images/image-qr-code.png"
-              alt="QR Code"
-              class="rounded-xl"
-            />
-          </div>
+      <div>
+        for
+        <a
+          class="text-optimum-blue hover:text-optimum-darkblue"
+          href="https://github.com/optimumBA"
+          target="_blank"
+          >Optimum BH</a
+        >
+        Internship.
+      </div>
 
-          <!--Text Div-->
-          <div class="pb-8 pt-8 text-center">
-            <h2 class="font-outfit pb-6 pr-12 pl-12 text-2xl font-bold">
-              Improve your front-end skills by building projects
-            </h2>
-            <p class="pr-12 pl-12 text-sm font-thin text-slate-900">
-              Scan the QR code to visit Frontend Mentor and take your coding
-              skills to the next level
-            </p>
-          </div>
+      <div>
+        <a
+          class="text-optimum-blue hover:text-optimum-darkblue"
+          href="https://github.com/oki-imamovic/frontend_mentor_challenges/tree/qr_code_component/challenges/qr_code_component"
+          >Source code</a
+        >
+      </div>
+    </div>
+
+    <!--Position Div-->
+    <div class="flex h-screen items-center justify-center">
+      <!--Main Div-->
+      <div
+        class="grid-cols-0 desktop:h-fit desktop:w-96 mobile:h-fit mobile:w-[360px] grid gap-0 rounded-xl bg-gray-50"
+      >
+        <!--Img Div-->
+        <div class="mx-auto h-80 w-80 rounded-xl pt-4">
+          <img
+            src="images/image-qr-code.png"
+            alt="QR Code"
+            class="rounded-xl"
+          />
+        </div>
+
+        <!--Text Div-->
+        <div class="pb-8 pt-8 text-center">
+          <h2 class="pb-6 pr-12 pl-12 text-2xl font-bold">
+            Improve your front-end skills by building projects
+          </h2>
+          <p class="pr-12 pl-12 text-sm font-light text-slate-500">
+            Scan the QR code to visit Frontend Mentor and take your coding
+            skills to the next level
+          </p>
         </div>
       </div>
-    </main>
+    </div>
   </body>
 </html>
