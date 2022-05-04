@@ -2,4 +2,44 @@
 @tailwind components;
 @tailwind utilities;
 @layer components {
+
+  .div-status{
+    @apply -my-16 grid w-full grid-cols-3 items-center justify-center gap-2 border-t-[1px] border-gray-300 p-8 text-center
+  }
+
+  .p-elements{
+   @apply font-light tracking-widest text-gray-600 desktop:text-sm mobile:text-xs
+  }
+
+  .h-elements{
+    @apply font-bold text-gray-800 desktop:text-2xl mobile:text-lg
+  }
+
+  .div-victor{
+    @apply my-14 w-full items-center justify-center p-6 text-center
+  }
+
+  .h-victor{
+    @apply font-bold text-gray-800 desktop:text-2xl mobile:text-xl
+  }
+
+  .span-victor{
+    @apply mx-2 font-medium text-gray-600 desktop:text-2xl mobile:text-xl
+  }
+
+  .p-victor{
+    @apply pt-2 font-light tracking-wide text-gray-600 desktop:text-sm mobile:text-xs
+  }
+
+  .div-img{
+    @apply h-fit w-fit rounded-full border-4 border-gray-50 desktop:absolute desktop:my-[70px] mobile:absolute mobile:my-[30px]
+  }
+
+  .div-svg{
+    @apply desktop:h-[120px] desktop:w-[400px] mobile:h-[80px] mobile:w-[280px]
+  }
+
+  .div-main{
+    @apply font-kumbh desktop:w-[350px] desktop:h-[390px] mobile:w-[280px] mobile:h-[320px] flex flex-col items-center overflow-hidden rounded-2xl bg-slate-50 text-gray-900
+  }
 }
