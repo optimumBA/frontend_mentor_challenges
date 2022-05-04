@@ -6,10 +6,10 @@ module.exports = {
       colors: {
         'optimum-blue': '#009efc',
         'optimum-darkblue': '#0389e1',
-        'dc': '#19a2ae',
-        'vddb': '#2d3248',
-        'dgb': '#6a6f81',
-        'dg': '#969696',
+        dc: '#19a2ae',
+        vddb: '#2d3248',
+        dgb: '#6a6f81',
+        dg: '#969696',
       },
       fontFamily: {
         kumbh: ['Kumbh Sans', ...defaultTheme.fontFamily.sans],

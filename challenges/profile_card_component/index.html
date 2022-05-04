@@ -25,73 +25,87 @@
       sizes="16x16"
       href="../images/favicon-16x16.png"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="manifest" href="../site.webmanifest" />
     <link rel="stylesheet" href="style.css" />
   </head>
 
   <body class="bg-dc font-kumbh">
-  
     <!--Div to center main div-->
-  <div class="flex h-[100vh] w-full flex-col items-center justify-center">
+    <div class="flex h-[100vh] w-full flex-col items-center justify-center">
+      <!--Main Div-->
+      <div
+        class="font-kumbh desktop:w-[350px] desktop:h-[390px] mobile:w-[280px] mobile:h-[340px] flex flex-col items-center overflow-hidden rounded-2xl bg-slate-50 text-gray-900"
+      >
+        <!--Div Svg-->
+        <div class="">
+          <img
+            src="images/bg-pattern-card.svg"
+            alt="card bg"
+            class="h-[120px] w-[400px]"
+          />
+        </div>
 
-    <!--main div-->
-    <div class="absolute rounded-xl bg-gray-50 flex w-[320px] flex-col items-center justify-center">
+        <!--Img Div-->
+        <div
+          class="absolute my-[70px] h-fit w-fit rounded-full border-4 border-gray-50"
+        >
+          <img
+            src="images/image-victor.jpg"
+            alt="Victor Img"
+            class="h-full w-full rounded-full"
+          />
+        </div>
 
-      <!--svg div-->
-      <div class="card-bg w-full h-[80px] rounded-t-xl">
-      </div>
-
-      <!--img div-->
-      <div class="bg-gray-50">
-        <img src="images/image-victor.jpg" alt="Viktor" class="rounded-full border-2">
-      </div>
-
-      <!--viktor-->
-      <div class="text-center text-xl pt-4 pb-4 font-semibold">
-        Victor Crest <span class="text-slate-500 font-medium"> 26 </span>
-      </div>
-
-      <!--stats div-->
-      <div class="bg-gray-50 w-full h-[80px] border-t-2 flex justify-around items-center text-center rounded-b-xl">
-
-        <!--Prvi-->
-        <div>
-          <h2 class="font-extrabold text-xl">
-            80K
+        <!--Div Victor-->
+        <div class="my-14 w-full items-center justify-center p-6 text-center">
+          <h2 class="text-2xl font-bold text-gray-800">
+            Victor Crest
+            <span class="mx-2 text-2xl font-medium text-gray-600">26</span>
           </h2>
-          <p class="text-gray-600 text-sm tracking-wide">
-            Followers
+
+          <p class="pt-2 text-sm font-light tracking-wide text-gray-600">
+            London
           </p>
         </div>
 
-        <!--drugi-->
-        <div>
-          <h2 class="font-extrabold text-xl">
-            804K
-          </h2>
-          <p class="text-gray-600 text-sm tracking-wide">
-            Likes
-          </p>
-        </div>
+        <!--Div Status-->
+        <div
+          class="-my-16 grid w-full grid-cols-3 items-center justify-center gap-2 border-t-[1px] border-gray-300 p-8 text-center"
+        >
+          <!--First Element-->
+          <div>
+            <h2 class="text-xl font-bold text-gray-800">80K</h2>
 
-        <!--treci-->
-        <div>
-          <h2 class="font-extrabold text-xl">
-            1.4K
-          </h2>
-          <p class="text-gray-600 text-sm tracking-wide">
-            Pictures
-          </p>
-        </div>
+            <p class="text-xs font-light tracking-widest text-gray-600">
+              Followers
+            </p>
+          </div>
 
+          <!--Secound Element-->
+          <div>
+            <h2 class="text-xl font-bold text-gray-800">803K</h2>
+
+            <p class="text-xs font-light tracking-widest text-gray-600">
+              Likes
+            </p>
+          </div>
+
+          <!--Third Element-->
+          <div>
+            <h2 class="text-xl font-bold text-gray-800">1.4K</h2>
+
+            <p class="text-xs font-light tracking-widest text-gray-600">
+              Photos
+            </p>
+          </div>
+        </div>
       </div>
-
     </div>
-
-  </div>
-  
-</body>
+  </body>
 </html>

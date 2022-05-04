@@ -2,9 +2,4 @@
 @tailwind components;
 @tailwind utilities;
 @layer components {
-    .card-bg {
-        background-image: url('./images/bg-pattern-card.svg');
-      }
-
-    
 }
