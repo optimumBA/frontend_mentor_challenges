@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 @layer components {
-
   .bg-mobile {
     background-image: url('./images/bg-pattern-top.svg'),
       url('./images/bg-pattern-bottom.svg');
@@ -19,43 +18,43 @@
     background-size: 70%, 70%;
   }
 
-  .div-status{
-    @apply text-center border-t-[1px] border-gray-300 items-center justify-center desktop:grid desktop:w-full desktop:grid-cols-3 desktop:gap-2 desktop:p-8 desktop:-my-16 mobile:flex mobile:flex-row mobile:gap-6 mobile:p-4 mobile:-my-12 mobile:w-full
+  .div-status {
+    @apply desktop:grid desktop:w-full desktop:grid-cols-3 desktop:gap-2 desktop:p-8 desktop:-my-16 mobile:flex mobile:flex-row mobile:gap-6 mobile:p-4 mobile:-my-12 mobile:w-full items-center justify-center border-t-[1px] border-gray-300 text-center;
   }
 
-  .p-elements{
-   @apply font-light tracking-widest text-gray-600 desktop:text-sm mobile:text-xs
+  .p-elements {
+    @apply desktop:text-sm mobile:text-xs font-light tracking-widest text-gray-600;
   }
 
-  .h-elements{
-    @apply font-bold text-gray-700 desktop:text-2xl mobile:text-lg
+  .h-elements {
+    @apply desktop:text-2xl mobile:text-lg font-bold text-gray-700;
   }
 
-  .div-victor{
-    @apply w-full items-center justify-center text-center desktop:my-14  desktop:p-6 mobile:my-16
+  .div-victor {
+    @apply desktop:my-14 desktop:p-6 mobile:my-16 w-full items-center  justify-center text-center;
   }
 
-  .h-victor{
-    @apply font-bold text-gray-700 desktop:text-2xl mobile:text-xl
+  .h-victor {
+    @apply desktop:text-2xl mobile:text-xl font-bold text-gray-700;
   }
 
-  .span-victor{
-    @apply mx-2 font-medium text-gray-600 desktop:text-2xl mobile:text-xl
+  .span-victor {
+    @apply desktop:text-2xl mobile:text-xl mx-2 font-medium text-gray-600;
   }
 
-  .p-victor{
-    @apply pt-2 font-light tracking-wide text-gray-600 desktop:text-sm mobile:text-xs
+  .p-victor {
+    @apply desktop:text-sm mobile:text-xs pt-2 font-light tracking-wide text-gray-600;
   }
 
-  .div-img{
-    @apply h-fit w-fit rounded-full border-4 border-gray-50 desktop:absolute desktop:my-[70px] mobile:absolute mobile:my-[40px]
+  .div-img {
+    @apply desktop:absolute desktop:my-[70px] mobile:absolute mobile:my-[40px] h-fit w-fit rounded-full border-4 border-gray-50;
   }
 
-  .div-svg{
-    @apply desktop:h-[120px] desktop:w-[400px] mobile:h-[80px] mobile:w-[280px]
+  .div-svg {
+    @apply desktop:h-[120px] desktop:w-[400px] mobile:h-[80px] mobile:w-[280px];
   }
 
-  .div-main{
-    @apply font-kumbh desktop:w-[350px] desktop:h-[390px] mobile:w-[280px] mobile:h-[300px] flex flex-col items-center overflow-hidden rounded-2xl bg-slate-50 text-gray-900
+  .div-main {
+    @apply font-kumbh desktop:w-[350px] desktop:h-[390px] mobile:w-[280px] mobile:h-[300px] flex flex-col items-center overflow-hidden rounded-2xl bg-slate-50 text-gray-900;
   }
 }
