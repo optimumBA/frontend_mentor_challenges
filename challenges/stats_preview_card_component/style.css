@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.div-main {
+  @apply desktop:flex desktop:flex-row mobile:flex mobile:flex-col-reverse mobile:overflow-hidden rounded-lg;
+}
+
+.div-text {
+  @apply bg-dark-desa desktop:flex desktop:h-[350px] desktop:w-[450px] desktop:flex-col desktop:items-start desktop:justify-start desktop:overflow-hidden mobile:flex mobile:h-[500px] mobile:w-[350px] mobile:flex-col mobile:text-center mobile:p-4 text-gray-50;
+}
+
+.div-h {
+  @apply font-extraextrabold desktop:text-left desktop:text-4xl desktop:pt-10 desktop:mx-4 mobile:text-center mobile:text-3xl mobile:pt-4 h-full w-full;
+}
+
+.div-p {
+  @apply text-15 font-deca mobile:-my-40 mobile:text-center mobile:pl-8 mobile:pr-8 desktop:text-left desktop:pl-0 desktop:pt-10 desktop:pr-12 desktop:mx-4 desktop:-my-4 h-full w-full font-normal text-gray-400;
+}
+
+.div-elements {
+  @apply desktop:flex desktop:flex-row desktop:justify-around desktop:items-center desktop:pb-5 desktop:pt-5 mobile:flex mobile:flex-col h-full w-full;
+}
