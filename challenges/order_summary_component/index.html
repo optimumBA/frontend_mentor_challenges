@@ -27,36 +27,86 @@
     />
     <link rel="manifest" href="../site.webmanifest" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body class="m-0">
-    <div
-      class="flex h-[100vh] w-full flex-col place-content-center text-center"
-    >
-      <div>
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://www.frontendmentor.io/challenges/order-summary-component-QlPmajDUj"
-          target="_blank"
-          >Frontend Mentor challenge</a
-        >
-      </div>
-      <div>
-        for
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA"
-          target="_blank"
-          >Optimum BH</a
-        >
-        Internship.
-      </div>
+  <body class="body">
+    <!--Div Position-->
+    <div class="flex h-[100vh] w-full flex-col items-center justify-center p-4">
+      <!--Div Main-->
+      <div class="div-main">
+        <!--Div Img-->
+        <div>
+          <img
+            src="images/illustration-hero.svg"
+            alt="Illustration hero"
+            class="overflow-hidden"
+          />
+        </div>
 
-      <div class="mt-3">
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA/frontend_mentor_challenges/tree/order_summary_component/challenges/order_summary_component"
-          >Source code</a
-        >
+        <!--Div to position text-->
+        <div class="desktop:p-8 mobile:p-6">
+          <!--Div Text-->
+          <div class="pl-4 pr-4 text-center">
+            <h2
+              class="desktop:text-3xl mobile:text-2xl font-extrabold text-gray-700"
+            >
+              Order Summary
+            </h2>
+
+            <p
+              class="desktop:pl-0 desktop:pr-0 mobile:pl-4 mobile:pr-4 pt-4 text-gray-500"
+            >
+              You can now listen to millions of songs, audiobooks, and podcasts
+              on any device anywere you like!
+            </p>
+          </div>
+        </div>
+
+        <!--Payment Div-->
+        <div class="div-pay">
+          <!--Left-->
+          <div class="flex flex-row items-center gap-6">
+            <!--Music Div Svg-->
+            <div>
+              <img src="images/icon-music.svg" alt="Harf" />
+            </div>
+
+            <!--Annual plan-->
+            <div class="text-left">
+              <h4 class="font-extrabold text-gray-800">Annual Plan</h4>
+              <p class="text-gray-500">$59.99/year</p>
+            </div>
+          </div>
+
+          <!--Right-->
+          <div>
+            <!--charge-->
+            <div class="underline hover:text-purple-400 hover:no-underline">
+              <a href="#">Change</a>
+            </div>
+          </div>
+        </div>
+
+        <!--Div to position buttons-->
+        <div class="pt-10">
+          <!--Button Div-->
+          <div class="flex flex-col gap-2">
+            <div
+              class="bg-bb desktop:shadow-xl mobile:shadow-2xl div-button text-gray-50 hover:bg-purple-400"
+            >
+              <a href="#" class="">Proceed to Payment</a>
+            </div>
+
+            <div class="div-button text-slate-500 hover:text-slate-800">
+              <a href="#" class="">Cancel Order</a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </body>

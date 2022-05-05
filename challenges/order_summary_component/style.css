@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.body {
+  @apply font-redhat bg-pb desktop:bg-hero-pattern desktop:h-screen desktop:bg-contain desktop:bg-no-repeat mobile:bg-footer-texture mobile:h-screen mobile:bg-contain mobile:bg-no-repeat  m-0;
+}
+
+.div-main {
+  @apply desktop:w-[450px] desktop:h-[680px] mobile:w-[380px] mobile:h-[620px] flex flex-col items-center overflow-hidden rounded-2xl bg-gray-50;
+}
+
+.div-button {
+  @apply desktop:w-[360px] desktop:h-[50px] mobile:w-[320px] mobile:h-[50px] cursor-pointer rounded-lg pt-3 text-center font-extrabold;
+}
+
+.div-pay {
+  @apply bg-vpb desktop:w-[360px] desktop:h-[100px] mobile:w-[320px] mobile:h-[100px] desktop:gap-24 mobile:gap-14 flex flex-row items-center justify-center rounded-lg;
+}
