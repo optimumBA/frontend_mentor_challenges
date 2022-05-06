@@ -35,9 +35,13 @@
 }
 
 .div-price{
-    @apply bg-teal-700 text-left rounded-r-lg rounded-l-sm items-center justify-center w-[180px]
+    @apply bg-teal-700 text-left rounded-r-lg rounded-l-sm flex flex-row items-center w-[180px] h-[30px]
 }
 
 .div-write{
-    @apply overflow-hidden bg-whitee text-gray-400 text-[12px] text-left rounded-2xl items-center justify-center h-8
+    @apply overflow-hidden bg-whitee text-gray-400 text-[12px] text-left rounded-2xl h-8
+}
+
+.div-circle{
+    @apply relative left-2 h-[12px] w-[12px] bg-inherit rounded-full border-[1px] border-gray-300
 }
