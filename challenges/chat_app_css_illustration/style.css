@@ -17,3 +17,27 @@
 .div-main{
     @apply mobile:flex mobile:flex-col mobile:gap-[20px] desktop:flex desktop:flex-row desktop:gap-[100px]
 }
+
+.div-dog{
+    @apply overflow-hidden h-[40px] w-[40px] rounded-2xl
+}
+
+.div-msgl{
+    @apply overflow-hidden rounded-r-lg rounded-l-sm bg-gray-500 text-[10px] text-left items-center justify-center w-[150px] p-1
+}
+
+.div-msgr{
+    @apply overflow-hidden rounded-l-lg rounded-r-sm bg-gray-500 text-[10px] text-left items-center justify-center
+}
+
+.div-ppay{
+    @apply text-whitee text-xs text-left
+}
+
+.div-price{
+    @apply bg-teal-700 text-left rounded-r-lg rounded-l-sm items-center justify-center w-[180px]
+}
+
+.div-write{
+    @apply overflow-hidden bg-whitee text-gray-400 text-[12px] text-left rounded-2xl items-center justify-center h-8
+}
