@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.div-p{
+    @apply mobile:tracking-wide mobile:pt-2 mobile:text-[18px] desktop:tracking-normal desktop:pt-4
+}
+
+.div-h{
+    @apply mobile:text-[45px] mobile:pt-[30px] desktop:text-[40px]
+}
+
+.div-hp{
+    @apply mobile:text-center mobile:w-[370px] mobile:h-[300px] desktop:text-left desktop:w-[500px] desktop:h-[200px]
+}
+
+.div-main{
+    @apply mobile:flex mobile:flex-col mobile:gap-[20px] desktop:flex desktop:flex-row desktop:gap-[100px]
+}

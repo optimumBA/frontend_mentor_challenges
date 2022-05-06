@@ -18,15 +18,16 @@ module.exports = {
         //SECONDARY
         'whitee': 'hsl(0, 0%, 100%)',
         'light-grayish-violet': 'hsl(270, 20%, 96%)',
-        'very-dark-desaturated Violet': 'hsl(271, 36%, 24%)',
-        'Very Light Magenta': 'hsl(289, 100%, 72%)',
+        'vvery-dark-desaturated-violet': 'hsl(271, 36%, 24%)',
+        'vvery-light-magenta': 'hsl(289, 100%, 72%)',
       },
       fontFamily: {
         rubik: ['Rubik', ...defaultTheme.fontFamily.sans],
       },
-      fontSize: {
-        '16': '16px',
-      }  
+      screens: {
+        mobile: '375px',
+        desktop: '1440px',
+      },
     },
   },
   plugins: [],
