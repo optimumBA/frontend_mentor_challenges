@@ -12,11 +12,11 @@ module.exports = {
         'grayish-blue': 'hsl(206, 6%, 79%)',
         'very-dark-desaturated-violet': 'hsl(271, 36%, 24%)',
         'dark-grayish-violet': 'hsl(270, 7%, 64%)',
-         // GRADIENT COLORS
+        // GRADIENT COLORS
         'light-magenta': 'hsl(293, 100%, 63%)',
         'light-violet': 'hsl(264, 100%, 61%)',
         //SECONDARY
-        'whitee': 'hsl(0, 0%, 100%)',
+        whitee: 'hsl(0, 0%, 100%)',
         'light-grayish-violet': 'hsl(270, 20%, 96%)',
         'vvery-dark-desaturated-violet': 'hsl(271, 36%, 24%)',
         'vvery-light-magenta': 'hsl(289, 100%, 72%)',

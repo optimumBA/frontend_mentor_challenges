@@ -2,46 +2,50 @@
 @tailwind components;
 @tailwind utilities;
 
-.div-p{
-    @apply mobile:tracking-wide mobile:pt-2 mobile:text-[18px] desktop:tracking-normal desktop:pt-4
+.div-bg{
+    @apply from-light-magenta to-light-violet absolute -left-12 z-0 h-[490px] w-[250px] rounded-br-full bg-gradient-to-bl desktop:left-0 desktop:h-[900px] desktop:w-[600px] desktop:rounded-bl-full
 }
 
-.div-h{
-    @apply mobile:text-[45px] mobile:pt-[30px] desktop:text-[40px]
+.div-p {
+  @apply mobile:tracking-wide mobile:pt-2 mobile:text-[18px] desktop:tracking-normal desktop:pt-4;
 }
 
-.div-hp{
-    @apply mobile:text-center mobile:w-[370px] mobile:h-[300px] desktop:text-left desktop:w-[500px] desktop:h-[200px]
+.div-h {
+  @apply mobile:text-[45px] mobile:pt-[30px] desktop:text-[40px];
 }
 
-.div-main{
-    @apply mobile:flex mobile:flex-col mobile:gap-[20px] desktop:flex desktop:flex-row desktop:gap-[100px]
+.div-hp {
+  @apply mobile:text-center mobile:w-[370px] mobile:h-[300px] desktop:text-left desktop:w-[500px] desktop:h-[200px];
 }
 
-.div-dog{
-    @apply overflow-hidden h-[40px] w-[40px] rounded-2xl
+.div-main {
+  @apply mobile:flex mobile:flex-col mobile:gap-[20px] desktop:flex desktop:flex-row desktop:gap-[100px];
 }
 
-.div-msgl{
-    @apply overflow-hidden rounded-r-lg rounded-l-sm bg-gray-500 text-[10px] text-left items-center justify-center w-[150px] p-1
+.div-dog {
+  @apply h-[40px] w-[40px] overflow-hidden rounded-2xl;
 }
 
-.div-msgr{
-    @apply overflow-hidden rounded-l-lg rounded-r-sm bg-gray-500 text-[10px] text-left items-center justify-center
+.div-msgl {
+  @apply w-[150px] items-center justify-center overflow-hidden rounded-r-lg rounded-l-sm bg-gray-500 p-1 text-left text-[10px];
 }
 
-.div-ppay{
-    @apply text-whitee text-xs text-left
+.div-msgr {
+  @apply items-center justify-center overflow-hidden rounded-l-lg rounded-r-sm bg-gray-500 text-left text-[10px];
 }
 
-.div-price{
-    @apply bg-teal-700 text-left rounded-r-lg rounded-l-sm flex flex-row items-center w-[180px] h-[30px]
+.div-ppay {
+  @apply text-whitee text-left text-xs;
 }
 
-.div-write{
-    @apply overflow-hidden bg-whitee text-gray-400 text-[12px] text-left rounded-2xl h-8
+.div-price {
+  @apply flex h-[30px] w-[180px] flex-row items-center rounded-r-lg rounded-l-sm bg-teal-700 text-left;
 }
 
-.div-circle{
-    @apply relative left-2 h-[12px] w-[12px] bg-inherit rounded-full border-[1px] border-gray-300
+.div-write {
+  @apply bg-whitee h-8 overflow-hidden rounded-2xl text-left text-[12px] text-gray-400;
+}
+
+.div-circle {
+  @apply relative left-2 h-[12px] w-[12px] rounded-full border-[1px] border-gray-300 bg-inherit;
 }

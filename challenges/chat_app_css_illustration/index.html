@@ -27,186 +27,210 @@
     />
     <link rel="manifest" href="../site.webmanifest" />
     <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body class="font-rubik m-0 bg-blue-800">
-    
-    <!--Div Position-->
-    <div class="flex h-[100vh] w-full flex-col items-center justify-center p-4">
-      
-      <!--Div Main-->
-      <div class="items-center justify-center p-4 div-main">
-        
-        <!--Android Div-->
-        <div class="rounded-3xl overflow-hidden border-[10px] border-whitee w-[280px] h-[510px]">
+  <body class="font-rubik bg-gray-200 m-0">
+    <div class="div-bg"></div>
+      <!--Div Position-->
+      <div
+        class="absolute flex h-[100vh] w-full flex-col items-center justify-center p-4"
+      >
+        <!--Div Main-->
+        <div class="div-main items-center justify-center p-4">
+          <!--Android Div-->
+          <div
+            class="border-whitee h-[510px] w-[280px] overflow-hidden rounded-3xl border-[10px]"
+          >
+            <!--Samuel Green Div-->
+            <div
+              class="flex h-[80px] w-full flex-col items-center justify-center bg-gradient-to-r from-vvery-dark-desaturated-violet to-vvery-light-magenta"
+            >
+              <!--Div White-->
+              <div
+                class="bg-whitee relative bottom-[25px] h-[40px] w-[160px] rounded-xl"
+              ></div>
 
-          <!--Samuel Green Div-->
-          <div class="w-full h-[80px] bg-slate-900 flex flex-col items-center justify-center">
+              <div class="flex flex-row">
+                <!--Back Svg-->
+                <div class="relative right-[35px] bottom-[2px]">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    viewBox="0 0 20 20"
+                    fill="white"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </div>
 
-            <!--Div White-->
-            <div class="relative bottom-[25px] bg-whitee w-[160px] h-[40px] rounded-xl"></div>
+                <!--samuel img div-->
+                <div
+                  class="relative right-[30px] bottom-[8px] h-[35px] w-[35px] overflow-hidden rounded-full border-2"
+                >
+                  <img src="images/avatar.jpg" alt="Samuel Profile Picture" />
+                </div>
 
-            <div class="flex flex-row">
-              <!--Back Svg-->
-              <div class="relative right-[35px] bottom-[2px]">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="white">
-                  <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
-                </svg>
-              </div>
+                <!--Profile Status-->
+                <div class="relative right-[20px] bottom-[8px]">
+                  <h2 class="text-whitee text-[14px] font-normal">
+                    Samuel Green
+                  </h2>
 
-              <!--samuel img div-->
-              <div class="relative right-[30px] bottom-[8px] w-[35px] h-[35px] overflow-hidden border-2 rounded-full">
-                <img src="images/avatar.jpg" alt="Samuel Profile Picture">
-              </div>
+                  <p class="text-[10px] font-thin text-gray-500">
+                    Available to Walk
+                  </p>
+                </div>
 
-              <!--Profile Status-->
-              <div class="relative right-[20px] bottom-[8px]">
-                <h2 class="text-whitee text-[14px] font-normal">
-                  Samuel Green
-                </h2>
-
-                <p class="text-gray-500 text-[10px] font-thin">
-                  Available to Walk
-                </p>
-
-              </div>
-
-              <!--Options Svg-->
-              <div class="relative right-[-30px]">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="white">
-                  <path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z" />
-                </svg>
-              </div>
-            </div>
-
-          </div>
-
-          <!--Msg Divs-->
-          <div class="w-full h-full bg-orange-800 overflow-hidden flex flex-col gap-2 p-2">
-
-            <!--Div MsgL-->
-            <div class="flex flex-col gap-2 items-start justify-start">
-              <div class="div-msgl">
-                <p>That sounds great. I'd be happy to discuss more.</p>
-              </div>
-  
-              <div class="div-msgl">
-                <p>Could you send over some pictures of your dog, please?</p>
-              </div>
-            </div>
-
-            <!--Div Dogs-->
-            <div class="flex flex-row gap-2 items-end justify-end">
-
-              <!--Dog 1-->
-              <div class="div-dog">
-                <img src="images/dog-image-1.jpg" alt="Dog 1">
-              </div>
-              
-              <!--Dog 2-->
-              <div class="div-dog">
-                <img src="images/dog-image-2.jpg" alt="Dog 2">
-              </div>
-
-              <!--Dog 3-->
-              <div class="div-dog">
-                <img src="images/dog-image-3.jpg" alt="Dog 3">
-              </div>
-
-            </div>
-
-            <!--Div MsgR-->
-            <div class="flex flex-col gap-2 items-end justify-end">
-              <div class="div-msgr w-[150px] p-1">
-                <p>Here are some pictures. She's a happy girl!</p>
-              </div>
-  
-              <div class="div-msgr p-1">
-                <p>Can you make it?</p>
+                <!--Options Svg-->
+                <div class="relative right-[-30px]">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-4 w-4"
+                    viewBox="0 0 20 20"
+                    fill="white"
+                  >
+                    <path
+                      d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"
+                    />
+                  </svg>
+                </div>
               </div>
             </div>
 
-            <!--Price-->
-            <div class="flex flex-col gap-2">
+            <!--Msg Divs-->
+            <div
+              class="flex h-full w-full flex-col gap-2 overflow-hidden bg-orange-800 p-2"
+            >
+              <!--Div MsgL-->
+              <div class="flex flex-col items-start justify-start gap-2">
+                <div class="div-msgl">
+                  <p>That sounds great. I'd be happy to discuss more.</p>
+                </div>
 
+                <div class="div-msgl">
+                  <p>Could you send over some pictures of your dog, please?</p>
+                </div>
+              </div>
+
+              <!--Div Dogs-->
+              <div class="flex flex-row items-end justify-end gap-2">
+                <!--Dog 1-->
+                <div class="div-dog">
+                  <img src="images/dog-image-1.jpg" alt="Dog 1" />
+                </div>
+
+                <!--Dog 2-->
+                <div class="div-dog">
+                  <img src="images/dog-image-2.jpg" alt="Dog 2" />
+                </div>
+
+                <!--Dog 3-->
+                <div class="div-dog">
+                  <img src="images/dog-image-3.jpg" alt="Dog 3" />
+                </div>
+              </div>
+
+              <!--Div MsgR-->
+              <div class="flex flex-col items-end justify-end gap-2">
+                <div class="div-msgr w-[150px] p-1">
+                  <p>Here are some pictures. She's a happy girl!</p>
+                </div>
+
+                <div class="div-msgr p-1">
+                  <p>Can you make it?</p>
+                </div>
+              </div>
+
+              <!--Price-->
+              <div class="flex flex-col gap-2">
                 <!--Div MsgL-->
-              <div class="div-msgl">
-                <p>She looks soo happy! The time we disscussed works. How long shall I take her out for?</p>
-              </div>
-
-              <!--Div Price1-->
-              <div class="div-price">
-
-                <!--Circle Svg-->
-                <div class="div-circle"></div>
-
-              <div class="relative left-4">
-                <p class="div-ppay">30 minute walk</p>
-              </div>
-                
-              <div class="relative left-[40px]">
-                <h2 class="text-whitee font-bold">$29</h2>
-              </div>
-                
-              </div>
-
-              <!--Div Price2-->
-              <div class="div-price">
-
-                <!--Circle Svg-->
-                <div class="div-circle"></div>
-
-                <div class="relative left-4">
-                  <p class="div-ppay">1 hour walk</p>
-                </div>
-                  
-                <div class="relative left-[62px]">
-                  <h2 class="text-whitee font-bold">$49</h2>
-                </div>
-                  
+                <div class="div-msgl">
+                  <p>
+                    She looks soo happy! The time we disscussed works. How long
+                    shall I take her out for?
+                  </p>
                 </div>
 
+                <!--Div Price1-->
+                <div class="div-price">
+                  <!--Circle Svg-->
+                  <div class="div-circle"></div>
+
+                  <div class="relative left-4">
+                    <p class="div-ppay">30 minute walk</p>
+                  </div>
+
+                  <div class="relative left-[40px]">
+                    <h2 class="text-whitee font-bold">$29</h2>
+                  </div>
+                </div>
+
+                <!--Div Price2-->
+                <div class="div-price">
+                  <!--Circle Svg-->
+                  <div class="div-circle"></div>
+
+                  <div class="relative left-4">
+                    <p class="div-ppay">1 hour walk</p>
+                  </div>
+
+                  <div class="relative left-[62px]">
+                    <h2 class="text-whitee font-bold">$49</h2>
+                  </div>
+                </div>
+              </div>
+
+              <!--Div write-->
+              <div
+                class="div-write my-1 flex flex-row items-center justify-start"
+              >
+                <div class="relative left-[10px]">
+                  <p>Type a message...</p>
+                </div>
+
+                <div class="relative left-[110px] rounded-full bg-black">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-7 w-7"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!--HP Div-->
+          <div class="div-hp">
+            <!--H Div-->
+            <div class="text-vvery-dark-desaturated-violet div-h font-normal">
+              Simple booking
             </div>
 
-            <!--Div write-->
-            <div class="div-write flex flex-row items-center justify-start my-1">
-              <div class="relative left-[10px]">
-                <p>Type a message...</p>
-              </div>
-
-              <div class="relative left-[110px] rounded-full bg-black">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" viewBox="0 0 20 20" fill="currentColor">
-                  <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
-                </svg>
-                </svg>
-              </div>
-              
+            <!--P Div-->
+            <div class="text-dark-grayish-violet div-p">
+              Stay in touch with our dog walkers through the chat interface.
+              This makes it easy to discuss arrangements and make booking. Once
+              the walk has been compleated you can rate your walker and book
+              again all through the chat.
             </div>
-
           </div>
-
         </div>
-
-        <!--HP Div-->
-        <div class="div-hp">
-
-          <!--H Div-->
-          <div class="text-vvery-light-magenta font-normal div-h">
-            Simple booking
-          </div>
-
-          <!--P Div-->
-          <div class="text-vvery-dark-desaturated-violet div-p">
-            Stay in touch with our dog walkers through the chat interface. This makes it easy to discuss arrangements and make booking. Once the walk has been compleated you can rate your walker and book again all through the chat.
-          </div>
-
-        </div>
-
       </div>
-
-    </div>
-
   </body>
 </html>
