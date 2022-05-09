@@ -28,93 +28,130 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter&family=Kumbh+Sans:wght@500&family=Outfit:wght@300;400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
   </head>
 
   <body class="bg-very-dark-blue font-inter">
-    <!--Frontend Mentor Challenge OptimumBH-->
-    <div class="">
-      <div>
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://www.frontendmentor.io/challenges/stats-preview-card-component-8JqbgoU62"
-          target="_blank"
-          >Frontend Mentor challenge</a
-        >
-      </div>
-      <div class="text-gray-50">
-        for
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA"
-          target="_blank"
-          >Optimum BH</a
-        >
-        Internship.
-      </div>
-
-      <div class="">
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/oki-imamovic/frontend_mentor_challenges/tree/stats_preview_card_component/challenges/stats_preview_card_component"
-          >Source code</a
-        >
-      </div>
-    </div>
-
     <!--Div Position-->
-    <div class="flex h-[100vh] w-full flex-col items-center justify-center p-4">
+    <div
+      class="relative flex h-[100vh] w-full flex-col items-center justify-center gap-4 p-4"
+    >
+      <!--Frontend Mentor Challenge OptimumBH-->
+      <div class="">
+        <div>
+          <a
+            class="text-optimum-blue hover:text-optimum-darkblue"
+            href="https://www.frontendmentor.io/challenges/stats-preview-card-component-8JqbgoU62"
+            target="_blank"
+            >Frontend Mentor challenge</a
+          >
+        </div>
+        <div class="text-gray-50">
+          for
+          <a
+            class="text-optimum-blue hover:text-optimum-darkblue"
+            href="https://github.com/optimumBA"
+            target="_blank"
+            >Optimum BH</a
+          >
+          Internship.
+        </div>
+
+        <div class="">
+          <a
+            class="text-optimum-blue hover:text-optimum-darkblue"
+            href="https://github.com/oki-imamovic/frontend_mentor_challenges/tree/stats_preview_card_component/challenges/stats_preview_card_component"
+            >Source code</a
+          >
+        </div>
+      </div>
       <!--Div main-->
-      <div class="div-main">
+      <div
+        class="bg-dark-desaturated-blue mobile:flex mobile:flex-col-reverse mobile:w-[300px] mobile:h-mobile desktop:flex desktop:flex-row desktop:h-[500px] desktop:w-[1400px] overflow-hidden rounded-xl"
+      >
         <!--Div Text-->
-        <div class="div-text">
+        <div
+          class="mobile:text-center mobile:p-8 desktop:text-left desktop:p-16 flex flex-col gap-4"
+        >
           <!--Div h-->
-          <div class="div-h">
-            Get <span class="text-soft-violet">insights</span> that help your
-            business grow.
+          <div>
+            <h2
+              class="mobile:text-2xl desktop:text-5xl font-extrabold text-white"
+            >
+              Get <span class="text-soft-violet">insights</span> that help your
+              business grow.
+            </h2>
           </div>
 
           <!--Div p-->
-          <div class="div-p">
-            Discover the benefits of data analytics and make better decisions
-            regarding revenue, customer experience, and overall efficiency.
+          <div>
+            <p
+              class="text-transp-white-1 text-15 mobile:pr-[2.5px] mobile:pl-[2.5px] mobile:pt-0 mobile:text-[13px] mobile:font-light desktop:text-[20px] desktop:pl-[5px] desktop:pr-[5px] desktop:pt-4"
+            >
+              Discover the benefits of data analytics and make better decisions
+              regarding revenue, customer experience, and overall efficiency.
+            </p>
           </div>
 
           <!--Div for Status elements-->
-          <div class="div-elements">
+          <div
+            class="desktop:flex desktop:flex-row desktop:gap-[90px] desktop:pt-12 mobile:flex mobile:flex-col mobile:gap-4 mobile:pt-0"
+          >
             <!--1. element-->
             <div>
-              <h2 class="font-extraextrabold text-2xl">10k+</h2>
-              <p class="text-15 font-deca text-gray-400">COMPANMIES</p>
+              <h2
+                class="mobile:text-[20px] desktop:text-[30px] font-extrabold text-white"
+              >
+                10k+
+              </h2>
+              <p
+                class="text-transp-white-1 text-15 mobile:text-[10px] desktop:text-[13px] font-medium tracking-widest"
+              >
+                COMPANIES
+              </p>
             </div>
 
             <!--2. element-->
-            <div
-              class="desktop:pt-0 desktop:pb-0 desktop:pr-0 desktop:pl-0 mobile:pb-8 mobile:pt-8"
-            >
-              <h2 class="font-extraextrabold text-2xl">314</h2>
-              <p class="text-15 font-deca text-gray-400">TEMPLATES</p>
+            <div>
+              <h2
+                class="desktop:text-[30px] text-[20px] font-extrabold text-white"
+              >
+                314
+              </h2>
+              <p
+                class="text-transp-white-1 text-15 mobile:text-[10px] desktop:text-[13px] font-medium tracking-widest"
+              >
+                TEMPLATES
+              </p>
             </div>
 
             <!--3. element-->
             <div>
-              <h2 class="font-extraextrabold text-2xl">12M+</h2>
-              <p class="text-15 font-deca text-gray-400">QUERIES</p>
+              <h2
+                class="desktop:text-[30px] text-[20px] font-extrabold text-white"
+              >
+                12M+
+              </h2>
+              <p
+                class="text-transp-white-1 text-15 mobile:text-[10px] desktop:text-[13px] font-medium tracking-widest"
+              >
+                QUERIES
+              </p>
             </div>
           </div>
         </div>
 
         <!--Lijevi dio (slika) -->
         <div
-          class="bg-soft-violet mobile:h-[250px] mobile:w-[350px] desktop:h-[350px] desktop:w-[350px]"
+          class="bg-soft-violet desktop:h-full desktop:w-full mobile:w-[300px] mobile:h-[200px] overflow-hidden"
         >
           <img
             src="images/image-header-desktop.jpg"
             alt="Status Preview"
-            class="mobile:h-full mobile:w-full desktop:h-[350px] desktop:w-[350px] opacity-60"
+            class="h-full w-full opacity-60"
           />
         </div>
       </div>

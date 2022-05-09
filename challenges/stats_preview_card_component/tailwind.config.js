@@ -19,9 +19,11 @@ module.exports = {
       colors: {
         'optimum-blue': '#009efc',
         'optimum-darkblue': '#0389e1',
-        'very-dark-blue': '#090b1a',
-        'dark-desa': '#1b1938',
-        'soft-violet': '#aa5cdb',
+        'very-dark-blue': '#090b1a' /* main background */,
+        'dark-desaturated-blue': '#1b1938' /* card background */,
+        'soft-violet': '#aa5cdb', // accent
+        'transp-white-1': '#ffffffbf' /* main paragraph */,
+        'transp-white-2': '#ffffff99' /* stat headings */,
       },
 
       screens: {
