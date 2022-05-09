@@ -6,10 +6,10 @@ module.exports = {
       colors: {
         'optimum-blue': '#009efc',
         'optimum-darkblue': '#0389e1',
-        pb: 'hsl(225, 100%, 94%)',
-        bb: 'hsl(245, 75%, 52%)',
-        vpb: 'hsl(225, 100%, 98%)',
-        db: 'hsl(224, 23%, 55%)',
+        'pale-blue': 'hsl(225, 100%, 94%)',
+        'bright-blue': 'hsl(245, 75%, 52%)',
+        'very-pale-blue': 'hsl(225, 100%, 98%)',
+        'desaturated-blue': 'hsl(224, 23%, 55%)',
         darkblue: 'hsl(223, 47%, 23%)',
       },
 

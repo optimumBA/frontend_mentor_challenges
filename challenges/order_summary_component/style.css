@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .body {
-  @apply font-redhat bg-pb desktop:bg-hero-pattern desktop:h-screen desktop:bg-contain desktop:bg-no-repeat mobile:bg-footer-texture mobile:h-screen mobile:bg-contain mobile:bg-no-repeat  m-0;
+  @apply font-redhat bg-pale-blue desktop:bg-hero-pattern desktop:h-screen desktop:bg-contain desktop:bg-no-repeat mobile:bg-footer-texture mobile:h-screen mobile:bg-contain mobile:bg-no-repeat  m-0;
 }
 
 .div-main {
@@ -15,5 +15,5 @@
 }
 
 .div-pay {
-  @apply bg-vpb desktop:w-[360px] desktop:h-[100px] mobile:w-[320px] mobile:h-[100px] desktop:gap-24 mobile:gap-14 flex flex-row items-center justify-center rounded-lg;
+  @apply bg-very-pale-blue desktop:w-[360px] desktop:h-[100px] mobile:w-[320px] mobile:h-[100px] desktop:gap-24 mobile:gap-14 flex flex-row items-center justify-center rounded-lg;
 }
