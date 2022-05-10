@@ -5,6 +5,17 @@ module.exports = {
       colors: {
         'optimum-blue': '#009efc',
         'optimum-darkblue': '#0389e1',
+        'white': "	#ffffff",
+        'Light-gray': '	#d6e2f0',
+        'g-blue': '#7b879d',
+        'dark-blue': '#1f3251',
+      },
+      fontSize:{
+        'par-text':'15px',
+      },
+      screens:{
+        mob: "375px",
+        desk: "1440px",
       },
     },
   },
