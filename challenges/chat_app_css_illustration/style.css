@@ -3,49 +3,49 @@
 @tailwind utilities;
 
 .div-bg {
-  @apply from-light-magenta to-light-violet desktop:left-0 desktop:h-[900px] desktop:w-[600px] desktop:rounded-bl-full absolute -left-12 z-0 h-[490px] w-[250px] rounded-br-full bg-gradient-to-bl;
+  @apply from-light-magenta to-light-violet desktop:left-0 desktop:h-[800px] desktop:w-[400px] desktop:rounded-bl-full mobile:h-[580px] mobile:w-[270px] absolute -left-12 z-0 rounded-br-full bg-gradient-to-bl;
 }
 
 .div-p {
-  @apply mobile:tracking-wide mobile:pt-2 mobile:text-[18px] desktop:tracking-normal desktop:pt-4;
+  @apply mobile:tracking-wide mobile:pt-2 mobile:text-[9px] desktop:text-[18px] desktop:tracking-normal desktop:pt-4;
 }
 
 .div-h {
-  @apply mobile:text-[45px] mobile:pt-[30px] desktop:text-[40px] font-medium;
+  @apply mobile:text-[20px] mobile:pt-[15px] desktop:text-[40px] font-medium;
 }
 
 .div-hp {
-  @apply mobile:text-center mobile:w-[370px] mobile:h-[300px] desktop:text-left desktop:w-[500px] desktop:h-[200px];
+  @apply mobile:text-center mobile:w-[185px] mobile:h-[150px] desktop:text-left desktop:w-[500px] desktop:h-[200px];
 }
 
 .div-main {
-  @apply mobile:flex mobile:flex-col mobile:gap-[20px] desktop:flex desktop:flex-row desktop:gap-[100px];
+  @apply mobile:flex mobile:flex-col mobile:gap-[10px] desktop:flex desktop:flex-row desktop:gap-[50px];
 }
 
 .div-dog {
-  @apply h-[40px] w-[40px] overflow-hidden rounded-2xl;
+  @apply desktop:h-[40px] desktop:w-[40px] mobile:h-[25px] mobile:w-[25px] desktop:rounded-2xl mobile:rounded-md overflow-hidden;
 }
 
 .div-msgl {
-  @apply bg-light-grayish-violet text-moderate-violet w-[150px] items-center justify-center overflow-hidden rounded-r-lg rounded-l-md p-1 text-left text-[10px];
+  @apply bg-light-grayish-violet text-moderate-violet desktop:w-[150px] desktop:text-[10px] mobile:w-[100px] mobile:text-[6px] items-center justify-center overflow-hidden rounded-r-lg rounded-l-md p-1 text-left;
 }
 
 .div-msgr {
-  @apply bg-whitee items-center justify-center overflow-hidden rounded-l-lg rounded-r-md text-left text-[10px] text-gray-600;
+  @apply bg-whitee desktop:text-[10px] mobile:text-[6px] items-center justify-center overflow-hidden rounded-l-lg rounded-r-md text-left text-gray-600;
 }
 
 .div-ppay {
-  @apply text-whitee text-left text-xs;
+  @apply text-whitee desktop:text-xs mobile:text-[8px] text-left;
 }
 
 .div-price {
-  @apply from-light-magenta to-light-violet flex h-[30px] w-[180px] flex-row items-center rounded-r-lg rounded-l-md bg-gradient-to-r text-left;
+  @apply from-light-magenta to-light-violet desktop:h-[30px] desktop:w-[180px] mobile:h-[20px] mobile:w-[120px] flex flex-row items-center rounded-r-lg rounded-l-md bg-gradient-to-r text-left;
 }
 
 .div-write {
-  @apply bg-whitee h-8 overflow-hidden rounded-2xl text-left text-[12px] text-gray-400;
+  @apply bg-whitee desktop:h-8 mobile:h-[25px] desktop:text-[12px] mobile:text-[8px] w-full overflow-hidden rounded-2xl text-left text-gray-400;
 }
 
 .div-circle {
-  @apply relative left-2 h-[12px] w-[12px] rounded-full border-[0.5px] border-purple-400 bg-inherit;
+  @apply desktop:h-[12px] desktop:w-[12px] mobile:h-[12px] mobile:w-[12px] relative left-2 rounded-full border-[0.5px] border-purple-300 bg-inherit;
 }
