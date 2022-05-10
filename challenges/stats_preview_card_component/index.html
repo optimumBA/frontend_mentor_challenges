@@ -28,11 +28,86 @@
     <link rel="manifest" href="../site.webmanifest" />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="m-0">
+  <body
+    class="bg-spc-main-bg font-spc-inter grid h-full place-items-center text-[15px]"
+  >
     <div
-      class="flex h-[100vh] w-full flex-col place-content-center text-center"
+      class="flex h-[100vh] w-full flex-col place-content-center items-center justify-center"
     >
-      <div>
+      <!--CARD-->
+
+      <div
+        class="bg-spc-card-bg flex w-[90%] max-w-[400px] flex-col rounded-2xl xl:w-[80%] xl:max-w-[1200px] xl:flex-row-reverse xl:gap-20"
+        role="main"
+      >
+        <!--IMAGE-->
+
+        <div
+          class="after:bg-spc-accent-500 relative after:absolute after:inset-0 after:rounded-t-2xl xl:w-[100%] xl:after:rounded-r-2xl xl:after:rounded-tl-none"
+        >
+          <picture>
+            <source
+              media="(min-width: 1024px)"
+              src="../stats_preview_card_component/images/image-header-desktop.jpg"
+            />
+            <img
+              src="../stats_preview_card_component/images/image-header-mobile.jpg"
+              class="h-full w-full rounded-t-2xl xl:rounded-r-2xl xl:rounded-tl-none"
+              alt="heading image"
+            />
+          </picture>
+        </div>
+
+        <!--END IMAGE-->
+
+        <!--TEXT-->
+        <div
+          class="flex flex-col py-8 px-7 xl:justify-around xl:py-12 xl:px-14"
+        >
+          <div>
+            <h1
+              class="text-spc-white mb-3 text-center text-3xl font-bold xl:mb-5 xl:text-left xl:text-4xl"
+            >
+              Get <span class="text-spc-accent">insights</span> that help your
+              business grow.
+            </h1>
+            <p
+              class="text-spc-main-p mb-8 mt-10 text-center xl:mb-16 xl:text-left"
+            >
+              Discover the benefits of data analytics and make better decisions
+              regarding revenue, customer experience, and overall efficiency.
+            </p>
+          </div>
+          <div
+            class="flex flex-col gap-4 xl:flex-row xl:justify-between xl:gap-0"
+          >
+            <div class="text-center xl:text-left">
+              <span class="text-spc-white block text-2xl font-bold">10k+</span>
+              <span class="text-spc-heading-s font-spc-ld block uppercase"
+                >companies</span
+              >
+            </div>
+            <div class="text-center xl:text-left">
+              <span class="text-spc-white block text-2xl font-bold">324</span>
+              <span class="text-spc-heading-s font-spc-ld block uppercase"
+                >templates</span
+              >
+            </div>
+            <div class="text-center xl:text-left">
+              <span class="text-spc-white block text-2xl font-bold">12M+</span>
+              <span class="text-spc-heading-s font-spc-ld block uppercase"
+                >queries</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <!--END TEXT-->
+      </div>
+
+      <!--END CARD-->
+
+      <div class="mt-6">
         <a
           class="text-optimum-blue hover:text-optimum-darkblue"
           href="https://www.frontendmentor.io/challenges/stats-preview-card-component-8JqbgoU62"
@@ -40,7 +115,7 @@
           >Frontend Mentor challenge</a
         >
       </div>
-      <div>
+      <div class="text-spc-white">
         for
         <a
           class="text-optimum-blue hover:text-optimum-darkblue"

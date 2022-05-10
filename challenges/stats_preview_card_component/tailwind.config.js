@@ -5,24 +5,18 @@ module.exports = {
       colors: {
         'optimum-blue': '#009efc',
         'optimum-darkblue': '#0389e1',
-        'very-dark-blue' : 'hsl(233, 47%, 7%)' /* main background*/ ,
-        'dark-desaturated-blue': 'hsl(244, 38%, 16%)' /* card background */,
-        'soft-violet' : 'hsl(277, 64%, 61%)' ,
-        'white' : 'hsl(0,0%,100%)' ,
-        'transp-white-1' : 'hsla(0, 0%, 100%, 0.75)' ,
-        'transp-white-2' : 'hsla(0, 0%, 100%, 0.6)',
-
+        'spc-main-bg': 'hsl(233, 47%, 7%)',
+        'spc-card-bg': 'hsl(244, 38%, 16%)',
+        'spc-accent': 'hsl(277, 64%, 61%)',
+        'spc-accent-500': 'hsla(277, 100%, 20%, 0.65)',
+        'spc-white': 'hsl(0, 0%, 100%)',
+        'spc-main-p': 'hsla(0, 0%, 100%, 0.75)',
+        'spc-heading-s': 'hsla(0, 0%, 100%, 0.6)',
       },
-      fontSize:{
-        'text' : '15px',
+      fontFamily: {
+        'spc-inter': ['Inter'],
+        'spc-ld': ['Lexend Deca'],
       },
-      fontFamily:{
-        inter: ['Inter'],
-        lexendDeca: ['Lexend Deca']
-      },
-      mobile: '376px',
-      tablet: '768px',
-      desktop: '1440px'
     },
   },
   plugins: [],
