@@ -13,10 +13,6 @@ module.exports = {
       fontSize: {
         'par-text': '15px',
       },
-      screens: {
-        mob: '375px',
-        desk: '1440px',
-      },
     },
   },
   plugins: [],
