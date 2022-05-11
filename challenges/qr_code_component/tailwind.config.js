@@ -16,7 +16,6 @@ module.exports = {
       fontFamily: {
         outfit: ['Outfit'],
       },
-      
     },
   },
   plugins: [],
