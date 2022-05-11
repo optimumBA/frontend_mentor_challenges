@@ -11,7 +11,13 @@ module.exports = {
         'dark-blue': '#1f3251',
       },
       fontSize: {
-        'par-text': '15px',
+        sm: '15px',
+      },
+      screens: {
+        mobile: '640px',
+        // => @media (min-width: 640px) { ... }
+
+        desktop: '1280px',
       },
     },
   },
