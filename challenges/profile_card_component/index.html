@@ -28,36 +28,98 @@
     <link rel="manifest" href="../site.webmanifest" />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="m-0">
+  <body class="bg-dark-cyan font-kumbh-sans m-0">
     <div
-      class="flex h-[100vh] w-full flex-col place-content-center text-center"
+      class="flex h-[100vh] w-full flex-col place-content-center items-center text-center"
     >
-      <div>
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://www.frontendmentor.io/challenges/profile-card-component-cfArpWshJ"
-          target="_blank"
-          >Frontend Mentor challenge</a
-        >
-      </div>
-      <div>
-        for
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA"
-          target="_blank"
-          >Optimum BH</a
-        >
-        Internship.
+      <img
+        src="images/bg-pattern-top.svg"
+        alt=""
+        class="fixed top-[-20%] left-[-200px] sm:-left-[60%] sm:top-[-50%] lg:left-[-260px] lg:top-[-520px]"
+      />
+      <!--CARD DIV-->
+
+      <div
+        class="z-50 flex max-w-[90%] flex-col items-center overflow-hidden rounded-3xl bg-white"
+      >
+        <!--bacground image div -->
+
+        <div>
+          <img src="./images/bg-pattern-card.svg " alt="" class="h-40 w-full" />
+        </div>
+
+        <!--end bacground image div-->
+
+        <!--CONTENT-->
+
+        <div class="mb-10 flex flex-col items-center">
+          <img
+            src="./images/image-victor.jpg"
+            alt=""
+            class="-mt-[60px] mb-4 h-[120px] w-[120px] rounded-full border-4"
+          />
+
+          <h1 class="text-xl font-extrabold">
+            Victor Crest <span class="font-medium text-gray-700">26</span>
+          </h1>
+
+          <h3 class="text-gray-600">London</h3>
+        </div>
+
+        <div class="flex w-full justify-evenly border-t-2 pb-8 pt-4">
+          <div>
+            <h4 class="text-lg font-extrabold">80K</h4>
+            <span class="text-gray-600">Followers</span>
+          </div>
+
+          <div>
+            <h4 class="text-lg font-extrabold">803K</h4>
+            <span class="text-gray-600">Likes</span>
+          </div>
+
+          <div>
+            <h4 class="text-lg font-extrabold">1.4K</h4>
+            <span class="text-gray-600">Photos</span>
+          </div>
+        </div>
+
+        <!--END CONTENT-->
       </div>
 
-      <div class="mt-3">
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA/frontend_mentor_challenges/tree/profile_card_component/challenges/profile_card_component"
-          >Source code</a
-        >
+      <!--END CARD DIV-->
+      <div class="z-20 mt-6 rounded-xl bg-white p-10 font-semibold">
+        <div>
+          <a
+            class="text-optimum-blue hover:text-optimum-darkblue"
+            href="https://www.frontendmentor.io/challenges/profile-card-component-cfArpWshJ"
+            target="_blank"
+            >Frontend Mentor challenge</a
+          >
+        </div>
+        <div>
+          for
+          <a
+            class="text-optimum-blue hover:text-optimum-darkblue"
+            href="https://github.com/optimumBA"
+            target="_blank"
+            >Optimum BH</a
+          >
+          Internship.
+        </div>
+
+        <div class="mt-1">
+          <a
+            class="text-optimum-blue hover:text-optimum-darkblue"
+            href="https://github.com/OmerSalkan/frontend_mentor_challenges/tree/profile_card_component/challenges/profile_card_component"
+            >Source code</a
+          >
+        </div>
       </div>
+      <img
+        src="images/bg-pattern-bottom.svg"
+        alt=""
+        class="fixed right-[-50%] bottom-[-150px] overflow-x-hidden sm:right-[-70%] sm:bottom-[-500px] lg:right-[-370px] lg:bottom-[-500px]"
+      />
     </div>
   </body>
 </html>
