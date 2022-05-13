@@ -8,7 +8,7 @@ module.exports = {
         'optimum-blue': '#009efc',
         'optimum-darkblue': '#0389e1',
         'light-gray': '#d6e2f0',
-        'grayish': '#7b879d',
+        grayish: '#7b879d',
         'd-blue': '#1f3251',
       },
       fontFamily: {
