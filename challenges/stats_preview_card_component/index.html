@@ -28,11 +28,93 @@
     <link rel="manifest" href="../site.webmanifest" />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="m-0">
+  <body class="bg-spc-main-bg grid h-full place-items-center text-[15px]">
     <div
-      class="flex h-[100vh] w-full flex-col place-content-center text-center"
+      class="font-spc-inter flex h-[100vh] w-full flex-col place-content-center items-center justify-center"
     >
-      <div>
+      <!--CARD-->
+
+      <div
+        class="bg-spc-card-bg mt-4 flex h-[90%] w-[310px] flex-col overflow-hidden rounded-2xl md:h-[360px] md:w-[800px] md:flex-row-reverse lg:w-[80%] lg:max-w-[1200px] lg:gap-20"
+        role="main"
+      >
+        <!--IMAGE-->
+
+        <div
+          class="after:bg-spc-accent-500 relative h-[200px] w-[100%] object-cover after:absolute after:inset-0 sm:object-cover md:h-[100%] md:w-[100%]"
+        >
+          <picture>
+            <source
+              media="(min-width: 1024px)"
+              src="../stats_preview_card_component/images/image-header-desktop.jpg"
+            />
+            <img
+              src="../stats_preview_card_component/images/image-header-mobile.jpg"
+              class="h-full w-full"
+              alt="heading image"
+            />
+          </picture>
+        </div>
+
+        <!--END IMAGE-->
+
+        <!--TEXT-->
+        <div
+          class="flex flex-col pl-6 pr-6 md:justify-around md:pl-9 md:pr-9 lg:py-12 xl:px-14"
+        >
+          <div>
+            <h1
+              class="text-spc-white mt-4 text-center text-2xl font-bold md:text-left md:text-3xl lg:mb-5 lg:text-left lg:text-4xl"
+            >
+              Get <span class="text-spc-accent">insights</span> that help your
+              business grow.
+            </h1>
+            <p
+              class="text-spc-main-p mb-2 mt-3 text-center md:mt-10 md:text-left lg:mb-16 lg:text-left"
+            >
+              Discover the benefits of data analytics and make better decisions
+              regarding revenue, customer experience, and overall efficiency.
+            </p>
+          </div>
+          <div
+            class="flex flex-col gap-4 md:flex-row md:justify-between xl:flex-row xl:justify-between xl:gap-0"
+          >
+            <div class="text-center xl:text-left">
+              <span class="text-spc-white block text-lg font-bold md:text-2xl"
+                >10k+</span
+              >
+              <span
+                class="text-spc-heading-s font-spc-ld block text-sm uppercase md:text-sm"
+                >companies</span
+              >
+            </div>
+            <div class="text-center xl:text-left">
+              <span class="text-spc-white block text-lg font-bold md:text-2xl"
+                >314</span
+              >
+              <span
+                class="text-spc-heading-s font-spc-ld block text-sm uppercase md:text-sm"
+                >templates</span
+              >
+            </div>
+            <div class="text-center xl:text-left">
+              <span class="text-spc-white block text-lg font-bold md:text-2xl"
+                >12M+</span
+              >
+              <span
+                class="text-spc-heading-s font-spc-ld block text-sm uppercase md:text-sm"
+                >queries</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <!--END TEXT-->
+      </div>
+
+      <!--END CARD-->
+
+      <div class="mt-2">
         <a
           class="text-optimum-blue hover:text-optimum-darkblue"
           href="https://www.frontendmentor.io/challenges/stats-preview-card-component-8JqbgoU62"
@@ -40,7 +122,7 @@
           >Frontend Mentor challenge</a
         >
       </div>
-      <div>
+      <div class="text-spc-white">
         for
         <a
           class="text-optimum-blue hover:text-optimum-darkblue"
@@ -54,7 +136,7 @@
       <div class="mt-3">
         <a
           class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA/frontend_mentor_challenges/tree/stats_preview_card_component/challenges/stats_preview_card_component"
+          href="https://github.com/OmerSalkan/frontend_mentor_challenges/tree/stats_preview_card_component/challenges/stats_preview_card_component"
           >Source code</a
         >
       </div>
