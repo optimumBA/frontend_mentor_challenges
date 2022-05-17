@@ -1,3 +1,30 @@
+@import './base.css';
+@import './components.css';
+@import './utilities.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .background-mb {
+    background-image: url(./images/bg-pattern-top.svg),
+      url(./images/bg-pattern-bottom.svg);
+    background-size: 500px, 500px, auto;
+    background-position: -290px -250px, 150px 400px;
+    background-repeat: no-repeat;
+  }
+
+  .timeline-photo {
+    background-image: url(./images/bg-pattern-card.svg);
+    background-size: cover;
+  }
+
+  .background {
+    background-image: url(./images/bg-pattern-top.svg),
+      url(./images/bg-pattern-bottom.svg);
+    background-position: -20rem -38rem, 750px 400px;
+    background-repeat: no-repeat;
+    background-size: 1000px;
+  }
+}
