@@ -26,46 +26,65 @@
       href="../images/favicon-16x16.png"
     />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap"
+      rel="stylesheet"
+    />
 
     <link rel="manifest" href="../site.webmanifest" />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="m-0 h-screen font-red-hat text-center">
-    <div class="bg-mob flex h-screen flex-col items-center justify-center bg-primary-pale-blue">
-      <div class="flex flex-col items-center justify-center bg-white h-4/5 w-[80%]">
-        <div>
+  <body class="font-red-hat m-0 h-screen text-center">
+    <div
+      class="bg-mob sm:bg-desk bg-primary-pale-blue flex h-screen flex-col items-center justify-center"
+    >
+      <div
+        class="flex h-4/5 w-[80%] flex-col items-center justify-between rounded-2xl bg-white sm:w-[27.5%]"
+      >
+        <div class="h-1/4 object-cover">
           <img
+            class="rounded-t-2xl object-cover shadow-lg"
             src="images/illustration-hero.svg"
             alt="Happy person listening to music"
           />
         </div>
-        <div class="flex flex-col justify-center items-center mt-2">
-          <h2 class="">Order Summary</h2>
-          <p class="mt-2">
-            You can now lsiten to millions of songs, audiobooks, and podcasts on
+        <div class="mt-2 flex flex-col items-center justify-center sm:mt-16">
+          <h2 class="text-neutral-dark-blue mt-5 text-[1.225rem] font-black">
+            Order Summary
+          </h2>
+          <p
+            class="text-neutral-desaturated-blue mt-2 w-3/4 text-[0.8rem] font-medium tracking-wider"
+          >
+            You can now listen to millions of songs, audiobooks, and podcasts on
             any device anywhere you like!
           </p>
         </div>
-        <div class="w-full mt-4 flex flex-row justify-evenly items-center">
-          <img
-            src="images/icon-music.svg"
-            alt="Note"
-          />
+        <div class="pay-plan">
+          <img src="images/icon-music.svg" alt="Note" />
           <div>
-            <p>Annual Plan</p>
-            <p>$59.99/year</p>
+            <p class="text-neutral-dark-blue text-[0.9rem] font-black">
+              Annual Plan
+            </p>
+            <p class="text-neutral-desaturated-blue text-[0.9rem]">
+              $59.99/year
+            </p>
           </div>
-          <a href="#">Change</a>
-        </div>
-        <div class="mt-3 flex flex-col">
-          <a href="#">Proceed to Payment</a>
-          <a href="#">Cancel Order</a>
+          <a
+            class="text-primary-bright-blue text-[0.8rem] font-bold underline"
+            href="#"
+            >Change</a
+          >
         </div>
         <div
-          class="flex w-full mt-6 flex-col justify-end place-content-center text-center text-xs"
+          class="mt-3 flex h-1/5 w-full flex-col items-center justify-center"
+        >
+          <a class="btn-pay" href="#">Proceed to Payment</a>
+          <a class="btn-cancel" href="#">Cancel Order</a>
+        </div>
+        <div
+          class="mt-6 flex w-full flex-col place-content-center justify-end text-center text-xs"
         >
           <div>
             <a
@@ -89,7 +108,7 @@
           <div class="mt-3">
             <a
               class="text-optimum-blue hover:text-optimum-darkblue"
-              href="https://github.com/optimumBA/frontend_mentor_challenges/tree/order_summary_component/challenges/order_summary_component"
+              href="https://github.com/tarikcahta/frontend_mentor_challenges/tree/order_summary_component/challenges/order_summary_component"
               >Source code</a
             >
           </div>
