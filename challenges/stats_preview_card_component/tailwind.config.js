@@ -22,12 +22,6 @@ module.exports = {
         inter: ['Inter', ...defaultTheme.fontFamily.sans],
         lexdec: ['Lexend Deca', ...defaultTheme.fontFamily.sans],
       },
-      screens: {
-        mob: '375px',
-        // => @media (min-width: 375px) { ... }
-        desk: '1440px',
-        // => @media (min-width: 1440px) { ... }
-      },
     },
   },
   plugins: [],
