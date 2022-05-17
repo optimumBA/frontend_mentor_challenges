@@ -1,3 +1,15 @@
+@import "./base.css";
+@import "./components.css";
+@import "./utilities.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .bg-mob {
+    background-image: url('./images/pattern-background-mobile.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}
