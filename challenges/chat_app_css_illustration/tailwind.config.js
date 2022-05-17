@@ -20,6 +20,9 @@ module.exports = {
       fontFamily : {
         rubik : ['Rubik'],
       },
+    borderWidth: {
+      '10': '10px',
+    }
     },
   },
   plugins: [],
