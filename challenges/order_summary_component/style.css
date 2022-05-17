@@ -1,6 +1,6 @@
-@import "./base.css";
-@import "./components.css";
-@import "./utilities.css";
+@import './base.css';
+@import './components.css';
+@import './utilities.css';
 
 @tailwind base;
 @tailwind components;
@@ -11,5 +11,30 @@
     background-image: url('./images/pattern-background-mobile.svg');
     background-repeat: no-repeat;
     background-size: contain;
+  }
+
+  .bg-desk {
+    background-image: url('./images/pattern-background-desktop.svg');
+    background-position: 0px -70px;
+  }
+
+  .header-photo {
+    background-image: url('./images/icon-music.svg');
+    background-size: contain;
+  }
+
+  .btn-pay {
+    @apply bg-primary-bright-blue hover:bg-neutral-desaturated-blue 
+    active:bg-neutral-desaturated-blue focus:bg-neutral-desaturated-blue 
+    w-[90%] rounded-xl p-3 text-[0.95rem] font-bold text-white shadow-2xl;
+  }
+
+  .btn-cancel {
+    @apply text-neutral-desaturated-blue mt-2 w-[90%] rounded-xl p-3 text-[0.95rem] font-bold;
+  }
+
+  .pay-plan {
+    @apply bg-neutral-very-pale-blue mt-4 flex 
+    h-[12.5%] w-[90%] flex-row items-center justify-evenly rounded-2xl;
   }
 }
