@@ -1,3 +1,51 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.div-bg {
+  @apply from-light-magenta to-light-violet absolute -left-12 z-0 rounded-br-full bg-gradient-to-bl sm:h-[580px] sm:w-[270px] lg:left-0 lg:h-[800px] lg:w-[400px] lg:rounded-bl-full;
+}
+
+.div-p {
+  @apply sm:pt-2 sm:text-[9px] sm:tracking-wide lg:pt-4 lg:text-[18px] lg:tracking-normal;
+}
+
+.div-h {
+  @apply font-medium sm:pt-[15px] sm:text-[20px] lg:text-[40px];
+}
+
+.div-hp {
+  @apply sm:h-[150px] sm:w-[185px] sm:text-center lg:h-[200px] lg:w-[500px] lg:text-left;
+}
+
+.div-main {
+  @apply sm:flex sm:flex-col sm:gap-[10px] lg:flex lg:flex-row lg:gap-[50px];
+}
+
+.div-dog {
+  @apply overflow-hidden sm:h-[25px] sm:w-[25px] sm:rounded-lg lg:h-[40px] lg:w-[40px] lg:rounded-2xl;
+}
+
+.div-msgl {
+  @apply bg-light-grayish-violet text-moderate-violet items-center justify-center overflow-hidden rounded-r-lg rounded-l-md p-1 text-left sm:w-[100px] sm:text-[6px] lg:w-[150px] lg:text-[10px];
+}
+
+.div-msgr {
+  @apply bg-whitee items-center justify-center overflow-hidden rounded-l-lg rounded-r-md text-left text-gray-600 sm:text-[6px] lg:text-[10px];
+}
+
+.div-ppay {
+  @apply text-whitee text-left sm:text-[8px] lg:text-xs;
+}
+
+.div-price {
+  @apply from-light-magenta to-light-violet flex flex-row items-center rounded-r-lg rounded-l-md bg-gradient-to-r text-left sm:h-[20px] sm:w-[120px] lg:h-[30px] lg:w-[180px];
+}
+
+.div-write {
+  @apply bg-whitee w-full overflow-hidden rounded-2xl text-left text-gray-400 sm:h-[27px] sm:text-[8px] lg:h-[30px] lg:text-[12px];
+}
+
+.div-circle {
+  @apply relative left-2 rounded-full border-[0.5px] border-purple-300 bg-inherit sm:h-[12px] sm:w-[12px] lg:h-[12px] lg:w-[12px];
+}

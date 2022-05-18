@@ -27,36 +27,258 @@
     />
     <link rel="manifest" href="../site.webmanifest" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body class="m-0">
-    <div
-      class="flex h-[100vh] w-full flex-col place-content-center text-center"
-    >
-      <div>
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://www.frontendmentor.io/challenges/chat-app-css-illustration-O5auMkFqY"
-          target="_blank"
-          >Frontend Mentor challenge</a
-        >
-      </div>
-      <div>
-        for
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA"
-          target="_blank"
-          >Optimum BH</a
-        >
-        Internship.
-      </div>
+  <body class="font-rubik m-0 bg-gray-200">
+    <!--Div Position-->
+    <div class="">
+      <!--Div Bg-->
+      <div class="div-bg"></div>
+      <div
+        class="absolute flex h-[100vh] w-full flex-col items-center justify-center p-4"
+      >
+        <div>
+          <a
+            class="text-optimum-blue hover:text-optimum-darkblue text-xs"
+            href="https://www.frontendmentor.io/challenges/chat-app-css-illustration-O5auMkFqY"
+            target="_blank"
+            >Frontend Mentor challenge</a
+          >
+        </div>
+        <div class="text-xs">
+          for
+          <a
+            class="text-optimum-blue hover:text-optimum-darkblue text-xs"
+            href="https://github.com/optimumBA"
+            target="_blank"
+            >Optimum BH</a
+          >
+          Internship.
+        </div>
 
-      <div class="mt-3">
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA/frontend_mentor_challenges/tree/chat_app_css_illustration/challenges/chat_app_css_illustration"
-          >Source code</a
-        >
+        <div class="mt-0">
+          <a
+            class="text-optimum-blue hover:text-optimum-darkblue text-xs"
+            href="https://github.com/oki-imamovic/frontend_mentor_challenges/tree/chat_app_css_illustration/challenges/chat_app_css_illustration"
+            >Source code</a
+          >
+        </div>
+        <!--Div Main-->
+        <div class="div-main items-center justify-center p-4">
+          <!--Android Div-->
+          <div
+            class="border-whitee overflow-hidden sm:h-fit sm:w-[200px] sm:rounded-2xl sm:border-[5px] lg:h-fit lg:w-[280px] lg:rounded-3xl lg:border-[10px]"
+          >
+            <!--Samuel Green Div-->
+            <div
+              class="from-light-violet to-light-magenta flex flex-col items-center justify-center bg-gradient-to-r sm:h-[50px] sm:w-full lg:h-[60px] lg:w-full"
+            >
+              <!--Div White-->
+              <div
+                class="bg-whitee relative rounded-xl sm:bottom-[10px] sm:h-[20px] sm:w-[100px] lg:bottom-[15px] lg:h-[30px] lg:w-[160px]"
+              ></div>
+
+              <div class="flex flex-row">
+                <!--Back Svg-->
+                <div
+                  class="relative sm:right-[30px] sm:bottom-[-5px] lg:right-[35px] lg:bottom-[2px]"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="sm:h-4 sm:w-4 lg:h-5 lg:w-5"
+                    viewBox="0 0 20 20"
+                    fill="white"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </div>
+
+                <!--samuel img div-->
+                <div
+                  class="relative overflow-hidden rounded-full sm:right-[30px] sm:bottom-[0px] sm:h-[25px] sm:w-[25px] sm:border-[1px] lg:right-[30px] lg:bottom-[8px] lg:h-[35px] lg:w-[35px] lg:border-2"
+                >
+                  <img src="images/avatar.jpg" alt="Samuel Profile Picture" />
+                </div>
+
+                <!--Profile Status-->
+                <div
+                  class="relative sm:right-[20px] sm:bottom-[3px] lg:right-[20px] lg:bottom-[8px]"
+                >
+                  <h2
+                    class="text-whitee font-normal sm:text-[12px] lg:text-[14px]"
+                  >
+                    Samuel Green
+                  </h2>
+
+                  <p
+                    class="font-thin text-gray-300 sm:text-[8px] lg:text-[10px]"
+                  >
+                    Available to Walk
+                  </p>
+                </div>
+
+                <!--Options Svg-->
+                <div
+                  class="relative sm:right-[-20px] sm:top-[5px] lg:right-[-30px] lg:bottom-0"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="sm:h-3 sm:w-3 lg:h-4 lg:w-4"
+                    viewBox="0 0 20 20"
+                    fill="white"
+                  >
+                    <path
+                      d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <!--Msg Divs-->
+            <div
+              class="flex h-full w-full flex-col bg-gray-200 sm:gap-1 sm:p-1 lg:gap-1 lg:p-1"
+            >
+              <!--Div MsgL-->
+              <div class="flex flex-col items-start justify-start gap-1">
+                <div class="div-msgl">
+                  <p>That sounds great. I'd be happy to discuss more.</p>
+                </div>
+
+                <div class="div-msgl">
+                  <p>Could you send over some pictures of your dog, please?</p>
+                </div>
+              </div>
+
+              <!--Div Dogs-->
+              <div
+                class="flex flex-row items-end justify-end sm:gap-1 sm:pt-0 sm:pb-0 lg:gap-2 lg:pt-1 lg:pb-1"
+              >
+                <!--Dog 1-->
+                <div class="div-dog">
+                  <img src="images/dog-image-1.jpg" alt="Dog 1" />
+                </div>
+
+                <!--Dog 2-->
+                <div class="div-dog">
+                  <img src="images/dog-image-2.jpg" alt="Dog 2" />
+                </div>
+
+                <!--Dog 3-->
+                <div class="div-dog">
+                  <img src="images/dog-image-3.jpg" alt="Dog 3" />
+                </div>
+              </div>
+
+              <!--Div MsgR-->
+              <div class="flex flex-col items-end justify-end gap-1">
+                <div class="div-msgr p-1 sm:w-[75px] lg:w-[150px]">
+                  <p>Here are some pictures. She's a happy girl!</p>
+                </div>
+
+                <div class="div-msgr p-1">
+                  <p>Can you make it?</p>
+                </div>
+              </div>
+
+              <!--Price-->
+              <div class="flex flex-col gap-1">
+                <!--Div MsgL-->
+                <div class="div-msgl">
+                  <p>
+                    She looks soo happy! The time we disscussed works. How long
+                    shall I take her out for?
+                  </p>
+                </div>
+
+                <!--Div Price1-->
+                <div class="div-price">
+                  <!--Circle Svg-->
+                  <div class="div-circle"></div>
+
+                  <div class="relative left-4">
+                    <p class="div-ppay">30 minute walk</p>
+                  </div>
+
+                  <div class="relative sm:left-[25px] lg:left-[40px]">
+                    <h2
+                      class="text-whitee font-bold sm:text-[10px] lg:text-[16px]"
+                    >
+                      $29
+                    </h2>
+                  </div>
+                </div>
+
+                <!--Div Price2-->
+                <div class="div-price">
+                  <!--Circle Svg-->
+                  <div class="div-circle"></div>
+
+                  <div class="relative left-4">
+                    <p class="div-ppay">1 hour walk</p>
+                  </div>
+
+                  <div class="relative sm:left-[40px] lg:left-[62px]">
+                    <h2
+                      class="text-whitee font-bold sm:text-[10px] lg:text-[16px]"
+                    >
+                      $49
+                    </h2>
+                  </div>
+                </div>
+              </div>
+
+              <!--Div write-->
+              <div class="div-write flex flex-row items-center justify-start">
+                <div class="relative left-[10px]">
+                  <p>Type a message...</p>
+                </div>
+
+                <div
+                  class="relative rounded-full bg-black sm:left-[80px] lg:left-[110px]"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="sm:h-5 sm:w-5 lg:h-7 lg:w-7"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!--HP Div-->
+          <div class="div-hp">
+            <!--H Div-->
+            <div class="text-vvery-dark-desaturated-violet div-h">
+              Simple booking
+            </div>
+
+            <!--P Div-->
+            <div class="text-dark-grayish-violet div-p">
+              Stay in touch with our dog walkers through the chat interface.
+              This makes it easy to discuss arrangements and make bookings.Once
+              the walk has been completed you can rate your walker and book
+              again all through the chat.
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </body>
