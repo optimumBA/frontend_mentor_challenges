@@ -25,8 +25,8 @@ module.exports = {
         rubik: ['Rubik', ...defaultTheme.fontFamily.sans],
       },
       screens: {
-        mobile: '375px',
-        desktop: '1200px',
+        sm: '375px',
+        lg: '1100px',
       },
     },
   },

@@ -3,49 +3,49 @@
 @tailwind utilities;
 
 .div-bg {
-  @apply from-light-magenta to-light-violet desktop:left-0 desktop:h-[800px] desktop:w-[400px] desktop:rounded-bl-full mobile:h-[580px] mobile:w-[270px] absolute -left-12 z-0 rounded-br-full bg-gradient-to-bl;
+  @apply from-light-magenta to-light-violet absolute -left-12 z-0 rounded-br-full bg-gradient-to-bl sm:h-[580px] sm:w-[270px] lg:left-0 lg:h-[800px] lg:w-[400px] lg:rounded-bl-full;
 }
 
 .div-p {
-  @apply mobile:tracking-wide mobile:pt-2 mobile:text-[9px] desktop:text-[18px] desktop:tracking-normal desktop:pt-4;
+  @apply sm:pt-2 sm:text-[9px] sm:tracking-wide lg:pt-4 lg:text-[18px] lg:tracking-normal;
 }
 
 .div-h {
-  @apply mobile:text-[20px] mobile:pt-[15px] desktop:text-[40px] font-medium;
+  @apply font-medium sm:pt-[15px] sm:text-[20px] lg:text-[40px];
 }
 
 .div-hp {
-  @apply mobile:text-center mobile:w-[185px] mobile:h-[150px] desktop:text-left desktop:w-[500px] desktop:h-[200px];
+  @apply sm:h-[150px] sm:w-[185px] sm:text-center lg:h-[200px] lg:w-[500px] lg:text-left;
 }
 
 .div-main {
-  @apply mobile:flex mobile:flex-col mobile:gap-[10px] desktop:flex desktop:flex-row desktop:gap-[50px];
+  @apply sm:flex sm:flex-col sm:gap-[10px] lg:flex lg:flex-row lg:gap-[50px];
 }
 
 .div-dog {
-  @apply desktop:h-[40px] desktop:w-[40px] mobile:h-[25px] mobile:w-[25px] desktop:rounded-2xl mobile:rounded-md overflow-hidden;
+  @apply overflow-hidden sm:h-[25px] sm:w-[25px] sm:rounded-lg lg:h-[40px] lg:w-[40px] lg:rounded-2xl;
 }
 
 .div-msgl {
-  @apply bg-light-grayish-violet text-moderate-violet desktop:w-[150px] desktop:text-[10px] mobile:w-[100px] mobile:text-[6px] items-center justify-center overflow-hidden rounded-r-lg rounded-l-md p-1 text-left;
+  @apply bg-light-grayish-violet text-moderate-violet items-center justify-center overflow-hidden rounded-r-lg rounded-l-md p-1 text-left sm:w-[100px] sm:text-[6px] lg:w-[150px] lg:text-[10px];
 }
 
 .div-msgr {
-  @apply bg-whitee desktop:text-[10px] mobile:text-[6px] items-center justify-center overflow-hidden rounded-l-lg rounded-r-md text-left text-gray-600;
+  @apply bg-whitee items-center justify-center overflow-hidden rounded-l-lg rounded-r-md text-left text-gray-600 sm:text-[6px] lg:text-[10px];
 }
 
 .div-ppay {
-  @apply text-whitee desktop:text-xs mobile:text-[8px] text-left;
+  @apply text-whitee text-left sm:text-[8px] lg:text-xs;
 }
 
 .div-price {
-  @apply from-light-magenta to-light-violet desktop:h-[30px] desktop:w-[180px] mobile:h-[20px] mobile:w-[120px] flex flex-row items-center rounded-r-lg rounded-l-md bg-gradient-to-r text-left;
+  @apply from-light-magenta to-light-violet flex flex-row items-center rounded-r-lg rounded-l-md bg-gradient-to-r text-left sm:h-[20px] sm:w-[120px] lg:h-[30px] lg:w-[180px];
 }
 
 .div-write {
-  @apply bg-whitee desktop:h-8 mobile:h-[25px] desktop:text-[12px] mobile:text-[8px] w-full overflow-hidden rounded-2xl text-left text-gray-400;
+  @apply bg-whitee w-full overflow-hidden rounded-2xl text-left text-gray-400 sm:h-[27px] sm:text-[8px] lg:h-[30px] lg:text-[12px];
 }
 
 .div-circle {
-  @apply desktop:h-[12px] desktop:w-[12px] mobile:h-[12px] mobile:w-[12px] relative left-2 rounded-full border-[0.5px] border-purple-300 bg-inherit;
+  @apply relative left-2 rounded-full border-[0.5px] border-purple-300 bg-inherit sm:h-[12px] sm:w-[12px] lg:h-[12px] lg:w-[12px];
 }
