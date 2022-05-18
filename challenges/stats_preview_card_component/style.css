@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .stats-card {
+    @apply bg-primary-3000 mt-[20%] ml-[-2%] mr-2 flex w-[84%] flex-col 
+        items-center justify-center rounded-xl text-center 
+        sm:ml-0 sm:mt-0 sm:min-h-[73%] sm:max-w-[80%] sm:flex-row 
+        sm:rounded-md;
+  }
+}
