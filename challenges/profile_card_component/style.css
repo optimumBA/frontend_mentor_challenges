@@ -17,13 +17,13 @@
 
   .timeline-photo {
     background-image: url(./images/bg-pattern-card.svg);
-    background-size: cover;
+    background-size: contain;
   }
 
   .background {
     background-image: url(./images/bg-pattern-top.svg),
       url(./images/bg-pattern-bottom.svg);
-    background-position: -20rem -38rem, 750px 400px;
+    background-position: -20rem -38rem, 550px 450px;
     background-repeat: no-repeat;
     background-size: 1000px;
   }
