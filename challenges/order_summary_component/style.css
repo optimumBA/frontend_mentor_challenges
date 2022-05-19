@@ -15,7 +15,7 @@
 
   .bg-desk {
     background-image: url('./images/pattern-background-desktop.svg');
-    background-position: 0px -70px;
+    background-position: 0px 0px;
   }
 
   .header-photo {
@@ -26,15 +26,15 @@
   .btn-pay {
     @apply bg-primary-bright-blue hover:bg-neutral-desaturated-blue 
     active:bg-neutral-desaturated-blue focus:bg-neutral-desaturated-blue 
-    w-[90%] rounded-xl p-3 text-[0.95rem] font-bold text-white shadow-2xl;
+    w-[90%] rounded-xl p-3 text-[0.95rem] font-bold text-white shadow-2xl sm:w-4/5;
   }
 
   .btn-cancel {
-    @apply text-neutral-desaturated-blue mt-2 w-[90%] rounded-xl p-3 text-[0.95rem] font-bold;
+    @apply text-neutral-desaturated-blue mt-2 w-[90%] rounded-xl p-3 text-[0.95rem] font-bold sm:w-4/5;
   }
 
   .pay-plan {
-    @apply bg-neutral-very-pale-blue mt-4 flex 
-    h-[12.5%] w-[90%] flex-row items-center justify-evenly rounded-2xl;
+    @apply bg-neutral-very-pale-blue mt-4 flex h-[12.5%] 
+    w-[90%] flex-row items-center justify-evenly rounded-2xl px-2 sm:w-4/5;
   }
 }
