@@ -25,38 +25,134 @@
       sizes="16x16"
       href="../images/favicon-16x16.png"
     />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap"
+      rel="stylesheet"
+    />
+
     <link rel="manifest" href="../site.webmanifest" />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="m-0">
+  <body class="font-inter m-0 h-screen">
     <div
-      class="flex h-[100vh] w-full flex-col place-content-center text-center"
+      class="bg-primary-2000 flex w-full flex-col items-center justify-center sm:min-h-screen sm:pt-5"
     >
-      <div>
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://www.frontendmentor.io/challenges/stats-preview-card-component-8JqbgoU62"
-          target="_blank"
-          >Frontend Mentor challenge</a
+      <div class="stats-card">
+        <div
+          class="bg-primary-1000 m-0 w-full rounded-t-xl sm:order-2 sm:h-full sm:w-1/2 sm:rounded-tl-none md:rounded-tr-md md:rounded-br-md"
         >
-      </div>
-      <div>
-        for
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA"
-          target="_blank"
-          >Optimum BH</a
+          <img
+            src="images/image-header-mobile.jpg"
+            alt="Group of people working and laughing"
+            class="w-full object-cover opacity-75 mix-blend-multiply sm:hidden"
+          />
+          <img
+            src="images/image-header-desktop.jpg"
+            alt="Group of people working and laughing"
+            class="hidden h-full max-h-full w-full max-w-full object-cover opacity-75 mix-blend-multiply sm:block"
+          />
+        </div>
+        <div
+          class="flex flex-col items-center justify-center sm:order-1 sm:w-1/2 sm:justify-start"
         >
-        Internship.
+          <div class="max-w-[75%] sm:max-w-[75%]">
+            <h2
+              class="text-neutral-1000 font-lexdec mt-8 w-full text-[24px] font-bold sm:mt-2 sm:max-h-[20%] sm:text-left sm:text-[28px]"
+            >
+              Get <span class="text-primary-1000">insights</span> that help your
+              business grow.
+            </h2>
+            <p
+              class="text-neutral-2000 font-inter mt-2 text-[13px] sm:mt-4 sm:w-[90%] sm:text-left"
+            >
+              Discover the benefits of data analytics and make better decisions
+              regarding revenue, customer experience, and overall efficiency.
+            </p>
+          </div>
+          <div
+            class="flex w-full items-center justify-start sm:ml-[-10%] sm:mt-8 sm:w-[90%] sm:text-left"
+          >
+            <div
+              class="font-inter mt-3 mb-6 flex w-full flex-col justify-evenly font-bold sm:mb-0 sm:flex-row sm:text-left"
+            >
+              <div class="mt-3">
+                <h2
+                  class="text-neutral-1000 mb-1 text-[20px] sm:text-left sm:text-[18px]"
+                >
+                  10k+
+                </h2>
+                <p
+                  class="text-neutral-3000 font-lexdec text-[10px] uppercase tracking-wider"
+                >
+                  companies
+                </p>
+              </div>
+              <div class="mt-3">
+                <h2
+                  class="text-neutral-1000 mb-1 text-[20px] sm:text-left sm:text-[18px]"
+                >
+                  314
+                </h2>
+                <p
+                  class="text-neutral-3000 font-lexdec text-[10px] uppercase tracking-wider"
+                >
+                  templates
+                </p>
+              </div>
+              <div class="mt-3">
+                <h2
+                  class="text-neutral-1000 mb-1 text-[20px] uppercase sm:text-left sm:text-[18px]"
+                >
+                  12m+
+                </h2>
+                <p
+                  class="text-neutral-3000 font-lexdec text-[10px] uppercase tracking-wider"
+                >
+                  queries
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+      <div
+        class="mt-8 flex w-full flex-col place-content-center pb-4 text-center text-xs text-white sm:mt-12 sm:mb-0 sm:text-[10px]"
+      >
+        <div>
+          <a
+            class="text-optimum-blue hover:text-optimum-darkblue"
+            href="https://www.frontendmentor.io/challenges/stats-preview-card-component-8JqbgoU62"
+            target="_blank"
+            >Frontend Mentor challenge</a
+          >
+        </div>
+        <div>
+          for
+          <a
+            class="text-optimum-blue hover:text-optimum-darkblue"
+            href="https://github.com/optimumBA"
+            target="_blank"
+            >Optimum BH</a
+          >
+          Internship.
+        </div>
 
-      <div class="mt-3">
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA/frontend_mentor_challenges/tree/stats_preview_card_component/challenges/stats_preview_card_component"
-          >Source code</a
-        >
+        <div class="mt-3">
+          <a
+            class="text-optimum-blue hover:text-optimum-darkblue"
+            href="https://github.com/tarikcahta/frontend_mentor_challenges/tree/stats_preview_card_component/challenges/stats_preview_card_component"
+            >Source code</a
+          >
+        </div>
       </div>
     </div>
   </body>
