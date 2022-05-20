@@ -28,35 +28,229 @@
     <link rel="manifest" href="../site.webmanifest" />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="m-0">
+  <body
+    class="font-Rubik relative m-0 h-[100vh] w-full overflow-scroll bg-white"
+  >
+    <!--Backgrounds-->
     <div
-      class="flex h-[100vh] w-full flex-col place-content-center text-center"
+      class="from-bg-violet to-bg-magneta fixed top-0 ml-[-55%] h-[500px] w-[400px] rounded-b-[47%] bg-gradient-to-tr lg:ml-[-10%] lg:h-[800px] lg:w-[500px]"
+    ></div>
+    <div
+      class="from-app-bg fixed bottom-0 right-0 mr-[-55%] h-[300px] w-[400px] rounded-t-[50%] bg-gradient-to-bl lg:mr-[-15%] lg:h-[700px] lg:w-[550px]"
+    ></div>
+    <!--Main body-->
+    <div
+      class="text-s-text flex h-full w-full flex-col items-center justify-center"
     >
-      <div>
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://www.frontendmentor.io/challenges/chat-app-css-illustration-O5auMkFqY"
-          target="_blank"
-          >Frontend Mentor challenge</a
+      <!--main container -->
+      <div
+        class="relative flex flex-col items-center justify-center lg:grid lg:grid-cols-2"
+      >
+        <div
+          class="relative mt-[25rem] flex h-[33.5rem] w-[16rem] flex-col rounded-[33px] bg-white shadow-xl lg:mt-[13%] lg:ml-[53%]"
         >
-      </div>
-      <div>
-        for
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA"
-          target="_blank"
-          >Optimum BH</a
-        >
-        Internship.
-      </div>
+          <!--Top chat -->
+          <div
+            class="relative ml-16 h-[30px] w-[8rem] rounded-xl bg-white"
+          ></div>
 
-      <div class="mt-3">
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA/frontend_mentor_challenges/tree/chat_app_css_illustration/challenges/chat_app_css_illustration"
-          >Source code</a
+          <div
+            class="from-bg-violet to-bg-magneta static mx-3 mt-[-20px] flex h-[4rem] w-[full] flex-row items-center justify-between rounded-t-3xl rounded-b-md bg-gradient-to-r"
+          >
+            <div class="mt-4 flex items-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="ml-2 mr-1 h-4 w-4 font-bold text-white"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15 19l-7-7 7-7"
+                />
+              </svg>
+              <img
+                src="../images/avatar.jpg"
+                alt=""
+                class="h-[25px] w-[25px] rounded-3xl border-[1px] border-white"
+              />
+              <div class="block pl-2 text-white">
+                <h3 class="text-xs font-bold">Samuel Green</h3>
+                <p class="text-t-heading text-[10px]">Available to Walk</p>
+              </div>
+            </div>
+            <div class="mt-3 items-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="mr-2 h-3 w-3 text-white"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"
+                />
+              </svg>
+            </div>
+          </div>
+          <!--Chat body -->
+          <div class="static mx-3 rounded-b-3xl bg-gray-100">
+            <div
+              class="rounded-lb-sm mb-2 mt-2 mr-20 ml-3 rounded-t-lg rounded-r-lg bg-gray-200"
+            >
+              <p class="text-chat-l py-2 px-2 text-[9px]">
+                That sounds great. I’d be happy with that.
+              </p>
+            </div>
+            <div
+              class="rounded-lb-sm my-2 mr-20 ml-3 rounded-t-lg rounded-r-lg bg-gray-200"
+            >
+              <p class="text-chat-l py-2 px-1 text-[9px]">
+                Could you send over some pictures of your dog, please?
+              </p>
+            </div>
+            <div class="mt-3 flex flex-col text-[10px]">
+              <div class="flex justify-end">
+                <img
+                  src="../images/dog-image-1.jpg"
+                  alt=" image of the dog"
+                  class="mr-3 h-10 w-10 rounded-xl"
+                />
+                <img
+                  src="../images/dog-image-2.jpg"
+                  alt="image of the dog"
+                  class="mr-3 h-10 w-10 rounded-xl"
+                />
+                <img
+                  src="../images/dog-image-3.jpg"
+                  alt=" image of the dog"
+                  class="mr-3 h-10 w-10 rounded-xl"
+                />
+              </div>
+              <div
+                class="roundn-rb-sm mt-2 ml-20 mr-2 flex justify-end rounded-t-lg rounded-l-lg bg-white shadow-lg"
+              >
+                <p class="text-chat-r p-2 px-2 text-[9px]">
+                  Here are a few pictures. She’s a happy girl!
+                </p>
+              </div>
+              <div
+                class="roundn-rb-sm mt-2 mb-2 ml-32 mr-2 flex justify-end rounded-t-lg rounded-l-lg bg-white shadow-lg"
+              >
+                <p class="text-c-right py-1 px-3 text-[9px]">
+                  Can you make it?
+                </p>
+              </div>
+            </div>
+            <div
+              class="mb-2 mt-2 mr-[75px] ml-3 rounded-t-lg rounded-r-lg bg-gray-200"
+            >
+              <p class="text-chat-l p-2 px-3 text-[9px]">
+                She looks so happy! The time we discussed works. How long shall
+                I take her out for?
+              </p>
+            </div>
+            <div
+              class="from-bg-magneta to-bg-violet mb-2 ml-3 mr-[20%] flex items-center justify-between rounded-lg rounded-r-lg rounded-bl-sm bg-gradient-to-r text-white"
+            >
+              <div class="flex items-center">
+                <div
+                  class="ml-2 h-4 w-4 rounded-lg border-[1px] border-white"
+                ></div>
+                <p class="py-2 pl-2 text-[10px]">30 minute walk</p>
+              </div>
+              <h3 class="pr-4 text-sm font-bold">$29</h3>
+            </div>
+            <div
+              class="from-bg-magneta to-bg-violet mb-2 ml-3 mr-[20%] flex items-center justify-between rounded-t-lg rounded-r-lg rounded-bl-sm bg-gradient-to-r text-white"
+            >
+              <div class="flex items-center">
+                <div
+                  class="ml-2 h-4 w-4 rounded-lg border-[1px] border-white"
+                ></div>
+                <p class="py-2 pl-2 text-[10px]">1 hour walk</p>
+              </div>
+              <h3 class="pr-4 text-sm font-bold">$49</h3>
+            </div>
+            <div
+              class="mx-2 mt-4 mb-3 flex items-center justify-between overflow-hidden rounded-2xl bg-white text-[9px]"
+            >
+              <input
+                type="text"
+                placeholder="Type a message…"
+                class="text-p-holder w-[70rem] border-none py-3 pl-3 outline-none"
+              />
+              <div class="bg-bg-submit mr-2 rounded-3xl text-white">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className=""
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth="{2}"
+                  class="h-6 w-6 font-bold"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="flex w-full flex-col items-center pt-14 lg:mt-4 lg:ml-5 lg:items-start lg:p-2"
         >
+          <h3 class="text-m-heading justify-start text-[40px] font-semibold">
+            Simple booking
+          </h3>
+          <p
+            class="text-p-col my-[2rem] px-8 text-center lg:pl-0 lg:pr-[3rem] lg:text-left lg:text-xl"
+          >
+            Stay in touch with our dog walkers through the chat interface. This
+            makes it easy to discuss arrangements and make bookings.Once the
+            walk has been completed you can rate your walker and book again all
+            through the chat.
+          </p>
+        </div>
+      </div>
+      <div>
+        <footer class="relative">
+          <div>
+            <a
+              class="text-optimum-blue hover:text-optimum-darkblue"
+              href="https://www.frontendmentor.io/challenges/chat-app-css-illustration-O5auMkFqY"
+              target="_blank"
+              >Frontend Mentor challenge</a
+            >
+          </div>
+          <div>
+            for
+            <a
+              class="text-optimum-blue hover:text-optimum-darkblue"
+              href="https://github.com/optimumBA"
+              target="_blank"
+              >Optimum BH</a
+            >
+            Internship.
+          </div>
+
+          <div class="mt-3">
+            <a
+              class="text-optimum-blue hover:text-optimum-darkblue"
+              href="https://github.com/senaid123/frontend_mentor_challenges/tree/chat_app_css_illustration/challenges/chat_app_css_illustration"
+              >Source code</a
+            >
+          </div>
+        </footer>
       </div>
     </div>
   </body>
