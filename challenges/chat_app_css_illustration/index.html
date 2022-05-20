@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -31,117 +30,191 @@
   </head>
   <body class="m-0">
     <div
-      class="flex relative h-[100vh] w-full flex-col place-content-center text-center"
+      class="relative flex w-full flex-col place-content-center overflow-hidden text-center"
     >
-    <div class="bg-gradient-to-b z-0 fixed rounded-b-[50%] top-0 md:left-[-20%] lg:left-[-14%] left-[-50%] md:w-[40%] w-[90%] h-[50%] md:h-[85%] from-fuchsia-500 to-purple-600 "></div>
-    <div class="bg-light-grayish-violet z-0 fixed rounded-t-[50%] bottom-0 right-[-40%] lg:right-[-20%] md:right-[-20%] md:w-[40%]  w-[80%] h-[40%] md:h-[85%] 0 "></div>
+      <div
+        class="fixed top-0 left-[-50%] z-0 h-[50%] w-[90%] rounded-b-full bg-gradient-to-b from-fuchsia-500 to-purple-600 md:left-[-20%] md:h-[85%] md:w-[40%] lg:left-[-14%] lg:w-[40%]"
+      ></div>
+      <div
+        class="bg-light-grayish-violet 0 absolute bottom-0 right-[-40%] z-0 h-[40%] w-[80%] rounded-t-full md:right-[-20%] md:h-[85%] md:w-[40%] lg:right-[-20%]"
+      ></div>
 
-      <div class="z-50 flex mt-72 md:mt-0 flex-col md:flex-row items-center justify-evenly w-[80%] mx-auto">
-    <!--MOBILE-->
- <div class="flex-[0_0_21%]">
-    <div class="bg-gray-50 w-64 h-auto  overflow-hidden rounded-3xl shadow-xl border-10 border-white" 
-    >
-
-     <div class="bg-gradient-to-r from-light-violet to-light-magenta w-full h-16 rounded-t-xl rounded-b-md">
-       <div class="bg-white mx-auto w-32 h-4 rounded-b-xl"></div>
-       <div class="flex justify-between h-12 items-center px-3">
-
-         <div class="flex items-center space-x-1">
-           <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" class="text-white h-4" viewBox="0 0 20 20" fill="currentColor">
-             <path fillRule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clipRule="evenodd" />
-           </svg>
-           <img src="./images/avatar.jpg" alt="" class="w-6 h-6 rounded-full border-white border">
-           <div class="pl-1">
-             <p class="text-xs text-white font-bold">Samuel Green</p>
-             <p class="text-[0.6rem] text-left text-white opacity-60">Available to Walk</p>
-           </div>
-         </div>
-         <div><svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" class="text-white h-5 " fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-           <path strokeLinecap="round" strokeLinejoin="round" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
-         </svg></div>
-
-       </div>
-     </div>
-     <div class="flex bg-light-grayish-violet flex-col space-y-2 p-2">
-
-       <div class="bg-fuchsia-100 max-w-32 p-2 text-left text-fuchsia-700 text-[0.5rem] rounded-md rounded-bl-none">
-
-         That sounds great. I'd be happy to discuss more.
-       </div>
-       <div class="bg-fuchsia-100 max-w-32 p-2 text-left text-fuchsia-700 text-[0.5rem] rounded-md rounded-bl-none">
-
-        Could you send over some pictures of your dog, please ?
-       </div>
-
-       <div class="flex space-x-2 self-end ">
-         <img src="./images/dog-image-1.jpg" alt="" class="h-10 w-10 rounded-lg">
-         <img src="./images/dog-image-2.jpg" alt="" class="h-10 w-10 rounded-lg">
-         <img src="./images/dog-image-3.jpg" alt="" class="h-10 w-10 rounded-lg">
-
-       </div>
-
-       <div class="bg-white max-w-32 p-2 text-left text-gray-700 text-[0.5rem] rounded-md rounded-br-none self-end shadow-md
-     ">
-         Here are a few pictures. She's a happy girll
-       </div>
-       <div class="bg-white max-w-32 p-2 text-left text-gray-700 text-[0.5rem] rounded-md rounded-br-none self-end shadow-md
-     ">
-       Can you make it?
-       </div>
-
-       <div class="bg-fuchsia-100 max-w-32 p-2 text-left text-fuchsia-700 text-[0.5rem] rounded-md rounded-bl-none">
-         She looks so happy! The time we discussed works. How long shall I take her out for?
-       </div>
-       <div class="flex text-white items-center justify-between bg-gradient-to-l from-light-magenta to-light-violet p-2 rounded-md rounded-bl-none w-40  ">
-         <div class="flex space-x-2 justify-start">
-         <span class="inline-block w-3 h-3 border border-white opacity-50 rounded-full"></span> <p class=" text-[0.5rem]">30 minute walk</p>
-         </div>
-         <div class="font-bold text-sm">
-         $29
-         </div>
-          </div>
-       <div class="flex text-white items-center justify-between bg-gradient-to-l from-light-magenta to-light-violet p-2 rounded-md rounded-bl-none w-40  ">
-         <div class="flex space-x-2 justify-start">
-         <span class="inline-block w-3 h-3 border border-white opacity-50 rounded-full"></span> <p class=" text-[0.5rem]">1 hour walk</p>
-         </div>
-         <div class="font-bold text-sm">
-         $49
-         </div>
-         
-                   </div>
-
-                  <div class="pt-2">
-                   <div class="bg-white flex p-1 rounded-full w-full justify-between items-center text-gray-400  h-89 shadow-sm text-[0.5rem] text-left">
-                    <p class="pl-4"> Type a message </p>
-                    <div class="w-6 h-6 flex justify-center items-center bg-fuchsia-900 text-white rounded-full">
-                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" class="text-white h-4 " viewBox="0 0 20 20" fill="currentColor">
-                       <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
-                     </svg>
-                    </div>
-                   </div>
+      <div
+        class="z-50 mx-auto flex w-[80%] flex-col items-center justify-evenly md:mt-0 md:flex-row"
+      >
+        <!--MOBILE-->
+        <div class="mt-8 flex-[0_0_21%] lg:ml-10">
+          <div
+            class="border-10 h-auto w-64 overflow-hidden rounded-3xl border-white bg-gray-50 shadow-xl"
+          >
+            <div
+              class="from-light-violet to-light-magenta h-16 w-full rounded-t-xl rounded-b-md bg-gradient-to-r"
+            >
+              <div class="mx-auto h-4 w-32 rounded-b-xl bg-white"></div>
+              <div class="flex h-12 items-center justify-between px-3">
+                <div class="flex items-center space-x-1">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-5 w-5"
+                    class="h-4 text-white"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                  <img
+                    src="./images/avatar.jpg"
+                    alt=""
+                    class="h-6 w-6 rounded-full border border-white"
+                  />
+                  <div class="pl-1">
+                    <p class="text-xs font-bold text-white">Samuel Green</p>
+                    <p class="text-left text-[0.6rem] text-white opacity-60">
+                      Available to Walk
+                    </p>
                   </div>
-     </div>
+                </div>
+                <div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-6 w-6"
+                    class="h-5 text-white"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth="{2}"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div class="bg-light-grayish-violet flex flex-col space-y-2 p-2">
+              <div
+                class="max-w-32 rounded-md rounded-bl-none bg-fuchsia-100 p-2 text-left text-[0.5rem] text-fuchsia-700"
+              >
+                That sounds great. I'd be happy to discuss more.
+              </div>
+              <div
+                class="max-w-32 rounded-md rounded-bl-none bg-fuchsia-100 p-2 text-left text-[0.5rem] text-fuchsia-700"
+              >
+                Could you send over some pictures of your dog, please ?
+              </div>
 
-    
+              <div class="flex space-x-2 self-end">
+                <img
+                  src="./images/dog-image-1.jpg"
+                  alt=""
+                  class="h-10 w-10 rounded-lg"
+                />
+                <img
+                  src="./images/dog-image-2.jpg"
+                  alt=""
+                  class="h-10 w-10 rounded-lg"
+                />
+                <img
+                  src="./images/dog-image-3.jpg"
+                  alt=""
+                  class="h-10 w-10 rounded-lg"
+                />
+              </div>
 
+              <div
+                class="max-w-32 self-end rounded-md rounded-br-none bg-white p-2 text-left text-[0.5rem] text-gray-700 shadow-md"
+              >
+                Here are a few pictures. She's a happy girll
+              </div>
+              <div
+                class="max-w-32 self-end rounded-md rounded-br-none bg-white p-2 text-left text-[0.5rem] text-gray-700 shadow-md"
+              >
+                Can you make it?
+              </div>
 
-     </div>
-    </div>
-    <!--END MOBILE-->
+              <div
+                class="max-w-32 rounded-md rounded-bl-none bg-fuchsia-100 p-2 text-left text-[0.5rem] text-fuchsia-700"
+              >
+                She looks so happy! The time we discussed works. How long shall
+                I take her out for?
+              </div>
+              <div
+                class="from-light-magenta to-light-violet flex w-40 items-center justify-between rounded-md rounded-bl-none bg-gradient-to-l p-2 text-white"
+              >
+                <div class="flex justify-start space-x-2">
+                  <span
+                    class="inline-block h-3 w-3 rounded-full border border-white opacity-50"
+                  ></span>
+                  <p class="text-[0.5rem]">30 minute walk</p>
+                </div>
+                <div class="text-sm font-bold">$29</div>
+              </div>
+              <div
+                class="from-light-magenta to-light-violet flex w-40 items-center justify-between rounded-md rounded-bl-none bg-gradient-to-l p-2 text-white"
+              >
+                <div class="flex justify-start space-x-2">
+                  <span
+                    class="inline-block h-3 w-3 rounded-full border border-white opacity-50"
+                  ></span>
+                  <p class="text-[0.5rem]">1 hour walk</p>
+                </div>
+                <div class="text-sm font-bold">$49</div>
+              </div>
 
-    <!--TEXT-->
+              <div class="pt-2">
+                <div
+                  class="h-89 flex w-full items-center justify-between rounded-full bg-white p-1 text-left text-[0.5rem] text-gray-400 shadow-sm"
+                >
+                  <p class="pl-4">Type a message</p>
+                  <div
+                    class="flex h-6 w-6 items-center justify-center rounded-full bg-fuchsia-900 text-white"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-5 w-5"
+                      class="h-4 text-white"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--END MOBILE-->
 
-    <div class="flex-[0_0_40%] text-center md:text-left mt-8">
-      <h1 class="text-4xl mb-5 text-very-dark-desaturated-violet font-bold">Simple booking</h1>
-      <p class="text-dark-grayish-violet font-medium">Stay in touch with our dog walkers through the chat interface. This makes it easy to discuss arrangements and make bookings.
-        Once the walk has been completes you can rate your walker and book again all through the cat.
-      </p>
-    </div>
+        <!--TEXT-->
 
-    <!--END TEXT-->
+        <div class="mt-8 flex-[0_0_40%] text-center md:text-left">
+          <h1
+            class="text-very-dark-desaturated-violet mb-5 text-3xl font-bold md:text-4xl"
+          >
+            Simple booking
+          </h1>
+          <p class="text-dark-grayish-violet font-medium">
+            Stay in touch with our dog walkers through the chat interface. This
+            makes it easy to discuss arrangements and make bookings.Once the
+            walk has been completed you can rate your walker and book again all
+            through the chat.
+          </p>
+        </div>
 
-  </div>
-      <div class="z-50">
+        <!--END TEXT-->
+      </div>
+      <div class="z-50 mt-8">
         <a
           class="text-optimum-blue hover:text-optimum-darkblue"
           href="https://www.frontendmentor.io/challenges/chat-app-css-illustration-O5auMkFqY"
@@ -160,7 +233,7 @@
         Internship.
       </div>
 
-      <div class="mt-3 z-50">
+      <div class="z-50 mt-3">
         <a
           class="text-optimum-blue hover:text-optimum-darkblue"
           href="https://github.com/OmerSalkan/frontend_mentor_challenges/tree/chat_app_css_illustration/challenges/chat_app_css_illustration"
