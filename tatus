@@ -1,0 +1,31 @@
+[33mcc6f604[m[33m ([m[1;36mHEAD -> [m[1;32mchat_app_css_illustration[m[33m)[m .
+[33mece6372[m Card completed
+[33m7d9e528[m Fix source code link
+[33mbc7272d[m Added images and style
+[33mbd2b5f6[m[33m ([m[1;31morigin/chat_app_css_illustration[m[33m)[m Merge branch 'main' into chat_app_css_illustration
+[33m7282120[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m Fix empty challenge directory error
+[33m0a99155[m Merge branch 'main' into chat_app_css_illustration
+[33mdcc86e0[m Improve instructions
+[33m45613b6[m Execute workflow on PRs
+[33maa00258[m Merge branch 'main' into chat_app_css_illustration
+[33mde4ea6f[m Fix chromedriver issue
+[33me9ae54b[m Merge branch 'main' into chat_app_css_illustration
+[33m01af907[m Save screenshots even on failure
+[33m775e2a9[m Improve Chat app CSS illustration challenge
+[33mbef6139[m Merge branch 'main' into chat_app_css_illustration
+[33mc62aa6d[m Include missing chromedriver service
+[33m131ea1b[m Improve tests
+[33m45b2ec5[m Save screenshots while testing
+[33m2bdede3[m Fix Chat app CSS illustration test
+[33maa53eed[m Prepare Chat app CSS illustration challenge
+[33m82ed166[m Fix favicons on GitHub Pages
+[33m5451e15[m Accredit exercises
+[33m575d2b8[m Better describe finding challenges
+[33m86383c0[m Remove redundant check
+[33m956a10e[m Improve instructions
+[33m620a384[m Fix formatting
+[33ma04b4c6[m Add instructions
+[33mbc5cf2a[m Enable building multiple challenges at once
+[33m3c8c41d[m Fix stylesheet build while running server
+[33m69c1a9a[m Avoid deployment on PRs
+[33m8501c02[m Initial commit
