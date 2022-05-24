@@ -1,3 +1,37 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .phone-speaker {
+    content: '';
+    display: block;
+    width: 150px;
+    height: 8px;
+    position: absolute;
+    top: 5.6rem;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+  }
+
+  .phone-speaker-desk {
+    content: '';
+    display: block;
+    width: 130px;
+    height: 20px;
+    position: absolute;
+    top: 10rem;
+    left: 460px;
+    transform: translate(-50%, -50%);
+    background: #fff;
+  }
+
+  .bg-grdnt {
+    background-image: linear-gradient(to right, #8838ff, #e942ff);
+  }
+
+  .bg-btn {
+    background-image: linear-gradient(to right, #e942ff, #8838ff);
+  }
+}
