@@ -30,9 +30,191 @@
   </head>
   <body class="m-0">
     <div
-      class="flex h-[100vh] w-full flex-col place-content-center text-center"
+      class="relative flex w-full flex-col place-content-center overflow-hidden text-center"
     >
-      <div>
+      <div
+        class="fixed top-0 left-[-50%] z-0 h-[60%] w-[90%] rounded-b-full bg-gradient-to-b from-fuchsia-500 to-purple-600 md:left-[-20%] md:h-[85%] md:w-[40%] lg:left-[-14%] lg:w-[40%]"
+      ></div>
+      <div
+        class="bg-light-grayish-violet fixed bottom-0 right-[-50%] z-0 h-[60%] w-[90%] rounded-t-full md:right-[-20%] md:h-[85%] md:w-[40%] lg:right-[-14%] lg:w-[40%]"
+      ></div>
+
+      <div
+        class="z-50 mx-auto flex w-[80%] flex-col items-center justify-evenly md:mt-0 md:flex-row"
+      >
+        <!--MOBILE-->
+        <div class="mt-8 flex-[0_0_21%] lg:ml-10">
+          <div
+            class="border-10 h-auto w-64 overflow-hidden rounded-3xl border-white bg-gray-50 shadow-xl"
+          >
+            <div
+              class="from-light-violet to-light-magenta h-16 w-full rounded-t-xl rounded-b-md bg-gradient-to-r"
+            >
+              <div class="mx-auto h-4 w-32 rounded-b-xl bg-white"></div>
+              <div class="flex h-12 items-center justify-between px-3">
+                <div class="flex items-center space-x-1">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-5 w-5"
+                    class="h-4 text-white"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                  <img
+                    src="./images/avatar.jpg"
+                    alt=""
+                    class="h-6 w-6 rounded-full border border-white"
+                  />
+                  <div class="pl-1">
+                    <p class="text-xs font-bold text-white">Samuel Green</p>
+                    <p class="text-left text-[0.6rem] text-white opacity-60">
+                      Available to Walk
+                    </p>
+                  </div>
+                </div>
+                <div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-6 w-6"
+                    class="h-5 text-white"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth="{2}"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div class="bg-light-grayish-violet flex flex-col space-y-2 p-2">
+              <div
+                class="max-w-32 rounded-md rounded-bl-none bg-fuchsia-100 p-2 text-left text-[0.5rem] text-fuchsia-700"
+              >
+                That sounds great. I'd be happy to discuss more.
+              </div>
+              <div
+                class="max-w-32 rounded-md rounded-bl-none bg-fuchsia-100 p-2 text-left text-[0.5rem] text-fuchsia-700"
+              >
+                Could you send over some pictures of your dog, please ?
+              </div>
+
+              <div class="flex space-x-2 self-end">
+                <img
+                  src="./images/dog-image-1.jpg"
+                  alt=""
+                  class="h-10 w-10 rounded-lg"
+                />
+                <img
+                  src="./images/dog-image-2.jpg"
+                  alt=""
+                  class="h-10 w-10 rounded-lg"
+                />
+                <img
+                  src="./images/dog-image-3.jpg"
+                  alt=""
+                  class="h-10 w-10 rounded-lg"
+                />
+              </div>
+
+              <div
+                class="max-w-32 self-end rounded-md rounded-br-none bg-white p-2 text-left text-[0.5rem] text-gray-700 shadow-md"
+              >
+                Here are a few pictures. She's a happy girll
+              </div>
+              <div
+                class="max-w-32 self-end rounded-md rounded-br-none bg-white p-2 text-left text-[0.5rem] text-gray-700 shadow-md"
+              >
+                Can you make it?
+              </div>
+
+              <div
+                class="max-w-32 rounded-md rounded-bl-none bg-fuchsia-100 p-2 text-left text-[0.5rem] text-fuchsia-700"
+              >
+                She looks so happy! The time we discussed works. How long shall
+                I take her out for?
+              </div>
+              <div
+                class="from-light-magenta to-light-violet flex w-40 items-center justify-between rounded-md rounded-bl-none bg-gradient-to-l p-2 text-white"
+              >
+                <div class="flex justify-start space-x-2">
+                  <span
+                    class="inline-block h-3 w-3 rounded-full border border-white opacity-50"
+                  ></span>
+                  <p class="text-[0.5rem]">30 minute walk</p>
+                </div>
+                <div class="text-sm font-bold">$29</div>
+              </div>
+              <div
+                class="from-light-magenta to-light-violet flex w-40 items-center justify-between rounded-md rounded-bl-none bg-gradient-to-l p-2 text-white"
+              >
+                <div class="flex justify-start space-x-2">
+                  <span
+                    class="inline-block h-3 w-3 rounded-full border border-white opacity-50"
+                  ></span>
+                  <p class="text-[0.5rem]">1 hour walk</p>
+                </div>
+                <div class="text-sm font-bold">$49</div>
+              </div>
+
+              <div class="pt-2">
+                <div
+                  class="h-89 flex w-full items-center justify-between rounded-full bg-white p-1 text-left text-[0.5rem] text-gray-400 shadow-sm"
+                >
+                  <p class="pl-4">Type a message</p>
+                  <div
+                    class="flex h-6 w-6 items-center justify-center rounded-full bg-fuchsia-900 text-white"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-5 w-5"
+                      class="h-4 text-white"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--END MOBILE-->
+
+        <!--TEXT-->
+
+        <div class="mt-8 flex-[0_0_40%] text-center md:text-left">
+          <h1
+            class="text-very-dark-desaturated-violet mb-5 text-3xl font-bold md:text-4xl"
+          >
+            Simple booking
+          </h1>
+          <p class="text-dark-grayish-violet font-medium">
+            Stay in touch with our dog walkers through the chat interface. This
+            makes it easy to discuss arrangements and make bookings.Once the
+            walk has been completed you can rate your walker and book again all
+            through the chat.
+          </p>
+        </div>
+
+        <!--END TEXT-->
+      </div>
+      <div class="z-50 mt-8">
         <a
           class="text-optimum-blue hover:text-optimum-darkblue"
           href="https://www.frontendmentor.io/challenges/chat-app-css-illustration-O5auMkFqY"
@@ -40,7 +222,7 @@
           >Frontend Mentor challenge</a
         >
       </div>
-      <div>
+      <div class="z-50">
         for
         <a
           class="text-optimum-blue hover:text-optimum-darkblue"
@@ -51,10 +233,10 @@
         Internship.
       </div>
 
-      <div class="mt-3">
+      <div class="z-50 mt-3">
         <a
           class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA/frontend_mentor_challenges/tree/chat_app_css_illustration/challenges/chat_app_css_illustration"
+          href="https://github.com/OmerSalkan/frontend_mentor_challenges/tree/chat_app_css_illustration/challenges/chat_app_css_illustration"
           >Source code</a
         >
       </div>
