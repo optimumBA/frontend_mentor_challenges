@@ -21,13 +21,13 @@ module.exports = {
         'light-violet': '#8838ff',
       },
       secondary: {
-        'white': '#ffffff',
+        white: '#ffffff',
         'light-grayish-viol': '#f5f3f7',
         'very-dark-desat-viol': '#3e2753',
-        'very-light-magenta': '#e570ffz',
+        'very-light-magenta': '#e570ff',
       },
       fontFamily: {
-        'rubik': ['Rubik', ...defaultTheme.fontFamily.sans],
+        rubik: ['Rubik', ...defaultTheme.fontFamily.sans],
       },
     },
   },
