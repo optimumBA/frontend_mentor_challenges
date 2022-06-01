@@ -21,6 +21,11 @@ module.exports = {
         overpass: ['Overpass', 'sans-serif'],
         ubuntu: ['Ubuntu', 'sans-serif'],
       },
+      backgroundImage: {
+        circles: "url('./images/bg-pattern-circles.svg')",
+        mobilePattern: "url('./images/bg-pattern-intro-mobile.svg')",
+        desktopPattern: "url('./images/bg-pattern-intro-desktop.svg')",
+      },
     },
   },
   plugins: [],
