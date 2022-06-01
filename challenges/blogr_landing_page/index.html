@@ -27,12 +27,323 @@
     />
     <link rel="manifest" href="../site.webmanifest" />
     <link rel="stylesheet" href="style.css" />
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
   </head>
   <body class="m-0">
-    <div
-      class="flex h-[100vh] w-full flex-col place-content-center text-center"
+    <header
+      class="font-ubuntu from-very-light-red-2 to-light-red overflow-hidden rounded-bl-[80px] bg-gradient-to-br text-center text-white"
     >
-      <div>
+      <div
+        class="bg-mobilePattern md:bg-desktopPattern h-full bg-[length:250vw_250vh] bg-center px-5 pt-10 pb-20"
+      >
+        <div
+          x-data="{ open: false }"
+          class="mb-20 flex items-center justify-between md:justify-start"
+        >
+          <img src="./images/logo.svg" alt="logo" />
+          <div id="mobile-menu-toggle" @click="open = !open">
+            <img
+              :class="!open || 'hidden'"
+              class="h-[20px] w-[25px] hover:cursor-pointer md:hidden"
+              src="./images/icon-hamburger.svg"
+              alt="menu icon"
+            />
+            <img
+              x-cloak
+              :class="open || 'hidden'"
+              class="h-[20px] w-[20px] hover:cursor-pointer md:hidden"
+              src="./images/icon-close.svg"
+              alt="menu icon"
+            />
+          </div>
+
+          <template
+            x-if="open"
+            x-init="open = window.innerWidth > 768"
+            @resize.window="open = window.innerWidth > 768"
+          >
+            <nav
+              x-data="{ openArray: [ false, false, false  ], handleOpen }"
+              class="text-very-dark-blue absolute top-24 left-10 right-10 z-10 rounded-lg bg-white py-10 md:static md:ml-10 md:flex md:w-full md:gap-9 md:bg-transparent md:py-0"
+            >
+              <div class="relative mb-2">
+                <div>
+                  <a
+                    @click="handleOpen(0)"
+                    class="hover:cursor-pointer md:text-white md:hover:underline"
+                  >
+                    Product
+                  </a>
+                  <picture>
+                    <source
+                      media="(min-width:768px)"
+                      srcset="./images/icon-arrow-light.svg"
+                    />
+                    <img
+                      x-ref="productArrow"
+                      class="inline-block"
+                      src="./images/icon-arrow-dark.svg"
+                      alt="arrow"
+                    />
+                  </picture>
+                </div>
+                <template x-if="openArray[0]">
+                  <div
+                    x-ref="product"
+                    class="mx-10 flex flex-col gap-2 rounded-md bg-gray-100 p-3 md:absolute md:-left-16 md:top-9 md:text-left"
+                  >
+                    <a class="hover:cursor-pointer hover:font-bold">
+                      Overview
+                    </a>
+                    <a class="hover:cursor-pointer hover:font-bold">
+                      Pricing
+                    </a>
+                    <a class="hover:cursor-pointer hover:font-bold">
+                      Marketplace
+                    </a>
+                    <a class="hover:cursor-pointer hover:font-bold">
+                      Features
+                    </a>
+                    <a class="hover:cursor-pointer hover:font-bold">
+                      Integrations
+                    </a>
+                  </div>
+                </template>
+              </div>
+
+              <div class="relative mb-2">
+                <div>
+                  <a
+                    @click="handleOpen(1)"
+                    class="hover:cursor-pointer md:text-white md:hover:underline"
+                  >
+                    Company
+                  </a>
+                  <picture>
+                    <source
+                      media="(min-width:768px)"
+                      srcset="./images/icon-arrow-light.svg"
+                    />
+                    <img
+                      x-ref="companyArrow"
+                      class="inline-block"
+                      src="./images/icon-arrow-dark.svg"
+                      alt="arrow"
+                    />
+                  </picture>
+                </div>
+                <template x-if="openArray[1]">
+                  <div
+                    x-ref="company"
+                    class="mx-10 flex flex-col gap-2 rounded-md bg-gray-100 p-3 md:absolute md:-left-11 md:top-9 md:text-left"
+                  >
+                    <a class="hover:cursor-pointer hover:font-bold"> About </a>
+                    <a class="hover:cursor-pointer hover:font-bold"> Team </a>
+                    <a class="hover:cursor-pointer hover:font-bold"> Blog </a>
+                    <a class="hover:cursor-pointer hover:font-bold">
+                      Careers
+                    </a>
+                  </div>
+                </template>
+              </div>
+
+              <div class="relative mb-2">
+                <div>
+                  <a
+                    @click="handleOpen(2)"
+                    class="hover:cursor-pointer md:text-white md:hover:underline"
+                  >
+                    Connect
+                  </a>
+                  <picture>
+                    <source
+                      media="(min-width:768px)"
+                      srcset="./images/icon-arrow-light.svg"
+                    />
+                    <img
+                      x-ref="connectArrow"
+                      class="inline-block"
+                      src="./images/icon-arrow-dark.svg"
+                      alt="arrow"
+                    />
+                  </picture>
+                </div>
+                <template x-if="openArray[2]">
+                  <div
+                    x-ref="connect"
+                    class="mx-10 flex flex-col gap-2 rounded-md bg-gray-100 p-3 md:absolute md:-left-14 md:top-9 md:text-left"
+                  >
+                    <a class="hover:cursor-pointer hover:font-bold">
+                      Contact
+                    </a>
+                    <a class="hover:cursor-pointer hover:font-bold">
+                      Newsletter
+                    </a>
+                    <a class="hover:cursor-pointer hover:font-bold">
+                      LinkedIn
+                    </a>
+                  </div>
+                </template>
+              </div>
+
+              <div
+                class="relative grid grid-rows-2 border-t-[1px] md:absolute md:right-10 md:grid-cols-2 md:grid-rows-1 md:border-none"
+              >
+                <button class="w-[100px] justify-self-center md:text-white">
+                  Login
+                </button>
+                <button
+                  class="from-very-light-red to-light-red md:text-light-red md:hover:bg-light-red w-[100px] justify-self-center rounded-3xl bg-gradient-to-r p-2 text-white md:bg-white md:bg-none md:hover:text-white"
+                >
+                  Sign Up
+                </button>
+              </div>
+            </nav>
+          </template>
+        </div>
+
+        <h1 class="p-3 text-4xl">A modern publishing platform</h1>
+        <h5>Grow your audience and build your online brand</h5>
+
+        <div class="my-10">
+          <button
+            class="text-light-red mr-3 rounded-3xl border-[1px] border-white bg-white px-4 py-3 font-bold hover:bg-transparent hover:text-white"
+          >
+            Start for Free
+          </button>
+          <button
+            class="hover:text-light-red rounded-3xl border-[1px] border-white px-4 py-3 font-bold hover:bg-white"
+          >
+            Learn More
+          </button>
+        </div>
+      </div>
+    </header>
+    <section class="text-very-dark-blue text-center font-medium">
+      <h2 class="mt-24 mb-12 text-2xl lg:text-4xl">Designed for the future</h2>
+      <img
+        src="images/illustration-editor-mobile.svg"
+        alt="Editor illustration"
+        class="lg:hidden"
+      />
+      <div class="flex flex-row-reverse">
+        <img
+          src="images/illustration-editor-desktop.svg"
+          alt="Editor illustration"
+          class="hidden w-1/2 lg:block"
+        />
+        <div class="lg:text-left">
+          <h2 class="mt-12 mb-6 px-16 text-2xl lg:ml-10 lg:p-0">
+            Introducing an extensible editor
+          </h2>
+          <p class="text-very-dark-grayish-blue px-10 font-normal">
+            Blogr features an exceedingly intuitive interface which lets you
+            focus on one thing: creating content. The editor supports management
+            of multiple blogs and allows easy manipulation of embeds such as
+            images, videos, and Markdown. Extensibility with plugins and themes
+            provide easy ways to add functionality or change the looks of a
+            blog.
+          </p>
+          <h2 class="mt-12 mb-6 px-16 text-2xl lg:ml-10 lg:p-0">
+            Robust content management
+          </h2>
+          <p class="text-very-dark-grayish-blue px-10 font-normal">
+            Flexible content management enables users to easily move through
+            posts. Increase the usability of your blog by adding customized
+            categories, sections, format, or flow. With this functionality,
+            you're in full control.
+          </p>
+        </div>
+      </div>
+    </section>
+    <img
+      src="images/illustration-phones.svg"
+      alt="Phones illustration"
+      class="relative top-52 lg:hidden"
+    />
+    <section
+      class="bg-very-dark-gray-blue rounded-tr-[80px] rounded-bl-[80px] pb-24 pt-52 text-center text-white lg:mt-32 lg:flex lg:h-80 lg:p-0"
+    >
+      <img
+        src="images/illustration-phones.svg"
+        alt="Phones illustration"
+        class="hidden lg:relative lg:bottom-20 lg:flex lg:h-[500px] lg:w-1/2"
+      />
+      <div class="lg:my-auto lg:w-1/2 lg:text-left">
+        <h1 class="mb-8 text-4xl lg:text-3xl">
+          State of the Art Infrastructure
+        </h1>
+        <p class="px-10 lg:pl-0 lg:pr-10">
+          With reliability and speed in mind, worldwide data centers provide the
+          backbone for ultra-fast connectivity. This ensures your site will load
+          instantly, no matter where your readers are, keeping your site
+          competitive.
+        </p>
+      </div>
+    </section>
+    <section
+      class="text-very-dark-blue mb-20 text-center lg:mt-32 lg:flex lg:text-left"
+    >
+      <img
+        src="images/illustration-laptop-mobile.svg"
+        alt="Laptop illustration"
+        class="mt-12 lg:w-1/2"
+      />
+      <div class="lg:w-1/2">
+        <h2 class="mt-12 mb-6 text-2xl font-medium">Free, open, simple</h2>
+        <p class="text-very-dark-grayish-blue px-10 lg:pl-0 lg:pr-14">
+          Blogr is a free and open source application backed by a large
+          community of helpful developers. It supports features such as code
+          syntax highlighting, RSS feeds, social media integration, third-party
+          commenting tools, and works seamlessly with Google Analytics. The
+          architecture is clean and is relatively easy to learn.
+        </p>
+        <h2 class="mt-12 text-2xl font-medium">Powerful tooling</h2>
+        <p class="text-very-dark-grayish-blue px-10 lg:pl-0 lg:pr-14">
+          Batteries included. We built a simple and straightforward CLI tool
+          that makes customization and deployment a breeze, but capable of
+          producing even the most complicated sites.
+        </p>
+      </div>
+    </section>
+    <footer
+      class="bg-very-dark-black-blue flex h-[110vh] w-full flex-col place-content-center rounded-tr-[80px] pt-20 text-center lg:h-[40vh] lg:pt-16"
+    >
+      <div class="flex flex-col lg:flex-row lg:items-start lg:justify-evenly">
+        <img
+          src="images/logo.svg"
+          alt="Logo of the site"
+          class="mx-auto mb-10 w-24 lg:m-0"
+        />
+
+        <div class="text-grayish-blue flex flex-col">
+          <p class="mb-6 font-bold text-white lg:mt-0 lg:mb-3">Product</p>
+          <a href="#" class="active:underline lg:mb-1">Overview</a>
+          <a href="#" class="active:underline lg:mb-1">Pricing</a>
+          <a href="#" class="active:underline lg:mb-1">Marketplace</a>
+          <a href="#" class="active:underline lg:mb-1">Features</a>
+          <a href="#" class="active:underline lg:mb-1">Integrations</a>
+        </div>
+
+        <div class="text-grayish-blue flex flex-col">
+          <p class="mt-10 mb-6 font-bold text-white lg:mt-0 lg:mb-3">Company</p>
+          <a href="#" class="active:underline lg:mb-1">About</a>
+          <a href="#" class="active:underline lg:mb-1">Team</a>
+          <a href="#" class="active:underline lg:mb-1">Blog</a>
+          <a href="#" class="active:underline lg:mb-1">Careers</a>
+        </div>
+
+        <div class="text-grayish-blue flex flex-col lg:m-0">
+          <p class="mt-10 mb-6 font-bold text-white lg:mt-0 lg:mb-3">Connect</p>
+          <a href="#" class="active:underline lg:mb-1">Contact</a>
+          <a href="#" class="active:underline lg:mb-1">Newsletter</a>
+          <a href="#" class="active:underline lg:mb-1">LinkedIn</a>
+        </div>
+      </div>
+      <div class="mt-auto text-sm">
         <a
           class="text-optimum-blue hover:text-optimum-darkblue"
           href="https://www.frontendmentor.io/challenges/blogr-landing-page-EX2RLAApP"
@@ -40,7 +351,7 @@
           >Frontend Mentor challenge</a
         >
       </div>
-      <div>
+      <div class="text-sm text-white">
         for
         <a
           class="text-optimum-blue hover:text-optimum-darkblue"
@@ -51,13 +362,23 @@
         Internship.
       </div>
 
-      <div class="mt-3">
+      <div class="mt-1 text-sm">
         <a
           class="text-optimum-blue hover:text-optimum-darkblue"
           href="https://github.com/optimumBA/frontend_mentor_challenges/tree/blogr_landing_page/challenges/blogr_landing_page"
           >Source code</a
         >
       </div>
-    </div>
+    </footer>
+
+    <script>
+      function handleOpen(p) {
+        this.openArray = this.openArray.map((e, i) => {
+          if (i != p) {
+            return false
+          } else return !this.openArray[p]
+        })
+      }
+    </script>
   </body>
 </html>
