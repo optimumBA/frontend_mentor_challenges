@@ -38,6 +38,7 @@
 
   <body
     class="min-h-[100px] bg-gradient-to-b from-[#af67e9] to-[#6565e7] bg-cover text-[12px]"
+    x-data="FAQ()"
   >
     <main
       class="desktop:flex-row mobile:flex-col mx-auto mb-0 mt-[176px] flex h-[80%] min-h-[42rem] w-[90%] max-w-[900px] rounded-[15px] bg-white shadow-md"
@@ -64,65 +65,26 @@
         <section
           class="mobile:mb-[32px] desktop:mb-2 mx-[3rem] mt-[3.5rem] grid gap-[0.2rem] divide-y divide-slate-200 border-2"
         >
-          <div
-            class="main-item flex cursor-pointer flex-col"
-            x-data="{show:false}"
-          >
-            <div class="question" x-on:click="show=!show" type="text">
-              <p>How many team members can I invite?</p>
-
-              <div class="arrow"></div>
-            </div>
-
-            <p class="answer" x-show="show">
-              You up to 2 additional users on the Free plan. There is no limit
-              on team members for the Premium plan.
-            </p>
-          </div>
-          <div class="main-item" x-data="{show:false}">
-            <div class="question" x-on:click="show=!show" type="text">
-              <p>What is the maximum file upload size?</p>
-
-              <div class="arrow"></div>
-            </div>
-
-            <p class="answer" x-show="show">
-              No more than 2GB. All files in your account must fit your allotted
-              storage space.
-            </p>
-          </div>
-          <div class="main-item" x-data="{show:false}">
-            <div class="question" @click="show=!show">
-              <p>How do I reset my password?</p>
-              <div class="arrow"></div>
-            </div>
-            <p class="answer" x-show="show">
-              Click “Forgot password” from the login page or “Change password”
-              from your profile page. A reset link will be emailed to you.
-            </p>
-          </div>
-          <div class="main-item" x-data="{show:false}">
-            <div class="question" x-on:click="show=!show">
-              <p>Can I cancel my subscription?</p>
-              <div class="arrow"></div>
-            </div>
-            <p class="answer" x-show="show">
-              Yes! Send us a message and we’ll process your request no questions
-              asked.
-            </p>
-          </div>
-          <div class="main-item" x-data="{show:false}">
-            <div
-              class="question border-b-1 divide-slate-200"
-              x-on:click="show=!show"
-            >
-              <p>Do you provide additional support?</p>
-              <div class="arrow"></div>
-            </div>
-            <p class="answer" x-show="show">
-              Chat and email support is available 24/7. Phone lines are open
-              during normal business hours.
-            </p>
+          <div class="main-item flex cursor-pointer flex-col" x-data="FAQ()">
+            <template x-for="question in questions" :key="question.id">
+              <section>
+                <div>
+                  <div
+                    @click="question.open = !question.open"
+                    class="main-item"
+                    type="text"
+                  >
+                    <p class="question" x-text="question.question"></p>
+                  </div>
+                  <div class="arrow"></div>
+                </div>
+                <div>
+                  <template x-if="question.open">
+                    <p class="answer" x-text="question.answer"></p>
+                  </template>
+                </div>
+              </section>
+            </template>
           </div>
         </section>
       </section>
@@ -158,5 +120,48 @@
         >
       </div>
     </div>
+    <script>
+      const questions = [
+        {
+          id: 1,
+          question: 'How many team members can I invite?',
+          answer: `You up to 2 additional users on the Free plan. There is no limit
+      on team members for the Premium plan`,
+          open: true,
+        },
+        {
+          id: 2,
+          question: 'What is the maximum file upload size?',
+          answer: `No more than 2GB. All files in your account must fit your allotted
+      storage space.`,
+          open: false,
+        },
+        {
+          id: 3,
+          question: 'How do I reset my password?',
+          answer: `Click “Forgot password” from the login page or “Change password”
+      from your profile page. A reset link will be emailed to you.`,
+          open: false,
+        },
+        {
+          id: 4,
+          question: 'Can I cancel my subscription?',
+          answer: `Yes! Send us a message and we’ll process your request no questions
+      asked.`,
+        },
+        {
+          id: 5,
+          question: 'Do you provide additional support?',
+          answer: `Chat and email support is available 24/7. Phone lines are open
+      during normal business hours.`,
+          open: false,
+        },
+      ]
+      function FAQ() {
+        return {
+          questions,
+        }
+      }
+    </script>
   </body>
 </html>
