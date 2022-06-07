@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="h-full text-[12px]">
+<html lang="en" class="mobile:h-full max-h-[100%] text-[12px]">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -40,17 +40,17 @@
   </head>
 
   <body
-    class="min-h-[100px] bg-gradient-to-b from-[#af67e9] to-[#6565e7] bg-cover text-[12px]"
+    class="mobile:w-[95%] min-h-[100px] bg-gradient-to-b from-[#af67e9] to-[#6565e7] bg-fixed text-[12px]"
   >
     <main
-      class="desktop:flex-row mobile:flex-col mx-auto mb-0 mt-[176px] flex h-[80%] min-h-[42rem] w-[90%] max-w-[900px] rounded-[15px] bg-white shadow-md"
+      class="desktop:flex-row mobile:flex-col mobile:mt-[30%] mx-auto mb-0 mt-[176px] flex h-[80%] min-h-[42rem] w-[90%] max-w-[900px] rounded-[15px] bg-white shadow-md"
     >
       <section
         class="relative bg-[url('./images/bg-pattern-desktop.svg')] bg-contain bg-[top_1rem_left_-2rem] bg-no-repeat"
       >
         <section class="">
           <img
-            class="desktop:mt-[5.7rem] desktop:ml-[-6.5rem] mobile:mt-[-10rem] mobile:ml-[-1.5rem] block"
+            class="desktop:mt-[5.7rem] desktop:ml-[-6.5rem] mobile:mt-[-10rem] mobile:ml-[-1.5rem] block bg-no-repeat"
             src="images/illustration-woman-online-desktop.svg"
             alt=""
           />
@@ -63,11 +63,11 @@
       </section>
 
       <section class="mobile:gap-1 desktop:w-[47%]">
-        <h1 class="mt-[5.1rem] ml-[3rem] text-[2.5rem]">FAQ</h1>
+        <h1 class="mobile:mt-[1rem] mt-[5.1rem] ml-[3rem] text-[2.5rem]">
+          FAQ
+        </h1>
 
-        <section
-          class="mobile:mb-[32px] desktop:mb-2 mx-[3rem] mt-[3.5rem] grid gap-[0.2rem]"
-        >
+        <section class="desktop:mb-2 mx-[3rem] mt-[3.5rem] grid gap-[0.2rem]">
           <div
             class="main-item flex cursor-pointer flex-col"
             x-data="{questions, check} "
@@ -75,15 +75,15 @@
             <template x-for="question in questions" :key="question.id">
               <div class="question-container">
                 <div @click="check(question.id)">
-                  <p
+                  <a
                     class="question"
                     :class="question.open===true? 'font-bold' : 'font-normal'"
                     x-text="question.question"
-                  ></p>
+                  ></a>
                   <img
                     src="images/icon-arrow-down.svg"
-                    class="float-right mt-[-22px] h-[20px] w-[20px]"
-                    :class="{'rotate-180': question.open ===true}"
+                    class="float-right mt-1 h-[20px] w-[20px]"
+                    :class="{'rotate-180': question.open ===true }"
                     alt="arrow not found!"
                   />
                 </div>
@@ -134,21 +134,21 @@
           id: 1,
           question: 'How many team members can I invite?',
           answer:
-            'You can invite up to 2 additional users on the Free plan. There is no limit on team members for the Premium plan',
+            'You can invite up to 2 additional users on the Free plan. There is no limit on team members for the Premium plan.',
           open: true,
         },
         {
           id: 2,
           question: 'What is the maximum file upload size?',
           answer:
-            'Click “Forgot password” from the login page or “Change password” from your profile page. A reset link will be emailed to you.',
+            'No more than 2GB. All files in your account must fit your allotted storage space.',
           open: false,
         },
         {
           id: 3,
           question: 'How do I reset my password?',
           answer:
-            'Yes! Send us a message and we’ll process your request no questions asked.',
+            'Click “Forgot password” from the login page or “Change password” from your profile page. A reset link will be emailed to you.',
           open: false,
         },
         {
@@ -169,8 +169,11 @@
 
       function check(id) {
         this.questions.forEach((q) => {
-         
-          q.id==id?(q.open===true? q.open=false : q.open=true): q.open=false;
+          q.id == id
+            ? q.open === true
+              ? (q.open = false)
+              : (q.open = true)
+            : (q.open = false)
         })
       }
     </script>

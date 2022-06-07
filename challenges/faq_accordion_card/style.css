@@ -4,14 +4,16 @@
 
 @layer components {
   .main-item {
-    @apply inline cursor-pointer flex-col;
+    @apply my-4 inline cursor-pointer  flex-col text-[1.2rem];
   }
   .main-item p {
     @apply my-4 text-[1.2rem];
   }
+
   .question-container {
-    @apply border-b-2 border-b-[#e5e7eb];
+    @apply my-4 border-b-2 border-b-[#e5e7eb] text-[1.2rem];
   }
+
   .question {
     @apply font-[700];
   }
@@ -19,7 +21,7 @@
     @apply font-[700] text-black;
   }
   .answer {
-    @apply mb-[1px];
+    @apply text-dark-grayish-blue mb-[1px] text-[11px];
   }
   .answer p {
     @apply mb-2;
