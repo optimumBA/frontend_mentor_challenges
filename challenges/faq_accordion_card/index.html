@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="text-[12px]">
+<html lang="en" class="h-full text-[12px]">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -31,14 +31,16 @@
       href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap"
       rel="stylesheet"
     />
-    <script src="//unpkg.com/alpinejs" defer></script>
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
     <link rel="manifest" href="../site.webmanifest" />
     <link rel="stylesheet" href="style.css" />
   </head>
 
   <body
     class="min-h-[100px] bg-gradient-to-b from-[#af67e9] to-[#6565e7] bg-cover text-[12px]"
-    x-data="FAQ()"
   >
     <main
       class="desktop:flex-row mobile:flex-col mx-auto mb-0 mt-[176px] flex h-[80%] min-h-[42rem] w-[90%] max-w-[900px] rounded-[15px] bg-white shadow-md"
@@ -59,40 +61,46 @@
           alt=""
         />
       </section>
+
       <section class="mobile:gap-1 desktop:w-[47%]">
         <h1 class="mt-[5.1rem] ml-[3rem] text-[2.5rem]">FAQ</h1>
 
         <section
-          class="mobile:mb-[32px] desktop:mb-2 mx-[3rem] mt-[3.5rem] grid gap-[0.2rem] divide-y divide-slate-200 border-2"
+          class="mobile:mb-[32px] desktop:mb-2 mx-[3rem] mt-[3.5rem] grid gap-[0.2rem]"
         >
-          <div class="main-item flex cursor-pointer flex-col" x-data="FAQ()">
+          <div
+            class="main-item flex cursor-pointer flex-col"
+            x-data="{questions, check} "
+          >
             <template x-for="question in questions" :key="question.id">
-              <section>
-                <div>
-                  <div
-                    @click="question.open = !question.open"
-                    class="main-item"
-                    type="text"
-                  >
-                    <p class="question" x-text="question.question"></p>
-                  </div>
-                  <div class="arrow"></div>
+              <div class="question-container">
+                <div @click="check(question.id)">
+                  <p
+                    class="question"
+                    :class="question.open===true? 'font-bold' : 'font-normal'"
+                    x-text="question.question"
+                  ></p>
+                  <img
+                    src="images/icon-arrow-down.svg"
+                    class="float-right mt-[-22px] h-[20px] w-[20px]"
+                    :class="{'rotate-180': question.open ===true}"
+                    alt="arrow not found!"
+                  />
                 </div>
-                <div>
-                  <template x-if="question.open">
-                    <p class="answer" x-text="question.answer"></p>
-                  </template>
-                </div>
-              </section>
+
+                <p
+                  class="answer"
+                  x-show="question.open"
+                  x-text="question.answer"
+                ></p>
+              </div>
             </template>
           </div>
         </section>
       </section>
     </main>
 
-    <div
-      class="flex h-[100vh] w-full flex-col place-content-center text-center"
-    >
+    <div class="mt-6 flex w-full flex-col place-content-center text-center">
       <div>
         <a
           class="text-optimum-blue hover:text-optimum-darkblue"
@@ -125,42 +133,45 @@
         {
           id: 1,
           question: 'How many team members can I invite?',
-          answer: `You up to 2 additional users on the Free plan. There is no limit
-      on team members for the Premium plan`,
+          answer:
+            'You can invite up to 2 additional users on the Free plan. There is no limit on team members for the Premium plan',
           open: true,
         },
         {
           id: 2,
           question: 'What is the maximum file upload size?',
-          answer: `No more than 2GB. All files in your account must fit your allotted
-      storage space.`,
+          answer:
+            'Click “Forgot password” from the login page or “Change password” from your profile page. A reset link will be emailed to you.',
           open: false,
         },
         {
           id: 3,
           question: 'How do I reset my password?',
-          answer: `Click “Forgot password” from the login page or “Change password”
-      from your profile page. A reset link will be emailed to you.`,
+          answer:
+            'Yes! Send us a message and we’ll process your request no questions asked.',
           open: false,
         },
         {
           id: 4,
           question: 'Can I cancel my subscription?',
-          answer: `Yes! Send us a message and we’ll process your request no questions
-      asked.`,
+          answer:
+            ' Yes! Send us a message and we’ll process your request no questions asked.',
+          open: false,
         },
         {
           id: 5,
           question: 'Do you provide additional support?',
-          answer: `Chat and email support is available 24/7. Phone lines are open
-      during normal business hours.`,
+          answer:
+            ' Chat and email support is available 24/7. Phone lines are open during normal business hours. ',
           open: false,
         },
       ]
-      function FAQ() {
-        return {
-          questions,
-        }
+
+      function check(id) {
+        this.questions.forEach((q) => {
+         
+          q.id==id?(q.open===true? q.open=false : q.open=true): q.open=false;
+        })
       }
     </script>
   </body>

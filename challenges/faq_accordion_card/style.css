@@ -4,38 +4,27 @@
 
 @layer components {
   .main-item {
-    @apply flex cursor-pointer flex-col;
+    @apply inline cursor-pointer flex-col;
   }
   .main-item p {
-    @apply text-[1.2rem];
+    @apply my-4 text-[1.2rem];
+  }
+  .question-container {
+    @apply border-b-2 border-b-[#e5e7eb];
   }
   .question {
-    @apply flex justify-between;
+    @apply font-[700];
   }
   .question.active {
     @apply font-[700] text-black;
   }
-
-  .answer.shown {
-    @apply text-very-dark-grayish-blue mt-[-1.5rem] pr-[20px] pb-[3rem] text-[1rem];
+  .answer {
+    @apply mb-[1px];
+  }
+  .answer p {
+    @apply mb-2;
   }
   .question:hover {
     @apply text-soft-red transition delay-300 ease-in-out;
-  }
-  .arrow {
-    @apply h-[4rem] w-[4rem] bg-[url('./images/icon-arrow-down.svg')] bg-[position:25%] bg-no-repeat;
-  }
-  .arrow:before {
-    @apply block;
-  }
-  .arrow-active {
-    @apply rotate-180;
-  }
-  .arrow-block {
-    @apply inline-block w-[2rem] text-center;
-  }
-
-  .arrow.rotate {
-    @apply rotate-180;
   }
 }
