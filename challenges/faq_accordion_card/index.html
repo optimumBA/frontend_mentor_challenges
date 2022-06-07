@@ -35,209 +35,134 @@
     <div
       class="relative z-50 flex h-[100vh] w-full flex-col place-content-center items-center text-center"
     >
-      <!--CARD MOBILE-->
+    
 
-      <img
-        src="images/illustration-woman-online-mobile.svg"
-        alt=""
-        class="absolute top-2 w-52"
-      />
-
-      <div
-        class="mt-10 w-[90%] rounded-3xl bg-white pr-10 pl-10 pb-10 md:hidden"
-      >
-        <div class="flex flex-col">
-          <div class="flex-[0_0_30%]">
-            <img src="images/bg-pattern-mobile.svg" alt="" />
-          </div>
-
-          <div class="flex-[0_0_70%]">
-            <div
-              x-data=" {isOpen : false} "
-              class="border-divider border-b pt-5 pb-4"
-            >
-              <div
-                @click="isOpen = !isOpen"
-                class="text-neutral-darker hover:text-primary-hover flex cursor-pointer items-center justify-between"
-                :class="{'font-bold' : isOpen}"
-              >
-                <span class="text-xs md:text-base"
-                  >How many team members can I invite?</span
-                >
-                <div>
-                  <img
-                    class="mb-1 duration-300"
-                    :class="{'transform rotate-180' : isOpen}"
-                    src="images/icon-arrow-down.svg"
-                    alt="missing"
-                  />
-                </div>
-              </div>
-
-              <div
-                x-show.transition.duration.300ms.origin.bottom="isOpen"
-                x-cloak
-                @click.away="isOpen = false"
-                class="text-neutral pt-3 text-sm"
-              >
-                <span class="text-xs md:text-base">
-                  You can invite up to 2 additional users on the Free plan.
-                  There is no limit on team members for the Premium plan.
-                </span>
-              </div>
-            </div>
-            <!-- end of item -->
-
-            <!-- item -->
-            <div
-              x-data=" {isOpen : false} "
-              class="border-divider border-b pt-5 pb-4"
-            >
-              <div
-                @click="isOpen = !isOpen"
-                class="text-neutral-darker hover:text-primary-hover flex cursor-pointer items-center justify-between"
-                :class="{'font-bold' : isOpen}"
-              >
-                <span class="text-xs md:text-base"
-                  >What is the maximum file upload size?</span
-                >
-                <div>
-                  <img
-                    class="mb-1 duration-300"
-                    :class="{'transform rotate-180' : isOpen}"
-                    src="images/icon-arrow-down.svg"
-                    alt="missing"
-                  />
-                </div>
-              </div>
-
-              <div
-                x-show.transition.duration.300ms.origin.bottom="isOpen"
-                x-cloak
-                @click.away="isOpen = false"
-                class="text-neutral pt-3 text-sm"
-              >
-                <span class="text-xs md:text-base">
-                  No more than 2GB. All files in your account must fit your
-                  allotted storage space.
-                </span>
-              </div>
-            </div>
-            <!-- end of item -->
-
-            <!-- item -->
-            <div
-              x-data=" {isOpen : false} "
-              class="border-divider border-b pt-5 pb-4"
-            >
-              <div
-                @click="isOpen = !isOpen"
-                class="text-neutral-darker hover:text-primary-hover flex cursor-pointer items-center justify-between"
-                :class="{'font-bold' : isOpen}"
-              >
-                <span class="text-xs md:text-base"
-                  >How do I reset my password?</span
-                >
-                <div>
-                  <img
-                    class="mb-1 duration-300"
-                    :class="{'transform rotate-180' : isOpen}"
-                    src="images/icon-arrow-down.svg"
-                    alt="missing"
-                  />
-                </div>
-              </div>
-
-              <div
-                x-show.transition.duration.300ms.origin.bottom="isOpen"
-                x-cloak
-                @click.away="isOpen = false"
-                class="text-neutral pt-3 text-sm"
-              >
-                <span class="text-xs md:text-base">
-                  Click “Forgot password” from the login page or “Change
-                  password” from your profile page. A reset link will be emailed
-                  to you.
-                </span>
-              </div>
-            </div>
-            <!-- end of item -->
-
-            <!-- item -->
-            <div
-              x-data=" {isOpen : false} "
-              class="border-divider border-b pt-5 pb-4"
-            >
-              <div
-                @click="isOpen = !isOpen"
-                class="text-neutral-darker hover:text-primary-hover flex cursor-pointer items-center justify-between"
-                :class="{'font-bold' : isOpen}"
-              >
-                <span class="text-xs md:text-base"
-                  >Can I cancel my subscription?</span
-                >
-                <div>
-                  <img
-                    class="mb-1 duration-300"
-                    :class="{'transform rotate-180' : isOpen}"
-                    src="images/icon-arrow-down.svg"
-                    alt="missing"
-                  />
-                </div>
-              </div>
-
-              <div
-                x-show.transition.duration.300ms.origin.bottom="isOpen"
-                x-cloak
-                @click.away="isOpen = false"
-                class="text-neutral pt-3 text-sm"
-              >
-                <span class="text-xs md:text-base">
-                  Yes! Send us a message and we’ll process your request no
-                  questions asked.
-                </span>
-              </div>
-            </div>
-            <!-- end of item -->
-
-            <!-- item -->
-            <div
-              x-data=" {isOpen : false} "
-              class="border-divider border-b pt-5 pb-4"
-            >
-              <div
-                @click="isOpen = !isOpen"
-                class="text-neutral-darker hover:text-primary-hover flex cursor-pointer items-center justify-between"
-                :class="{'font-bold' : isOpen}"
-              >
-                <span class="text-xs md:text-base"
-                  >Do you provide additional support?</span
-                >
-                <div>
-                  <img
-                    class="mb-1 duration-300"
-                    :class="{'transform rotate-180' : isOpen}"
-                    src="images/icon-arrow-down.svg"
-                    alt="missing"
-                  />
-                </div>
-              </div>
-
-              <div
-                x-show.transition.duration.300ms.origin.bottom="isOpen"
-                x-cloak
-                @click.away="isOpen = false"
-                class="text-neutral pt-3 text-sm"
-              >
-                <span class="text-xs md:text-base">
-                  Chat and email support is available 24/7. Phone lines are open
-                  during normal business hours.
-                </span>
-              </div>
-            </div>
-            <!-- end of item -->
-          </div>
+      <div class="md:w-[90%] mt-[10%] md:mt-0 h-[75vh] w-[320px] lg:w-[980px] relative flex-col md:flex-row bg-white rounded-3xl flex md:h-[500px]">
+        <img src="images/illustration-box-desktop.svg" alt="" class="absolute left-[-10%] bottom-[115px] z-40 hidden md:block">
+        <img src="images/illustration-woman-online-mobile.svg" alt="" class="md:hidden absolute w-[210px] ml-12 top-[-90px]">
+        <div class="md:flex-[0_0_50%] flex-[0_0_30%] md:flex md:items-center relative overflow-hidden ">
+          <img src="images/bg-pattern-desktop.svg" alt="" class="hidden md:block absolute left-[-40%] bottom-[-5%] w-[100%]">
+          <img src="images/illustration-woman-online-desktop.svg" alt="" class="hidden md:block absolute left-[-15%] z-10">
+          <img src="images/bg-pattern-mobile.svg" alt="" class="md:hidden ml-auto mr-auto">
         </div>
+
+        <div class="md:flex-[0_0_50%] flex-[0_0_70%] px-6 pb-10 md:px-6 md:py-14">
+          
+          <div class="h-auto md:h-96">
+            <h2 class="pb-4 text-3xl font-bold text-center md:text-left text-primary-darker">FAQ</h2>
+
+            <!-- item -->
+            <div x-data=" {isOpen : false} " class="pt-5 pb-4 border-b border-divider">
+              <div @click="isOpen = !isOpen"
+                class="flex items-center justify-between cursor-pointer text-neutral-darker hover:text-primary-hover"
+                :class="{'font-bold' : isOpen}">
+                <span class="text-xs md:text-base">How many team members can I invite?</span>
+                <div>
+                  <img class="mb-1 duration-300" :class="{'transform rotate-180' : isOpen}"
+                    src="images/icon-arrow-down.svg" alt="missing">
+                </div>
+              </div>
+
+              <div x-show.transition.duration.300ms.origin.bottom="isOpen" x-cloak @click.away="isOpen = false"
+                class="pt-3 text-sm text-neutral text-left">
+                <span class="text-xs ">
+                  You can invite up to 2 additional users on the Free plan. There is no limit on
+                  team members for the Premium plan.
+                </span>
+              </div>
+            </div>
+            <!-- end of item -->
+
+            <!-- item -->
+            <div x-data=" {isOpen : false} " class="pt-5 pb-4 border-b border-divider">
+              <div @click="isOpen = !isOpen"
+                class="flex items-center justify-between cursor-pointer text-neutral-darker hover:text-primary-hover"
+                :class="{'font-bold' : isOpen}">
+                <span class="text-xs md:text-base">What is the maximum file upload size?</span>
+                <div>
+                  <img class="mb-1 duration-300" :class="{'transform rotate-180' : isOpen}"
+                    src="images/icon-arrow-down.svg" alt="missing">
+                </div>
+              </div>
+
+              <div x-show.transition.duration.300ms.origin.bottom="isOpen" x-cloak @click.away="isOpen = false"
+                class="pt-3 text-sm text-neutral text-left">
+                <span class="text-xs ">
+                  No more than 2GB. All files in your account must fit your allotted storage space.
+                </span>
+              </div>
+            </div>
+            <!-- end of item -->
+
+            <!-- item -->
+            <div x-data=" {isOpen : false} " class="pt-5 pb-4 border-b border-divider">
+              <div @click="isOpen = !isOpen"
+                class="flex items-center justify-between cursor-pointer text-neutral-darker hover:text-primary-hover"
+                :class="{'font-bold' : isOpen}">
+                <span class="text-xs md:text-base">How do I reset my password?</span>
+                <div>
+                  <img class="mb-1 duration-300" :class="{'transform rotate-180' : isOpen}"
+                    src="images/icon-arrow-down.svg" alt="missing">
+                </div>
+              </div>
+
+              <div x-show.transition.duration.300ms.origin.bottom="isOpen" x-cloak @click.away="isOpen = false"
+                class="pt-3 text-sm text-neutral text-left">
+                <span class="text-xs ">
+                  Click “Forgot password” from the login page or “Change password” from your profile page.
+                  A reset link will be emailed to you.
+                </span>
+              </div>
+            </div>
+            <!-- end of item -->
+
+            <!-- item -->
+            <div x-data=" {isOpen : false} " class="pt-5 pb-4 border-b border-divider">
+              <div @click="isOpen = !isOpen"
+                class="flex items-center justify-between cursor-pointer text-neutral-darker hover:text-primary-hover"
+                :class="{'font-bold' : isOpen}">
+                <span class="text-xs md:text-base">Can I cancel my subscription?</span>
+                <div>
+                  <img class="mb-1 duration-300" :class="{'transform rotate-180' : isOpen}"
+                    src="images/icon-arrow-down.svg" alt="missing">
+                </div>
+              </div>
+
+              <div x-show.transition.duration.300ms.origin.bottom="isOpen" x-cloak @click.away="isOpen = false"
+                class="pt-3 text-sm text-neutral text-left">
+                <span class="text-xs ">
+                  Yes! Send us a message and we’ll process your request no questions asked.
+                </span>
+              </div>
+            </div>
+            <!-- end of item -->
+
+            <!-- item -->
+            <div x-data=" {isOpen : false} " class="pt-5 pb-4 border-b border-divider">
+              <div @click="isOpen = !isOpen"
+                class="flex items-center justify-between cursor-pointer text-neutral-darker hover:text-primary-hover"
+                :class="{'font-bold' : isOpen}">
+                <span class="text-xs md:text-base">Do you provide additional support?</span>
+                <div>
+                  <img class="mb-1 duration-300" :class="{'transform rotate-180' : isOpen}"
+                    src="images/icon-arrow-down.svg" alt="missing">
+                </div>
+              </div>
+
+              <div x-show.transition.duration.300ms.origin.bottom="isOpen" x-cloak @click.away="isOpen = false"
+                class="pt-3 text-sm text-left">
+                <span class="text-xs ">
+                  Chat and email support is available 24/7. Phone lines are open during normal business hours.
+                </span>
+              </div>
+            </div>
+            <!-- end of item -->
+          </div>
+
+        </div>
+
+
+
       </div>
 
       <div class="text-white">
