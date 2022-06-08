@@ -1,3 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+
+.nav-list {
+	@apply py-2 hover:text-black text-disatureteBlue font-Overpass-xl;
+}
+
+.nav-wrapper {
+	@apply bg-gray-200
+	md:bg-white
+	rounded-md
+	p-3
+	font-Overpass
+	mt-1 font-Overpass-md
+	md:absolute md:shadow-md md:text-left;
+}
+
+.nav-button {
+	@apply flex
+	text-black
+	items-center
+	w-full
+	hover:underline
+	font-Overpass font-Overpass-xl
+	md:text-white
+	focus:text-disatureteBlue
+	md:focus:text-gray-50
+	justify-center;
+}
+
+.nav-arrow-light {
+	@apply mx-2
+	hidden
+	md:inline;
+}
+
+.nav-arrow-dark {
+	@apply mx-2 
+	inline
+	md:hidden;
+}
