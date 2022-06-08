@@ -4,3 +4,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .main-body {
+    @apply font-kumbhSans from-softViolet to-softBlue flex h-[110vh] w-full flex-col items-center justify-center bg-gradient-to-b 
+        text-center text-[12px] lg:h-[100vh];
+  }
+  .main-component-card {
+    @apply fixed mt-[10%] h-[33rem] w-[20rem] overflow-hidden rounded-3xl bg-white shadow-2xl lg:relative lg:mt-0 lg:flex lg:h-[30rem] lg:w-[55rem];
+  }
+}

@@ -5,18 +5,17 @@ module.exports = {
       colors: {
         'optimum-blue': '#009efc',
         'optimum-darkblue': '#0389e1',
-        'text-dark': 'hsl(238, 29%, 16%)',
-        'text-red': 'hsl(238, 29%, 16%)',
-        'background-violet':  'hsl(273, 75%, 66%)',
-        'background-s-blue': 'hsl(240, 73%, 65%)',
-        'text-vd-g-blue': 'hsl(237, 12%, 33%)',
-        'text-d-g-blue': 'hsl(240, 6%, 50%)',
-        'devider': 'hsl(240, 5%, 91%)'
+        veryDarkBlue: '#1d1e35',
+        softRed: '#f47c57',
+        softViolet: '#af67e9',
+        softBlue: '#6565e7',
+        veryDarkGrayishBlue: '#4a4b5e',
+        darkGrayishBlue: '#787887',
+        lightGrayishBlue: '#e7e7e9',
       },
       fontFamily: {
         kumbhSans: ['Kumbh Sans', 'sans-serif'],
       },
-
     },
   },
   plugins: [],
