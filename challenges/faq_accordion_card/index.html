@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+    <script src="./index.js"></script>
     <title>
       FAQ accordion card &bullet; Frontend Mentor Challenges &bullet; Optimum BH
       Internship
@@ -27,37 +32,139 @@
     />
     <link rel="manifest" href="../site.webmanifest" />
     <link rel="stylesheet" href="style.css" />
+
+    <style>
+      [x-cloak] {
+        display: none !important;
+      }
+    </style>
   </head>
   <body class="m-0">
-    <div
-      class="flex h-[100vh] w-full flex-col place-content-center text-center"
-    >
-      <div>
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://www.frontendmentor.io/challenges/faq-accordion-card-XlyjD0Oam"
-          target="_blank"
-          >Frontend Mentor challenge</a
-        >
-      </div>
-      <div>
-        for
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA"
-          target="_blank"
-          >Optimum BH</a
-        >
-        Internship.
-      </div>
+    <div class="main-body">
+      <div class="main-component-card">
+        <img
+          class="mt-[-39%] ml-[14%] w-[70%] lg:absolute lg:left-0 lg:mt-[-33%] lg:ml-[-58%] lg:w-full"
+          src="../images/bg-pattern-desktop.svg"
+          alt=""
+        />
+        <div class="relative lg:left-0 lg:w-1/2">
+          <img
+            class="mt-[-30%] hidden w-[50%] lg:relative lg:left-0 lg:mt-12 lg:ml-[-15%] lg:block lg:w-full"
+            src="../images/illustration-woman-online-desktop.svg"
+            alt="tech-woman"
+            width=""
+          />
 
-      <div class="mt-3">
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA/frontend_mentor_challenges/tree/faq_accordion_card/challenges/faq_accordion_card"
-          >Source code</a
+          <img
+            class="mt-[-35%] ml-[5%] hidden w-[25%] lg:fixed lg:mt-[-17%] lg:ml-[-10%] lg:block lg:w-[15%]"
+            src="../images/illustration-box-desktop.svg"
+            alt="box ilustration"
+          />
+        </div>
+        <img
+          class="fixed mt-[-52%] ml-[13%] block w-[60%] lg:hidden"
+          src="../images/illustration-woman-online-mobile.svg"
+          alt=""
+        />
+        <div
+          x-data="tabContent()"
+          class="mt-[5%] block px-1 lg:my-auto lg:w-1/2 lg:justify-center lg:px-14 lg:text-left"
         >
+          <h1 class="text-veryDarkBlue pb-2 text-[30px] font-bold">FAQ</h1>
+
+          <template x-for="myTab in tabs">
+            <div
+              class="border-lightGrayishBlue mx-6 border-b-[1px] text-left lg:mx-1 lg:text-left"
+            >
+              <div
+                @click="myTab.isOpen = !myTab.isOpen"
+                @click.away="myTab.isOpen = false"
+                x-cloak
+                class="hover:text-softRed text-veryDarkBlue flex cursor-pointer items-center justify-between pt-[15px]"
+              >
+                <a
+                  :class="myTab.isOpen ? 'font-bold' : 'font-normal '"
+                  x-text="myTab.title"
+                ></a>
+
+                <img
+                  src="../images/icon-arrow-down.svg"
+                  alt="arrow button"
+                  :class="myTab.isOpen ? 'rotate-180 h-[10px] mr-2'   : 'rotate-0 h-[10px] mr-2'  "
+                />
+              </div>
+              <br />
+
+              <p
+                class="text-darkGrayishBlue mb-3"
+                x-show="myTab.isOpen"
+                x-text="myTab.body"
+              ></p>
+            </div>
+          </template>
+        </div>
       </div>
+      <footer class="">
+        <div>
+          <a
+            class="hover:text-blue text-blue-50"
+            href="https://www.frontendmentor.io/challenges/faq-accordion-card-XlyjD0Oam"
+            target="_blank"
+            >Frontend Mentor challenge</a
+          >
+        </div>
+        <div class="text-blue-50">
+          for
+          <a
+            class="text-blue-50 hover:text-blue-50"
+            href="https://github.com/optimumBA"
+            target="_blank"
+            >Optimum BH</a
+          >
+          Internship.
+        </div>
+
+        <div class="mt-3">
+          <a
+            class="hover:text-optimum-darkblue text-blue-50"
+            href="https://github.com/senaid123/frontend_mentor_challenges/tree/faq_accordion_card/challenges/faq_accordion_card"
+            >Source code</a
+          >
+        </div>
+      </footer>
     </div>
+    <script>
+      let tabContent = () => {
+        return {
+          tabs: [
+            {
+              title: 'How many team members can I invite?',
+              body: 'You can invite up to 2 additional users on the Free plan. There is no limit on team members for the Premium plan.',
+              isOpen: true,
+            },
+            {
+              title: 'What is the maximum file upload size?',
+              body: 'No more than 2GB. All files in your account must fit your allotted storage space.',
+              isOpen: false,
+            },
+            {
+              title: 'How do I reset my password?',
+              body: 'Click “Forgot password” from the login page or “Change password” from your profile page. A reset link will be emailed to you.',
+              isOpen: false,
+            },
+            {
+              title: 'Can I cancel my subscription?',
+              body: 'Yes! Send us a message and we’ll process your request no questions asked.',
+              isOpen: false,
+            },
+            {
+              title: 'Do you provide additional support?',
+              body: 'Chat and email support is available 24/7. Phone lines are open during normal business hours.',
+              isOpen: false,
+            },
+          ],
+        }
+      }
+    </script>
   </body>
 </html>
