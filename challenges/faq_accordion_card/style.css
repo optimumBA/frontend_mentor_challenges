@@ -2,3 +2,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.div-q{
+    @apply h-[15%] w-[100%] border-b-[1px] text-2xl flex items-center place-content-between;
+}
+
+.p{
+    @apply hover:cursor-pointer hover:text-softRed text-veryDarkGrayishBlue;
+}
