@@ -29,112 +29,106 @@
     <link rel="stylesheet" href="style.css" />
     <script src="//unpkg.com/alpinejs" defer></script>
   </head>
-  <body class="m-0 font-kumbhSans font-kumbhSans from-softViolet to-softBlue bg-gradient-to-b">
-    <!--Position-->
-    <main class="flex h-[100vh] w-full items-center justify-center">
+  <body class="body">
+
+    <!--Main-->
+    <main class="relative flex h-[100vh] items-center justify-center">
       
-      <!--Div-Holder-->
-      <div class="bg-white w-[85%] h-[70%] rounded-3xl flex overflow-hidden">
-
-        <!--Left-Section-->
-        <section class="w-[50%] flex flex-col relative">
-
-          <!--Shadow-->
-          <div class="">
-            <img src="./images/bg-pattern-desktop.svg" alt="Shadow" class="absolute right-[36%] mt-[6%] ml-[-4%] w-[100%] h-[100%]">
-          </div>
-
-          <!--IMG DIV-->
-          <div class="relative left-0 w-full">
-            <img src="./images/illustration-woman-online-desktop.svg" alt="Illustration Woman"
-            class="relative left-0 mt-24 ml-[-15%] w-[85%]">
-          </div>
-
-          <!--Box-->
-          <div>
-            <img src="./images/illustration-box-desktop.svg" alt="Box" class="fixed mt-[-17%] ml-[-10%] block w-[15%]">
-          </div>
-
+      <!--Article-->
+      <article class="article">
+  
+        <!--Box Image-->
+        <img src="./images/illustration-box-desktop.svg" alt="Box" 
+        class="box">
+  
+        <!--Section images-->
+        <section class="section-image">
+          
+          <!--Desktop Woman-->
+          <img src="./images/illustration-woman-online-desktop.svg" alt="Woman Desktop" 
+          class="woman-desktop">
+  
+          <!--Mobile Woman-->
+          <img src="./images/illustration-woman-online-mobile.svg" alt="Woman Mobile" 
+          class="woman-mobile">
+  
+          <!--Shadow Img Desktop-->
+          <img src="./images/bg-pattern-desktop.svg" alt="Shadow Desktop"
+          class="shadow-desktop">
+  
+          <!--Shadow Img Mobile-->
+          <img src="./images/bg-pattern-mobile.svg" alt="Shadow Mobile" 
+          class="shadow-mobile">
+  
         </section>
-
-        <!--Right-Section-->
-        <section class="w-[50%] flex flex-col p-4 shrink">
-          <!--Top-Div-->
-          <div class="w-[100%] h-[25%] flex justify-start items-center">
-            <!--Tittle-->
-            <div class="text-6xl font-bold">
-              <h4>
-                FAQ
-              </h4>
-            </div>
+  
+        <!--Section text-->
+        <section class="section-text">
+          
+          <!--Tittle-->
+          <div class="div-tittle">
+            <h4 class="md:text-3xl text-2xl font-bold">
+              FAQ
+            </h4>
           </div>
-
-          <!--Bottom-Div-->
-            <div class="w-[100%] h-[70%] flex flex-row gap-0">
-
-            <!--Questions-->
-            <div class="w-[95%] flex flex-col items-start justify-start">
-
-              <!--Q-1-->
-              <div class="div-q">
-                <p class="p">
-                  How many team members can I invite ?
-                </p>
-
-                <button>
-                  <img src="./images/icon-arrow-down.svg" alt="Arrow Down">
-                </button>
-              </div>
-
-              <!--Q-2-->
-              <div class="div-q">
-                <p class="p">
-                  What is the maximum file upload size ?
-                </p>
-
-                <button>
-                  <img src="./images/icon-arrow-down.svg" alt="Arrow Down">
-                </button>
-              </div>
-
-              <!--Q-3-->
-              <div class="div-q">
-                <p class="p"> 
-                  How do I reset my password ?
-                </p>
-
-                <button>
-                  <img src="./images/icon-arrow-down.svg" alt="Arrow Down">
-                </button>
-              </div>
-
-              <!--Q-4-->
-              <div class="div-q">
-                <p class="p">
-                  Can I cancel my subscription ?
-                </p>
-
-                <button>
-                  <img src="./images/icon-arrow-down.svg" alt="Arrow Down">
-                </button>
-              </div>
-
-              <!--Q-5-->
-              <div class="div-q">
-                <p class="p">
-                  Do you provide additional support ?
-                </p>
-
-                <button>
-                  <img src="./images/icon-arrow-down.svg" alt="Arrow Down">
-                </button>
-              </div>
-
+  
+          <!--Questions-->
+          <div class="div-question">
+  
+            <!--Q-1-->
+            <div class="div-q">
+              <p class="p">
+                How many team members can I invite ?
+              </p>
+              <button>
+                <img src="./images/icon-arrow-down.svg" alt="Arrow-Down">
+              </button>
             </div>
-
-          </div>         
+            
+            <!--Q-2-->
+            <div class="div-q">
+              <p class="p">
+                What is the maximum file upload size ?
+              </p>
+              <button>
+                <img src="./images/icon-arrow-down.svg" alt="Arrow-Down">
+              </button>
+            </div>
+  
+            <!--Q-3-->
+            <div class="div-q">
+              <p class="p">
+                How do I restart my password ?
+              </p>
+              <button>
+                <img src="./images/icon-arrow-down.svg" alt="Arrow-Down">
+              </button>
+            </div>
+  
+            <!--Q-4-->
+            <div class="div-q">
+              <p class="p">
+                Can I cancel my subscription ?
+              </p>
+              <button>
+                <img src="./images/icon-arrow-down.svg" alt="Arrow-Down">
+              </button>
+            </div>
+  
+            <!--Q-5-->
+            <div class="div-q">
+              <p class="p">
+                Do you provide additional support ?
+              </p>
+              <button>
+                <img src="./images/icon-arrow-down.svg" alt="Arrow-Down">
+              </button>
+            </div>
+  
+          </div>
+  
         </section>
-      </div>
+      </article>
     </main>
   </body>
 </html>

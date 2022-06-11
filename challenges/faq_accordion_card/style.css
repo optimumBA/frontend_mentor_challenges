@@ -3,10 +3,54 @@
 @tailwind components;
 @tailwind utilities;
 
+.body{
+    @apply m-0 font-kumbhSans from-softViolet to-softBlue bg-gradient-to-b;
+}
+
+.article{
+    @apply relative flex flex-col md:w-[70%] md:h-[55%] md:flex-row w-[70%] h-[55%] bg-white rounded-3xl;
+}
+
+.box{
+    @apply absolute w-[12%] top-[45%] -left-[7.5%] hidden md:block z-50;
+}
+
+.section-image{
+    @apply relative w-[100%] h-[20%] flex items-center justify-center md:w-[50%] md:h-[100%] md:items-center md:overflow-hidden;
+}
+
+.woman-desktop{
+    @apply relative left-[-25%] md:block hidden w-[80%] z-10;
+}
+
+.woman-mobile{
+    @apply md:hidden block w-[50%] relative bottom-20;
+}
+
+.shadow-desktop{
+    @apply absolute -left-[35%] -bottom-[9%] md:block hidden z-0;
+}
+
+.shadow-mobile{
+    @apply absolute md:hidden block;
+}
+
+.section-text{
+    @apply md:w-[50%] md:h-[100%] p-4 w-[100%] h-[80%] flex flex-col overflow-hidden;
+}
+
+.div-tittle{
+    @apply flex items-center justify-center md:items-center md:justify-start md:h-20;
+}
+
+.div-question{
+    @apply pt-2 flex flex-col text-[15px];
+}
+
 .div-q{
-    @apply h-[15%] w-[100%] border-b-[1px] text-2xl flex items-center place-content-between;
+    @apply flex flex-row justify-between border-b-[1px] md:h-12 h-10 items-center;
 }
 
 .p{
-    @apply hover:cursor-pointer hover:text-softRed text-veryDarkGrayishBlue;
+    @apply flex flex-row justify-between border-b-[1px] md:h-12 h-10 items-center;
 }
