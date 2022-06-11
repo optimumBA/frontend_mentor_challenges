@@ -28,6 +28,11 @@
     <link rel="manifest" href="../site.webmanifest" />
     <link rel="stylesheet" href="style.css" />
     <script src="//unpkg.com/alpinejs" defer></script>
+    <style>
+      [x-cloak] {
+        display: none !important;
+      }
+    </style>
   </head>
   <body class="body">
 
@@ -76,59 +81,141 @@
           <div class="div-question">
   
             <!--Q-1-->
-            <div class="div-q">
-              <p class="p">
-                How many team members can I invite ?
-              </p>
-              <button>
-                <img src="./images/icon-arrow-down.svg" alt="Arrow-Down">
-              </button>
+            <div x-data="{open: false}" class="div-qvs">
+  
+              <div class="div-q">
+                <p x-on:click="open = !open" class="p" :class="{'font-bold' : open}">
+                  How many team members can I invite ?
+                </p>
+                <button x-on:click="open = !open" :class="{'rotate-180' : open}">
+                  <img src="./images/icon-arrow-down.svg" alt="Arrow-Down">
+                </button>
+              </div>
+  
+              <!--Answer-->
+              <div
+                  x-show.transition.duration.300ms.origin.bottom="open"
+                  x-cloak
+                  @click.away="open = false"
+                  class="text-neutral pb-4 text-left text-sm"
+                >
+                  <a class="a">
+                    You can invite up to 2 additional users on the Free plan.
+                    There is no limit on team members for the Premium plan.
+                  </a>
+                </div>
+              </div>
             </div>
             
             <!--Q-2-->
-            <div class="div-q">
-              <p class="p">
-                What is the maximum file upload size ?
-              </p>
-              <button>
-                <img src="./images/icon-arrow-down.svg" alt="Arrow-Down">
-              </button>
+            <div x-data="{open: false}" class="div-qvs">
+  
+              <div class="div-q">
+                <p x-on:click="open = !open" class="p" :class="{'font-bold' : open}">
+                  What is the maximum file upload size ?
+                </p>
+                <button x-on:click="open = !open" :class="{'rotate-180' : open}">
+                  <img src="./images/icon-arrow-down.svg" alt="Arrow-Down">
+                </button>
+              </div>
+  
+              <!--Answer-->
+              <div
+                  x-show.transition.duration.300ms.origin.bottom="open"
+                  x-cloak
+                  @click.away="open = false"
+                  class="text-neutral pb-4 text-left text-sm"
+                >
+                  <a class="a">
+                    No more than 2GB. All files in your account must fit your allotted storage space.
+                  </a>
+                </div>
+              </div>
             </div>
   
             <!--Q-3-->
-            <div class="div-q">
-              <p class="p">
-                How do I restart my password ?
-              </p>
-              <button>
-                <img src="./images/icon-arrow-down.svg" alt="Arrow-Down">
-              </button>
+            <div x-data="{open: false}" class="div-qvs">
+  
+              <div class="div-q">
+                <p x-on:click="open = !open" class="p" :class="{'font-bold' : open}">
+                  How do I reset my password ?
+                </p>
+                <button x-on:click="open = !open" :class="{'rotate-180' : open}">
+                  <img src="./images/icon-arrow-down.svg" alt="Arrow-Down">
+                </button>
+              </div>
+  
+              <!--Answer-->
+              <div
+                  x-show.transition.duration.300ms.origin.bottom="open"
+                  x-cloak
+                  @click.away="open = false"
+                  class="text-neutral pb-4 text-left text-sm"
+                >
+                  <a class="a">
+                    Click “Forgot password” from the login page or “Change password” from your profile page. A reset link will be emailed to you.
+                  </a>
+                </div>
+              </div>
             </div>
   
             <!--Q-4-->
-            <div class="div-q">
-              <p class="p">
-                Can I cancel my subscription ?
-              </p>
-              <button>
-                <img src="./images/icon-arrow-down.svg" alt="Arrow-Down">
-              </button>
+            <div x-data="{open: false}" class="div-qvs">
+  
+              <div class="div-q">
+                <p x-on:click="open = !open" class="p" :class="{'font-bold' : open}">
+                  Can I cancel my subscription ?
+                </p>
+                <button x-on:click="open = !open" :class="{'rotate-180' : open}">
+                  <img src="./images/icon-arrow-down.svg" alt="Arrow-Down">
+                </button>
+              </div>
+  
+              <!--Answer-->
+              <div
+                  x-show.transition.duration.300ms.origin.bottom="open"
+                  x-cloak
+                  @click.away="open = false"
+                  class="text-neutral pb-4 text-left text-sm"
+                >
+                  <a class="a">
+                    Yes! Send us a message and we’ll process your request no questions asked.
+                  </a>
+                </div>
+              </div>
             </div>
   
             <!--Q-5-->
-            <div class="div-q">
-              <p class="p">
-                Do you provide additional support ?
-              </p>
-              <button>
-                <img src="./images/icon-arrow-down.svg" alt="Arrow-Down">
-              </button>
-            </div>
+            <div x-data="{open: false}" class="div-qvs">
   
+              <div class="div-q">
+                <p x-on:click="open = !open" class="p" :class="{'font-bold' : open}">
+                  Do you provide additional support ?
+                </p>
+                <button x-on:click="open = !open" :class="{'rotate-180' : open}">
+                  <img src="./images/icon-arrow-down.svg" alt="Arrow-Down">
+                </button>
+              </div>
+  
+              <!--Answer-->
+              <div
+                  x-show.transition.duration.300ms.origin.bottom="open"
+                  x-cloak
+                  @click.away="open = false"
+                  class="text-neutral pb-4 text-left text-sm"
+                >
+                  <a class="a">
+                    Chat and email support is available 24/7. Phone lines are open during normal business hours.
+                  </a>
+                </div>
+              </div>
+            </div>
+            
           </div>
   
         </section>
       </article>
     </main>
   </body>
+  
 </html>

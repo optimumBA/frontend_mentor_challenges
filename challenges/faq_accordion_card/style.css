@@ -8,7 +8,7 @@
 }
 
 .article{
-    @apply relative flex flex-col md:w-[70%] md:h-[55%] md:flex-row w-[70%] h-[55%] bg-white rounded-3xl;
+    @apply relative flex flex-col md:w-[70%] md:h-[50%] md:flex-row w-[70%] h-[55%] bg-white rounded-3xl;
 }
 
 .box{
@@ -48,9 +48,17 @@
 }
 
 .div-q{
-    @apply flex flex-row justify-between border-b-[1px] md:h-12 h-10 items-center;
+    @apply flex flex-row justify-between md:h-12 h-10 items-center;
 }
 
 .p{
-    @apply flex flex-row justify-between border-b-[1px] md:h-12 h-10 items-center;
+    @apply hover:cursor-pointer hover:text-softRed;
+}
+
+.div-qvs{
+    @apply flex flex-col border-b-[1px];
+}
+
+.a{
+    @apply text-xs text-gray-600;
 }
