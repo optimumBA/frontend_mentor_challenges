@@ -3,62 +3,62 @@
 @tailwind components;
 @tailwind utilities;
 
-.body{
-    @apply m-0 font-kumbhSans from-softViolet to-softBlue bg-gradient-to-b;
+.body {
+  @apply font-kumbhSans from-softViolet to-softBlue m-0 bg-gradient-to-b;
 }
 
-.article{
-    @apply relative flex flex-col md:w-[70%] md:h-[50%] md:flex-row w-[70%] h-[55%] bg-white rounded-3xl;
+.article {
+  @apply relative flex h-[55%] w-[70%] flex-col rounded-3xl bg-white md:h-[50%] md:w-[70%] md:flex-row;
 }
 
-.box{
-    @apply absolute w-[12%] top-[45%] -left-[7.5%] hidden md:block z-50;
+.box {
+  @apply absolute top-[45%] -left-[7.5%] z-50 hidden w-[12%] md:block;
 }
 
-.section-image{
-    @apply relative w-[100%] h-[20%] flex items-center justify-center md:w-[50%] md:h-[100%] md:items-center md:overflow-hidden;
+.section-image {
+  @apply relative flex h-[20%] w-[100%] items-center justify-center md:h-[100%] md:w-[50%] md:items-center md:overflow-hidden;
 }
 
-.woman-desktop{
-    @apply relative left-[-25%] md:block hidden w-[80%] z-10;
+.woman-desktop {
+  @apply relative left-[-25%] z-10 hidden w-[80%] md:block;
 }
 
-.woman-mobile{
-    @apply md:hidden block w-[50%] relative bottom-20;
+.woman-mobile {
+  @apply relative bottom-20 block w-[50%] md:hidden;
 }
 
-.shadow-desktop{
-    @apply absolute -left-[35%] -bottom-[9%] md:block hidden z-0;
+.shadow-desktop {
+  @apply absolute -left-[35%] -bottom-[9%] z-0 hidden md:block;
 }
 
-.shadow-mobile{
-    @apply absolute md:hidden block;
+.shadow-mobile {
+  @apply absolute block md:hidden;
 }
 
-.section-text{
-    @apply md:w-[50%] md:h-[100%] p-4 w-[100%] h-[80%] flex flex-col overflow-hidden;
+.section-text {
+  @apply flex h-[80%] w-[100%] flex-col overflow-hidden p-4 md:h-[100%] md:w-[50%];
 }
 
-.div-tittle{
-    @apply flex items-center justify-center md:items-center md:justify-start md:h-20;
+.div-tittle {
+  @apply flex items-center justify-center md:h-20 md:items-center md:justify-start;
 }
 
-.div-question{
-    @apply pt-2 flex flex-col text-[15px];
+.div-question {
+  @apply flex flex-col pt-2 text-[15px];
 }
 
-.div-q{
-    @apply flex flex-row justify-between md:h-12 h-10 items-center;
+.div-q {
+  @apply flex h-10 flex-row items-center justify-between md:h-12;
 }
 
-.p{
-    @apply hover:cursor-pointer hover:text-softRed;
+.p {
+  @apply hover:text-softRed hover:cursor-pointer;
 }
 
-.div-qvs{
-    @apply flex flex-col border-b-[1px];
+.div-qvs {
+  @apply flex flex-col border-b-[1px];
 }
 
-.a{
-    @apply text-xs text-gray-600;
+.a {
+  @apply text-xs text-gray-600;
 }
