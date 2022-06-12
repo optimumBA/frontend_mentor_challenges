@@ -8,7 +8,7 @@
 }
 
 .article {
-  @apply relative flex h-[55%] w-[70%] flex-col rounded-3xl bg-white md:h-[50%] md:w-[70%] md:flex-row;
+  @apply relative flex h-[65%] w-[60%] flex-col rounded-3xl bg-white md:h-[50%] md:w-[70%] md:flex-row;
 }
 
 .box {
@@ -24,15 +24,15 @@
 }
 
 .woman-mobile {
-  @apply relative bottom-20 block w-[50%] md:hidden;
+  @apply relative bottom-10 z-10 block w-[70%] md:hidden;
 }
 
 .shadow-desktop {
-  @apply absolute -left-[35%] -bottom-[9%] z-0 hidden md:block;
+  @apply absolute -left-[35%] -bottom-[4%] z-0 hidden md:block;
 }
 
 .shadow-mobile {
-  @apply absolute block md:hidden;
+  @apply absolute block w-[80%] md:hidden;
 }
 
 .section-text {
@@ -44,7 +44,7 @@
 }
 
 .div-question {
-  @apply flex flex-col pt-2 text-[15px];
+  @apply flex flex-col pt-2;
 }
 
 .div-q {
@@ -52,7 +52,7 @@
 }
 
 .p {
-  @apply hover:text-softRed hover:cursor-pointer;
+  @apply hover:text-softRed text-[8px] hover:cursor-pointer md:text-[15px];
 }
 
 .div-qvs {
@@ -60,5 +60,5 @@
 }
 
 .a {
-  @apply text-xs text-gray-600;
+  @apply text-[8px] text-gray-600 md:text-[15px];
 }
