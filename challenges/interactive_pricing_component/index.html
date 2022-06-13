@@ -52,7 +52,6 @@
           </span>
         </div>
         <input
-          id="input"
           type="range"
           min="1"
           value="3"
@@ -151,39 +150,38 @@
       let yearlyBilling = [6, 9, 12, 18, 27]
       let pageviewsChange = ['10K', '50K', '100K', '500K', '1M']
 
-      let input = document.getElementById('input')
+      let priceSlider = document.getElementById('price-slider')
       let billingChange = document.getElementById('yearly-billing-toggle')
-      let pageviewsOutput = (document.getElementById(
-        'pageviews-output'
-      )
-      let priceOutput = (document.getElementById('price-output')
+      let pageviewsOutput = document.getElementById('pageviews-output')
+      let priceOutput = document.getElementById('price-output')
 
-      console.log(input.value)
+      console.log(priceSlider.value)
       function oninput(e) {
         e.preventDefault()
         //console.log(pageviewsOutput.textContent)
         //console.log(priceOutput.textContent)
-        console.log(input.value)
+        console.log(priceSlider.value)
         if (billingChange.checked) {
           pageviewsOutput.textContent =
-            pageviewsChange[input.value - 1] + ' PAGEVIEWS'
-          console.log(input.value)
-          priceOutput.textContent = '$' + yearlyBilling[input.value - 1] + '.00'
+            pageviewsChange[priceSlider.value - 1] + ' PAGEVIEWS'
+          console.log(priceSlider.value)
+          priceOutput.textContent =
+            '$' + yearlyBilling[priceSlider.value - 1] + '.00'
           //console.log(pageviewsOutput.textContent)
           //console.log(priceOutput.textContent)
-          console.log(input.value)
+          console.log(priceSlider.value)
         } else {
           pageviewsOutput.textContent =
-            pageviewsChange[input.value - 1] + ' PAGEVIEWS'
+            pageviewsChange[priceSlider.value - 1] + ' PAGEVIEWS'
           priceOutput.textContent =
-            '$' + monthlyBilling[input.value - 1] + '.00'
+            '$' + monthlyBilling[priceSlider.value - 1] + '.00'
           //console.log(pageviewsOutput.textContent)
           //console.log(priceOutput.textContent)
-          console.log(input.value)
+          console.log(priceSlider.value)
         }
       }
       billingChange.addEventListener('change', oninput)
-      input.addEventListener('input', oninput)
+      priceSlider.addEventListener('input', oninput)
     </script>
   </body>
 </html>
