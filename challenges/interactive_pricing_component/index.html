@@ -30,7 +30,7 @@
   </head>
   <body class="bg-light-grayish-blue font-manrope text-grayish-blue m-0">
     <section
-      class="mt-16 flex h-[200px] flex-col justify-center bg-[url('images/pattern-circles.svg')] bg-contain bg-center bg-no-repeat text-center"
+      class="mx-auto mt-16 flex h-[200px] flex-col justify-center bg-[url('images/pattern-circles.svg')] bg-contain bg-center bg-no-repeat text-center"
     >
       <h1 class="text-dark-desaturated-blue text-2xl font-bold">
         Simple, traffic-based pricing
@@ -48,7 +48,7 @@
             class="mr-1 py-8 text-sm font-extrabold tracking-widest"
             id="pageviews-output"
           >
-            100K PAGEVIEWS
+            <!-- 100K PAGEVIEWS -->
           </span>
         </div>
         <input
@@ -64,7 +64,7 @@
         <div
           class="text-dark-desaturated-blue my-6 text-3xl font-extrabold lg:col-start-2 lg:row-start-1"
         >
-          <div id="output" class="inline">$16.00</div>
+          <div id="price-output" class="inline"><!-- $16.00 --></div>
           <span class="text-grayish-blue text-lg font-normal">/ month</span>
         </div>
       </div>
@@ -147,27 +147,44 @@
     </div>
 
     <script>
-      let monthlyBilling = [0, 8, 12, 16, 24, 36]
-      let yearlyBilling = [0, 6, 9, 12, 18, 27]
+      let monthlyBilling = [8, 12, 16, 24, 36]
+      let yearlyBilling = [6, 9, 12, 18, 27]
       let pageviewsChange = ['10K', '50K', '100K', '500K', '1M']
 
       let input = document.getElementById('input')
       let billingChange = document.getElementById('yearly-billing-toggle')
-      let pageviewsOutput = document.getElementById('pageviews-output')
-      output = document.getElementById('output')
+      let pageviewsOutput = (document.getElementById(
+        'pageviews-output'
+      ).textContent = '100K PAGEVIEWS')
+      let priceOutput = (document.getElementById('price-output').textContent =
+        '$16.00')
 
-      input.oninput = function () {
+      console.log(input.value)
+      function oninput(e) {
+        e.preventDefault()
+        //console.log(pageviewsOutput.textContent)
+        //console.log(priceOutput.textContent)
+        console.log(input.value)
         if (billingChange.checked) {
-          output.textContent = '$' + yearlyBilling[this.value] + '.00'
           pageviewsOutput.textContent =
-            pageviewsChange[this.value - 1] + ' PAGEVIEWS'
+            pageviewsChange[input.value - 1] + ' PAGEVIEWS'
+          console.log(input.value)
+          priceOutput.textContent = '$' + yearlyBilling[input.value - 1] + '.00'
+          //console.log(pageviewsOutput.textContent)
+          //console.log(priceOutput.textContent)
+          console.log(input.value)
         } else {
-          output.textContent = '$' + monthlyBilling[this.value] + '.00'
           pageviewsOutput.textContent =
-            pageviewsChange[this.value - 1] + ' PAGEVIEWS'
+            pageviewsChange[input.value - 1] + ' PAGEVIEWS'
+          priceOutput.textContent =
+            '$' + monthlyBilling[input.value - 1] + '.00'
+          //console.log(pageviewsOutput.textContent)
+          //console.log(priceOutput.textContent)
+          console.log(input.value)
         }
       }
-      input.oninput()
+      billingChange.addEventListener('change', oninput)
+      input.addEventListener('input', oninput)
     </script>
   </body>
 </html>
