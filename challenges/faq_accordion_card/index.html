@@ -92,28 +92,26 @@
                 >
                   <div
                     @click="qa.showAnswer = !qa.showAnswer"
+                    @click.away="qa.showAnswer = false"
                     class="hover:text-primary-text-soft-red flex cursor-pointer items-center justify-between py-3"
                   >
                     <a
                       :class="qa.showAnswer ? qaClasses + qaActive : qaClasses + qaInactive"
                       x-text="qa.question"
                     ></a>
-                    <div>
-                      <img
-                        :class="qa.showAnswer ? 'rotate-180 duration-500' : 'duration-300'"
-                        src="images/icon-arrow-down.svg"
-                        alt="Arrow icon"
-                      />
-                    </div>
-                  </div>
-                  <!-- <br /> -->
 
-                  <div
-                    class="sm:text-[16] text-neutral-text-dark-grayish-blue h-[30%] pb-2 font-medium"
-                  >
-                    <span x-cloak x-text="qa.showAnswer ? qa.answer : ''">
-                    </span>
+                    <img
+                      :class="qa.showAnswer ? 'rotate-180 duration-500' : 'duration-300'"
+                      src="images/icon-arrow-down.svg"
+                      alt="Arrow icon"
+                    />
                   </div>
+
+                  <span
+                    class="sm:text-[16] text-neutral-text-dark-grayish-blue h-[30%] pb-2 font-medium"
+                    x-cloak
+                    x-text="qa.showAnswer ? qa.answer : ''"
+                  ></span>
                 </div>
               </template>
             </div>
@@ -158,14 +156,14 @@
           question: 'How many team members can I invite?',
           answer: `You can invite up to 2 additional users
     on the Free plan. There is no limit on team members for the Premium plan.`,
-          showAnswer: false,
+          showAnswer: true,
         },
         {
           id: 2,
           question: 'What is the maximum file upload size?',
           answer: `No more than 2GB. All files in your
     account must fit your allotted storage space.`,
-          showAnswer: true,
+          showAnswer: false,
         },
         {
           id: 3,
