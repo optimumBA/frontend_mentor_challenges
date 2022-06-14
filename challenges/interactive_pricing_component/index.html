@@ -155,29 +155,18 @@
       let pageviewsOutput = document.getElementById('pageviews-output')
       let priceOutput = document.getElementById('price-output')
 
-      console.log(priceSlider.value)
       function oninput(e) {
         e.preventDefault()
-        //console.log(pageviewsOutput.textContent)
-        //console.log(priceOutput.textContent)
-        console.log(priceSlider.value)
         if (billingChange.checked) {
           pageviewsOutput.textContent =
             pageviewsChange[priceSlider.value - 1] + ' PAGEVIEWS'
-          console.log(priceSlider.value)
           priceOutput.textContent =
             '$' + yearlyBilling[priceSlider.value - 1] + '.00'
-          //console.log(pageviewsOutput.textContent)
-          //console.log(priceOutput.textContent)
-          console.log(priceSlider.value)
         } else {
           pageviewsOutput.textContent =
             pageviewsChange[priceSlider.value - 1] + ' PAGEVIEWS'
           priceOutput.textContent =
             '$' + monthlyBilling[priceSlider.value - 1] + '.00'
-          //console.log(pageviewsOutput.textContent)
-          //console.log(priceOutput.textContent)
-          console.log(priceSlider.value)
         }
       }
       billingChange.addEventListener('change', oninput)
