@@ -28,13 +28,98 @@
     <link rel="manifest" href="../site.webmanifest" />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="m-0">
+  <body class="bg-light-grayish-blue font-manrope text-grayish-blue m-0">
+    <section
+      class="mx-auto mt-16 flex h-[200px] flex-col justify-center bg-[url('images/pattern-circles.svg')] bg-contain bg-center bg-no-repeat text-center"
+    >
+      <h1 class="text-dark-desaturated-blue text-2xl font-bold">
+        Simple, traffic-based pricing
+      </h1>
+      <p class="mt-3 px-20">
+        Sign-up for our 30-day trial. No credit card required.
+      </p>
+    </section>
+    <section
+      class="mx-auto mt-10 max-h-[500px] max-w-[320px] rounded-lg bg-white text-center lg:max-w-[500px]"
+    >
+      <div class="lg:grid lg:grid-cols-2 lg:grid-rows-2 lg:gap-8 lg:pt-5">
+        <div class="flex justify-center lg:col-start-1">
+          <span
+            class="mr-1 py-8 text-sm font-extrabold tracking-widest"
+            id="pageviews-output"
+          >
+            100K PAGEVIEWS
+          </span>
+        </div>
+        <input
+          type="range"
+          min="1"
+          value="3"
+          max="5"
+          step="1"
+          class="slider mx-auto lg:col-span-2"
+          id="price-slider"
+        />
+        <div
+          class="text-dark-desaturated-blue my-6 text-3xl font-extrabold lg:col-start-2 lg:row-start-1"
+        >
+          <div id="price-output" class="inline">$16.00</div>
+          <span class="text-grayish-blue text-lg font-normal">/ month</span>
+        </div>
+      </div>
+
+      <div class="mb-6 flex items-center justify-center text-xs">
+        <p>Monthly Billing</p>
+
+        <label
+          class="group relative flex items-center justify-between p-2 text-xl"
+        >
+          <!--Toggle-->
+          <input
+            type="checkbox"
+            class="peer absolute left-1/2 h-full w-full -translate-x-1/2 appearance-none rounded-md"
+            id="yearly-billing-toggle"
+          />
+          <span
+            class="bg-light-grayish-blue-2 peer-checked:bg-strong-cyan ml-2 flex h-7 w-14 flex-shrink-0 items-center rounded-full p-1 duration-300 ease-in-out after:h-5 after:w-5 after:rounded-full after:bg-slate-50 after:shadow-md after:duration-300 group-hover:after:translate-x-1 peer-checked:after:translate-x-6"
+          ></span>
+        </label>
+
+        <p>Yearly Billing</p>
+        <div class="text-light-red bg-light-grayish-red ml-2 rounded-3xl p-1">
+          -25% <span class="hidden lg:inline">discount</span>
+        </div>
+      </div>
+
+      <hr />
+
+      <div class="lg:flex lg:items-center lg:justify-evenly">
+        <div class="mx-auto my-8 w-[70vw] text-xs lg:mx-0 lg:w-[20vw]">
+          <p class="mb-3 flex items-center justify-center lg:justify-start">
+            <img src="images/icon-check.svg" class="mr-3 h-3" />Unlimited
+            websites
+          </p>
+          <p class="mb-3 flex items-center justify-center lg:justify-start">
+            <img src="images/icon-check.svg" class="mr-3 h-3" />100% data
+            ownership
+          </p>
+          <p class="mb-3 flex items-center justify-center lg:justify-start">
+            <img src="images/icon-check.svg" class="mr-3 h-3" />Email reports
+          </p>
+        </div>
+        <button
+          class="bg-dark-desaturated-blue text-light-grayish-blue-2 mb-8 rounded-3xl py-3 px-10 text-xs font-extrabold active:text-white lg:mb-0 lg:h-10"
+        >
+          Start my trial
+        </button>
+      </div>
+    </section>
     <div
-      class="flex h-[100vh] w-full flex-col place-content-center text-center"
+      class="mt-20 flex h-[10vh] w-full flex-col place-content-center text-center text-sm"
     >
       <div>
         <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
+          class="text-dark-desaturated-blue hover:text-optimum-darkblue"
           href="https://www.frontendmentor.io/challenges/interactive-pricing-component-t0m8PIyY8"
           target="_blank"
           >Frontend Mentor challenge</a
@@ -43,7 +128,7 @@
       <div>
         for
         <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
+          class="text-dark-desaturated-blue hover:text-optimum-darkblue"
           href="https://github.com/optimumBA"
           target="_blank"
           >Optimum BH</a
@@ -51,13 +136,41 @@
         Internship.
       </div>
 
-      <div class="mt-3">
+      <div class="mt-1">
         <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
+          class="text-dark-desaturated-blue hover:text-optimum-darkblue"
           href="https://github.com/optimumBA/frontend_mentor_challenges/tree/interactive_pricing_component/challenges/interactive_pricing_component"
           >Source code</a
         >
       </div>
     </div>
+
+    <script>
+      let monthlyBilling = [8, 12, 16, 24, 36]
+      let yearlyBilling = [6, 9, 12, 18, 27]
+      let pageviewsChange = ['10K', '50K', '100K', '500K', '1M']
+
+      let priceSlider = document.getElementById('price-slider')
+      let billingChange = document.getElementById('yearly-billing-toggle')
+      let pageviewsOutput = document.getElementById('pageviews-output')
+      let priceOutput = document.getElementById('price-output')
+
+      function oninput(e) {
+        e.preventDefault()
+        if (billingChange.checked) {
+          pageviewsOutput.textContent =
+            pageviewsChange[priceSlider.value - 1] + ' PAGEVIEWS'
+          priceOutput.textContent =
+            '$' + yearlyBilling[priceSlider.value - 1] + '.00'
+        } else {
+          pageviewsOutput.textContent =
+            pageviewsChange[priceSlider.value - 1] + ' PAGEVIEWS'
+          priceOutput.textContent =
+            '$' + monthlyBilling[priceSlider.value - 1] + '.00'
+        }
+      }
+      billingChange.addEventListener('change', oninput)
+      priceSlider.addEventListener('input', oninput)
+    </script>
   </body>
 </html>
