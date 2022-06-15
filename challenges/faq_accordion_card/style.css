@@ -12,5 +12,7 @@
 
   .bg-img-mob {
     background-image: url(./images/bg-pattern-mobile.svg);
+    background-position: 0 -40%;
+    background-repeat: no-repeat;
   }
 }
