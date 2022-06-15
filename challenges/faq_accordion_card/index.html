@@ -43,46 +43,46 @@
       }
     </style>
   </head>
-  <body
-    class="font-kumbh-sans from-primary-gradient-soft-violet to-primary-gradient-soft-blue m-0 bg-gradient-to-b text-[12px]"
-  >
-    <div class="flex h-screen flex-col items-center justify-center">
+  <body class="font-kumbh-sans m-0 min-h-screen">
+    <div
+      class="from-primary-gradient-soft-violet to-primary-gradient-soft-blue m-0 flex h-screen w-full flex-col items-center justify-center bg-gradient-to-b pt-[173px] sm:min-h-screen sm:pt-0 sm:pb-0"
+    >
       <div
-        class="flex h-[60%] w-[85%] items-center justify-center rounded-2xl bg-white sm:h-[55%] sm:w-[77%]"
+        class="-ml-3 -mt-24 flex h-[95%] w-[85%] flex-col items-center justify-center rounded-2xl bg-white text-[12px] sm:h-[55%] sm:w-[77%] sm:flex-row"
       >
-        <div class="absolute top-[357px] left-[44px] z-50">
-          <img src="images/illustration-box-desktop.svg" alt="" class="" />
+        <div class="absolute top-[34%] left-[39px] z-50 hidden sm:block">
+          <img src="images/illustration-box-desktop.svg" alt="" />
         </div>
-        <div class="sm:bg-img order-1 h-[100%] w-1/2 overflow-hidden">
+        <div
+          class="sm:bg-img bg-img-mob order-1 h-1/4 w-[75%] sm:h-[100%] sm:w-1/2 sm:overflow-hidden"
+        >
           <div class="relative ml-[-18%] mt-[3.75rem] hidden sm:block">
-            <img
-              src="images/illustration-woman-online-desktop.svg"
-              alt=""
-              class=""
-            />
+            <img src="images/illustration-woman-online-desktop.svg" alt="" />
           </div>
-          <img
-            src="images/illustration-woman-online-mobile.svg"
-            alt=""
-            class="sm:hidden"
-          />
+          <div
+            class="relative -top-[89%] block overflow-visible sm:hidden sm:pb-0"
+          >
+            <img src="images/illustration-woman-online-mobile.svg" alt="" />
+          </div>
         </div>
 
         <!-- Textual part of component -->
         <div
-          class="order-2 flex h-full w-1/2 flex-col items-center justify-center"
+          class="order-2 -mt-[3%] flex w-full flex-col items-center justify-center pb-2 sm:mt-0 sm:h-full sm:w-1/2 sm:pb-0"
         >
-          <div class="mt-[-4%] flex w-4/5 justify-start">
-            <h2 class="text-left text-[29px] font-bold">FAQ</h2>
+          <div class="flex w-4/5 justify-center sm:mt-[-4%]">
+            <h2 class="text-[29px] font-bold sm:text-left">FAQ</h2>
           </div>
 
-          <div class="mt-6 w-4/5">
+          <div class="ml-[8%] mt-2 w-[95%] pb-4 sm:mt-6 sm:w-4/5">
             <div
               x-data="{
               qas: qas,
-              qaClasses: 'sm:text[20px] text-neutral-text-vd-grayish-blue transition-colors duration-300 ease-in ',
+              qaClasses: 'hover:text-primary-text-soft-red sm:text[20px] text-[14px] text-neutral-text-vd-grayish-blue transition-colors duration-300 ease-in ',
               qaActive: 'text-primary-text-vd-desat-blue font-bold',
               qaInactive: 'font-normal',
+              ansClasses: 'sm:text-[16] text-neutral-text-dark-grayish-blue h-[25%] text-[12px] font-medium ',
+              ansM: 'mb-3 -mt-2',
             }"
               class="flex flex-col justify-between"
             >
@@ -93,7 +93,7 @@
                   <div
                     @click="qa.showAnswer = !qa.showAnswer"
                     @click.away="qa.showAnswer = false"
-                    class="hover:text-primary-text-soft-red flex cursor-pointer items-center justify-between py-3"
+                    class="flex cursor-pointer items-center justify-between py-3"
                   >
                     <a
                       :class="qa.showAnswer ? qaClasses + qaActive : qaClasses + qaInactive"
@@ -107,11 +107,12 @@
                     />
                   </div>
 
-                  <span
-                    class="sm:text-[16] text-neutral-text-dark-grayish-blue h-[30%] pb-2 font-medium"
+                  <p
+                    :class="qa. showAnswer ? ansClasses + ansM : ''"
                     x-cloak
                     x-text="qa.showAnswer ? qa.answer : ''"
-                  ></span>
+                    :class="qa.showAnswer ? 'mb-3' : ''"
+                  ></p>
                 </div>
               </template>
             </div>
@@ -119,7 +120,7 @@
         </div>
       </div>
       <div
-        class="mt-6 flex flex-col place-content-center rounded-2xl bg-white text-center sm:w-[77%]"
+        class="mt-2 -ml-3 flex w-[85%] flex-col place-content-center rounded-2xl bg-white text-center text-[10px] sm:mt-6 sm:w-[77%] sm:text-[13px]"
       >
         <div>
           <a
@@ -140,7 +141,7 @@
           Internship.
         </div>
 
-        <div class="mt-3">
+        <div class="mt-1">
           <a
             class="text-optimum-blue hover:text-optimum-darkblue"
             href="https://github.com/tarikcahta/frontend_mentor_challenges/tree/faq_accordion_card/challenges/faq_accordion_card"
