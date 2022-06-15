@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .bg-img {
+    background-image: url(./images/bg-pattern-desktop.svg);
+    background-size: 825px auto;
+    background-position: 118% 68%;
+    background-repeat: no-repeat;
+  }
+
+  .bg-img-mob {
+    background-image: url(./images/bg-pattern-mobile.svg);
+    background-position: 0 -40%;
+    background-repeat: no-repeat;
+  }
+}
