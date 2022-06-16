@@ -27,11 +27,158 @@
     />
     <link rel="manifest" href="../site.webmanifest" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background-color: slategray;
+      }
+    </style>
   </head>
-  <body class="m-0">
-    <div
-      class="flex h-[100vh] w-full flex-col place-content-center text-center"
-    >
+  <body class="m-0 text-[16px]">
+    <div class="text-center">
+      <div class="flex w-full flex-row justify-between">
+        <div>
+          <img src="images/logo.svg" alt="" />
+        </div>
+        <div>
+          <img src="images/icon-hamburger.svg" alt="" />
+        </div>
+      </div>
+      <div>
+        <a href="#"> Product </a>
+        <div class="hidden">
+          <a href="#"> Overview </a>
+          <a href="#"> Pricing </a>
+          <a href="#"> Marketplace </a>
+          <a href="#"> Features </a>
+          <a href="#"> Integrations </a>
+        </div>
+      </div>
+
+      <div>
+        <a href="#"> Company </a>
+        <div class="hidden">
+          <a href="#"> About </a>
+          <a href="#"> Team </a>
+          <a href="#"> Blog </a>
+          <a href="#"> Careers </a>
+        </div>
+      </div>
+
+      <div>
+        <a href="#"> Connect </a>
+
+        <div class="hidden">
+          <a href="#"> Contact </a>
+          <a href="#"> Newsletter </a>
+          <a href="#"> LinkedIn </a>
+        </div>
+      </div>
+
+      <div>
+        <a href="#"> Login </a>
+        <a href="#"> Sign Up </a>
+      </div>
+
+      <div>
+        <h2>A modern publishing platform</h2>
+        <h3>Grow your audience and build your online brand</h3>
+
+        <div>
+          <a href="#"> Start for Free </a>
+          <a href="#"> Learn More </a>
+        </div>
+      </div>
+
+      <h2>Designed for the future</h2>
+
+      <h2>Introducing an extensible editor</h2>
+      <p>
+        Blogr features an exceedingly intuitive interface which lets you focus
+        on one thing: creating content. The editor supports management of
+        multiple blogs and allows easy manipulation of embeds such as images,
+        videos, and Markdown. Extensibility with plugins and themes provide easy
+        ways to add functionality or change the looks of a blog.
+      </p>
+
+      <h2>Robust content management</h2>
+      <p>
+        Flexible content management enables users to easily move through posts.
+        Increase the usability of your blog by adding customized categories,
+        sections, format, or flow. With this functionality, you’re in full
+        control.
+      </p>
+
+      <h2>State of the Art Infrastructure</h2>
+      <p>
+        With reliability and speed in mind, worldwide data centers provide the
+        backbone for ultra-fast connectivity. This ensures your site will load
+        instantly, no matter where your readers are, keeping your site
+        competitive.
+      </p>
+
+      <h2>Free, open, simple</h2>
+      <p>
+        Blogr is a free and open source application backed by a large community
+        of helpful developers. It supports features such as code syntax
+        highlighting, RSS feeds, social media integration, third-party
+        commenting tools, and works seamlessly with Google Analytics. The
+        architecture is clean and is relatively easy to learn.
+      </p>
+
+      <h2>Powerful tooling</h2>
+      <p>
+        Batteries included. We built a simple and straightforward CLI tool that
+        makes customization and deployment a breeze, but capable of producing
+        even the most complicated sites.
+      </p>
+
+      <img src="images/logo.svg" alt="" />
+
+      <div>
+        <a href="#"> Product </a>
+
+        <div>
+          <a href="#"> Overview </a>
+          <a href="#"> Pricing </a>
+          <a href="#"> Marketplace </a>
+          <a href="#"> Features </a>
+          <a href="#"> Integrations </a>
+        </div>
+      </div>
+
+      <div>
+        <a href="#"> Company </a>
+        <div>
+          <a href="#"> About </a>
+          <a href="#"> Team </a>
+          <a href="#"> Blog </a>
+          <a href="#"> Careers </a>
+        </div>
+      </div>
+
+      <div>
+        <a href="#"> Connect </a>
+
+        <div>
+          <a href="#"> Contact </a>
+          <a href="#"> Newsletter </a>
+          <a href="#"> LinkedIn </a>
+        </div>
+      </div>
+    </div>
+    <div class="flex w-full flex-col place-content-center text-center">
       <div>
         <a
           class="text-optimum-blue hover:text-optimum-darkblue"
@@ -59,5 +206,10 @@
         >
       </div>
     </div>
+    <script>
+      let show = {
+        showMenu: false,
+      }
+    </script>
   </body>
 </html>
