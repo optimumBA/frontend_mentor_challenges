@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
     <title>
       Blogr landing page &bullet; Frontend Mentor Challenges &bullet; Optimum BH
       Internship
@@ -39,72 +43,82 @@
       href="https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&display=swap"
       rel="stylesheet"
     />
-    <style>
-      body {
-        background-color: slategray;
-      }
-    </style>
   </head>
-  <body class="m-0 text-[16px]">
-    <div class="text-center">
-      <div class="flex w-full flex-row justify-between">
-        <div>
+  <body class="m-0 bg-slate-300 text-[16px]">
+    <div class="mt-8 flex flex-col items-center justify-center text-center">
+      <div class="flex w-4/5 flex-row justify-between">
+        <div class="">
           <img src="images/logo.svg" alt="" />
         </div>
-        <div>
+        <div class="">
           <img src="images/icon-hamburger.svg" alt="" />
         </div>
       </div>
-      <div>
-        <a href="#"> Product </a>
-        <div class="hidden">
-          <a href="#"> Overview </a>
-          <a href="#"> Pricing </a>
-          <a href="#"> Marketplace </a>
-          <a href="#"> Features </a>
-          <a href="#"> Integrations </a>
+
+      <div class="hidden">
+        <div>
+          <a href="#"> Product </a>
+          <div class="hidden">
+            <a href="#"> Overview </a>
+            <a href="#"> Pricing </a>
+            <a href="#"> Marketplace </a>
+            <a href="#"> Features </a>
+            <a href="#"> Integrations </a>
+          </div>
         </div>
-      </div>
-
-      <div>
-        <a href="#"> Company </a>
-        <div class="hidden">
-          <a href="#"> About </a>
-          <a href="#"> Team </a>
-          <a href="#"> Blog </a>
-          <a href="#"> Careers </a>
-        </div>
-      </div>
-
-      <div>
-        <a href="#"> Connect </a>
-
-        <div class="hidden">
-          <a href="#"> Contact </a>
-          <a href="#"> Newsletter </a>
-          <a href="#"> LinkedIn </a>
-        </div>
-      </div>
-
-      <div>
-        <a href="#"> Login </a>
-        <a href="#"> Sign Up </a>
-      </div>
-
-      <div>
-        <h2>A modern publishing platform</h2>
-        <h3>Grow your audience and build your online brand</h3>
 
         <div>
+          <a href="#"> Company </a>
+          <div class="hidden">
+            <a href="#"> About </a>
+            <a href="#"> Team </a>
+            <a href="#"> Blog </a>
+            <a href="#"> Careers </a>
+          </div>
+        </div>
+
+        <div>
+          <a href="#"> Connect </a>
+
+          <div class="hidden">
+            <a href="#"> Contact </a>
+            <a href="#"> Newsletter </a>
+            <a href="#"> LinkedIn </a>
+          </div>
+        </div>
+
+        <div class="hidden">
+          <a href="#"> Login </a>
+          <a href="#"> Sign Up </a>
+        </div>
+      </div>
+
+      <div class="mt-16">
+        <h2 class="text-[22px] text-white">A modern publishing platform</h2>
+        <h3 class="text-[14px] text-white">
+          Grow your audience and build your online brand
+        </h3>
+
+        <div class="mt-10">
           <a href="#"> Start for Free </a>
           <a href="#"> Learn More </a>
         </div>
       </div>
 
-      <h2>Designed for the future</h2>
+      <h2 class="mt-28 text-[28px]">Designed for the future</h2>
+      <img
+        class="mt-8 sm:hidden"
+        src="images/illustration-editor-mobile.svg"
+        alt=""
+      />
+      <img
+        class="hidden sm:block"
+        src="images/illustration-editor-desktop.svg"
+        alt=""
+      />
 
-      <h2>Introducing an extensible editor</h2>
-      <p>
+      <h2 class="mt-8 w-3/5 text-[28px]">Introducing an extensible editor</h2>
+      <p class="mt-4 w-4/5 text-[15px]">
         Blogr features an exceedingly intuitive interface which lets you focus
         on one thing: creating content. The editor supports management of
         multiple blogs and allows easy manipulation of embeds such as images,
@@ -112,24 +126,37 @@
         ways to add functionality or change the looks of a blog.
       </p>
 
-      <h2>Robust content management</h2>
-      <p>
+      <h2 class="mt-8 w-3/5 text-[28px]">Robust content management</h2>
+      <p class="mt-4 w-4/5">
         Flexible content management enables users to easily move through posts.
         Increase the usability of your blog by adding customized categories,
         sections, format, or flow. With this functionality, you’re in full
         control.
       </p>
 
-      <h2>State of the Art Infrastructure</h2>
-      <p>
+      <img class="mt-20" src="images/illustration-phones.svg" alt="" />
+
+      <h2 class="mt-6 w-4/5 text-[32px]">State of the Art Infrastructure</h2>
+      <p class="mt-4 w-[75%] text-[15px]">
         With reliability and speed in mind, worldwide data centers provide the
         backbone for ultra-fast connectivity. This ensures your site will load
         instantly, no matter where your readers are, keeping your site
         competitive.
       </p>
 
-      <h2>Free, open, simple</h2>
-      <p>
+      <img
+        class="mt-36 sm:hidden"
+        src="images/illustration-laptop-mobile.svg"
+        alt=""
+      />
+      <img
+        class="hidden sm:block"
+        src="images/illustration-laptop-desktop.svg"
+        alt=""
+      />
+
+      <h2 class="mt-8 w-3/5 text-[25px]">Free, open, simple</h2>
+      <p class="mt-4 w-[90%] text-[19px]">
         Blogr is a free and open source application backed by a large community
         of helpful developers. It supports features such as code syntax
         highlighting, RSS feeds, social media integration, third-party
@@ -137,48 +164,54 @@
         architecture is clean and is relatively easy to learn.
       </p>
 
-      <h2>Powerful tooling</h2>
-      <p>
+      <h2 class="mt-8 text-[25px]">Powerful tooling</h2>
+      <p class="mt-4 w-4/5">
         Batteries included. We built a simple and straightforward CLI tool that
         makes customization and deployment a breeze, but capable of producing
         even the most complicated sites.
       </p>
 
-      <img src="images/logo.svg" alt="" />
+      <img class="mt-32" src="images/logo.svg" alt="" />
 
-      <div>
-        <a href="#"> Product </a>
+      <div class="mt-12 w-1/5 text-white">
+        <div class="">
+          <a href="#"> Product </a>
 
-        <div>
-          <a href="#"> Overview </a>
-          <a href="#"> Pricing </a>
-          <a href="#"> Marketplace </a>
-          <a href="#"> Features </a>
-          <a href="#"> Integrations </a>
+          <div>
+            <a href="#"> Overview </a>
+            <a href="#"> Pricing </a>
+            <a href="#"> Marketplace </a>
+            <a href="#"> Features </a>
+            <a href="#"> Integrations </a>
+          </div>
         </div>
-      </div>
 
-      <div>
-        <a href="#"> Company </a>
         <div>
-          <a href="#"> About </a>
-          <a href="#"> Team </a>
-          <a href="#"> Blog </a>
-          <a href="#"> Careers </a>
+          <a href="#"> Company </a>
+          <div>
+            <a href="#"> About </a>
+            <a href="#"> Team </a>
+            <a href="#"> Blog </a>
+            <a href="#"> Careers </a>
+          </div>
         </div>
-      </div>
-
-      <div>
-        <a href="#"> Connect </a>
 
         <div>
-          <a href="#"> Contact </a>
-          <a href="#"> Newsletter </a>
-          <a href="#"> LinkedIn </a>
+          <a href="#"> Connect </a>
+
+          <div>
+            <a href="#"> Contact </a>
+            <a href="#"> Newsletter </a>
+            <a href="#"> LinkedIn </a>
+          </div>
         </div>
       </div>
     </div>
-    <div class="flex w-full flex-col place-content-center text-center">
+
+    <!-- Credits - OptimumBA -->
+    <div
+      class="mt-8 mb-8 flex w-full flex-col place-content-center text-center"
+    >
       <div>
         <a
           class="text-optimum-blue hover:text-optimum-darkblue"
@@ -201,7 +234,7 @@
       <div class="mt-3">
         <a
           class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA/frontend_mentor_challenges/tree/blogr_landing_page/challenges/blogr_landing_page"
+          href="https://github.com/tarikcahta/frontend_mentor_challenges/tree/blogr_landing_page/challenges/blogr_landing_page"
           >Source code</a
         >
       </div>

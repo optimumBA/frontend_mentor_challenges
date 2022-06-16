@@ -29,8 +29,8 @@ module.exports = {
         },
       },
       fontFamily: {
-        overpass: [Overpass, ...defaultTheme.fontFamily.sans],
-        ubuntu: [Ubuntu, ...defaultTheme.fontFamily.sans],
+        overpass: ['Overpass', ...defaultTheme.fontFamily.sans],
+        ubuntu: ['Ubuntu', ...defaultTheme.fontFamily.sans],
       },
     },
   },
