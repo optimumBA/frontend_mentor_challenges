@@ -56,9 +56,15 @@
 
         <article class="relative flex flex-col gap-6 md:gap-10">
           <!--Section for drop down-->
-          <section class="flex flex-row items-center justify-between p-4">
+          <section
+            class="flex flex-row items-center justify-between p-4"
+            id="mobile-menu-toggle"
+          >
             <div class="flex flex-col">
-              <div class="flex w-full flex-row items-center gap-4">
+              <div
+                class="flex w-full flex-row items-center gap-4"
+                x-data="{ productBtn1: false, productBtn2: false, productBtn3: false }"
+              >
                 <img
                   src="images/logo.svg"
                   alt="Logo"
@@ -66,21 +72,18 @@
                 />
 
                 <!--Div drop down md up-->
-                <div
-                  class="hidden md:block"
-                  x-data="{ productBtn1: false, productBtn2: false, productBtn3: false }"
-                >
-                  <ol class="flex flex-row gap-8">
-                    <li
+                <div class="hidden md:block">
+                  <div class="flex flex-row gap-8">
+                    <div
                       class="flex flex-row items-center justify-center gap-1 hover:cursor-pointer"
                     >
-                      <button
-                        class="font-medium text-slate-300 hover:text-white hover:underline"
+                      <a
+                        class="font-medium text-slate-300 hover:cursor-pointer hover:text-white hover:underline"
                         @click="productBtn1 = !productBtn1"
                         @click.away="productBtn1=false"
                       >
                         Product
-                      </button>
+                      </a>
                       <img
                         src="images/icon-arrow-light.svg"
                         alt="Arrow Light"
@@ -88,18 +91,18 @@
                         @click="productBtn1 = !productBtn1"
                         :class="{'rotate-180' : productBtn1}"
                       />
-                    </li>
+                    </div>
 
-                    <li
+                    <div
                       class="justify-centerr flex flex-row items-center gap-1 hover:cursor-pointer"
                     >
-                      <button
-                        class="font-medium text-slate-300 hover:text-white hover:underline"
+                      <a
+                        class="font-medium text-slate-300 hover:cursor-pointer hover:text-white hover:underline"
                         @click="productBtn2 = !productBtn2"
                         @click.away="productBtn2=false"
                       >
                         Company
-                      </button>
+                      </a>
                       <img
                         src="images/icon-arrow-light.svg"
                         alt="Arrow Light"
@@ -107,17 +110,17 @@
                         @click="productBtn2 = !productBtn2"
                         :class="{'rotate-180' : productBtn2}"
                       />
-                    </li>
-                    <li
+                    </div>
+                    <div
                       class="flex flex-row items-center justify-center gap-1 hover:cursor-pointer"
                     >
-                      <button
-                        class="font-medium text-slate-300 hover:text-white hover:underline"
+                      <a
+                        class="font-medium text-slate-300 hover:cursor-pointer hover:text-white hover:underline"
                         @click="productBtn3 = !productBtn3"
                         @click.away="productBtn3=false"
                       >
                         Connect
-                      </button>
+                      </a>
                       <img
                         src="images/icon-arrow-light.svg"
                         alt="Arrow Light"
@@ -125,8 +128,8 @@
                         @click="productBtn3 = !productBtn3"
                         :class="{'rotate-180' : productBtn3}"
                       />
-                    </li>
-                  </ol>
+                    </div>
+                  </div>
 
                   <template x-if="productBtn1">
                     <div
@@ -223,13 +226,13 @@
                         <div
                           class="flex flex-row items-center justify-center gap-2"
                         >
-                          <button
-                            class="font-bold"
+                          <a
+                            class="font-bold hover:cursor-pointer"
                             @click="divShow1 = !divShow1"
                             @click.away="divShow1=false"
                           >
                             Product
-                          </button>
+                          </a>
                           <img
                             src="images/icon-arrow-dark.svg"
                             alt="ArrowDown"
@@ -246,27 +249,27 @@
                             >
                               <a
                                 class="hover:text-white hover:underline"
-                                href=""
+                                href="#"
                                 >Overview</a
                               >
                               <a
                                 class="hover:text-white hover:underline"
-                                href=""
+                                href="#"
                                 >Pricing</a
                               >
                               <a
                                 class="hover:text-white hover:underline"
-                                href=""
+                                href="#"
                                 >Marketplace</a
                               >
                               <a
                                 class="hover:text-white hover:underline"
-                                href=""
+                                href="#"
                                 >Features</a
                               >
                               <a
                                 class="hover:text-white hover:underline"
-                                href=""
+                                href="#"
                                 >Integration</a
                               >
                             </ol>
@@ -280,13 +283,13 @@
                         <div
                           class="flex flex-row items-center justify-center gap-2"
                         >
-                          <button
-                            class="font-bold"
+                          <a
+                            class="font-bold hover:cursor-pointer"
                             @click="divShow2 = !divShow2"
                             @click.away="divShow2=false"
                           >
                             Company
-                          </button>
+                          </a>
                           <img
                             src="images/icon-arrow-dark.svg"
                             alt="ArrowDown"
@@ -303,22 +306,22 @@
                             >
                               <a
                                 class="hover:text-white hover:underline"
-                                href=""
+                                href="#"
                                 >About</a
                               >
                               <a
                                 class="hover:text-white hover:underline"
-                                href=""
+                                href="#"
                                 >Team</a
                               >
                               <a
                                 class="hover:text-white hover:underline"
-                                href=""
+                                href="#"
                                 >Blog</a
                               >
                               <a
                                 class="hover:text-white hover:underline"
-                                href=""
+                                href="#"
                                 >Careers</a
                               >
                             </ol>
@@ -332,13 +335,13 @@
                         <div
                           class="flex flex-row items-center justify-center gap-2"
                         >
-                          <button
-                            class="font-bold"
+                          <a
+                            class="font-bold hover:cursor-pointer"
                             @click="divShow3 = !divShow3"
                             @click.away="divShow3=false"
                           >
                             Connect
-                          </button>
+                          </a>
                           <img
                             src="images/icon-arrow-dark.svg"
                             alt="ArrowDown"
@@ -355,17 +358,17 @@
                             >
                               <a
                                 class="hover:text-white hover:underline"
-                                href=""
+                                href="#"
                                 >Contact</a
                               >
                               <a
                                 class="hover:text-white hover:underline"
-                                href=""
+                                href="#"
                                 >Newsletter</a
                               >
                               <a
                                 class="hover:text-white hover:underline"
-                                href=""
+                                href="#"
                                 >LinkedIn</a
                               >
                             </ol>
