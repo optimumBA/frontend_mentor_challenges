@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .bg-intro-mob {
+    background-image: url(./images/bg-pattern-intro-mobile.svg);
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+  }
+}
