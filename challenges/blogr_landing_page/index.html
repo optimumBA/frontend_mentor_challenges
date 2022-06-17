@@ -27,6 +27,9 @@
     />
     <link rel="manifest" href="../site.webmanifest" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&family=Ubuntu:ital,wght@0,500;0,700;1,400&display=swap" rel="stylesheet">
     <script src="//unpkg.com/alpinejs" defer></script>
     <style>
       [x-cloak] {
@@ -34,414 +37,117 @@
       }
     </style>
   </head>
-  <body class="font-[16px] m-0 bg-white">
-    <header class="relative flex w-[100%] justify-center bg-slate-200">
-      <nav
-        class="from-lightred to-verylightRed relative h-[380px] w-[100%] overflow-hidden rounded-bl-[90px] bg-gradient-to-l md:h-[400px]"
-      >
-        <div
-          class="absolute -top-[300px] -left-[250px] w-[200%] md:-top-[600px] md:-left-[250px] lg:-top-[320%] lg:-left-[50%]"
-        >
-          <img
-            src="images/bg-pattern-intro-mobile.svg"
-            alt="Intro Mobile"
-            class="block w-[100%] md:hidden"
-          />
-          <img
-            src="images/bg-pattern-intro-desktop.svg"
-            alt="Intro Desktop"
-            class="hidden w-[100%] md:block"
-          />
+  <body class="font-[16px] m-0 bg-slate-200">
+    
+    <header class="w-[100%] h-[550px] bg-gradient-to-l from-lightred to-verylightRed rounded-bl-[120px]">
+
+      <!--NAV BAR-->
+      <nav class="p-4 font-ubuntu">
+
+        <!--Logo and produkts separation from login and signup buttons-->
+        <div class="flex flex-row items-center justify-between">
+
+          <!--CENTRIRA LOGO I DROP MENIJE-->
+          <div class="flex flex-row gap-4 items-center">
+
+            <img src="images/logo.svg" alt="Logo">
+
+            <!--SKRIVA DESKTOP DROP DOWN-->
+            <div class="md:block hidden">
+            
+              <!--DESKTOP DROP DOWN-->
+              <div class="flex flex-row gap-4">
+            
+                <!--Product-->
+                <button class="flex flex-row gap-2 items-center">
+                  <a class="hover:underline hover:text-white text-gray-300" href="#">Product</a>
+                  <img src="images/icon-arrow-light.svg" alt="Arrow Light" class="w-2 h-2">
+                </button>
+              
+                <!--Company-->
+                <button class="flex flex-row gap-2 items-center">
+                  <a class="hover:underline hover:text-white text-gray-300" href="#">Company</a>
+                  <img src="images/icon-arrow-light.svg" alt="Arrow Light" class="w-2 h-2">
+                </button>
+  
+                <!--Connect-->
+                <button class="flex flex-row gap-2 items-center">
+                  <a class="hover:underline hover:text-white text-gray-300" href="#">Connect</a>
+                  <img src="images/icon-arrow-light.svg" alt="Arrow Light" class="w-2 h-2">
+                </button>
+  
+              </div>
+
+            </div>
+
+          </div>
+
+          <!--Mobile Hamb-X Icon-->
+          <div class="md:hidden block">
+
+            <button>
+              <img src="images/icon-hamburger.svg" alt="Hamburger">
+            </button>
+
+          </div>
+
+          <!--Login Sign Up-->
+          <div class="md:block hidden">
+
+            <div class="flex flex-row gap-2">
+
+              <button class="text-slate-300 hover:text-white md:w-36 md:h-14 md:text-lg md::font-bold items-center justify-center rounded-3xl">
+                Login
+              </button>
+    
+              <button class="bg-white text-lightRed hover:text-white hover:bg-veryLightRed md:w-36 md:h-14 md:text-lg md:font-bold items-center justify-center rounded-3xl">
+                Sign Up
+              </button>
+
+            </div>
+            
+          </div>
+
         </div>
 
-        <article class="relative flex flex-col gap-6 md:gap-10">
-          <!--Section for drop down-->
-          <section
-            class="flex flex-row items-center justify-between p-4"
-            id="mobile-menu-toggle"
-          >
-            <div class="flex flex-col">
-              <div
-                class="flex w-full flex-row items-center gap-4"
-                x-data="{ productBtn1: false, productBtn2: false, productBtn3: false }"
-              >
-                <img
-                  src="images/logo.svg"
-                  alt="Logo"
-                  class="w-[60%] md:w-[15%]"
-                />
 
-                <!--Div drop down md up-->
-                <div class="hidden md:block">
-                  <div class="flex flex-row gap-8">
-                    <div
-                      class="flex flex-row items-center justify-center gap-1 hover:cursor-pointer"
-                    >
-                      <a
-                        class="font-medium text-slate-300 hover:cursor-pointer hover:text-white hover:underline"
-                        @click="productBtn1 = !productBtn1"
-                        @click.away="productBtn1=false"
-                      >
-                        Product
-                      </a>
-                      <img
-                        src="images/icon-arrow-light.svg"
-                        alt="Arrow Light"
-                        class="h-2 w-2"
-                        @click="productBtn1 = !productBtn1"
-                        :class="{'rotate-180' : productBtn1}"
-                      />
-                    </div>
-
-                    <div
-                      class="justify-centerr flex flex-row items-center gap-1 hover:cursor-pointer"
-                    >
-                      <a
-                        class="font-medium text-slate-300 hover:cursor-pointer hover:text-white hover:underline"
-                        @click="productBtn2 = !productBtn2"
-                        @click.away="productBtn2=false"
-                      >
-                        Company
-                      </a>
-                      <img
-                        src="images/icon-arrow-light.svg"
-                        alt="Arrow Light"
-                        class="h-2 w-2"
-                        @click="productBtn2 = !productBtn2"
-                        :class="{'rotate-180' : productBtn2}"
-                      />
-                    </div>
-                    <div
-                      class="flex flex-row items-center justify-center gap-1 hover:cursor-pointer"
-                    >
-                      <a
-                        class="font-medium text-slate-300 hover:cursor-pointer hover:text-white hover:underline"
-                        @click="productBtn3 = !productBtn3"
-                        @click.away="productBtn3=false"
-                      >
-                        Connect
-                      </a>
-                      <img
-                        src="images/icon-arrow-light.svg"
-                        alt="Arrow Light"
-                        class="h-2 w-2"
-                        @click="productBtn3 = !productBtn3"
-                        :class="{'rotate-180' : productBtn3}"
-                      />
-                    </div>
-                  </div>
-
-                  <template x-if="productBtn1">
-                    <div
-                      class="left-22 absolute top-14 w-32 bg-white p-4"
-                      x-cloak
-                    >
-                      <ol
-                        class="flex flex-col items-start justify-center text-sm font-normal"
-                      >
-                        <a class="hover:font-bold" href="">Overview</a>
-                        <a class="hover:font-bold" href="">Pricing</a>
-                        <a class="hover:font-bold" href="">Marketplace</a>
-                        <a class="hover:font-bold" href="">Features</a>
-                        <a class="hover:font-bold" href="">Integration</a>
-                      </ol>
-                    </div>
-                  </template>
-
-                  <template x-if="productBtn2">
-                    <div
-                      class="absolute top-14 left-48 w-32 bg-white p-4"
-                      x-cloak
-                    >
-                      <ol
-                        class="flex flex-col items-start justify-center text-sm font-normal"
-                      >
-                        <a class="hover:font-bold" href="">About</a>
-                        <a class="hover:font-bold" href="">Team</a>
-                        <a class="hover:font-bold" href="">Blog</a>
-                        <a class="hover:font-bold" href="">Careers</a>
-                      </ol>
-                    </div>
-                  </template>
-
-                  <template x-if="productBtn3">
-                    <div
-                      class="absolute top-14 left-[305px] w-32 bg-white p-4"
-                      x-cloak
-                    >
-                      <ol
-                        class="flex flex-col items-start justify-center text-sm font-normal"
-                      >
-                        <a class="hover:font-bold" href="">Contact</a>
-                        <a class="hover:font-bold" href="">Newsletter</a>
-                        <a class="hover:font-bold" href="">LinkedIn</a>
-                      </ol>
-                    </div>
-                  </template>
-                </div>
-              </div>
-            </div>
-
-            <!--Hamburger Button-->
-            <div x-data="{ isOpen: false, isOpenHamb: true }">
-              <template x-if="isOpen">
-                <button
-                  @click="isOpenHamb = !isOpenHamb, isOpen = false"
-                  x-cloak
-                >
-                  <img
-                    src="images/icon-close.svg"
-                    alt="Close"
-                    class="h-5 w-5 md:hidden"
-                  />
-                </button>
-              </template>
-              <template x-if="isOpenHamb">
-                <button
-                  x-show="isOpenHamb"
-                  @click="isOpen = !isOpen, isOpenHamb = !isOpenHamb"
-                  x-cloak
-                >
-                  <img
-                    src="images/icon-hamburger.svg"
-                    alt="Hamburger Icon"
-                    class="w-[60%] md:hidden"
-                  />
-                </button>
-              </template>
-
-              <!--Div hamb dropdown-->
-              <template x-if="isOpen">
-                <div
-                  class="absolute top-[18%] right-4 h-fit w-[220px] bg-white p-4 text-[60%] md:hidden"
-                >
-                  <div class="flex flex-col gap-4">
-                    <ol
-                      class="flex flex-col items-center justify-center gap-2"
-                      x-data="{ divShow1: false, divShow2: false, divShow3: false }"
-                    >
-                      <li
-                        class="flex flex-col items-center justify-center gap-2"
-                      >
-                        <div
-                          class="flex flex-row items-center justify-center gap-2"
-                        >
-                          <a
-                            class="font-bold hover:cursor-pointer"
-                            @click="divShow1 = !divShow1"
-                            @click.away="divShow1=false"
-                          >
-                            Product
-                          </a>
-                          <img
-                            src="images/icon-arrow-dark.svg"
-                            alt="ArrowDown"
-                            class="h-2 w-2 hover:cursor-pointer"
-                            @click="divShow1 = !divShow1"
-                            :class="{'rotate-180' : divShow1}"
-                          />
-                        </div>
-
-                        <template x-if="divShow1">
-                          <div class="text-veryDarkBlue font-bold" x-cloak>
-                            <ol
-                              class="flex h-fit w-[190px] flex-col items-center justify-center gap-1 bg-gray-200 p-2"
-                            >
-                              <a
-                                class="hover:text-white hover:underline"
-                                href="#"
-                                >Overview</a
-                              >
-                              <a
-                                class="hover:text-white hover:underline"
-                                href="#"
-                                >Pricing</a
-                              >
-                              <a
-                                class="hover:text-white hover:underline"
-                                href="#"
-                                >Marketplace</a
-                              >
-                              <a
-                                class="hover:text-white hover:underline"
-                                href="#"
-                                >Features</a
-                              >
-                              <a
-                                class="hover:text-white hover:underline"
-                                href="#"
-                                >Integration</a
-                              >
-                            </ol>
-                          </div>
-                        </template>
-                      </li>
-
-                      <li
-                        class="flex flex-col items-center justify-center gap-2"
-                      >
-                        <div
-                          class="flex flex-row items-center justify-center gap-2"
-                        >
-                          <a
-                            class="font-bold hover:cursor-pointer"
-                            @click="divShow2 = !divShow2"
-                            @click.away="divShow2=false"
-                          >
-                            Company
-                          </a>
-                          <img
-                            src="images/icon-arrow-dark.svg"
-                            alt="ArrowDown"
-                            class="h-2 w-2 hover:cursor-pointer"
-                            @click="divShow2 = !divShow2"
-                            :class="{'rotate-180' : divShow2}"
-                          />
-                        </div>
-
-                        <template x-if="divShow2">
-                          <div class="text-veryDarkBlue font-bold" x-cloak>
-                            <ol
-                              class="flex h-fit w-[190px] flex-col items-center justify-center gap-1 bg-gray-200 p-2"
-                            >
-                              <a
-                                class="hover:text-white hover:underline"
-                                href="#"
-                                >About</a
-                              >
-                              <a
-                                class="hover:text-white hover:underline"
-                                href="#"
-                                >Team</a
-                              >
-                              <a
-                                class="hover:text-white hover:underline"
-                                href="#"
-                                >Blog</a
-                              >
-                              <a
-                                class="hover:text-white hover:underline"
-                                href="#"
-                                >Careers</a
-                              >
-                            </ol>
-                          </div>
-                        </template>
-                      </li>
-
-                      <li
-                        class="flex flex-col items-center justify-center gap-2"
-                      >
-                        <div
-                          class="flex flex-row items-center justify-center gap-2"
-                        >
-                          <a
-                            class="font-bold hover:cursor-pointer"
-                            @click="divShow3 = !divShow3"
-                            @click.away="divShow3=false"
-                          >
-                            Connect
-                          </a>
-                          <img
-                            src="images/icon-arrow-dark.svg"
-                            alt="ArrowDown"
-                            class="h-2 w-2 hover:cursor-pointer"
-                            @click="divShow3 = !divShow3"
-                            :class="{'rotate-180' : divShow3}"
-                          />
-                        </div>
-
-                        <template x-if="divShow3">
-                          <div class="text-veryDarkBlue font-bold" x-cloak>
-                            <ol
-                              class="flex h-fit w-[190px] flex-col items-center justify-center gap-1 bg-gray-200 p-2"
-                            >
-                              <a
-                                class="hover:text-white hover:underline"
-                                href="#"
-                                >Contact</a
-                              >
-                              <a
-                                class="hover:text-white hover:underline"
-                                href="#"
-                                >Newsletter</a
-                              >
-                              <a
-                                class="hover:text-white hover:underline"
-                                href="#"
-                                >LinkedIn</a
-                              >
-                            </ol>
-                          </div>
-                        </template>
-                      </li>
-                    </ol>
-
-                    <div
-                      class="flex flex-col items-center justify-center gap-2 border-t-[1px] pt-2"
-                    >
-                      <button
-                        class="hover:bg-lightRed h-10 w-32 rounded-3xl font-bold hover:text-white"
-                      >
-                        Login
-                      </button>
-                      <button
-                        class="from-lightred to-verylightRed h-10 w-32 rounded-3xl bg-gradient-to-l font-bold text-gray-300 hover:text-white"
-                      >
-                        Sign Up
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </template>
-            </div>
-
-            <div class="hidden md:block">
-              <div class="flex flex-row gap-2">
-                <button
-                  class="h-10 w-32 rounded-3xl font-bold text-slate-300 hover:text-white"
-                >
-                  Login
-                </button>
-                <button
-                  class="text-veryLightRed hover:bg-veryLightRed h-10 w-32 rounded-3xl bg-white font-bold hover:text-white"
-                >
-                  Sign Up
-                </button>
-              </div>
-            </div>
-          </section>
-
-          <section
-            class="font-overpass mx-[22%] flex flex-col items-center justify-center gap-4 text-center text-white md:mx-0"
-          >
-            <h4 class="text-2xl font-bold md:text-6xl">
-              A modern publishing platform
-            </h4>
-            <p class="text-sm font-normal text-gray-300 md:text-2xl">
-              Grow your audience and build your online brand
-            </p>
-          </section>
-
-          <section class="flex flex-row items-center justify-center gap-4">
-            <button
-              class="text-veryLightRed hover:bg-veryLightRed h-10 w-[32%] rounded-3xl bg-white text-xs font-bold hover:text-white md:h-14 md:w-36 md:text-lg"
-            >
-              Start for Free
-            </button>
-            <button
-              class="hover:text-veryLightRed h-10 w-[32%] rounded-3xl border-[1px] text-xs font-bold text-white hover:bg-white md:h-14 md:w-36 md:text-lg"
-            >
-              Learn More
-            </button>
-          </section>
-        </article>
       </nav>
+
+      <div class="flex flex-col gap-8 my-24 p-4 items-center justify-center">
+
+        <!--H and P-->
+        <div class="flex flex-col gap-2 items-center justify-center font-overpass text-white">
+
+          <h2 class="font-extrabold text-3xl md:text-5xl lg:text-6xl">
+            A modern publishing platform
+          </h2>
+
+          <p class="font-semibold text-base md:text-xl lg:text-2xl">
+            Grow your audience and build your online brand
+          </p>
+
+        </div>
+
+        <!--Buttons-->
+        <div class="flex flex-row gap-4 items-center justify-center">
+
+          <button class="bg-white text-lightRed hover:text-white hover:bg-veryLightRed w-32 h-12 text-base md:w-36 md:h-14 md:text-lg font-bold items-center justify-center rounded-3xl">
+            Start for Free
+          </button>
+
+          <button class="text-white border-[1px] hover:text-veryLightRed hover:bg-white w-32 h-12 text-base md:w-36 md:h-14 md:text-lg font-bold items-center justify-center rounded-3xl">
+            Learn More
+          </button>
+
+        </div>
+
+      </div>
+
     </header>
 
     <main class="flex flex-col items-center justify-center">
       <container
-        class="font-overpass relative flex h-fit w-[100%] flex-col gap-8 bg-slate-200 pt-12 pb-8 md:gap-8"
+        class="font-overpass relative flex h-fit w-[100%] flex-col gap-8 pt-12 pb-8 md:gap-8"
       >
         <article class="h-[20%]">
           <h2
@@ -506,7 +212,7 @@
       </container>
 
       <container
-        class="relative h-fit w-[100%] bg-slate-200 pt-[15%] pb-2 md:pt-8 md:pb-8"
+        class="relative h-fit w-[100%] pt-[15%] pb-2 md:pt-8 md:pb-8"
       >
         <section
           class="absolute left-[4%] -bottom-[-10%] z-20 flex flex-col items-center justify-center md:-bottom-[12%] md:left-[10%] md:flex-row lg:-bottom-[14%] lg:left-[8%]"
@@ -543,7 +249,7 @@
       </container>
 
       <container
-        class="relative h-fit w-[100%] bg-slate-200 pt-4 pb-14 md:pt-24"
+        class="relative h-fit w-[100%] pt-4 pb-14 md:pt-24"
       >
         <section
           class="relative flex flex-col items-center justify-center gap-4 md:flex-row md:gap-0"
@@ -598,7 +304,7 @@
       </container>
     </main>
 
-    <footer class="font-overpass w-[100%] bg-slate-200 text-slate-300">
+    <footer class="font-overpass w-[100%] text-slate-300">
       <article class="bg-veryDarkBlackBlue h-fit w-[100%] rounded-tr-[90px]">
         <container
           class="flex flex-col items-center justify-center gap-4 p-8 md:flex-row md:items-start md:justify-between md:gap-0 md:p-28"
