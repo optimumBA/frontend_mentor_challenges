@@ -27,41 +27,77 @@
     />
     <link rel="manifest" href="../site.webmanifest" />
     <link rel="stylesheet" href="style.css" />
-
-    <script
-    defer
-    src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
-  ></script>
+    <script src="//unpkg.com/alpinejs" defer></script>
   </head>
-  <body class="m-0">
+  <body
+    class="font-ubuntu max-w-full overflow-x-hidden"
+  >
+ <!--HEADER-->
+ <section class=" rounded-bl-[5rem] header-gradient relative overflow-hidden ">
+  <img src="images/bg-pattern-intro-desktop.svg" alt="" class="absolute z-10 lg:top-[-500px] md:top-[-100px] w-fit">
+  <!--Navigacija-->
+<div class="container relative  z-20  pt-10 flex justify-between items-center"  x-data="open:false">
+<nav class="flex items-center ">
+  <img src="images/logo.svg" alt="" class="pr-14">
+  <ul class="md:flex text-slate-200 hidden ">
+    <li class="md:pr-8">
+      <a href="">Product</a>
 
-
-      <div>
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://www.frontendmentor.io/challenges/blogr-landing-page-EX2RLAApP"
-          target="_blank"
-          >Frontend Mentor challenge</a
-        >
-      </div>
-      <div>
-        for
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA"
-          target="_blank"
-          >Optimum BH</a
-        >
-        Internship.
-      </div>
-
-      <div class="mt-3">
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/OmerSalkan/frontend_mentor_challenges/tree/blogr_landing_page/challenges/blogr_landing_page"
-          >Source code</a
-        >
-      </div>
    
+     
+    </li>
+    <li class="md:pr-8">
+      <a href="">Company</a>
+    </li>
+    <li>
+      <a href="">Connect</a>
+    </li>
+  </ul>
+</nav>
+
+<div class="hidden md:block">
+  <a href="" class="text-slate-200">Login</a>
+  <a href="" class="md:ml-8 text-[#ff525d] bg-white rounded-full px-4 py-2 font-bold">Sign Up</a>
+</div>
+
+</div>
+<!--Kraj navigacije-->
+<article class="text-center relative mt-16 z-20">
+<h1 class="md:text-[3rem] text-[2rem] text-white pb-4 font-semibold md:px-0 px-6 md:font-bold">A modern publishing platform</h1>
+<span class="text-slate-200">Grow your audience and build your <br class="md:hidden"> online brand</span>
+<div class="pt-16 pb-28">
+<a href="" class=" text-[#ff525d] bg-white rounded-full px-4 py-2 font-semibold mr-2">Start for Free</a>
+<a href="" class="text-white border rounded-full px-4 py-2 font-semibold">Learn More</a>
+</div>
+</article>
+</section>
+<!--END HEADER-->
+
+    <div>
+      <a
+        class="text-optimum-blue hover:text-optimum-darkblue"
+        href="https://www.frontendmentor.io/challenges/blogr-landing-page-EX2RLAApP"
+        target="_blank"
+        >Frontend Mentor challenge</a
+      >
+    </div>
+    <div>
+      for
+      <a
+        class="text-optimum-blue hover:text-optimum-darkblue"
+        href="https://github.com/optimumBA"
+        target="_blank"
+        >Optimum BH</a
+      >
+      Internship.
+    </div>
+
+    <div class="mt-3">
+      <a
+        class="text-optimum-blue hover:text-optimum-darkblue"
+        href="https://github.com/OmerSalkan/frontend_mentor_challenges/tree/blogr_landing_page/challenges/blogr_landing_page"
+        >Source code</a
+      >
+    </div>
   </body>
 </html>
