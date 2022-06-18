@@ -29,221 +29,288 @@
     <link rel="stylesheet" href="style.css" />
     <script src="//unpkg.com/alpinejs" defer></script>
   </head>
-  <body
-    class="font-ubuntu max-w-full overflow-x-hidden"
-  >
- <!--HEADER-->
- <section class=" rounded-bl-[5rem] header-gradient relative overflow-hidden ">
-  <img src="images/bg-pattern-intro-desktop.svg" alt="" class="absolute z-10 lg:top-[-500px] md:top-[-100px] w-fit">
-  <!--Navigacija-->
-<div class="container relative  z-20  pt-10 flex justify-between items-center"  x-data="open:false">
-<nav class="flex items-center ">
-  <img src="images/logo.svg" alt="" class="pr-14">
-  <ul class="md:flex text-slate-200 hidden ">
-    <li class="md:pr-8">
-      <a href="">Product</a>
+  <body class="font-ubuntu max-w-full overflow-x-hidden">
+    <!--HEADER-->
+    <section class="header-gradient relative overflow-hidden rounded-bl-[5rem]">
+      <img
+        src="images/bg-pattern-intro-desktop.svg"
+        alt=""
+        class="absolute z-10 w-fit md:top-[-100px] lg:top-[-500px]"
+      />
+      <!--Navigacija-->
+   <header class="relative z-30 container pt-10">
+    <nav x-data="{isNavOpen:false}" class="flex items-center justify-between px-5 text-gray-600 transition-all lg:text-white lg:px-20">
+<!--lOGO-->
+      <img src="images/logo.svg" alt="">
 
-   
-     
-    </li>
-    <li class="md:pr-8">
-      <a href="">Company</a>
-    </li>
-    <li>
-      <a href="">Connect</a>
-    </li>
-  </ul>
-</nav>
+      <!--Hamburger menu za mobilne uredjaje -->
 
-<div class="hidden md:block">
-  <a href="" class="text-slate-200">Login</a>
-  <a href="" class="md:ml-8 text-[#ff525d] bg-white rounded-full px-4 py-2 font-bold">Sign Up</a>
-</div>
+      <a id="mobile-menu-toggle" class="block lg:hidden" @click="isNavOpen = !isNavOpen">
+        <img src="images/icon-hamburger.svg" :class="isNavOpen ? 'hidden' : 'block'" alt="">
+        <img src="images/icon-close.svg" :class="isNavOpen ? 'block' : 'hidden'" alt="">
+      </a>
 
-</div>
-<!--Kraj navigacije-->
-<article class="text-center relative mt-16 z-20">
-<h1 class="md:text-[3rem] text-[2rem] text-white pb-4 font-semibold md:px-0 px-6 md:font-bold">A modern publishing platform</h1>
-<span class="text-slate-200">Grow your audience and build your <br class="md:hidden"> online brand</span>
-<div class="pt-16 pb-28">
-<a href="" class=" text-[#ff525d] bg-white rounded-full px-4 py-2 font-semibold mr-2">Start for Free</a>
-<a href="" class="text-white border rounded-full px-4 py-2 font-semibold">Learn More</a>
-</div>
-</article>
-</section>
-<!--END HEADER-->
-
-<!--Prva sekcija-->
-<section class="md:mt-20 mt-10 mb-36 ">
-  <h1 class="text-center text-[1.5rem] text-[#25252d] md:text-[2rem] md:font-semibold md:mb-0 font-semibold mb-10">Designed for the future</h1>
-  <article class="flex flex-col-reverse md:flex-row justify-between md:mt-[-80px]">
-    <div class="md:flex-[0_0_40%] container md:text-left text-center flex flex-col justify-center">
-      <h1 class="text-[#25252d] text-[1.5rem] font-semibold">Introducing an extensible editor</h1>
-      <p class="mb-24 mt-4 text-[#4b5862]">Blogr features an exceedingly intuitive interface which lets you focus on one thing: creating content. The editor supports management of multiple blogs and allows easy manipulation of embeds such as images, videos, and Markdown. Extensibility with plugins and themes provide easy ways to add functionality or change the looks of a blog.</p>
-
-      <h1 class="text-[#25252d] text-[1.5rem] font-semibold">Robust content management</h1>
-      <p class="text-[#4b5862] mt-4">Flexible content management enables users to easily move through posts. Increase the usability of your blog by adding customized categories, sections, format, or flow. With this functionality, you’re in full control.</p>
-    </div>
-
-    <div class="md:flex-[0_0_60%] md:mr-[-15%]">
-     <img src="images/illustration-editor-desktop.svg" alt="" class="hidden md:block">
-     <img src="images/illustration-editor-mobile.svg" alt="" class="block md:hidden">
-    </div>
-
-  </article>
-
-</section>
+    </nav>
 
 
 
- <!--Kraj prve sekcije-->
-
-
- <!--Pocetak druge sekcije-->
-
- <section class="mt-20 relative">
-<div class="w-full overflow-hidden top-[12%] md:h-[400px] h-[90%] rounded-tr-[5rem] rounded-bl-[5rem] absolute -z-10 bg-gradient-to-r from-[#2c2d3f] to-[#3f4164]">
-<img src="images/bg-pattern-circles.svg" alt="" class="absolute left-[-10%] top-[-130%]">
-</div>
-  <article class="flex md:flex-row flex-col relative z-50 items-center container ">
-
-    <div class="flex-[0_0_50%]">
-      <img src="images/illustration-phones.svg" alt="" class="md:mt-0 mt-[-80px]">
-    </div>
-
-    <div class="flex-[0_0_50%] md:text-left text-center md:mt-0 mt-[-40px]">
-      <h1 class="text-white text-[2rem] mb-2">State of the Art Infrastructure</h1>
-      <p class="text-slate-100">With reliability and speed in mind, worldwide data centers provide the backbone for ultra-fast connectivity. This ensures your site will load instantly, no matter where your readers are, keeping your site competitive.</p>
-    </div>
-
-  </article>
 
 
 
- </section>
 
 
- <!--Kraj druge sekcije-->
 
- <!--Pocetak trece sekcije-->
- <section class="md:mb-36 md:mt-0 mt-20">
-
-<article class="flex  md:flex-row container flex-col justify-between mr-0 md:mr-[10%] items-center">
-
-<div class="flex-[0_0_50%] lg:ml-[-15%] md:mb-0 mb-8">
-<img src="images/illustration-laptop-desktop.svg" alt="" class="w-full">
-</div>
-
-<div class="flex-[0_0_50%] md:text-left text-center">
-
-  <h1 class="text-[1.5rem] md:mb-0 mb-6 font-semibold">Free, open, simple</h1>
-<p class="md:mt-8 text-[#4b5862]">Blogr is a free and open source application backed by a large community of helpful developers. It supports features such as code syntax highlighting, RSS feeds, social media integration, third-party commenting tools, and works seamlessly with Google Analytics. The architecture is clean and is relatively easy to learn.</p>
-
-<h1 class="md:mt-14 mt-8 md:mb-0 mb-6 text-[1.5rem] font-semibold">Powerful tooling</h1>
-<p class="md:mt-8 text-[#4b5862]">Batteries included. We built a simple and straightforward CLI tool that makes customization and deployment a breeze, but capable of producing even the most complicated sites.</p>
-</div>
-
-</article>
-
- </section>
- <!--Kraj trece sekcije-->
-<!--Footer-->
-
-<footer class="bg-[#25252d] w-full md:mt-0 mt-16 rounded-tr-[5rem]">
-
-  <article class="container flex text-center md:flex-row  flex-col items-center text-[#c8c8cb] md:flex justify-around pt-20 pb-20">
-
-    <div class="md:mb-0 mb-8"><img src="images/logo.svg" alt=""></div>
-    <div class="md:mb-0 mb-8">
-      <ul class="text-white">
-        Product
-        <div class="text-[#c8c8cb]  pt-8">
-        <li >
-          <a href="">Overview</a>
-        </li>
-        <li>
-          <a href="">Pricing</a>
-        </li>
-        <li>
-          <a href="">Marketplace</a>
-        </li>
-        <li>
-          <a href="">Features</a>
-        </li>
-        <li>
-          <a href="">Integrations</a>
-        </li>
-      </div>
-      </ul>
-    </div>
-    <div>
-      <ul class="text-white">
-     Company
-     <div class="text-[#c8c8cb] pt-8 md:mb-0 mb-8">
-
-
-        <li>
-          <a href="">About</a>
-        </li>
-        <li>
-          <a href="">Team</a>
-        </li>
-        <li>
-          <a href="">Blog</a>
-        </li>
-        <li>
-          <a href="">Careers</a>
-        </li>
-      </div>
-      </ul>
-    </div>
-    <div>      <ul class="text-white">
-   Connect
-   <div class="text-[#c8c8cb] pt-8 md:mb-0 mb-8">
-
-  
-         <li>
-           <a href="">Contact</a>
-         </li>
-         <li>
-           <a href="">Newsletter</a>
-         </li>
-         <li>
-           <a href="">Blog LinkedIn</a>
-         </li>
+   </header>
+      <!--Kraj navigacije-->
+      <article class="relative z-20 mt-16 text-center">
+        <h1
+          class="px-6 pb-4 text-[2rem] font-semibold text-white md:px-0 md:text-[3rem] md:font-bold"
+        >
+          A modern publishing platform
+        </h1>
+        <span class="text-slate-200"
+          >Grow your audience and build your <br class="md:hidden" />
+          online brand</span
+        >
+        <div class="pt-16 pb-28">
+          <a
+            href=""
+            class="mr-2 rounded-full bg-white px-4 py-2 font-semibold text-[#ff525d]"
+            >Start for Free</a
+          >
+          <a
+            href=""
+            class="rounded-full border px-4 py-2 font-semibold text-white"
+            >Learn More</a
+          >
         </div>
-        
-       </ul></div>
-  </article>
-  <div class="text-center">
-    <a
-      class="text-optimum-blue hover:text-optimum-darkblue"
-      href="https://www.frontendmentor.io/challenges/blogr-landing-page-EX2RLAApP"
-      target="_blank"
-      >Frontend Mentor challenge</a
-    >
-  </div>
-  <div class="text-center">
-    for
-    <a
-      class="text-optimum-blue hover:text-optimum-darkblue"
-      href="https://github.com/optimumBA"
-      target="_blank"
-      >Optimum BH</a
-    >
-    Internship.
-  </div>
+      </article>
+    </section>
+    <!--END HEADER-->
 
-  <div class="mt-3 text-center">
-    <a
-      class="text-optimum-blue hover:text-optimum-darkblue"
-      href="https://github.com/OmerSalkan/frontend_mentor_challenges/tree/blogr_landing_page/challenges/blogr_landing_page"
-      >Source code</a
-    >
-  </div>
- </footer>
+    <!--Prva sekcija-->
+    <section class="mt-10 mb-36 md:mt-20">
+      <h1
+        class="mb-10 text-center text-[1.5rem] font-semibold text-[#25252d] md:mb-0 md:text-[2rem] md:font-semibold"
+      >
+        Designed for the future
+      </h1>
+      <article
+        class="flex flex-col-reverse justify-between md:mt-[-80px] md:flex-row"
+      >
+        <div
+          class="container flex flex-col justify-center text-center md:flex-[0_0_40%] md:text-left"
+        >
+          <h1 class="text-[1.5rem] font-semibold text-[#25252d]">
+            Introducing an extensible editor
+          </h1>
+          <p class="mb-24 mt-4 text-[#4b5862]">
+            Blogr features an exceedingly intuitive interface which lets you
+            focus on one thing: creating content. The editor supports management
+            of multiple blogs and allows easy manipulation of embeds such as
+            images, videos, and Markdown. Extensibility with plugins and themes
+            provide easy ways to add functionality or change the looks of a
+            blog.
+          </p>
 
- <!--Kraj footera-->
-    
+          <h1 class="text-[1.5rem] font-semibold text-[#25252d]">
+            Robust content management
+          </h1>
+          <p class="mt-4 text-[#4b5862]">
+            Flexible content management enables users to easily move through
+            posts. Increase the usability of your blog by adding customized
+            categories, sections, format, or flow. With this functionality,
+            you’re in full control.
+          </p>
+        </div>
+
+        <div class="md:mr-[-15%] md:flex-[0_0_60%]">
+          <img
+            src="images/illustration-editor-desktop.svg"
+            alt=""
+            class="hidden md:block"
+          />
+          <img
+            src="images/illustration-editor-mobile.svg"
+            alt=""
+            class="block md:hidden"
+          />
+        </div>
+      </article>
+    </section>
+
+    <!--Kraj prve sekcije-->
+
+    <!--Pocetak druge sekcije-->
+
+    <section class="relative mt-20">
+      <div
+        class="absolute top-[12%] -z-10 h-[90%] w-full overflow-hidden rounded-tr-[5rem] rounded-bl-[5rem] bg-gradient-to-r from-[#2c2d3f] to-[#3f4164] md:h-[400px]"
+      >
+        <img
+          src="images/bg-pattern-circles.svg"
+          alt=""
+          class="absolute left-[-10%] top-[-130%]"
+        />
+      </div>
+      <article
+        class="container relative z-50 flex flex-col items-center md:flex-row"
+      >
+        <div class="flex-[0_0_50%]">
+          <img
+            src="images/illustration-phones.svg"
+            alt=""
+            class="mt-[-80px] md:mt-0"
+          />
+        </div>
+
+        <div class="mt-[-40px] flex-[0_0_50%] text-center md:mt-0 md:text-left">
+          <h1 class="mb-2 text-[2rem] text-white">
+            State of the Art Infrastructure
+          </h1>
+          <p class="text-slate-100">
+            With reliability and speed in mind, worldwide data centers provide
+            the backbone for ultra-fast connectivity. This ensures your site
+            will load instantly, no matter where your readers are, keeping your
+            site competitive.
+          </p>
+        </div>
+      </article>
+    </section>
+
+    <!--Kraj druge sekcije-->
+
+    <!--Pocetak trece sekcije-->
+    <section class="mt-20 md:mb-36 md:mt-0">
+      <article
+        class="container mr-0 flex flex-col items-center justify-between md:mr-[10%] md:flex-row"
+      >
+        <div class="mb-8 flex-[0_0_50%] md:mb-0 lg:ml-[-15%]">
+          <img
+            src="images/illustration-laptop-desktop.svg"
+            alt=""
+            class="w-full"
+          />
+        </div>
+
+        <div class="flex-[0_0_50%] text-center md:text-left">
+          <h1 class="mb-6 text-[1.5rem] font-semibold md:mb-0">
+            Free, open, simple
+          </h1>
+          <p class="text-[#4b5862] md:mt-8">
+            Blogr is a free and open source application backed by a large
+            community of helpful developers. It supports features such as code
+            syntax highlighting, RSS feeds, social media integration,
+            third-party commenting tools, and works seamlessly with Google
+            Analytics. The architecture is clean and is relatively easy to
+            learn.
+          </p>
+
+          <h1 class="mt-8 mb-6 text-[1.5rem] font-semibold md:mt-14 md:mb-0">
+            Powerful tooling
+          </h1>
+          <p class="text-[#4b5862] md:mt-8">
+            Batteries included. We built a simple and straightforward CLI tool
+            that makes customization and deployment a breeze, but capable of
+            producing even the most complicated sites.
+          </p>
+        </div>
+      </article>
+    </section>
+    <!--Kraj trece sekcije-->
+    <!--Footer-->
+
+    <footer class="mt-16 w-full rounded-tr-[5rem] bg-[#25252d] md:mt-0">
+      <article
+        class="container flex flex-col items-center justify-around pt-20 pb-20 text-center text-[#c8c8cb] md:flex md:flex-row"
+      >
+        <div class="mb-8 md:mb-0"><img src="images/logo.svg" alt="" /></div>
+        <div class="mb-8 md:mb-0">
+          <ul class="text-white">
+            Product
+            <div class="pt-8 text-[#c8c8cb]">
+              <li>
+                <a href="">Overview</a>
+              </li>
+              <li>
+                <a href="">Pricing</a>
+              </li>
+              <li>
+                <a href="">Marketplace</a>
+              </li>
+              <li>
+                <a href="">Features</a>
+              </li>
+              <li>
+                <a href="">Integrations</a>
+              </li>
+            </div>
+          </ul>
+        </div>
+        <div>
+          <ul class="text-white">
+            Company
+            <div class="mb-8 pt-8 text-[#c8c8cb] md:mb-0">
+              <li>
+                <a href="">About</a>
+              </li>
+              <li>
+                <a href="">Team</a>
+              </li>
+              <li>
+                <a href="">Blog</a>
+              </li>
+              <li>
+                <a href="">Careers</a>
+              </li>
+            </div>
+          </ul>
+        </div>
+        <div>
+          <ul class="text-white">
+            Connect
+            <div class="mb-8 pt-8 text-[#c8c8cb] md:mb-0">
+              <li>
+                <a href="">Contact</a>
+              </li>
+              <li>
+                <a href="">Newsletter</a>
+              </li>
+              <li>
+                <a href="">Blog LinkedIn</a>
+              </li>
+            </div>
+          </ul>
+        </div>
+      </article>
+      <div class="text-center">
+        <a
+          class="text-optimum-blue hover:text-optimum-darkblue"
+          href="https://www.frontendmentor.io/challenges/blogr-landing-page-EX2RLAApP"
+          target="_blank"
+          >Frontend Mentor challenge</a
+        >
+      </div>
+      <div class="text-center">
+        for
+        <a
+          class="text-optimum-blue hover:text-optimum-darkblue"
+          href="https://github.com/optimumBA"
+          target="_blank"
+          >Optimum BH</a
+        >
+        Internship.
+      </div>
+
+      <div class="mt-3 text-center">
+        <a
+          class="text-optimum-blue hover:text-optimum-darkblue"
+          href="https://github.com/OmerSalkan/frontend_mentor_challenges/tree/blogr_landing_page/challenges/blogr_landing_page"
+          >Source code</a
+        >
+      </div>
+    </footer>
+
+    <!--Kraj footera-->
   </body>
 </html>

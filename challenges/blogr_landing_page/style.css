@@ -5,10 +5,15 @@
 @tailwind components;
 @tailwind utilities;
 
-.container{
-    width: 80%;
-    margin: auto;
+.container {
+  width: 80%;
+  margin: auto;
 }
-.header-gradient{
-    background: linear-gradient(to right, #ff8f70 10%, #ff394d 70%);
+.header-gradient {
+  background: linear-gradient(to right, #ff8f70 10%, #ff394d 70%);
+}
+
+body{
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
