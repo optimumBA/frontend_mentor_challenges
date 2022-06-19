@@ -1,3 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.container {
+  width: 80%;
+  margin: auto;
+}
+.header-gradient {
+  background: linear-gradient(to right, #ff8f70 10%, #ff394d 70%);
+}
+
+body {
+  overflow-y: scroll;
+  overflow-x: hidden;
+}

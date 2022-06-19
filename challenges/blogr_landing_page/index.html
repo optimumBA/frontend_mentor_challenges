@@ -27,12 +27,414 @@
     />
     <link rel="manifest" href="../site.webmanifest" />
     <link rel="stylesheet" href="style.css" />
+    <script src="//unpkg.com/alpinejs" defer></script>
   </head>
-  <body class="m-0">
-    <div
-      class="flex h-[100vh] w-full flex-col place-content-center text-center"
+  <body class="font-ubuntu max-w-full overflow-x-hidden">
+    <!--HEADER-->
+    <header
+      class="font-ubuntu header-gradient relative overflow-hidden rounded-bl-[5rem] text-center text-white"
     >
-      <div>
+      <img
+        src="images/bg-pattern-intro-desktop.svg"
+        alt=""
+        class="absolute z-10 hidden w-fit md:top-[-100px] md:block lg:top-[-400px]"
+      />
+
+      <!--Navigacija-->
+      <div class="px-5 pt-10 pb-20 md:pr-[10%] md:pl-[10%]">
+        <div
+          x-data="{isNavOpen: false}"
+          class="mb-20 flex items-center justify-between md:justify-start"
+        >
+          <img src="./images/logo.svg" alt="logo" />
+          <!--Hamburger iconica -->
+          <a
+            id="mobile-menu-toggle"
+            class="z-20 block lg:hidden"
+            @click="isNavOpen = !isNavOpen"
+          >
+            <img
+              src="images/icon-hamburger.svg"
+              :class="isNavOpen ? 'hidden' : 'block'"
+              alt=""
+            />
+            <img
+              src="images/icon-close.svg"
+              :class="isNavOpen ? 'block' : 'hidden'"
+              alt=""
+            />
+          </a>
+
+          <template
+            x-if="isNavOpen"
+            x-init="isNavOpen = window.innerWidth > 768"
+            @resize.window="isNavOpen= window.innerWidth > 768"
+          >
+            <nav
+              x-data="{ array: [ false, false, false  ], arrayOpen }"
+              class="absolute top-24 left-10 right-10 z-50 rounded-lg bg-white py-10 md:static md:ml-10 md:flex md:w-full md:gap-9 md:bg-transparent md:py-0"
+            >
+              <div class="relative mb-2">
+                <div>
+                  <a
+                    @click="arrayOpen(0)"
+                    class="text-black hover:cursor-pointer md:text-white md:hover:underline"
+                  >
+                    Product
+                  </a>
+                  <picture>
+                    <source
+                      media="(min-width:768px)"
+                      srcset="./images/icon-arrow-light.svg"
+                    />
+                    <img
+                      x-ref="productArrow"
+                      class="inline-block"
+                      src="./images/icon-arrow-dark.svg"
+                      alt="arrow"
+                    />
+                  </picture>
+                </div>
+                <template x-if="array[0]">
+                  <div
+                    x-ref="product"
+                    class="mx-10 flex flex-col gap-2 rounded-md bg-white p-3 text-[#ff525d] md:absolute md:-left-16 md:top-9 md:text-left"
+                  >
+                    <a class="hover:cursor-pointer hover:font-bold">
+                      Overview
+                    </a>
+                    <a class="hover:cursor-pointer hover:font-bold">
+                      Pricing
+                    </a>
+                    <a class="hover:cursor-pointer hover:font-bold">
+                      Marketplace
+                    </a>
+                    <a class="hover:cursor-pointer hover:font-bold">
+                      Features
+                    </a>
+                    <a class="hover:cursor-pointer hover:font-bold">
+                      Integrations
+                    </a>
+                  </div>
+                </template>
+              </div>
+
+              <div class="relative mb-2">
+                <div>
+                  <a
+                    @click="arrayOpen(1)"
+                    class="text-black hover:cursor-pointer md:text-white md:hover:underline"
+                  >
+                    Company
+                  </a>
+                  <picture>
+                    <source
+                      media="(min-width:768px)"
+                      srcset="./images/icon-arrow-light.svg"
+                    />
+                    <img
+                      x-ref="companyArrow"
+                      class="inline-block"
+                      src="./images/icon-arrow-dark.svg"
+                      alt="arrow"
+                    />
+                  </picture>
+                </div>
+                <template x-if="array[1]">
+                  <div
+                    x-ref="company"
+                    class="mx-10 flex flex-col gap-2 rounded-md bg-white p-3 text-[#ff525d] md:absolute md:-left-11 md:top-9 md:text-left"
+                  >
+                    <a class="hover:cursor-pointer hover:font-bold"> About </a>
+                    <a class="hover:cursor-pointer hover:font-bold"> Team </a>
+                    <a class="hover:cursor-pointer hover:font-bold"> Blog </a>
+                    <a class="hover:cursor-pointer hover:font-bold">
+                      Careers
+                    </a>
+                  </div>
+                </template>
+              </div>
+
+              <div class="relative mb-2">
+                <div>
+                  <a
+                    @click="arrayOpen(2)"
+                    class="text-black hover:cursor-pointer md:text-white md:hover:underline"
+                  >
+                    Connect
+                  </a>
+                  <picture>
+                    <source
+                      media="(min-width:768px)"
+                      srcset="./images/icon-arrow-light.svg"
+                    />
+                    <img
+                      x-ref="connectArrow"
+                      class="inline-block"
+                      src="./images/icon-arrow-dark.svg"
+                      alt="arrow"
+                    />
+                  </picture>
+                </div>
+                <template x-if="array[2]">
+                  <div
+                    x-ref="connect"
+                    class="mx-10 flex flex-col gap-2 rounded-md bg-white p-3 text-[#ff525d] md:absolute md:-left-14 md:top-9 md:text-left"
+                  >
+                    <a class="hover:cursor-pointer hover:font-bold">
+                      Contact
+                    </a>
+                    <a class="hover:cursor-pointer hover:font-bold">
+                      Newsletter
+                    </a>
+                    <a class="hover:cursor-pointer hover:font-bold">
+                      LinkedIn
+                    </a>
+                  </div>
+                </template>
+              </div>
+
+              <div
+                class="relative grid grid-rows-2 border-t-[1px] md:absolute md:right-10 md:grid-cols-2 md:grid-rows-1 md:border-none"
+              >
+                <button
+                  class="w-[100px] justify-self-center text-black md:text-white"
+                >
+                  Login
+                </button>
+                <button
+                  class="mx-auto rounded-3xl bg-gradient-to-r from-[#ff8f70] to-[#ff394d] p-2 px-6 py-4 font-semibold text-white md:bg-white md:bg-none md:text-[#ff525d]"
+                >
+                  Sign Up
+                </button>
+              </div>
+            </nav>
+          </template>
+        </div>
+        <!--Kraj navigacije-->
+        <article class="relative z-10 mt-16 text-center">
+          <h1
+            class="relative px-6 pb-4 text-[2rem] font-semibold text-white md:px-0 md:text-[3rem] md:font-bold"
+          >
+            A modern publishing platform
+          </h1>
+          <span class="text-slate-200"
+            >Grow your audience and build your <br class="md:hidden" />
+            online brand</span
+          >
+          <div class="pt-16 pb-28">
+            <a
+              href=""
+              class="mr-2 rounded-full bg-white px-4 py-2 font-semibold text-[#ff525d]"
+              >Start for Free</a
+            >
+            <a
+              href=""
+              class="rounded-full border px-4 py-2 font-semibold text-white"
+              >Learn More</a
+            >
+          </div>
+        </article>
+      </div>
+    </header>
+    <!--END HEADER-->
+
+    <!--Prva sekcija-->
+    <section class="mt-10 mb-36 overflow-x-hidden md:mt-20">
+      <h1
+        class="mb-10 text-center text-[1.5rem] font-semibold text-[#25252d] md:mb-0 md:text-[2rem] md:font-semibold"
+      >
+        Designed for the future
+      </h1>
+      <article
+        class="flex flex-col-reverse justify-between md:mt-[-80px] md:flex-row"
+      >
+        <div
+          class="container flex flex-col justify-center text-center md:flex-[0_0_40%] md:text-left"
+        >
+          <h1 class="text-[1.5rem] font-semibold text-[#25252d]">
+            Introducing an extensible editor
+          </h1>
+          <p class="mb-24 mt-4 text-[#4b5862]">
+            Blogr features an exceedingly intuitive interface which lets you
+            focus on one thing: creating content. The editor supports management
+            of multiple blogs and allows easy manipulation of embeds such as
+            images, videos, and Markdown. Extensibility with plugins and themes
+            provide easy ways to add functionality or change the looks of a
+            blog.
+          </p>
+
+          <h1 class="text-[1.5rem] font-semibold text-[#25252d]">
+            Robust content management
+          </h1>
+          <p class="mt-4 text-[#4b5862]">
+            Flexible content management enables users to easily move through
+            posts. Increase the usability of your blog by adding customized
+            categories, sections, format, or flow. With this functionality,
+            you’re in full control.
+          </p>
+        </div>
+
+        <div class="md:mr-[-15%] md:flex-[0_0_60%]">
+          <img
+            src="images/illustration-editor-desktop.svg"
+            alt=""
+            class="hidden md:block"
+          />
+          <img
+            src="images/illustration-editor-mobile.svg"
+            alt=""
+            class="block md:hidden"
+          />
+        </div>
+      </article>
+    </section>
+
+    <!--Kraj prve sekcije-->
+
+    <!--Pocetak druge sekcije-->
+
+    <section class="relative mt-20">
+      <div
+        class="absolute top-[12%] -z-10 h-[90%] w-full overflow-hidden rounded-tr-[5rem] rounded-bl-[5rem] bg-gradient-to-r from-[#2c2d3f] to-[#3f4164] md:h-[400px]"
+      >
+        <img
+          src="images/bg-pattern-circles.svg"
+          alt=""
+          class="absolute left-[-10%] top-[-130%]"
+        />
+      </div>
+      <article
+        class="container relative z-50 flex flex-col items-center md:flex-row"
+      >
+        <div class="flex-[0_0_50%]">
+          <img
+            src="images/illustration-phones.svg"
+            alt=""
+            class="mt-[-80px] md:mt-0"
+          />
+        </div>
+
+        <div class="mt-[-40px] flex-[0_0_50%] text-center md:mt-0 md:text-left">
+          <h1 class="mb-2 text-[2rem] text-white">
+            State of the Art Infrastructure
+          </h1>
+          <p class="text-slate-100">
+            With reliability and speed in mind, worldwide data centers provide
+            the backbone for ultra-fast connectivity. This ensures your site
+            will load instantly, no matter where your readers are, keeping your
+            site competitive.
+          </p>
+        </div>
+      </article>
+    </section>
+
+    <!--Kraj druge sekcije-->
+
+    <!--Pocetak trece sekcije-->
+    <section class="mt-20 md:mb-36 md:mt-0">
+      <article
+        class="container mr-0 flex flex-col items-center justify-between md:mr-[10%] md:flex-row"
+      >
+        <div class="mb-8 flex-[0_0_50%] md:mb-0 lg:ml-[-15%]">
+          <img
+            src="images/illustration-laptop-desktop.svg"
+            alt=""
+            class="w-full"
+          />
+        </div>
+
+        <div class="flex-[0_0_50%] text-center md:text-left">
+          <h1 class="mb-6 text-[1.5rem] font-semibold md:mb-0">
+            Free, open, simple
+          </h1>
+          <p class="text-[#4b5862] md:mt-8">
+            Blogr is a free and open source application backed by a large
+            community of helpful developers. It supports features such as code
+            syntax highlighting, RSS feeds, social media integration,
+            third-party commenting tools, and works seamlessly with Google
+            Analytics. The architecture is clean and is relatively easy to
+            learn.
+          </p>
+
+          <h1 class="mt-8 mb-6 text-[1.5rem] font-semibold md:mt-14 md:mb-0">
+            Powerful tooling
+          </h1>
+          <p class="text-[#4b5862] md:mt-8">
+            Batteries included. We built a simple and straightforward CLI tool
+            that makes customization and deployment a breeze, but capable of
+            producing even the most complicated sites.
+          </p>
+        </div>
+      </article>
+    </section>
+    <!--Kraj trece sekcije-->
+    <!--Footer-->
+
+    <footer class="mt-16 w-full rounded-tr-[5rem] bg-[#25252d] md:mt-0">
+      <article
+        class="container flex flex-col items-center justify-around pt-20 pb-20 text-center text-[#c8c8cb] md:flex md:flex-row"
+      >
+        <div class="mb-8 md:mb-0"><img src="images/logo.svg" alt="" /></div>
+        <div class="mb-8 md:mb-0">
+          <ul class="text-white">
+            Product
+            <div class="pt-8 text-[#c8c8cb]">
+              <li>
+                <a href="">Overview</a>
+              </li>
+              <li>
+                <a href="">Pricing</a>
+              </li>
+              <li>
+                <a href="">Marketplace</a>
+              </li>
+              <li>
+                <a href="">Features</a>
+              </li>
+              <li>
+                <a href="">Integrations</a>
+              </li>
+            </div>
+          </ul>
+        </div>
+        <div>
+          <ul class="text-white">
+            Company
+            <div class="mb-8 pt-8 text-[#c8c8cb] md:mb-0">
+              <li>
+                <a href="">About</a>
+              </li>
+              <li>
+                <a href="">Team</a>
+              </li>
+              <li>
+                <a href="">Blog</a>
+              </li>
+              <li>
+                <a href="">Careers</a>
+              </li>
+            </div>
+          </ul>
+        </div>
+        <div>
+          <ul class="text-white">
+            Connect
+            <div class="mb-8 pt-8 text-[#c8c8cb] md:mb-0">
+              <li>
+                <a href="">Contact</a>
+              </li>
+              <li>
+                <a href="">Newsletter</a>
+              </li>
+              <li>
+                <a href="">Blog LinkedIn</a>
+              </li>
+            </div>
+          </ul>
+        </div>
+      </article>
+      <div class="text-center">
         <a
           class="text-optimum-blue hover:text-optimum-darkblue"
           href="https://www.frontendmentor.io/challenges/blogr-landing-page-EX2RLAApP"
@@ -40,24 +442,38 @@
           >Frontend Mentor challenge</a
         >
       </div>
-      <div>
-        for
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA"
-          target="_blank"
-          >Optimum BH</a
-        >
-        Internship.
-      </div>
+      <div class="pb-10">
+        <div class="text-center text-white">
+          for
+          <a
+            class="text-optimum-blue hover:text-optimum-darkblue"
+            href="https://github.com/optimumBA"
+            target="_blank"
+            >Optimum BH</a
+          >
+          Internship.
+        </div>
 
-      <div class="mt-3">
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA/frontend_mentor_challenges/tree/blogr_landing_page/challenges/blogr_landing_page"
-          >Source code</a
-        >
+        <div class="mt-3 text-center">
+          <a
+            class="text-optimum-blue hover:text-optimum-darkblue"
+            href="https://github.com/OmerSalkan/frontend_mentor_challenges/tree/blogr_landing_page/challenges/blogr_landing_page"
+            >Source code</a
+          >
+        </div>
       </div>
-    </div>
+    </footer>
+
+    <!--Kraj footera-->
+
+    <script>
+      function arrayOpen(p) {
+        this.array = this.array.map((e, i) => {
+          if (i != p) {
+            return false
+          } else return !this.array[p]
+        })
+      }
+    </script>
   </body>
 </html>
