@@ -34,18 +34,29 @@
     <header
       class="font-ubuntu header-gradient overflow-hidden rounded-bl-[5rem] text-center text-white"
     >
-    <!--Navigacija-->
-      <div class="px-5 md:pr-[10%] md:pl-[10%] pt-10 pb-20">
-        
+      <!--Navigacija-->
+      <div class="px-5 pt-10 pb-20 md:pr-[10%] md:pl-[10%]">
         <div
-        x-data="{isNavOpen: false}" 
+          x-data="{isNavOpen: false}"
           class="mb-20 flex items-center justify-between md:justify-start"
         >
           <img src="./images/logo.svg" alt="logo" />
           <!--Hamburger iconica -->
-          <a id="mobile-menu-toggle" class="block lg:hidden" @click="isNavOpen = !isNavOpen">
-            <img src="images/icon-hamburger.svg" :class="isNavOpen ? 'hidden' : 'block'" alt="">
-            <img src="images/icon-close.svg" :class="isNavOpen ? 'block' : 'hidden'" alt="">
+          <a
+            id="mobile-menu-toggle"
+            class="block lg:hidden"
+            @click="isNavOpen = !isNavOpen"
+          >
+            <img
+              src="images/icon-hamburger.svg"
+              :class="isNavOpen ? 'hidden' : 'block'"
+              alt=""
+            />
+            <img
+              src="images/icon-close.svg"
+              :class="isNavOpen ? 'block' : 'hidden'"
+              alt=""
+            />
           </a>
 
           <template
@@ -55,13 +66,13 @@
           >
             <nav
               x-data="{ array: [ false, false, false  ], arrayOpen }"
-              class="absolute top-24 left-10 right-10 z-50 rounded-lg bg-white py-10  md:static md:ml-10 md:flex md:w-full md:gap-9 md:bg-transparent md:py-0"
+              class="absolute top-24 left-10 right-10 z-50 rounded-lg bg-white py-10 md:static md:ml-10 md:flex md:w-full md:gap-9 md:bg-transparent md:py-0"
             >
               <div class="relative mb-2">
                 <div>
                   <a
                     @click="arrayOpen(0)"
-                    class="hover:cursor-pointer md:text-white text-black md:hover:underline"
+                    class="text-black hover:cursor-pointer md:text-white md:hover:underline"
                   >
                     Product
                   </a>
@@ -106,7 +117,7 @@
                 <div>
                   <a
                     @click="arrayOpen(1)"
-                    class="hover:cursor-pointer md:text-white text-black md:hover:underline"
+                    class="text-black hover:cursor-pointer md:text-white md:hover:underline"
                   >
                     Company
                   </a>
@@ -142,7 +153,7 @@
                 <div>
                   <a
                     @click="arrayOpen(2)"
-                    class="hover:cursor-pointer md:text-white text-black md:hover:underline"
+                    class="text-black hover:cursor-pointer md:text-white md:hover:underline"
                   >
                     Connect
                   </a>
@@ -180,11 +191,13 @@
               <div
                 class="relative grid grid-rows-2 border-t-[1px] md:absolute md:right-10 md:grid-cols-2 md:grid-rows-1 md:border-none"
               >
-                <button class="w-[100px] justify-self-center md:text-white text-black">
+                <button
+                  class="w-[100px] justify-self-center text-black md:text-white"
+                >
                   Login
                 </button>
                 <button
-                  class="rounded-3xl p-2 font-semibold md:text-[#ff525d] px-6 py-4  mx-auto text-white bg-gradient-to-r from-[#ff8f70] to-[#ff394d] md:bg-white md:bg-none"
+                  class="mx-auto rounded-3xl bg-gradient-to-r from-[#ff8f70] to-[#ff394d] p-2 px-6 py-4 font-semibold text-white md:bg-white md:bg-none md:text-[#ff525d]"
                 >
                   Sign Up
                 </button>
@@ -221,7 +234,7 @@
     <!--END HEADER-->
 
     <!--Prva sekcija-->
-    <section class="mt-10 mb-36 md:mt-20 overflow-x-hidden">
+    <section class="mt-10 mb-36 overflow-x-hidden md:mt-20">
       <h1
         class="mb-10 text-center text-[1.5rem] font-semibold text-[#25252d] md:mb-0 md:text-[2rem] md:font-semibold"
       >
@@ -447,7 +460,7 @@
 
     <script>
       function arrayOpen(p) {
-        this.array= this.array.map((e, i) => {
+        this.array = this.array.map((e, i) => {
           if (i != p) {
             return false
           } else return !this.array[p]
