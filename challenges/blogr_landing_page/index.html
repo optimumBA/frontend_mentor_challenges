@@ -32,8 +32,10 @@
   <body class="font-ubuntu max-w-full overflow-x-hidden">
     <!--HEADER-->
     <header
-      class="font-ubuntu header-gradient overflow-hidden rounded-bl-[5rem] text-center text-white"
+      class="font-ubuntu relative header-gradient overflow-hidden rounded-bl-[5rem] text-center text-white"
     >
+    <img src="images/bg-pattern-intro-desktop.svg" alt="" class="absolute hidden md:block z-10 lg:top-[-500px] md:top-[-100px] w-fit">
+    <img src="images/bg-pattern-intro-mobile.svg" alt="" class="absolute z-10 md:hidden">
       <!--Navigacija-->
       <div class="px-5 pt-10 pb-20 md:pr-[10%] md:pl-[10%]">
         <div
@@ -44,7 +46,7 @@
           <!--Hamburger iconica -->
           <a
             id="mobile-menu-toggle"
-            class="block lg:hidden"
+            class="block lg:hidden z-20"
             @click="isNavOpen = !isNavOpen"
           >
             <img
