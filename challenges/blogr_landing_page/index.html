@@ -32,10 +32,14 @@
   <body class="font-ubuntu max-w-full overflow-x-hidden">
     <!--HEADER-->
     <header
-      class="font-ubuntu relative header-gradient overflow-hidden rounded-bl-[5rem] text-center text-white"
+      class="font-ubuntu header-gradient relative overflow-hidden rounded-bl-[5rem] text-center text-white"
     >
-    <img src="images/bg-pattern-intro-desktop.svg" alt="" class="absolute hidden md:block z-10 lg:top-[-500px] md:top-[-100px] w-fit">
-    <img src="images/bg-pattern-intro-mobile.svg" alt="" class="absolute z-10 md:hidden">
+      <img
+        src="images/bg-pattern-intro-desktop.svg"
+        alt=""
+        class="absolute z-10 hidden w-fit md:top-[-100px] md:block lg:top-[-400px]"
+      />
+
       <!--Navigacija-->
       <div class="px-5 pt-10 pb-20 md:pr-[10%] md:pl-[10%]">
         <div
@@ -46,7 +50,7 @@
           <!--Hamburger iconica -->
           <a
             id="mobile-menu-toggle"
-            class="block lg:hidden z-20"
+            class="z-20 block lg:hidden"
             @click="isNavOpen = !isNavOpen"
           >
             <img
@@ -438,23 +442,25 @@
           >Frontend Mentor challenge</a
         >
       </div>
-      <div class="text-center">
-        for
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA"
-          target="_blank"
-          >Optimum BH</a
-        >
-        Internship.
-      </div>
+      <div class="pb-10">
+        <div class="text-center text-white">
+          for
+          <a
+            class="text-optimum-blue hover:text-optimum-darkblue"
+            href="https://github.com/optimumBA"
+            target="_blank"
+            >Optimum BH</a
+          >
+          Internship.
+        </div>
 
-      <div class="mt-3 text-center">
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/OmerSalkan/frontend_mentor_challenges/tree/blogr_landing_page/challenges/blogr_landing_page"
-          >Source code</a
-        >
+        <div class="mt-3 text-center">
+          <a
+            class="text-optimum-blue hover:text-optimum-darkblue"
+            href="https://github.com/OmerSalkan/frontend_mentor_challenges/tree/blogr_landing_page/challenges/blogr_landing_page"
+            >Source code</a
+          >
+        </div>
       </div>
     </footer>
 
