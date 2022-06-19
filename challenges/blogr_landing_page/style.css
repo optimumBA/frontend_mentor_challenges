@@ -13,7 +13,7 @@
   background: linear-gradient(to right, #ff8f70 10%, #ff394d 70%);
 }
 
-body{
-    overflow-y: scroll;
-    overflow-x: hidden;
+body {
+  overflow-y: scroll;
+  overflow-x: hidden;
 }

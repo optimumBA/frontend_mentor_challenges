@@ -31,65 +31,197 @@
   </head>
   <body class="font-ubuntu max-w-full overflow-x-hidden">
     <!--HEADER-->
-    <section class="header-gradient relative overflow-hidden rounded-bl-[5rem]">
-      <img
-        src="images/bg-pattern-intro-desktop.svg"
-        alt=""
-        class="absolute z-10 w-fit md:top-[-100px] lg:top-[-500px]"
-      />
-      <!--Navigacija-->
-   <header class="relative z-30 container pt-10">
-    <nav x-data="{isNavOpen:false}" class="flex items-center justify-between px-5 text-gray-600 transition-all lg:text-white lg:px-20">
-<!--lOGO-->
-      <img src="images/logo.svg" alt="">
-
-      <!--Hamburger menu za mobilne uredjaje -->
-
-      <a id="mobile-menu-toggle" class="block lg:hidden" @click="isNavOpen = !isNavOpen">
-        <img src="images/icon-hamburger.svg" :class="isNavOpen ? 'hidden' : 'block'" alt="">
-        <img src="images/icon-close.svg" :class="isNavOpen ? 'block' : 'hidden'" alt="">
-      </a>
-
-    </nav>
-
-
-
-
-
-
-
-
-
-   </header>
-      <!--Kraj navigacije-->
-      <article class="relative z-20 mt-16 text-center">
-        <h1
-          class="px-6 pb-4 text-[2rem] font-semibold text-white md:px-0 md:text-[3rem] md:font-bold"
+    <header
+      class="font-ubuntu header-gradient overflow-hidden rounded-bl-[5rem] text-center text-white"
+    >
+    <!--Navigacija-->
+      <div class="px-5 md:pr-[10%] md:pl-[10%] pt-10 pb-20">
+        
+        <div
+        x-data="{isNavOpen: false}" 
+          class="mb-20 flex items-center justify-between md:justify-start"
         >
-          A modern publishing platform
-        </h1>
-        <span class="text-slate-200"
-          >Grow your audience and build your <br class="md:hidden" />
-          online brand</span
-        >
-        <div class="pt-16 pb-28">
-          <a
-            href=""
-            class="mr-2 rounded-full bg-white px-4 py-2 font-semibold text-[#ff525d]"
-            >Start for Free</a
+          <img src="./images/logo.svg" alt="logo" />
+          <!--Hamburger iconica -->
+          <a id="mobile-menu-toggle" class="block lg:hidden" @click="isNavOpen = !isNavOpen">
+            <img src="images/icon-hamburger.svg" :class="isNavOpen ? 'hidden' : 'block'" alt="">
+            <img src="images/icon-close.svg" :class="isNavOpen ? 'block' : 'hidden'" alt="">
+          </a>
+
+          <template
+            x-if="isNavOpen"
+            x-init="isNavOpen = window.innerWidth > 768"
+            @resize.window="isNavOpen= window.innerWidth > 768"
           >
-          <a
-            href=""
-            class="rounded-full border px-4 py-2 font-semibold text-white"
-            >Learn More</a
-          >
+            <nav
+              x-data="{ array: [ false, false, false  ], arrayOpen }"
+              class="absolute top-24 left-10 right-10 z-50 rounded-lg bg-white py-10  md:static md:ml-10 md:flex md:w-full md:gap-9 md:bg-transparent md:py-0"
+            >
+              <div class="relative mb-2">
+                <div>
+                  <a
+                    @click="arrayOpen(0)"
+                    class="hover:cursor-pointer md:text-white text-black md:hover:underline"
+                  >
+                    Product
+                  </a>
+                  <picture>
+                    <source
+                      media="(min-width:768px)"
+                      srcset="./images/icon-arrow-light.svg"
+                    />
+                    <img
+                      x-ref="productArrow"
+                      class="inline-block"
+                      src="./images/icon-arrow-dark.svg"
+                      alt="arrow"
+                    />
+                  </picture>
+                </div>
+                <template x-if="array[0]">
+                  <div
+                    x-ref="product"
+                    class="mx-10 flex flex-col gap-2 rounded-md bg-white p-3 text-[#ff525d] md:absolute md:-left-16 md:top-9 md:text-left"
+                  >
+                    <a class="hover:cursor-pointer hover:font-bold">
+                      Overview
+                    </a>
+                    <a class="hover:cursor-pointer hover:font-bold">
+                      Pricing
+                    </a>
+                    <a class="hover:cursor-pointer hover:font-bold">
+                      Marketplace
+                    </a>
+                    <a class="hover:cursor-pointer hover:font-bold">
+                      Features
+                    </a>
+                    <a class="hover:cursor-pointer hover:font-bold">
+                      Integrations
+                    </a>
+                  </div>
+                </template>
+              </div>
+
+              <div class="relative mb-2">
+                <div>
+                  <a
+                    @click="arrayOpen(1)"
+                    class="hover:cursor-pointer md:text-white text-black md:hover:underline"
+                  >
+                    Company
+                  </a>
+                  <picture>
+                    <source
+                      media="(min-width:768px)"
+                      srcset="./images/icon-arrow-light.svg"
+                    />
+                    <img
+                      x-ref="companyArrow"
+                      class="inline-block"
+                      src="./images/icon-arrow-dark.svg"
+                      alt="arrow"
+                    />
+                  </picture>
+                </div>
+                <template x-if="array[1]">
+                  <div
+                    x-ref="company"
+                    class="mx-10 flex flex-col gap-2 rounded-md bg-white p-3 text-[#ff525d] md:absolute md:-left-11 md:top-9 md:text-left"
+                  >
+                    <a class="hover:cursor-pointer hover:font-bold"> About </a>
+                    <a class="hover:cursor-pointer hover:font-bold"> Team </a>
+                    <a class="hover:cursor-pointer hover:font-bold"> Blog </a>
+                    <a class="hover:cursor-pointer hover:font-bold">
+                      Careers
+                    </a>
+                  </div>
+                </template>
+              </div>
+
+              <div class="relative mb-2">
+                <div>
+                  <a
+                    @click="arrayOpen(2)"
+                    class="hover:cursor-pointer md:text-white text-black md:hover:underline"
+                  >
+                    Connect
+                  </a>
+                  <picture>
+                    <source
+                      media="(min-width:768px)"
+                      srcset="./images/icon-arrow-light.svg"
+                    />
+                    <img
+                      x-ref="connectArrow"
+                      class="inline-block"
+                      src="./images/icon-arrow-dark.svg"
+                      alt="arrow"
+                    />
+                  </picture>
+                </div>
+                <template x-if="array[2]">
+                  <div
+                    x-ref="connect"
+                    class="mx-10 flex flex-col gap-2 rounded-md bg-white p-3 text-[#ff525d] md:absolute md:-left-14 md:top-9 md:text-left"
+                  >
+                    <a class="hover:cursor-pointer hover:font-bold">
+                      Contact
+                    </a>
+                    <a class="hover:cursor-pointer hover:font-bold">
+                      Newsletter
+                    </a>
+                    <a class="hover:cursor-pointer hover:font-bold">
+                      LinkedIn
+                    </a>
+                  </div>
+                </template>
+              </div>
+
+              <div
+                class="relative grid grid-rows-2 border-t-[1px] md:absolute md:right-10 md:grid-cols-2 md:grid-rows-1 md:border-none"
+              >
+                <button class="w-[100px] justify-self-center md:text-white text-black">
+                  Login
+                </button>
+                <button
+                  class="rounded-3xl p-2 font-semibold md:text-[#ff525d] px-6 py-4  mx-auto text-white bg-gradient-to-r from-[#ff8f70] to-[#ff394d] md:bg-white md:bg-none"
+                >
+                  Sign Up
+                </button>
+              </div>
+            </nav>
+          </template>
         </div>
-      </article>
-    </section>
+        <!--Kraj navigacije-->
+        <article class="relative z-10 mt-16 text-center">
+          <h1
+            class="relative px-6 pb-4 text-[2rem] font-semibold text-white md:px-0 md:text-[3rem] md:font-bold"
+          >
+            A modern publishing platform
+          </h1>
+          <span class="text-slate-200"
+            >Grow your audience and build your <br class="md:hidden" />
+            online brand</span
+          >
+          <div class="pt-16 pb-28">
+            <a
+              href=""
+              class="mr-2 rounded-full bg-white px-4 py-2 font-semibold text-[#ff525d]"
+              >Start for Free</a
+            >
+            <a
+              href=""
+              class="rounded-full border px-4 py-2 font-semibold text-white"
+              >Learn More</a
+            >
+          </div>
+        </article>
+      </div>
+    </header>
     <!--END HEADER-->
 
     <!--Prva sekcija-->
-    <section class="mt-10 mb-36 md:mt-20">
+    <section class="mt-10 mb-36 md:mt-20 overflow-x-hidden">
       <h1
         class="mb-10 text-center text-[1.5rem] font-semibold text-[#25252d] md:mb-0 md:text-[2rem] md:font-semibold"
       >
@@ -312,5 +444,15 @@
     </footer>
 
     <!--Kraj footera-->
+
+    <script>
+      function arrayOpen(p) {
+        this.array= this.array.map((e, i) => {
+          if (i != p) {
+            return false
+          } else return !this.array[p]
+        })
+      }
+    </script>
   </body>
 </html>
