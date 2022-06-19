@@ -88,16 +88,7 @@ body {
   grid-area: right;
   text-align: left;
 }
-.discount {
-  color: #ff8c66;
-  background-color: #feece7;
-  border-radius: 20px;
-  padding: 3px 6px;
-  margin-left: 4px;
-  display: inline-block;
-  font-size: 11px;
-  font-weight: 800;
-}
+
 .toggle {
   background-color: #cdd7ee;
   -webkit-transition: 0.4s;
@@ -131,20 +122,12 @@ input:checked + .toggle:before {
   transform: translateX(24px);
 }
 
-/* Rounded toggle */
 .toggle.round {
   border-radius: 19px;
 }
 
 .toggle.round:before {
   border-radius: 50%;
-}
-
-hr {
-  height: 1px;
-  color: var(--empty-slider);
-  background-color: var(--empty-slider);
-  border: none;
 }
 
 .ticks {
@@ -162,15 +145,6 @@ hr {
   width: 10px;
   height: 10px;
   margin-right: 15px;
-}
-
-.attribution {
-  margin: 75px auto 10px auto;
-  font-size: 11px;
-  bottom: 5px;
-}
-.attribution a {
-  color: hsl(228, 45%, 44%);
 }
 
 @layer components {
