@@ -25,6 +25,7 @@ module.exports = {
           body: {
             'vdark-gray-blue': '#2c2d3f',
             'vdark-desat-blue': '#3f4164',
+            'bg-menu': '#efeff1',
           },
         },
       },

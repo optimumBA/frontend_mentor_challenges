@@ -1,11 +1,28 @@
+/* @import 'tailwindcss/base';
+@import './custom-base-styles.css';
+
+@import 'tailwindcss/components';
+@import './custom-components.css';
+
+@import 'tailwindcss/utilities';
+@import './custom-utilities.css'; */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
-  .bg-intro-mob {
-    background-image: url(./images/bg-pattern-intro-mobile.svg);
-    background-position: 50% 100%;
+@layer {
+  .bg-intro {
+    background-image: url(./images/bg-pattern-intro-desktop.svg);
     background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: 390px auto;
+  }
+
+  .bg-middle {
+    background-image: url(./images/bg-pattern-circles.svg);
+    background-repeat: no-repeat;
+    background-position: 50% 1000%;
+    background-size: 620px auto;
   }
 }
