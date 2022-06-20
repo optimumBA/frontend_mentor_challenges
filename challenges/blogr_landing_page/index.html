@@ -27,11 +27,445 @@
     />
     <link rel="manifest" href="../site.webmanifest" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&family=Ubuntu:ital,wght@0,500;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <script src="//unpkg.com/alpinejs" defer></script>
   </head>
-  <body class="m-0">
-    <div
-      class="flex h-[100vh] w-full flex-col place-content-center text-center"
+  <body class="font-[16px] m-0 bg-slate-200">
+    <header
+      class="from-lightred to-verylightRed relative h-[550px] w-[100%] overflow-hidden rounded-bl-[120px] bg-gradient-to-l"
     >
+      <div
+        x-data="{isNavOpen: false}"
+        class="flex items-center justify-between p-4 pb-12 md:justify-start"
+      >
+        <img src="./images/logo.svg" alt="logo" />
+
+        <a
+          id="mobile-menu-toggle"
+          class="block hover:cursor-pointer lg:hidden"
+          @click="isNavOpen = !isNavOpen"
+        >
+          <img
+            src="images/icon-hamburger.svg"
+            :class="isNavOpen ? 'hidden' : 'block'"
+            alt=""
+          />
+          <img
+            src="images/icon-close.svg"
+            class="md:hidden"
+            :class="isNavOpen ? 'block' : 'hidden'"
+            alt=""
+          />
+        </a>
+
+        <template
+          x-if="isNavOpen"
+          x-init="isNavOpen = window.innerWidth > 768"
+          @resize.window="isNavOpen= window.innerWidth > 768"
+        >
+          <nav
+            x-data="{ tab: [ false, false, false  ], isArrayOpen }"
+            class="absolute top-24 left-10 right-10 rounded-lg bg-white py-10 md:static md:ml-10 md:flex md:w-full md:gap-9 md:bg-transparent md:py-0"
+          >
+            <div
+              class="flex flex-col items-center justify-center text-center md:flex-row md:gap-4"
+            >
+              <div class="relative mb-2">
+                <div class="hover:cursor-pointer hover:font-bold">
+                  <a
+                    @click="isArrayOpen(0)"
+                    class="text-black hover:cursor-pointer md:text-white md:hover:underline"
+                    :class="{'font-bold' : tab[0]}"
+                  >
+                    Product
+                  </a>
+                  <picture>
+                    <source
+                      media="(min-width:768px)"
+                      srcset="./images/icon-arrow-light.svg"
+                    />
+                    <img
+                      x-ref="productArrow"
+                      class="inline-block"
+                      :class="{'rotate-180' : tab[0]}"
+                      src="./images/icon-arrow-dark.svg"
+                      alt="arrow"
+                    />
+                  </picture>
+                </div>
+                <template x-if="tab[0]">
+                  <div
+                    x-ref="product"
+                    class="text-veryDarkBlue mx-10 flex w-[300px] flex-col gap-2 rounded-md bg-slate-300 p-3 md:absolute md:-left-16 md:top-9 md:w-fit md:bg-white md:text-left"
+                  >
+                    <a class="hover:cursor-pointer hover:font-bold">
+                      Overview
+                    </a>
+                    <a class="hover:cursor-pointer hover:font-bold">
+                      Pricing
+                    </a>
+                    <a class="hover:cursor-pointer hover:font-bold">
+                      Marketplace
+                    </a>
+                    <a class="hover:cursor-pointer hover:font-bold">
+                      Features
+                    </a>
+                    <a class="hover:cursor-pointer hover:font-bold">
+                      Integrations
+                    </a>
+                  </div>
+                </template>
+              </div>
+
+              <div class="relative mb-2">
+                <div class="hover:cursor-pointer hover:font-bold">
+                  <a
+                    @click="isArrayOpen(1)"
+                    class="text-black hover:cursor-pointer md:text-white md:hover:underline"
+                    :class="{'font-bold' : tab[1]}"
+                  >
+                    Company
+                  </a>
+                  <picture>
+                    <source
+                      media="(min-width:768px)"
+                      srcset="./images/icon-arrow-light.svg"
+                    />
+                    <img
+                      x-ref="companyArrow"
+                      class="inline-block"
+                      :class="{'rotate-180' : tab[1]}"
+                      src="./images/icon-arrow-dark.svg"
+                      alt="arrow"
+                    />
+                  </picture>
+                </div>
+                <template x-if="tab[1]">
+                  <div
+                    x-ref="company"
+                    class="text-veryDarkBlue mx-10 flex w-[300px] flex-col gap-2 rounded-md bg-slate-300 p-3 md:absolute md:-left-11 md:top-9 md:w-fit md:bg-white md:text-left"
+                  >
+                    <a class="hover:cursor-pointer hover:font-bold"> About </a>
+                    <a class="hover:cursor-pointer hover:font-bold"> Team </a>
+                    <a class="hover:cursor-pointer hover:font-bold"> Blog </a>
+                    <a class="hover:cursor-pointer hover:font-bold">
+                      Careers
+                    </a>
+                  </div>
+                </template>
+              </div>
+
+              <div class="relative mb-2">
+                <div class="hover:cursor-pointer hover:font-bold">
+                  <a
+                    @click="isArrayOpen(2)"
+                    class="text-black hover:cursor-pointer md:text-white md:hover:underline"
+                    :class="{'font-bold' : tab[2]}"
+                  >
+                    Connect
+                  </a>
+                  <picture>
+                    <source
+                      media="(min-width:768px)"
+                      srcset="./images/icon-arrow-light.svg"
+                    />
+                    <img
+                      x-ref="connectArrow"
+                      class="inline-block"
+                      :class="{'rotate-180' : tab[2]}"
+                      src="./images/icon-arrow-dark.svg"
+                      alt="arrow"
+                    />
+                  </picture>
+                </div>
+                <template x-if="tab[2]">
+                  <div
+                    x-ref="connect"
+                    class="text-veryDarkBlue mx-10 flex w-[300px] flex-col gap-2 rounded-md bg-slate-300 p-3 md:absolute md:-left-14 md:top-9 md:w-fit md:bg-white md:text-left"
+                  >
+                    <a class="hover:cursor-pointer hover:font-bold">
+                      Contact
+                    </a>
+                    <a class="hover:cursor-pointer hover:font-bold">
+                      Newsletter
+                    </a>
+                    <a class="hover:cursor-pointer hover:font-bold">
+                      LinkedIn
+                    </a>
+                  </div>
+                </template>
+              </div>
+
+              <div
+                class="relative grid grid-rows-2 border-t-[1px] md:absolute md:right-10 md:grid-cols-2 md:grid-rows-1 md:border-none"
+              >
+                <button
+                  class="text-veryDarkBlue h-14 w-36 items-center justify-center rounded-3xl hover:font-bold md:h-14 md:w-36 md:text-lg md:font-bold md:text-slate-300 md:hover:text-white"
+                >
+                  Login
+                </button>
+                <button
+                  class="hover:bg-veryLightRed bg-lightRed md:text-lightRed md:hover:bg-veryLightRed h-14 w-36 items-center justify-center rounded-3xl font-bold text-white hover:text-white md:h-14 md:w-36 md:bg-white md:text-lg md:font-bold md:hover:text-white"
+                >
+                  Sign Up
+                </button>
+              </div>
+            </div>
+          </nav>
+        </template>
+      </div>
+
+      <div class="flex flex-col items-center justify-center gap-8 p-4">
+        <!--H and P-->
+        <div
+          class="font-overpass flex flex-col items-center justify-center gap-2 text-white"
+        >
+          <h2 class="text-3xl font-extrabold md:text-5xl lg:text-6xl">
+            A modern publishing platform
+          </h2>
+
+          <p class="text-base font-semibold md:text-xl lg:text-2xl">
+            Grow your audience and build your online brand
+          </p>
+        </div>
+
+        <!--Buttons-->
+        <div class="flex flex-row items-center justify-center gap-4">
+          <button
+            class="text-lightRed hover:bg-veryLightRed h-12 w-32 items-center justify-center rounded-3xl bg-white text-base font-bold hover:text-white md:h-14 md:w-36 md:text-lg"
+          >
+            Start for Free
+          </button>
+
+          <button
+            class="hover:text-veryLightRed h-12 w-32 items-center justify-center rounded-3xl border-[1px] text-base font-bold text-white hover:bg-white md:h-14 md:w-36 md:text-lg"
+          >
+            Learn More
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="flex flex-col items-center justify-center">
+      <container
+        class="font-overpass relative flex h-fit w-[100%] flex-col gap-8 pt-12 pb-8 md:gap-8"
+      >
+        <article class="h-[20%]">
+          <h2
+            class="text-veryDarkBlue text-center text-2xl font-extrabold md:text-4xl lg:text-6xl"
+          >
+            Design for the future
+          </h2>
+        </article>
+
+        <article
+          class="relative flex h-[80%] flex-col items-center gap-4 md:flex-row md:gap-0"
+        >
+          <section class="block md:hidden">
+            <img
+              src="images/illustration-editor-mobile.svg"
+              alt="Editor Mobile"
+            />
+          </section>
+
+          <section class="flex w-[50%] flex-col gap-4 md:mx-4 lg:mx-32">
+            <div
+              class="text-veryDarkBlue flex flex-col text-center md:gap-2 md:text-left lg:gap-4"
+            >
+              <h2 class="text-lg font-bold md:text-xl lg:text-2xl">
+                Introducing an extensible editor
+              </h2>
+
+              <p class="text-[70%] md:text-[80%] lg:text-[90%]">
+                Blogr features an exceedingly intuitive interface which lets you
+                focus on one thing: creating content. The editor supports
+                management of multiple blogs and allows easy manipulation of
+                embeds such as images, videos, and Markdown. Extensibility with
+                plugins and themes provide easy ways to add functionality or
+                change the looks of a blog.
+              </p>
+            </div>
+
+            <div
+              class="text-veryDarkBlue flex flex-col text-center md:gap-2 md:text-left lg:gap-4"
+            >
+              <h2 class="text-lg font-bold md:text-xl lg:text-2xl">
+                Robust content management
+              </h2>
+
+              <p class="text-[70%] md:text-[80%] lg:text-[90%]">
+                Flexible content management enables users to easily move through
+                posts. Increase the usability of your blog by adding customized
+                categories, sections, format, or flow. With this functionality,
+                you’re in full control.
+              </p>
+            </div>
+          </section>
+
+          <section class="relative hidden w-[50%] overflow-hidden md:block">
+            <img
+              src="images/illustration-editor-desktop.svg"
+              alt="Illustration Desktop"
+              class="relative left-[27%] w-full"
+            />
+          </section>
+        </article>
+      </container>
+
+      <container class="relative h-fit w-[100%] pt-[15%] pb-2 md:pt-8 md:pb-8">
+        <section
+          class="absolute left-[4%] -bottom-[-10%] z-20 flex flex-col items-center justify-center md:-bottom-[12%] md:left-[10%] md:flex-row lg:-bottom-[14%] lg:left-[8%]"
+        >
+          <img
+            src="images/illustration-phones.svg"
+            alt="Phones"
+            class="w-[280px] md:w-[420px] lg:w-[550px]"
+          />
+          <div
+            class="font-overpass flex w-[50%] flex-col items-center justify-center gap-4 p-0 text-center text-white md:items-start md:p-[20px] md:text-left lg:p-[1%]"
+          >
+            <h2 class="text-lg font-bold md:text-xl lg:text-2xl">
+              State of the Art Infrastructure
+            </h2>
+
+            <p class="text-[70%] md:text-[80%] lg:text-[90%]">
+              With reliability and speed in mind, worldwide data centers provide
+              the backbone for ultra-fast connectivity. This ensures your site
+              will load instantly, no matter where your readers are, keeping
+              your site competitive.
+            </p>
+          </div>
+        </section>
+        <section
+          class="from-verydarkdesaturatedBlue to-verydarkgrayBlue relative z-10 h-[380px] overflow-hidden rounded-tr-[80px] rounded-bl-[80px] bg-gradient-to-l md:h-[320px] lg:h-[420px]"
+        >
+          <img
+            src="images/bg-pattern-circles.svg"
+            alt="Circle"
+            class="relative -left-[0%] bottom-[40%] md:-left-[24%] md:bottom-[100%] lg:-left-[14%] lg:bottom-[120%]"
+          />
+        </section>
+      </container>
+
+      <container class="relative h-fit w-[100%] pt-4 pb-14 md:pt-24">
+        <section
+          class="relative flex flex-col items-center justify-center gap-4 md:flex-row md:gap-0"
+        >
+          <div class="md:h-full lg:w-full">
+            <img
+              src="images/illustration-laptop-desktop.svg"
+              alt="Laptop Desktop"
+              class="relative -left-24 hidden w-full md:block"
+            />
+            <img
+              src="images/illustration-laptop-mobile.svg"
+              alt="Laptop Mobile"
+              class="relative block w-full md:hidden"
+            />
+          </div>
+
+          <div
+            class="text-veryDarkBlue font-overpass flex flex-col items-center justify-center gap-8 text-center md:items-start md:text-left"
+          >
+            <div
+              class="mx-[35%] flex flex-col gap-4 md:mx-0 md:mr-[10%] lg:mr-[28%]"
+            >
+              <h2 class="text-lg font-bold md:text-xl lg:text-2xl">
+                Free, open, simple
+              </h2>
+
+              <p class="text-[70%] md:text-[80%] lg:text-[90%]">
+                Blogr is a free and open source application backed by a large
+                community of helpful developers. It supports features such as
+                code syntax highlighting, RSS feeds, social media integration,
+                third-party commenting tools, and works seamlessly with Google
+                Analytics. The architecture is clean and is relatively easy to
+                learn.
+              </p>
+            </div>
+
+            <div
+              class="mx-[35%] flex flex-col gap-4 md:mx-0 md:mr-[10%] lg:mr-[28%]"
+            >
+              <h2 class="text-lg font-bold md:text-xl lg:text-2xl">
+                Powerful tooling
+              </h2>
+              <p class="text-[70%] md:text-[80%] lg:text-[90%]">
+                Batteries included. We built a simple and straightforward CLI
+                tool that makes customization and deployment a breeze, but
+                capable of producing even the most complicated sites.
+              </p>
+            </div>
+          </div>
+        </section>
+      </container>
+    </main>
+
+    <footer class="font-overpass w-[100%] text-slate-300">
+      <article class="bg-veryDarkBlackBlue h-fit w-[100%] rounded-tr-[90px]">
+        <container
+          class="flex flex-col items-center justify-center gap-4 p-8 md:flex-row md:items-start md:justify-between md:gap-0 md:p-28"
+        >
+          <section class="flex items-center justify-center">
+            <img
+              src="images/logo.svg"
+              alt="Logo"
+              class="w-[65%] md:w-[55%] lg:w-[70%]"
+            />
+          </section>
+
+          <section
+            class="text-center text-xs md:text-left md:text-sm lg:text-lg"
+          >
+            <div class="flex flex-col">
+              <h2 class="pb-6 font-bold text-white">Product</h2>
+
+              <a class="hover:text-white hover:underline" href="">Overview</a>
+              <a class="hover:text-white hover:underline" href="">Pricing</a>
+              <a class="hover:text-white hover:underline" href=""
+                >Marketplace</a
+              >
+              <a class="hover:text-white hover:underline" href="">Features</a>
+              <a class="hover:text-white hover:underline" href=""
+                >Integration</a
+              >
+            </div>
+          </section>
+
+          <section
+            class="text-center text-xs md:text-left md:text-sm lg:text-lg"
+          >
+            <div class="flex flex-col">
+              <h2 class="pb-6 font-bold text-white">Company</h2>
+
+              <a class="hover:text-white hover:underline" href="">About</a>
+              <a class="hover:text-white hover:underline" href="">Team</a>
+              <a class="hover:text-white hover:underline" href="">Blog</a>
+              <a class="hover:text-white hover:underline" href="">Careers</a>
+            </div>
+          </section>
+
+          <section
+            class="text-center text-xs md:text-left md:text-sm lg:text-lg"
+          >
+            <div class="flex flex-col">
+              <h2 class="pb-6 font-bold text-white">Connect</h2>
+
+              <a class="hover:text-white hover:underline" href="">Contact</a>
+              <a class="hover:text-white hover:underline" href="">Newsletter</a>
+              <a class="hover:text-white hover:underline" href="">LinkedIn</a>
+            </div>
+          </section>
+        </container>
+      </article>
+    </footer>
+
+    <div class="flex w-full flex-col place-content-center pt-4 text-center">
       <div>
         <a
           class="text-optimum-blue hover:text-optimum-darkblue"
@@ -54,10 +488,20 @@
       <div class="mt-3">
         <a
           class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA/frontend_mentor_challenges/tree/blogr_landing_page/challenges/blogr_landing_page"
+          href="https://github.com/oki-imamovic/frontend_mentor_challenges/tree/blogr_landing_page/challenges/blogr_landing_page"
           >Source code</a
         >
       </div>
     </div>
+
+    <script>
+      function isArrayOpen(p) {
+        this.tab = this.tab.map((e, i) => {
+          if (i != p) {
+            return false
+          } else return !this.tab[p]
+        })
+      }
+    </script>
   </body>
 </html>
