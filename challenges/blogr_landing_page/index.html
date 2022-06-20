@@ -27,122 +27,228 @@
     />
     <link rel="manifest" href="../site.webmanifest" />
     <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&family=Ubuntu:ital,wght@0,500;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&family=Ubuntu:ital,wght@0,500;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
     <script src="//unpkg.com/alpinejs" defer></script>
-    <style>
-      [x-cloak] {
-        display: none !important;
-      }
-    </style>
   </head>
   <body class="font-[16px] m-0 bg-slate-200">
-    
-    <header class="w-[100%] h-[550px] bg-gradient-to-l from-lightred to-verylightRed rounded-bl-[120px]">
+    <header
+      class="from-lightred to-verylightRed relative h-[550px] w-[100%] overflow-hidden rounded-bl-[120px] bg-gradient-to-l"
+    >
+      <div
+        x-data="{isNavOpen: false}"
+        class="flex items-center justify-between p-4 pb-12 md:justify-start"
+      >
+        <img src="./images/logo.svg" alt="logo" />
 
-      <!--NAV BAR-->
-      <nav class="p-4 font-ubuntu">
+        <a
+          id="mobile-menu-toggle"
+          class="block hover:cursor-pointer lg:hidden"
+          @click="isNavOpen = !isNavOpen"
+        >
+          <img
+            src="images/icon-hamburger.svg"
+            :class="isNavOpen ? 'hidden' : 'block'"
+            alt=""
+          />
+          <img
+            src="images/icon-close.svg"
+            class="md:hidden"
+            :class="isNavOpen ? 'block' : 'hidden'"
+            alt=""
+          />
+        </a>
 
-        <!--Logo and produkts separation from login and signup buttons-->
-        <div class="flex flex-row items-center justify-between">
-
-          <!--CENTRIRA LOGO I DROP MENIJE-->
-          <div class="flex flex-row gap-4 items-center">
-
-            <img src="images/logo.svg" alt="Logo">
-
-            <!--SKRIVA DESKTOP DROP DOWN-->
-            <div class="md:block hidden">
-            
-              <!--DESKTOP DROP DOWN-->
-              <div class="flex flex-row gap-4">
-            
-                <!--Product-->
-                <button class="flex flex-row gap-2 items-center">
-                  <a class="hover:underline hover:text-white text-gray-300" href="#">Product</a>
-                  <img src="images/icon-arrow-light.svg" alt="Arrow Light" class="w-2 h-2">
-                </button>
-              
-                <!--Company-->
-                <button class="flex flex-row gap-2 items-center">
-                  <a class="hover:underline hover:text-white text-gray-300" href="#">Company</a>
-                  <img src="images/icon-arrow-light.svg" alt="Arrow Light" class="w-2 h-2">
-                </button>
-  
-                <!--Connect-->
-                <button class="flex flex-row gap-2 items-center">
-                  <a class="hover:underline hover:text-white text-gray-300" href="#">Connect</a>
-                  <img src="images/icon-arrow-light.svg" alt="Arrow Light" class="w-2 h-2">
-                </button>
-  
+        <template
+          x-if="isNavOpen"
+          x-init="isNavOpen = window.innerWidth > 768"
+          @resize.window="isNavOpen= window.innerWidth > 768"
+        >
+          <nav
+            x-data="{ tab: [ false, false, false  ], isArrayOpen }"
+            class="absolute top-24 left-10 right-10 rounded-lg bg-white py-10 md:static md:ml-10 md:flex md:w-full md:gap-9 md:bg-transparent md:py-0"
+          >
+            <div
+              class="flex flex-col items-center justify-center text-center md:flex-row md:gap-4"
+            >
+              <div class="relative mb-2">
+                <div class="hover:cursor-pointer hover:font-bold">
+                  <a
+                    @click="isArrayOpen(0)"
+                    class="text-black hover:cursor-pointer md:text-white md:hover:underline"
+                    :class="{'font-bold' : tab[0]}"
+                  >
+                    Product
+                  </a>
+                  <picture>
+                    <source
+                      media="(min-width:768px)"
+                      srcset="./images/icon-arrow-light.svg"
+                    />
+                    <img
+                      x-ref="productArrow"
+                      class="inline-block"
+                      :class="{'rotate-180' : tab[0]}"
+                      src="./images/icon-arrow-dark.svg"
+                      alt="arrow"
+                    />
+                  </picture>
+                </div>
+                <template x-if="tab[0]">
+                  <div
+                    x-ref="product"
+                    class="text-veryDarkBlue mx-10 flex w-[300px] flex-col gap-2 rounded-md bg-slate-300 p-3 md:absolute md:-left-16 md:top-9 md:w-fit md:bg-white md:text-left"
+                  >
+                    <a class="hover:cursor-pointer hover:font-bold">
+                      Overview
+                    </a>
+                    <a class="hover:cursor-pointer hover:font-bold">
+                      Pricing
+                    </a>
+                    <a class="hover:cursor-pointer hover:font-bold">
+                      Marketplace
+                    </a>
+                    <a class="hover:cursor-pointer hover:font-bold">
+                      Features
+                    </a>
+                    <a class="hover:cursor-pointer hover:font-bold">
+                      Integrations
+                    </a>
+                  </div>
+                </template>
               </div>
 
+              <div class="relative mb-2">
+                <div class="hover:cursor-pointer hover:font-bold">
+                  <a
+                    @click="isArrayOpen(1)"
+                    class="text-black hover:cursor-pointer md:text-white md:hover:underline"
+                    :class="{'font-bold' : tab[1]}"
+                  >
+                    Company
+                  </a>
+                  <picture>
+                    <source
+                      media="(min-width:768px)"
+                      srcset="./images/icon-arrow-light.svg"
+                    />
+                    <img
+                      x-ref="companyArrow"
+                      class="inline-block"
+                      :class="{'rotate-180' : tab[1]}"
+                      src="./images/icon-arrow-dark.svg"
+                      alt="arrow"
+                    />
+                  </picture>
+                </div>
+                <template x-if="tab[1]">
+                  <div
+                    x-ref="company"
+                    class="text-veryDarkBlue mx-10 flex w-[300px] flex-col gap-2 rounded-md bg-slate-300 p-3 md:absolute md:-left-11 md:top-9 md:w-fit md:bg-white md:text-left"
+                  >
+                    <a class="hover:cursor-pointer hover:font-bold"> About </a>
+                    <a class="hover:cursor-pointer hover:font-bold"> Team </a>
+                    <a class="hover:cursor-pointer hover:font-bold"> Blog </a>
+                    <a class="hover:cursor-pointer hover:font-bold">
+                      Careers
+                    </a>
+                  </div>
+                </template>
+              </div>
+
+              <div class="relative mb-2">
+                <div class="hover:cursor-pointer hover:font-bold">
+                  <a
+                    @click="isArrayOpen(2)"
+                    class="text-black hover:cursor-pointer md:text-white md:hover:underline"
+                    :class="{'font-bold' : tab[2]}"
+                  >
+                    Connect
+                  </a>
+                  <picture>
+                    <source
+                      media="(min-width:768px)"
+                      srcset="./images/icon-arrow-light.svg"
+                    />
+                    <img
+                      x-ref="connectArrow"
+                      class="inline-block"
+                      :class="{'rotate-180' : tab[2]}"
+                      src="./images/icon-arrow-dark.svg"
+                      alt="arrow"
+                    />
+                  </picture>
+                </div>
+                <template x-if="tab[2]">
+                  <div
+                    x-ref="connect"
+                    class="text-veryDarkBlue mx-10 flex w-[300px] flex-col gap-2 rounded-md bg-slate-300 p-3 md:absolute md:-left-14 md:top-9 md:w-fit md:bg-white md:text-left"
+                  >
+                    <a class="hover:cursor-pointer hover:font-bold">
+                      Contact
+                    </a>
+                    <a class="hover:cursor-pointer hover:font-bold">
+                      Newsletter
+                    </a>
+                    <a class="hover:cursor-pointer hover:font-bold">
+                      LinkedIn
+                    </a>
+                  </div>
+                </template>
+              </div>
+
+              <div
+                class="relative grid grid-rows-2 border-t-[1px] md:absolute md:right-10 md:grid-cols-2 md:grid-rows-1 md:border-none"
+              >
+                <button
+                  class="text-veryDarkBlue h-14 w-36 items-center justify-center rounded-3xl hover:font-bold md:h-14 md:w-36 md:text-lg md:font-bold md:text-slate-300 md:hover:text-white"
+                >
+                  Login
+                </button>
+                <button
+                  class="hover:bg-veryLightRed bg-lightRed md:text-lightRed md:hover:bg-veryLightRed h-14 w-36 items-center justify-center rounded-3xl font-bold text-white hover:text-white md:h-14 md:w-36 md:bg-white md:text-lg md:font-bold md:hover:text-white"
+                >
+                  Sign Up
+                </button>
+              </div>
             </div>
+          </nav>
+        </template>
+      </div>
 
-          </div>
-
-          <!--Mobile Hamb-X Icon-->
-          <div class="md:hidden block">
-
-            <button>
-              <img src="images/icon-hamburger.svg" alt="Hamburger">
-            </button>
-
-          </div>
-
-          <!--Login Sign Up-->
-          <div class="md:block hidden">
-
-            <div class="flex flex-row gap-2">
-
-              <button class="text-slate-300 hover:text-white md:w-36 md:h-14 md:text-lg md::font-bold items-center justify-center rounded-3xl">
-                Login
-              </button>
-    
-              <button class="bg-white text-lightRed hover:text-white hover:bg-veryLightRed md:w-36 md:h-14 md:text-lg md:font-bold items-center justify-center rounded-3xl">
-                Sign Up
-              </button>
-
-            </div>
-            
-          </div>
-
-        </div>
-
-
-      </nav>
-
-      <div class="flex flex-col gap-8 my-24 p-4 items-center justify-center">
-
+      <div class="flex flex-col items-center justify-center gap-8 p-4">
         <!--H and P-->
-        <div class="flex flex-col gap-2 items-center justify-center font-overpass text-white">
-
-          <h2 class="font-extrabold text-3xl md:text-5xl lg:text-6xl">
+        <div
+          class="font-overpass flex flex-col items-center justify-center gap-2 text-white"
+        >
+          <h2 class="text-3xl font-extrabold md:text-5xl lg:text-6xl">
             A modern publishing platform
           </h2>
 
-          <p class="font-semibold text-base md:text-xl lg:text-2xl">
+          <p class="text-base font-semibold md:text-xl lg:text-2xl">
             Grow your audience and build your online brand
           </p>
-
         </div>
 
         <!--Buttons-->
-        <div class="flex flex-row gap-4 items-center justify-center">
-
-          <button class="bg-white text-lightRed hover:text-white hover:bg-veryLightRed w-32 h-12 text-base md:w-36 md:h-14 md:text-lg font-bold items-center justify-center rounded-3xl">
+        <div class="flex flex-row items-center justify-center gap-4">
+          <button
+            class="text-lightRed hover:bg-veryLightRed h-12 w-32 items-center justify-center rounded-3xl bg-white text-base font-bold hover:text-white md:h-14 md:w-36 md:text-lg"
+          >
             Start for Free
           </button>
 
-          <button class="text-white border-[1px] hover:text-veryLightRed hover:bg-white w-32 h-12 text-base md:w-36 md:h-14 md:text-lg font-bold items-center justify-center rounded-3xl">
+          <button
+            class="hover:text-veryLightRed h-12 w-32 items-center justify-center rounded-3xl border-[1px] text-base font-bold text-white hover:bg-white md:h-14 md:w-36 md:text-lg"
+          >
             Learn More
           </button>
-
         </div>
-
       </div>
-
     </header>
 
     <main class="flex flex-col items-center justify-center">
@@ -211,9 +317,7 @@
         </article>
       </container>
 
-      <container
-        class="relative h-fit w-[100%] pt-[15%] pb-2 md:pt-8 md:pb-8"
-      >
+      <container class="relative h-fit w-[100%] pt-[15%] pb-2 md:pt-8 md:pb-8">
         <section
           class="absolute left-[4%] -bottom-[-10%] z-20 flex flex-col items-center justify-center md:-bottom-[12%] md:left-[10%] md:flex-row lg:-bottom-[14%] lg:left-[8%]"
         >
@@ -248,9 +352,7 @@
         </section>
       </container>
 
-      <container
-        class="relative h-fit w-[100%] pt-4 pb-14 md:pt-24"
-      >
+      <container class="relative h-fit w-[100%] pt-4 pb-14 md:pt-24">
         <section
           class="relative flex flex-col items-center justify-center gap-4 md:flex-row md:gap-0"
         >
@@ -391,5 +493,15 @@
         >
       </div>
     </div>
+
+    <script>
+      function isArrayOpen(p) {
+        this.tab = this.tab.map((e, i) => {
+          if (i != p) {
+            return false
+          } else return !this.tab[p]
+        })
+      }
+    </script>
   </body>
 </html>
