@@ -5,6 +5,17 @@ module.exports = {
       colors: {
         'optimum-blue': '#009efc',
         'optimum-darkblue': '#0389e1',
+        screens: {
+          sm: '375px',
+
+          md: '960px',
+
+          lg: '1440px',
+
+          xl: '1280px',
+
+          '2xl': '1536px',
+        },
       },
     },
   },
