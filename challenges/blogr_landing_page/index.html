@@ -27,37 +27,404 @@
     />
     <link rel="manifest" href="../site.webmanifest" />
     <link rel="stylesheet" href="style.css" />
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+    <style>
+      [x-cloak] {
+        display: none !important;
+      }
+    </style>
   </head>
-  <body class="m-0">
-    <div
-      class="flex h-[100vh] w-full flex-col place-content-center text-center"
-    >
-      <div>
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://www.frontendmentor.io/challenges/blogr-landing-page-EX2RLAApP"
-          target="_blank"
-          >Frontend Mentor challenge</a
+  <body class="font-ubuntu m-0">
+    <div class="body-component">
+      <div class="top-card-component font-overpass">
+        <div
+          class="bg-desktopBg bg-[top:-20%] h-full bg-[length:150rem_150rem] bg-center"
         >
-      </div>
-      <div>
-        for
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA"
-          target="_blank"
-          >Optimum BH</a
-        >
-        Internship.
+          <!--nav-->
+          <div
+            x-data="{isOpen: false}"
+            class="flex w-full items-center justify-between px-10 pt-10 lg:flex"
+          >
+            <img class="static" src="../images/logo.svg" alt="" />
+            <a
+              x-cloak
+              @click.prevent="isOpen=!isOpen "
+              class="absolute right-0 block pr-10 lg:hidden"
+              id="mobile-menu-toggle"
+            >
+              <img
+                :class="isOpen ? 'hidden ' : 'block '"
+                src="../images/icon-hamburger.svg"
+                alt=""
+              />
+              <img
+                :class="isOpen ? 'block ' : 'hidden '"
+                src="../images/icon-close.svg"
+                alt=""
+              />
+            </a>
+
+            <template
+              x-if="isOpen"
+              x-init="isOpen = window.innerWidth > 768"
+              @resize.window="isOpen= window.innerWidth > 768"
+            >
+              <div
+                x-data="{ tab1:false,tab2:false, tab3:false}"
+                class="text-very-dark-blue absolute mt-[26rem] w-[85%] items-center justify-evenly rounded-lg bg-white px-4 font-bold duration-700 ease-out lg:static lg:mt-0 lg:flex lg:h-10 lg:w-full lg:items-center lg:justify-between lg:bg-transparent lg:px-0 lg:text-white lg:duration-1000 lg:ease-linear"
+              >
+                <div
+                  class="px-auto block items-center justify-center px-10 lg:mt-0 lg:flex lg:justify-start lg:gap-5 lg:px-0 lg:pl-10"
+                >
+                  <div class="items-center" @click.away="tab1=false">
+                    <div
+                      class="mt-6 flex items-center justify-center gap-1 lg:mt-0"
+                    >
+                      <a
+                        @click.prevent="tab1=!tab1"
+                        class="pr-2 hover:border-b-[1px]"
+                        href=""
+                        >Product</a
+                      >
+                      <img
+                        class="hidden w-3 lg:block"
+                        :class="openArray[0] ? 'rotate-180 ease-in duration-300' : 'rotate-0 ease-in duration-300' "
+                        height="2"
+                        src="../images/icon-arrow-light.svg"
+                        alt=""
+                      />
+                      <img
+                        :class="openArray[0] ?  'rotate-180 ease-in duration-300' : 'rotate-0 ease-in duration-300' "
+                        class="block w-3 lg:hidden"
+                        height="2"
+                        src="../images/icon-arrow-dark.svg"
+                        alt=""
+                      />
+                    </div>
+                    <template x-if="tab1">
+                      <div
+                        class="mt-3 rounded-lg bg-gray-200 py-2 text-center text-black lg:absolute lg:bg-white lg:px-10 lg:text-left"
+                      >
+                        <ul class="p-2">
+                          <li class="pt-1 hover:font-bold"><a>Overview</a></li>
+                          <li class="pt-1 hover:font-bold"><a>Pricing</a></li>
+                          <li class="pt-1 hover:font-bold">
+                            <a>Marketplace</a>
+                          </li>
+                          <li class="pt-1 hover:font-bold"><a>Features</a></li>
+                          <li class="pt-1 hover:font-bold">
+                            <a>Integrations</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </template>
+                  </div>
+                  <div class="relative lg:static" @click.away="tab2=false">
+                    <div
+                      class="mt-6 flex items-center justify-center gap-1 lg:mt-0"
+                    >
+                      <a
+                        @click.prevent="tab2=!tab2"
+                        class="pr-2 hover:border-b-[1px]"
+                        href=""
+                        >Company</a
+                      >
+                      <img
+                        class="hidden w-3 lg:block"
+                        :class="openArray[1] ? 'rotate-180 ease-in duration-300' : 'rotate-0 ease-in duration-300' "
+                        height="2"
+                        src="../images/icon-arrow-light.svg"
+                        alt=""
+                      />
+                      <img
+                        :class="openArray[1] ?  'rotate-180 ease-in duration-300' : 'rotate-0 ease-in duration-300' "
+                        class="block w-3 lg:hidden"
+                        height="2"
+                        src="../images/icon-arrow-dark.svg"
+                        alt=""
+                      />
+                    </div>
+                    <template x-if="tab2">
+                      <div
+                        class="mt-3 rounded-lg bg-gray-200 py-2 text-center text-black lg:absolute lg:bg-white lg:px-10 lg:text-left"
+                      >
+                        <ul>
+                          <li class="pt-1 hover:font-bold"><a>About</a></li>
+                          <li class="pt-1 hover:font-bold"><a>Team</a></li>
+                          <li class="pt-1 hover:font-bold"><a>Blog</a></li>
+                          <li class="pt-1 hover:font-bold"><a>Careers</a></li>
+                        </ul>
+                      </div>
+                    </template>
+                  </div>
+                  <div>
+                    <div
+                      class="mt-6 flex items-center justify-center lg:mt-0"
+                      @click.away="tab3=false"
+                    >
+                      <a
+                        @click.prevent="tab3=!tab3"
+                        class="pr-2 hover:border-b-[1px]"
+                        href=""
+                        >Connect</a
+                      >
+                      <img
+                        :class="openArray[2] ?  'rotate-180 ease-in duration-300' : 'rotate-0 ease-in duration-300' "
+                        class="hidden w-3 lg:block"
+                        height="2"
+                        src="../images/icon-arrow-light.svg"
+                        alt=""
+                      />
+                      <img
+                        :class="openArray[2] ?  'rotate-180 ease-in duration-300' : 'rotate-0 ease-in duration-300' "
+                        class="block w-3 lg:hidden"
+                        height="2"
+                        src="../images/icon-arrow-dark.svg"
+                        alt=""
+                      />
+                    </div>
+                    <template x-if="tab3">
+                      <div
+                        class="mt-3 rounded-lg bg-gray-200 py-2 text-center text-black lg:absolute lg:bg-white lg:px-10 lg:text-left"
+                      >
+                        <ul>
+                          <li class="pt-1 hover:font-bold"><a>Contact</a></li>
+                          <li class="pt-1 hover:font-bold">
+                            <a>Newsletter</a>
+                          </li>
+                          <li class="pt-1 hover:font-bold"><a>LinkedIn</a></li>
+                        </ul>
+                      </div>
+                    </template>
+                  </div>
+                </div>
+
+                <!--Nav right-->
+                <div
+                  class="static my-[10%] gap-6 border-t-[1px] border-t-gray-500 lg:my-0 lg:mt-0 lg:flex lg:items-center lg:border-t-0"
+                >
+                  <div class="my-6 lg:my-0">
+                    <button class="font-bold">Login</button>
+                  </div>
+                  <div
+                    class="lg:text-light-red lg:hover:bg-very-light-red-prim bg-light-red rounded-2xl text-white lg:bg-white lg:hover:text-white"
+                  >
+                    <button class="py-2 px-3 font-bold lg:px-8">Sign up</button>
+                  </div>
+                </div>
+              </div>
+            </template>
+          </div>
+          <div class="mt-[25%] block justify-center lg:mt-[16%]">
+            <h3 class="px-[5%] text-4xl font-bold lg:text-6xl">
+              A modern publishing platform
+            </h3>
+            <h5 class="mt-5 px-[10%] text-lg lg:px-0">
+              Grow your audience and build your online brend
+            </h5>
+            <div class="mt-6 flex justify-center gap-5">
+              <button
+                class="text-light-red hover:bg-very-light-red-prim rounded-2xl bg-white px-3 py-2 font-bold hover:text-white"
+              >
+                Start for Free
+              </button>
+              <button
+                class="hover:text-very-light-red-prim rounded-2xl border-[1px] border-white px-3 font-bold hover:bg-white"
+              >
+                Learn More
+              </button>
+            </div>
+          </div>
+          <!--Kraj nava-->
+        </div>
       </div>
 
-      <div class="mt-3">
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA/frontend_mentor_challenges/tree/blogr_landing_page/challenges/blogr_landing_page"
-          >Source code</a
+      <div class="items-center overflow-hidden">
+        <div class="pt-[10%]">
+          <h1 class="text-very-dark-blue text-4xl">Designed for the future</h1>
+          <div class="flex items-center justify-evenly">
+            <div class="lg:relative lg:ml-[5%] lg:block lg:w-1/2 lg:text-left">
+              <div class="mb-[10%]">
+                <div class="block lg:hidden">
+                  <img src="../images/illustration-editor-mobile.svg" alt="" />
+                </div>
+                <h3 class="text-very-dark-blue mx-20 mb-10 text-xl lg:mx-0">
+                  Introducing an extensible editor
+                </h3>
+
+                <p class="text-very-dark-grayish-blue px-[15%] lg:px-0 lg:pr-1">
+                  Blogr features an exceedingly intuitive interface which lets
+                  you focus on one thing: creating content. The editor supports
+                  management of multiple blogs and allows easy manipulation of
+                  embeds such as images, videos, and Markdown. Extensibility
+                  with plugins and themes provide easy ways to add functionality
+                  or change the looks of a blog.
+                </p>
+              </div>
+              <div class="mb-[10%] lg:mb-10">
+                <h3 class="text-very-dark-blue mx-20 mb-7 text-xl lg:mx-0">
+                  Robust content management
+                </h3>
+                <p class="text-very-dark-grayish-blue px-[15%] lg:px-0">
+                  Flexible content management enables users to easily move
+                  through posts. Increase the usability of your blog by adding
+                  customized categories, sections, format, or flow. With this
+                  functionality, you’re in full control.
+                </p>
+              </div>
+            </div>
+            <div class="hidden lg:static lg:mr-[-25%] lg:block">
+              <img
+                class=""
+                src="../images/illustration-editor-desktop.svg"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="from-very-dark-gray-blue to-very-dark-desaturated-blue static mt-16 w-full overflow-hidden rounded-tr-[20%] rounded-bl-[20%] bg-gradient-to-r lg:flex"
         >
+          <img
+            class="ml-[25%] mt-[-25%] lg:static lg:mt-[-20%] lg:ml-0"
+            width="50%"
+            src="../images/bg-pattern-circles.svg"
+            alt=""
+          />
+          <img
+            class="absolute mt-[-43%] ml-[25%] w-[50%] lg:ml-0 lg:mt-[-10%] lg:w-[50%]"
+            src="../images/illustration-phones.svg"
+            alt=""
+          />
+          <div
+            class="py-6 text-white lg:static lg:my-auto lg:ml-[-1%] lg:text-left"
+          >
+            <h2 class="px-10 pb-5 text-2xl lg:px-0">
+              State of the Art Infrastructure
+            </h2>
+            <p
+              class="text-grayish-blue mb-10 px-[15%] lg:mb-0 lg:px-0 lg:pr-[9%]"
+            >
+              With reliability and speed in mind, worldwide data centers provide
+              the backbone for ultra-fast connectivity. This ensures your site
+              will load instantly, no matter where your readers are, keeping
+              your site competitive.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-10 flex items-center">
+          <div class="hidden lg:static lg:ml-[-23%] lg:block">
+            <img
+              class=""
+              src="../images/illustration-laptop-desktop.svg"
+              alt=""
+            />
+          </div>
+          <div class="lg:w-1/2 lg:pr-[1%] lg:text-left">
+            <img
+              class="block lg:hidden"
+              src="../images/illustration-laptop-mobile.svg"
+              alt=""
+            />
+            <div>
+              <h2 class="text-very-dark-blue pb-3 text-2xl">
+                Free, open, simple
+              </h2>
+              <p class="text-very-dark-grayish-blue px-[18%] lg:px-0">
+                Blogr is a free and open source application backed by a large
+                community of helpful developers. It supports features such as
+                code syntax highlighting, RSS feeds, social media integration,
+                third-party commenting tools, and works seamlessly with Google
+                Analytics. The architecture is clean and is relatively easy to
+                learn.
+              </p>
+            </div>
+            <div class="pt-10">
+              <h2 class="text-very-dark-blue pb-3 text-2xl">
+                Powerful tooling
+              </h2>
+              <p class="text-very-dark-grayish-blue px-[15%] lg:px-0">
+                Batteries included. We built a simple and straightforward CLI
+                tool that makes customization and deployment a breeze, but
+                capable of producing even the most complicated sites.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
+
+      <footer
+        class="from-very-dark-gray-blue to-very-dark-desaturated-blue static mt-10 w-full overflow-hidden rounded-tr-[15%] bg-gradient-to-r"
+      >
+        <div
+          class="items-center justify-center text-white lg:flex lg:items-start lg:justify-around lg:p-[7%] lg:text-left"
+        >
+          <div class="mt-[10%] ml-[38%] lg:mt-0 lg:ml-0">
+            <img src="../images/logo.svg" alt="" />
+          </div>
+          <div class="mt-3 lg:mt-0">
+            <p>Product</p>
+            <ul class="text-grayish-blue pt-7">
+              <li><a href="">Overview</a></li>
+              <li><a href="">Pricing</a></li>
+              <li><a href="">Marketplace</a></li>
+              <li><a href="">Features</a></li>
+              <li><a href="">Integrations</a></li>
+            </ul>
+          </div>
+          <div class="mt-3 lg:mt-0">
+            <p>Company</p>
+            <ul class="text-grayish-blue pt-5 lg:pt-7">
+              <li><a href="">About</a></li>
+              <li><a href="">Team</a></li>
+              <li><a href="">Blog</a></li>
+              <li><a href="">Careers</a></li>
+            </ul>
+          </div>
+          <div class="mt-3 lg:mt-0">
+            <p>Connect</p>
+            <ul class="text-grayish-blue pt-5 lg:pt-7">
+              <li><a href="">Contact</a></li>
+              <li><a href="">Newsletter</a></li>
+              <li><a href="">LinkedIn</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div>
+          <div>
+            <a
+              class="text-optimum-blue hover:text-optimum-darkblue"
+              href="https://www.frontendmentor.io/challenges/blogr-landing-page-EX2RLAApP"
+              target="_blank"
+              >Frontend Mentor challenge</a
+            >
+          </div>
+          <div>
+            for
+            <a
+              class="text-optimum-blue hover:text-optimum-darkblue"
+              href="https://github.com/optimumBA"
+              target="_blank"
+              >Optimum BH</a
+            >
+            Internship.
+          </div>
+
+          <div class="mt-3">
+            <a
+              class="text-optimum-blue hover:text-optimum-darkblue"
+              href="https://github.com/optimumBA/frontend_mentor_challenges/tree/blogr_landing_page/challenges/blogr_landing_page"
+              >Source code</a
+            >
+          </div>
+        </div>
+      </footer>
     </div>
   </body>
 </html>
