@@ -1,3 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&family=Ubuntu:wght@400;500;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .body-component {
+    @apply h-[100vh] w-full  place-content-center  text-center text-[14px];
+  }
+  .top-card-component {
+    @apply from-very-light-red to-light-red  h-[70vh] items-start overflow-hidden  rounded-bl-[20%] bg-gradient-to-r   text-white lg:rounded-bl-[10%];
+  }
+}
