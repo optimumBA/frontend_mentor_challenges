@@ -91,13 +91,13 @@
                   class="mr-[1.5rem] inline-flex"
                   src="images/icon-arrow-light.svg"
                   alt="dropdown arrow"
-                  :class="item.open==true?'rotate-180':'rotate-0'"
+                  :class="item.open?'rotate-180':'rotate-0'"
                 />
-                <template x-if="item.label=='Product' & item.open==true">
+                <template x-if="item.label=='Product' & item.open">
                   <div
-                    :class="item.open==true?  items[1].open=false ?  null :items[2].open=false : null"
+                    :class="item.open?  !items[1].open ?  null : !items[2].open : null"
                     class="box"
-                    @mouseleave="item.open=false"
+                    @mouseleave="!item.open"
                   >
                     <a href="#">Overview</a>
                     <a href="#">Pricing</a>
@@ -107,11 +107,11 @@
                   </div>
                 </template>
 
-                <template x-if="item.label=='Connection' & item.open==true">
+                <template x-if="item.label=='Connection' & item.open">
                   <div
-                    :class="item.open==true? items[0].open=false ? null :items[2].open=false : null"
+                    :class="item.open? !items[0].open ? null : !items[2].open : null"
                     class="box"
-                    @mouseleave="item.open=false"
+                    @mouseleave="!item.open"
                   >
                     <a href="#">About</a>
                     <a href="#">Team</a>
@@ -119,9 +119,9 @@
                     <a href="#">Careers</a>
                   </div>
                 </template>
-                <template x-if="item.label=='Connect' & item.open==true">
+                <template x-if="item.label=='Connect' & item.open">
                   <div
-                    :class="item.open==true? items[0].open=false ? null :items[1].open=false : null"
+                    :class="item.open? !items[0].open ? null : !items[1].open : null"
                     class="box"
                     @mouseleave="item.open=false"
                   >
