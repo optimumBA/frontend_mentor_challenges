@@ -1,3 +1,34 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  overflow-x: hidden;
+  background: hsl(0, 26%, 96%);
+}
+
+a {
+  @apply cursor-pointer text-white;
+}
+.box {
+  @apply mt-[0.2rem] flex flex-col bg-white py-[1.5rem] px-[0.5rem];
+}
+.box a {
+  @apply text-extreme-gray hover:text-very-dark-gray-blue no-underline hover:font-bold hover:transition-colors hover:duration-100;
+}
+h6 {
+  @apply mb-[2rem] text-[1rem] font-medium text-white;
+}
+ul,
+h6 {
+  @apply mobile:text-center  mobile:my-8 mobile:flex mobile:flex-col mobile:gap-4;
+}
+ul li a {
+  @apply text-[#c8c9cc] hover:cursor-pointer hover:underline;
+}
