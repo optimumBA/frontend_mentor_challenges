@@ -41,7 +41,6 @@ module.exports = {
       backgroundImage: {
         circlesBg: "url('../images/bg-pattern-circles.svg')",
         mobileBg: "url('../images/bg-pattern-intro-mobile.svg')",
-       
       },
     },
   },
