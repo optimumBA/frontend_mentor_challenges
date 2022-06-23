@@ -1,3 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .price-slider {
+    -webkit-appearance: none;
+    margin-top: 15px;
+    border-radius: 10px;
+    background: #eaeefb;
+    outline: none;
+  }
+  .price-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 40%;
+    background-color: #11d8c5;
+    background-image: url('../images/icon-slider.svg');
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: center;
+    cursor: pointer;
+    box-shadow: 0 0.5rem 2rem rgba(16, 213, 193, 0.8);
+  }
+}
