@@ -20,7 +20,7 @@ module.exports = {
         /*Neutral  */
 
         /*Pricing component background */
-        'white': '#fffff',
+        white: '#ffff',
         /*Main background */
         'very-pale-blue': 'fafbff',
         /*Empty Slider Bar */
@@ -32,8 +32,12 @@ module.exports = {
         /*Text & CTA Background */
         'dark-desaturated-blue': '#293356',
       },
-      fontFamily:{
-        manrope: ['Manrope'],
+      fontFamily: {
+        mantrope: ['Manrope'],
+      },
+      backgroundImage: {
+        bgPattern: 'url(../images/bg-pattern.svg)',
+        patternCircles: 'url(../images/pattern-circles.svg)',
       },
     },
   },
