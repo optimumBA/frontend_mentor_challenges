@@ -37,18 +37,20 @@
           Simple, traffic-based pricing
         </h1>
         <p
-          class="text-grayish-blue px-[22%] text-base text-[15px] md:flex-row lg:px-0"
+          class="text-grayish-blue px-[22%] text-base text-[15px] text-gray-400 md:flex-row lg:px-0"
         >
           Sign-up for our 30-day trial. No credit card required.
         </p>
       </div>
       <div
-        class="mt-20 w-[22rem] flex-col items-center rounded-2xl bg-white  text-center shadow-2xl lg:h-[28rem] lg:w-[35rem]"
+        class="mt-20 w-[21rem] flex-col items-center rounded-2xl bg-white text-center shadow-2xl lg:h-[28rem] lg:w-[35rem] lg:p-8"
       >
-        <div class="static lg:grid lg:grid-cols-2 lg:grid-rows-2 lg:gap-5 ">
+        <div
+          class="static mt-[10%] items-center lg:mt-0 lg:grid lg:grid-cols-2 lg:grid-rows-2 lg:gap-5"
+        >
           <div class="flex justify-center lg:col-start-1">
             <span
-              class=" mr-1 py-3 text-sm font-extrabold tracking-widest"
+              class="mr-1 py-3 text-sm font-extrabold tracking-widest text-gray-400"
               id="pageviews-output"
             >
               100K PAGEVIEWS
@@ -60,19 +62,21 @@
             value="3"
             max="5"
             step="1"
-            class="price-slider col-span-2 h-[10px] w-[80%]"
+            class="price-slider col-span-2 mt-10 h-[10px] w-[90%] lg:mt-0 lg:w-auto"
             id="price-slider"
           />
           <div
-            class="text-dark-desaturated-blue mt-10 text-3xl font-extrabold lg:col-start-2 lg:row-start-1 lg:mt-1 "
+            class="text-dark-desaturated-blue mt-10 text-3xl font-extrabold lg:col-start-2 lg:row-start-1 lg:mt-1"
           >
             <div id="price-output" class="inline text-3xl">$16.00</div>
-            <span class="text-grayish-blue text-lg font-normal">/ month</span>
+            <span class="text-grayish-blue text-lg font-normal text-gray-400"
+              >/ month</span
+            >
           </div>
         </div>
 
-        <div class="lg:my-[10%] my-[20%] flex items-center justify-end">
-          <p class="text-xs lg:pr-3">Monthly Billing</p>
+        <div class="my-[15%] flex items-center justify-end lg:my-[10%]">
+          <p class="pr-3 text-xs text-gray-400">Monthly Billing</p>
           <label
             for="default-toggle"
             class="relative inline-flex cursor-pointer items-center"
@@ -87,29 +91,29 @@
               class="peer peer-checked:bg-strong-cyan h-6 w-11 rounded-full bg-gray-200 after:absolute after:top-[2px] after:left-[2px] after:h-5 after:w-5 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:border-gray-600 dark:bg-gray-700 dark:peer-focus:ring-blue-800"
             ></div>
           </label>
-          <p class="text-xs lg:pl-3">Yearly Billing</p>
+          <p class="pl-3 text-xs text-gray-400">Yearly Billing</p>
           <div
-            class="bg-light-grayish-red text-discount-text flex rounded-xl p-1 text-xs lg:ml-3"
+            class="bg-light-grayish-red text-discount-text mx-3 flex rounded-xl p-1 text-xs"
           >
             25% <span class="hidden pl-1 lg:block">discount</span>
           </div>
         </div>
 
-        <div
-          class="w-full items-center border-t-[1px] pt-3 lg:flex lg:justify-around"
-        >
-          <div class="py-8 text-xs lg:w-1/2">
+        <div class="items-center border-t-[1px] pt-3 lg:flex lg:justify-around">
+          <div
+            class="py-4 px-[28%] text-xs text-gray-400 lg:w-1/2 lg:py-8 lg:px-0"
+          >
             <div class="flex items-center">
               <img class="" src="../images/icon-check.svg" alt="" />
-              <p>Unlimited web sites</p>
+              <p class="pl-3">Unlimited web sites</p>
             </div>
             <div class="flex items-center pt-2">
               <img src="../images/icon-check.svg" alt="" />
-              <p>Unlimited web sites</p>
+              <p class="pl-3">100% data ownership</p>
             </div>
             <div class="flex items-center pt-2">
               <img src="../images/icon-check.svg" alt="" />
-              <p>Unlimited web sites</p>
+              <p class="pl-3">Email reports</p>
             </div>
           </div>
           <div class="py-[10%]">
@@ -160,8 +164,7 @@
       let pageviewsOutput = document.getElementById('pageviews-output')
       let priceOutput = document.getElementById('price-output')
 
-      function oninput(e) {
-        e.preventDefault()
+      const oninput = (e) => {
         if (billingChange.checked) {
           pageviewsOutput.textContent =
             pageviewsChange[priceSlider.value - 1] + ' PAGEVIEWS'
