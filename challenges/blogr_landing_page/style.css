@@ -1,28 +1,51 @@
-/* @import 'tailwindcss/base';
-@import './custom-base-styles.css';
-
-@import 'tailwindcss/components';
-@import './custom-components.css';
-
-@import 'tailwindcss/utilities';
-@import './custom-utilities.css'; */
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer {
-  .bg-intro {
-    background-image: url(./images/bg-pattern-intro-desktop.svg);
+  .gradient {
+    @apply to-primary-lite-red from-primary-vlite-red bg-gradient-to-r;
+  }
+
+  .bg-for-intro-mob {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    background-image: url(./images/bg-pattern-intro-mobile.svg),
+      linear-gradient(25deg, rgba(255, 61, 84, 1), rgba(255, 143, 112, 1));
     background-repeat: no-repeat;
-    background-position: 0 0;
-    background-size: 390px auto;
+    background-position: 35% 33%;
+    background-size: 1300px auto, 800px auto;
+  }
+
+  .bg-for-intro {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    background-image: url(./images/bg-pattern-intro-desktop.svg),
+      linear-gradient(270deg, rgba(255, 61, 84, 1), rgba(255, 143, 112, 1));
+    background-repeat: no-repeat;
+    background-position: 25% 50%;
+    background-size: 3000px auto, 2000px auto;
   }
 
   .bg-middle {
-    background-image: url(./images/bg-pattern-circles.svg);
+    background-image: url(./images/bg-pattern-circles.svg),
+      linear-gradient(335deg, rgba(63, 65, 100, 1), rgba(44, 45, 63, 1));
     background-repeat: no-repeat;
     background-position: 50% 1000%;
     background-size: 620px auto;
+  }
+
+  .bg-middle-desk {
+    background-image: url(./images/bg-pattern-circles.svg),
+      linear-gradient(335deg, rgba(63, 65, 100, 1), rgba(44, 45, 63, 1));
+    background-repeat: no-repeat;
+    background-position: -52% 90%;
+    background-size: 850px 900px, auto;
   }
 }

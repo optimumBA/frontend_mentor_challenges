@@ -47,137 +47,268 @@
       [x-cloak] {
         display: none !important;
       }
-
-      .bg-intro-mob {
-        background-image: url(./images/bg-pattern-intro-mobile.svg),
-          linear-gradient(335deg, rgba(255, 61, 84, 1), rgba(255, 143, 112, 1));
-        background-size: 1200px;
-        background-position: 37% 35%;
-        height: 550px;
-        width: 100%;
-      }
     </style>
   </head>
-  <body class="font-overpass m-0 bg-white text-[16px]">
+  <body
+    x-data="{...toggleMenu()}"
+    x-init="toggleMenu = window.innerWidth > 900"
+    @resize.window="toggleMenu = window.innerWidth > 900"
+    class="font-overpass m-0 bg-white text-[16px]"
+  >
     <div class="flex flex-col items-center justify-center text-center">
+      <!-- INTRO LAYOUT -->
       <div
-        x-data="show"
-        class="bg-intro-mob flex flex-col items-center justify-center rounded-bl-[8rem] pb-44 pt-12"
+        class="font-ubuntu relative z-[100] flex w-full flex-1 flex-col items-center justify-center rounded-bl-[8rem] px-6 pb-36 pt-4 sm:px-[80px]"
       >
-        <div class="mt-12 flex w-4/5 flex-row justify-between">
-          <div class="">
+        <div
+          class="bg-for-intro-mob absolute -z-[1] rounded-bl-[5rem] sm:hidden"
+        ></div>
+        <div
+          class="bg-for-intro absolute -z-[1] hidden rounded-bl-[5rem] sm:block"
+        ></div>
+        <div
+          class="mt-12 flex w-4/5 flex-row justify-between sm:ml-8 sm:w-full sm:items-center"
+        >
+          <div class="ml-[-13%] sm:ml-0">
             <img src="images/logo.svg" alt="Blogr Logo" />
           </div>
-          <a @click="showMenu = !showMenu" href="#" class="">
+          <a
+            id="mobile-menu-toggle"
+            @click="toggleActive"
+            href="#"
+            class="cursor-pointer sm:hidden"
+          >
             <img
-              :class="showMenu ? 'hidden' : 'block'"
+              :class="toggleMenu ? 'hidden' : 'block'"
               src="images/icon-hamburger.svg"
               alt="Menu icon"
             />
             <img
               x-cloak
-              :class="showMenu ? 'block' : 'hidden' "
+              :class="toggleMenu ? 'block' : 'hidden' "
               src="images/icon-close.svg"
               alt="Close menu icon"
             />
           </a>
-          <div
-            x-show="showMenu"
-            @click.away="showMenu = false"
-            x-cloak
-            x-transition:enter="transition duration-700"
-            x-transition:leave="transition duration-300"
-            class="absolute top-[13%] left-[5%] w-[90%] bg-white py-4 pb-6"
-          >
+          <template x-if="toggleMenu">
             <div
-              @click="btn1 = !btn1"
-              class="mt-4 flex flex-col items-center justify-center"
+              class="absolute top-[20%] left-[5%] w-[90%] bg-white py-4 pb-6 sm:relative sm:left-0 sm:ml-14 sm:flex-1 sm:flex-row sm:justify-between sm:bg-transparent sm:p-0"
+              :class="(toggleMenu & window.innderWidth < 900)"
+              @click.away="(toggleMenu & window.innderWidth < 900) && setToggle(false)"
             >
-              <a class="flex flex-row items-center justify-center" href="#">
-                Product
-                <img class="ml-2" src="images/icon-arrow-dark.svg" alt="" />
-              </a>
               <div
-                x-show="btn1"
-                x-cloak
-                class="bg-gradient-body-bg-menu mt-4 flex w-[85%] flex-col items-center justify-center"
+                class="w-full sm:mr-[-1.5rem] sm:flex sm:w-full sm:items-center sm:justify-between sm:gap-9"
               >
-                <a class="mt-4" href="#"> Overview </a>
-                <a class="mt-2" href="#"> Pricing </a>
-                <a class="mt-2" href="#"> Marketplace </a>
-                <a class="mt-2" href="#"> Features </a>
-                <a class="mt-2 mb-4" href="#"> Integrations </a>
+                <div
+                  @click="menuOnClick('product')"
+                  class="mt-4 flex flex-col items-center justify-center sm:mt-[0rem]"
+                >
+                  <div>
+                    <a
+                      class="flex flex-row items-center justify-center hover:cursor-pointer sm:text-white sm:hover:underline"
+                      href="#"
+                    >
+                      Product
+                      <img
+                        class="ml-2 sm:hidden"
+                        :class="dynamicMenu === 'product' && 'rotate-180'"
+                        src="images/icon-arrow-dark.svg"
+                        alt="Arrow Icon"
+                      />
+                      <img
+                        class="ml-2 hidden sm:block"
+                        :class="dynamicMenu === 'product' && 'rotate-180' "
+                        src="images/icon-arrow-light.svg"
+                        alt="Arrow Icon"
+                      />
+                    </a>
+                  </div>
+                  <template x-if="dynamicMenu === 'product'">
+                    <div
+                      class="bg-gradient-body-bg-menu mt-4 flex w-[85%] flex-col items-center justify-center sm:absolute sm:left-0 sm:top-[4rem] sm:ml-[-1%] sm:w-[11%] sm:cursor-pointer sm:items-baseline sm:pl-4 sm:focus:font-bold"
+                      @click.away="dynamicMenu === ''"
+                    >
+                      <a
+                        class="mt-4 hover:cursor-pointer hover:font-bold"
+                        href="#"
+                      >
+                        Overview
+                      </a>
+                      <a
+                        class="mt-2 hover:cursor-pointer hover:font-bold"
+                        href="#"
+                      >
+                        Pricing
+                      </a>
+                      <a
+                        class="mt-2 hover:cursor-pointer hover:font-bold"
+                        href="#"
+                      >
+                        Marketplace
+                      </a>
+                      <a
+                        class="mt-2 hover:cursor-pointer hover:font-bold"
+                        href="#"
+                      >
+                        Features
+                      </a>
+                      <a
+                        class="mt-2 mb-4 hover:cursor-pointer hover:font-bold"
+                        href="#"
+                      >
+                        Integrations
+                      </a>
+                    </div>
+                  </template>
+                </div>
+
+                <div
+                  @click="menuOnClick('company')"
+                  class="flex flex-col items-center justify-center sm:mt-[rem]"
+                >
+                  <div class="mt-4 mb-3 sm:mt-0 sm:mb-0">
+                    <a
+                      class="flex flex-row items-center justify-center sm:text-white sm:hover:underline"
+                      href="#"
+                    >
+                      Company
+                      <img
+                        class="ml-2 sm:hidden"
+                        :class="dynamicMenu === 'company' && 'rotate-180'"
+                        src="images/icon-arrow-dark.svg"
+                        alt="Arrow Icon"
+                      />
+                      <img
+                        class="ml-2 hidden sm:block"
+                        :class="dynamicMenu === 'company' && 'rotate-180' "
+                        src="images/icon-arrow-light.svg"
+                        alt="Arrow Icon"
+                      />
+                    </a>
+                  </div>
+
+                  <template x-if="dynamicMenu === 'company'">
+                    <div
+                      class="bg-gradient-body-bg-menu ml-4 flex w-[85%] flex-col items-center justify-center sm:absolute sm:left-[7%] sm:top-[4.5rem] sm:ml-[-1%] sm:w-[13%] sm:cursor-pointer sm:items-baseline sm:pl-4 sm:focus:font-bold"
+                      @click.away="dynamicMenu === ''"
+                    >
+                      <a
+                        class="mt-4 hover:cursor-pointer hover:font-bold"
+                        href="#"
+                      >
+                        About
+                      </a>
+                      <a
+                        class="mt-2 hover:cursor-pointer hover:font-bold"
+                        href="#"
+                      >
+                        Team
+                      </a>
+                      <a
+                        class="mt-2 hover:cursor-pointer hover:font-bold"
+                        href="#"
+                      >
+                        Blog
+                      </a>
+                      <a
+                        class="mt-2 mb-4 hover:cursor-pointer hover:font-bold"
+                        href="#"
+                      >
+                        Careers
+                      </a>
+                    </div>
+                  </template>
+                </div>
+
+                <div @click="menuOnClick('connect')">
+                  <div
+                    class="mt-2 mb-4 flex flex-row items-center justify-center sm:mt-0 sm:mb-0"
+                  >
+                    <a
+                      class="sm:text-white sm:hover:cursor-pointer sm:hover:underline"
+                      href="#"
+                    >
+                      Connect
+                    </a>
+                    <img
+                      class="ml-2 sm:hidden"
+                      :class="dynamicMenu === 'connect' && 'rotate-180'"
+                      src="images/icon-arrow-dark.svg"
+                      alt="Arrow Icon"
+                    />
+                    <img
+                      class="ml-2 hidden sm:block"
+                      :class="dynamicMenu === 'connect' && 'rotate-180' "
+                      src="images/icon-arrow-light.svg"
+                      alt="Arrow Icon"
+                    />
+                  </div>
+
+                  <template x-if="dynamicMenu === 'connect'">
+                    <div
+                      class="bg-gradient-body-bg-menu ml-4 flex w-[90%] flex-col justify-items-center sm:absolute sm:left-[14%] sm:top-[4.5rem] sm:ml-[-1%] sm:w-[13%] sm:cursor-pointer sm:items-baseline sm:pl-4 sm:focus:font-bold"
+                      @click.away="dynamicMenu === ''"
+                    >
+                      <a
+                        class="mt-4 hover:cursor-pointer hover:font-bold"
+                        href="#"
+                      >
+                        Contact
+                      </a>
+                      <a
+                        class="mt-2 hover:cursor-pointer hover:font-bold"
+                        href="#"
+                      >
+                        Newsletter
+                      </a>
+                      <a
+                        class="mt-2 mb-4 hover:cursor-pointer hover:font-bold"
+                        href="#"
+                      >
+                        LinkedIn
+                      </a>
+                    </div>
+                  </template>
+                </div>
+
+                <div
+                  class="mt-6 ml-5 flex h-[120px] w-[90%] flex-col items-center justify-center border-t border-slate-300 text-[15px] sm:mt-0 sm:ml-10 sm:mr-[-4.5rem] sm:flex-row sm:items-center sm:justify-center sm:gap-9 sm:border-none"
+                >
+                  <a
+                    class="mt-8 rounded-full py-3 px-10 font-bold text-black sm:mt-0 sm:mr-[-2%] sm:text-white"
+                    href="#"
+                  >
+                    Login
+                  </a>
+                  <a
+                    class="gradient mt-2 mb-4 rounded-full py-3 px-10 font-bold text-white sm:hidden"
+                    href="#"
+                  >
+                    Sign Up
+                  </a>
+                  <a
+                    class="text-primary-lite-red mt-2 mb-4 hidden rounded-full bg-white py-3 px-10 font-bold hover:bg-opacity-25 hover:text-white focus:bg-opacity-25 focus:text-white sm:ml-[-2%] sm:mr-[-35%] sm:block"
+                    href="#"
+                  >
+                    Sign Up
+                  </a>
+                </div>
               </div>
             </div>
-
-            <div class="flex flex-col items-center justify-center">
-              <div @click="btn2 = !btn2" class="mt-4 mb-3">
-                <a class="flex flex-row items-center justify-center" href="#">
-                  Company
-                  <img class="ml-2" src="images/icon-arrow-dark.svg" alt="" />
-                </a>
-              </div>
-
-              <div
-                x-show="btn2"
-                x-cloak
-                class="bg-gradient-body-bg-menu ml-4 flex w-[85%] flex-col items-center justify-center"
-              >
-                <a class="mt-4" href="#"> About </a>
-                <a class="mt-2" href="#"> Team </a>
-                <a class="mt-2" href="#"> Blog </a>
-                <a class="mt-2 mb-4" href="#"> Careers </a>
-              </div>
-            </div>
-
-            <div>
-              <div
-                @click="btn3 = !btn3"
-                class="mt-2 mb-4 flex flex-row items-center justify-center"
-              >
-                <a href="#"> Connect </a>
-                <img class="ml-2" src="images/icon-arrow-dark.svg" alt="" />
-              </div>
-
-              <div
-                x-show="btn3"
-                x-cloak
-                class="bg-gradient-body-bg-menu ml-4 flex w-[90%] flex-col justify-items-center"
-              >
-                <a class="mt-4" href="#"> Contact </a>
-                <a class="mt-2" href="#"> Newsletter </a>
-                <a class="mt-2 mb-4" href="#"> LinkedIn </a>
-              </div>
-            </div>
-
-            <div
-              class="mt-6 ml-5 flex h-[120px] w-[90%] flex-col items-center justify-center border-t border-slate-300 text-[15px]"
-            >
-              <a
-                class="mt-8 rounded-full py-3 px-10 font-bold text-black"
-                href="#"
-              >
-                Login
-              </a>
-              <a
-                class="gradient mt-2 mb-4 rounded-full py-3 px-10 font-bold text-white"
-                href="#"
-              >
-                Sign Up
-              </a>
-            </div>
-          </div>
+          </template>
         </div>
 
         <div class="mt-16 w-[85%]">
-          <h2 class="text-[32px] font-bold text-white">
+          <h2
+            class="font-ubuntu text-[32px] font-bold text-white sm:text-[52px]"
+          >
             A modern publishing platform
           </h2>
-          <h3 class="mt-2 text-[18px] text-white">
+          <h3 class="mt-2 text-[18px] text-white sm:text-[20px]">
             Grow your audience and build your online brand
           </h3>
 
-          <div class="mt-10">
+          <div class="mt-12">
             <a
               class="text-primary-lite-red mb-4 rounded-3xl bg-white p-3 text-[14px] font-bold hover:bg-opacity-25 hover:text-white focus:bg-opacity-25 focus:text-white"
               href="#"
@@ -185,7 +316,7 @@
               Start for Free
             </a>
             <a
-              class="hover:text-primary-lite-red ml-5 rounded-3xl border border-white bg-transparent py-3 px-4 text-[14px] font-bold text-white hover:border-transparent hover:bg-white focus:border-transparent focus:bg-white"
+              class="hover:text-primary-lite-red ml-7 rounded-3xl border border-white bg-transparent py-3 px-4 text-[14px] font-bold text-white hover:border-transparent hover:bg-white focus:border-transparent focus:bg-white"
               href="#"
             >
               Learn More
@@ -194,49 +325,74 @@
         </div>
       </div>
 
-      <h2 class="text-primary-vdark-blue mt-28 text-[24px] font-bold">
-        Designed for the future
-      </h2>
-      <img
-        class="mt-8 sm:hidden"
-        src="images/illustration-editor-mobile.svg"
-        alt=""
-      />
-      <img
-        class="hidden sm:block"
-        src="images/illustration-editor-desktop.svg"
-        alt=""
-      />
+      <!-- Body of the page -->
+      <div class="sm:flex sm:w-full sm:flex-col">
+        <h2
+          class="text-primary-vdark-blue mt-28 text-[24px] font-bold sm:-mb-24 sm:text-[32px]"
+        >
+          Designed for the future
+        </h2>
+        <div class="items-center justify-center sm:flex sm:flex-row">
+          <div
+            class="sm:relative sm:order-2 sm:-ml-[18rem] sm:h-full sm:overflow-hidden"
+          >
+            <img
+              class="mt-8 sm:hidden"
+              src="images/illustration-editor-mobile.svg"
+              alt="An ilustration"
+            />
+            <div class="sm:relative sm:top-0 sm:left-0 sm:h-[120%]">
+              <img
+                class="hidden sm:relative sm:left-[30%] sm:block"
+                src="images/illustration-editor-desktop.svg"
+                alt="An ilustration"
+              />
+            </div>
+          </div>
+          <div
+            class="flex flex-col items-center justify-center sm:order-1 sm:ml-[2rem] sm:w-[50%] sm:text-left"
+          >
+            <h2
+              class="text-primary-vdark-blue mt-8 w-[55%] text-[25px] font-bold sm:w-[93%]"
+            >
+              Introducing an extensible editor
+            </h2>
+            <p
+              class="text-neutral-grayish-blue mt-4 w-4/5 text-[16px] sm:ml-[-14%] sm:w-[79%] sm:text-[14px]"
+            >
+              Blogr features an exceedingly intuitive interface which lets you
+              focus on one thing: creating content. The editor supports
+              management of multiple blogs and allows easy manipulation of
+              embeds such as images, videos, and Markdown. Extensibility with
+              plugins and themes provide easy ways to add functionality or
+              change the looks of a blog.
+            </p>
 
-      <h2 class="text-primary-vdark-blue mt-8 w-[75%] text-[25px] font-bold">
-        Introducing an extensible editor
-      </h2>
-      <p class="text-neutral-grayish-blue mt-4 w-4/5 text-[16px]">
-        Blogr features an exceedingly intuitive interface which lets you focus
-        on one thing: creating content. The editor supports management of
-        multiple blogs and allows easy manipulation of embeds such as images,
-        videos, and Markdown. Extensibility with plugins and themes provide easy
-        ways to add functionality or change the looks of a blog.
-      </p>
-
-      <h2 class="text-primary-vdark-blue mt-8 w-3/5 text-[25px] font-bold">
-        Robust content management
-      </h2>
-      <p class="text-neutral-grayish-blue mt-4 w-4/5 text-[16px]">
-        Flexible content management enables users to easily move through posts.
-        Increase the usability of your blog by adding customized categories,
-        sections, format, or flow. With this functionality, you’re in full
-        control.
-      </p>
+            <h2
+              class="text-primary-vdark-blue mt-8 w-3/5 text-[25px] font-bold sm:w-[93%]"
+            >
+              Robust content management
+            </h2>
+            <p
+              class="text-neutral-grayish-blue mt-4 w-4/5 text-[16px] sm:ml-[-12%] sm:w-[79%] sm:text-[14px]"
+            >
+              Flexible content management enables users to easily move through
+              posts. Increase the usability of your blog by adding customized
+              categories, sections, format, or flow. With this functionality,
+              you’re in full control.
+            </p>
+          </div>
+        </div>
+      </div>
 
       <img
-        class="absolute top-[260%]"
+        class="absolute top-[258%] sm:left-[1%] sm:top-[158%]"
         src="images/illustration-phones.svg"
         alt="Two phones with blogr running on them"
       />
-
+      <!-- MOBILE middle layout -->
       <div
-        class="bg-gradient-body-vdark-gray-blue bg-middle mt-[14rem] h-[600px] w-full rounded-tr-[7rem] rounded-bl-[7rem]"
+        class="bg-gradient-body-vdark-gray-blue bg-middle mt-[16rem] block h-[600px] w-full rounded-tr-[9rem] rounded-bl-[9rem] sm:hidden sm:h-[400px]"
       >
         <h2 class="mt-[16rem] ml-8 w-4/5 text-[32px] font-bold text-white">
           State of the Art Infrastructure
@@ -249,63 +405,99 @@
         </p>
       </div>
 
-      <img
-        class="mt-36 sm:hidden"
-        src="images/illustration-laptop-mobile.svg"
-        alt=""
-      />
-      <img
-        class="hidden sm:block"
-        src="images/illustration-laptop-desktop.svg"
-        alt=""
-      />
+      <!-- DESKTOP middle layout -->
+      <div
+        class="bg-middle-desk mt-[6rem] hidden h-[450px] w-full rounded-tr-[9rem] rounded-bl-[9rem] px-[10rem] sm:block sm:h-[400px]"
+      >
+        <div class="ml-[25rem] h-3/5">
+          <h2 class="mt-[6rem] ml-8 w-[100%] text-[32px] font-bold text-white">
+            State of the Art Infrastructure
+          </h2>
+          <p class="mt-6 ml-8 w-[100%] text-left text-[15px] text-white">
+            With reliability and speed in mind, worldwide data centers provide
+            the backbone for ultra-fast connectivity. This ensures your site
+            will load instantly, no matter where your readers are, keeping your
+            site competitive.
+          </p>
+        </div>
+      </div>
 
-      <h2 class="text-primary-vdark-blue mt-8 w-3/5 text-[25px]">
-        Free, open, simple
-      </h2>
-      <p class="text-neutral-grayish-blue mt-4 w-[79%] text-[16px]">
-        Blogr is a free and open source application backed by a large community
-        of helpful developers. It supports features such as code syntax
-        highlighting, RSS feeds, social media integration, third-party
-        commenting tools, and works seamlessly with Google Analytics. The
-        architecture is clean and is relatively easy to learn.
-      </p>
+      <div
+        class="flex flex-col items-center justify-center text-center sm:h-[800px] sm:flex-row"
+      >
+        <div class="sm:relative sm:top-[10rem] sm:left-[-13rem] sm:h-[120%]">
+          <img
+            class="mt-36 sm:hidden"
+            src="images/illustration-laptop-mobile.svg"
+            alt=""
+          />
+          <img
+            class="hidden sm:block"
+            src="images/illustration-laptop-desktop.svg"
+            alt=""
+          />
+        </div>
+        <div class="sm:relative sm:left-[-10rem] sm:w-1/2 sm:text-left">
+          <h2 class="text-primary-vdark-blue mt-8 text-[25px]">
+            Free, open, simple
+          </h2>
+          <p
+            class="text-neutral-grayish-blue mt-4 ml-[8%] w-[79%] text-[16px] sm:ml-0 sm:w-[98%] sm:text-[14px]"
+          >
+            Blogr is a free and open source application backed by a large
+            community of helpful developers. It supports features such as code
+            syntax highlighting, RSS feeds, social media integration,
+            third-party commenting tools, and works seamlessly with Google
+            Analytics. The architecture is clean and is relatively easy to
+            learn.
+          </p>
 
-      <h2 class="text-primary-vdark-blue mt-8 text-[25px]">Powerful tooling</h2>
-      <p class="text-neutral-grayish-blue mt-4 w-4/5">
-        Batteries included. We built a simple and straightforward CLI tool that
-        makes customization and deployment a breeze, but capable of producing
-        even the most complicated sites.
-      </p>
+          <h2 class="text-primary-vdark-blue mt-8 text-[25px]">
+            Powerful tooling
+          </h2>
+          <p
+            class="text-neutral-grayish-blue mt-4 ml-[8%] w-[85%] sm:ml-0 sm:w-[100%] sm:text-[14px]"
+          >
+            Batteries included. We built a simple and straightforward CLI tool
+            that makes customization and deployment a breeze, but capable of
+            producing even the most complicated sites.
+          </p>
+        </div>
+      </div>
 
       <img
-        class="bg-neutral-vdark-black-blue mt-32 mb-[-13%] rounded-tr-full px-[9.325rem] pt-20"
+        class="bg-neutral-vdark-black-blue mt-32 mb-[-13%] rounded-tr-full px-[9.325rem] pt-20 sm:hidden"
         src="images/logo.svg"
-        alt=""
+        alt="Blogr logo"
       />
 
       <div
-        class="bg-neutral-vdark-black-blue mt-12 w-full pt-14 pb-20 text-white"
+        class="bg-neutral-vdark-black-blue mt-12 w-full pt-14 pb-20 text-white sm:flex sm:flex-row sm:items-baseline sm:justify-around sm:rounded-tr-[9rem] sm:text-left"
       >
-        <div class="">
+        <img
+          class="mt-2 hidden sm:block"
+          src="images/logo.svg"
+          alt="Blogr logo"
+        />
+        <div>
           <a class="mt-2 font-bold" href="#"> Product </a>
 
           <div class="mt-3 flex flex-col">
-            <a href="#"> Overview </a>
-            <a href="#"> Pricing </a>
-            <a href="#"> Marketplace </a>
-            <a href="#"> Features </a>
-            <a href="#"> Integrations </a>
+            <a class="hover:underline" href="#"> Overview </a>
+            <a class="hover:underline sm:mt-2" href="#"> Pricing </a>
+            <a class="hover:underline sm:mt-2" href="#"> Marketplace </a>
+            <a class="hover:underline sm:mt-2" href="#"> Features </a>
+            <a class="hover:underline sm:mt-2" href="#"> Integrations </a>
           </div>
         </div>
 
         <div class="mt-6">
           <a class="font-bold" href="#"> Company </a>
           <div class="mt-4 flex flex-col">
-            <a href="#"> About </a>
-            <a href="#"> Team </a>
-            <a href="#"> Blog </a>
-            <a href="#"> Careers </a>
+            <a class="hover:underline" href="#"> About </a>
+            <a class="hover:underline sm:mt-2" href="#"> Team </a>
+            <a class="hover:underline sm:mt-2" href="#"> Blog </a>
+            <a class="hover:underline sm:mt-2" href="#"> Careers </a>
           </div>
         </div>
 
@@ -313,9 +505,9 @@
           <a class="font-bold" href="#"> Connect </a>
 
           <div class="mt-4 flex flex-col">
-            <a href="#"> Contact </a>
-            <a href="#"> Newsletter </a>
-            <a href="#"> LinkedIn </a>
+            <a class="hover:underline" href="#"> Contact </a>
+            <a class="hover:underline sm:mt-2" href="#"> Newsletter </a>
+            <a class="hover:underline sm:mt-2" href="#"> LinkedIn </a>
           </div>
         </div>
       </div>
@@ -323,7 +515,7 @@
 
     <!-- Credits - OptimumBA -->
     <div
-      class="bg-neutral-vdark-black-blue flex w-full flex-col place-content-center pb-8 text-center"
+      class="bg-neutral-vdark-black-blue flex w-full flex-col place-content-center pb-6 text-center text-white"
     >
       <div>
         <a
@@ -353,12 +545,25 @@
       </div>
     </div>
     <script>
-      let show = {
-        showMenu: false,
-        btn1: false,
-        btn2: false,
-        btn3: false,
-      }
+      document.addEventListener('alpine:init', () => {
+        Alpine.data('toggleMenu', () => ({
+          dynamicMenu: '',
+          toggleMenu: false,
+          toggleActive() {
+            this.toggleMenu = !this.toggleMenu
+          },
+          menuOnClick(menuName) {
+            if (this.dynamicMenu === menuName) {
+              this.dynamicMenu = ''
+              return
+            }
+            this.dynamicMenu = menuName
+          },
+          setToggle(newStat) {
+            this.toggleMenu = newStat
+          },
+        }))
+      })
     </script>
   </body>
 </html>
