@@ -39,123 +39,131 @@
       rel="stylesheet"
     />
   </head>
+  <style>
+    [x-cloak] {
+      display: none !important;
+    }
+  </style>
   <body class="m-0">
     <header
       class="z-1 mobile:w-[100%] z-1 bg-gradient-to-r from-[#ff836d] to-[#ff4d59]"
+      x-data="{isOpen:false}"
     >
       <div
-        class="desktop:h-[550px] bg-massive relative z-[0] h-[100vh] w-[100%] rounded-bl-[6rem] bg-[url(images/bg-pattern-intro-desktop.svg)] bg-center bg-no-repeat p-[4rem_10rem] lg:h-auto"
+        class="desktop:h-[550px] bg-massive desktop:bg-[url(images/bg-pattern-intro-desktop.svg)] mobile:bg-[url(images/bg-pattern-intro-mobile.svg)] relative z-[0] h-[100vh] w-[100%] rounded-bl-[6rem] bg-center bg-no-repeat p-[4rem_10rem] lg:h-auto"
       >
-        <div class="mobile:w-[90%] mobile:flex-col mobile:w-[100%] flex flex-1">
-          <div
-            class="mobile:flex mobile:flex-row-reverse mobile:justify-between"
-            x-data="{isOpen:false}"
+        <div
+          class="mobile:flex mobile:flex-row-reverse mobile:justify-between"
+          id="mobile-menu-toggle"
+          @click="isOpen=!isOpen"
+        >
+          <img
+            src="images/icon-hamburger.svg"
+            class="mobile:ml-[13rem] mobile:mr-[-7rem] mobile:flex ml-[2rem] hidden"
+            alt="hamburger"
+            id=""
+            x-show="isOpen==false"
+          />
+          <img
+            src="images/icon-close.svg"
+            alt="icon-close not found"
+            class="mobile:h-[25px] mobile:ml-[13rem] mobile:mr-[-7rem] mobile:flex ml-[2rem] hidden"
+            srcset=""
+            x-show="isOpen==true"
+          />
+          <img src="images/logo.svg" class="inline h-max" alt="Blogr logo" />
+        </div>
+        <div
+          class="mobile:w-[90%] desktop:relative desktop:top-[-2.5rem] desktop:left-[6rem] mobile:absolute mobile:text-center mobile:p-[2rem_1.5rem] mobile:z-[20] mobile:left-[1rem] mobile:bg-white mobile:flex-col mobile:w-[100%] flex flex-1"
+          :class="isOpen==false? 'mobile:top-[-12rem] mobile:duration-[75ms]' : 'mobile:top-[7rem] mobile:duration-[75ms]' "
+        >
+          <template
+            x-if="isOpen"
+            x-init="isOpen = window.innerWidth > 768"
+            @resize.window="isOpen = window.innerWidth > 768"
           >
-            <img
-              src="images/icon-hamburger.svg"
-              class="mobile:ml-[13rem] mobile:mr-[-7rem] mobile:flex ml-[2rem] hidden"
-              alt="hamburger"
-              id="mobilemenu"
-              @click="isOpen=!isOpen"
-              x-show="isOpen==false"
-            />
-            <img
-              src="images/icon-close.svg"
-              alt="icon-close not found"
-              @click="isOpen=!isOpen"
-              class="mobile:h-[25px] mobile:ml-[13rem] mobile:mr-[-7rem] mobile:flex ml-[2rem] hidden"
-              srcset=""
-              x-show="isOpen==true"
-            />
-            <img src="images/logo.svg" class="inline h-max" alt="Blogr logo" />
-          </div>
-
-          <div
-            x-data="{ items: [
+            <div
+              x-data="{ items: [
         { id: 1, label: 'Product',open:false },
-        { id: 2, label: 'Connection',open:false },
+        { id: 2, label: 'Company',open:false },
         { id: 3, label: 'Connect',open:false },
-    ]}"
-            class="mobile:hidden float-right ml-[3.5rem] mt-[0.5rem] flex flex-1"
-          >
-            <template x-for="item in items" :key="item.id">
-              <div class="" @mouseover.away="item.open=false">
-                <a
-                  x-text="item.label"
-                  class="relative mr-[0.2rem] list-none hover:underline"
-                  @mouseover="item.open=!item.open"
-                  @click="item.open=!item.open"
-                  :class="item.open?'underline':'no-underline'"
-                ></a>
-                <img
-                  class="mr-[1.5rem] inline-flex"
-                  src="images/icon-arrow-light.svg"
-                  alt="dropdown arrow"
-                  :class="item.open?'rotate-180':'rotate-0'"
-                />
-                <template x-if="item.label=='Product' & item.open">
-                  <div
-                    :class="item.open?  !items[1].open ?  null : !items[2].open : null"
-                    class="box"
-                    @mouseleave="!item.open"
-                  >
-                    <a href="#">Overview</a>
-                    <a href="#">Pricing</a>
-                    <a href="#">Marketplace</a>
-                    <a href="#">Features</a>
-                    <a href="#">Integrations</a>
-                  </div>
-                </template>
+    ], check}"
+              class="mobile:contents mobile:text-very-dark-black-blue ml-[3.5rem] mt-[0.5rem] flex flex-1"
+            >
+              <template x-for="item in items" :key="item.id">
+                <div class="mobile:p-[1rem]">
+                  <a
+                    x-text="item.label"
+                    class="mobile:text-[#374550] relative mr-[0.2rem] list-none"
+                    @click="check(item)"
+                    :class="item.open?'desktop:underline mobile:no-underline':'no-underline' "
+                  ></a>
+                  <img
+                    class="mobile:hidden mr-[1.5rem] inline-flex"
+                    src="images/icon-arrow-light.svg"
+                    alt="dropdown arrow"
+                    :class="item.open?'rotate-180':'rotate-0'"
+                  />
+                  <img
+                    x-ref="companyArrow"
+                    class="desktop:hidden inline-block"
+                    src="./images/icon-arrow-dark.svg"
+                    alt="arrow"
+                    :class="item.open?'rotate-180':'rotate-0'"
+                  />
+                  <template x-if="item.label=='Product' & item.open">
+                    <div class="box" x-ref="product">
+                      <a href="#">Overview</a>
+                      <a href="#">Pricing</a>
+                      <a href="#">Marketplace</a>
+                      <a href="#">Features</a>
+                      <a href="#">Integrations</a>
+                    </div>
+                  </template>
 
-                <template x-if="item.label=='Connection' & item.open">
-                  <div
-                    :class="item.open? !items[0].open ? null : !items[2].open : null"
-                    class="box"
-                    @mouseleave="!item.open"
-                  >
-                    <a href="#">About</a>
-                    <a href="#">Team</a>
-                    <a href="#">Blog</a>
-                    <a href="#">Careers</a>
-                  </div>
-                </template>
-                <template x-if="item.label=='Connect' & item.open">
-                  <div
-                    :class="item.open? !items[0].open ? null : !items[1].open : null"
-                    class="box"
-                    @mouseleave="item.open=false"
-                  >
-                    <a href="#">Contact</a>
-                    <a href="#">Newsletter</a>
-                    <a href="#">LinkedIn</a>
-                  </div>
-                </template>
-              </div>
-            </template>
-          </div>
-          <div class="mobile:hidden">
+                  <template x-if="item.label=='Company' & item.open">
+                    <div class="box" x-ref="company">
+                      <a href="#">About</a>
+                      <a href="#">Team</a>
+                      <a href="#">Blog</a>
+                      <a href="#">Careers</a>
+                    </div>
+                  </template>
+                  <template x-if="item.label=='Connect' & item.open">
+                    <div class="box" x-ref="connect">
+                      <a href="#">Contact</a>
+                      <a href="#">Newsletter</a>
+                      <a href="#">LinkedIn</a>
+                    </div>
+                  </template>
+                </div>
+              </template>
+            </div>
+          </template>
+
+          <div class="mobile:flex mobile:flex-col mobile:border-t-2">
             <a
               href="#"
-              class="mobile:flex-col ml-[2rem] text-[0.9rem] font-bold no-underline"
+              class="mobile:ml-[-1rem] mobile:text-[#374550] mobile:mt-[1.5rem] ml-[2rem] text-[0.9rem] font-bold no-underline"
               >Login</a
             >
             <a
               href="#"
-              class="mobile:flex-col from-light-red text-light-red hover:bg-light-red/70 ml-[2rem] rounded-3xl bg-white p-[0.8rem_2.5rem] text-[0.9rem] font-bold no-underline duration-500 hover:text-white"
+              class="from-light-red text-light-red mobile:bg-[#ff4d5b] mobile:w-[46%] mobile:ml-[71px] mobile:mt-[0.5rem] mobile:text-white mobile:font-bold hover:bg-light-red/70 mobile:ml-[-1rem] ml-[2rem] rounded-3xl bg-white p-[0.8rem_2.5rem] text-[0.9rem] font-bold no-underline duration-500 hover:text-white"
               >Sign Up</a
             >
           </div>
         </div>
         <div
-          class="absolute top-[41%] left-[3%] w-[100%] justify-center text-center"
+          class="mobile:px-[0.5rem] absolute top-[41%] left-[3%] w-[100%] justify-center text-center"
         >
           <h1
-            class="font-Overpass mobile:w-[97%] mobile:text-[2.2rem] mb-[1rem] text-[3.5rem] text-white"
+            class="font-Overpass mobile:w-[97%] mobile:px-1 mobile:text-[2.2rem] mb-[1rem] text-[3.5rem] text-white"
           >
             A modern publishing platform
           </h1>
           <p
-            class="font-Ubuntu mobile:w-[90%] mobile:text-center mb-[3rem] text-[1.2rem] font-normal leading-[1.75] text-white"
+            class="font-Ubuntu mobile:w-[90%] mobile:text-white mobile:text-center mb-[3rem] text-[1.2rem] font-normal leading-[1.75] text-white"
           >
             Grow your audience and build your online brand
           </p>
@@ -315,9 +323,8 @@
       </div>
     </section>
 
-    <!-- Footer -->
     <footer
-      class="mobile:items-center bg-very-dark-black-blue mobile:flex-col mobile:mt-[6rem] relative mt-[90px] flex w-[100%] justify-between rounded-tr-[6rem] p-[4rem_10rem_6rem]"
+      class="mobile:items-center bg-very-dark-black-blue mobile:flex-col mobile:mt-[6rem] mobile:mb-0 relative mt-[90px] flex w-[100%] justify-between rounded-tr-[6rem] p-[4rem_10rem_6rem]"
     >
       <div class="basis-[20%]">
         <a href="#"
@@ -358,7 +365,7 @@
       </div>
     </footer>
     <div
-      class="desktop:pb-2 mobile:mb-2rem largescreen:pb-0 flex w-full flex-col place-content-center bg-[#25252d] text-center"
+      class="z-20 flex h-full flex-col place-content-center bg-[#25252d] text-center"
     >
       <div class="">
         <a
@@ -387,6 +394,16 @@
         >
       </div>
     </div>
-    <script></script>
   </body>
+  <script>
+    function check(p) {
+      this.items.forEach((q) => {
+        q.id == p.id
+          ? q.open == true
+            ? (q.open = false)
+            : (q.open = true)
+          : (q.open = false)
+      })
+    }
+  </script>
 </html>

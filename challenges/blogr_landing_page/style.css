@@ -12,15 +12,14 @@ html {
   overflow-x: hidden;
   background: hsl(0, 26%, 96%);
 }
-
 a {
-  @apply cursor-pointer text-white;
+  @apply mobile:text-white mobile:no-underline cursor-pointer  text-white hover:font-bold;
 }
 .box {
-  @apply mt-[0.2rem] flex flex-col bg-white py-[1.5rem] px-[0.5rem];
+  @apply mobile:bg-[#e2e8f0] mobile:no-underline mobile:p-[2rem] mt-[0.2rem] flex flex-col bg-white py-[1.5rem] px-[0.5rem];
 }
 .box a {
-  @apply text-extreme-gray hover:text-very-dark-gray-blue no-underline hover:font-bold hover:transition-colors hover:duration-100;
+  @apply text-extreme-gray mobile:text-[#374550] hover:text-very-dark-gray-blue mobile:text-very-dark-black-blue no-underline hover:font-bold hover:transition-colors hover:duration-100;
 }
 h6 {
   @apply mb-[2rem] text-[1rem] font-medium text-white;
