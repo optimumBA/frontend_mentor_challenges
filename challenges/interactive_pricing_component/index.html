@@ -39,7 +39,7 @@
     />
   </head>
   <body
-    class="font-manrope bg-#ffffff m-0 flex w-full flex-col items-center bg-[url(./images/bg-pattern.svg)] bg-contain bg-no-repeat p-0 text-center text-xs font-semibold text-gray-600"
+    class="font-manrope bg-#ffffff mobile:[background-size:auto] m-0 flex w-full flex-col items-center bg-[url(./images/bg-pattern.svg)] bg-contain bg-no-repeat p-0 text-center text-xs font-semibold text-gray-600"
   >
     <div
       class="bg-[size:50%] flex h-[270px] flex-col items-center justify-center bg-[url(./images/pattern-circles.svg)] bg-[position:50%_65%] bg-no-repeat"
@@ -53,37 +53,39 @@
     </div>
 
     <section
-      class="mx-auto mt-[-50px] max-h-[500px] w-[320px] rounded-lg bg-white text-center md:mt-0 md:w-[800px]"
+      class="desktop:w-[600px] mx-auto mt-[-50px] max-h-[500px] w-[320px] rounded-lg bg-white text-center md:mt-0"
       x-data="{rangeValues:[8,12,16,24,36], pageViews:['10K PAGEVIEWS', '50K PAGEVIEWS', '100K PAGEVIEWS', '500K PAGEVIEWS', '1M PAGEVIEWS'], discountedValues : [6, 9, 12, 18, 27],currentValue:3, checkBox:false}"
-      x-init="mobileLayout = window.innerWidth < 750"
-      @resize.window="mobileLayout = window.innerWidth < 750"
     >
-      <div class="lg:grid lg:grid-cols-2 lg:grid-rows-2 lg:gap-8 lg:pt-5">
-        <div class="flex justify-center lg:col-start-1">
-          <span
-            class="mr-1 py-8 text-sm font-extrabold tracking-widest"
-            x-text="pageViews[currentValue-1]"
-          >
-          </span>
-        </div>
+      <div
+        class="mobile:justify-center desktop:ml-[10%] desktop:mb-[-10%] desktop:justify-start flex lg:col-start-1"
+      >
+        <span
+          class="mr-1 py-8 text-sm font-extrabold tracking-widest"
+          x-text="pageViews[currentValue-1]"
+        >
+        </span>
+      </div>
+      <div
+        class="mobile: mobile:flex-col-reverse flex flex-col lg:grid lg:grid-cols-2 lg:grid-rows-2 lg:gap-8 lg:pt-5"
+      >
         <div
           class="text-dark-desaturated-blue my-6 text-3xl font-extrabold lg:col-start-2 lg:row-start-1"
         >
           <div
-            class="inline"
-            :class="!window.innerWidth>750?'hidden':'visible'"
+            class="desktop:absolute desktop:mt-[-39px] desktop:ml-[-7%] inline"
+            :class="'window.innerWidth'<750?'mt-4':'mt-0'"
           >
             <span
               class=""
               x-text="`$${rangeValues[currentValue-1]}.00`"
-              :class="checkBox?'hidden':'visible font-bold text-[#2c3451] text-[22px]'"
+              :class="checkBox?'hidden':'visible text-3xl font-extrabold text-[#2c3451] '"
             ></span>
             <span
               class=""
               x-text="`$${discountedValues[currentValue-1]}.00`"
-              :class="checkBox? 'visible font-bold text-[#2c3451] text-[22px]' : 'hidden'"
+              :class="checkBox? 'visible text-3xl font-extrabold text-[#2c3451] ' : 'hidden'"
             ></span>
-            <span>/month</span>
+            <span class="text-[22px] font-normal text-[#b0b3be]">/month</span>
           </div>
         </div>
         <input
@@ -98,25 +100,6 @@
           x-model="currentValue"
         />
       </div>
-      <!-- <div
-        class="text-dark-desaturated-blue my-6 text-3xl font-extrabold lg:col-start-2 lg:row-start-1"
-        :class="window.innerWidth>750?'hidden':'visible'"
-      >
-        <div class="inline">
-          <span
-            class=""
-            x-text="`$${rangeValues[currentValue-1]}.00`"
-            :class="checkBox?'hidden':'visible text-black font-bold'"
-            
-          ></span>
-          <span
-            class=""
-            x-text="`$${discountedValues[currentValue-1]}.00`"
-            :class="checkBox? 'visible text-black font-bold' : 'hidden'"
-          ></span>
-          <span>/month</span>
-        </div>
-      </div> -->
 
       <div
         class="mobile:mt-[20px] mb-6 mt-2 flex items-center justify-center text-sm md:text-lg"
@@ -145,7 +128,7 @@
 
       <hr class="mb-8 bg-stone-200 md:mb-0" />
       <div
-        class="flex flex-row items-center justify-around pb-8 md:flex-row md:pt-10"
+        class="mobile:flex-col flex flex-row items-center justify-around pb-8 md:flex-row md:pt-10"
         x-data="{labels:[{label:'Unlimited websites'},{label:'100% data ownership'},{label:'Email reports'} ]}"
       >
         <div class="">
