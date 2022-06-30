@@ -1,3 +1,107 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .bg-intro {
+    background-image: url(./images/pattern-circles.svg);
+    background-repeat: no-repeat;
+    background-size: 150px;
+    background-position: bottom;
+  }
+
+  .price-slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 10px;
+    border-radius: 10px;
+    background: #eaeefb;
+    -webkit-transition: 0.2s;
+  }
+
+  .price-slider::-moz-range-track {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 10px;
+    border-radius: 10px;
+    background: #eaeefb;
+    outline: none;
+    -webkit-transition: 0.2s;
+  }
+
+  .price-slider:hover {
+    transition: all 0.2s;
+  }
+
+  /* .price-slider:active {
+    background: #7ae9dd;
+  } */
+
+  .price-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 38px;
+    height: 38px;
+    border: none;
+    border-radius: 50%;
+    background-color: #11d8c5;
+    background-image: url('./images/icon-slider.svg');
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: center;
+    cursor: pointer;
+    box-shadow: 0 1rem 2.2rem rgba(16, 213, 193, 0.8);
+    transition: all 0.4s ease-in-out;
+  }
+
+  .price-slider::-moz-range-thumb {
+    width: 38px;
+    height: 38px;
+    border: none;
+    border-radius: 50%;
+    background-color: #11d8c5;
+    background-image: url('./images/icon-slider.svg');
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: center;
+    cursor: pointer;
+    box-shadow: 0 1rem 2.2rem rgba(16, 213, 193, 0.8);
+    transition: all 0.4s ease-in-out;
+  }
+
+  .price-slider:hover::-webkit-slider-thumb {
+    background-color: #7be9de;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .price-slider::-moz-range-thumb:hover {
+    background-color: #7be9de;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .price-slider::-moz-range-thumb:active {
+    background-color: #24aea1;
+  }
+
+  .price-slider:active::-webkit-slider-thumb {
+    background-color: #24aea1;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .price-slider::-moz-range-progress {
+    background-color: #7ae9dd;
+    height: 10px;
+    border-radius: 10px;
+  }
+
+  .tglBtn {
+    @apply peer-checked:bg-primary-strong-cyan peer-focus:ring-primary-soft-cyan h-7 w-12 rounded-full bg-gray-200 after:absolute after:top-[3px] after:left-[2px] after:h-[22px] after:w-[22px] after:rounded-full after:border after:border-gray-200 after:bg-white after:shadow-md after:transition-all after:content-[''] peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:outline-none peer-focus:ring-4;
+  }
+}
+
+@layer base {
+  body {
+    background-image: url(./images/bg-pattern.svg);
+    background-repeat: no-repeat;
+    background-size: 100% 55%;
+  }
+}
