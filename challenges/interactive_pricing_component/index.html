@@ -27,37 +27,163 @@
     />
     <link rel="manifest" href="../site.webmanifest" />
     <link rel="stylesheet" href="style.css" />
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&family=Overpass:wght@300;600&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body class="m-0">
+  <body
+    class="font-manrope bg-#ffffff mobile:[background-size:auto] m-0 flex w-full flex-col items-center bg-[url(./images/bg-pattern.svg)] bg-contain bg-no-repeat p-0 text-center text-xs font-semibold text-gray-600"
+  >
     <div
-      class="flex h-[100vh] w-full flex-col place-content-center text-center"
+      class="bg-[size:50%] flex h-[270px] flex-col items-center justify-center bg-[url(./images/pattern-circles.svg)] bg-[position:50%_65%] bg-no-repeat"
     >
-      <div>
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://www.frontendmentor.io/challenges/interactive-pricing-component-t0m8PIyY8"
-          target="_blank"
-          >Frontend Mentor challenge</a
+      <h1
+        class="mobile:text-[1.2rem] mb-0 text-2xl font-extrabold text-[#293356]"
+      >
+        Simple, traffic-based pricing
+      </h1>
+      <p class="mobile:w-[190px] mt-2 pt-0 text-sm font-semibold leading-7">
+        Sign-up for our 30-day trial. No credit card required.
+      </p>
+    </div>
+
+    <section
+      class="desktop:w-[600px] mx-auto mt-[-50px] max-h-[500px] w-[320px] rounded-lg bg-white text-center shadow-md md:mt-0"
+      x-data="{rangeValues:[8,12,16,24,36], pageViews:['10K PAGEVIEWS', '50K PAGEVIEWS', '100K PAGEVIEWS', '500K PAGEVIEWS', '1M PAGEVIEWS'], discountedValues : [6, 9, 12, 18, 27],currentValue:3, checkBox:false}"
+    >
+      <div
+        class="mobile:justify-center desktop:ml-[10%] desktop:mb-[-10%] desktop:justify-start flex lg:col-start-1"
+      >
+        <span
+          class="mr-1 py-8 text-sm font-extrabold tracking-widest"
+          x-text="pageViews[currentValue-1]"
         >
+        </span>
       </div>
-      <div>
-        for
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA"
-          target="_blank"
-          >Optimum BH</a
+      <div
+        class="mobile: mobile:flex-col-reverse flex flex-col lg:grid lg:grid-cols-2 lg:grid-rows-2 lg:gap-8 lg:pt-5"
+      >
+        <div
+          class="text-dark-desaturated-blue my-6 text-3xl font-extrabold lg:col-start-2 lg:row-start-1"
         >
-        Internship.
+          <div
+            class="desktop:absolute desktop:mt-[-39px] desktop:ml-[-7%] inline"
+            :class="'window.innerWidth'<750?'mt-4':'mt-0'"
+          >
+            <span
+              class=""
+              x-text="`$${rangeValues[currentValue-1]}.00`"
+              :class="checkBox?'hidden':'visible text-3xl font-extrabold text-[#2c3451] '"
+            ></span>
+            <span
+              class=""
+              x-text="`$${discountedValues[currentValue-1]}.00`"
+              :class="checkBox? 'visible text-3xl font-extrabold text-[#2c3451] ' : 'hidden'"
+            ></span>
+            <span class="text-[22px] font-normal text-[#b0b3be]">/month</span>
+          </div>
+        </div>
+        <input
+          type="range"
+          min="1"
+          container
+          value="3"
+          id="price-slider"
+          max="5"
+          step="1"
+          class="slider mx-auto w-[85%] appearance-none bg-[#f0f3fc] opacity-75 outline-none transition-opacity lg:col-span-2"
+          x-model="currentValue"
+        />
       </div>
 
-      <div class="mt-3">
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA/frontend_mentor_challenges/tree/interactive_pricing_component/challenges/interactive_pricing_component"
-          >Source code</a
+      <div
+        class="mobile:mt-[20px] mb-6 mt-2 flex items-center justify-center text-sm md:text-lg"
+      >
+        <p>Monthly Billing</p>
+
+        <label
+          class="group relative flex items-center justify-evenly p-2 text-xl md:justify-between"
         >
+          <input
+            type="checkbox"
+            class="peer absolute left-1/2 h-full w-full -translate-x-1/2 appearance-none rounded-md"
+            id="yearly-billing-toggle"
+            @click="checkBox=!checkBox"
+          />
+          <span
+            class="peer-checked:bg-strong-cyan ml-2 flex h-7 w-14 flex-shrink-0 items-center rounded-full bg-gray-400 p-1 duration-300 ease-in-out after:h-5 after:w-5 after:rounded-full after:bg-slate-50 after:shadow-md after:duration-300 group-hover:after:translate-x-1 peer-checked:after:translate-x-6"
+          ></span>
+          <p class="pl-2 text-sm md:text-lg">Yearly Billing</p>
+        </label>
+
+        <div
+          class="text-light-red bg-light-grayish-red mobile:mr-[11px] ml-2 rounded-3xl p-1"
+        >
+          -25% <span class="hidden lg:inline">discount</span>
+        </div>
       </div>
+
+      <hr class="mb-8 bg-stone-200 md:mb-0" />
+      <div
+        class="mobile:flex-col flex flex-row items-center justify-around pb-8 md:flex-row md:pt-10"
+        x-data="{labels:[{label:'Unlimited websites'},{label:'100% data ownership'},{label:'Email reports'} ]}"
+      >
+        <div class="">
+          <template x-for="label in labels">
+            <div class="w flex pb-2">
+              <img
+                src="images/icon-check.svg"
+                class="mr-[7px]"
+                alt=""
+                srcset=""
+              />
+              <p x-text="label.label" class="text-[#a3a6b5]"></p>
+            </div>
+          </template>
+        </div>
+
+        <div class="">
+          <button
+            class="mobile:text-[#c0ccfc] mobile:h-[50px] mobile:w-[179px] mt-8 rounded-full bg-[#283355] py-2 px-6 text-base text-white md:mt-0"
+          >
+            Start my trial
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <div class="mobile:mb-2 mt-8">
+      <a
+        class="text-optimum-blue hover:text-optimum-darkblue"
+        href="https://www.frontendmentor.io/challenges/interactive-pricing-component-t0m8PIyY8"
+        target="_blank"
+        >Frontend Mentor challenge</a
+      >
+    </div>
+    <div>
+      for
+      <a
+        class="text-optimum-blue hover:text-optimum-darkblue"
+        href="https://github.com/optimumBA"
+        target="_blank"
+        >Optimum BH</a
+      >
+      Internship.
+    </div>
+
+    <div class="mt-3">
+      <a
+        class="text-optimum-blue hover:text-optimum-darkblue"
+        href="https://github.com/adnamaric/frontend_mentor_challenges/tree/interactive_pricing_component/challenges/interactive_pricing_component"
+        >Source code</a
+      >
     </div>
   </body>
 </html>
