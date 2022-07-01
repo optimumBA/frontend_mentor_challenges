@@ -44,16 +44,18 @@
     <div
       class="bg-[size:50%] flex h-[270px] flex-col items-center justify-center bg-[url(./images/pattern-circles.svg)] bg-[position:50%_65%] bg-no-repeat"
     >
-      <h1 class="mb-0 text-2xl font-extrabold text-[#293356]">
+      <h1
+        class="mobile:text-[1.2rem] mb-0 text-2xl font-extrabold text-[#293356]"
+      >
         Simple, traffic-based pricing
       </h1>
-      <p class="mt-2 pt-0 text-sm font-semibold leading-7">
+      <p class="mobile:w-[190px] mt-2 pt-0 text-sm font-semibold leading-7">
         Sign-up for our 30-day trial. No credit card required.
       </p>
     </div>
 
     <section
-      class="desktop:w-[600px] mx-auto mt-[-50px] max-h-[500px] w-[320px] rounded-lg bg-white text-center md:mt-0"
+      class="desktop:w-[600px] mx-auto mt-[-50px] max-h-[500px] w-[320px] rounded-lg bg-white text-center shadow-md md:mt-0"
       x-data="{rangeValues:[8,12,16,24,36], pageViews:['10K PAGEVIEWS', '50K PAGEVIEWS', '100K PAGEVIEWS', '500K PAGEVIEWS', '1M PAGEVIEWS'], discountedValues : [6, 9, 12, 18, 27],currentValue:3, checkBox:false}"
     >
       <div
@@ -121,7 +123,9 @@
           <p class="pl-2 text-sm md:text-lg">Yearly Billing</p>
         </label>
 
-        <div class="text-light-red bg-light-grayish-red ml-2 rounded-3xl p-1">
+        <div
+          class="text-light-red bg-light-grayish-red mobile:mr-[11px] ml-2 rounded-3xl p-1"
+        >
           -25% <span class="hidden lg:inline">discount</span>
         </div>
       </div>
@@ -140,14 +144,14 @@
                 alt=""
                 srcset=""
               />
-              <p x-text="label.label"></p>
+              <p x-text="label.label" class="text-[#a3a6b5]"></p>
             </div>
           </template>
         </div>
 
         <div class="">
           <button
-            class="mt-8 rounded-full bg-[#283355] py-2 px-6 text-base text-white md:mt-0"
+            class="mobile:text-[#c0ccfc] mobile:h-[50px] mobile:w-[179px] mt-8 rounded-full bg-[#283355] py-2 px-6 text-base text-white md:mt-0"
           >
             Start my trial
           </button>
@@ -155,7 +159,7 @@
       </div>
     </section>
 
-    <div class="mt-8">
+    <div class="mobile:mb-2 mt-8">
       <a
         class="text-optimum-blue hover:text-optimum-darkblue"
         href="https://www.frontendmentor.io/challenges/interactive-pricing-component-t0m8PIyY8"
@@ -177,7 +181,7 @@
     <div class="mt-3">
       <a
         class="text-optimum-blue hover:text-optimum-darkblue"
-        href="https://github.com/optimumBA/frontend_mentor_challenges/tree/interactive_pricing_component/challenges/interactive_pricing_component"
+        href="https://github.com/adnamaric/frontend_mentor_challenges/tree/interactive_pricing_component/challenges/interactive_pricing_component"
         >Source code</a
       >
     </div>
