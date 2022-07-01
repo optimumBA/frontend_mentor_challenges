@@ -35,7 +35,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,300;0,600;1,300;1,600&family=Ubuntu:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,300;0,500;0,600;1,300;1,500;1,600&family=Ubuntu:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap"
       rel="stylesheet"
     />
   </head>
@@ -46,14 +46,20 @@
   </style>
   <body class="m-0">
     <header
-      class="z-1 mobile:w-[100%] z-1 bg-gradient-to-r from-[#ff836d] to-[#ff4d59]"
+      class="z-1 mobile:w-[100%] z-1 rounded-bl-[6rem] bg-gradient-to-r from-[#ff836d] to-[#ff4d59]"
       x-data="{isOpen:false}"
     >
       <div
-        class="desktop:h-[550px] bg-massive desktop:bg-[url(images/bg-pattern-intro-desktop.svg)] mobile:bg-[url(images/bg-pattern-intro-mobile.svg)] relative z-[0] h-[100vh] w-[100%] rounded-bl-[6rem] bg-center bg-no-repeat p-[4rem_10rem] lg:h-auto"
+        class="desktop:h-[550px] relative z-[1] h-[100vh] w-[100%] overflow-hidden rounded-bl-[6rem] bg-opacity-50 bg-center bg-no-repeat p-[4rem_10rem] backdrop-filter lg:h-auto"
       >
         <div
-          class="mobile:flex mobile:flex-row-reverse mobile:justify-between"
+          class="mobile-img desktop:hidden mobile:visible absolute z-auto"
+        ></div>
+        <div
+          class="bg-massive mobile:hidden desktop:bg-[url(images/bg-pattern-intro-desktop.svg)] mobile:bg-[url(images/bg-pattern-intro-mobile.svg)] desktop:top-[-117px] desktop:left-[-203px] desktop:absolute z-0 h-[100vh] w-[196%] bg-center bg-no-repeat"
+        ></div>
+        <div
+          class="mobile:flex mobile:relative mobile:flex-row-reverse mobile:justify-between z-10"
           id="mobile-menu-toggle"
           @click="isOpen=!isOpen"
         >
@@ -70,6 +76,7 @@
             class="mobile:h-[25px] mobile:ml-[13rem] mobile:mr-[-7rem] mobile:flex ml-[2rem] hidden"
             srcset=""
             x-show="isOpen==true"
+            x-cloak
           />
           <img src="images/logo.svg" class="inline h-max" alt="Blogr logo" />
         </div>
@@ -158,12 +165,12 @@
           class="mobile:px-[0.5rem] absolute top-[41%] left-[3%] w-[100%] justify-center text-center"
         >
           <h1
-            class="font-Overpass mobile:w-[97%] mobile:px-1 mobile:text-[2.2rem] mb-[1rem] text-[3.5rem] text-white"
+            class="font-Overpass mobile:w-[300px] mobile:mx-auto mobile:text-[2rem] mobile:px-1 desktop:text-[3.5rem] mb-[1rem] font-[600] text-white"
           >
             A modern publishing platform
           </h1>
           <p
-            class="font-Ubuntu mobile:w-[90%] mobile:text-white mobile:text-center mb-[3rem] text-[1.2rem] font-normal leading-[1.75] text-white"
+            class="font-Ubuntu mobile:w-[260px] mobile:mx-auto mobile:text-white mobile:text-center mobile:text-[1rem] mb-[3rem] text-[1.2rem] font-normal leading-[1.75] text-white"
           >
             Grow your audience and build your online brand
           </p>
@@ -183,11 +190,11 @@
       </div>
     </header>
 
-    <section
-      class="bg-light-gray relative z-[2] min-h-[100vh] w-[100%] p-[10rem_0_3rem_10rem]"
+    <div
+      class="relative z-[2] min-h-[100vh] w-[100%] bg-white p-[10rem_0_3rem_10rem] text-[#1f3f5b]"
     >
       <h2
-        class="text-very-dark-blue font-Overpass mobile:mt-[-41%] mobile:ml-[-10rem] mobile:mb-[6rem] mobile:text-[25px] mobile:my-auto mb-[4rem] text-center text-[2.5rem] font-bold"
+        class="desktop:relative desktop:left-[-57px] font-Overpass mobile:mt-[-41%] mobile:ml-[-10rem] mobile:mb-[6rem] mobile:text-[25px] mobile:my-auto desktop:font-[600] desktop:mb-0 text-very-dark-blue text-center text-[2rem]"
       >
         Designed for the future
       </h2>
@@ -197,14 +204,16 @@
         class="mobile:block m-auto ml-[-81%] mt-[-31%] hidden max-w-none"
       />
       <div class="relative flex w-[100%] items-center">
-        <div class="desktop:basis-[50%] mobile:mb-[10rem]">
+        <div
+          class="desktop:basis-[50%] desktop:relative desktop:left-[-42px] mobile:mb-[10rem]"
+        >
           <h3
-            class="text-very-dark-blue font-Overpass mobile:ml-[-68%] mobile:text-center mb-[2.5rem] text-[1.8rem] font-bold"
+            class="text-very-dark-blue font-Overpass mobile:w-[213px] mobile:mt-[1rem] mobile:ml-[-79px] mobile:text-center desktop:font-[600] mb-[2.5rem] text-[25px]"
           >
             Introducing an extensible editor
           </h3>
           <p
-            class="font-Overpass desktop:w-[90%] mobile:text-center mobile:ml-[-71%] mobile:px-[0.5rem] mobile:leading-tight mb-[3rem] text-left text-[1.2rem] font-light"
+            class="font-Overpass desktop:w-[90%] mobile:w-[340px] mobile:text-center mobile:ml-[-145px] mobile:px-[1.5rem] mobile:leading-tight mb-[2rem] text-left text-[15px] font-[500] leading-7 text-[#9ea2a5]"
           >
             Blogr features an exceedingly intuitive interface which lets you
             focus on one thing: creating content. The editor supports management
@@ -213,12 +222,12 @@
             provide easy ways to add functionality or change the looks of a blog
           </p>
           <h3
-            class="text-very-dark-blue font-Overpass mobile:ml-[-68%] mobile:text-center mb-[2.5rem] text-[1.8rem] font-bold"
+            class="text-very-dark-blue font-Overpass mobile:w-[213px] mobile:ml-[-79px] mobile:text-center desktop:font-[600] mb-[2.5rem] text-[25px]"
           >
             Robust content management
           </h3>
           <p
-            class="font-Overpass desktop:w-[90%] mobile:text-center mobile:ml-[-71%] mobile:px-[0.5rem] mobile:leading-tight mb-[3rem] text-[1.2rem] font-light"
+            class="font-Overpass desktop:w-[90%] mobile:text-center mobile:w-[340px] mobile:ml-[-145px] mobile:px-[1.5rem] mobile:leading-tight mb-[2rem] text-[15px] font-[500] leading-7 text-[#9ea2a5]"
           >
             Flexible content management enables users to easily move through
             posts. Increase the usability of your blog by adding customized
@@ -226,18 +235,18 @@
             you’re in full control.
           </p>
         </div>
-        <div class="relative basis-[50%]">
+        <div class="desktop:left-[-7px] relative basis-[50%]">
           <img
             src="images/illustration-editor-desktop.svg"
             alt="editor illustration"
-            class="mobile:hidden relative w-[150%] max-w-none"
+            class="mobile:hidden desktop:top-[-62px] relative w-[139%] max-w-none"
           />
         </div>
       </div>
-    </section>
+    </div>
 
-    <section
-      class="bg-very-dark-gray-blue mobile:p-0 mobile:max-h-[700px] mobile:h-[700px] justify-space-between mobile:rounded-tl-none mobile:rounded-bl-[6rem] desktop:rounded-bl-none relative flex max-h-[396px] w-[100%] items-center rounded-tr-[6rem] rounded-tl-[6rem] p-[8rem_10rem]"
+    <div
+      class="bg-very-dark-gray-blue mobile:p-0 mobile:max-h-[700px] mobile:h-[700px] justify-space-between mobile:rounded-tl-0 mobile:rounded-bl-[6rem] desktop:rounded-bl-none desktop:rounded-tl-none relative flex max-h-[384px] w-[100%] items-center rounded-tr-[6rem] rounded-tl-[6rem] p-[8rem_10rem]"
     >
       <div
         class="bg-[(images/illustration-phones.svg)] relative basis-[40%] bg-cover bg-center"
@@ -245,24 +254,24 @@
         <img
           src="images/illustration-phones.svg"
           alt="phone illustration"
-          class="desktop:h-[557px] mobile:h-[357px] mobile:top-[-32rem] mobile:left-[1rem] desktop:ml-[381px] desktop:top-[-17rem] desktop:left-[-33rem] largescreen:left-[-18rem] absolute top-[-16rem] z-[3] max-w-none"
+          class="desktop:h-[497px] mobile:h-[357px] mobile:top-[-32rem] mobile:left-[1rem] desktop:ml-[494px] desktop:top-[-15rem] desktop:left-[-33rem] largescreen:left-[-18rem] absolute top-[-16rem] z-[3] max-w-none"
         />
         <img
           src="images/bg-pattern-circles.svg"
           alt="circle pattern"
-          class="circle-pattern z-1 mobile:w-[585%] mobile:top-[-32rem] mobile:left-[-5.1rem] desktop:left-[-33rem] desktop:top-[-57rem] largescreen:w-[229%] absolute left-[-5rem] top-[-25rem] w-[365%] max-w-none"
+          class="circle-pattern z-1 mobile:w-[585%] desktop:ml-[124px] mobile:top-[-32rem] mobile:left-[-5.1rem] desktop:left-[-33rem] desktop:top-[-45rem] largescreen:w-[229%] absolute left-[-5rem] top-[-25rem] w-[313%] max-w-none"
         />
       </div>
       <div
         class="desktop:ml-[179px] mobile:h-[212px] mobile:w-[216px] mobile:basis-[117%] mobile:w-[90%] mobile:px-[1.5rem] mobile:pt-[2.5rem] basis-[50%]"
       >
         <h4
-          class="font-Overpass mobile:text-[1.8rem] mobile:ml-[-82px] mobile:text-center mb-[2rem] text-[2.3rem] font-semibold text-white"
+          class="font-Overpass mobile:text-[1.8rem] mobile:ml-[-82px] mobile:text-center desktop:w-[134%] mb-[2rem] text-[2rem] font-normal text-white"
         >
           State of the Art Infrastructure
         </h4>
         <p
-          class="font-Overpass mobile:text-center mobile:ml-[-76px] text-[1.1rem] font-light leading-[1.9rem] text-white"
+          class="font-Overpass mobile:text-center mobile:ml-[-76px] text-[1rem] leading-[1.9rem] text-white"
         >
           With reliability and speed in mind, worldwide data centers provide the
           backbone for ultra-fast connectivity. This ensures your site will load
@@ -270,37 +279,36 @@
           competitive.
         </p>
       </div>
-    </section>
-
-    <section
-      class="bg-light-gray mobile:max-h-[840px] mobile:h-[840px] mobile:mb-[3rem] relative z-[2] flex max-h-[434px] w-[100%] items-center justify-between p-[15rem_10rem_15rem_0]"
+    </div>
+    <div
+      class="mobile:h-[840px] mobile:mb-[3rem] relative z-[2] flex w-[100%] items-center justify-between bg-white p-[15rem_10rem_15rem_0] text-[#1f3f5b]"
     >
-      <div class="relative basis-[50%]">
+      <div class="relative basis-[52%]">
         <div class="mobile:hidden absolute">
           <img
             src="images/illustration-laptop-desktop.svg"
             alt="laptop illustration"
-            class="desktop-illustration mobile:hidden desktop:max-w-max desktop:relative desktop:left-[-11rem] desktop:top-[3rem] largescreen:max-w-max top-[50%] left-[-16rem] w-[114%] translate-y-[-50%]"
+            class="desktop-illustration mobile:hidden desktop:max-w-max desktop:relative desktop:h-[650px] desktop:left-[-11rem] desktop:top-[3rem] desktop:left-[-206px] largescreen:max-w-max top-[50%] left-[-16rem] w-[136%] translate-y-[-50%]"
           />
         </div>
         <div class="absolute">
           <img
             src="images/illustration-laptop-mobile.svg"
             alt="laptop illustration"
-            class="mobile-illustration desktop:hidden mobile:max-w-none mobile:mt-[-80%] mobile:ml-[-11%]"
+            class="mobile-illustration desktop:hidden mobile:max-w-none mobile:mt-[-80%] mobile:ml-[-12%]"
           />
         </div>
       </div>
       <div
-        class="mobile:mt-[104%] mobile:text-center mobile:absolute max-h-none relative mt-[90px] basis-[40%]"
+        class="mobile:mt-[104%] mobile:w-[90%] mobile:text-center mobile:absolute max-h-none relative mt-[90px] basis-[46%]"
       >
         <h5
-          class="text-very-dark-blue font-Overpass mobile:text-[28px] mobile:mt-[30px] mb-[1.5rem] text-[1.8rem] font-bold"
+          class="text-very-dark-blue font-Overpass mobile:text-[25px] mobile:mt-[30px] mb-[1.5rem] text-[1.3rem] font-bold"
         >
           Free, open, simple
         </h5>
         <p
-          class="text-very-dark-blue mobile:w-[90%] mobile:m-auto text-[0.95rem] font-light leading-8"
+          class="mobile:w-[268px] mobile:mx-auto mobile:px-[1.5rem] font-Overpass mb-[1.6rem] text-[15px] font-[500] text-[#9ea2a5]"
         >
           Blogr is a free and open source application backed by a large
           community of helpful developers. It supports features such as code
@@ -309,22 +317,22 @@
           architecture is clean and is relatively easy to learn.
         </p>
         <h5
-          class="text-very-dark-blue font-Overpass mobile:text-[28px] mobile:mt-4 mb-[1.5rem] text-[1.8rem] font-bold"
+          class="text-very-dark-blue font-Overpass mobile:text-[25px] mobile:mt-4 mb-[1.5rem] text-[1.3rem] font-bold"
         >
           Powerful tooling
         </h5>
         <p
-          class="text-very-dark-blue mobile:w-[90%] mobile:m-auto text-[0.95rem] font-light leading-8"
+          class="mobile:mx-auto font-Overpass mobile:w-[260px] mobile:px-[1.5rem] text-[15px] font-[500] text-[#9ea2a5]"
         >
           Batteries included. We built a simple and straightforward CLI tool
           that makes customization and deployment a breeze, but capable of
           producing even the most complicated sites.
         </p>
       </div>
-    </section>
+    </div>
 
-    <footer
-      class="mobile:items-center bg-very-dark-black-blue mobile:flex-col mobile:mt-[6rem] mobile:mb-0 relative mt-[90px] flex w-[100%] justify-between rounded-tr-[6rem] p-[4rem_10rem_6rem]"
+    <div
+      class="mobile:items-center bg-very-dark-black-blue mobile:flex-col mobile:mt-[6rem] relative z-20 flex w-[100%] justify-between rounded-tr-[6rem] p-[4rem_10rem_6rem]"
     >
       <div class="basis-[20%]">
         <a href="#"
@@ -335,7 +343,7 @@
         /></a>
       </div>
       <div class="basis-[20%]">
-        <h6>Product</h6>
+        <h6 class="font-semibold">Product</h6>
         <ul>
           <li><a class="leading-2" href="#">Overview</a></li>
           <li><a href="#">Pricing</a></li>
@@ -345,8 +353,8 @@
         </ul>
       </div>
       <div class="mobile:mt-[15px] basis-[20%]">
-        <h6 class="mb-[2rem]">Company</h6>
-        <ul class="mobile:flex mobile:flex-col mobile:gap-4 mobile:my-8">
+        <h6 class="mb-[2rem] font-semibold">Company</h6>
+        <ul class="mobile:flex mobile:flex-col mobile:gap-4">
           <li><a href="#">About</a></li>
           <li><a href="#">Team</a></li>
           <li><a href="#">Blog</a></li>
@@ -354,18 +362,16 @@
         </ul>
       </div>
       <div class="mobile:mt-[15px]">
-        <h6>Connect</h6>
-        <ul
-          class="mobile:flex mobile:flex-col mobile:gap-4 mobile:my-8 font-light-gray"
-        >
+        <h6 class="font-semibold">Connect</h6>
+        <ul class="mobile:flex mobile:flex-col mobile:gap-4 font-light-gray">
           <li><a href="#" class="">Contact</a></li>
           <li><a href="#">Newsletter</a></li>
           <li><a href="#">LinkedIn</a></li>
         </ul>
       </div>
-    </footer>
+    </div>
     <div
-      class="z-20 flex h-full flex-col place-content-center bg-[#25252d] text-center"
+      class="mobile:w-full bg-very-dark-black-blue z-20 flex flex-col place-content-center pb-[3.5rem] text-center"
     >
       <div class="">
         <a
@@ -389,7 +395,7 @@
       <div class="mt-3">
         <a
           class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA/frontend_mentor_challenges/tree/blogr_landing_page/challenges/blogr_landing_page"
+          href="https://github.com/adnamaric/frontend_mentor_challenges/tree/blogr_landing_page/challenges/blogr_landing_page"
           >Source code</a
         >
       </div>

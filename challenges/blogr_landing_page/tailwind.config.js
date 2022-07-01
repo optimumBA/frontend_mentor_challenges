@@ -23,12 +23,16 @@ module.exports = {
         'light-gray': 'hsl(0, 26%, 96%)',
       },
       backgroundSize: {
-        massive: '150%',
+        massive: '109%',
       },
       screens: {
         desktop: '1200px',
         mobile: { min: '370px', max: '700px' },
         largescreen: '1800px',
+      },
+      fontFamily: {
+        Overpass: ['Overpass'],
+        Ubuntu: ['Ubuntu'],
       },
     },
   },
