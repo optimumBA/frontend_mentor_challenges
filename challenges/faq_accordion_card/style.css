@@ -1,3 +1,30 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .main-item {
+    @apply my-4 inline cursor-pointer  flex-col text-[1.2rem];
+  }
+  .main-item p {
+    @apply my-4 text-[1.2rem];
+  }
+
+  .question-container {
+    @apply mobile:text-[1rem] desktop:w-full mobile:w-[100%] mt-4 mb-[0.5rem] border-b-2 border-b-[#e5e7eb] text-[1.2rem];
+  }
+
+  .question {
+    @apply font-[700];
+  }
+  .question.active {
+    @apply font-[700] text-black;
+  }
+  .answer {
+    @apply text-dark-grayish-blue mobile:text-[1rem] mobile:leading-tight mobile:w-[92%] mb-2 text-xs leading-normal;
+  }
+
+  .question:hover {
+    @apply text-soft-red transition delay-300 ease-in-out;
+  }
+}

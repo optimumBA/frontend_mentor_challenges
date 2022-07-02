@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="text-[12px]">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -25,39 +25,192 @@
       sizes="16x16"
       href="../images/favicon-16x16.png"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
     <link rel="manifest" href="../site.webmanifest" />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="m-0">
+
+  <body class="text-[12px]">
     <div
-      class="flex h-[100vh] w-full flex-col place-content-center text-center"
+      class="h-[100%] min-h-screen w-[100%] overflow-hidden bg-gradient-to-b from-[#af67e9] to-[#6565e7] bg-cover"
     >
-      <div>
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://www.frontendmentor.io/challenges/faq-accordion-card-XlyjD0Oam"
-          target="_blank"
-          >Frontend Mentor challenge</a
+      <main
+        class="desktop:flex-row mobile:flex-col mobile:mt-[30%] mobile:w-[80%] mx-auto mb-0 mt-[176px] flex min-h-[42rem] w-full max-w-[900px] rounded-[15px] bg-white shadow-md"
+      >
+        <section
+          class="desktop:bg-[url('./images/bg-pattern-desktop.svg')] relative bg-contain bg-[top_1rem_left_-2rem] bg-no-repeat"
         >
-      </div>
-      <div>
-        for
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA"
-          target="_blank"
-          >Optimum BH</a
-        >
-        Internship.
+          <section
+            class="mobile:overflow-visible mobile:hidden desktop:visible overflow-hidden"
+          >
+            <img
+              class="desktop:mt-[5.7rem] desktop:ml-[-4.5rem] mobile:h-[90%] mobile:w-[210px] mobile:mr-auto mobile:ml-auto mobile:mt-[-10rem] mobile:ml-[-1.5rem] block w-full bg-no-repeat"
+              src="images/illustration-woman-online-desktop.svg"
+              alt=""
+            />
+          </section>
+          <section
+            class="desktop:visible mobile:hidden overflow-visible"
+            x-data="{moveImage}"
+          >
+            <img
+              class="mobile:h-[196px] ml-[-24%] mt-[-52%] block"
+              src="images/illustration-box-desktop.svg"
+              alt=""
+              @mouseover="moveImage=true"
+              @mouseout="moveImage=false"
+              :class="moveImage==true?'ml-[-29%]' : 'ml-[-24%]'"
+            />
+          </section>
+          <section>
+            <img
+              src="images/illustration-woman-online-mobile.svg"
+              class="desktop:hidden mobile:visible mr-auto ml-auto mt-[-23%] w-[220px] md:hidden"
+              alt=""
+            />
+          </section>
+          <section>
+            <img
+              src="images/bg-pattern-mobile.svg"
+              class="desktop:hidden mobile:visible ml-[38px] mt-[-74px] md:hidden"
+              alt=""
+              srcset=""
+            />
+          </section>
+        </section>
+
+        <section class="desktop:w-[47%]">
+          <h1
+            class="mobile:mt-[1rem] mobile:text-center mt-[5.1rem] ml-[3rem] text-[2.5rem]"
+          >
+            FAQ
+          </h1>
+
+          <section
+            class="desktop:mb-2 mobile:mb-1 desktop:mt-[3.5rem] mobile:mt-[2px] mx-[3rem] grid gap-[0.2rem]"
+          >
+            <div
+              class="main-item flex cursor-pointer flex-col"
+              x-data="{questions, check} "
+            >
+              <template x-for="question in questions" :key="question.id">
+                <div class="question-container">
+                  <div @click="check(question.id)">
+                    <a
+                      class="question"
+                      :class="question.open===true? 'font-bold' : 'font-normal'"
+                      x-text="question.question"
+                    ></a>
+                    <img
+                      src="images/icon-arrow-down.svg"
+                      class="mobile:ml-[2px] desktop:ml-0 float-right mt-1 h-[20px] w-[20px]"
+                      :class="{'rotate-180': question.open ===true }"
+                      alt="arrow not found!"
+                    />
+                  </div>
+
+                  <p
+                    class="answer"
+                    x-show="question.open"
+                    x-text="question.answer"
+                  ></p>
+                </div>
+              </template>
+            </div>
+          </section>
+        </section>
+      </main>
+
+      <div
+        class="mobile:w-[79%] mobile:mb-[2px] desktop:w-[905px] mobile:bg-transparent mobile:shadow-2xl mt-6 ml-auto mr-auto flex flex-col place-content-center rounded-[15px] bg-white text-center shadow-lg lg:w-[49%]"
+      >
+        <div>
+          <a
+            class="text-optimum-blue hover:text-optimum-darkblue"
+            href="https://www.frontendmentor.io/challenges/faq-accordion-card-XlyjD0Oam"
+            target="_blank"
+            >Frontend Mentor challenge</a
+          >
+        </div>
+        <div>
+          for
+          <a
+            class="text-optimum-blue hover:text-optimum-darkblue"
+            href="https://github.com/optimumBA"
+            target="_blank"
+            >Optimum BH</a
+          >
+          Internship.
+        </div>
+
+        <div class="mt-3">
+          <a
+            class="text-optimum-blue hover:text-optimum-darkblue"
+            href="https://github.com/adnamaric/frontend_mentor_challenges/tree/faq_accordion_card/challenges/faq_accordion_card"
+            >Source code</a
+          >
+        </div>
       </div>
 
-      <div class="mt-3">
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA/frontend_mentor_challenges/tree/faq_accordion_card/challenges/faq_accordion_card"
-          >Source code</a
-        >
-      </div>
+      <script>
+        let moveImage = false
+        const questions = [
+          {
+            id: 1,
+            question: 'How many team members can I invite?',
+            answer:
+              'You can invite up to 2 additional users on the Free plan. There is no limit on team members for the Premium plan.',
+            open: true,
+          },
+          {
+            id: 2,
+            question: 'What is the maximum file upload size?',
+            answer:
+              'No more than 2GB. All files in your account must fit your allotted storage space.',
+            open: false,
+          },
+          {
+            id: 3,
+            question: 'How do I reset my password?',
+            answer:
+              'Click “Forgot password” from the login page or “Change password” from your profile page. A reset link will be emailed to you.',
+            open: false,
+          },
+          {
+            id: 4,
+            question: 'Can I cancel my subscription?',
+            answer:
+              ' Yes! Send us a message and we’ll process your request no questions asked.',
+            open: false,
+          },
+          {
+            id: 5,
+            question: 'Do you provide additional support?',
+            answer:
+              ' Chat and email support is available 24/7. Phone lines are open during normal business hours. ',
+            open: false,
+          },
+        ]
+
+        function check(id) {
+          this.questions.forEach((q) => {
+            q.id == id
+              ? q.open === true
+                ? (q.open = false)
+                : (q.open = true)
+              : (q.open = false)
+          })
+        }
+      </script>
     </div>
   </body>
 </html>
