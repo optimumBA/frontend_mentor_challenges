@@ -8,6 +8,12 @@
       Interactive pricing component &bullet; Frontend Mentor Challenges &bullet;
       Optimum BH Internship
     </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="apple-touch-icon"
       sizes="180x180"
@@ -28,36 +34,174 @@
     <link rel="manifest" href="../site.webmanifest" />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="m-0">
+  <body
+    class="font-manrope bg-neutral-vpale-blue text-neutral-d-desat-blue m-0"
+  >
     <div
-      class="flex h-[100vh] w-full flex-col place-content-center text-center"
+      class="flex w-screen flex-col items-center justify-center bg-no-repeat text-center lg:bg-contain"
     >
-      <div>
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://www.frontendmentor.io/challenges/interactive-pricing-component-t0m8PIyY8"
-          target="_blank"
-          >Frontend Mentor challenge</a
-        >
+      <div
+        class="bg-intro flex flex-col items-center justify-center bg-center bg-no-repeat pt-[5rem] pb-[3rem] sm:w-full sm:pt-[5%]"
+      >
+        <h2 class="text-[20px] font-bold sm:text-[30px]">
+          Simple, traffic-based pricing
+        </h2>
+        <p class="text-neutral-grayish-blue mt-4 w-[55%] text-[15px]">
+          Sign-up for our 30-day trial. No credit card required.
+        </p>
       </div>
-      <div>
-        for
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA"
-          target="_blank"
-          >Optimum BH</a
+      <div
+        class="mt-2 flex w-[90%] flex-col items-center justify-center bg-white pt-10 pb-10 shadow-xl sm:w-[47%]"
+      >
+        <div
+          class="flex flex-col justify-center sm:flex-row sm:flex-wrap sm:items-center"
         >
-        Internship.
+          <div>
+            <span
+              class="text-neutral-grayish-blue text-[14px] font-extrabold tracking-widest sm:order-1 sm:ml-[-1rem]"
+              id="pgview-output"
+            >
+              100K PAGEVIEWS
+            </span>
+          </div>
+          <div class="mt-10 w-[270px] sm:order-3 sm:w-[500px]">
+            <input
+              class="price-slider"
+              type="range"
+              step="1"
+              min="1"
+              value="3"
+              max="5"
+              id="price-slider"
+            />
+          </div>
+          <div class="mt-7 sm:order-2 sm:ml-[9rem] sm:mt-0">
+            <div
+              class="text-neutral-d-desat-blue flex items-center justify-center text-[29px] font-extrabold sm:text-[36px]"
+              id="price-output"
+            >
+              <p class="mr-2">$16.00</p>
+              <span class="text-neutral-grayish-blue text-[12px]">
+                / month
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="mt-10 flex w-full flex-row items-center justify-around text-[13px] sm:mt-14 sm:ml-10"
+        >
+          <p class="text-neutral-grayish-blue text-[11px]">Monthly Billing</p>
+          <label
+            class="relative mx-[-10%] inline-flex cursor-pointer items-center sm:mx-[-40%]"
+            for="def-toggle"
+          >
+            <input
+              class="peer absolute left-1/2 h-full w-full -translate-x-1/2 appearance-none rounded-md"
+              value=""
+              type="checkbox"
+              id="yearly-billing-toggle"
+            />
+            <div class="tglBtn"></div>
+          </label>
+
+          <p class="text-neutral-grayish-blue text-[11px]">
+            Yearly Billing
+            <span
+              class="bg-primary-lite-grayish-red text-primary-lite-red ml-2 rounded-2xl py-[0.1rem] px-2 text-[9px] font-extrabold"
+            >
+              25%
+              <span class="hidden pl-1 sm:inline-block"> discount </span>
+            </span>
+          </p>
+        </div>
+
+        <div
+          class="text-neutral-grayish-blue mt-8 w-full justify-around border-t border-slate-200 text-[10px] sm:flex sm:flex-row"
+        >
+          <div class="sm:flex sm:flex-col sm:items-baseline">
+            <div class="mt-8 flex items-center justify-center gap-4">
+              <img src="images/icon-check.svg" alt="Check icon" />
+              <p>Unlimited websites</p>
+            </div>
+            <div class="mt-2 flex items-center justify-center gap-4">
+              <img src="images/icon-check.svg" alt="Check icon" />
+              <p>100% data ownership</p>
+            </div>
+            <div class="mt-2 flex items-center justify-center gap-4">
+              <img src="images/icon-check.svg" alt="Check icon" />
+              <p>Email reports</p>
+            </div>
+          </div>
+          <div class="mt-5">
+            <button
+              class="bg-neutral-d-desat-blue text-primary-pale-blue cursor-pointer rounded-3xl px-8 py-2 text-[10px] font-extrabold hover:text-white sm:mt-7"
+            >
+              Start my trial
+            </button>
+          </div>
+        </div>
       </div>
 
-      <div class="mt-3">
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA/frontend_mentor_challenges/tree/interactive_pricing_component/challenges/interactive_pricing_component"
-          >Source code</a
-        >
+      <!-- Credits Optimum -->
+      <div
+        class="mt-14 flex w-full flex-col place-content-center pb-4 text-center text-[13px]"
+      >
+        <div>
+          <a
+            class="text-optimum-blue hover:text-optimum-darkblue"
+            href="https://www.frontendmentor.io/challenges/interactive-pricing-component-t0m8PIyY8"
+            target="_blank"
+            >Frontend Mentor challenge</a
+          >
+        </div>
+        <div>
+          for
+          <a
+            class="text-optimum-blue hover:text-optimum-darkblue"
+            href="https://github.com/optimumBA"
+            target="_blank"
+            >Optimum BH</a
+          >
+          Internship.
+        </div>
+
+        <div class="mt-3">
+          <a
+            class="text-optimum-blue hover:text-optimum-darkblue"
+            href="https://github.com/tarikcahta/frontend_mentor_challenges/tree/interactive_pricing_component/challenges/interactive_pricing_component"
+            >Source code</a
+          >
+        </div>
       </div>
     </div>
+    <script>
+      const monthlyBill = [8, 12, 16, 24, 36]
+      const pgViewsChange = ['10K', '50K', '100K', '500K', '1M']
+
+      let pgViewsOutput = document.getElementById('pgview-output')
+      let priceSlider = document.getElementById('price-slider')
+      let priceOutput = document.getElementById('price-output')
+      let billChange = document.getElementById('yearly-billing-toggle')
+
+      const atInput = (e) => {
+        if (billChange.checked) {
+          pgViewsOutput.textContent =
+            pgViewsChange[priceSlider.value - 1] + ' PAGEVIEWS'
+          priceOutput.textContent =
+            '$' +
+            (monthlyBill[priceSlider.value - 1] -
+              monthlyBill[priceSlider.value - 1] * 0.25) +
+            '.00'
+        } else {
+          pgViewsOutput.textContent =
+            pgViewsChange[priceSlider.value - 1] + ' PAGEVIEWS'
+          priceOutput.textContent =
+            '$' + monthlyBill[priceSlider.value - 1] + '.00'
+        }
+      }
+      billChange.addEventListener('change', atInput)
+      priceSlider.addEventListener('input', atInput)
+    </script>
   </body>
 </html>
