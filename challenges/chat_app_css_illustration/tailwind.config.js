@@ -6,6 +6,9 @@ module.exports = {
         'optimum-blue': '#009efc',
         'optimum-darkblue': '#0389e1',
       },
+      fontFamily: {
+        Rubik: ['Rubik', 'sans-serif'],
+      },
     },
   },
   plugins: [],
