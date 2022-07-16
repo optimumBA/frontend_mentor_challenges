@@ -8,6 +8,13 @@
       Stats preview card component &bullet; Frontend Mentor Challenges &bullet;
       Optimum BH Internship
     </title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&family=Outfit:wght@100&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="apple-touch-icon"
       sizes="180x180"
@@ -28,36 +35,86 @@
     <link rel="manifest" href="../site.webmanifest" />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="m-0">
+  <body class="bg-bg-col m-0 text-[15px]">
     <div
-      class="flex h-[100vh] w-full flex-col place-content-center text-center"
+      class="mt-20 ml-[-2%] flex min-h-[100vh] w-full flex-col items-center justify-center lg:mt-0 lg:ml-0"
     >
-      <div>
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://www.frontendmentor.io/challenges/stats-preview-card-component-8JqbgoU62"
-          target="_blank"
-          >Frontend Mentor challenge</a
+      <div
+        class="bg-card-bg w-[20rem] justify-center rounded-lg text-center sm:mt-3 lg:relative lg:h-[29rem] lg:w-[70rem]"
+      >
+        <div
+          class="bg-bg-img h-full rounded-t-lg sm:w-full lg:absolute lg:right-0 lg:w-1/2 lg:overflow-hidden lg:rounded-r-lg"
         >
-      </div>
-      <div>
-        for
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA"
-          target="_blank"
-          >Optimum BH</a
+          <img
+            src="./images/image-header-desktop.jpg"
+            class="h-[100%] w-[100%] rounded-t-lg opacity-70"
+            alt="business_img"
+          />
+        </div>
+        <div
+          class="p-0 px-9 pt-10 sm:block sm:text-center lg:w-1/2 lg:p-20 lg:text-left"
         >
-        Internship.
+          <div>
+            <h1 class="text-2xl font-extrabold text-white lg:mx-0 lg:text-3xl">
+              Get <span class="text-bg-img"> insights </span> that help your
+              business grow.
+            </h1>
+            <p class="text-p-text my-5 px-1 lg:my-10 lg:px-0 lg:pr-7">
+              Discover the benefits of data analytics and make better decisions
+              regarding revenue, customer experience, and overall efficiency.
+            </p>
+          </div>
+          <div
+            class="sm:my-6 lg:my-0 lg:mt-20 lg:grid lg:grid-cols-3 lg:gap-4 lg:text-left"
+          >
+            <div class="py-3 lg:py-0">
+              <h2 class="text-xl font-extrabold text-white lg:text-2xl">
+                10k+
+              </h2>
+              <p class="text-b-text pt-2 uppercase">companies</p>
+            </div>
+            <div class="py-3 lg:py-0">
+              <h2 class="text-xl font-extrabold text-white lg:text-2xl">314</h2>
+              <p class="text-b-text pt-2 uppercase">templates</p>
+            </div>
+            <div class="py-3 lg:py-0">
+              <h2 class="text-xl font-extrabold text-white lg:text-2xl">
+                12m+
+              </h2>
+              <p class="text-b-text pt-2 uppercase">queries</p>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div class="mt-3">
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA/frontend_mentor_challenges/tree/stats_preview_card_component/challenges/stats_preview_card_component"
-          >Source code</a
-        >
-      </div>
+      <footer class="bottom-0 text-center lg:block">
+        <div>
+          <a
+            class="text-optimum-blue hover:text-optimum-darkblue"
+            href="https://www.frontendmentor.io/challenges/stats-preview-card-component-8JqbgoU62"
+            target="_blank"
+            >Frontend Mentor challenge</a
+          >
+        </div>
+        <div>
+          for
+          <a
+            class="text-optimum-blue hover:text-optimum-darkblue"
+            href="https://github.com/optimumBA"
+            target="_blank"
+            >Optimum BH</a
+          >
+          Internship.
+        </div>
+
+        <div class="mt-3">
+          <a
+            class="text-optimum-blue hover:text-optimum-darkblue"
+            href="https://github.com/senaid123/frontend_mentor_challenges/tree/stats_preview_card_component/challenges/stats_preview_card_component"
+            >Source code</a
+          >
+        </div>
+      </footer>
     </div>
   </body>
 </html>
