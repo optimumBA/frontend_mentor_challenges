@@ -30,26 +30,32 @@
   </head>
   <body class="m-0">
     <div
-      class="flex h-[100vh] w-full flex-col place-content-center bg-[#0A0C1B] text-center"
+      class="flex h-[100vh] w-full flex-col place-content-center items-center justify-center bg-[#0A0C1B] text-center"
     >
-      <div class="m-6 flex flex-col rounded-2xl bg-[#1C1938]">
-        <div class="">
+      <div
+        class="m-6 flex flex-col rounded-2xl bg-[#1C1938] sm:w-2/3 sm:flex-row"
+      >
+        <div class="flex sm:order-2 sm:flex-shrink sm:flex-grow sm:basis-2/4">
           <img
-            class="rounded-2xl rounded-b-none"
+            class="block rounded-2xl rounded-b-none bg-cover bg-center sm:w-full sm:rounded-none sm:rounded-r-2xl sm:object-cover sm:object-center"
             src="../images/image-header-mobile.jpg"
             alt=""
           />
         </div>
-        <main class="p-6 text-white">
-          <h1 class="mt-4 text-2xl font-bold">
-            Get <span class="text-purple-600">insights</span> that<br />help
-            your business grow.
+        <main
+          class="p-6 text-white sm:order-1 sm:flex-shrink sm:flex-grow sm:basis-2/4 sm:p-8 sm:text-left"
+        >
+          <h1 class="mt-4 text-2xl font-bold sm:mt-0 sm:text-2xl">
+            Get<span class="text-purple-600"> insights </span>that help your
+            business grow.
           </h1>
-          <p class="mt-4 text-gray-400">
+          <p class="mt-4 text-gray-400 sm:mt-4 sm:text-xs">
             Discover the benefits of data analytics and make better decisions
             regarding revenue, customer experience, and overall efficiency.
           </p>
-          <section class="mt-10 flex flex-col gap-6 pb-5">
+          <section
+            class="mt-10 flex flex-col gap-6 pb-5 sm:mt-6 sm:flex-row sm:pb-0"
+          >
             <div>
               <h3 class="text-2xl font-bold">10k+</h3>
               <p class="mt-2 text-sm uppercase text-gray-400">companies</p>
@@ -65,7 +71,7 @@
           </section>
         </main>
       </div>
-      <div class="hidden">
+      <div class="hidden text-white sm:block">
         <div>
           <a
             class="text-optimum-blue hover:text-optimum-darkblue"
