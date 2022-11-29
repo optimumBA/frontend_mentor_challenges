@@ -32,6 +32,19 @@
     <div
       class="flex h-[100vh] w-full flex-col place-content-center items-center justify-center bg-blue-200 text-center"
     >
+      <div class="background">
+        <img
+          class="fixed bottom-0 left-0 h-3/4 w-full rotate-180 sm:hidden"
+          src="../images/pattern-background-mobile.svg"
+          alt=""
+        />
+
+        <img
+          class="bottom-0 left-0 hidden h-3/4 w-full rotate-180 sm:fixed sm:block"
+          src="../images/pattern-background-desktop.svg"
+          alt=""
+        />
+      </div>
       <main class="relative m-6 max-w-[375px] rounded-3xl bg-white">
         <img
           class="block w-full rounded-t-3xl"
@@ -68,7 +81,7 @@
           </section>
         </div>
       </main>
-      <div class="credits hidden">
+      <div class="credits absolute bottom-1">
         <div>
           <a
             class="text-optimum-blue hover:text-optimum-darkblue"
