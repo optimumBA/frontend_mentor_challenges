@@ -28,154 +28,162 @@
     <link rel="manifest" href="../site.webmanifest" />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="m-0">
+  <body class="m-0 bg-gray-100">
     <div
-      class="absolute left-[-50%] top-[-30%] h-[824px] w-[364px] rotate-180 rounded-full bg-gradient-to-b from-violet-500 to-fuchsia-500"
+      class="absolute left-[-50%] top-[-30%] h-[824px] w-[364px] rotate-180 rounded-full bg-gradient-to-b from-violet-500 to-fuchsia-500 sm:top-[-320px] sm:left-[-240px] sm:h-[1024px] sm:w-[580px]"
     ></div>
     <div
       class="flex w-full flex-col place-content-center items-center justify-center bg-gray-100 text-center"
     >
-      <div class="relative p-6">
-        <main
-          id="phone"
-          class="max-w-[358px] rounded-[3rem] border-[16px] border-white bg-gray-50 shadow-2xl"
+      <div class="relative p-6 sm:flex sm:items-center">
+        <div
+          class="m-0 flex items-center justify-center p-0 sm:flex-1 sm:basis-1/2"
         >
-          <div
-            id="header"
-            class="relative rounded-t-[2.1rem] bg-pink-700 bg-gradient-to-r from-violet-500 to-fuchsia-500 p-5"
+          <main
+            id="phone"
+            class="w-[358px] rounded-[3rem] border-[16px] border-white bg-gray-50 shadow-2xl"
           >
-            <div id="notch-container" class="flex justify-center">
-              <div
-                id="notch"
-                class="absolute top-[-16px] h-10 w-1/2 rounded-b-3xl bg-white"
-              ></div>
-            </div>
-            <div class="mt-8 flex items-center justify-between">
-              <div class="ml-3 flex items-center">
-                <div class="flex flex-col">
-                  <div
-                    class="mb-[-3px] h-[10px] w-[3px] rotate-[30deg] rounded-full bg-white"
-                  ></div>
-                  <div
-                    class="h-[10px] w-[3px] -rotate-[30deg] rounded-full bg-white"
-                  ></div>
+            <div
+              id="header"
+              class="relative rounded-t-[2.1rem] bg-pink-700 bg-gradient-to-r from-violet-500 to-fuchsia-500 p-5"
+            >
+              <div id="notch-container" class="flex justify-center">
+                <div
+                  id="notch"
+                  class="absolute top-[-16px] h-10 w-1/2 rounded-b-3xl bg-white"
+                ></div>
+              </div>
+              <div class="mt-8 flex items-center justify-between">
+                <div class="ml-3 flex items-center">
+                  <div class="flex flex-col">
+                    <div
+                      class="mb-[-3px] h-[10px] w-[3px] rotate-[30deg] rounded-full bg-white"
+                    ></div>
+                    <div
+                      class="h-[10px] w-[3px] -rotate-[30deg] rounded-full bg-white"
+                    ></div>
+                  </div>
+                  <img
+                    class="ml-3 block w-10 rounded-full border-2 border-white bg-red-300"
+                    src="../images/avatar.jpg"
+                    alt=""
+                  />
+                  <div class="ml-3 text-left">
+                    <h2 class="font-bold text-white">Samuel Green</h2>
+                    <p class="text-xs text-white opacity-60">
+                      Available to Walk
+                    </p>
+                  </div>
                 </div>
-                <img
-                  class="ml-3 block w-10 rounded-full border-2 border-white bg-red-300"
-                  src="../images/avatar.jpg"
-                  alt=""
-                />
-                <div class="ml-3 text-left">
-                  <h2 class="font-bold text-white">Samuel Green</h2>
-                  <p class="text-xs text-white opacity-60">Available to Walk</p>
+                <div class="flex flex-col gap-1">
+                  <div class="h-1 w-1 rounded-full bg-white"></div>
+                  <div class="h-1 w-1 rounded-full bg-white"></div>
+                  <div class="h-1 w-1 rounded-full bg-white"></div>
                 </div>
               </div>
-              <div class="flex flex-col gap-1">
-                <div class="h-1 w-1 rounded-full bg-white"></div>
-                <div class="h-1 w-1 rounded-full bg-white"></div>
-                <div class="h-1 w-1 rounded-full bg-white"></div>
-              </div>
             </div>
-          </div>
-          <div id="messages" class="bg-gray-50 p-3 pb-8">
-            <div
-              class="max-w-[244px] rounded-2xl rounded-bl-none bg-fuchsia-100 text-left"
-            >
-              <p class="m-3 p-2 text-sm text-fuchsia-700">
-                That sounds greet. I'd be happy to discuss more
-              </p>
-            </div>
-            <div
-              class="max-w-[244px] rounded-2xl rounded-bl-none bg-fuchsia-100 text-left"
-            >
-              <p class="m-3 p-2 text-sm text-fuchsia-700">
-                Could you send over some pictures of your dog, please?
-              </p>
-            </div>
-            <div class="mt-6 flex justify-end gap-3">
-              <img
-                class="h-16 w-16 rounded-2xl"
-                src="../images/dog-image-1.jpg"
-                alt="my dog"
-              />
-              <img
-                class="h-16 w-16 rounded-2xl"
-                src="../images/dog-image-2.jpg"
-                alt="my dog sit"
-              />
-              <img
-                class="h-16 w-16 rounded-2xl"
-                src="../images/dog-image-3.jpg"
-                alt="my dog walk"
-              />
-            </div>
-            <div class="mt-3 flex justify-end drop-shadow-md">
+            <div id="messages" class="bg-gray-50 p-3 pb-8">
               <div
-                class="max-w-[244px] rounded-2xl rounded-br-none bg-white text-left"
+                class="max-w-[244px] rounded-2xl rounded-bl-none bg-fuchsia-100 text-left"
               >
-                <p class="m-3 ml-5 text-sm">
-                  Here are a few pictures. She's a happy girls!
+                <p class="m-3 p-2 text-sm text-fuchsia-700">
+                  That sounds greet. I'd be happy to discuss more
                 </p>
               </div>
-            </div>
-            <div class="mt-3 flex justify-end drop-shadow-md">
               <div
-                class="max-w-[244px] rounded-2xl rounded-br-none bg-white text-left"
+                class="max-w-[244px] rounded-2xl rounded-bl-none bg-fuchsia-100 text-left"
               >
-                <p class="m-3 ml-5 text-sm">Can you make it?</p>
+                <p class="m-3 p-2 text-sm text-fuchsia-700">
+                  Could you send over some pictures of your dog, please?
+                </p>
               </div>
-            </div>
-            <div
-              class="mt-5 max-w-[252px] rounded-2xl rounded-bl-none bg-fuchsia-100 text-left"
-            >
-              <p class="m-3 p-2 text-sm text-fuchsia-700">
-                She looks so happy! The time we discussed works. How long shall
-                I take her out for?
-              </p>
-            </div>
-            <div
-              class="flex max-w-[252px] items-center justify-between rounded-2xl rounded-bl-none bg-gradient-to-r from-fuchsia-500 to-violet-500 p-3 text-left"
-            >
-              <div class="flex items-center">
+              <div class="mt-6 flex justify-end gap-3">
+                <img
+                  class="h-16 w-16 rounded-2xl"
+                  src="../images/dog-image-1.jpg"
+                  alt="my dog"
+                />
+                <img
+                  class="h-16 w-16 rounded-2xl"
+                  src="../images/dog-image-2.jpg"
+                  alt="my dog sit"
+                />
+                <img
+                  class="h-16 w-16 rounded-2xl"
+                  src="../images/dog-image-3.jpg"
+                  alt="my dog walk"
+                />
+              </div>
+              <div class="mt-3 flex justify-end drop-shadow-md">
                 <div
-                  class="b h-6 w-6 rounded-full border-[4px] border-white opacity-20"
-                ></div>
-                <p class="ml-2 text-sm text-white">30 minute walk</p>
+                  class="max-w-[244px] rounded-2xl rounded-br-none bg-white text-left"
+                >
+                  <p class="m-3 ml-5 text-sm">
+                    Here are a few pictures. She's a happy girls!
+                  </p>
+                </div>
               </div>
-              <p class="text-lg font-bold text-white">$29</p>
-            </div>
-            <div
-              class="mt-3 flex max-w-[252px] items-center justify-between rounded-2xl rounded-bl-none bg-gradient-to-r from-fuchsia-500 to-violet-500 p-3 text-left"
-            >
-              <div class="flex items-center">
+              <div class="mt-3 flex justify-end drop-shadow-md">
                 <div
-                  class="b h-6 w-6 rounded-full border-[4px] border-white opacity-20"
-                ></div>
-                <p class="ml-2 text-sm text-white">1 hour walk</p>
+                  class="max-w-[244px] rounded-2xl rounded-br-none bg-white text-left"
+                >
+                  <p class="m-3 ml-5 text-sm">Can you make it?</p>
+                </div>
               </div>
-              <p class="text-lg font-bold text-white">$49</p>
-            </div>
-          </div>
-          <div id="form" class="relative rounded-b-[2.1rem] bg-gray-50 p-4">
-            <input
-              type="text"
-              class="w-full rounded-full p-4 pl-8"
-              placeholder="Type a message..."
-            />
-            <div
-              class="absolute right-6 bottom-6 h-10 w-10 rounded-full bg-slate-800"
-            ></div>
-            <div class="absolute bottom-7 right-5 flex h-6 w-6 flex-col">
               <div
-                class="mb-[-4px] h-[10px] w-[3px] -rotate-[45deg] rounded-full bg-white"
-              ></div>
+                class="mt-5 max-w-[252px] rounded-2xl rounded-bl-none bg-fuchsia-100 text-left"
+              >
+                <p class="m-3 p-2 text-sm text-fuchsia-700">
+                  She looks so happy! The time we discussed works. How long
+                  shall I take her out for?
+                </p>
+              </div>
               <div
-                class="h-[10px] w-[3px] rotate-[45deg] rounded-full bg-white"
-              ></div>
+                class="flex max-w-[252px] items-center justify-between rounded-2xl rounded-bl-none bg-gradient-to-r from-fuchsia-500 to-violet-500 p-3 text-left"
+              >
+                <div class="flex items-center">
+                  <div
+                    class="b h-6 w-6 rounded-full border-[4px] border-white opacity-20"
+                  ></div>
+                  <p class="ml-2 text-sm text-white">30 minute walk</p>
+                </div>
+                <p class="text-lg font-bold text-white">$29</p>
+              </div>
+              <div
+                class="mt-3 flex max-w-[252px] items-center justify-between rounded-2xl rounded-bl-none bg-gradient-to-r from-fuchsia-500 to-violet-500 p-3 text-left"
+              >
+                <div class="flex items-center">
+                  <div
+                    class="b h-6 w-6 rounded-full border-[4px] border-white opacity-20"
+                  ></div>
+                  <p class="ml-2 text-sm text-white">1 hour walk</p>
+                </div>
+                <p class="text-lg font-bold text-white">$49</p>
+              </div>
             </div>
-          </div>
-        </main>
-        <main class="mb-10">
+            <div id="form" class="relative rounded-b-[2.1rem] bg-gray-50 p-4">
+              <input
+                type="text"
+                class="w-full rounded-full p-4 pl-8"
+                placeholder="Type a message..."
+              />
+              <div
+                class="absolute right-6 bottom-6 h-10 w-10 rounded-full bg-slate-800"
+              ></div>
+              <div class="absolute bottom-7 right-5 flex h-6 w-6 flex-col">
+                <div
+                  class="mb-[-4px] h-[10px] w-[3px] -rotate-[45deg] rounded-full bg-white"
+                ></div>
+                <div
+                  class="h-[10px] w-[3px] rotate-[45deg] rounded-full bg-white"
+                ></div>
+              </div>
+            </div>
+          </main>
+        </div>
+        <main
+          class="mb-10 sm:ml-20 sm:max-w-lg sm:flex-1 sm:basis-1/2 sm:text-left"
+        >
           <h1 class="mt-24 text-4xl font-bold text-slate-800">
             Simple booking
           </h1>
@@ -187,7 +195,7 @@
           </p>
         </main>
       </div>
-      <div id="credits" class="mb-10">
+      <div id="credits" class="mb-10 sm:mt-20">
         <div>
           <a
             class="text-optimum-blue hover:text-optimum-darkblue"
