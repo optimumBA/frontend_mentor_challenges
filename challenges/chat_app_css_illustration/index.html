@@ -30,15 +30,48 @@
   </head>
   <body class="m-0">
     <div
-      class="flex h-[100vh] w-full flex-col place-content-center text-center"
+      class="flex w-full flex-col place-content-center items-center justify-center bg-blue-200 text-center"
     >
       <main>
-        <main id="chat">
-          <div id="header">
-            <div>
-              <img src="../images/avatar.jpg" alt="" />
-              <h2>Samuel Green</h2>
-              <p>Available to Walk</p>
+        <main
+          id="phone"
+          class="m-10 w-[390px] rounded-[3rem] border-[16px] border-white"
+        >
+          <div
+            id="header"
+            class="relative rounded-t-[2.1rem] bg-pink-700 bg-gradient-to-r from-violet-500 to-fuchsia-500 p-5"
+          >
+            <div id="notch-container" class="flex justify-center">
+              <div
+                id="notch"
+                class="absolute top-[-16px] h-10 w-1/2 rounded-b-3xl bg-white"
+              ></div>
+            </div>
+            <div class="mt-8 flex items-center justify-between">
+              <div class="ml-3 flex items-center">
+                <div class="flex flex-col">
+                  <div
+                    class="mb-[-3px] h-[10px] w-[3px] rotate-[30deg] rounded-full bg-white"
+                  ></div>
+                  <div
+                    class="h-[10px] w-[3px] -rotate-[30deg] rounded-full bg-white"
+                  ></div>
+                </div>
+                <img
+                  class="ml-3 block w-10 rounded-full border-2 border-white bg-red-300"
+                  src="../images/avatar.jpg"
+                  alt=""
+                />
+                <div class="ml-3 text-left">
+                  <h2 class="font-bold text-white">Samuel Green</h2>
+                  <p class="text-xs text-white opacity-60">Available to Walk</p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-1">
+                <div class="h-1 w-1 rounded-full bg-white"></div>
+                <div class="h-1 w-1 rounded-full bg-white"></div>
+                <div class="h-1 w-1 rounded-full bg-white"></div>
+              </div>
             </div>
           </div>
           <div id="messages">
