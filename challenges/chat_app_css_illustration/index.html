@@ -35,11 +35,11 @@
       <main>
         <main
           id="phone"
-          class="m-10 w-[358px] rounded-[3rem] border-[16px] border-white"
+          class="m-10 w-[358px] rounded-[3rem] border-[16px] border-white bg-gray-50"
         >
           <div
             id="header"
-            class="relative rounded-t-[2.1rem] rounded-b-xl bg-pink-700 bg-gradient-to-r from-violet-500 to-fuchsia-500 p-5"
+            class="relative rounded-t-[2.1rem] bg-pink-700 bg-gradient-to-r from-violet-500 to-fuchsia-500 p-5"
           >
             <div id="notch-container" class="flex justify-center">
               <div
@@ -153,9 +153,23 @@
               <p class="text-lg font-bold text-white">$49</p>
             </div>
           </div>
-          <div id="form">
-            <input type="text" />
-            <button>></button>
+          <div id="form" class="relative rounded-b-[2.1rem] bg-gray-50 p-4">
+            <input
+              type="text"
+              class="w-full rounded-full p-4 pl-8"
+              placeholder="Type a message..."
+            />
+            <div
+              class="absolute right-6 bottom-6 h-10 w-10 rounded-full bg-slate-800"
+            ></div>
+            <div class="absolute bottom-7 right-5 flex h-6 w-6 flex-col">
+              <div
+                class="mb-[-4px] h-[10px] w-[3px] -rotate-[45deg] rounded-full bg-white"
+              ></div>
+              <div
+                class="h-[10px] w-[3px] rotate-[45deg] rounded-full bg-white"
+              ></div>
+            </div>
           </div>
         </main>
         <main class="hidden">
