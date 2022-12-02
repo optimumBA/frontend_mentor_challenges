@@ -3,8 +3,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'optimum-blue': '#009efc',
-        'optimum-darkblue': '#0389e1',
+        'grayish-blue': '#7B879D',
+        'light-gray': '#D6E2F0'
       },
     },
   },
