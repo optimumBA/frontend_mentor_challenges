@@ -57,7 +57,7 @@
             alt=""
           />
           <img
-            class="z-0 hidden md:absolute md:top-[-112px] md:left-[-240px] md:block md:min-w-[640px]"
+            class="z-0 hidden md:absolute md:top-[-120px] md:left-[-240px] md:block md:min-w-[640px]"
             src="../images/bg-pattern-desktop.svg"
             style="clip-path: inset(0 0 0 34.5%)"
             alt=""
@@ -76,16 +76,16 @@
             <div
               id="accordion-child"
               class="p-2 text-left"
-              x-data="{open: false}"
+              x-data="{open: true}"
             >
               <div
                 class="relative"
                 @click="open = !open"
                 @click.outside="open = false"
               >
-                <h3 class="inline-block text-lg text-gray-700">
+                <a href="#qna1" class="text-lg text-gray-700">
                   How many team members can I invite?
-                </h3>
+                </a>
                 <img
                   x-bind:class="open ? 'rotate-180' : ''"
                   class="absolute right-[-12px] top-2 w-4 md:right-[-24px]"
@@ -109,9 +109,9 @@
                 @click="open = !open"
                 @click.outside="open = false"
               >
-                <h3 class="inline-block text-lg text-gray-700">
+                <a href="#qna2" class="text-lg text-gray-700">
                   What is the maximum file upload size?
-                </h3>
+                </a>
                 <img
                   x-bind:class="open ? 'rotate-180' : ''"
                   class="absolute right-[-12px] top-2 w-4 md:right-[-24px]"
@@ -135,9 +135,9 @@
                 @click="open = !open"
                 @click.outside="open = false"
               >
-                <h3 class="inline-block text-lg text-gray-700">
+                <a href="#qna3" class="text-lg text-gray-700">
                   How do I reset my password?
-                </h3>
+                </a>
                 <img
                   x-bind:class="open ? 'rotate-180' : ''"
                   class="absolute right-[-12px] top-2 w-4 md:right-[-24px]"
@@ -161,9 +161,9 @@
                 @click="open = !open"
                 @click.outside="open = false"
               >
-                <h3 class="inline-block text-lg text-gray-700">
+                <a href="#qna4" class="text-lg text-gray-700">
                   Can I cancel my subscription?
-                </h3>
+                </a>
                 <img
                   x-bind:class="open ? 'rotate-180' : ''"
                   class="absolute right-[-12px] top-2 w-4 md:right-[-24px]"
@@ -187,9 +187,9 @@
                 @click="open = !open"
                 @click.outside="open = false"
               >
-                <h3 class="inline-block text-lg text-gray-700">
+                <a href="#qna5" class="text-lg text-gray-700">
                   Do you provide additional support?
-                </h3>
+                </a>
                 <img
                   x-bind:class="open ? 'rotate-180' : ''"
                   class="absolute right-[-12px] top-2 w-4 md:right-[-24px]"
