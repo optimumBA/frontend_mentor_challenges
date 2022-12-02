@@ -34,7 +34,7 @@
       class="flex w-full flex-col place-content-center bg-gradient-to-b from-violet-400 to-violet-500 text-center md:items-center"
     >
       <main
-        class="m-5 mt-36 rounded-3xl bg-yellow-200 p-4 md:mr-7 md:flex md:items-center md:gap-20"
+        class="m-5 mt-36 rounded-3xl bg-white p-4 md:mr-7 md:flex md:items-center md:gap-20"
       >
         <div
           id="illustration-mobile-container"
@@ -49,15 +49,27 @@
             />
           </div>
         </div>
-        <div>
+        <div class="md:relative">
           <img
-            class="left-[-80px] hidden md:relative md:block"
+            class="left-[-80px] z-10 hidden md:relative md:block"
+            style="clip-path: inset(0 0 0 13.5%)"
             src="../images/illustration-woman-online-desktop.svg"
+            alt=""
+          />
+          <img
+            class="z-0 hidden md:absolute md:top-[-112px] md:left-[-240px] md:block md:min-w-[640px]"
+            src="../images/bg-pattern-desktop.svg"
+            style="clip-path: inset(0 0 0 34.5%)"
+            alt=""
+          />
+          <img
+            class="z-50 hidden md:absolute md:top-28 md:left-[-115px] md:block"
+            src="../images/illustration-box-desktop.svg"
             alt=""
           />
         </div>
         <section
-          class="m-auto mt-[-72px] max-w-sm bg-red-300 md:m-0 md:my-20 md:mr-16 md:max-w-sm"
+          class="m-auto mt-[-72px] max-w-sm md:m-0 md:my-20 md:mr-16 md:max-w-sm"
         >
           <h1 class="text-4xl font-bold md:text-left">FAQ</h1>
           <div id="accordion" class="mt-9">
@@ -67,7 +79,7 @@
               x-data="{open: false}"
             >
               <div
-                class="relative bg-purple-300"
+                class="relative"
                 @click="open = !open"
                 @click.outside="open = false"
               >
@@ -81,7 +93,7 @@
                   alt=""
                 />
               </div>
-              <p x-show="open" class="mt-3 bg-orange-300 text-gray-500">
+              <p x-show="open" class="mt-3 text-gray-500">
                 You can invite up to 2 additional users on the Free plan. There
                 is no limit on team members for the Premium plan.
               </p>
