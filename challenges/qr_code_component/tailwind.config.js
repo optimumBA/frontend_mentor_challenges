@@ -6,6 +6,9 @@ module.exports = {
         'grayish-blue': '#7B879D',
         'light-gray': '#D6E2F0'
       },
+      fontFamily: {
+        outfit: ['"Outfit"']
+      }
     },
   },
   plugins: [],
