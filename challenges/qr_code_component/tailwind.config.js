@@ -4,11 +4,11 @@ module.exports = {
     extend: {
       colors: {
         'grayish-blue': '#7B879D',
-        'light-gray': '#D6E2F0'
+        'light-gray': '#D6E2F0',
       },
       fontFamily: {
-        outfit: ['"Outfit"']
-      }
+        outfit: ['"Outfit"'],
+      },
     },
   },
   plugins: [],
