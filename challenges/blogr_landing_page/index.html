@@ -67,32 +67,65 @@
               alt=""
             />
           </div>
-          <div class="hidden w-full md:block">
+          <div
+            x-data="product: false, company: false, connect: false"
+            class="hidden w-full md:block"
+          >
             <nav class="flex items-center justify-between text-white">
               <ul class="ml-24 flex gap-16">
                 <li class="relative">
-                  Product
+                  <a
+                    @click="product = !product; company = false; connect = false"
+                    class="font-bold"
+                    href="#"
+                    >Product</a
+                  >
                   <img
                     class="absolute top-2 right-[-16px]"
                     src="../images/icon-arrow-light.svg"
                     alt=""
                   />
+                  <template x-if="product">
+                    <ul class="absolute top-8 left-0">
+                      <li><a class="block" href="#">Overview</a></li>
+                    </ul>
+                  </template>
                 </li>
                 <li class="relative">
-                  Company
+                  <a
+                    @click="product = false; company = !company; connect = false"
+                    class="font-bold"
+                    href="#"
+                    >Company</a
+                  >
                   <img
                     class="absolute top-2 right-[-16px]"
                     src="../images/icon-arrow-light.svg"
                     alt=""
                   />
+                  <template x-if="company">
+                    <ul class="absolute top-8 left-0">
+                      <li><a class="block" href="#">About</a></li>
+                    </ul>
+                  </template>
                 </li>
                 <li class="relative">
-                  Connect
+                  <a
+                    @click="product = false; company = false; connect = !connect"
+                    class="font-bold"
+                    href="#"
+                    >Connect</a
+                  >
                   <img
                     class="absolute top-2 right-[-16px]"
                     src="../images/icon-arrow-light.svg"
                     alt=""
                   />
+                  <template x-if="connect">
+                    <ul class="absolute top-8 left-0">
+                      <li><a class="block" href="#">Contact</a></li>
+                    </ul>
+                  </template>
                 </li>
               </ul>
               <div>
