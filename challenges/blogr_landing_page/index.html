@@ -68,79 +68,81 @@
             />
           </div>
           <!-- desktop nav -->
-          <div
-            x-data="{product: false, company: false, connect: false}"
-            class="hidden w-full md:block"
-          >
-            <nav class="flex items-center justify-between text-white">
-              <ul class="ml-24 flex gap-16">
-                <li class="relative">
-                  <a
-                    @click="product = !product; company = false; connect = false"
-                    class="font-bold"
-                    href="#"
-                    >Product</a
+          <template x-if="true">
+            <div
+              x-data="{product: false, company: false, connect: false}"
+              class="hidden w-full md:block"
+            >
+              <nav class="flex items-center justify-between text-white">
+                <ul class="ml-24 flex gap-16">
+                  <li class="relative">
+                    <a
+                      @click="product = !product; company = false; connect = false"
+                      class="font-bold"
+                      href="#"
+                      >Product</a
+                    >
+                    <img
+                      class="absolute top-2 right-[-16px]"
+                      src="../images/icon-arrow-light.svg"
+                      alt=""
+                    />
+                    <template x-if="product">
+                      <ul class="absolute top-8 left-0">
+                        <li><a class="block" href="#">Overview</a></li>
+                      </ul>
+                    </template>
+                  </li>
+                  <li class="relative">
+                    <a
+                      @click="product = false; company = !company; connect = false"
+                      class="font-bold"
+                      href="#"
+                      >Company</a
+                    >
+                    <img
+                      class="absolute top-2 right-[-16px]"
+                      src="../images/icon-arrow-light.svg"
+                      alt=""
+                    />
+                    <template x-if="company">
+                      <ul class="absolute top-8 left-0">
+                        <li><a class="block" href="#">About</a></li>
+                      </ul>
+                    </template>
+                  </li>
+                  <li class="relative">
+                    <a
+                      @click="product = false; company = false; connect = !connect"
+                      class="font-bold"
+                      href="#"
+                      >Connect</a
+                    >
+                    <img
+                      class="absolute top-2 right-[-16px]"
+                      src="../images/icon-arrow-light.svg"
+                      alt=""
+                    />
+                    <template x-if="connect">
+                      <ul class="absolute top-8 left-0">
+                        <li><a class="block" href="#">Contact</a></li>
+                      </ul>
+                    </template>
+                  </li>
+                </ul>
+                <div>
+                  <button class="rounded-full px-4 py-3 font-bold text-white">
+                    Login
+                  </button>
+                  <button
+                    class="rounded-full bg-white px-4 py-3 font-bold text-[#FF555E]"
                   >
-                  <img
-                    class="absolute top-2 right-[-16px]"
-                    src="../images/icon-arrow-light.svg"
-                    alt=""
-                  />
-                  <template x-if="product">
-                    <ul class="absolute top-8 left-0">
-                      <li><a class="block" href="#">Overview</a></li>
-                    </ul>
-                  </template>
-                </li>
-                <li class="relative">
-                  <a
-                    @click="product = false; company = !company; connect = false"
-                    class="font-bold"
-                    href="#"
-                    >Company</a
-                  >
-                  <img
-                    class="absolute top-2 right-[-16px]"
-                    src="../images/icon-arrow-light.svg"
-                    alt=""
-                  />
-                  <template x-if="company">
-                    <ul class="absolute top-8 left-0">
-                      <li><a class="block" href="#">About</a></li>
-                    </ul>
-                  </template>
-                </li>
-                <li class="relative">
-                  <a
-                    @click="product = false; company = false; connect = !connect"
-                    class="font-bold"
-                    href="#"
-                    >Connect</a
-                  >
-                  <img
-                    class="absolute top-2 right-[-16px]"
-                    src="../images/icon-arrow-light.svg"
-                    alt=""
-                  />
-                  <template x-if="connect">
-                    <ul class="absolute top-8 left-0">
-                      <li><a class="block" href="#">Contact</a></li>
-                    </ul>
-                  </template>
-                </li>
-              </ul>
-              <div>
-                <button class="rounded-full px-4 py-3 font-bold text-white">
-                  Login
-                </button>
-                <button
-                  class="rounded-full bg-white px-4 py-3 font-bold text-[#FF555E]"
-                >
-                  Sign Up
-                </button>
-              </div>
-            </nav>
-          </div>
+                    Sign Up
+                  </button>
+                </div>
+              </nav>
+            </div>
+          </template>
           <!-- desktop nav -->
         </div>
         <template x-if="open">
