@@ -13,6 +13,12 @@
       Blogr landing page &bullet; Frontend Mentor Challenges &bullet; Optimum BH
       Internship
     </title>
+
+    <style>
+      html {
+        overflow-x: hidden;
+      }
+    </style>
     <link
       rel="apple-touch-icon"
       sizes="180x180"
@@ -127,14 +133,16 @@
     </div>
     <div class="mt-32 p-6 text-center">
       <h2 class="text-2xl font-bold text-gray-700">Designed for the future</h2>
-      <div class="items-center justify-around bg-pink-200 md:flex">
-        <div
-          class="relative mt-10 overflow-hidden bg-orange-200 md:order-2 md:overflow-visible"
-          id="img-container"
-        >
+      <div class="items-center justify-around md:flex">
+        <div class="mt-10 bg-orange-200 md:order-2" id="img-container">
           <img
             class="m-auto block md:hidden"
             src="../images/illustration-editor-mobile.svg"
+            alt=""
+          />
+          <img
+            class="absolute top-[550px] right-[-200px] hidden max-h-[550px] scale-[1.4] md:block"
+            src="../images/illustration-laptop-desktop.svg"
             alt=""
           />
         </div>
