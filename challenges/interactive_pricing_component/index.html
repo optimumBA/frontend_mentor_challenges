@@ -49,6 +49,7 @@
     />
     <link rel="manifest" href="../site.webmanifest" />
     <link rel="stylesheet" href="style.css" />
+    <script src="//unpkg.com/alpinejs" defer></script>
   </head>
   <body class="m-0">
     <div
@@ -73,11 +74,28 @@
             Sign-up for our 30-day trial. No credit card required.
           </p>
         </header>
-        <main class="m-6 mt-20 rounded-xl bg-white p-6 shadow-2xl">
-          <section>
-            <h2 class="my-10 mt-14 text-sm font-bold text-gray-500">
-              100K PAGEVIEWS
-            </h2>
+        <div
+          x-data="{data: '3', yearly: false, pageviews: 100, price: '$16.00', yearlyPrice: '$12.00'}"
+          x-effect="pageviews = data === '1' ? '10K' : data === '2' ? '50K' : data === '3' ? '100K' : data === '4' ? '500K' : '1M'"
+          class="m-6 mt-20 rounded-xl bg-white p-6 shadow-2xl"
+        >
+          <!-- x effect price -->
+          <div
+            x-effect="price = data === '1' ? '$8.00' : data === '2' ? '$12.00' : data === '3' ? '$16.00' : data === '4' ? '$24.00' : '$36.00'"
+          ></div>
+          <!-- x effect price -->
+
+          <!-- x effect yearly price -->
+          <div
+            x-effect="yearlyPrice = data === '1' ? '$6.00' : data === '2' ? '$9.00' : data === '3' ? '$12.00' : data === '4' ? '$18.00' : '$27.00'"
+          ></div>
+          <!-- x effect price -->
+
+          <section x-effect="console.log(yearly, yearlyPrice)">
+            <h2
+              class="my-10 mt-14 text-sm font-bold text-gray-500"
+              x-text="pageviews + ' PAGEVIEWS'"
+            ></h2>
             <div class="relative">
               <input
                 class="range-lg h-3 w-4/5 cursor-pointer appearance-none rounded-full bg-[#A4F2EA] px-8"
@@ -86,10 +104,27 @@
                 min="1"
                 max="5"
                 id="price-slider"
+                x-model="data"
               />
             </div>
             <div class="mt-16 flex items-center justify-center gap-2">
-              <h3 class="text-4xl font-bold text-gray-800">$16.00</h3>
+              <template x-if="!yearly">
+                <div>
+                  <h3
+                    class="text-4xl font-bold text-gray-800"
+                    x-text="price"
+                  ></h3>
+                </div>
+              </template>
+              <template x-if="yearly">
+                <div>
+                  <h3
+                    class="text-4xl font-bold text-gray-800"
+                    x-text="yearlyPrice"
+                  ></h3>
+                </div>
+              </template>
+
               <p class="text-gray-500">/month</p>
             </div>
             <div
@@ -101,7 +136,8 @@
                   type="checkbox"
                   value=""
                   class="peer sr-only"
-                  id="#yearly-billing-toggle"
+                  id="yearly-billing-toggle"
+                  @click="yearly = !yearly"
                 />
                 <div
                   class="peer h-6 w-11 rounded-full bg-gray-200 after:absolute after:top-[2px] after:left-[2px] after:h-5 after:w-5 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-blue-600 peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:border-gray-600 dark:bg-gray-700 dark:peer-focus:ring-blue-800"
@@ -149,7 +185,7 @@
               Start my trial
             </button>
           </section>
-        </main>
+        </div>
       </section>
       <div id="credits">
         <div>
