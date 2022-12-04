@@ -67,8 +67,9 @@
               alt=""
             />
           </div>
+          <!-- desktop nav -->
           <div
-            x-data="product: false, company: false, connect: false"
+            x-data="{product: false, company: false, connect: false}"
             class="hidden w-full md:block"
           >
             <nav class="flex items-center justify-between text-white">
@@ -140,6 +141,7 @@
               </div>
             </nav>
           </div>
+          <!-- desktop nav -->
         </div>
         <template x-if="open">
           <div class="mt-3">
