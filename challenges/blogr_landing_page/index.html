@@ -42,6 +42,7 @@
   <body class="m-0">
     <div
       x-data="{open: false}"
+      x-init="$watch('open', value => console.log(value))"
       id="header"
       class="sticky top-0 left-0 z-50 w-full bg-gradient-to-r from-[#FF8C6F] to-[#FF555E] p-6 text-center"
     >
@@ -49,6 +50,7 @@
         <div class="flex items-center justify-between">
           <img src="../images/logo.svg" alt="" />
           <div
+            id="mobile-menu-toggle"
             class="flex flex-col items-center justify-center p-2 md:hidden"
             @click="open = !open"
           >
@@ -106,73 +108,63 @@
             </nav>
           </div>
         </div>
-        <nav x-show="open" @click.outside="open=false" class="mt-3">
-          <ul>
-            <li x-data="{open: false}" class="relative p-2 text-white">
-              <a @click="open = !open" class="block w-full font-bold" href="#"
-                >Product</a
-              >
-              <div class="absolute top-4 right-4 bottom-0 flex h-full">
-                <img
-                  class="h-2 w-3"
-                  src="../images/icon-arrow-light.svg"
-                  alt=""
-                />
-              </div>
-              <ul
-                @click.outside="open=false"
-                x-show="open"
-                class="mt-2 flex flex-col gap-2 text-sm"
-              >
-                <li><a href="#">Overview</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
-              </ul>
-            </li>
-            <li x-data="{open: false}" class="relative p-2 text-white">
-              <a @click="open = !open" class="block w-full font-bold" href="#"
-                >Company</a
-              >
-              <div class="absolute top-4 right-4 bottom-0 flex h-full">
-                <img
-                  class="h-2 w-3"
-                  src="../images/icon-arrow-light.svg"
-                  alt=""
-                />
-              </div>
-              <ul
-                @click.outside="open=false"
-                x-show="open"
-                class="mt-2 flex flex-col gap-2 text-sm"
-              >
-                <li><a href="#">Overview</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
-              </ul>
-            </li>
-            <li x-data="{open: false}" class="relative p-2 text-white">
-              <a @click="open = !open" class="block w-full font-bold" href="#"
-                >Connect</a
-              >
-              <div class="absolute top-4 right-4 bottom-0 flex h-full">
-                <img
-                  class="h-2 w-3"
-                  src="../images/icon-arrow-light.svg"
-                  alt=""
-                />
-              </div>
-              <ul
-                @click.outside="open=false"
-                x-show="open"
-                class="mt-2 flex flex-col gap-2 text-sm"
-              >
-                <li><a href="#">Overview</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
-              </ul>
-            </li>
-          </ul>
-        </nav>
+        <template x-if="open">
+          <div class="mt-3">
+            <ul>
+              <li x-data="{open: false}" class="relative p-2 text-white">
+                <a @click="open = !open" class="block w-full font-bold" href="#"
+                  >Product</a
+                >
+                <div class="absolute top-4 right-4 bottom-0 flex h-full">
+                  <img
+                    class="h-2 w-3"
+                    src="../images/icon-arrow-light.svg"
+                    alt=""
+                  />
+                </div>
+                <template x-if="open" @click.outside="open">
+                  <ul class="mt-2 flex flex-col gap-2 text-sm">
+                    <li><a href="#">Overview</a></li>
+                  </ul>
+                </template>
+              </li>
+              <li x-data="{open: false}" class="relative p-2 text-white">
+                <a @click="open = !open" class="block w-full font-bold" href="#"
+                  >Company</a
+                >
+                <div class="absolute top-4 right-4 bottom-0 flex h-full">
+                  <img
+                    class="h-2 w-3"
+                    src="../images/icon-arrow-light.svg"
+                    alt=""
+                  />
+                </div>
+                <template x-if="open">
+                  <ul class="mt-2 flex flex-col gap-2 text-sm">
+                    <li><a href="#">About</a></li>
+                  </ul>
+                </template>
+              </li>
+              <li x-data="{open: false}" class="relative p-2 text-white">
+                <a @click="open = !open" class="block w-full font-bold" href="#"
+                  >Connect</a
+                >
+                <div class="absolute top-4 right-4 bottom-0 flex h-full">
+                  <img
+                    class="h-2 w-3"
+                    src="../images/icon-arrow-light.svg"
+                    alt=""
+                  />
+                </div>
+                <template x-if="open">
+                  <ul class="mt-2 flex flex-col gap-2 text-sm">
+                    <li><a href="#">Contact</a></li>
+                  </ul>
+                </template>
+              </li>
+            </ul>
+          </div>
+        </template>
       </div>
     </div>
     <div
@@ -180,8 +172,7 @@
     >
       <div class="mt-14">
         <h1 class="text-3xl text-white md:text-5xl">
-          A modern <br class="md:hidden" />
-          publishing platform
+          A modern publishing platform
         </h1>
         <p class="mt-3 text-white md:mt-5">
           Grow your audience and build your online brand
@@ -309,28 +300,28 @@
       <div class="mt-10">
         <h3 class="text-xl font-bold">Product</h3>
         <ul class="mt-4 flex flex-col gap-2 text-gray-300">
-          <li>Overview</li>
-          <li>Pricing</li>
-          <li>Marketplace</li>
-          <li>Features</li>
-          <li>Integrations</li>
+          <li><a href="#">Overview</a></li>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">Marketplace</a></li>
+          <li><a href="#">Features</a></li>
+          <li><a href="#">Integrations</a></li>
         </ul>
       </div>
       <div class="mt-10">
         <h3 class="text-xl font-bold">Company</h3>
         <ul class="mt-4 flex flex-col gap-2 text-gray-300">
-          <li>About</li>
-          <li>Team</li>
-          <li>Blog</li>
-          <li>Careers</li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Team</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Careers</a></li>
         </ul>
       </div>
       <div class="mt-10 mb-16">
         <h3 class="text-xl font-bold">Connect</h3>
         <ul class="mt-4 flex flex-col gap-2 text-gray-300">
-          <li>Contact</li>
-          <li>Newsletter</li>
-          <li>LinkedIn</li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Newsletter</a></li>
+          <li><a href="#">LinkedIn</a></li>
         </ul>
       </div>
     </div>
