@@ -8,6 +8,28 @@
       Interactive pricing component &bullet; Frontend Mentor Challenges &bullet;
       Optimum BH Internship
     </title>
+    <style>
+      #price-slider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        border-radius: 50%;
+        width: 45px;
+        height: 45px;
+        background: #11d8c5;
+        background-image: url('../images/icon-slider.svg');
+        filter: drop-shadow(3px 20px 24px #11d8c5);
+        background-repeat: no-repeat;
+        background-position: center;
+        cursor: pointer;
+      }
+
+      #price-slider::-moz-range-thumb {
+        width: 25px;
+        height: 25px;
+        background: #11d8c5;
+        cursor: pointer;
+      }
+    </style>
     <link
       rel="apple-touch-icon"
       sizes="180x180"
@@ -28,35 +50,114 @@
     <link rel="manifest" href="../site.webmanifest" />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="m-0">
+  <body class="m-0 bg-gray-100">
     <div
-      class="flex h-[100vh] w-full flex-col place-content-center text-center"
+      class="flex h-[100vh] w-full flex-col place-content-center items-center justify-center text-center"
     >
-      <div>
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://www.frontendmentor.io/challenges/interactive-pricing-component-t0m8PIyY8"
-          target="_blank"
-          >Frontend Mentor challenge</a
-        >
-      </div>
-      <div>
-        for
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA"
-          target="_blank"
-          >Optimum BH</a
-        >
-        Internship.
-      </div>
+      <header class="mt-96 flex flex-col gap-2">
+        <h1 class="text-2xl text-gray-800">Simple, traffic-based pricing</h1>
+        <p class="text-gray-500">Sign-up for our 30-day trial.</p>
+        <p class="mt-[-8px] text-gray-500">No credit card required.</p>
+      </header>
+      <main class="m-6 mt-20 rounded-xl bg-white p-6 shadow-2xl">
+        <section>
+          <h2 class="my-10 mt-14 text-sm font-bold text-gray-500">
+            100K PAGEVIEWS
+          </h2>
+          <div class="relative">
+            <input
+              class="range-lg h-3 w-4/5 cursor-pointer appearance-none rounded-full bg-[#A4F2EA] px-8"
+              type="range"
+              name="price"
+              min="1"
+              max="5"
+              id="price-slider"
+            />
+          </div>
+          <div class="mt-16 flex items-center justify-center gap-2">
+            <h3 class="text-4xl font-bold text-gray-800">$16.00</h3>
+            <p class="text-gray-500">/month</p>
+          </div>
+          <div
+            class="mt-10 flex items-center justify-center gap-4 text-sm text-gray-500"
+          >
+            <p>Monthly Billing</p>
+            <label class="relative inline-flex cursor-pointer items-center">
+              <input type="checkbox" value="" class="peer sr-only" />
+              <div
+                class="peer h-6 w-11 rounded-full bg-gray-200 after:absolute after:top-[2px] after:left-[2px] after:h-5 after:w-5 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-blue-600 peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:border-gray-600 dark:bg-gray-700 dark:peer-focus:ring-blue-800"
+              ></div>
+            </label>
 
-      <div class="mt-3">
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA/frontend_mentor_challenges/tree/interactive_pricing_component/challenges/interactive_pricing_component"
-          >Source code</a
-        >
+            <p>
+              Yearly Billing
+              <span
+                class="rounded-full bg-orange-100 p-[3px] px-2 font-bold text-orange-500"
+                >-25%</span
+              >
+            </p>
+          </div>
+          <hr class="my-12" />
+          <div class="flex flex-col gap-2">
+            <div class="flex items-center justify-center gap-4">
+              <img
+                class="block w-[12px]"
+                src="../images/icon-check.svg"
+                alt=""
+              />
+              <p>Unlimited websites</p>
+            </div>
+            <div class="flex items-center justify-center gap-4">
+              <img
+                class="block w-[12px]"
+                src="../images/icon-check.svg"
+                alt=""
+              />
+              <p>100% data ownership</p>
+            </div>
+            <div class="flex items-center justify-center gap-4">
+              <img
+                class="block w-[12px]"
+                src="../images/icon-check.svg"
+                alt=""
+              />
+              <p>Email report</p>
+            </div>
+          </div>
+          <button
+            class="mt-8 mb-8 rounded-full bg-slate-700 py-3 px-8 font-bold text-slate-300"
+          >
+            Start my trial
+          </button>
+        </section>
+      </main>
+      <div id="credits">
+        <div>
+          <a
+            class="text-optimum-blue hover:text-optimum-darkblue"
+            href="https://www.frontendmentor.io/challenges/interactive-pricing-component-t0m8PIyY8"
+            target="_blank"
+            >Frontend Mentor challenge</a
+          >
+        </div>
+        <div>
+          for
+          <a
+            class="text-optimum-blue hover:text-optimum-darkblue"
+            href="https://github.com/optimumBA"
+            target="_blank"
+            >Optimum BH</a
+          >
+          Internship.
+        </div>
+
+        <div class="mt-3">
+          <a
+            class="text-optimum-blue hover:text-optimum-darkblue"
+            href="https://github.com/amir-repository/frontend_mentor_challenges/tree/interactive_pricing_component/challenges/interactive_pricing_component"
+            >Source code</a
+          >
+        </div>
       </div>
     </div>
   </body>
