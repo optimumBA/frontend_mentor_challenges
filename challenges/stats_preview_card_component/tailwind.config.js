@@ -3,8 +3,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'inter': ['Inter'],
-        'lexend-dica': ['Lexend Deca']
+        inter: ['Inter'],
+        'lexend-dica': ['Lexend Deca'],
       },
       colors: {
         'optimum-blue': '#009efc',
@@ -12,7 +12,7 @@ module.exports = {
 
         'very-dark-blue': '#090B1A',
         'dark-desaturated-blue': '#1B1938',
-        'soft-violet': '#AA5CDB'
+        'soft-violet': '#AA5CDB',
       },
     },
   },
