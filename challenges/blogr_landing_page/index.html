@@ -40,6 +40,13 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body class="m-0">
+    <!-- 
+    <div x-data>
+      <button @click="$refs.word.remove()">Remove</button>
+      <br />
+      <h1 x-ref="word">Hey</h1>
+    </div>
+    -->
     <div
       x-data="{open: false, product: false, company: false, connect: false}"
       x-init="$watch('open', value => console.log(value))"
@@ -68,12 +75,27 @@
             />
           </div>
           <!-- desktop nav -->
-          <template x-if="true">
+
+          <template
+            x-data="{desktop: open === false && window.innerWidth >= 768}"
+            x-if="true"
+            x-effect="console.log('desktop nav visible: ', desktop)"
+          >
             <div
+              id="navContainer"
               x-data="{product: false, company: false, connect: false}"
               class="hidden w-full md:block"
             >
-              <nav class="flex items-center justify-between text-white">
+              <div
+                x-on:resize.window="window.innerWidth <= 375 && $refs.desktopNav ? $refs.desktopNav.remove() : ''"
+              ></div>
+              <div
+                x-on:resize.window="window.innerWidth > 375  ? printNav : ''"
+              ></div>
+              <nav
+                x-ref="desktopNav"
+                class="flex items-center justify-between text-white"
+              >
                 <ul class="ml-24 flex gap-16">
                   <li class="relative">
                     <a
@@ -212,6 +234,7 @@
           </div>
         </template>
       </div>
+      <!-- end header -->
     </div>
     <div
       class="rounded-bl-[84px] bg-gradient-to-r from-[#FF8C6F] to-[#FF555E] p-2 text-center"
@@ -399,5 +422,83 @@
         >
       </div>
     </div>
+    <script>
+      function printNav() {
+        const navCon = document.getElementById('navContainer')
+        navCon.innerHTML = `
+          <nav
+            x-ref="desktopNav"
+            class="flex items-center justify-between text-white"
+          >
+            <ul class="ml-24 flex gap-16">
+              <li class="relative">
+                <a
+                  @click="product = !product; company = false; connect = false"
+                  class="font-bold"
+                  href="#"
+                  >Product</a
+                >
+                <img
+                  class="absolute top-2 right-[-16px]"
+                  src="../images/icon-arrow-light.svg"
+                  alt=""
+                />
+                <template x-if="product">
+                  <ul class="absolute top-8 left-0">
+                    <li><a class="block" href="#">Overview</a></li>
+                  </ul>
+                </template>
+              </li>
+              <li class="relative">
+                <a
+                  @click="product = false; company = !company; connect = false"
+                  class="font-bold"
+                  href="#"
+                  >Company</a
+                >
+                <img
+                  class="absolute top-2 right-[-16px]"
+                  src="../images/icon-arrow-light.svg"
+                  alt=""
+                />
+                <template x-if="company">
+                  <ul class="absolute top-8 left-0">
+                    <li><a class="block" href="#">About</a></li>
+                  </ul>
+                </template>
+              </li>
+              <li class="relative">
+                <a
+                  @click="product = false; company = false; connect = !connect"
+                  class="font-bold"
+                  href="#"
+                  >Connect</a
+                >
+                <img
+                  class="absolute top-2 right-[-16px]"
+                  src="../images/icon-arrow-light.svg"
+                  alt=""
+                />
+                <template x-if="connect">
+                  <ul class="absolute top-8 left-0">
+                    <li><a class="block" href="#">Contact</a></li>
+                  </ul>
+                </template>
+              </li>
+            </ul>
+            <div>
+              <button class="rounded-full px-4 py-3 font-bold text-white">
+                Login
+              </button>
+              <button
+                class="rounded-full bg-white px-4 py-3 font-bold text-[#FF555E]"
+              >
+                Sign Up
+              </button>
+            </div>
+          </nav>
+        `
+      }
+    </script>
   </body>
 </html>
