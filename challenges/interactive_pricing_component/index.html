@@ -79,19 +79,7 @@
           x-effect="pageviews = data === '1' ? '10K' : data === '2' ? '50K' : data === '3' ? '100K' : data === '4' ? '500K' : '1M'"
           class="m-6 mt-20 rounded-xl bg-white p-6 shadow-2xl"
         >
-          <!-- x effect price -->
-          <div
-            x-effect="price = data === '1' ? '$8.00' : data === '2' ? '$12.00' : data === '3' ? '$16.00' : data === '4' ? '$24.00' : '$36.00'"
-          ></div>
-          <!-- x effect price -->
-
-          <!-- x effect yearly price -->
-          <div
-            x-effect="yearlyPrice = data === '1' ? '$6.00' : data === '2' ? '$9.00' : data === '3' ? '$12.00' : data === '4' ? '$18.00' : '$27.00'"
-          ></div>
-          <!-- x effect price -->
-
-          <section x-effect="console.log(yearly, yearlyPrice)">
+          <section>
             <h2
               class="my-10 mt-14 text-sm font-bold text-gray-500"
               x-text="pageviews + ' PAGEVIEWS'"
@@ -104,6 +92,26 @@
                 min="1"
                 max="5"
                 id="price-slider"
+                @change="price =
+                data === '1'
+                  ? '$8.00'
+                  : data === '2'
+                  ? '$12.00'
+                  : data === '3'
+                  ? '$16.00'
+                  : data === '4'
+                  ? '$24.00'
+                  : '$36.00'; 
+                yearlyPrice =
+                data === '1'
+                  ? '$6.00'
+                  : data === '2'
+                  ? '$9.00'
+                  : data === '3'
+                  ? '$12.00'
+                  : data === '4'
+                  ? '$18.00'
+                  : '$27.00'"
                 x-model="data"
               />
             </div>
