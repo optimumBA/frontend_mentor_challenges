@@ -40,16 +40,8 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body class="m-0">
-    <!-- 
-    <div x-data>
-      <button @click="$refs.word.remove()">Remove</button>
-      <br />
-      <h1 x-ref="word">Hey</h1>
-    </div>
-    -->
     <div
       x-data="{open: false, product: false, company: false, connect: false}"
-      x-init="$watch('open', value => console.log(value))"
       id="header"
       class="sticky top-0 left-0 z-50 w-full bg-gradient-to-r from-[#FF8C6F] to-[#FF555E] p-6 text-center"
     >
@@ -76,11 +68,7 @@
           </div>
           <!-- desktop nav -->
 
-          <template
-            x-data="{desktop: open === false && window.innerWidth >= 768}"
-            x-if="true"
-            x-effect="console.log('desktop nav visible: ', desktop)"
-          >
+          <div x-data="{desktop: open === false && window.innerWidth >= 768}">
             <div
               id="navContainer"
               x-data="{product: false, company: false, connect: false}"
@@ -164,7 +152,7 @@
                 </div>
               </nav>
             </div>
-          </template>
+          </div>
           <!-- desktop nav -->
         </div>
         <template x-if="open">
