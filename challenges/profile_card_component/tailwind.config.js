@@ -8,6 +8,8 @@ module.exports = {
       colors: {
         'optimum-blue': '#009efc',
         'optimum-darkblue': '#0389e1',
+        'very-dark-saturated-blue': 'hsl(229, 23%, 23%)',
+        'dark-grayish-blue': 'hsl(227, 10%, 46%)',
       },
     },
   },
