@@ -29,9 +29,16 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
   </head>
-  <body class="m-0">
-    <div class="h-screen flex justify-center items-center">
-      <div class="font-kumbh-sans max-w-sm rounded-lg drop-shadow-md bg-white">
+  <body class="m-0 bg-dark-cyan max-h-screen">
+    <div class="h-screen flex justify-center items-center flex-col overflow-hidden relative">
+      <div class="absolute w-10/12 -top-36 -left-1/4 lg:w-1/2 lg:-top-96 lg:left-0">
+        <img src="../images/bg-pattern-top.svg" alt="">
+      </div>
+
+      <div class="absolute w-10/12 bottom-0 -right-1/4 lg:w-1/2 lg:-bottom-96 lg:-right-24">
+        <img src="../images/bg-pattern-bottom.svg" alt="">
+      </div>
+      <div class="z-50 font-kumbh-sans max-w-md rounded-lg drop-shadow-md bg-white">
         <div class="w-full border-b border-gray-300">
           <img class="rounded-t-lg" src="../images/bg-pattern-card.svg" alt="">
           <div class="-mt-12 flex justify-center items-center">
