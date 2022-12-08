@@ -11,6 +11,9 @@ module.exports = {
         'desaturated-blue': 'hsl(224, 23%, 55%)',
         'very-pale-blue': 'hsl(225, 100%, 98%)'
       },
+      fontFamily: {
+        'red-hat-display': ['Red Hat Display']
+      }
     },
   },
   plugins: [],
