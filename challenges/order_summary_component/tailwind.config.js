@@ -9,11 +9,11 @@ module.exports = {
         'bright-blue': 'hsl(245, 75%, 52%)',
         'dark-blue': 'hsl(223, 47%, 23%)',
         'desaturated-blue': 'hsl(224, 23%, 55%)',
-        'very-pale-blue': 'hsl(225, 100%, 98%)'
+        'very-pale-blue': 'hsl(225, 100%, 98%)',
       },
       fontFamily: {
-        'red-hat-display': ['Red Hat Display']
-      }
+        'red-hat-display': ['Red Hat Display'],
+      },
     },
   },
   plugins: [],

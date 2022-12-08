@@ -27,36 +27,64 @@
     />
     <link rel="manifest" href="../site.webmanifest" />
     <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <div class="p-6 sm:p-0 font-red-hat-display bg-pale-blue h-screen flex items-center justify-center bg-repeat-x bg-[url('../images/pattern-background-mobile.svg')] md:bg-[url('../images/pattern-background-desktop.svg')]">
-
-      <div class="max-w-md drop-shadow-2xl bg-white rounded-xl">
-        <img class="rounded-t-xl" src="../images/illustration-hero.svg" alt="">
-        <div class="p-6 sm:p-8 flex justify-center flex-col">
+    <div
+      class="font-red-hat-display bg-pale-blue flex h-screen items-center justify-center bg-[url('../images/pattern-background-mobile.svg')] bg-repeat-x p-6 sm:p-0 md:bg-[url('../images/pattern-background-desktop.svg')]"
+    >
+      <div class="max-w-md rounded-xl bg-white drop-shadow-2xl">
+        <img
+          class="rounded-t-xl"
+          src="../images/illustration-hero.svg"
+          alt=""
+        />
+        <div class="flex flex-col justify-center p-6 sm:p-8">
           <div class="text-center sm:p-4">
-            <h2 class="capitalize text-dark-blue font-extrabold text-2xl">Order Summary</h2>
-            <p class="mt-4 sm:mt:6 text-desaturated-blue">You can now listen to millions of songs, audiobooks, and podcasts on any device anywhere you like!</p>
+            <h2 class="text-dark-blue text-2xl font-extrabold capitalize">
+              Order Summary
+            </h2>
+            <p class="sm:mt:6 text-desaturated-blue mt-4">
+              You can now listen to millions of songs, audiobooks, and podcasts
+              on any device anywhere you like!
+            </p>
           </div>
 
-          <div class="my-6 rounded-lg flex justify-between items-center p-5 bg-very-pale-blue">
+          <div
+            class="bg-very-pale-blue my-6 flex items-center justify-between rounded-lg p-5"
+          >
             <div class="flex">
-              <img class="block" src="../images/icon-music.svg" alt="">
+              <img class="block" src="../images/icon-music.svg" alt="" />
               <div class="pl-3">
                 <p class="text-dark-blue font-semibold">Annual Plan</p>
                 <p class="text-desaturated-blue">$59.99/year</p>
               </div>
             </div>
             <div>
-              <a class="active:no-underline active:opacity-60 underline text-bright-blue text-sm font-semibold" href="">Change</a>
+              <a
+                class="text-bright-blue text-sm font-semibold underline active:no-underline active:opacity-60"
+                href=""
+                >Change</a
+              >
             </div>
           </div>
 
-          <button class="active:no-underline active:opacity-60 mt-3 shadow-lg shadow-bright-blue/40 w-full p-4 text-sm rounded-lg font-bold bg-bright-blue text-white">Proceed to Payment</button>
+          <button
+            class="shadow-bright-blue/40 bg-bright-blue mt-3 w-full rounded-lg p-4 text-sm font-bold text-white shadow-lg active:no-underline active:opacity-60"
+          >
+            Proceed to Payment
+          </button>
 
-          <button class="active:text-dark-blue mt-5 sm:mt-7 sm:mb-4 text-desaturated-blue font-semibold text-sm">Cancel Order</button>
-          
+          <button
+            class="active:text-dark-blue text-desaturated-blue mt-5 text-sm font-semibold sm:mt-7 sm:mb-4"
+          >
+            Cancel Order
+          </button>
         </div>
       </div>
     </div>
