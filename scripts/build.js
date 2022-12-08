@@ -1,16 +1,8 @@
 const { readdirSync } = require('fs')
-const { resolve } = require('path')
-
-const isDirEmpty = (directory, subdirectory) => {
-  const path = resolve(directory, subdirectory)
-  return readdirSync(path).length === 0
-}
 
 const getDirectories = (source) =>
   readdirSync(source, { withFileTypes: true })
-    .filter(
-      (dirent) => dirent.isDirectory() && !isDirEmpty(source, dirent.name)
-    )
+    .filter((dirent) => dirent.isDirectory())
     .map((dirent) => dirent.name)
 
 const foreachChallenge = (command) => {
