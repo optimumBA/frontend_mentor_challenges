@@ -3,7 +3,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'kumbh-sans': ['Kumbh Sans']
+        'kumbh-sans': ['Kumbh Sans'],
       },
       colors: {
         'optimum-blue': '#009efc',
