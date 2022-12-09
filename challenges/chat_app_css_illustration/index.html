@@ -28,7 +28,137 @@
     <link rel="manifest" href="../site.webmanifest" />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="m-0">
+  <body class="m-0 bg-blue-100">
+    <div class="p-2">
+      <!-- Chat app illustration -->
+      <div class="max-w-sm drop-shadow-2xl mx-auto bg-white p-2.5 rounded-3xl">
+        <!-- Phone inner -->
+        <div class="flex flex-col w-full rounded-3xl bg-gray-200 relative"> 
+          <div class="absolute w-full top-0">
+            <div class="bg-gray-50 w-7/12 rounded-b-2xl mx-auto -mt-1 py-3"></div>
+          </div>
+          <!-- Chat header -->
+          <div class="flex justify-between items-center rounded-t-2xl rounded-b-md pb-4 px-4 pt-8 bg-gradient-to-r from-indigo-500 to-blue-500">
+            <div class="inline-flex items-center gap-1">
+              <div>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="font-bold w-6 h-6 text-white">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                </svg>              
+              </div>
+
+              <div>
+                <img class="h-10 w-10 rounded-full border" src="images/avatar.jpg" alt="">
+              </div>
+
+              <div>
+                <h3 class="text-lg font-bold">Samuel Green</h3>
+                <p>Available to walk</p>
+              </div>
+            </div>
+
+            <div>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 12.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 18.75a.75.75 0 110-1.5.75.75 0 010 1.5z" />
+              </svg>              
+            </div>
+          </div>
+
+          <!-- Rest of the chat  -->
+          <div class="p-4">
+            <!-- Incoming messages top -->
+            <div class="flex justify-start">
+              <div class="w-7/12">
+                <div class="bg-indigo-50 p-2.5 rounded-t-2xl rounded-bl-sm rounded-br-2xl">
+                  <p class="text-xs">That sounds great. I'd be very happy to discuss more</p>  
+                </div>
+
+                <div class="bg-indigo-50 my-2 p-2.5 rounded-t-2xl rounded-bl-sm rounded-br-2xl">
+                  <p class="text-xs">Could you sand over some pictures of your dog, please?</p>  
+                </div>
+                
+              </div>
+            </div>
+
+            <!-- Outgoing messages top -->
+            <div class="flex justify-end">
+              <div class="w-7/12">
+                <div class="flex w-full gap-2 justify-end max-w-fit my-2">
+                  <img class="w-14 h-14 rounded-xl" src="images/dog-image-1.jpg" alt="">
+                  <img class="w-14 h-14 rounded-xl" src="images/dog-image-2.jpg" alt="">
+                  <img class="w-14 h-14 rounded-xl" src="images/dog-image-3.jpg" alt="">
+                </div>
+
+                <div class="bg-white p-2.5 rounded-t-2xl rounded-bl-2xl rounded-br-sm">
+                  <p class="text-xs">Here are a few pictures. She's a happy girl!</p>
+                </div>
+                <div class="flex justify-end">
+                  <div class="bg-white max-w-fit my-2 p-2.5 rounded-t-2xl rounded-bl-2xl rounded-br-sm">
+                    <p class="text-xs">Can you make it?</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Incoming messages -->
+            <div class="flex flex-col justify-start my-2.5">
+              <div class="w-7/12 max-w-fit">
+                <div class="bg-indigo-50 p-2.5 rounded-t-2xl rounded-bl-sm rounded-br-2xl">
+                  <p class="text-xs">She looks so happy The time we discussed works. How long shall I take her out for?</p>  
+                </div>
+              </div>
+
+              <!-- CTAs -->
+              <div class="w-9/12">
+
+                <!-- CTA 1 -->
+                <div class="flex justify-between p-2 my-3 rounded-t-2xl rounded-bl-sm rounded-br-2xl bg-gradient-to-r from-indigo-500 to-blue-500">
+                  <div class="flex items-center gap-3">
+                    <div class="h-5 w-5 rounded-full border-2 border-gray-700"></div>
+                    <p class="text-xs">30 minute walk</p>
+                  </div>
+                  <div>
+                    <h4 class="text-lg px-4 font-bold">$29</h4>
+                  </div>
+                </div>
+
+                <!-- CTA 2 -->
+                <div class="flex justify-between p-2 my-3 rounded-t-2xl rounded-bl-sm rounded-br-2xl bg-gradient-to-r from-indigo-500 to-blue-500">
+                  <div class="flex items-center gap-3">
+                    <div class="h-5 w-5 rounded-full border-2 border-gray-700"></div>
+                    <p class="text-xs">1 hour walk</p>
+                  </div>
+                  <div>
+                    <h4 class="text-lg px-4 font-bold">$49</h4>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Chat Box -->
+            <div class="flex items-center justify-between w-full mt-3 pt-3 pb-2 pl-5 pr-2 rounded-3xl bg-white">
+              <p class="block text-xs">Type a message...</p>
+              <div class="rounded-full bg-black p-1">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="text-white w-6 h-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                </svg>                  
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+
+      <div class="max-w-md my-10 mx-auto">
+        <h1 class="text-center text-4xl">Simple Booking</h1>
+        <p class="text-center my-5 px-5">Stay in touch with our dog walkers through the chat interface. This makes it easy to discuss arrangements and make bookings. Once the walk has been
+          completed you can rate your walker and
+          book again all through the chat.</p>
+      </div>
+    </div>
+
+
+
     <div
       class="flex h-[100vh] w-full flex-col place-content-center text-center"
     >
