@@ -29,34 +29,84 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body class="m-0">
-    <div
-      class="flex h-[100vh] w-full flex-col place-content-center text-center"
-    >
-      <div>
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://www.frontendmentor.io/challenges/order-summary-component-QlPmajDUj"
-          target="_blank"
-          >Frontend Mentor challenge</a
-        >
-      </div>
-      <div>
-        for
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA"
-          target="_blank"
-          >Optimum BH</a
-        >
-        Internship.
-      </div>
+    <div class="background">
+      <img
+        class="fixed bottom-[-96px] left-0 h-3/4 w-full rotate-180 sm:hidden"
+        src="images/pattern-background-mobile.svg"
+        alt=""
+      />
 
-      <div class="mt-3">
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA/frontend_mentor_challenges/tree/order_summary_component/challenges/order_summary_component"
-          >Source code</a
-        >
+      <img
+        class="bottom-0 left-0 hidden h-3/4 w-full rotate-180 sm:fixed sm:block"
+        src="images/pattern-background-desktop.svg"
+        alt=""
+      />
+    </div>
+    <div
+      class="flex w-full flex-col place-content-center items-center justify-center bg-blue-200 text-center"
+    >
+      <main class="relative m-6 max-w-[375px] rounded-3xl bg-white">
+        <img
+          class="block w-full rounded-t-3xl"
+          src="images/illustration-hero.svg"
+          alt=""
+        />
+        <div class="p-8">
+          <h2 class="mt-6 text-2xl font-bold text-gray-800">Order Summary</h2>
+          <p class="mt-4 text-sm leading-5 text-gray-500">
+            You can now listen to millions of songs, audiobooks, and podcasts on
+            any device anywhere you like!
+          </p>
+          <section
+            class="mt-8 flex items-center justify-between rounded-2xl bg-slate-50 p-4"
+          >
+            <img class="block" src="images/icon-music.svg" alt="" />
+            <div>
+              <h3 class="text-sm font-bold text-gray-800">Annual Plan</h3>
+              <p class="text-sm text-gray-500">$59.99/year</p>
+            </div>
+            <a class="ml-3 text-sm font-bold text-blue-700 underline" href="#"
+              >Change</a
+            >
+          </section>
+          <section class="mt-8 mb-3">
+            <button
+              class="block w-full rounded-xl bg-indigo-700 p-4 font-bold text-white"
+            >
+              Proceed to Payment
+            </button>
+            <button class="mt-5 block w-full font-bold text-gray-500">
+              Cancel Order
+            </button>
+          </section>
+        </div>
+      </main>
+      <div class="relative mb-6">
+        <div>
+          <a
+            class="text-optimum-blue hover:text-optimum-darkblue"
+            href="https://www.frontendmentor.io/challenges/order-summary-component-QlPmajDUj"
+            target="_blank"
+            >Frontend Mentor challenge</a
+          >
+        </div>
+        <div>
+          for
+          <a
+            class="text-optimum-blue hover:text-optimum-darkblue"
+            href="https://github.com/optimumBA"
+            target="_blank"
+            >Optimum BH</a
+          >
+          Internship.
+        </div>
+        <div class="mt-3">
+          <a
+            class="text-optimum-blue hover:text-optimum-darkblue"
+            href="https://github.com/amir-repository/frontend_mentor_challenges/tree/order_summary_component/challenges/order_summary_component"
+            >Source code</a
+          >
+        </div>
       </div>
     </div>
   </body>
