@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="text-[16px]">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>
       Blogr landing page &bullet; Frontend Mentor Challenges &bullet; Optimum BH
       Internship
@@ -27,12 +28,352 @@
     />
     <link rel="manifest" href="../site.webmanifest" />
     <link rel="stylesheet" href="style.css" />
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,300;0,500;0,600;1,300;1,500;1,600&family=Ubuntu:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
   </head>
+  <style>
+    [x-cloak] {
+      display: none !important;
+    }
+  </style>
   <body class="m-0">
-    <div
-      class="flex h-[100vh] w-full flex-col place-content-center text-center"
+    <header
+      class="z-1 mobile:w-[100%] z-1 rounded-bl-[6rem] bg-gradient-to-r from-[#ff836d] to-[#ff4d59]"
+      x-data="{isOpen:false}"
     >
-      <div>
+      <div
+        class="desktop:h-[550px] relative z-[1] h-[100vh] w-[100%] overflow-hidden rounded-bl-[6rem] bg-opacity-50 bg-center bg-no-repeat p-[4rem_10rem] backdrop-filter lg:h-auto"
+      >
+        <div
+          class="mobile-img desktop:hidden mobile:visible absolute z-auto"
+        ></div>
+        <div
+          class="bg-massive mobile:hidden desktop:bg-[url(images/bg-pattern-intro-desktop.svg)] mobile:bg-[url(images/bg-pattern-intro-mobile.svg)] desktop:top-[-117px] desktop:left-[-203px] desktop:absolute z-0 h-[100vh] w-[196%] bg-center bg-no-repeat"
+        ></div>
+        <div
+          class="mobile:flex mobile:relative mobile:flex-row-reverse mobile:justify-between z-10"
+          id="mobile-menu-toggle"
+          @click="isOpen=!isOpen"
+        >
+          <img
+            src="../images/icon-hamburger.svg"
+            class="mobile:ml-[13rem] mobile:mr-[-7rem] mobile:flex ml-[2rem] hidden"
+            alt="hamburger"
+            id=""
+            x-show="isOpen==false"
+          />
+          <img
+            src="../images/icon-close.svg"
+            alt="icon-close not found"
+            class="mobile:h-[25px] mobile:ml-[13rem] mobile:mr-[-7rem] mobile:flex ml-[2rem] hidden"
+            srcset=""
+            x-show="isOpen==true"
+            x-cloak
+          />
+          <img src="../images/logo.svg" class="inline h-max" alt="Blogr logo" />
+        </div>
+        <div
+          class="desktop:relative desktop:top-[-2.5rem] desktop:left-[6rem] mobile:absolute mobile:text-center mobile:p-[2rem_1.5rem] mobile:z-[20] mobile:left-[1rem] mobile:bg-white mobile:flex-col mobile:w-[100%] flex flex-1"
+          :class="isOpen==false? 'mobile:top-[-12rem] mobile:duration-[75ms]' : 'mobile:top-[7rem] mobile:duration-[75ms]' "
+        >
+          <template
+            x-if="isOpen"
+            x-init="isOpen = window.innerWidth > 768"
+            @resize.window="isOpen = window.innerWidth > 768"
+          >
+            <div
+              x-data="{ items: [
+        { id: 1, label: 'Product',open:false },
+        { id: 2, label: 'Company',open:false },
+        { id: 3, label: 'Connect',open:false },
+    ], check}"
+              class="mobile:contents mobile:text-very-dark-black-blue ml-[3.5rem] mt-[0.5rem] flex flex-1"
+            >
+              <template x-for="item in items" :key="item.id">
+                <div class="mobile:p-[1rem]">
+                  <a
+                    x-text="item.label"
+                    class="mobile:text-[#374550] relative mr-[0.2rem] list-none"
+                    @click="check(item)"
+                    :class="item.open?'desktop:underline mobile:no-underline':'no-underline' "
+                  ></a>
+                  <img
+                    class="mobile:hidden mr-[1.5rem] inline-flex"
+                    src="../images/icon-arrow-light.svg"
+                    alt="dropdown arrow"
+                    :class="item.open?'rotate-180':'rotate-0'"
+                  />
+                  <img
+                    x-ref="companyArrow"
+                    class="desktop:hidden inline-block"
+                    src="../images/icon-arrow-dark.svg"
+                    alt="arrow"
+                    :class="item.open?'rotate-180':'rotate-0'"
+                  />
+                  <template x-if="item.label=='Product' & item.open">
+                    <div class="box" x-ref="product">
+                      <a href="#">Overview</a>
+                      <a href="#">Pricing</a>
+                      <a href="#">Marketplace</a>
+                      <a href="#">Features</a>
+                      <a href="#">Integrations</a>
+                    </div>
+                  </template>
+
+                  <template x-if="item.label=='Company' & item.open">
+                    <div class="box" x-ref="company">
+                      <a href="#">About</a>
+                      <a href="#">Team</a>
+                      <a href="#">Blog</a>
+                      <a href="#">Careers</a>
+                    </div>
+                  </template>
+                  <template x-if="item.label=='Connect' & item.open">
+                    <div class="box" x-ref="connect">
+                      <a href="#">Contact</a>
+                      <a href="#">Newsletter</a>
+                      <a href="#">LinkedIn</a>
+                    </div>
+                  </template>
+                </div>
+              </template>
+            </div>
+          </template>
+
+          <div class="mobile:flex mobile:flex-col mobile:border-t-2">
+            <a
+              href="#"
+              class="mobile:ml-[-1rem] mobile:text-[#374550] mobile:mt-[1.5rem] ml-[2rem] text-[0.9rem] font-bold no-underline"
+              >Login</a
+            >
+            <a
+              href="#"
+              class="from-light-red text-light-red mobile:bg-[#ff4d5b] mobile:w-[46%] mobile:ml-[71px] mobile:mt-[0.5rem] mobile:text-white mobile:font-bold hover:bg-light-red/70 ml-[2rem] rounded-3xl bg-white p-[0.8rem_2.5rem] text-[0.9rem] font-bold no-underline duration-500 hover:text-white"
+              >Sign Up</a
+            >
+          </div>
+        </div>
+        <div
+          class="mobile:px-[0.5rem] absolute top-[41%] left-[3%] w-[100%] justify-center text-center"
+        >
+          <h1
+            class="font-Overpass mobile:w-[300px] mobile:mx-auto mobile:text-[2rem] mobile:px-1 desktop:text-[3.5rem] mb-[1rem] font-[600] text-white"
+          >
+            A modern publishing platform
+          </h1>
+          <p
+            class="font-Ubuntu mobile:w-[260px] mobile:mx-auto mobile:text-white mobile:text-center mobile:text-[1rem] mb-[3rem] text-[1.2rem] font-normal leading-[1.75] text-white"
+          >
+            Grow your audience and build your online brand
+          </p>
+          <div class="flex justify-center">
+            <a
+              href="#"
+              class="font-[0.9rem] font-Ubuntu text-light-red m-[0_0.5rem] cursor-pointer rounded-[3rem] bg-white p-[0.7rem_1.5rem] font-bold duration-500 hover:bg-[#ff6864]/80 hover:bg-opacity-70 hover:text-white/90"
+              >Start for free</a
+            >
+            <a
+              href="#"
+              class="font-[0.9rem] font-Ubuntu m-[0_0.5rem] cursor-pointer rounded-[3rem] border-[1px] border-white/75 p-[0.7rem_1.5rem] font-bold hover:bg-white hover:text-[#ff6864] hover:opacity-80"
+              >Learn More</a
+            >
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div
+      class="relative z-[2] min-h-[100vh] w-[100%] bg-white p-[10rem_0_3rem_10rem] text-[#1f3f5b]"
+    >
+      <h2
+        class="desktop:relative desktop:left-[-57px] font-Overpass mobile:mt-[-41%] mobile:ml-[-10rem] mobile:mb-[6rem] mobile:text-[25px] mobile:my-auto desktop:font-[600] desktop:mb-0 text-very-dark-blue text-center text-[2rem]"
+      >
+        Designed for the future
+      </h2>
+      <img
+        src="../images/illustration-editor-mobile.svg"
+        alt="editor illustration"
+        class="mobile:block m-auto ml-[-81%] mt-[-31%] hidden max-w-none"
+      />
+      <div class="relative flex w-[100%] items-center">
+        <div
+          class="desktop:basis-[50%] desktop:relative desktop:left-[-42px] mobile:mb-[10rem]"
+        >
+          <h3
+            class="text-very-dark-blue font-Overpass mobile:w-[213px] mobile:mt-[1rem] mobile:ml-[-79px] mobile:text-center desktop:font-[600] mb-[2.5rem] text-[25px]"
+          >
+            Introducing an extensible editor
+          </h3>
+          <p
+            class="font-Overpass desktop:w-[90%] mobile:w-[340px] mobile:text-center mobile:ml-[-145px] mobile:px-[1.5rem] mobile:leading-tight mb-[2rem] text-left text-[15px] font-[500] leading-7 text-[#9ea2a5]"
+          >
+            Blogr features an exceedingly intuitive interface which lets you
+            focus on one thing: creating content. The editor supports management
+            of multiple blogs and allows easy manipulation of embeds such as
+            images, videos, and Markdown. Extensibility with plugins and themes
+            provide easy ways to add functionality or change the looks of a blog
+          </p>
+          <h3
+            class="text-very-dark-blue font-Overpass mobile:w-[213px] mobile:ml-[-79px] mobile:text-center desktop:font-[600] mb-[2.5rem] text-[25px]"
+          >
+            Robust content management
+          </h3>
+          <p
+            class="font-Overpass desktop:w-[90%] mobile:text-center mobile:w-[340px] mobile:ml-[-145px] mobile:px-[1.5rem] mobile:leading-tight mb-[2rem] text-[15px] font-[500] leading-7 text-[#9ea2a5]"
+          >
+            Flexible content management enables users to easily move through
+            posts. Increase the usability of your blog by adding customized
+            categories, sections, format, or flow. With this functionality,
+            you’re in full control.
+          </p>
+        </div>
+        <div class="desktop:left-[-7px] relative basis-[50%]">
+          <img
+            src="../images/illustration-editor-desktop.svg"
+            alt="editor illustration"
+            class="mobile:hidden desktop:top-[-62px] relative w-[139%] max-w-none"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="bg-very-dark-gray-blue mobile:p-0 mobile:max-h-[700px] mobile:h-[700px] justify-space-between mobile:rounded-tl-0 mobile:rounded-bl-[6rem] desktop:rounded-bl-none desktop:rounded-tl-none relative flex max-h-[384px] w-[100%] items-center rounded-tr-[6rem] rounded-tl-[6rem] p-[8rem_10rem]"
+    >
+      <div
+        class="bg-[(images/illustration-phones.svg)] relative basis-[40%] bg-cover bg-center"
+      >
+        <img
+          src="../images/illustration-phones.svg"
+          alt="phone illustration"
+          class="desktop:h-[497px] mobile:h-[357px] mobile:top-[-32rem] mobile:left-[1rem] desktop:ml-[494px] desktop:top-[-15rem] desktop:left-[-33rem] largescreen:left-[-18rem] absolute top-[-16rem] z-[3] max-w-none"
+        />
+        <img
+          src="../images/bg-pattern-circles.svg"
+          alt="circle pattern"
+          class="circle-pattern z-1 mobile:w-[585%] desktop:ml-[124px] mobile:top-[-32rem] mobile:left-[-5.1rem] desktop:left-[-33rem] desktop:top-[-45rem] largescreen:w-[229%] absolute left-[-5rem] top-[-25rem] w-[313%] max-w-none"
+        />
+      </div>
+      <div
+        class="desktop:ml-[179px] mobile:h-[212px] mobile:w-[216px] mobile:basis-[117%] mobile:px-[1.5rem] mobile:pt-[2.5rem] basis-[50%]"
+      >
+        <h4
+          class="font-Overpass mobile:text-[1.8rem] mobile:ml-[-82px] mobile:text-center desktop:w-[134%] mb-[2rem] text-[2rem] font-normal text-white"
+        >
+          State of the Art Infrastructure
+        </h4>
+        <p
+          class="font-Overpass mobile:text-center mobile:ml-[-76px] text-[1rem] leading-[1.9rem] text-white"
+        >
+          With reliability and speed in mind, worldwide data centers provide the
+          backbone for ultra-fast connectivity. This ensures your site will load
+          instantly, no matter where your readers are, keeping your site
+          competitive.
+        </p>
+      </div>
+    </div>
+    <div
+      class="mobile:h-[840px] mobile:mb-[3rem] relative z-[2] flex w-[100%] items-center justify-between bg-white p-[15rem_10rem_15rem_0] text-[#1f3f5b]"
+    >
+      <div class="relative basis-[52%]">
+        <div class="mobile:hidden absolute">
+          <img
+            src="../images/illustration-laptop-desktop.svg"
+            alt="laptop illustration"
+            class="desktop-illustration mobile:hidden desktop:max-w-max desktop:relative desktop:h-[650px] desktop:left-[-11rem] desktop:top-[3rem] desktop:left-[-206px] largescreen:max-w-max top-[50%] left-[-16rem] w-[136%] translate-y-[-50%]"
+          />
+        </div>
+        <div class="absolute">
+          <img
+            src="../images/illustration-laptop-mobile.svg"
+            alt="laptop illustration"
+            class="mobile-illustration desktop:hidden mobile:max-w-none mobile:mt-[-80%] mobile:ml-[-12%]"
+          />
+        </div>
+      </div>
+      <div
+        class="mobile:mt-[104%] mobile:w-[90%] mobile:text-center mobile:absolute max-h-none relative mt-[90px] basis-[46%]"
+      >
+        <h5
+          class="text-very-dark-blue font-Overpass mobile:text-[25px] mobile:mt-[30px] mb-[1.5rem] text-[1.3rem] font-bold"
+        >
+          Free, open, simple
+        </h5>
+        <p
+          class="mobile:w-[268px] mobile:mx-auto mobile:px-[1.5rem] font-Overpass mb-[1.6rem] text-[15px] font-[500] text-[#9ea2a5]"
+        >
+          Blogr is a free and open source application backed by a large
+          community of helpful developers. It supports features such as code
+          syntax highlighting, RSS feeds, social media integration, third-party
+          commenting tools, and works seamlessly with Google Analytics. The
+          architecture is clean and is relatively easy to learn.
+        </p>
+        <h5
+          class="text-very-dark-blue font-Overpass mobile:text-[25px] mobile:mt-4 mb-[1.5rem] text-[1.3rem] font-bold"
+        >
+          Powerful tooling
+        </h5>
+        <p
+          class="mobile:mx-auto font-Overpass mobile:w-[260px] mobile:px-[1.5rem] text-[15px] font-[500] text-[#9ea2a5]"
+        >
+          Batteries included. We built a simple and straightforward CLI tool
+          that makes customization and deployment a breeze, but capable of
+          producing even the most complicated sites.
+        </p>
+      </div>
+    </div>
+
+    <div
+      class="mobile:items-center bg-very-dark-black-blue mobile:flex-col mobile:mt-[6rem] relative z-20 flex w-[100%] justify-between rounded-tr-[6rem] p-[4rem_10rem_6rem]"
+    >
+      <div class="basis-[20%]">
+        <a href="#"
+          ><img
+            src="../images/logo.svg"
+            class="mobile:max-w-none mobile:mb-[2.5rem]"
+            alt="Blogr logo"
+        /></a>
+      </div>
+      <div class="basis-[20%]">
+        <h6 class="font-semibold">Product</h6>
+        <ul>
+          <li><a class="leading-2" href="#">Overview</a></li>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">Marketplace</a></li>
+          <li><a href="#">Features</a></li>
+          <li><a href="#">Integrations</a></li>
+        </ul>
+      </div>
+      <div class="mobile:mt-[15px] basis-[20%]">
+        <h6 class="mb-[2rem] font-semibold">Company</h6>
+        <ul class="mobile:flex mobile:flex-col mobile:gap-4">
+          <li><a href="#">About</a></li>
+          <li><a href="#">Team</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
+      </div>
+      <div class="mobile:mt-[15px]">
+        <h6 class="font-semibold">Connect</h6>
+        <ul class="mobile:flex mobile:flex-col mobile:gap-4 font-light-gray">
+          <li><a href="#" class="">Contact</a></li>
+          <li><a href="#">Newsletter</a></li>
+          <li><a href="#">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div
+      class="mobile:w-full bg-very-dark-black-blue z-20 flex flex-col place-content-center pb-[3.5rem] text-center"
+    >
+      <div class="">
         <a
           class="text-optimum-blue hover:text-optimum-darkblue"
           href="https://www.frontendmentor.io/challenges/blogr-landing-page-EX2RLAApP"
@@ -40,7 +381,7 @@
           >Frontend Mentor challenge</a
         >
       </div>
-      <div>
+      <div class="text-white">
         for
         <a
           class="text-optimum-blue hover:text-optimum-darkblue"
@@ -54,10 +395,21 @@
       <div class="mt-3">
         <a
           class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA/frontend_mentor_challenges/tree/blogr_landing_page/challenges/blogr_landing_page"
+          href="https://github.com/amos-kibet/frontend_mentor_challenges/tree/blogr_landing_page/challenges/blogr_landing_page"
           >Source code</a
         >
       </div>
     </div>
   </body>
+  <script>
+    function check(p) {
+      this.items.forEach((q) => {
+        q.id == p.id
+          ? q.open == true
+            ? (q.open = false)
+            : (q.open = true)
+          : (q.open = false)
+      })
+    }
+  </script>
 </html>
