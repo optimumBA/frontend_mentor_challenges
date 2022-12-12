@@ -11,52 +11,102 @@
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="../images/apple-touch-icon.png"
+      href="./images/apple-touch-icon.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="../images/favicon-32x32.png"
+      href="./images/favicon-32x32.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="../images/favicon-16x16.png"
+      href="./images/favicon-16x16.png"
     />
     <link rel="manifest" href="../site.webmanifest" />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="m-0">
-    <div
-      class="flex h-[100vh] w-full flex-col place-content-center text-center"
-    >
-      <div>
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://www.frontendmentor.io/challenges/profile-card-component-cfArpWshJ"
-          target="_blank"
-          >Frontend Mentor challenge</a
-        >
+  <body class="m-0 max-h-screen bg-[#18A0AC]">
+    <div class="relative">
+      <div
+        class="absolute -top-36 -left-1/4 w-10/12 lg:-top-96 lg:left-0 lg:w-1/2"
+      >
+        <img src="./images/bg-pattern-top.svg" alt="" />
       </div>
-      <div>
-        for
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA"
-          target="_blank"
-          >Optimum BH</a
-        >
-        Internship.
+      <div
+        class="absolute bottom-0 -right-1/4 w-10/12 lg:-bottom-96 lg:-right-24 lg:w-1/2"
+      >
+        <img src="./images/bg-pattern-bottom.svg" alt="" />
       </div>
+    </div>
 
-      <div class="mt-3">
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA/frontend_mentor_challenges/tree/profile_card_component/challenges/profile_card_component"
-          >Source code</a
+    <div
+      class="relative z-10 flex h-[100vh] w-full flex-col place-content-center items-center justify-center text-center"
+    >
+      <div class="m-6 max-w-sm rounded-2xl bg-white">
+        <div>
+          <img
+            class="block h-40 w-full rounded-t-2xl bg-no-repeat object-cover object-center"
+            src="./images/bg-pattern-card.svg"
+            alt=""
+          />
+        </div>
+
+        <img
+          class="relative m-auto mt-[-50px] block rounded-full border-[5px] border-white"
+          src="./images/image-victor.jpg"
+          alt=""
+        />
+        <h2 class="mt-4 text-xl font-bold text-gray-700">
+          Victor Crest <span class="font-normal text-gray-500">26</span>
+        </h2>
+        <p class="mt-2 text-lg text-gray-500">London</p>
+        <div
+          class="mt-8 flex items-center justify-around border-t-2 border-black border-opacity-10 px-6 py-6"
         >
+          <div>
+            <h3 class="text-xl font-bold text-gray-800">80K</h3>
+            <p class="text-xs text-gray-700">Followers</p>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-gray-800">803K</h3>
+            <p class="text-xs text-gray-700">Likes</p>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-gray-800">1.4K</h3>
+            <p class="text-xs text-gray-700">Photos</p>
+          </div>
+        </div>
+      </div>
+      <div class="credits rounded-2xl bg-white p-4">
+        <div>
+          <a
+            class="text-optimum-blue hover:text-optimum-darkblue"
+            href="https://www.frontendmentor.io/challenges/profile-card-component-cfArpWshJ"
+            target="_blank"
+            >Frontend Mentor challenge</a
+          >
+        </div>
+        <div>
+          for
+          <a
+            class="text-optimum-blue hover:text-optimum-darkblue"
+            href="https://github.com/optimumBA"
+            target="_blank"
+            >Optimum BH</a
+          >
+          Internship.
+        </div>
+
+        <div class="mt-3">
+          <a
+            class="text-optimum-blue hover:text-optimum-darkblue"
+            href="https://github.com/amos-kibet/frontend_mentor_challenges/tree/profile_card_component/challenges/profile_card_component"
+            >Source code</a
+          >
+        </div>
       </div>
     </div>
   </body>
