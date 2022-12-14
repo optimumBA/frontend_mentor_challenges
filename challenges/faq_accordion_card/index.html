@@ -26,92 +26,211 @@
       href="../images/favicon-16x16.png"
     />
     <link rel="manifest" href="../site.webmanifest" />
-    <script defer src="https://unpkg.com/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
-    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script
+      defer
+      src="https://unpkg.com/@alpinejs/collapse@3.x.x/dist/cdn.min.js"
+    ></script>
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
 
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="m-0 bg-gradient-to-b from-soft-violet to-soft-blue">
-    <div class="h-screen flex items-center justify-center p-8 lg:p-0">
-      <div class="max-w-4xl w-full rounded-xl flex flex-col lg:flex-row lg:py-20 relative bg-white">
-        <img class="hidden lg:block absolute z-50 -left-24 bottom-36" src="images/illustration-box-desktop.svg" alt="">
-        <div class="relative overflow-hidden hidden lg:block w-1/2">
-          <img class="absolute -left-24" src="images/bg-pattern-desktop.svg" alt="">
-          <img class="-ml-16" src="images/illustration-woman-online-desktop.svg" alt="">
+  <body class="from-soft-violet to-soft-blue m-0 bg-gradient-to-b">
+    <div class="flex h-screen items-center justify-center p-8 lg:p-0">
+      <div
+        class="relative flex w-full max-w-4xl flex-col rounded-xl bg-white lg:flex-row lg:py-20"
+      >
+        <img
+          class="absolute -left-24 bottom-36 z-50 hidden lg:block"
+          src="images/illustration-box-desktop.svg"
+          alt=""
+        />
+        <div class="relative hidden w-1/2 overflow-hidden lg:block">
+          <img
+            class="absolute -left-24"
+            src="images/bg-pattern-desktop.svg"
+            alt=""
+          />
+          <img
+            class="-ml-16"
+            src="images/illustration-woman-online-desktop.svg"
+            alt=""
+          />
         </div>
 
-        <div class="block lg:hidden mb-2 relative w-1/2 mx-auto">
-          <img class="-mt-24" src="images/illustration-woman-online-mobile.svg" alt="">
-          <img class="absolute top-0" src="images/bg-pattern-mobile.svg" alt="">
+        <div class="relative mx-auto mb-2 block w-1/2 lg:hidden">
+          <img
+            class="-mt-24"
+            src="images/illustration-woman-online-mobile.svg"
+            alt=""
+          />
+          <img
+            class="absolute top-0"
+            src="images/bg-pattern-mobile.svg"
+            alt=""
+          />
         </div>
 
-        <div class="p-4 mt-5 lg:mt-0 lg:p-0 lg:w-1/2">
+        <div class="mt-5 p-4 lg:mt-0 lg:w-1/2 lg:p-0">
           <div class="lg:w-4/5">
-            <h1 class="text-4xl text-very-dark-desaturated-blue font-bold text-center lg:text-left">FAQ</h1>
+            <h1
+              class="text-very-dark-desaturated-blue text-center text-4xl font-bold lg:text-left"
+            >
+              FAQ
+            </h1>
             <div class="w-full py-6">
               <!-- Question 1 -->
-              <div x-data="{isOpen: false, baseQuestionClass: 'text-sm lg:text-base'}" @click="isOpen = ! isOpen" class="border-b flex justify-between items-start cursor-pointer py-3">
+              <div
+                x-data="{isOpen: false, baseQuestionClass: 'text-sm lg:text-base'}"
+                @click="isOpen = ! isOpen"
+                class="flex cursor-pointer items-start justify-between border-b py-3"
+              >
                 <div class="w-11/12">
-                  <h5 :class="isOpen ? baseQuestionClass + 'text-very-dark-desaturated-blue font-semibold' : baseQuestionClass + 'text-very-dark-grayish-blue active:text-soft-red'">How many team members can I invite?</h5>
-                  <p x-show="isOpen" class="py-2 text-xs  text-dark-grayish-blue" x-collapse>You can invite up to 2 additional users on the Free plan. There is no limit on team members for the Premium plan.</p>
+                  <h5
+                    :class="isOpen ? baseQuestionClass + 'text-very-dark-desaturated-blue font-semibold' : baseQuestionClass + 'text-very-dark-grayish-blue active:text-soft-red'"
+                  >
+                    How many team members can I invite?
+                  </h5>
+                  <p
+                    x-show="isOpen"
+                    class="text-dark-grayish-blue py-2 text-xs"
+                    x-collapse
+                  >
+                    You can invite up to 2 additional users on the Free plan.
+                    There is no limit on team members for the Premium plan.
+                  </p>
                 </div>
                 <div class="py-2">
-                  <img :class="isOpen ? 'rotate-180' : ''" src="images/icon-arrow-down.svg" alt="">
+                  <img
+                    :class="isOpen ? 'rotate-180' : ''"
+                    src="images/icon-arrow-down.svg"
+                    alt=""
+                  />
                 </div>
-                
               </div>
 
               <!-- Question 2 -->
-              <div x-data="{isOpen: true, baseQuestionClass: 'text-sm lg:text-base'}" @click="isOpen = ! isOpen" class="border-b flex justify-between items-start cursor-pointer py-3">
+              <div
+                x-data="{isOpen: true, baseQuestionClass: 'text-sm lg:text-base'}"
+                @click="isOpen = ! isOpen"
+                class="flex cursor-pointer items-start justify-between border-b py-3"
+              >
                 <div class="w-11/12">
-                  <h5 :class="isOpen ? baseQuestionClass + 'text-very-dark-desaturated-blue font-semibold' : baseQuestionClass + 'text-very-dark-grayish-blue active:text-soft-red'">What is the maximum upload file size?</h5>
-                  <p x-show="isOpen" class="py-2 text-xs  text-dark-grayish-blue" x-collapse>No more than 2GB. All files in your account must fit your allotted storage space.</p>
+                  <h5
+                    :class="isOpen ? baseQuestionClass + 'text-very-dark-desaturated-blue font-semibold' : baseQuestionClass + 'text-very-dark-grayish-blue active:text-soft-red'"
+                  >
+                    What is the maximum upload file size?
+                  </h5>
+                  <p
+                    x-show="isOpen"
+                    class="text-dark-grayish-blue py-2 text-xs"
+                    x-collapse
+                  >
+                    No more than 2GB. All files in your account must fit your
+                    allotted storage space.
+                  </p>
                 </div>
                 <div class="py-2">
-                  <img :class="isOpen ? 'rotate-180' : ''" src="images/icon-arrow-down.svg" alt="">
+                  <img
+                    :class="isOpen ? 'rotate-180' : ''"
+                    src="images/icon-arrow-down.svg"
+                    alt=""
+                  />
                 </div>
-                
               </div>
 
               <!-- Question 3 -->
-              <div x-data="{isOpen: false, baseQuestionClass: 'text-sm lg:text-base'}" @click="isOpen = ! isOpen" class="border-b flex justify-between items-start cursor-pointer py-3">
+              <div
+                x-data="{isOpen: false, baseQuestionClass: 'text-sm lg:text-base'}"
+                @click="isOpen = ! isOpen"
+                class="flex cursor-pointer items-start justify-between border-b py-3"
+              >
                 <div class="w-11/12">
-                  <h5 :class="isOpen ? baseQuestionClass + 'text-very-dark-desaturated-blue font-semibold' : baseQuestionClass + 'text-very-dark-grayish-blue active:text-soft-red'">How do I reset my password?</h5>
-                  <p x-show="isOpen" class="py-2 text-xs  text-dark-grayish-blue" x-collapse>Click “Forgot password” from the login page or “Change password” from your profile page. A reset link will be emailed to you.</p>
+                  <h5
+                    :class="isOpen ? baseQuestionClass + 'text-very-dark-desaturated-blue font-semibold' : baseQuestionClass + 'text-very-dark-grayish-blue active:text-soft-red'"
+                  >
+                    How do I reset my password?
+                  </h5>
+                  <p
+                    x-show="isOpen"
+                    class="text-dark-grayish-blue py-2 text-xs"
+                    x-collapse
+                  >
+                    Click “Forgot password” from the login page or “Change
+                    password” from your profile page. A reset link will be
+                    emailed to you.
+                  </p>
                 </div>
                 <div class="py-2">
-                  <img :class="isOpen ? 'rotate-180' : ''" src="images/icon-arrow-down.svg" alt="">
+                  <img
+                    :class="isOpen ? 'rotate-180' : ''"
+                    src="images/icon-arrow-down.svg"
+                    alt=""
+                  />
                 </div>
-                
               </div>
 
               <!-- Question 4 -->
-              <div x-data="{isOpen: false, baseQuestionClass: 'text-sm lg:text-base'}" @click="isOpen = ! isOpen" class="border-b flex justify-between items-start cursor-pointer py-3">
+              <div
+                x-data="{isOpen: false, baseQuestionClass: 'text-sm lg:text-base'}"
+                @click="isOpen = ! isOpen"
+                class="flex cursor-pointer items-start justify-between border-b py-3"
+              >
                 <div class="w-11/12">
-                  <h5 :class="isOpen ? baseQuestionClass + 'text-very-dark-desaturated-blue font-semibold' : baseQuestionClass + 'text-very-dark-grayish-blue active:text-soft-red'">Can I cancel my subscription?</h5>
-                  <p x-show="isOpen" class="py-2 text-xs  text-dark-grayish-blue" x-collapse>Yes! Send us a message and we’ll process your request no questions asked.</p>
+                  <h5
+                    :class="isOpen ? baseQuestionClass + 'text-very-dark-desaturated-blue font-semibold' : baseQuestionClass + 'text-very-dark-grayish-blue active:text-soft-red'"
+                  >
+                    Can I cancel my subscription?
+                  </h5>
+                  <p
+                    x-show="isOpen"
+                    class="text-dark-grayish-blue py-2 text-xs"
+                    x-collapse
+                  >
+                    Yes! Send us a message and we’ll process your request no
+                    questions asked.
+                  </p>
                 </div>
                 <div class="py-2">
-                  <img :class="isOpen ? 'rotate-180' : ''" src="images/icon-arrow-down.svg" alt="">
+                  <img
+                    :class="isOpen ? 'rotate-180' : ''"
+                    src="images/icon-arrow-down.svg"
+                    alt=""
+                  />
                 </div>
-                
               </div>
 
               <!-- Question 5 -->
-              <div x-data="{isOpen: false, baseQuestionClass: 'text-sm lg:text-base'}" @click="isOpen = ! isOpen" class="border-b flex justify-between items-start cursor-pointer py-3">
+              <div
+                x-data="{isOpen: false, baseQuestionClass: 'text-sm lg:text-base'}"
+                @click="isOpen = ! isOpen"
+                class="flex cursor-pointer items-start justify-between border-b py-3"
+              >
                 <div class="w-11/12">
-                  <h5 :class="isOpen ? baseQuestionClass + 'text-very-dark-desaturated-blue font-semibold' : baseQuestionClass + 'text-very-dark-grayish-blue active:text-soft-red'">Do you provide additional support?</h5>
-                  <p x-show="isOpen" class="py-2 text-xs  text-dark-grayish-blue" x-collapse>Chat and email support is available 24/7. Phone lines are open during normal business hours.</p>
+                  <h5
+                    :class="isOpen ? baseQuestionClass + 'text-very-dark-desaturated-blue font-semibold' : baseQuestionClass + 'text-very-dark-grayish-blue active:text-soft-red'"
+                  >
+                    Do you provide additional support?
+                  </h5>
+                  <p
+                    x-show="isOpen"
+                    class="text-dark-grayish-blue py-2 text-xs"
+                    x-collapse
+                  >
+                    Chat and email support is available 24/7. Phone lines are
+                    open during normal business hours.
+                  </p>
                 </div>
                 <div class="py-2">
-                  <img :class="isOpen ? 'rotate-180' : ''" src="images/icon-arrow-down.svg" alt="">
+                  <img
+                    :class="isOpen ? 'rotate-180' : ''"
+                    src="images/icon-arrow-down.svg"
+                    alt=""
+                  />
                 </div>
-                
               </div>
-
-
-              
-
             </div>
           </div>
         </div>
