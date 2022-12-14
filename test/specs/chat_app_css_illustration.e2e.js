@@ -21,7 +21,7 @@ describe('Chat app CSS illustration', () => {
 
     await expect($('body')).toHaveTextContaining('Simple booking')
     await expect($('body')).toHaveTextContaining(
-      'Stay in touch with our dog walkers through the chat interface. This makes it easy to discuss arrangements and make bookings.Once the walk has been completed you can rate your walker and book again all through the chat.'
+      'Stay in touch with our dog walkers through the chat interface. This makes it easy to discuss arrangements and make bookings. Once the walk has been completed you can rate your walker and book again all through the chat.'
     )
     await expect($('body')).toHaveTextContaining('Samuel Green')
     await expect($('body')).toHaveTextContaining('30 minute walk')
@@ -51,7 +51,7 @@ describe('Chat app CSS illustration', () => {
 
     await expect($('body')).toHaveTextContaining('Simple booking')
     await expect($('body')).toHaveTextContaining(
-      'Stay in touch with our dog walkers through the chat interface. This makes it easy to discuss arrangements and make bookings.Once the walk has been completed you can rate your walker and book again all through the chat.'
+      'Stay in touch with our dog walkers through the chat interface. This makes it easy to discuss arrangements and make bookings. Once the walk has been completed you can rate your walker and book again all through the chat.'
     )
     await expect($('body')).toHaveTextContaining('Samuel Green')
     await expect($('body')).toHaveTextContaining('30 minute walk')
