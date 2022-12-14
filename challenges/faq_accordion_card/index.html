@@ -32,105 +32,77 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body class="m-0">
-    <div class="h-screen flex items-center justify-center bg-indigo-500">
-      <div class="max-w-4xl w-full rounded-xl flex p-5 relative overflow-hidden bg-white">
+    <div class="h-screen flex items-center justify-center bg-gradient-to-b bg-gradient from-soft-violet to-soft-blue">
+      <div class="max-w-4xl w-full rounded-xl flex py-20 relative overflow-hidden bg-white">
         <div class="relative w-1/2">
           <img class="absolute -left-24" src="images/bg-pattern-desktop.svg" alt="">
-          <img class=" -ml-24" src="images/illustration-woman-online-desktop.svg" alt="">
+          <img class="-ml-20" src="images/illustration-woman-online-desktop.svg" alt="">
         </div>
 
         <div class="w-1/2 mb-15">
           <div class="w-4/5">
-            <h1 class="text-4xl font-bold">FAQ</h1>
+            <h1 class="text-4xl text-very-dark-desaturated-blue font-bold">FAQ</h1>
             <div class="w-full py-6">
               <!-- Question 1 -->
               <div x-data="{isOpen: false}" @click="isOpen = ! isOpen" class="border-b flex justify-between items-start cursor-pointer py-3">
                 <div class="">
-                  <h5 class="">How many team members can I invite?</h5>
-                  <p x-show="isOpen" x-collapse>You can invite upto 4 members</p>
+                  <h5 :class="isOpen ? 'text-very-dark-desaturated-blue font-semibold' : 'text-very-dark-grayish-blue active:text-soft-red'">How many team members can I invite?</h5>
+                  <p x-show="isOpen" class="py-2 text-sm text-dark-grayish-blue" x-collapse>You can invite upto 4 members</p>
                 </div>
-                <div>
-                  <svg x-show="!isOpen" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                  </svg>
-  
-                  <svg x-show="isOpen" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
-                  </svg>
+                <div class="py-2">
+                  <img :class="isOpen ? 'rotate-180' : ''" src="images/icon-arrow-down.svg" alt="">
                 </div>
                 
               </div>
-  
+
               <!-- Question 2 -->
               <div x-data="{isOpen: false}" @click="isOpen = ! isOpen" class="border-b flex justify-between items-start cursor-pointer py-3">
-                <div>
-                  <h5 class="">What is the maximum file upload size?</h5>
-                  <p x-show="isOpen" x-collapse>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, quos quod! Iusto</p>
+                <div class="">
+                  <h5 :class="isOpen ? 'text-very-dark-desaturated-blue font-semibold' : 'text-very-dark-grayish-blue active:text-soft-red'">How many team members can I invite?</h5>
+                  <p x-show="isOpen" class="py-2 text-sm text-dark-grayish-blue" x-collapse>You can invite upto 4 members</p>
                 </div>
-                <div>
-                  <svg x-show="!isOpen" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                  </svg>
-  
-                  <svg x-show="isOpen" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
-                  </svg>
+                <div class="py-2">
+                  <img :class="isOpen ? 'rotate-180' : ''" src="images/icon-arrow-down.svg" alt="">
                 </div>
                 
               </div>
-  
+
               <!-- Question 3 -->
               <div x-data="{isOpen: false}" @click="isOpen = ! isOpen" class="border-b flex justify-between items-start cursor-pointer py-3">
-                <div>
-                  <h5 class="">How do I reset my password?</h5>
-                  <p x-show="isOpen" x-collapse>You can invite upto 4 members</p>
+                <div class="">
+                  <h5 :class="isOpen ? 'text-very-dark-desaturated-blue font-semibold' : 'text-very-dark-grayish-blue active:text-soft-red'">How many team members can I invite?</h5>
+                  <p x-show="isOpen" class="py-2 text-sm text-dark-grayish-blue" x-collapse>You can invite upto 4 members</p>
                 </div>
-                <div>
-                  <svg x-show="!isOpen" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                  </svg>
-  
-                  <svg x-show="isOpen" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
-                  </svg>
+                <div class="py-2">
+                  <img :class="isOpen ? 'rotate-180' : ''" src="images/icon-arrow-down.svg" alt="">
                 </div>
                 
               </div>
-  
+
               <!-- Question 4 -->
               <div x-data="{isOpen: false}" @click="isOpen = ! isOpen" class="border-b flex justify-between items-start cursor-pointer py-3">
-                <div>
-                  <h5 class="">Can I cancel my subscription?</h5>
-                  <p x-show="isOpen" x-collapse>You can invite upto 4 members</p>
+                <div class="">
+                  <h5 :class="isOpen ? 'text-very-dark-desaturated-blue font-semibold' : 'text-very-dark-grayish-blue active:text-soft-red'">How many team members can I invite?</h5>
+                  <p x-show="isOpen" class="py-2 text-sm text-dark-grayish-blue" x-collapse>You can invite upto 4 members</p>
                 </div>
-                <div>
-                  <svg x-show="!isOpen" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                  </svg>
-  
-                  <svg x-show="isOpen" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
-                  </svg>
+                <div class="py-2">
+                  <img :class="isOpen ? 'rotate-180' : ''" src="images/icon-arrow-down.svg" alt="">
                 </div>
                 
               </div>
-  
+
               <!-- Question 5 -->
               <div x-data="{isOpen: false}" @click="isOpen = ! isOpen" class="border-b flex justify-between items-start cursor-pointer py-3">
-                <div>
-                  <h5 class="">Do you provide additional support?</h5>
-                  <p x-show="isOpen" x-collapse>You can invite upto 4 members</p>
+                <div class="">
+                  <h5 :class="isOpen ? 'text-very-dark-desaturated-blue font-semibold' : 'text-very-dark-grayish-blue active:text-soft-red'">How many team members can I invite?</h5>
+                  <p x-show="isOpen" class="py-2 text-sm text-dark-grayish-blue" x-collapse>You can invite upto 4 members</p>
                 </div>
-                <div>
-                  <svg x-show="!isOpen" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                  </svg>
-  
-                  <svg x-show="isOpen" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
-                  </svg>
+                <div class="py-2">
+                  <img :class="isOpen ? 'rotate-180' : ''" src="images/icon-arrow-down.svg" alt="">
                 </div>
+                
               </div>
+
 
               
 
