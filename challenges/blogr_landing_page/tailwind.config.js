@@ -12,7 +12,7 @@ module.exports = {
         'very-dark-black-blue': 'hsl(240, 10%, 16%)',
         'grayish-blue': 'hsl(240, 2%, 79%)',
         'very-dark-gray-blue': 'hsl(237, 17%, 21%)',
-        'very-dark-desaturated-blue': 'hsl(237, 23%, 32%)'
+        'very-dark-desaturated-blue': 'hsl(237, 23%, 32%)',
       },
     },
   },
