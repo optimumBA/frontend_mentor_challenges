@@ -35,8 +35,10 @@
 
       <!-- Hero Section -->
       <section class="w-full rounded-bl-[5rem] bg-gradient-to-tl overflow-hidden from-light-red to-very-light-red">
-        <nav class="my-5">
-          <div class="max-w-7xl mx-auto flex justify-between items-center p-3 md:p-0">
+        <nav class="my-5" x-data="{
+          hasClickedMenu: false
+        }">
+          <div class="max-w-7xl mx-auto flex justify-between items-center relative p-3 md:p-0">
             
             <!-- Left Side of the navbar -->
             <div class="flex items-center">
@@ -137,8 +139,93 @@
               </button>
             </div>
 
-            <div class="block md:hidden">
-              <img src="images/icon-hamburger.svg" alt="">
+            <div class="block md:hidden cursor-pointer" @click="hasClickedMenu = !hasClickedMenu">
+              <template x-if="hasClickedMenu">
+                <img src="images/icon-close.svg" alt="">
+              </template>
+
+              <template x-if="!hasClickedMenu">
+                <img src="images/icon-hamburger.svg" alt="">
+              </template>
+            </div>
+
+            <!-- Mobile menu -->
+            <div x-transition x-show="hasClickedMenu" class="top-16 absolute w-full bg-white">
+              <div class="mt-2 flex w-full flex-col" x-data="{
+                defualtTabClasses: 'inline-flex py-2 gap-2 items-center justify-center cursor-pointer text-center text-very-dark-blue font-semibold',
+                hasClickedOnProduct: false,
+                hasClickedOnCompany: false,
+                hasClickedOnConnect: false
+              }">
+
+                <div @click="
+                hasClickedOnProduct = !hasClickedOnProduct
+                hasClickedOnCompany = false
+                hasClickedOnConnect = false
+                "
+                
+                :class="hasClickedOnProduct ? 'font-semibold text-very-dark-grayish-blue ' + defualtTabClasses : defualtTabClasses">
+
+                  Product <span :class="hasClickedOnProduct ? 'rotate-180' : ''"><img src="images/icon-arrow-dark.svg" alt=""></span>
+                </div>
+                
+                <div x-show="hasClickedOnProduct" class="bg-gray-100 text-center p-4 w-10/12 mx-auto rounded-md  text-very-dark-grayish-blue">
+                  <a class="block py-1 active:text-very-dark-blue active:font-semibold hover:text-very-dark-blue" href="">Overview</a>
+                  <a class="block py-1 active:text-very-dark-blue hover:text-very-dark-blue" href="">Pricing</a>
+                  <a class="block py-1 active:text-very-dark-blue hover:text-very-dark-blue" href="">Marketplace</a>
+                  <a class="block py-1 active:text-very-dark-blue hover:text-very-dark-blue" href="">Features</a>
+                  <a class="block py-1 active:text-very-dark-blue hover:text-very-dark-blue" href="">Integrations</a>
+                </div>
+
+                <div @click="
+                hasClickedOnCompany = !hasClickedOnCompany
+                hasClickedOnProduct = false
+                hasClickedOnConnect = false
+                "
+                
+                :class="hasClickedOnCompany ? 'font-semibold text-very-dark-grayish-blue ' + defualtTabClasses : defualtTabClasses">
+
+                  Company <span :class="hasClickedOnCompany ? 'rotate-180' : ''"><img src="images/icon-arrow-dark.svg" alt=""></span>
+                </div>
+                
+                <div x-show="hasClickedOnCompany" class="bg-gray-100 text-center p-4 w-10/12 mx-auto rounded-md  text-very-dark-grayish-blue">
+                  <a class="block py-1 active:text-very-dark-blue active:font-semibold hover:text-very-dark-blue" href="">About</a>
+                  <a class="block py-1 active:text-very-dark-blue hover:text-very-dark-blue" href="">Team</a>
+                  <a class="block py-1 active:text-very-dark-blue hover:text-very-dark-blue" href="">Blog</a>
+                  <a class="block py-1 active:text-very-dark-blue hover:text-very-dark-blue" href="">Careers</a>
+                </div>
+
+                <div @click="
+                hasClickedOnConnect = !hasClickedOnConnect
+                hasClickedOnProduct = false
+                hasClickedOnCompany = false
+                "
+                
+                :class="hasClickedOnConnect ? 'font-semibold text-very-dark-grayish-blue ' + defualtTabClasses : defualtTabClasses">
+
+                  Connect <span :class="hasClickedOnConnect ? 'rotate-180' : ''"><img src="images/icon-arrow-dark.svg" alt=""></span>
+                </div>
+                
+                <div x-show="hasClickedOnConnect" class="bg-gray-100 text-center p-4 w-10/12 mx-auto rounded-md  text-very-dark-grayish-blue">
+                  <a class="block py-1 active:text-very-dark-blue active:font-semibold hover:text-very-dark-blue" href="">Contact</a>
+                  <a class="block py-1 active:text-very-dark-blue hover:text-very-dark-blue" href="">Newsletter</a>
+                  <a class="block py-1 active:text-very-dark-blue hover:text-very-dark-blue" href="">LinkedIn</a>
+                </div>
+
+                <hr class="mt-3">
+                
+                <div class="mx-auto my-4">
+                  <div class="cursor-pointer text-center  px-3 text-very-dark-grayish-blue">
+                    Login
+                  </div>
+                  <button class="rounded-full my-2 cursor-pointer py-2 px-6 font-bold bg-gradient-to-l from-light-red to-very-light-red text-white">
+                    Sign up
+                  </button>
+                </div>
+
+
+              </div>
+                  
             </div>
 
           </div>
