@@ -27,13 +27,14 @@
     />
     <link rel="manifest" href="../site.webmanifest" />
     <link rel="stylesheet" href="style.css" />
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
   </head>
   <body class="m-0">
     <!-- The whole blogr site -->
     <div class="">
 
       <!-- Hero Section -->
-      <section class="w-full rounded-bl-[5rem] bg-gradient-to-tl relative overflow-hidden from-light-red to-very-light-red">
+      <section class="w-full rounded-bl-[5rem] bg-gradient-to-tl overflow-hidden from-light-red to-very-light-red">
         <nav class="my-5">
           <div class="max-w-7xl mx-auto flex justify-between items-center p-3 md:p-0">
             
@@ -41,18 +42,86 @@
             <div class="flex items-center">
               <img src="images/logo.svg" alt="">
 
-              <div class="pl-8 hidden md:flex">
+              <div class="pl-8 hidden md:flex" x-data="{
+                defualtTabClasses: 'inline-flex items-center gap-2 cursor-pointer px-3 active:underline active:font-semibold text-white ',
+                hasClickedOnProduct: false,
+                hasClickedOnCompany: false,
+                hasClickedOnConnect: false
+              }">
 
-                <div class="cursor-pointer px-3 text-white">
-                  Product
+                <div class="relative">
+                  <div @click="
+                    hasClickedOnProduct = !hasClickedOnProduct
+                    hasClickedOnCompany = false
+                    hasClickedOnConnect = false
+                  "
+
+                  @click.away="
+                    hasClickedOnProduct = false
+                  "
+                  
+                  :class="hasClickedOnProduct ? 'underline font-semibold ' + defualtTabClasses : defualtTabClasses">
+                    Product <span :class="hasClickedOnProduct ? 'rotate-180' : ''"><img src="images/icon-arrow-light.svg" alt=""></span>
+                  </div>
+  
+                  <div x-transition x-show="hasClickedOnProduct" class="absolute rounded-lg shadow-2xl top-10 p-6 bg-white text-very-dark-grayish-blue">
+                    <a class="block py-0.5 active:text-very-dark-blue active:font-semibold hover:text-very-dark-blue" href="">Overview</a>
+                    <a class="block py-0.5 active:text-very-dark-blue active:font-semibold hover:text-very-dark-blue" href="">Pricing</a>
+                    <a class="block py-0.5 active:text-very-dark-blue active:font-semibold hover:text-very-dark-blue" href="">Marketplace</a>
+                    <a class="block py-0.5 active:text-very-dark-blue active:font-semibold hover:text-very-dark-blue" href="">Features</a>
+                    <a class="block py-0.5 active:text-very-dark-blue active:font-semibold hover:text-very-dark-blue" href="">Integrations</a>
+                  </div>
                 </div>
 
-                <div class="cursor-pointer px-3 text-white">
-                  Company
+
+                <div class="relative">
+                  <div @click="
+                    hasClickedOnCompany = !hasClickedOnCompany
+                    hasClickedOnProduct = false
+                    hasClickedOnConnect = false
+                  " 
+
+                  @click.away="
+                    hasClickedOnCompany = false
+                  "
+                  
+                  
+                  :class="hasClickedOnCompany ? 'underline font-semibold ' + defualtTabClasses : defualtTabClasses">
+                    Company <span :class="hasClickedOnCompany ? 'rotate-180' : ''"><img src="images/icon-arrow-light.svg" alt=""></span>
+                  </div>
+
+                  <div x-transition x-show="hasClickedOnCompany" class="absolute rounded-lg shadow-2xl top-10 p-6 bg-white text-very-dark-grayish-blue">
+                    <a class="block py-0.5 active:text-very-dark-blue active:font-semibold hover:text-very-dark-blue" href="">About</a>
+                    <a class="block py-0.5 active:text-very-dark-blue hover:text-very-dark-blue" href="">Team</a>
+                    <a class="block py-0.5 active:text-very-dark-blue hover:text-very-dark-blue" href="">Blog</a>
+                    <a class="block py-0.5 active:text-very-dark-blue hover:text-very-dark-blue" href="">Careers</a>
+                  </div>
+
+
                 </div>
 
-                <div class="cursor-pointer px-3 text-white">
-                  Connect
+                <div class="relative">
+                  <div @click="
+                    hasClickedOnConnect = !hasClickedOnConnect
+                    hasClickedOnProduct = false
+                    hasClickedOnCompany = false
+                  "
+
+                  @click.away="
+                    hasClickedOnConnect = false
+                  "
+                  
+                  :class="hasClickedOnConnect ? 'underline font-semibold ' + defualtTabClasses : defualtTabClasses">
+                    Connect <span :class="hasClickedOnConnect ? 'rotate-180' : ''"><img src="images/icon-arrow-light.svg" alt=""></span>
+                  </div>
+
+                  <div x-transition x-show="hasClickedOnConnect"  class="absolute rounded-lg shadow-2xl top-10 p-6 bg-white text-very-dark-grayish-blue">
+                    <a class="block py-0.5 active:text-very-dark-blue active:font-semibold hover:text-very-dark-blue" href="">Contact</a>
+                    <a class="block py-0.5 active:text-very-dark-blue active:font-semibold hover:text-very-dark-blue" href="">Newsletter</a>
+                    <a class="block py-0.5 active:text-very-dark-blue active:font-semibold hover:text-very-dark-blue" href="">LinkedIn</a>
+                  </div>
+
+
                 </div>
               </div>
 
@@ -63,7 +132,7 @@
               <div  class="cursor-pointer px-3 text-white">
                 Login
               </div>
-              <button class="rounded-full cursor-pointer py-2 px-6 font-bold text-light-red bg-white">
+              <button class="rounded-full cursor-pointer py-2 px-6 font-bold text-light-red bg-white active:bg-very-light-red active:text-white">
                 Sign up
               </button>
             </div>
@@ -81,8 +150,8 @@
 
           <!-- CTAs -->
           <div class="flex justify-center items-center my-12">
-            <button class="rounded-full cursor-pointer py-2 px-4 mx-2 font-bold text-light-red bg-white">Start for Free</button>
-            <button class="rounded-full cursor-pointer py-2 px-4 mx-2 border text-white bg-transparent border-white">Learn more</button>
+            <button class="rounded-full cursor-pointer py-2 px-4 mx-2 font-bold text-light-red bg-white hover:bg-very-light-red active:text-white">Start for Free</button>
+            <button class="rounded-full cursor-pointer py-2 px-4 mx-2 border active:font-bold text-white bg-transparent border-white active:bg-white active:text-light-red">Learn more</button>
           </div>
         </div>
       </section>
