@@ -27,8 +27,74 @@
     />
     <link rel="manifest" href="../site.webmanifest" />
     <link rel="stylesheet" href="style.css" />
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
   </head>
-  <body class="m-0">
+  <body class="m-0 bg-gray-100">
+    <div class="max-w-3xl mx-auto bg-white">
+      <!-- Interactive component -->
+      <div class="p-5" x-data="{
+        sliderValue: 3
+      }">
+        <div class="flex justify-between items-center tracking-wider">
+          <div class="uppercase text-grayish-blue font-medium"><span x-text="(sliderValue * 110)"></span>K Pageviews</div>
+          <div class="inline-flex gap-2 items-center">
+            <span class="text-4xl font-bold text-dark-desaturated-blue">$<span x-text="(sliderValue * 30).toFixed(2)"></span></span>
+            <span class="text-center text-grayish-blue">/ month</span>
+            
+          </div>
+        </div>
+
+        <div>
+          <input id="slider" x-model="sliderValue" min="1" max="5" class="w-full cursor-pointer h-2 my-10 rounded-full" type="range" id="">
+        </div>
+
+        <div class="flex justify-end gap-2 items-center mr-6 text-grayish-blue">
+          <div>Monthly Billing</div>
+
+          <div 
+            x-data="{hasClicked: false,
+              defaultClasses: 'h-6 w-12 rounded-full relative cursor-pointer active:bg-soft-cyan',
+              defaultToggleClasses: 'absolute h-4 w-4 rounded-full top-1 bg-white'
+            }" 
+            @click="hasClicked = !hasClicked" 
+            :class="hasClicked ? 'bg-soft-cyan ' + defaultClasses  : 'bg-light-grayish-blue ' + defaultClasses">
+            <div :class="hasClicked ? 'right-1 ' + defaultToggleClasses : 'left-1 ' + defaultToggleClasses">
+            </div>
+          </div>
+
+          <div>Yearly Billing</div>
+
+          <div class="rounded-full text-xs p-1.5 text-light-red bg-light-grayish-red">
+            25% Discount
+          </div>
+        </div>
+        
+
+      </div>
+
+      <hr>
+
+      <div class="flex items-center justify-between p-5">
+        <div class="flex flex-col py-5 text-grayish-blue">
+          <div class="inline-flex gap-2 items-center">
+            <span><img src="images/icon-check.svg" alt=""></span>
+            Unlimited websites
+          </div>
+
+          <div class="inline-flex gap-2 items-center">
+            <span><img src="images/icon-check.svg" alt=""></span>
+            100% data ownership
+          </div>
+
+          <div class="inline-flex gap-2 items-center">
+            <span><img src="images/icon-check.svg" alt=""></span>
+            Email reports
+          </div>
+        </div>
+
+        <button class="px-16 py-3 rounded-full text-pale-blue bg-dark-desaturated-blue active:text-white">Start my trial</button>
+      </div>
+    </div>
     <div
       class="flex h-[100vh] w-full flex-col place-content-center text-center"
     >
