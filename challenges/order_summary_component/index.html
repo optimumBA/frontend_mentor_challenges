@@ -28,36 +28,106 @@
     <link rel="manifest" href="../site.webmanifest" />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="m-0">
+  <body
+    class="bg-bg-col font-redHatDisplay relative flex flex-col items-center justify-center bg-gray-200 text-center"
+  >
+    <img
+      src="./images/pattern-background-desktop.svg"
+      alt="background image"
+      class="fixed top-0 w-full"
+    />
+
     <div
-      class="flex h-[100vh] w-full flex-col place-content-center text-center"
+      class="relative mt-[100px] flex w-[430px] flex-col rounded-xl bg-white text-center"
     >
       <div>
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://www.frontendmentor.io/challenges/order-summary-component-QlPmajDUj"
-          target="_blank"
-          >Frontend Mentor challenge</a
-        >
-      </div>
-      <div>
-        for
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA"
-          target="_blank"
-          >Optimum BH</a
-        >
-        Internship.
+        <img
+          class="h-[270px] w-full overflow-hidden rounded-t-xl object-cover"
+          src="./images/illustration-hero.svg"
+          alt=""
+        />
       </div>
 
-      <div class="mt-3">
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA/frontend_mentor_challenges/tree/order_summary_component/challenges/order_summary_component"
-          >Source code</a
+      <div>
+        <h1 class="mt-12 mb-6 text-3xl font-extrabold">Order Summary</h1>
+      </div>
+
+      <p class="ml-[90px] mb-6 w-[300px] text-center text-gray-400">
+        You can now listen to millions of songs, audiobooks, and podcasts on any
+        device anywhere you like!
+      </p>
+
+      <div
+        class="ml-[40px] mr-[40px] mb-8 flex items-center justify-evenly rounded-xl bg-slate-100 py-[25px]"
+      >
+        <div class="flex">
+          <div class="pr-5">
+            <img src="./images/icon-music.svg" alt="music icon" />
+          </div>
+          <div class="text-left">
+            <h5 class="text-bg-head text-sm font-extrabold">Annual Plan</h5>
+            <p class="text-bg-text text-par text-par pt-1">$59.99/year</p>
+          </div>
+        </div>
+
+        <div class="border-b-1">
+          <p
+            class="border-bg-button text-bg-button hover:text-bg-text hover:border-bg-text cursor-pointer border-b-2 text-xs font-extrabold text-blue-700"
+            href=""
+          >
+            Change
+          </p>
+        </div>
+      </div>
+
+      <div
+        class="ml-[60px] mr-[60px] mb-8 cursor-pointer rounded-xl bg-blue-700 text-sm font-bold text-white drop-shadow-2xl"
+      >
+        <button class="m-3 drop-shadow-2xl">Proceed to Payment</button>
+      </div>
+
+      <div>
+        <button
+          class="mb-8 cursor-pointer text-sm font-extrabold text-gray-500"
         >
+          Cancel Order
+        </button>
       </div>
     </div>
+
+    <footer class="relative h-32 w-32">
+      <div class="absolute bottom-0 left-0 h-16 w-16">
+        <div
+          class="flex h-[100vh] w-full flex-col place-content-center text-center"
+        >
+          <div>
+            <a
+              class="text-optimum-blue hover:text-optimum-darkblue"
+              href="https://www.frontendmentor.io/challenges/order-summary-component-QlPmajDUj"
+              target="_blank"
+              >Frontend Mentor challenge</a
+            >
+          </div>
+          <div>
+            for
+            <a
+              class="text-optimum-blue hover:text-optimum-darkblue"
+              href="https://github.com/optimumBA"
+              target="_blank"
+              >Optimum BH</a
+            >
+            Internship.
+          </div>
+
+          <div class="mt-3">
+            <a
+              class="text-optimum-blue hover:text-optimum-darkblue"
+              href="https://github.com/amos-kibet/frontend_mentor_challenges/tree/order_summary_component/challenges/order_summary_component"
+              >Source code</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
