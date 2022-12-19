@@ -11,7 +11,8 @@ module.exports = {
         'light-grayish-blue': 'hsl(224, 65%, 95%)',
         'light-grayish-red' :'hsl(14, 92%, 95%)',
         'light-red': 'hsl(15, 100%, 70%)',
-        'soft-cyan': 'hsl(174, 77%, 80%)'
+        'soft-cyan': 'hsl(174, 77%, 80%)',
+        'very-pale-blue': 'hsl(230, 100%, 99%)'
       },
     },
   },
