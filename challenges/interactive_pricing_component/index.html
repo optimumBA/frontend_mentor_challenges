@@ -55,24 +55,56 @@
       >
         <!-- Interactive component -->
         <div
-          class="p-5 relative"
+          class="relative p-5"
           x-data="{
           sliderValue: 1,
+          get pageViews() {
+            if (this.sliderValue == 1){
+              return '10K'
+            } else if (this.sliderValue == 2) {
+              return '50K'
+            } else if (this.sliderValue == 3) {
+              return '100K'
+            } else if (this.sliderValue == 4) {
+              return '500K'
+            } else if (this.sliderValue == 5) {
+              return '1M'
+            }
+          },
+
+          get price() {
+            if (this.sliderValue == 1){
+              return '$8.00'
+            } else if (this.sliderValue == 2) {
+              return '$12.00'
+            } else if (this.sliderValue == 3) {
+              return '$16.00'
+            } else if (this.sliderValue == 4) {
+              return '$24.00'
+            } else if (this.sliderValue == 5) {
+              return '$36.00'
+            }
+          }
         }"
         >
           <div class="flex items-center justify-between tracking-wider">
             <div class="text-grayish-blue font-medium uppercase">
-              <span x-text="(sliderValue * 110)"></span>K Pageviews
+              <span x-text="pageViews"></span> Pageviews
             </div>
             <div class="inline-flex items-center gap-2">
-              <span class="text-dark-desaturated-blue text-4xl font-bold"
-                >$<span x-text="(sliderValue * 30).toFixed(2)"></span
-              ></span>
+              <span class="text-dark-desaturated-blue text-4xl font-bold" x-text="price"></span>
               <span class="text-grayish-blue text-center">/ month</span>
             </div>
           </div>
 
-          <input class="my-16" type="range" min="1" max="5" id="price-slider" x-model="sliderValue" />
+          <input
+            class="my-16"
+            type="range"
+            min="1"
+            max="5"
+            id="price-slider"
+            x-model="sliderValue"
+          />
 
           <div
             class="text-grayish-blue mr-6 flex items-center justify-end gap-2"
