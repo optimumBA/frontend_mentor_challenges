@@ -27,8 +27,180 @@
     />
     <link rel="manifest" href="../site.webmanifest" />
     <link rel="stylesheet" href="style.css" />
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
   </head>
-  <body class="m-0">
+  <body
+    class="bg-very-pale-blue relative m-0 bg-[url('images/bg-pattern.svg')] bg-no-repeat"
+  >
+    <div class="relative mx-auto mt-28 w-full">
+      <div class="relative mx-auto mb-32 max-w-md pt-12 text-center">
+        <img
+          class="absolute top-0 left-[35%]"
+          src="images/pattern-circles.svg"
+          alt=""
+        />
+        <h1 class="text-dark-desaturated-blue text-3xl">
+          Simple, traffic-based pricing
+        </h1>
+        <p class="text-grayish-blue">
+          Sign-up for our 30-day trial. No credit card required.
+        </p>
+      </div>
+
+      <div
+        class="mx-auto w-full max-w-xs rounded-md bg-white p-0 pb-3 drop-shadow-2xl md:max-w-xl md:p-6"
+      >
+        <!-- Interactive component -->
+        <div
+          class="relative p-5"
+          x-data="{
+          sliderValue: 3,
+          hasClickedBillingToggle: false,
+          defaultClasses: 'h-6 w-12 rounded-full relative cursor-pointer active:bg-soft-cyan',
+          defaultToggleClasses: 'absolute h-4 w-4 rounded-full top-1 bg-white ',
+
+          monthlyPricesList: [
+            '$8.00',
+            '$12.00',
+            '$16.00',
+            '$24.00',
+            '$36.00'
+          ],
+          
+          yearlyPricesList: [
+            '$6.00',
+            '$9.00',
+            '$12.00',
+            '$18.00',
+            '$27.00'
+          ],
+
+          pageViewsList: [
+            '10K',
+            '50K',
+            '100K',
+            '500K',
+            '1M',
+          ],
+
+          getPageViews() {
+            return this.pageViewsList[this.sliderValue - 1]
+          },
+
+          getPrice() {
+            if (this.hasClickedBillingToggle) {
+              return this.yearlyPricesList[this.sliderValue - 1]
+            } else {
+              return this.monthlyPricesList[this.sliderValue - 1]
+            }
+          }
+        }"
+        >
+          <div
+            class="hidden items-center justify-between tracking-wider md:flex"
+          >
+            <div class="text-grayish-blue font-medium uppercase">
+              <span x-text="getPageViews()"></span> Pageviews
+            </div>
+            <div class="inline-flex items-center gap-2">
+              <span
+                class="text-dark-desaturated-blue text-4xl font-bold"
+                x-text="getPrice()"
+              ></span>
+              <span class="text-grayish-blue text-center">/ month</span>
+            </div>
+          </div>
+
+          <div
+            class="text-grayish-blue block text-center font-medium uppercase md:hidden"
+          >
+            <span x-text="getPageViews()"></span> Pageviews
+          </div>
+
+          <input
+            class="my-16"
+            type="range"
+            min="1"
+            max="5"
+            id="price-slider"
+            x-model="sliderValue"
+          />
+
+          <div class="mb-5 flex w-full items-center md:hidden">
+            <div class="mx-auto flex items-center gap-2">
+              <span
+                class="text-dark-desaturated-blue text-4xl font-bold"
+                x-text="getPrice()"
+              ></span>
+              <span class="text-grayish-blue text-center">/ month</span>
+            </div>
+          </div>
+
+          <div
+            class="text-grayish-blue mr-0 flex w-full items-center justify-end gap-1 text-xs md:mr-6 md:gap-2"
+          >
+            <div>Monthly Billing</div>
+
+            <div
+              id="yearly-billing-toggle"
+              @click="hasClickedBillingToggle = !hasClickedBillingToggle"
+              :class="hasClickedBillingToggle ? 'bg-soft-cyan ' + defaultClasses  : 'bg-light-grayish-blue ' + defaultClasses"
+            >
+              <div
+                :class="hasClickedBillingToggle ? 'right-1 ' + defaultToggleClasses : 'left-1 ' + defaultToggleClasses"
+              ></div>
+            </div>
+
+            <div>Yearly Billing</div>
+
+            <div
+              class="text-light-red bg-light-grayish-red hidden rounded-full p-1.5 text-xs md:block"
+            >
+              25% Discount
+            </div>
+
+            <div
+              class="text-light-red bg-light-grayish-red block rounded-full p-1.5 text-xs md:hidden"
+            >
+              -25%
+            </div>
+          </div>
+        </div>
+
+        <hr />
+
+        <div
+          class="flex flex-col items-center justify-center md:flex-row md:justify-between"
+        >
+          <div class="text-grayish-blue flex flex-col py-5">
+            <div class="inline-flex items-center gap-2">
+              <span><img src="images/icon-check.svg" alt="" /></span>
+              Unlimited websites
+            </div>
+
+            <div class="inline-flex items-center gap-2">
+              <span><img src="images/icon-check.svg" alt="" /></span>
+              100% data ownership
+            </div>
+
+            <div class="inline-flex items-center gap-2">
+              <span><img src="images/icon-check.svg" alt="" /></span>
+              Email reports
+            </div>
+          </div>
+
+          <button
+            class="text-pale-blue bg-dark-desaturated-blue rounded-full px-16 py-3 active:text-white"
+          >
+            Start my trial
+          </button>
+        </div>
+      </div>
+    </div>
+
     <div
       class="flex h-[100vh] w-full flex-col place-content-center text-center"
     >
@@ -54,7 +226,7 @@
       <div class="mt-3">
         <a
           class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA/frontend_mentor_challenges/tree/interactive_pricing_component/challenges/interactive_pricing_component"
+          href="https://github.com/nittin-shankar/frontend_mentor_challenges/tree/interactive_pricing_component/challenges/interactive_pricing_component"
           >Source code</a
         >
       </div>
