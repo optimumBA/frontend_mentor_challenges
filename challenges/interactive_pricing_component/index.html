@@ -57,42 +57,57 @@
         <div
           class="relative p-5"
           x-data="{
-          sliderValue: 1,
-          get pageViews() {
-            if (this.sliderValue == 1){
-              return '10K'
-            } else if (this.sliderValue == 2) {
-              return '50K'
-            } else if (this.sliderValue == 3) {
-              return '100K'
-            } else if (this.sliderValue == 4) {
-              return '500K'
-            } else if (this.sliderValue == 5) {
-              return '1M'
-            }
+          sliderValue: 3,
+          hasClickedBillingToggle: false,
+          defaultClasses: 'h-6 w-12 rounded-full relative cursor-pointer active:bg-soft-cyan',
+          defaultToggleClasses: 'absolute h-4 w-4 rounded-full top-1 bg-white ',
+
+          monthlyPricesList: [
+            '$8.00',
+            '$12.00',
+            '$16.00',
+            '$24.00',
+            '$36.00'
+          ],
+          
+          yearlyPricesList: [
+            '$6.00',
+            '$9.00',
+            '$12.00',
+            '$18.00',
+            '$27.00'
+          ],
+
+          pageViewsList: [
+            '10K',
+            '50K',
+            '100K',
+            '500K',
+            '1M',
+          ],
+
+          getPageViews() {
+            return this.pageViewsList[this.sliderValue - 1]
           },
 
-          get price() {
-            if (this.sliderValue == 1){
-              return '$8.00'
-            } else if (this.sliderValue == 2) {
-              return '$12.00'
-            } else if (this.sliderValue == 3) {
-              return '$16.00'
-            } else if (this.sliderValue == 4) {
-              return '$24.00'
-            } else if (this.sliderValue == 5) {
-              return '$36.00'
+          getPrice() {
+            if (this.hasClickedBillingToggle) {
+              return this.yearlyPricesList[this.sliderValue - 1]
+            } else {
+              return this.monthlyPricesList[this.sliderValue - 1]
             }
           }
         }"
         >
           <div class="flex items-center justify-between tracking-wider">
             <div class="text-grayish-blue font-medium uppercase">
-              <span x-text="pageViews"></span> Pageviews
+              <span x-text="getPageViews()"></span> Pageviews
             </div>
             <div class="inline-flex items-center gap-2">
-              <span class="text-dark-desaturated-blue text-4xl font-bold" x-text="price"></span>
+              <span
+                class="text-dark-desaturated-blue text-4xl font-bold"
+                x-text="getPrice()"
+              ></span>
               <span class="text-grayish-blue text-center">/ month</span>
             </div>
           </div>
@@ -112,15 +127,12 @@
             <div>Monthly Billing</div>
 
             <div
-              x-data="{hasClicked: false,
-                defaultClasses: 'h-6 w-12 rounded-full relative cursor-pointer active:bg-soft-cyan',
-                defaultToggleClasses: 'absolute h-4 w-4 rounded-full top-1 bg-white'
-              }"
-              @click="hasClicked = !hasClicked"
-              :class="hasClicked ? 'bg-soft-cyan ' + defaultClasses  : 'bg-light-grayish-blue ' + defaultClasses"
+              id="yearly-billing-toggle"
+              @click="hasClickedBillingToggle = !hasClickedBillingToggle"
+              :class="hasClickedBillingToggle ? 'bg-soft-cyan ' + defaultClasses  : 'bg-light-grayish-blue ' + defaultClasses"
             >
               <div
-                :class="hasClicked ? 'right-1 ' + defaultToggleClasses : 'left-1 ' + defaultToggleClasses"
+                :class="hasClickedBillingToggle ? 'right-1 ' + defaultToggleClasses : 'left-1 ' + defaultToggleClasses"
               ></div>
             </div>
 
