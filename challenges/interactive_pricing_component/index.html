@@ -27,83 +27,110 @@
     />
     <link rel="manifest" href="../site.webmanifest" />
     <link rel="stylesheet" href="style.css" />
-    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
   </head>
-  <body class="m-0 bg-[url('images/bg-pattern.svg')] bg-no-repeat  bg-very-pale-blue relative">
-    <div class="w-full mx-auto mt-28 relative ">
-      <div class="max-w-md mx-auto text-center pt-12 mb-32 relative">
-        <img class="absolute top-0 left-[35%]" src="images/pattern-circles.svg" alt="">
-        <h1 class="text-3xl text-dark-desaturated-blue">Simple, traffic-based pricing</h1>
-        <p class="text-grayish-blue">Sign-up for our 30-day trial. No credit card required.</p>
+  <body
+    class="bg-very-pale-blue relative m-0 bg-[url('images/bg-pattern.svg')] bg-no-repeat"
+  >
+    <div class="relative mx-auto mt-28 w-full">
+      <div class="relative mx-auto mb-32 max-w-md pt-12 text-center">
+        <img
+          class="absolute top-0 left-[35%]"
+          src="images/pattern-circles.svg"
+          alt=""
+        />
+        <h1 class="text-dark-desaturated-blue text-3xl">
+          Simple, traffic-based pricing
+        </h1>
+        <p class="text-grayish-blue">
+          Sign-up for our 30-day trial. No credit card required.
+        </p>
       </div>
 
-      <div class="max-w-xl w-full drop-shadow-2xl p-6 mx-auto rounded-md bg-white">
+      <div
+        class="mx-auto w-full max-w-xl rounded-md bg-white p-6 drop-shadow-2xl"
+      >
         <!-- Interactive component -->
-        <div class="p-5" x-data="{
-          sliderValue: 3
-        }">
-          <div class="flex justify-between items-center tracking-wider">
-            <div class="uppercase text-grayish-blue font-medium"><span x-text="(sliderValue * 110)"></span>K Pageviews</div>
-            <div class="inline-flex gap-2 items-center">
-              <span class="text-4xl font-bold text-dark-desaturated-blue">$<span x-text="(sliderValue * 30).toFixed(2)"></span></span>
-              <span class="text-center text-grayish-blue">/ month</span>
-              
+        <div
+          class="p-5 relative"
+          x-data="{
+          sliderValue: 1,
+        }"
+        >
+          <div class="flex items-center justify-between tracking-wider">
+            <div class="text-grayish-blue font-medium uppercase">
+              <span x-text="(sliderValue * 110)"></span>K Pageviews
+            </div>
+            <div class="inline-flex items-center gap-2">
+              <span class="text-dark-desaturated-blue text-4xl font-bold"
+                >$<span x-text="(sliderValue * 30).toFixed(2)"></span
+              ></span>
+              <span class="text-grayish-blue text-center">/ month</span>
             </div>
           </div>
-  
-          <div>
-            <input id="slider" x-model="sliderValue" min="1" max="5" class="w-full cursor-pointer h-2 my-10 rounded-full" type="range" id="">
-          </div>
-  
-          <div class="flex justify-end gap-2 items-center mr-6 text-grayish-blue">
+
+          <input class="my-16" type="range" min="1" max="5" id="price-slider" x-model="sliderValue" />
+
+          <div
+            class="text-grayish-blue mr-6 flex items-center justify-end gap-2"
+          >
             <div>Monthly Billing</div>
-  
-            <div 
+
+            <div
               x-data="{hasClicked: false,
                 defaultClasses: 'h-6 w-12 rounded-full relative cursor-pointer active:bg-soft-cyan',
                 defaultToggleClasses: 'absolute h-4 w-4 rounded-full top-1 bg-white'
-              }" 
-              @click="hasClicked = !hasClicked" 
-              :class="hasClicked ? 'bg-soft-cyan ' + defaultClasses  : 'bg-light-grayish-blue ' + defaultClasses">
-              <div :class="hasClicked ? 'right-1 ' + defaultToggleClasses : 'left-1 ' + defaultToggleClasses">
-              </div>
+              }"
+              @click="hasClicked = !hasClicked"
+              :class="hasClicked ? 'bg-soft-cyan ' + defaultClasses  : 'bg-light-grayish-blue ' + defaultClasses"
+            >
+              <div
+                :class="hasClicked ? 'right-1 ' + defaultToggleClasses : 'left-1 ' + defaultToggleClasses"
+              ></div>
             </div>
-  
+
             <div>Yearly Billing</div>
-  
-            <div class="rounded-full text-xs p-1.5 text-light-red bg-light-grayish-red">
+
+            <div
+              class="text-light-red bg-light-grayish-red rounded-full p-1.5 text-xs"
+            >
               25% Discount
             </div>
           </div>
-          
-  
         </div>
-  
-        <hr>
-  
+
+        <hr />
+
         <div class="flex items-center justify-between p-5">
-          <div class="flex flex-col py-5 text-grayish-blue">
-            <div class="inline-flex gap-2 items-center">
-              <span><img src="images/icon-check.svg" alt=""></span>
+          <div class="text-grayish-blue flex flex-col py-5">
+            <div class="inline-flex items-center gap-2">
+              <span><img src="images/icon-check.svg" alt="" /></span>
               Unlimited websites
             </div>
-  
-            <div class="inline-flex gap-2 items-center">
-              <span><img src="images/icon-check.svg" alt=""></span>
+
+            <div class="inline-flex items-center gap-2">
+              <span><img src="images/icon-check.svg" alt="" /></span>
               100% data ownership
             </div>
-  
-            <div class="inline-flex gap-2 items-center">
-              <span><img src="images/icon-check.svg" alt=""></span>
+
+            <div class="inline-flex items-center gap-2">
+              <span><img src="images/icon-check.svg" alt="" /></span>
               Email reports
             </div>
           </div>
-  
-          <button class="px-16 py-3 rounded-full text-pale-blue bg-dark-desaturated-blue active:text-white">Start my trial</button>
+
+          <button
+            class="text-pale-blue bg-dark-desaturated-blue rounded-full px-16 py-3 active:text-white"
+          >
+            Start my trial
+          </button>
         </div>
       </div>
     </div>
-  
+
     <div
       class="flex h-[100vh] w-full flex-col place-content-center text-center"
     >
@@ -129,7 +156,7 @@
       <div class="mt-3">
         <a
           class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA/frontend_mentor_challenges/tree/interactive_pricing_component/challenges/interactive_pricing_component"
+          href="https://github.com/nittin-shankar/frontend_mentor_challenges/tree/interactive_pricing_component/challenges/interactive_pricing_component"
           >Source code</a
         >
       </div>
