@@ -51,7 +51,7 @@
       </div>
 
       <div
-        class="mx-auto w-full max-w-xl rounded-md bg-white p-6 drop-shadow-2xl"
+        class="mx-auto w-full max-w-xs md:max-w-xl rounded-md bg-white p-0 pb-3 md:p-6 drop-shadow-2xl"
       >
         <!-- Interactive component -->
         <div
@@ -99,7 +99,7 @@
           }
         }"
         >
-          <div class="flex items-center justify-between tracking-wider">
+          <div class="hidden md:flex items-center justify-between tracking-wider">
             <div class="text-grayish-blue font-medium uppercase">
               <span x-text="getPageViews()"></span> Pageviews
             </div>
@@ -112,6 +112,10 @@
             </div>
           </div>
 
+          <div class="text-grayish-blue text-center font-medium uppercase block md:hidden">
+            <span x-text="getPageViews()"></span> Pageviews
+          </div>
+
           <input
             class="my-16"
             type="range"
@@ -121,8 +125,18 @@
             x-model="sliderValue"
           />
 
+          <div class="mb-5 w-full flex items-center md:hidden">
+            <div class="flex mx-auto items-center gap-2">
+              <span
+                class="text-dark-desaturated-blue text-4xl font-bold"
+                x-text="getPrice()"
+              ></span>
+              <span class="text-grayish-blue text-center">/ month</span>
+            </div>
+          </div>
+
           <div
-            class="text-grayish-blue mr-6 flex items-center justify-end gap-2"
+            class="text-grayish-blue mr-0 text-xs md:mr-6 flex items-center justify-end gap-1 w-full md:gap-2"
           >
             <div>Monthly Billing</div>
 
@@ -139,16 +153,22 @@
             <div>Yearly Billing</div>
 
             <div
-              class="text-light-red bg-light-grayish-red rounded-full p-1.5 text-xs"
+              class="text-light-red bg-light-grayish-red hidden md:block rounded-full p-1.5 text-xs"
             >
               25% Discount
+            </div>
+
+            <div
+              class="text-light-red bg-light-grayish-red rounded-full p-1.5 text-xs block md:hidden"
+            >
+              -25%
             </div>
           </div>
         </div>
 
         <hr />
 
-        <div class="flex items-center justify-between p-5">
+        <div class="flex flex-col md:flex-row items-center justify-center md:justify-between">
           <div class="text-grayish-blue flex flex-col py-5">
             <div class="inline-flex items-center gap-2">
               <span><img src="images/icon-check.svg" alt="" /></span>
