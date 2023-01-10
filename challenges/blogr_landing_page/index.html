@@ -27,8 +27,595 @@
     />
     <link rel="manifest" href="../site.webmanifest" />
     <link rel="stylesheet" href="style.css" />
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
   </head>
   <body class="m-0">
+    <!-- The whole blogr site -->
+    <div class="">
+      <!-- Hero Section -->
+      <section
+        class="from-light-red to-very-light-red w-full overflow-hidden rounded-bl-[5rem] bg-gradient-to-tl"
+      >
+        <nav
+          class="my-5"
+          x-data="{
+          hasClickedMenu: false
+        }"
+        >
+          <div
+            class="relative mx-auto flex max-w-7xl items-center justify-between p-3 md:p-0"
+          >
+            <!-- Left Side of the navbar -->
+            <div class="flex items-center">
+              <img src="images/logo.svg" alt="" />
+
+              <div
+                class="hidden pl-8 md:flex"
+                x-data="{
+                defualtTabClasses: 'inline-flex items-center gap-2 cursor-pointer px-3 active:underline active:font-semibold text-white ',
+                hasClickedOnProduct: false,
+                hasClickedOnCompany: false,
+                hasClickedOnConnect: false
+              }"
+              >
+                <div class="relative">
+                  <div
+                    @click="
+                    hasClickedOnProduct = !hasClickedOnProduct
+                    hasClickedOnCompany = false
+                    hasClickedOnConnect = false
+                  "
+                    @click.away="
+                    hasClickedOnProduct = false
+                  "
+                    :class="hasClickedOnProduct ? 'underline font-semibold ' + defualtTabClasses : defualtTabClasses"
+                  >
+                    Product
+                    <span :class="hasClickedOnProduct ? 'rotate-180' : ''"
+                      ><img src="images/icon-arrow-light.svg" alt=""
+                    /></span>
+                  </div>
+
+                  <div
+                    x-transition
+                    x-cloak
+                    x-show="hasClickedOnProduct"
+                    class="text-very-dark-grayish-blue absolute top-10 rounded-lg bg-white p-6 shadow-2xl"
+                  >
+                    <a
+                      class="active:text-very-dark-blue hover:text-very-dark-blue block py-0.5 active:font-semibold"
+                      href=""
+                      >Overview</a
+                    >
+                    <a
+                      class="active:text-very-dark-blue hover:text-very-dark-blue block py-0.5 active:font-semibold"
+                      href=""
+                      >Pricing</a
+                    >
+                    <a
+                      class="active:text-very-dark-blue hover:text-very-dark-blue block py-0.5 active:font-semibold"
+                      href=""
+                      >Marketplace</a
+                    >
+                    <a
+                      class="active:text-very-dark-blue hover:text-very-dark-blue block py-0.5 active:font-semibold"
+                      href=""
+                      >Features</a
+                    >
+                    <a
+                      class="active:text-very-dark-blue hover:text-very-dark-blue block py-0.5 active:font-semibold"
+                      href=""
+                      >Integrations</a
+                    >
+                  </div>
+                </div>
+
+                <div class="relative">
+                  <div
+                    @click="
+                    hasClickedOnCompany = !hasClickedOnCompany
+                    hasClickedOnProduct = false
+                    hasClickedOnConnect = false
+                  "
+                    @click.away="
+                    hasClickedOnCompany = false
+                  "
+                    :class="hasClickedOnCompany ? 'underline font-semibold ' + defualtTabClasses : defualtTabClasses"
+                  >
+                    Company
+                    <span :class="hasClickedOnCompany ? 'rotate-180' : ''"
+                      ><img src="images/icon-arrow-light.svg" alt=""
+                    /></span>
+                  </div>
+
+                  <div
+                    x-transition
+                    x-cloak
+                    x-show="hasClickedOnCompany"
+                    class="text-very-dark-grayish-blue absolute top-10 rounded-lg bg-white p-6 shadow-2xl"
+                  >
+                    <a
+                      class="active:text-very-dark-blue hover:text-very-dark-blue block py-0.5 active:font-semibold"
+                      href=""
+                      >About</a
+                    >
+                    <a
+                      class="active:text-very-dark-blue hover:text-very-dark-blue block py-0.5"
+                      href=""
+                      >Team</a
+                    >
+                    <a
+                      class="active:text-very-dark-blue hover:text-very-dark-blue block py-0.5"
+                      href=""
+                      >Blog</a
+                    >
+                    <a
+                      class="active:text-very-dark-blue hover:text-very-dark-blue block py-0.5"
+                      href=""
+                      >Careers</a
+                    >
+                  </div>
+                </div>
+
+                <div class="relative">
+                  <div
+                    @click="
+                    hasClickedOnConnect = !hasClickedOnConnect
+                    hasClickedOnProduct = false
+                    hasClickedOnCompany = false
+                  "
+                    @click.away="
+                    hasClickedOnConnect = false
+                  "
+                    :class="hasClickedOnConnect ? 'underline font-semibold ' + defualtTabClasses : defualtTabClasses"
+                  >
+                    Connect
+                    <span :class="hasClickedOnConnect ? 'rotate-180' : ''"
+                      ><img src="images/icon-arrow-light.svg" alt=""
+                    /></span>
+                  </div>
+
+                  <div
+                    x-transition
+                    x-cloak
+                    x-show="hasClickedOnConnect"
+                    class="text-very-dark-grayish-blue absolute top-10 rounded-lg bg-white p-6 shadow-2xl"
+                  >
+                    <a
+                      class="active:text-very-dark-blue hover:text-very-dark-blue block py-0.5 active:font-semibold"
+                      href=""
+                      >Contact</a
+                    >
+                    <a
+                      class="active:text-very-dark-blue hover:text-very-dark-blue block py-0.5 active:font-semibold"
+                      href=""
+                      >Newsletter</a
+                    >
+                    <a
+                      class="active:text-very-dark-blue hover:text-very-dark-blue block py-0.5 active:font-semibold"
+                      href=""
+                      >LinkedIn</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Side of the navbar -->
+            <div class="hidden items-center md:flex">
+              <div class="cursor-pointer px-3 text-white">Login</div>
+              <button
+                class="text-light-red active:bg-very-light-red cursor-pointer rounded-full bg-white py-2 px-6 font-bold active:text-white"
+              >
+                Sign up
+              </button>
+            </div>
+
+            <div
+              id="mobile-menu-toggle"
+              class="block cursor-pointer md:hidden"
+              @click="hasClickedMenu = !hasClickedMenu"
+            >
+              <template x-if="hasClickedMenu">
+                <img src="images/icon-close.svg" alt="" />
+              </template>
+
+              <template x-if="!hasClickedMenu">
+                <img src="images/icon-hamburger.svg" alt="" />
+              </template>
+            </div>
+
+            <!-- Mobile menu -->
+            <div
+              x-transition
+              x-cloak
+              x-show="hasClickedMenu"
+              class="absolute top-16 w-full bg-white"
+            >
+              <div
+                class="mt-2 flex w-full flex-col"
+                x-data="{
+                defualtTabClasses: 'inline-flex py-2 gap-2 items-center justify-center cursor-pointer text-center text-very-dark-blue font-semibold',
+                hasClickedOnProduct: false,
+                hasClickedOnCompany: false,
+                hasClickedOnConnect: false
+              }"
+              >
+                <div
+                  @click="
+                hasClickedOnProduct = !hasClickedOnProduct
+                hasClickedOnCompany = false
+                hasClickedOnConnect = false
+                "
+                  :class="hasClickedOnProduct ? 'font-semibold text-very-dark-grayish-blue ' + defualtTabClasses : defualtTabClasses"
+                >
+                  Product
+                  <span :class="hasClickedOnProduct ? 'rotate-180' : ''"
+                    ><img src="images/icon-arrow-dark.svg" alt=""
+                  /></span>
+                </div>
+
+                <div
+                  x-cloak
+                  x-show="hasClickedOnProduct"
+                  class="text-very-dark-grayish-blue mx-auto w-10/12 rounded-md bg-gray-100 p-4 text-center"
+                >
+                  <a
+                    class="active:text-very-dark-blue hover:text-very-dark-blue block py-1 active:font-semibold"
+                    href=""
+                    >Overview</a
+                  >
+                  <a
+                    class="active:text-very-dark-blue hover:text-very-dark-blue block py-1"
+                    href=""
+                    >Pricing</a
+                  >
+                  <a
+                    class="active:text-very-dark-blue hover:text-very-dark-blue block py-1"
+                    href=""
+                    >Marketplace</a
+                  >
+                  <a
+                    class="active:text-very-dark-blue hover:text-very-dark-blue block py-1"
+                    href=""
+                    >Features</a
+                  >
+                  <a
+                    class="active:text-very-dark-blue hover:text-very-dark-blue block py-1"
+                    href=""
+                    >Integrations</a
+                  >
+                </div>
+
+                <div
+                  @click="
+                hasClickedOnCompany = !hasClickedOnCompany
+                hasClickedOnProduct = false
+                hasClickedOnConnect = false
+                "
+                  :class="hasClickedOnCompany ? 'font-semibold text-very-dark-grayish-blue ' + defualtTabClasses : defualtTabClasses"
+                >
+                  Company
+                  <span :class="hasClickedOnCompany ? 'rotate-180' : ''"
+                    ><img src="images/icon-arrow-dark.svg" alt=""
+                  /></span>
+                </div>
+
+                <div
+                  x-cloak
+                  x-show="hasClickedOnCompany"
+                  class="text-very-dark-grayish-blue mx-auto w-10/12 rounded-md bg-gray-100 p-4 text-center"
+                >
+                  <a
+                    class="active:text-very-dark-blue hover:text-very-dark-blue block py-1 active:font-semibold"
+                    href=""
+                    >About</a
+                  >
+                  <a
+                    class="active:text-very-dark-blue hover:text-very-dark-blue block py-1"
+                    href=""
+                    >Team</a
+                  >
+                  <a
+                    class="active:text-very-dark-blue hover:text-very-dark-blue block py-1"
+                    href=""
+                    >Blog</a
+                  >
+                  <a
+                    class="active:text-very-dark-blue hover:text-very-dark-blue block py-1"
+                    href=""
+                    >Careers</a
+                  >
+                </div>
+
+                <div
+                  @click="
+                hasClickedOnConnect = !hasClickedOnConnect
+                hasClickedOnProduct = false
+                hasClickedOnCompany = false
+                "
+                  :class="hasClickedOnConnect ? 'font-semibold text-very-dark-grayish-blue ' + defualtTabClasses : defualtTabClasses"
+                >
+                  Connect
+                  <span :class="hasClickedOnConnect ? 'rotate-180' : ''"
+                    ><img src="images/icon-arrow-dark.svg" alt=""
+                  /></span>
+                </div>
+
+                <div
+                  x-cloak
+                  x-show="hasClickedOnConnect"
+                  class="text-very-dark-grayish-blue mx-auto w-10/12 rounded-md bg-gray-100 p-4 text-center"
+                >
+                  <a
+                    class="active:text-very-dark-blue hover:text-very-dark-blue block py-1 active:font-semibold"
+                    href=""
+                    >Contact</a
+                  >
+                  <a
+                    class="active:text-very-dark-blue hover:text-very-dark-blue block py-1"
+                    href=""
+                    >Newsletter</a
+                  >
+                  <a
+                    class="active:text-very-dark-blue hover:text-very-dark-blue block py-1"
+                    href=""
+                    >LinkedIn</a
+                  >
+                </div>
+
+                <hr class="mt-3" />
+
+                <div class="mx-auto my-4">
+                  <div
+                    class="text-very-dark-grayish-blue cursor-pointer px-3 text-center"
+                  >
+                    Login
+                  </div>
+                  <button
+                    class="from-light-red to-very-light-red my-2 cursor-pointer rounded-full bg-gradient-to-l py-2 px-6 font-bold text-white"
+                  >
+                    Sign up
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+
+        <div class="my-28 px-3 md:mx-auto md:max-w-5xl">
+          <h1 class="text-center text-4xl text-white md:text-6xl">
+            A modern publishing platform
+          </h1>
+          <p class="my-5 px-4 text-center text-white">
+            Grow your audience and build your online brand
+          </p>
+
+          <!-- CTAs -->
+          <div class="my-12 flex items-center justify-center">
+            <button
+              class="text-light-red hover:bg-very-light-red mx-2 cursor-pointer rounded-full bg-white py-2 px-4 font-bold active:text-white"
+            >
+              Start for Free
+            </button>
+            <button
+              class="active:text-light-red mx-2 cursor-pointer rounded-full border border-white bg-transparent py-2 px-4 text-white active:bg-white active:font-bold"
+            >
+              Learn more
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Designed for the future section -->
+      <section class="relative h-fit w-full overflow-x-clip py-12">
+        <div class="flex flex-col-reverse justify-center md:flex-row">
+          <img
+            class="absolute -right-40 hidden md:top-36 md:block md:w-1/2 lg:top-2"
+            src="images/illustration-editor-desktop.svg"
+            alt=""
+          />
+          <img
+            class="block md:hidden"
+            src="images/illustration-editor-mobile.svg"
+            alt=""
+          />
+          <h2
+            class="text-very-dark-blue py-11 text-center text-3xl md:py-24 md:text-4xl"
+          >
+            Designed for the future
+          </h2>
+        </div>
+
+        <div class="md:mx-auto md:w-1/2 md:max-w-7xl">
+          <div class="my-10 px-3 md:m-0 md:w-7/12 md:p-0">
+            <div class="text-center md:text-left">
+              <h3
+                class="text-very-dark-blue mb-4 px-5 text-3xl md:px-0 md:text-2xl"
+              >
+                Introducing an extensible editor
+              </h3>
+              <p class="text-very-dark-grayish-blue px-3 md:p-0">
+                Blogr features an exceedingly intuitive interface which lets you
+                focus on one thing: creating content. The editor supports
+                management of multiple blogs and allows easy manipulation of
+                embeds such as images, videos, and Markdown. Extensibility with
+                plugins and themes provide easy ways to add functionality or
+                change the looks of a blog.
+              </p>
+            </div>
+
+            <div class="mt-20 text-center md:text-left">
+              <h3
+                class="text-very-dark-blue my-4 px-5 text-3xl md:px-0 md:text-2xl"
+              >
+                Robust content management
+              </h3>
+              <p class="text-very-dark-grayish-blue px-3 md:p-0">
+                Flexible content management enables users to easily move through
+                posts. Increase the usability of your blog by adding customized
+                categories, sections, format, or flow. With this functionality,
+                you’re in full control.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- State of the architechture Section -->
+      <section
+        class="from-very-dark-gray-blue to-very-dark-desaturated-blue relative my-20 w-full rounded-bl-[5rem] rounded-tr-[5rem] bg-gradient-to-r md:my-40"
+      >
+        <img
+          class="absolute -top-28 z-50 block md:absolute md:-top-16 md:hidden"
+          src="images/illustration-phones.svg"
+          alt=""
+        />
+
+        <div class="relative mx-auto hidden max-w-5xl md:block">
+          <img
+            class="absolute -top-28 z-50 md:absolute md:-top-16"
+            src="images/illustration-phones.svg"
+            alt=""
+          />
+        </div>
+
+        <div class="relative h-full w-full overflow-hidden">
+          <img
+            class="md:absolute md:-bottom-1/2"
+            src="images/bg-pattern-circles.svg"
+            alt=""
+          />
+
+          <div class="z-50 mx-auto -mt-32 mb-24 max-w-5xl md:-mt-0 md:mb-0">
+            <div class="md:flex md:items-center md:justify-end md:pl-32">
+              <div
+                class="my-10 px-2 text-center md:my-24 md:w-1/2 md:p-0 md:text-left"
+              >
+                <h2 class="text-3xl text-white md:text-2xl">
+                  State of the Art Infrastructure
+                </h2>
+                <p class="mt-10 px-3 text-white md:px-0">
+                  With reliability and speed in mind, worldwide data centers
+                  provide the backbone for ultra-fast connectivity. This ensures
+                  your site will load instantly, no matter where your readers
+                  are, keeping your site competitive.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Last section of the page -->
+      <section class="relative h-fit w-full py-4">
+        <div class="flex flex-col items-center justify-center md:flex-row">
+          <img
+            class="-ml-16 hidden md:block"
+            src="images/illustration-laptop-desktop.svg"
+            alt=""
+          />
+          <img
+            class="block md:hidden"
+            src="images/illustration-laptop-mobile.svg"
+            alt=""
+          />
+
+          <div class="px-3 py-5 md:p-0">
+            <div class="text-center md:w-8/12 md:text-left">
+              <h3
+                class="text-very-dark-blue mb-4 px-5 text-3xl md:px-0 md:text-2xl"
+              >
+                Free, open, simple
+              </h3>
+              <p class="text-very-dark-grayish-blue px-3 md:p-0">
+                Blogr is a free and open source application backed by a large
+                community of helpful developers. It supports features such as
+                code syntax highlighting, RSS feeds, social media integration,
+                third-party commenting tools, and works seamlessly with Google
+                Analytics. The architecture is clean and is relatively easy to
+                learn.
+              </p>
+            </div>
+
+            <div class="mt-20 text-center md:w-8/12 md:text-left">
+              <h3
+                class="text-very-dark-blue my-4 px-5 text-3xl md:px-0 md:text-2xl"
+              >
+                Powerful tooling
+              </h3>
+              <p class="text-very-dark-grayish-blue px-3 md:p-0">
+                Batteries included. We built a simple and straightforward CLI
+                tool that makes customization and deployment a breeze, but
+                capable of producing even the most complicated sites.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer section -->
+      <section class="bg-very-dark-black-blue mt-20 rounded-tr-[5rem] py-24">
+        <div
+          class="text-grayish-blue mx-auto flex max-w-7xl flex-col p-3 text-center md:flex-row md:items-start md:justify-between md:p-0 md:text-left"
+        >
+          <div class="mx-auto mb-10 md:m-0">
+            <img src="images/logo.svg" alt="" />
+          </div>
+          <div>
+            <div class="mb-4 font-semibold text-white md:mb-8">Product</div>
+            <a class="block py-0.5 hover:text-white active:underline" href=""
+              >Overview</a
+            >
+            <a class="block py-0.5 hover:text-white active:underline" href=""
+              >Pricing</a
+            >
+            <a class="block py-0.5 hover:text-white active:underline" href=""
+              >Marketplace</a
+            >
+            <a class="block py-0.5 hover:text-white active:underline" href=""
+              >Features</a
+            >
+            <a class="block py-0.5 hover:text-white active:underline" href=""
+              >Integrations</a
+            >
+          </div>
+
+          <div class="mt-10 md:m-0">
+            <div class="mb-4 font-semibold text-white md:mb-8">Company</div>
+            <a class="block py-0.5 hover:text-white active:underline" href=""
+              >About</a
+            >
+            <a class="block py-0.5 hover:text-white active:underline" href=""
+              >Team</a
+            >
+            <a class="block py-0.5 hover:text-white active:underline" href=""
+              >Blog</a
+            >
+            <a class="block py-0.5 hover:text-white active:underline" href=""
+              >Careers</a
+            >
+          </div>
+
+          <div class="mt-10 md:m-0">
+            <div class="mb-4 font-semibold text-white md:mb-8">Connect</div>
+            <a class="block py-0.5 hover:text-white active:underline" href=""
+              >Contact</a
+            >
+            <a class="block py-0.5 hover:text-white active:underline" href=""
+              >Newsletter</a
+            >
+            <a class="block py-0.5 hover:text-white active:underline" href=""
+              >LinkedIn</a
+            >
+          </div>
+        </div>
+      </section>
+    </div>
+
     <div
       class="flex h-[100vh] w-full flex-col place-content-center text-center"
     >
@@ -54,7 +641,7 @@
       <div class="mt-3">
         <a
           class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA/frontend_mentor_challenges/tree/blogr_landing_page/challenges/blogr_landing_page"
+          href="https://github.com/nittin-shankar/frontend_mentor_challenges/tree/blogr_landing_page/challenges/blogr_landing_page"
           >Source code</a
         >
       </div>
