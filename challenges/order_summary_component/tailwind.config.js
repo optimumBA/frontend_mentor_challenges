@@ -18,8 +18,8 @@ module.exports = {
         btn: '0 20px 20px 0 hsla(245, 75%, 52%, 20%)',
       },
       backgroundImage: {
-        mobile: "url('pattern-background-mobile.svg')",
-        desktop: "url('pattern-background-desktop.svg')",
+        mobile: "url('images/pattern-background-mobile.svg')",
+        desktop: "url('images/pattern-background-desktop.svg')",
       },
     },
   },
