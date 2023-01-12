@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .stats {
+    @apply font-titles font-bold text-white;
+  }
+
+  .stats-title {
+    @apply text-transparent-white-main block text-xs font-normal uppercase opacity-75;
+  }
+}

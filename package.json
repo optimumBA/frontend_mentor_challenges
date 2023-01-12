@@ -25,5 +25,9 @@
     "test": "npm-run-all check-formatting build wdio-test",
     "watch": "npm run build -- --watch",
     "wdio-test": "npx wdio run wdio.conf.js"
+  },
+  "dependencies": {
+    "chrome-launcher": "^0.15.1",
+    "node-fetch": "^2.6.7"
   }
 }
