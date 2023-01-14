@@ -1,3 +1,68 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  img,
+  input,
+  button {
+    @apply block;
+  }
+
+  img {
+    @apply max-w-full;
+  }
+
+  input::placeholder {
+    @apply text-grayish-blue opacity-75;
+  }
+
+  main::before {
+    content: '';
+    @apply bg-light-magenta absolute left-0 top-0 z-[-1] block h-[600px] w-[50%]  rounded-br-full;
+  }
+
+  /* TODO: fix white space caused here */
+  body::after {
+    content: '';
+    transform: translateY(40%);
+    @apply bg-light-magenta absolute right-0 z-[-1] h-[700px] w-[50%] rounded-tl-full opacity-5;
+  }
+
+  .chat::before {
+    content: '';
+    padding: 15em, 4em;
+    transform: translateY(-40%);
+
+    @apply absolute right-1 left-2 z-[2] mx-auto mb-3 block h-6 w-40 rounded-2xl bg-white;
+  }
+
+  .bubble {
+    @apply w-fit max-w-[65%] rounded-xl p-2;
+  }
+
+  .bubble-l {
+    @apply text-moderate-violet bg-grayish-blue rounded-bl-sm text-xs shadow;
+  }
+
+  .bubble-r {
+    @apply text-desat-dark-violet ml-auto rounded-br-sm bg-white text-xs shadow-md;
+  }
+
+  .bubble-img {
+    @apply h-12 rounded-xl;
+  }
+
+  .bubble-purple {
+    @apply from-light-magenta to-light-violet flex max-w-fit whitespace-nowrap bg-gradient-to-r py-2 px-4 text-white;
+  }
+
+  .price {
+    @apply border-light-magenta border-thin h-5 w-5 border-solid opacity-10;
+  }
+
+  .vert-btn {
+    transform: rotate(-90deg);
+    display: block;
+  }
+}
