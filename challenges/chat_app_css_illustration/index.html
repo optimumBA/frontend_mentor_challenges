@@ -36,155 +36,160 @@
   </head>
 
   <body
-    class="font-base m-0 grid min-h-screen items-center justify-center bg-white font-normal"
+    class="font-base m-0 grid min-h-screen items-center justify-center bg-white font-normal lg:text-lg"
   >
-    <main class="pt-8">
-      <section
-        class="chat shadow-grayish-blue mx-auto w-[85%] max-w-xs rounded-3xl border-[12px] border-solid border-white bg-white shadow-2xl sm:max-w-md"
-      >
-        <div
-          class="from-light-violet to-light-magenta relative -bottom-1 flex w-full justify-between overflow-hidden rounded-full rounded-t-3xl rounded-b-lg bg-gradient-to-r py-6 pl-2 pr-4 text-white"
+    <div>
+      <main class="pt-8 md:grid md:grid-flow-col md:items-center md:gap-6">
+        <section
+          class="chat shadow-grayish-blue relative mx-auto w-[85%] max-w-xs rounded-3xl border-[12px] border-solid border-white bg-white shadow-2xl sm:max-w-md"
         >
-          <div class="flex items-center">
-            <button class="vert-btn h-6 w-6 self-center bg-transparent">
-              <span class="text-5xl leading-none text-white">^</span>
-            </button>
-            <img
-              src="images/avatar.jpg"
-              alt="Samuel Green"
-              class="h-8 w-8 rounded-full border-2 border-solid border-white"
-            />
-            <div class="ml-2 leading-snug">
-              <h3 class="text-sm font-medium opacity-80">Samuel Green</h3>
-              <p class="text-pale-violet text-xs opacity-75">
-                Available to Walk
-              </p>
+          <div
+            class="from-light-violet to-light-magenta relative -bottom-1 flex w-full justify-between overflow-hidden rounded-full rounded-t-3xl rounded-b-lg bg-gradient-to-r py-6 pl-2 pr-4 text-white"
+          >
+            <div class="flex items-center">
+              <button class="vert-btn h-6 w-6 self-center bg-transparent">
+                <span class="text-5xl leading-none text-white">^</span>
+              </button>
+              <img
+                src="images/avatar.jpg"
+                alt="Samuel Green"
+                class="h-8 w-8 rounded-full border-2 border-solid border-white"
+              />
+              <div class="ml-2 leading-snug">
+                <h3 class="text-sm font-medium opacity-80">Samuel Green</h3>
+                <p class="text-pale-violet text-xs opacity-75">
+                  Available to Walk
+                </p>
+              </div>
             </div>
+
+            <button class="font-bold"><span class="vert-btn">...</span></button>
           </div>
-
-          <button class="font-bold"><span class="vert-btn">...</span></button>
-        </div>
-
-        <div
-          class="bg-light-grayish-violet grid gap-3 rounded-b-3xl py-4 px-3 text-xs"
-        >
-          <p class="bubble bubble-l">
-            That sounds great. I’d be happy with that.
-          </p>
-
-          <p class="bubble bubble-l">
-            Could you send over some pictures of your dog, please?
-          </p>
 
           <div
-            class="ml-auto flex w-fit max-w-[65%] items-center gap-2 rounded-xl"
+            class="bg-light-grayish-violet grid gap-3 rounded-b-3xl py-4 px-3 text-xs"
           >
-            <img
-              src="images/dog-image-1.jpg"
-              class="bubble-img"
-              alt="Brown dog with toungue out headshot"
-            />
-            <img
-              src="images/dog-image-2.jpg"
-              class="bubble-img"
-              alt="Brown dog on Sand with toungue aut"
-            />
-            <img
-              src="images/dog-image-3.jpg"
-              class="bubble-img"
-              alt="Brown dog carrying a stick"
-            />
-          </div>
-
-          <p class="bubble bubble-r">
-            Here are a few pictures. She’s a happy girl!
-          </p>
-
-          <p class="bubble bubble-r">Can you make it?</p>
-          <p class="bubble bubble-l">
-            She looks so happy! The time we discussed works. How long shall I
-            take her out for?
-          </p>
-
-          <div class="bubble bubble-l bubble-purple">
-            <input type="radio" name="" id="" class="price" />
-            <p class="self ml-2 text-white">
-              30 minute walk
-              <span class="ml-3 text-sm font-bold opacity-80">$29</span>
+            <p class="bubble bubble-l">
+              That sounds great. I’d be happy with that.
             </p>
-          </div>
 
-          <div class="bubble bubble-l bubble-purple">
-            <input type="radio" name="" id="" class="price" />
-            <p class="ml-2 text-white">
-              1 hour walk
-              <span class="ml-8 text-sm font-bold text-white opacity-80"
-                >$49</span
-              >
+            <p class="bubble bubble-l">
+              Could you send over some pictures of your dog, please?
             </p>
-          </div>
 
-          <form action="" class="relative mt-2 flex w-full items-center">
-            <input
-              type="text"
-              name=""
-              id=""
-              placeholder="Type a message..."
-              class="w-full rounded-3xl py-3 px-6 shadow"
-            />
-            <button
-              class="bg-very-dark-desat-violet absolute right-1 flex h-8 w-8 cursor-pointer items-center justify-center rounded-full text-center text-base font-bold text-white shadow-sm"
+            <div
+              class="ml-auto flex w-fit max-w-[65%] items-center gap-2 rounded-xl"
             >
+              <img
+                src="images/dog-image-1.jpg"
+                class="bubble-img"
+                alt="Brown dog with toungue out headshot"
+              />
+              <img
+                src="images/dog-image-2.jpg"
+                class="bubble-img"
+                alt="Brown dog on Sand with toungue aut"
+              />
+              <img
+                src="images/dog-image-3.jpg"
+                class="bubble-img"
+                alt="Brown dog carrying a stick"
+              />
+            </div>
+
+            <p class="bubble bubble-r">
+              Here are a few pictures. She’s a happy girl!
+            </p>
+
+            <p class="bubble bubble-r">Can you make it?</p>
+            <p class="bubble bubble-l">
+              She looks so happy! The time we discussed works. How long shall I
+              take her out for?
+            </p>
+
+            <div class="bubble bubble-l bubble-purple">
+              <input type="radio" name="" id="" class="price" />
+              <p class="self ml-2 text-white">
+                30 minute walk
+                <span class="ml-3 text-sm font-bold opacity-80">$29</span>
+              </p>
+            </div>
+
+            <div class="bubble bubble-l bubble-purple">
+              <input type="radio" name="" id="" class="price" />
+              <p class="ml-2 text-white">
+                1 hour walk
+                <span class="ml-8 text-sm font-bold text-white opacity-80"
+                  >$49</span
+                >
+              </p>
+            </div>
+
+            <form action="" class="relative mt-2 flex w-full items-center">
+              <input
+                type="text"
+                name=""
+                id=""
+                placeholder="Type a message..."
+                class="w-full rounded-3xl py-3 px-6 shadow"
+              />
+              <button
+                class="bg-very-dark-desat-violet absolute right-1 flex h-8 w-8 cursor-pointer items-center justify-center rounded-full text-center text-base font-bold text-white shadow-sm"
               >
-            </button>
-          </form>
-        </div>
-      </section>
+                >
+              </button>
+            </form>
+          </div>
+        </section>
 
-      <section
-        class="text-dark-grayish-violet mt-9 max-w-md border-b p-7 text-center text-sm leading-6 sm:text-left"
+        <section
+          class="text-dark-grayish-violet mt-9 mb-2 max-w-md p-7 text-center text-sm leading-6 md:text-left"
+        >
+          <h1
+            class="text-very-dark-desaturated-violet mb-4 text-3xl font-medium tracking-wide"
+          >
+            Simple booking
+          </h1>
+
+          <p class="m-0">
+            Stay in touch with our dog walkers through the chat interface. This
+            makes it easy to discuss arrangements and make bookings. Once the
+            walk has been completed you can rate your walker and book again all
+            through the chat.
+          </p>
+        </section>
+      </main>
+
+      <footer
+        class="flex w-full flex-col place-content-center text-center md:mt-8 md:flex-row md:gap-1"
       >
-        <h1
-          class="text-very-dark-desaturated-violet mb-4 text-3xl font-medium tracking-wide"
-        >
-          Simple booking
-        </h1>
+        <div>
+          <a
+            class="text-optimum-blue hover:text-optimum-darkblue"
+            href="https://www.frontendmentor.io/challenges/chat-app-css-illustration-O5auMkFqY"
+            target="_blank"
+            >Frontend Mentor challenge</a
+          >
+        </div>
+        <div>
+          for
+          <a
+            class="text-optimum-blue hover:text-optimum-darkblue"
+            href="https://github.com/optimumBA"
+            target="_blank"
+            >Optimum BH</a
+          >
+          Internship.
+        </div>
 
-        <p class="m-0">
-          Stay in touch with our dog walkers through the chat interface. This
-          makes it easy to discuss arrangements and make bookings. Once the walk
-          has been completed you can rate your walker and book again all through
-          the chat.
-        </p>
-      </section>
-    </main>
-    <footer class="mt-1 flex w-full flex-col place-content-center text-center">
-      <div>
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://www.frontendmentor.io/challenges/chat-app-css-illustration-O5auMkFqY"
-          target="_blank"
-          >Frontend Mentor challenge</a
-        >
-      </div>
-      <div>
-        for
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA"
-          target="_blank"
-          >Optimum BH</a
-        >
-        Internship.
-      </div>
-
-      <div class="mt-1">
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA/frontend_mentor_challenges/tree/chat_app_css_illustration/challenges/chat_app_css_illustration"
-          >Source code</a
-        >
-      </div>
-    </footer>
+        <div class="mt-1 md:mt-0">
+          <a
+            class="text-optimum-blue hover:text-optimum-darkblue"
+            href="https://github.com/kagure-nyakio/frontend_mentor_challenges/tree/chat_app_css_illustration/challenges/chat_app_css_illustration"
+            >Source code</a
+          >
+        </div>
+      </footer>
+    </div>
   </body>
 </html>
