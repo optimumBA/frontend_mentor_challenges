@@ -19,40 +19,20 @@
 
   body::before {
     content: '';
-    @apply bg-light-magenta absolute left-0 right-[50%] bottom-[45%] top-0 z-[-1] rounded-br-full;
+    @apply bg-light-magenta absolute left-0 right-[50%] -bottom-[60%] top-0 z-[-1] rounded-br-full;
   }
 
-  body::after {
-    content: '';
-    @apply bg-light-magenta absolute left-[50%] right-0 bottom-0 top-[50%] z-[-1] rounded-tl-full opacity-5;
+  @media (min-width: 768px) {
+    body::before {
+      @apply left-0 right-[65%] -bottom-[40%] top-0;
+    }
   }
-
   .chat::before {
     content: '';
     padding: 15em, 4em;
     transform: translateY(-40%);
 
     @apply absolute right-1 left-2 z-[2] mx-auto mb-3 block h-6 w-40 rounded-2xl bg-white;
-  }
-
-  @media (min-width: 768px) {
-    body::before {
-      @apply top-0 left-0 right-[60%] bottom-[20%];
-    }
-
-    body::after {
-      @apply bottom-0 right-0 left-[70%] top-[30%];
-    }
-  }
-
-  @media (min-width: 1270px) {
-    body::before {
-      @apply top-0 left-0 right-[70%] bottom-[40%];
-    }
-
-    body::after {
-      @apply bottom-0 right-0 left-[70%] top-[20%];
-    }
   }
 
   .bubble {
