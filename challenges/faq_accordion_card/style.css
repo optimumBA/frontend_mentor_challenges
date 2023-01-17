@@ -1,3 +1,35 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  img { 
+    @apply block; 
+  }
+
+  .faq-query {
+    @apply grid border-b border-light-grayish-blue py-3 px-1 mb-2;
+    grid-template-areas: 
+    "title btn"
+    "answer answer";
+  }
+
+  .faq-title {
+    @apply whitespace-nowrap pb-2 hover:cursor-pointer hover:text-soft-red transition ease-in duration-300;
+    grid-area: title;
+  }
+
+  .faq-title-bold {
+    @apply font-bold text-very-dark-desat-blue text-sm whitespace-nowrap pb-2 transition ease-in duration-300;
+    grid-area: title;
+  }
+
+  .faq-answer {
+    grid-area: answer;
+  }
+
+  .arrow-btn {
+    @apply justify-self-end;                                
+    grid-area: btn;
+  }
+}
