@@ -15,12 +15,12 @@
   }
 
   .faq-title {
-    @apply hover:text-soft-red whitespace-nowrap pb-2 transition duration-300 ease-in hover:cursor-pointer;
+    @apply hover:text-soft-red whitespace-nowrap pb-2 transition duration-300 ease-in-out hover:cursor-pointer;
     grid-area: title;
   }
 
   .faq-title-bold {
-    @apply text-very-dark-desat-blue whitespace-nowrap pb-2 text-sm font-bold transition duration-300 ease-in;
+    @apply text-very-dark-desat-blue whitespace-nowrap pb-2 text-sm font-bold transition duration-300 ease-in-out;
     grid-area: title;
   }
 
