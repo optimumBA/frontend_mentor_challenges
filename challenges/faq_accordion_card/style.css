@@ -8,19 +8,19 @@
   }
 
   .faq-query {
-    @apply border-light-grayish-blue mb-2 grid border-b py-3 px-1 md:p-3;
+    @apply border-light-grayish-blue mb-2 grid border-b p-3;
     grid-template-areas:
       'title btn'
       'answer answer';
   }
 
   .faq-title {
-    @apply hover:text-soft-red whitespace-nowrap pb-2 transition duration-300 ease-in-out hover:cursor-pointer;
+    @apply hover:text-soft-red mr-4 whitespace-nowrap pb-2 hover:cursor-pointer;
     grid-area: title;
   }
 
   .faq-title-bold {
-    @apply text-very-dark-desat-blue whitespace-nowrap pb-2 text-sm font-bold transition duration-300 ease-in-out;
+    @apply text-very-dark-desat-blue whitespace-nowrap pb-2 text-sm font-bold;
     grid-area: title;
   }
 
@@ -32,5 +32,52 @@
   .arrow-btn {
     @apply justify-self-end;
     grid-area: btn;
+  }
+
+  .container {
+    @apply mx-auto mt-6 grid w-[90%] max-w-sm justify-center;
+    grid-template-rows: 125px 125px 1fr;
+  }
+
+  .container picture {
+    grid-column: 2/3;
+    grid-row: 1/3;
+    z-index: 1;
+  }
+
+  .card {
+    grid-column: 2/3;
+    grid-row: 2/-1;
+  }
+
+  @media (min-width: 768px) {
+    .container {
+      @apply relative grid max-w-2xl grid-flow-col gap-10 rounded-xl bg-white bg-[url('images/bg-pattern-desktop.svg')] bg-left-top bg-no-repeat px-6 py-4 shadow-lg;
+      grid-template-columns: repeat(2, max-content);
+      grid-template-rows: 1fr;
+    }
+
+    .container picture {
+      @apply relative -left-[61px] self-center md:py-0;
+      grid-column: 1/2;
+      grid-row: 1/-1;
+      clip-path: inset(0 0 0 13.5%);
+    }
+
+    .container .card {
+      @apply z-0 max-w-sm rounded-none bg-transparent bg-none py-0 shadow-none;
+      grid-column: 2/-1;
+      grid-row: 1/-1;
+    }
+
+    .container::after {
+      content: url('images/illustration-box-desktop.svg');
+      @apply absolute top-[35%] right-[90%] z-10;
+    }
+
+    .container::before {
+      content: '';
+      @apply absolute left-[-2px] bottom-0 block h-[300px] w-[300px] rotate-180  bg-[url('images/bg-pattern-mobile.svg')] bg-cover bg-no-repeat p-1;
+    }
   }
 }
