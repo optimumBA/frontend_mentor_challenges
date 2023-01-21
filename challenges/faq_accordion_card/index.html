@@ -26,15 +26,161 @@
       href="../images/favicon-16x16.png"
     />
     <link rel="manifest" href="../site.webmanifest" />
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="m-0">
+  <body
+    class="font-base text-dark-grayish-blue from-soft-violet to-soft-blue m-0 flex min-h-screen flex-col items-center justify-center bg-gradient-to-b text-xs font-normal"
+  >
+    <div class="container">
+      <picture class="mx-auto block w-[250px]">
+        <source
+          media="(min-width: 768px)"
+          srcset="images/illustration-woman-online-desktop.svg"
+        />
+        <img
+          src="images/illustration-woman-online-mobile.svg"
+          class="max-w-full"
+          alt=""
+        />
+      </picture>
+
+      <div>
+        <img
+          class="z-0 hidden md:absolute md:bottom-[-15%] md:left-[-55%] md:block md:min-w-[640px]"
+          src="images/bg-pattern-desktop.svg"
+          alt=""
+        />
+      </div>
+
+      <div
+        class="card relative -top-4 rounded-xl bg-white bg-[url('images/bg-pattern-mobile.svg')] bg-top bg-no-repeat p-5 shadow-md md:bg-none"
+      >
+        <div class="mt-3 py-3 md:px-3">
+          <h1
+            class="text-very-dark-desat-blue mb-3 mt-[3em] text-center text-2xl font-bold md:mt-1 md:text-left"
+          >
+            FAQ
+          </h1>
+
+          <div class="faq-query" x-data="{ open: true }">
+            <p @click="open = !open" @click.outside="open = false">
+              <a href="#members" :class="open ? 'faq-title-bold' : 'faq-title'"
+                >How many team members can I invite?</a
+              >
+            </p>
+            <p class="faq-answer" x-show="open">
+              You can invite up to 2 additional users on the Free plan. There is
+              no limit on team members for the Premium plan.
+            </p>
+            <button class="arrow-btn" @click="open = ! open">
+              <img
+                src="images/icon-arrow-down.svg"
+                :class="open ? 'transition duration-300 rotate-180' : 'transition duration-300'"
+                alt=""
+              />
+            </button>
+          </div>
+
+          <div class="faq-query" x-data="{ open: false }">
+            <p @click="open = !open" @click.outside="open = false">
+              <a
+                :class="open ? 'faq-title-bold' : 'faq-title'"
+                href="#upload-size"
+                >What is the maximum file upload size?</a
+              >
+            </p>
+            <p class="faq-answer" x-show="open">
+              No more than 2GB. All files in your account must fit your allotted
+              storage space.
+            </p>
+            <button class="arrow-btn" @click="open = ! open">
+              <img
+                src="images/icon-arrow-down.svg"
+                :class="open ? 'transition duration-300 rotate-180' : 'transition duration-300'"
+                alt=""
+              />
+            </button>
+          </div>
+
+          <div class="faq-query" x-data="{ open: false }">
+            <p @click="open = !open" @click.outside="open = false">
+              <a
+                href="#reset-pwd"
+                :class="open ? 'faq-title-bold' : 'faq-title'"
+                >How do I reset my password?</a
+              >
+            </p>
+            <p class="faq-answer" x-show="open">
+              Click “Forgot password” from the login page or “Change password”
+              from your profile page. A reset link will be emailed to you.
+            </p>
+            <button class="arrow-btn" @click="open = ! open">
+              <img
+                src="images/icon-arrow-down.svg"
+                :class="open ? 'transition duration-300 rotate-180' : 'transition duration-300'"
+                alt=""
+              />
+            </button>
+          </div>
+
+          <div class="faq-query" x-data="{ open: false }">
+            <p @click="open = !open" @click.outside="open = false">
+              <a href="#cancel" :class="open ? 'faq-title-bold' : 'faq-title'"
+                >Can I cancel my subscription?</a
+              >
+            </p>
+            <p class="faq-answer" x-show="open">
+              Yes! Send us a message and we’ll process your request no questions
+              asked.
+            </p>
+            <button class="arrow-btn" @click="open = ! open">
+              <img
+                src="images/icon-arrow-down.svg"
+                :class="open ? 'transition duration-300 rotate-180' : 'transition duration-300'"
+                alt=""
+              />
+            </button>
+          </div>
+
+          <div class="faq-query" x-data="{ open: false }">
+            <p @click="open = !open" @click.outside="open = false">
+              <a
+                href="#added-support"
+                :class="open ? 'faq-title-bold' : 'faq-title'"
+                >Do you provide additional support?</a
+              >
+            </p>
+            <p class="faq-answer" x-show="open">
+              Chat and email support is available 24/7. Phone lines are open
+              during normal business hours.
+            </p>
+            <button class="arrow-btn" @click="open = ! open">
+              <img
+                src="images/icon-arrow-down.svg"
+                :class="open ? 'transition duration-300 rotate-180' : 'transition duration-300'"
+                alt=""
+              />
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
     <div
-      class="flex h-[100vh] w-full flex-col place-content-center text-center"
+      class="flex w-full flex-col place-content-center gap-2 p-3 text-center text-white md:flex-row"
     >
       <div>
         <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
+          class="text-very-dark-desat-blue hover:text-white"
           href="https://www.frontendmentor.io/challenges/faq-accordion-card-XlyjD0Oam"
           target="_blank"
           >Frontend Mentor challenge</a
@@ -43,7 +189,7 @@
       <div>
         for
         <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
+          class="text-very-dark-desat-blue hover:text-white"
           href="https://github.com/optimumBA"
           target="_blank"
           >Optimum BH</a
@@ -51,10 +197,10 @@
         Internship.
       </div>
 
-      <div class="mt-3">
+      <div class="mt-3 md:mt-0">
         <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA/frontend_mentor_challenges/tree/faq_accordion_card/challenges/faq_accordion_card"
+          class="text-very-dark-desat-blue hover:text-white"
+          href="https://github.com/kagure-nyakio/frontend_mentor_challenges/tree/faq_accordion_card/challenges/faq_accordion_card"
           >Source code</a
         >
       </div>
