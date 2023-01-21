@@ -52,13 +52,13 @@
 
   @media (min-width: 768px) {
     .container {
-      @apply relative grid max-w-2xl grid-flow-col gap-10 rounded-xl bg-white bg-[url('images/bg-pattern-desktop.svg')] bg-left-top bg-no-repeat px-6 py-4 shadow-lg;
+      @apply relative grid max-w-2xl grid-flow-col gap-10 rounded-xl bg-white  px-6 py-4 shadow-lg;
       grid-template-columns: repeat(2, max-content);
       grid-template-rows: 1fr;
     }
 
     .container picture {
-      @apply relative -left-[61px] self-center md:py-0;
+      @apply relative -left-[50px] self-center md:py-0;
       grid-column: 1/2;
       grid-row: 1/-1;
       clip-path: inset(0 0 0 13.5%);
@@ -72,12 +72,7 @@
 
     .container::after {
       content: url('images/illustration-box-desktop.svg');
-      @apply absolute top-[35%] right-[90%] z-10;
-    }
-
-    .container::before {
-      content: '';
-      @apply absolute left-[-2px] bottom-0 block h-[300px] w-[300px] rotate-180  bg-[url('images/bg-pattern-mobile.svg')] bg-cover bg-no-repeat p-1;
+      @apply absolute top-[35%] right-[91%] z-10;
     }
   }
 }
