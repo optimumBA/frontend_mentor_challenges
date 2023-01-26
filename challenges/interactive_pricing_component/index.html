@@ -26,11 +26,118 @@
       href="../images/favicon-16x16.png"
     />
     <link rel="manifest" href="../site.webmanifest" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
+
+    <script src="//unpkg.com/alpinejs" defer></script>
   </head>
-  <body class="m-0">
+
+  <body
+    class="font-primary text-grayish-blue bg-very-pale-blue m-0 grid text-center text-sm font-semibold"
+  >
+    <header
+      class="bg-[url('./images/bg-pattern.svg')] px-2 pb-20 pt-20 md:pb-10"
+    >
+      <div
+        class="text-desat-blue container bg-[url('./images/pattern-circles.svg')] bg-center bg-no-repeat"
+      >
+        <h1 class="text-2xl font-extrabold">Simple, traffic-based pricing</h1>
+        <p class="opacity-60">
+          Sign-up for our 30-day trial.
+          <span class="mt-[.5rem] block md:inline"
+            >No credit card required</span
+          >
+        </p>
+      </div>
+    </header>
+
+    <div class="card container bg-white" x-data="pricing">
+      <div class="card-top grid gap-4">
+        <p
+          class="views font-extrabold uppercase tracking-wider md:justify-self-start"
+        >
+          <span
+            x-text="getView() < 1000000 ? getView()/1000 : getView()/1000000"
+          ></span
+          ><span x-text="getView() < 1000000 ? 'K' : 'M'"></span> pageviews
+        </p>
+
+        <div class="slider-container">
+          <input type="range" min="1" max="5" class="slider" x-model="range" />
+        </div>
+
+        <p class="rates md:justify-self-end">
+          <span class="text-desat-blue text-2xl font-extrabold">
+            $<span x-text="yearly ? applyDiscount() : getPrice"></span>
+          </span>
+          <span class="text-grayish-blue text-base font-semibold">/month</span>
+        </p>
+      </div>
+      <div
+        class="grid grid-flow-col items-center justify-evenly py-3 text-xs md:mt-4 md:justify-end md:gap-4"
+      >
+        <p>Monthly Billing</p>
+
+        <div>
+          <input type="checkbox" id="tgl" class="toggle" x-model="yearly" />
+          <label for="tgl"></label>
+        </div>
+
+        <p>Yearly Billing</p>
+        <p
+          class="text-light-red bg-grayish-red flex items-center justify-center rounded-full px-2 py-1 font-extrabold"
+        >
+          <span class="block md:hidden"> -25% </span>
+          <span class="hidden md:block"> 25% discount </span>
+        </p>
+      </div>
+
+      <div
+        class="border-light-grayish-blue-1 grid items-center justify-center gap-4 border-t-2 pt-6 md:grid-flow-col md:grid-cols-2 md:justify-start md:gap-4"
+      >
+        <div>
+          <p class="mb-2 flex items-center gap-3">
+            Unlimited websites
+            <img
+              src="./images/icon-check.svg"
+              alt=""
+              class="order-first h-3 w-3"
+            />
+          </p>
+          <p class="mb-2 flex items-center gap-3">
+            100% data ownership
+            <img
+              src="./images/icon-check.svg"
+              alt=""
+              class="order-first h-3 w-3"
+            />
+          </p>
+
+          <p class="flex items-center gap-3">
+            Email reports
+            <img
+              src="./images/icon-check.svg"
+              alt=""
+              class="order-first h-3 w-3"
+            />
+          </p>
+        </div>
+
+        <button
+          class="text-pale-blue bg-desat-blue mt-3 block w-[90%] rounded-full px-6 py-2 text-sm font-extrabold hover:text-white md:mt-0 md:w-[80%] md:self-center md:justify-self-end"
+        >
+          Start my trial
+        </button>
+      </div>
+    </div>
+
     <div
-      class="flex h-[100vh] w-full flex-col place-content-center text-center"
+      class="attribution mt-4 flex w-full flex-col place-content-center text-center"
     >
       <div>
         <a
@@ -59,5 +166,29 @@
         >
       </div>
     </div>
+    <script>
+      document.addEventListener('alpine:init', () => {
+        Alpine.data('pricing', () => ({
+          pricing: new Map([
+            ['1', { price: 8, views: 8000 }],
+            ['2', { price: 12, views: 50000 }],
+            ['3', { price: 16, views: 100000 }],
+            ['4', { price: 24, views: 500000 }],
+            ['5', { price: 36, views: 1000000 }],
+          ]),
+          range: '3',
+          yearly: false,
+          getView() {
+            return this.pricing.get(this.range).views
+          },
+          getPrice() {
+            return this.pricing.get(this.range).price
+          },
+          applyDiscount() {
+            return this.getPrice(this.range) * 0.75
+          },
+        }))
+      })
+    </script>
   </body>
 </html>
