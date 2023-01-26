@@ -63,11 +63,7 @@
   }
 
   input[type='checkbox'].toggle {
-    cursor: pointer;
-    opacity: 3;
-    position: absolute;
-    left: -9000px;
-    top: -9000px;
+    @apply sr-only cursor-pointer;
   }
 
   input[type='checkbox'].toggle + label {
