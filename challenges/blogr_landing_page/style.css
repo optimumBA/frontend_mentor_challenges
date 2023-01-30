@@ -1,3 +1,166 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  picture,
+  img {
+    @apply block max-w-full;
+  }
+
+  body {
+    grid-template-columns: 1.5em auto 1.5em;
+    grid-template-areas:
+      'header header       header'
+      '....   subtitle     ....'
+      '....   illustration  ....'
+      '....   text-1       ....'
+      '....   phone-start  ....'
+      '....   text-2-start text-2-start'
+      '....   phone-end    ....'
+      '....   text-2-end   text-2-end'
+      '....   laptop       ....'
+      '....   text-3      ....'
+      'footer footer      footer';
+
+    row-gap: 4em;
+  }
+
+  .subtitle {
+    @apply md:self-center md:justify-self-end;
+    grid-area: subtitle;
+  }
+
+  .illustration {
+    grid-area: illustration;
+  }
+
+  .text-1 {
+    grid-area: text-1;
+  }
+
+  .phone {
+    grid-row: phone-start/phone-end;
+    grid-column: 2/3;
+    z-index: 100;
+  }
+
+  .text-2 {
+    grid-row: text-2-start/text-2-end;
+    grid-column: 1/-1;
+  }
+
+  .laptop {
+    grid-area: laptop;
+  }
+
+  .text-3 {
+    grid-area: text-3;
+  }
+
+  footer {
+    grid-area: footer;
+  }
+
+  @media (min-width: 700px) {
+    body {
+      @apply relative;
+      grid-template-columns: 2em 1fr 1fr 2em;
+      grid-template-areas:
+        'header header header header'
+        '.... subtitle illustration illustration'
+        '.... text-1 illustration illustration'
+        '.... .... .... ....'
+        '.... .... .... ....'
+        'text-2 text-2 text-2-start text-2-start'
+        '.... phone .... ....'
+        'text-2-end text-2-end text-2-end text-2-end'
+        '.... .... .... ....'
+        '.... .... .... ....'
+        '.... .... .... ....'
+        'laptop laptop .... ....'
+        'laptop laptop text-3 text-3'
+        'laptop laptop .... ....'
+        'footer footer footer footer';
+      row-gap: 2em;
+      column-gap: 3em;
+    }
+
+    .phone {
+      @apply absolute;
+      grid-area: phone;
+      grid-row: 4/11;
+    }
+
+    .text-3 {
+      grid-column: 3/4;
+    }
+  }
+
+  header {
+    background: url('./images/bg-pattern-intro-mobile.svg'),
+      linear-gradient(to left, #ff7b86, #ff525e);
+    background-size: 300%;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    grid-area: header;
+  }
+
+  @media (min-width: 768px) {
+    header {
+      background: url('./images/bg-pattern-intro-desktop.svg'),
+        linear-gradient(to bottom, #ff7b86, #ff525e);
+      background-size: cover;
+      background-position: 50% 50%;
+    }
+  }
+
+  .content {
+    @apply mx-auto w-[95%] max-w-md;
+  }
+
+  .btn {
+    @apply bg-primary-200 hover:text-primary-100 focus:text-primary-100 inline-block rounded-full px-5 py-2 text-sm font-extrabold hover:bg-white focus:bg-white;
+  }
+
+  .btn[data-btn-type='btn-white'] {
+    @apply text-primary-100 hover:bg-primary-100 focus:bg-primary-100 bg-white hover:text-white focus:text-white;
+  }
+
+  .btn[data-btn-type='btn-no-border'] {
+    @apply bg-transparent hover:underline hover:opacity-80;
+  }
+
+  .nav-mobile {
+    @apply absolute top-[3rem] -bottom-1 left-[1rem] mx-auto h-[max-content] w-[90%] rounded-xl bg-white py-[4em] text-neutral-500 shadow-lg;
+  }
+
+  .nav-desktop {
+    @apply hidden md:grid md:grow md:grid-flow-col;
+  }
+
+  .nav-list-item-card {
+    @apply mx-auto grid w-[90%] gap-3 rounded-lg bg-neutral-300 py-3 px-2 text-[0.9rem] text-neutral-600 md:absolute md:top-[10%] md:w-[20%] md:bg-white;
+  }
+
+  .nav-list-item-card > * {
+    @apply block md:justify-self-start;
+  }
+
+  .nav-list-item-link {
+    @apply hover:font-semibold;
+  }
+
+  .nav-list-item {
+    @apply flex items-center justify-center  gap-1 font-extrabold;
+  }
+
+  .nav-list-item > img {
+    @apply ml-1 h-full self-center;
+  }
+
+  .footer-link {
+    @apply text-sm text-neutral-200 hover:underline;
+  }
+}
