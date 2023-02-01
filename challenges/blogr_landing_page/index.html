@@ -26,38 +26,295 @@
       href="../images/favicon-16x16.png"
     />
     <link rel="manifest" href="../site.webmanifest" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&family=Ubuntu:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="style.css" />
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
   </head>
-  <body class="m-0">
-    <div
-      class="flex h-[100vh] w-full flex-col place-content-center text-center"
+
+  <body
+    class="font-primary m-0 grid text-center text-base font-normal leading-7 text-neutral-400"
+  >
+    <header
+      class="header relative rounded-bl-[4rem] px-4 pb-[8rem] pt-4 text-white"
+      x-data="{isOpen: false, isDesktop: innerWidth >= 768 ? true : false}"
     >
-      <div>
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://www.frontendmentor.io/challenges/blogr-landing-page-EX2RLAApP"
-          target="_blank"
-          >Frontend Mentor challenge</a
-        >
-      </div>
-      <div>
-        for
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA"
-          target="_blank"
-          >Optimum BH</a
-        >
-        Internship.
+      <div class="flex items-center justify-between">
+        <!-- Logo-->
+        <div class="w-14 md:mr-4 md:flex-none md:flex-grow-0">
+          <img src="./images/logo.svg" alt="Blogr" />
+        </div>
+
+        <div class="md:hidden" @click="isOpen = !isOpen">
+          <button :class="isOpen ? 'hidden' : 'block'">
+            <img src="./images/icon-hamburger.svg" alt="" />
+          </button>
+
+          <button :class="isOpen ? 'block' : 'hidden'">
+            <img src="./images/icon-close.svg" alt="" />
+          </button>
+        </div>
+
+        <!-- Main nav -->
+        <nav :class="!isDesktop && isOpen ? 'nav-mobile' : 'nav-desktop'">
+          <div
+            class="grid gap-[2rem] md:grid-flow-col md:gap-0 md:self-center"
+            x-data="{ 
+              items: [
+                {id: 1, label: 'Product', open: false, subLabels: ['OverView', 'Pricing', 'Marketplace', 'Features', 'Integrations']},
+                {id: 2, label: 'Company', open: false, subLabels: ['About', 'Team', 'Blog', 'Careers']},
+                {id: 3, label: 'Connect', open: false, subLabels: ['Contact', 'Newsletter', 'LinkedIn'] }
+            ],
+              toggleOpen(item) {
+                this.items.forEach((link) => {
+                  link.id == item.id ?
+                  link.open == true ?
+                  link.open = false :
+                  link.open = true
+                : link.open = false
+                })
+              }
+          }
+            "
+          >
+            <template x-for="item in items" :key="item.id">
+              <div class="z-[100]">
+                <a href="#" class="nav-list-item" @click="toggleOpen(item)">
+                  <span x-text="item.label"></span>
+                  <picture>
+                    <source
+                      srcset="./images/icon-arrow-light.svg"
+                      media="(min-width: 700px)"
+                    />
+                    <img
+                      src="./images/icon-arrow-dark.svg"
+                      alt=""
+                      :class="item.open ? 'rotate-180' : ''"
+                    />
+                  </picture>
+                </a>
+
+                <div
+                  class="nav-list-item-card"
+                  x-data="{link: item.subLabels}"
+                  x-show="item.open"
+                >
+                  <template x-for="page in link">
+                    <div>
+                      <a href="#" class="nav-list-item-link" x-text="page"></a>
+                    </div>
+                  </template>
+                </div>
+              </div>
+            </template>
+          </div>
+
+          <div
+            class="mt-4 grid gap-4 border-t border-neutral-300 py-5 md:mt-0 md:ml-auto md:grid-flow-col md:items-center md:border-0 md:py-0"
+          >
+            <button
+              class="bg-transparent font-bold text-neutral-700 opacity-80"
+            >
+              Login
+            </button>
+            <button
+              class="from-primary-100 to-primary-200 md:from-primary-200 md:to-primary-200 hover:from-primary-200 hover:to-primary-200 mx-auto rounded-full bg-gradient-to-r px-8 py-2 font-bold text-white md:bg-gradient-to-b md:py-1"
+            >
+              Sign Up
+            </button>
+          </div>
+        </nav>
       </div>
 
-      <div class="mt-3">
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA/frontend_mentor_challenges/tree/blogr_landing_page/challenges/blogr_landing_page"
-          >Source code</a
+      <div class="mt-[8rem]">
+        <h1 class="md:text[2.5rem] mb-3 text-3xl font-[500]">
+          A modern publishing platform
+        </h1>
+        <p class="opacity-90">Grow your audience and build your online brand</p>
+        <div class="mt-[2rem] flex items-center justify-center gap-2">
+          <a href="#" class="btn" data-btn-type="btn-white"> Start for Free </a>
+          <a href="#" class="btn border border-white"> Learn More </a>
+        </div>
+      </div>
+    </header>
+
+    <h2 class="text-primary-900 font-accent subtitle text-2xl font-bold">
+      Designed for the future
+    </h2>
+
+    <div class="illustration mx-auto">
+      <picture>
+        <source
+          srcset="./images/illustration-editor-desktop.svg"
+          media="(min-width: 700px)"
+        />
+        <img src="./images/illustration-editor-mobile.svg" alt="" />
+      </picture>
+    </div>
+
+    <div class="text-1 md:text-left">
+      <div class="mb-8">
+        <h3
+          class="text-primary-900 font-accent mb-3 text-xl font-bold tracking-wide"
         >
+          Introducing an extensible editor
+        </h3>
+
+        <p>
+          Blogr features an exceedingly intuitive interface which lets you focus
+          on one thing: creating content. The editor supports management of
+          multiple blogs and allows easy manipulation of embeds such as images,
+          videos, and Markdown. Extensibility with plugins and themes provide
+          easy ways to add functionality or change the looks of a blog.
+        </p>
+      </div>
+
+      <div>
+        <h3
+          class="text-primary-900 font-accent mb-3 text-xl font-bold tracking-wide"
+        >
+          Robust content management
+        </h3>
+        <p>
+          Flexible content management enables users to easily move through
+          posts. Increase the usability of your blog by adding customized
+          categories, sections, format, or flow. With this functionality, you’re
+          in full control.
+        </p>
       </div>
     </div>
+
+    <div class="phone">
+      <img src="./images/illustration-phones.svg" alt="" />
+    </div>
+
+    <div
+      class="text-2 rounded-tr-[5rem] rounded-bl-[5rem] bg-gradient-to-b from-neutral-500 to-neutral-700 px-4 pb-[6rem] pt-[12em] sm:pt-[20em] md:py-[6em] md:text-left"
+    >
+      <div class="mx-auto md:ml-[40em]">
+        <h3
+          class="font-accent mb-3 text-3xl font-bold tracking-wide text-neutral-100"
+        >
+          State of the Art Infrastructure
+        </h3>
+        <p class="text-neutral-100">
+          With reliability and speed in mind, worldwide data centers provide the
+          backbone for ultra-fast connectivity. This ensures your site will load
+          instantly, no matter where your readers are, keeping your site
+          competitive.
+        </p>
+      </div>
+    </div>
+
+    <div class="laptop mx-auto">
+      <picture>
+        <source
+          srcset="./images/illustration-laptop-desktop.svg"
+          media="(min-width: 700px)"
+        />
+        <img src="./images/illustration-laptop-mobile.svg" alt="" />
+      </picture>
+    </div>
+
+    <div class="text-3 md:text-left">
+      <div class="mb-8">
+        <h3
+          class="text-primary-900 font-accent mb-4 text-xl font-bold tracking-wide"
+        >
+          Free, open, simple
+        </h3>
+        <p>
+          Blogr is a free and open source application backed by a large
+          community of helpful developers. It supports features such as code
+          syntax highlighting, RSS feeds, social media integration, third-party
+          commenting tools, and works seamlessly with Google Analytics. The
+          architecture is clean and is relatively easy to learn.
+        </p>
+      </div>
+
+      <div>
+        <h3
+          class="text-primary-900 font-accent mb-4 text-xl font-bold tracking-wide"
+        >
+          Powerful tooling
+        </h3>
+        <p>
+          Batteries included. We built a simple and straightforward CLI tool
+          that makes customization and deployment a breeze, but capable of
+          producing even the most complicated sites.
+        </p>
+      </div>
+    </div>
+
+    <footer class="grid rounded-tr-[5rem] bg-neutral-600 py-12">
+      <div
+        class="mb-4 grid justify-center gap-6 md:grid-cols-4 md:items-start md:gap-2"
+      >
+        <div class="mx-auto mb-8 md:mb-0">
+          <img src="./images/logo.svg" alt="Blogr" />
+        </div>
+
+        <ul class="grid gap-1">
+          <li class="mb-3">
+            <a href="#" class="font-extrabold text-white">Product</a>
+          </li>
+          <li><a href="#" class="footer-link">Overview</a></li>
+          <li><a href="#" class="footer-link">Pricing</a></li>
+          <li><a href="#" class="footer-link">Marketplace</a></li>
+          <li><a href="" class="footer-link">Features</a></li>
+          <li><a href="" class="footer-link">Integrations</a></li>
+        </ul>
+        <ul class="grid gap-1">
+          <li class="mb-3">
+            <a href="#" class="font-extrabold text-white">Company</a>
+          </li>
+          <li><a href="#" class="footer-link">About</a></li>
+          <li><a href="#" class="footer-link">Team</a></li>
+          <li><a href="#" class="footer-link">Blog</a></li>
+          <li><a href="#" class="footer-link">Careers</a></li>
+        </ul>
+        <ul class="grid gap-1">
+          <li class="mb-3">
+            <a href="#" class="font-extrabold text-white">Connect</a>
+          </li>
+          <li><a href="#" class="footer-link">Contact</a></li>
+          <li><a href="#" class="footer-link">Newsletter</a></li>
+          <li><a href="#" class="footer-link">LinkedIn</a></li>
+        </ul>
+      </div>
+
+      <div class="border-t border-neutral-200 pt-2 text-sm text-white">
+        <p>
+          <a
+            class="text-optimum-blue hover:text-optimum-darkblue"
+            href="https://www.frontendmentor.io/challenges/blogr-landing-page-EX2RLAApP"
+            target="_blank"
+            >Frontend Mentor challenge</a
+          >
+          for
+          <a
+            class="text-optimum-blue hover:text-optimum-darkblue"
+            href="https://github.com/optimumBA"
+            target="_blank"
+            >Optimum BH</a
+          >
+          Internship.
+          <a
+            class="text-optimum-blue hover:text-optimum-darkblue"
+            href="https://github.com/optimumBA/frontend_mentor_challenges/tree/blogr_landing_page/challenges/blogr_landing_page"
+            >Source code</a
+          >
+        </p>
+      </div>
+    </footer>
   </body>
 </html>
