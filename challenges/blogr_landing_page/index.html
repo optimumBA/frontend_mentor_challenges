@@ -46,7 +46,7 @@
   >
     <header
       class="header relative rounded-bl-[4rem] px-4 pb-[8rem] pt-4 text-white"
-      x-data="{isOpen: false, product: false, company: false, connect: false, isDesktop: innerWidth >= 768 ? true : false}"
+      x-data="{isOpen: false, isDesktop: innerWidth >= 768 ? true : false}"
     >
       <div class="flex items-center justify-between">
         <!-- Logo-->
@@ -66,100 +66,57 @@
 
         <!-- Main nav -->
         <nav :class="!isDesktop && isOpen ? 'nav-mobile' : 'nav-desktop'">
-          <ul class="grid gap-[2rem] md:grid-flow-col md:gap-0 md:self-center">
-            <li class="z-[100]">
-              <a
-                href="#"
-                class="nav-list-item"
-                @click="product = !product, connect = false, company = false"
-                @click:outside="product = false"
-              >
-                Product
-                <picture>
-                  <source
-                    srcset="./images/icon-arrow-light.svg"
-                    media="(min-width: 700px)"
-                  />
-                  <img
-                    src="./images/icon-arrow-dark.svg"
-                    alt=""
-                    :class="product ? 'rotate-180' : ''"
-                  />
-                </picture>
-              </a>
-              <div
-                class="nav-list-item-card"
-                x-data="{subpages: ['OverView', 'Pricing', 'Marketplace', 'Features', 'Integrations']}"
-                x-show="product"
-              >
-                <template x-for="page in subpages">
-                  <a href="#" class="nav-list-item-link" x-text="page"></a>
-                </template>
-              </div>
-            </li>
+          <div
+            class="grid gap-[2rem] md:grid-flow-col md:gap-0 md:self-center"
+            x-data="{ 
+              items: [
+                {id: 1, label: 'Product', open: false, subLabels: ['OverView', 'Pricing', 'Marketplace', 'Features', 'Integrations']},
+                {id: 2, label: 'Company', open: false, subLabels: ['About', 'Team', 'Blog', 'Careers']},
+                {id: 3, label: 'Connect', open: false, subLabels: ['Contact', 'Newsletter', 'LinkedIn'] }
+            ],
+              toggleOpen(item) {
+                this.items.forEach((link) => {
+                  link.id == item.id ?
+                  link.open == true ?
+                  link.open = false :
+                  link.open = true
+                : link.open = false
+                })
+              }
+          }
+            "
+          >
+            <template x-for="item in items" :key="item.id">
+              <div class="z-[100]">
+                <a href="#" class="nav-list-item" @click="toggleOpen(item)">
+                  <span x-text="item.label"></span>
+                  <picture>
+                    <source
+                      srcset="./images/icon-arrow-light.svg"
+                      media="(min-width: 700px)"
+                    />
+                    <img
+                      src="./images/icon-arrow-dark.svg"
+                      alt=""
+                      :class="item.open ? 'rotate-180' : ''"
+                    />
+                  </picture>
+                </a>
 
-            <li class="z-[100]">
-              <a
-                href="#"
-                class="nav-list-item"
-                @click="company = !company, connect = false, product = false"
-                @click:outside="company = false"
-              >
-                Company
-                <picture>
-                  <source
-                    srcset="./images/icon-arrow-light.svg"
-                    media="(min-width: 700px)"
-                  />
-                  <img
-                    src="./images/icon-arrow-dark.svg"
-                    alt=""
-                    :class="company ? 'rotate-180' : ''"
-                  />
-                </picture>
-              </a>
-              <div
-                class="nav-list-item-card"
-                x-data="{subpages: ['Team', 'Blog', 'Careers']}"
-                x-show="company"
-              >
-                <template x-for="page in subpages">
-                  <a href="#" class="nav-list-item-link" x-text="page"></a>
-                </template>
+                <div
+                  class="nav-list-item-card"
+                  x-data="{link: item.subLabels}"
+                  x-show="item.open"
+                >
+                  <template x-for="page in link">
+                    <div>
+                      <a href="#" class="nav-list-item-link" x-text="page"></a>
+                    </div>
+                  </template>
+                </div>
               </div>
-            </li>
-
-            <li class="z-[100]">
-              <a
-                href="#"
-                class="nav-list-item"
-                @click="connect = !connect, product = false, company = false"
-                @click:outside="connect = false"
-              >
-                Connect
-                <picture>
-                  <source
-                    srcset="./images/icon-arrow-light.svg"
-                    media="(min-width: 700px)"
-                  />
-                  <img
-                    src="./images/icon-arrow-dark.svg"
-                    alt=""
-                    :class="connect ? 'rotate-180' : ''"
-                  />
-                </picture>
-              </a>
-              <div
-                class="nav-list-item-card"
-                x-show="connect"
-                x-data="{subpages: ['Contact', 'Newsletter', 'LinkedIn']}"
-              >
-                <template x-for="page in subpages">
-                  <a href="#" class="nav-list-item-link" x-text="page"></a>
-                </template>
-              </div>
-            </li>
-          </ul>
+            </template>
+          </div>
 
           <div
             class="mt-4 grid gap-4 border-t border-neutral-300 py-5 md:mt-0 md:ml-auto md:grid-flow-col md:items-center md:border-0 md:py-0"
