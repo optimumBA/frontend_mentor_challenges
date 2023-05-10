@@ -1,6 +1,6 @@
 describe('QR code component', () => {
   it('should open page in desktop viewport size', async () => {
-    await browser.url(`http://localhost:3000/qr_code_component`)
+    await browser.url(`http://localhost:4567/qr_code_component`)
     await browser.pause(100)
     await browser.takeFullPageScreenshot('qr_code_component-desktop')
 
@@ -28,7 +28,7 @@ describe('QR code component', () => {
   })
 
   it('should open page in mobile viewport size', async () => {
-    await browser.url(`http://localhost:3000/qr_code_component`)
+    await browser.url(`http://localhost:4567/qr_code_component`)
     await browser.setWindowSize(375, 667) // iPhone 8
     await browser.pause(100)
     await browser.takeFullPageScreenshot('qr_code_component-mobile')
