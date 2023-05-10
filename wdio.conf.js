@@ -1,4 +1,8 @@
+const dns = require('dns')
 exports.config = {
+  beforeSession: () => {
+    dns.setDefaultResultOrder('ipv4first')
+  },
   //
   // ====================
   // Runner Configuration
