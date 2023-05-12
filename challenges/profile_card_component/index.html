@@ -28,7 +28,18 @@
     <link rel="manifest" href="../site.webmanifest" />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="bg-darkCyan m-0">
+  <body class="bg-darkCyan relative m-0 max-h-screen">
+    <div
+      class="absolute -top-36 -left-1/4 w-10/12 lg:-top-96 lg:left-0 lg:w-1/2"
+    >
+      <img src="images/bg-pattern-top.svg" alt="" />
+    </div>
+    <div
+      class="absolute top-[450px] bottom-[-100px] -right-1/2 w-full lg:top-[350px] lg:-right-28 lg:w-3/5"
+    >
+      <img src="images/bg-pattern-bottom.svg" alt="" />
+    </div>
+
     <div
       class="flex h-[100vh] w-full flex-col place-content-center text-center"
     >
@@ -438,7 +449,6 @@
             </g>
           </g>
         </svg>
-        <!-- <img src="images/image-victor.jpg" alt="victor's profile picture" /> -->
         <div>
           <img
             class="absolute top-1/3 translate-x-[120px] -translate-y-1/4 transform rounded-full border-4 border-white"
