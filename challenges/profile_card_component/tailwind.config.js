@@ -6,6 +6,9 @@ module.exports = {
         'optimum-blue': '#009efc',
         'optimum-darkblue': '#0389e1',
       },
+      backgroundImage: {
+        'card-pattern': "url('images/bg-pattern-card.svg ')",
+      },
     },
   },
   plugins: [],
