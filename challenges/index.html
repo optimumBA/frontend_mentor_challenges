@@ -25,20 +25,45 @@
     <link rel="manifest" href="site.webmanifest" />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="m-0 ">
-    <div
-      class="bg-blue-100 flex h-[100vh] w-full flex-col place-content-center text-center"
-    >
+  <body class="m-48 bg-blue-100">
+  <div class="w-full flex flex-col sm:flex-row flex-wrap sm:flex-nowrap py-4 flex-grow">
+    <!-- fixed-width -->
+    <div class="w-fixed w-full flex-shrink flex-grow-0 px-4">
+      <div class="sticky top-0 p-4 w-full h-full">
+        <!-- nav goes here -->
+      </div>
+    </div>
 
-
-      <div>
+    <div class="bg-white pl-3 pr-3 pt-5 pb-5 rounded-lg">
+      <div role="main" class="w-full flex-grow pt-1 px-3 ">
+        <!-- fluid-width: main content goes here -->
         <img
-          src="images/image-qr-code.png"
-          alt="logo"
-          class="mx-auto mb-10 rounded-lg">
+                src="images/image-qr-code.png"
+                alt="logo"
+                class="rounded-lg">
+
+        <div class="mt-6 w-full flex-grow font-bold">
+          <label>Improve your front-end</label>
+          <label>skills by building projects</label>
+        </div>
+
+        <div class="mt-4 w-full flex-grow font-light font-small">
+          <label>Improve your front-end</label>
+          <label>skills by building projects</label>
+        </div>
+
       </div>
 
 
     </div>
+
+    <div class="w-fixed w-full flex-shrink flex-grow-0 px-2">
+      <!-- fixed-width -->
+      <div class="flex sm:flex-col px-2">
+        <!-- sidebar goes here -->
+      </div>
+    </div>
+  </div>
+
   </body>
 </html>
