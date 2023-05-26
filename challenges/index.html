@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <title>Frontend Mentor Challenges • Optimum BH Internship</title>
+
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Frontend Mentor Challenges &bullet; Optimum BH Internship</title>
+
     <link
       rel="apple-touch-icon"
       sizes="180x180"
@@ -24,46 +26,61 @@
     />
     <link rel="manifest" href="site.webmanifest" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!--    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&family=Raleway:wght@100&display=swap" rel="stylesheet">-->
   </head>
   <body class="m-48 bg-blue-100">
-  <div class="w-full flex flex-col sm:flex-row flex-wrap sm:flex-nowrap py-4 flex-grow">
-    <!-- fixed-width -->
-    <div class="w-fixed w-full flex-shrink flex-grow-0 px-4">
-      <div class="sticky top-0 p-4 w-full h-full">
-        <!-- nav goes here -->
-      </div>
-    </div>
-
-    <div class="bg-white pl-3 pr-3 pt-5 pb-5 rounded-lg">
-      <div role="main" class="w-full flex-grow pt-1 px-3 ">
-        <!-- fluid-width: main content goes here -->
-        <img
-                src="images/image-qr-code.png"
-                alt="logo"
-                class="rounded-lg">
-
-        <div class="mt-6 w-full flex-grow font-bold">
-          <label>Improve your front-end</label>
-          <label>skills by building projects</label>
-        </div>
-
-        <div class="mt-4 w-full flex-grow font-light font-small">
-          <label>Improve your front-end</label>
-          <label>skills by building projects</label>
-        </div>
-
-      </div>
-
-
-    </div>
-
-    <div class="w-fixed w-full flex-shrink flex-grow-0 px-2">
+    <div
+      class="flex w-full flex-grow flex-col flex-wrap py-4 sm:flex-row sm:flex-nowrap"
+    >
       <!-- fixed-width -->
-      <div class="flex sm:flex-col px-2">
-        <!-- sidebar goes here -->
+      <div class="w-fixed w-full flex-shrink flex-grow-0 px-4">
+        <div class="sticky top-0 h-full w-full p-4">
+          <!-- nav goes here -->
+        </div>
+      </div>
+
+      <div class="rounded-lg bg-white pl-3 pr-3 pt-5 pb-5">
+        <div role="main" class="w-full flex-grow px-3 pt-1">
+          <!-- fluid-width: main content goes here -->
+          <img src="images/image-qr-code.png" alt="logo" class="rounded-lg" />
+
+          <div
+            class="mt-6 w-full flex-grow"
+            style="
+              font-size: 15px !important;
+              font-weight: 700;
+              font-family: 'Outfit', sans-serif;
+            "
+          >
+            <label>Frontend Mentor Challenges</label>
+            <label>Front-end development challenges</label>
+            <label>Improve your front-end</label>
+            <label>skills by building projects</label>
+          </div>
+
+          <div
+            class="mt-4 w-full flex-grow"
+            style="
+              color: #9b9fa8;
+              font-size: 15px !important;
+              font-weight: 400;
+              font-family: 'Outfit', sans-serif;
+            "
+          >
+            <label>Improve your front-end</label>
+            <label>skills by building projects</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="w-fixed w-full flex-shrink flex-grow-0 px-2">
+        <!-- fixed-width -->
+        <div class="flex px-2 sm:flex-col">
+          <!-- sidebar goes here -->
+        </div>
       </div>
     </div>
-  </div>
-
   </body>
 </html>
