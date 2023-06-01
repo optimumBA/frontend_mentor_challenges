@@ -22,7 +22,7 @@ module.exports = {
         rubik: ['Rubik', 'sans-serif'],
       },
       fontSize: {
-        xxs: '0.5rem',
+        xxs: '0.4rem',
       },
     },
   },
