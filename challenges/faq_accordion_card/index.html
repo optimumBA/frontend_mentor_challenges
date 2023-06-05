@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="//unpkg.com/alpinejs" defer></script>
     <title>
       FAQ accordion card &bullet; Frontend Mentor Challenges &bullet; Optimum BH
       Internship
@@ -28,35 +29,240 @@
     <link rel="manifest" href="../site.webmanifest" />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="m-0">
+  <body
+    class="font-kumbh from-softViolet to-softBlue m-0 bg-gradient-to-b text-[14px]"
+  >
     <div
-      class="flex h-[100vh] w-full flex-col place-content-center text-center"
+      class="flex w-full flex-col place-content-center pt-[150px] md:h-[100vh] md:pt-[130px]"
     >
-      <div>
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://www.frontendmentor.io/challenges/faq-accordion-card-XlyjD0Oam"
-          target="_blank"
-          >Frontend Mentor challenge</a
+      <main
+        class="relative z-20 mx-auto my-auto flex h-auto w-[90vw] flex-col rounded-3xl bg-white shadow-2xl md:h-[500px] md:w-[70vw] md:flex-row"
+      >
+        <div class="block md:hidden">
+          <img
+            src="./images/illustration-woman-online-mobile.svg"
+            alt="woman-mobile-illustration"
+            class="absolute top-[-18px] left-1/2 w-[240px] -translate-x-1/2 -translate-y-1/2 transform"
+          />
+          <img src="./images/bg-pattern-mobile.svg" alt="" class="mx-auto" />
+        </div>
+        <div
+          class="z-0 hidden w-[600px] overflow-clip md:mr-11 md:block lg:mr-0"
         >
-      </div>
-      <div>
-        for
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA"
-          target="_blank"
-          >Optimum BH</a
-        >
-        Internship.
-      </div>
+          <svg
+            width="966"
+            height="945"
+            xmlns="http://www.w3.org/2000/svg"
+            style="top: 50%; left: 50%; transform: translate(-61%, -26%)"
+          >
+            <g fill-rule="nonzero" fill="none" opacity=".099">
+              <path
+                d="M468.755 937.353L19.744 671.73c-14.295-8.047-26.548-21.23-12.62-29.878L457.734 381.89c6.754-4.194 17.018-6.946 23.903-2.936l471.265 273.827c14.296 8.308 16.861 31.45 2.619 39.837L527.925 936.933a59.64 59.64 0 01-59.17.42z"
+                fill="#6862E6"
+              />
+              <path
+                d="M468.755 561.353L19.744 295.73c-14.295-8.047-26.548-21.23-12.62-29.878L457.734 5.89c6.754-4.194 17.018-6.946 23.903-2.936l471.265 273.827c14.296 8.308 16.861 31.45 2.619 39.837L527.925 560.933a59.64 59.64 0 01-59.17.42z"
+                stroke="#1E1F36"
+              />
+              <path
+                d="M468.755 636.353L19.744 370.73c-14.295-8.047-26.548-21.23-12.62-29.878L457.734 80.89c6.754-4.194 17.018-6.946 23.903-2.936l471.265 273.827c14.296 8.308 16.861 31.45 2.619 39.837L527.925 635.933a59.64 59.64 0 01-59.17.42z"
+                stroke="#1E1F36"
+              />
+            </g>
+          </svg>
+          <img
+            src="images/illustration-box-desktop.svg"
+            alt=""
+            class="absolute top-[230px] left-[-130px] z-20"
+          />
 
-      <div class="mt-3">
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA/frontend_mentor_challenges/tree/faq_accordion_card/challenges/faq_accordion_card"
-          >Source code</a
+          <img
+            src="images/illustration-woman-online-desktop.svg"
+            alt=""
+            style="clip-path: inset(0 0 0 17%)"
+            class="absolute left-[-80px] z-0 md:top-[180px] md:h-[45%] lg:top-[100px] lg:h-[65%]"
+          />
+        </div>
+
+        <section
+          class="ml-[4%] mr-[8%] mt-8 mb-11 md:my-[70px] md:ml-0 md:w-[400px]"
         >
+          <h1 class="mb-4 text-center text-3xl font-bold md:text-left">FAQ</h1>
+          <div class="p-2 text-left" x-data="{open: true}">
+            <div
+              class="relative"
+              @click="open = !open"
+              @click.outside="open = false"
+            >
+              <a
+                href="#q1"
+                x-data="{ isBold: false }"
+                :class="{ 'font-bold': isBold }"
+                @click="isBold = !isBold"
+                @click.outside="isBold = false"
+                class="questions"
+              >
+                How many team members can I invite?
+              </a>
+              <img
+                x-bind:class="open ? 'rotate-180' : ''"
+                class="absolute right-[-12px] top-2 w-4 md:right-[-24px]"
+                src="./images/icon-arrow-down.svg"
+                alt=""
+              />
+            </div>
+            <p x-show="open" class="mt-3 text-gray-500">
+              You can invite up to 2 additional users on the Free plan. There is
+              no limit on team members for the Premium plan.
+            </p>
+            <hr class="mt-5" />
+          </div>
+          <div class="p-2 text-left" x-data="{open: false}">
+            <div
+              class="relative"
+              @click="open = !open"
+              @click.outside="open = false"
+            >
+              <a
+                href="#q2"
+                x-data="{ isBold: false }"
+                :class="{ 'font-bold': isBold }"
+                @click="isBold = !isBold"
+                @click.outside="isBold = false"
+                class="questions"
+              >
+                What is the maximum file upload size?
+              </a>
+              <img
+                x-bind:class="open ? 'rotate-180' : ''"
+                class="absolute right-[-12px] top-2 w-4 md:right-[-24px]"
+                src="./images/icon-arrow-down.svg"
+                alt=""
+              />
+            </div>
+            <p x-show="open" class="mt-3 text-gray-500">
+              No more than 2GB. All files in your account must fit your allotted
+              storage space.
+            </p>
+            <hr class="mt-5" />
+          </div>
+          <div class="p-2 text-left" x-data="{open: false}">
+            <div
+              class="relative"
+              @click="open = !open"
+              @click.outside="open = false"
+            >
+              <a
+                href="#q3"
+                x-data="{ isBold: false }"
+                :class="{ 'font-bold': isBold }"
+                @click="isBold = !isBold"
+                @click.outside="isBold = false"
+                class="questions"
+              >
+                How do I reset my password?
+              </a>
+              <img
+                x-bind:class="open ? 'rotate-180' : ''"
+                class="absolute right-[-12px] top-2 w-4 md:right-[-24px]"
+                src="./images/icon-arrow-down.svg"
+                alt=""
+              />
+            </div>
+            <p x-show="open" class="mt-3 text-gray-500">
+              Click “Forgot password” from the login page or “Change password”
+              from your profile page. A reset link will be emailed to you.
+            </p>
+            <hr class="mt-5" />
+          </div>
+
+          <div class="p-2 text-left" x-data="{open: false}">
+            <div
+              class="relative"
+              @click="open = !open"
+              @click.outside="open = false"
+            >
+              <a
+                href="#q4"
+                x-data="{ isBold: false }"
+                :class="{ 'font-bold': isBold }"
+                @click="isBold = !isBold"
+                @click.outside="isBold = false"
+                class="questions"
+              >
+                Can I cancel my subscription?
+              </a>
+              <img
+                x-bind:class="open ? 'rotate-180' : ''"
+                class="absolute right-[-12px] top-2 w-4 md:right-[-24px]"
+                src="./images/icon-arrow-down.svg"
+                alt=""
+              />
+            </div>
+            <p x-show="open" class="mt-3 text-gray-500">
+              Click “Cancel Subscription” once you log in and confirm if you
+              wish to unsubscribe.
+            </p>
+            <hr class="mt-5" />
+          </div>
+          <div class="p-2 text-left" x-data="{open: false}">
+            <div
+              class="relative"
+              @click="open = !open"
+              @click.outside="open = false"
+            >
+              <a
+                href="#q5"
+                x-data="{ isBold: false }"
+                :class="{ 'font-bold': isBold }"
+                @click="isBold = !isBold"
+                @click.outside="isBold = false"
+                class="questions"
+              >
+                Do you provide additional support?
+              </a>
+              <img
+                x-bind:class="open ? 'rotate-180' : ''"
+                class="absolute right-[-12px] top-2 w-4 md:right-[-24px]"
+                src="./images/icon-arrow-down.svg"
+                alt=""
+              />
+            </div>
+            <p x-show="open" class="mt-3 text-gray-500">
+              Yes, call our offices at any time and you will get immediate
+              assistance.
+            </p>
+            <hr class="mt-5" />
+          </div>
+        </section>
+      </main>
+      <div class="mt-5 text-center">
+        <div>
+          <a
+            class="text-optimum-blue hover:text-optimum-darkblue"
+            href="https://www.frontendmentor.io/challenges/faq-accordion-card-XlyjD0Oam"
+            target="_blank"
+            >Frontend Mentor challenge</a
+          >
+        </div>
+        <div>
+          for
+          <a
+            class="text-optimum-blue hover:text-optimum-darkblue"
+            href="https://github.com/optimumBA"
+            target="_blank"
+            >Optimum BH</a
+          >
+          Internship.
+        </div>
+
+        <div class="mt-3">
+          <a
+            class="text-optimum-blue hover:text-optimum-darkblue"
+            href="https://github.com/rowah/frontend_mentor_challenges/tree/faq_accordion_card/challenges/faq_accordion_card"
+            >Source code</a
+          >
+        </div>
       </div>
     </div>
   </body>
