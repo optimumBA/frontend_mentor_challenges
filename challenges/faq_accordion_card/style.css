@@ -5,7 +5,7 @@
 @tailwind utilities;
 
 @layer components {
-  .droparrow {
-    @apply mt-1 h-2 w-3 hover:cursor-pointer;
+  .questions {
+    @apply hover:text-softRed text-sm text-gray-700 focus:text-black;
   }
 }

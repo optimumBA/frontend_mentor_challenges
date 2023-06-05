@@ -36,7 +36,7 @@
       class="flex w-full flex-col place-content-center pt-[150px] md:h-[100vh] md:pt-[130px]"
     >
       <main
-        class="relative z-20 mx-auto my-auto flex h-auto w-[90vw] flex-col rounded-3xl bg-white shadow-2xl md:h-[550px] md:w-[70vw] md:flex-row"
+        class="relative z-20 mx-auto my-auto flex h-auto w-[90vw] flex-col rounded-3xl bg-white shadow-2xl md:h-[500px] md:w-[70vw] md:flex-row"
       >
         <div class="block md:hidden">
           <img
@@ -84,8 +84,10 @@
           />
         </div>
 
-        <section class="ml-[8%] mr-[8%] mt-8 mb-11 md:my-[70px] md:ml-0">
-          <h1 class="text-center text-3xl font-bold md:text-left">FAQ</h1>
+        <section
+          class="ml-[4%] mr-[8%] mt-8 mb-11 md:my-[70px] md:ml-0 md:w-[400px]"
+        >
+          <h1 class="mb-4 text-center text-3xl font-bold md:text-left">FAQ</h1>
           <div class="p-2 text-left" x-data="{open: true}">
             <div
               class="relative"
@@ -94,7 +96,11 @@
             >
               <a
                 href="#q1"
-                class="hover:text-softRed text-lg text-gray-700 focus:font-bold"
+                x-data="{ isBold: false }"
+                :class="{ 'font-bold': isBold }"
+                @click="isBold = !isBold"
+                @click.outside="isBold = false"
+                class="questions"
               >
                 How many team members can I invite?
               </a>
@@ -119,7 +125,11 @@
             >
               <a
                 href="#q2"
-                class="hover:text-softRed text-lg text-gray-700 focus:font-bold"
+                x-data="{ isBold: false }"
+                :class="{ 'font-bold': isBold }"
+                @click="isBold = !isBold"
+                @click.outside="isBold = false"
+                class="questions"
               >
                 What is the maximum file upload size?
               </a>
@@ -144,7 +154,11 @@
             >
               <a
                 href="#q3"
-                class="hover:text-softRed text-lg text-gray-700 focus:font-bold focus:text-black"
+                x-data="{ isBold: false }"
+                :class="{ 'font-bold': isBold }"
+                @click="isBold = !isBold"
+                @click.outside="isBold = false"
+                class="questions"
               >
                 How do I reset my password?
               </a>
@@ -170,7 +184,11 @@
             >
               <a
                 href="#q4"
-                class="hover:text-softRed text-lg text-gray-700 focus:font-bold"
+                x-data="{ isBold: false }"
+                :class="{ 'font-bold': isBold }"
+                @click="isBold = !isBold"
+                @click.outside="isBold = false"
+                class="questions"
               >
                 Can I cancel my subscription?
               </a>
@@ -195,7 +213,11 @@
             >
               <a
                 href="#q5"
-                class="hover:text-softRed text-lg text-gray-700 focus:font-bold"
+                x-data="{ isBold: false }"
+                :class="{ 'font-bold': isBold }"
+                @click="isBold = !isBold"
+                @click.outside="isBold = false"
+                class="questions"
               >
                 Do you provide additional support?
               </a>
