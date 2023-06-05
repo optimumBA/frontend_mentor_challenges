@@ -9,7 +9,7 @@
     @apply mt-1 h-2 w-3 hover:cursor-pointer;
   }
   .questions {
-    @apply mx-auto mt-4 flex flex-row justify-between pb-5;
+    @apply mx-auto mt-4 flex flex-row justify-between pb-5 hover:cursor-pointer;
   }
   .answer {
     @apply mb-4 mt-0 hidden text-gray-400;

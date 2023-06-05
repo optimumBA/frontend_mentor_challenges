@@ -35,8 +35,8 @@
     <div
       class="flex w-full flex-col place-content-center pt-[150px] md:h-[100vh] md:pt-[130px]"
     >
-      <div
-        class="relative mx-auto my-auto flex h-auto w-[90vw] flex-col rounded-3xl bg-white shadow-2xl md:w-[70vw] md:flex-row"
+      <main
+        class="relative z-20 mx-auto my-auto flex h-auto w-[90vw] flex-col rounded-3xl bg-white shadow-2xl md:h-[550px] md:w-[70vw] md:flex-row"
       >
         <div class="block md:hidden">
           <img
@@ -46,12 +46,55 @@
           />
           <img src="./images/bg-pattern-mobile.svg" alt="" class="mx-auto" />
         </div>
+        <div
+          class="z-0 hidden w-[600px] overflow-clip md:mr-11 md:block lg:mr-0"
+        >
+          <svg
+            width="966"
+            height="945"
+            xmlns="http://www.w3.org/2000/svg"
+            style="top: 50%; left: 50%; transform: translate(-61%, -26%)"
+          >
+            <g fill-rule="nonzero" fill="none" opacity=".099">
+              <path
+                d="M468.755 937.353L19.744 671.73c-14.295-8.047-26.548-21.23-12.62-29.878L457.734 381.89c6.754-4.194 17.018-6.946 23.903-2.936l471.265 273.827c14.296 8.308 16.861 31.45 2.619 39.837L527.925 936.933a59.64 59.64 0 01-59.17.42z"
+                fill="#6862E6"
+              />
+              <path
+                d="M468.755 561.353L19.744 295.73c-14.295-8.047-26.548-21.23-12.62-29.878L457.734 5.89c6.754-4.194 17.018-6.946 23.903-2.936l471.265 273.827c14.296 8.308 16.861 31.45 2.619 39.837L527.925 560.933a59.64 59.64 0 01-59.17.42z"
+                stroke="#1E1F36"
+              />
+              <path
+                d="M468.755 636.353L19.744 370.73c-14.295-8.047-26.548-21.23-12.62-29.878L457.734 80.89c6.754-4.194 17.018-6.946 23.903-2.936l471.265 273.827c14.296 8.308 16.861 31.45 2.619 39.837L527.925 635.933a59.64 59.64 0 01-59.17.42z"
+                stroke="#1E1F36"
+              />
+            </g>
+          </svg>
+          <!-- <img
+            src="images/bg-pattern-desktop.svg"
+            style="clip-path: inset(29% 0 0 59%)"
+            alt=""
+            class="absolute top-[-50%] md:left-[-440px] lg:left-[-57%]"
+          /> -->
+          <img
+            src="images/illustration-box-desktop.svg"
+            alt=""
+            class="absolute top-[230px] left-[-130px] z-20"
+          />
 
-        <section class="mx-[8%] mt-8 mb-11">
+          <img
+            src="images/illustration-woman-online-desktop.svg"
+            alt=""
+            style="clip-path: inset(0 0 0 17%)"
+            class="absolute left-[-80px] z-0 md:top-[180px] md:h-[45%] lg:top-[100px] lg:h-[65%]"
+          />
+        </div>
+
+        <section class="ml-[8%] mr-[8%] mt-8 mb-11 md:my-[70px] md:ml-0">
           <h1 class="text-center text-3xl font-bold md:text-left">FAQ</h1>
           <div>
             <div class="questions">
-              <h2 class="text-left text-sm text-gray-500">
+              <h2 class="hover:text-softRed text-left text-sm text-gray-500">
                 How many team members can I invite?
               </h2>
               <img
@@ -68,7 +111,9 @@
           <hr />
           <div>
             <div class="questions">
-              <h2 class="text-left text-sm font-bold text-gray-500">
+              <h2
+                class="hover:text-softRed text-left text-sm font-bold text-gray-500"
+              >
                 What is the maximum file upload size?
               </h2>
               <img
@@ -85,7 +130,7 @@
           <hr />
           <div>
             <div class="questions">
-              <h2 class="text-left text-sm text-gray-500">
+              <h2 class="hover:text-softRed text-left text-sm text-gray-500">
                 How do I reset my password?
               </h2>
               <img
@@ -102,7 +147,7 @@
           <hr />
           <div>
             <div class="questions">
-              <h2 class="text-left text-sm text-gray-500">
+              <h2 class="hover:text-softRed text-left text-sm text-gray-500">
                 Can I cancel my subscription?
               </h2>
               <img
@@ -116,7 +161,7 @@
           <hr />
           <div>
             <div class="questions">
-              <h2 class="text-left text-sm text-gray-500">
+              <h2 class="hover:text-softRed text-left text-sm text-gray-500">
                 Do you provide additional support?
               </h2>
               <img
@@ -129,8 +174,8 @@
           </div>
           <hr />
         </section>
-      </div>
-      <div class="mt-11 text-center">
+      </main>
+      <div class="mt-5 text-center">
         <div>
           <a
             class="text-optimum-blue hover:text-optimum-darkblue"
