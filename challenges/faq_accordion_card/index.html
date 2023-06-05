@@ -70,12 +70,6 @@
               />
             </g>
           </svg>
-          <!-- <img
-            src="images/bg-pattern-desktop.svg"
-            style="clip-path: inset(29% 0 0 59%)"
-            alt=""
-            class="absolute top-[-50%] md:left-[-440px] lg:left-[-57%]"
-          /> -->
           <img
             src="images/illustration-box-desktop.svg"
             alt=""
@@ -92,87 +86,132 @@
 
         <section class="ml-[8%] mr-[8%] mt-8 mb-11 md:my-[70px] md:ml-0">
           <h1 class="text-center text-3xl font-bold md:text-left">FAQ</h1>
-          <div>
-            <div class="questions">
-              <h2 class="hover:text-softRed text-left text-sm text-gray-500">
+          <div class="p-2 text-left" x-data="{open: true}">
+            <div
+              class="relative"
+              @click="open = !open"
+              @click.outside="open = false"
+            >
+              <a
+                href="#q1"
+                class="hover:text-softRed text-lg text-gray-700 focus:font-bold"
+              >
                 How many team members can I invite?
-              </h2>
+              </a>
               <img
+                x-bind:class="open ? 'rotate-180' : ''"
+                class="absolute right-[-12px] top-2 w-4 md:right-[-24px]"
                 src="./images/icon-arrow-down.svg"
-                alt="drop-down arrow"
-                class="droparrow"
+                alt=""
               />
             </div>
-            <p class="answer">
+            <p x-show="open" class="mt-3 text-gray-500">
               You can invite up to 2 additional users on the Free plan. There is
               no limit on team members for the Premium plan.
             </p>
+            <hr class="mt-5" />
           </div>
-          <hr />
-          <div>
-            <div class="questions">
-              <h2
-                class="hover:text-softRed text-left text-sm font-bold text-gray-500"
+          <div class="p-2 text-left" x-data="{open: false}">
+            <div
+              class="relative"
+              @click="open = !open"
+              @click.outside="open = false"
+            >
+              <a
+                href="#q2"
+                class="hover:text-softRed text-lg text-gray-700 focus:font-bold"
               >
                 What is the maximum file upload size?
-              </h2>
+              </a>
               <img
+                x-bind:class="open ? 'rotate-180' : ''"
+                class="absolute right-[-12px] top-2 w-4 md:right-[-24px]"
                 src="./images/icon-arrow-down.svg"
-                alt="drop-down arrow"
-                class="droparrow rotate-180 transform"
+                alt=""
               />
             </div>
-            <p class="answer block">
+            <p x-show="open" class="mt-3 text-gray-500">
               No more than 2GB. All files in your account must fit your allotted
               storage space.
             </p>
+            <hr class="mt-5" />
           </div>
-          <hr />
-          <div>
-            <div class="questions">
-              <h2 class="hover:text-softRed text-left text-sm text-gray-500">
+          <div class="p-2 text-left" x-data="{open: false}">
+            <div
+              class="relative"
+              @click="open = !open"
+              @click.outside="open = false"
+            >
+              <a
+                href="#q3"
+                class="hover:text-softRed text-lg text-gray-700 focus:font-bold focus:text-black"
+              >
                 How do I reset my password?
-              </h2>
+              </a>
               <img
+                x-bind:class="open ? 'rotate-180' : ''"
+                class="absolute right-[-12px] top-2 w-4 md:right-[-24px]"
                 src="./images/icon-arrow-down.svg"
-                alt="drop-down arrow"
-                class="droparrow"
+                alt=""
               />
             </div>
-            <p class="answer">
+            <p x-show="open" class="mt-3 text-gray-500">
               Click “Forgot password” from the login page or “Change password”
-              from your profile page. A reset link will be emailed to you
+              from your profile page. A reset link will be emailed to you.
             </p>
+            <hr class="mt-5" />
           </div>
-          <hr />
-          <div>
-            <div class="questions">
-              <h2 class="hover:text-softRed text-left text-sm text-gray-500">
+
+          <div class="p-2 text-left" x-data="{open: false}">
+            <div
+              class="relative"
+              @click="open = !open"
+              @click.outside="open = false"
+            >
+              <a
+                href="#q4"
+                class="hover:text-softRed text-lg text-gray-700 focus:font-bold"
+              >
                 Can I cancel my subscription?
-              </h2>
+              </a>
               <img
+                x-bind:class="open ? 'rotate-180' : ''"
+                class="absolute right-[-12px] top-2 w-4 md:right-[-24px]"
                 src="./images/icon-arrow-down.svg"
-                alt="drop-down arrow"
-                class="droparrow"
+                alt=""
               />
             </div>
-            <p class="answer"></p>
+            <p x-show="open" class="mt-3 text-gray-500">
+              Click “Cancel Subscription” once you log in and confirm if you
+              wish to unsubscribe.
+            </p>
+            <hr class="mt-5" />
           </div>
-          <hr />
-          <div>
-            <div class="questions">
-              <h2 class="hover:text-softRed text-left text-sm text-gray-500">
+          <div class="p-2 text-left" x-data="{open: false}">
+            <div
+              class="relative"
+              @click="open = !open"
+              @click.outside="open = false"
+            >
+              <a
+                href="#q5"
+                class="hover:text-softRed text-lg text-gray-700 focus:font-bold"
+              >
                 Do you provide additional support?
-              </h2>
+              </a>
               <img
+                x-bind:class="open ? 'rotate-180' : ''"
+                class="absolute right-[-12px] top-2 w-4 md:right-[-24px]"
                 src="./images/icon-arrow-down.svg"
-                alt="drop-down arrow"
-                class="droparrow"
+                alt=""
               />
             </div>
-            <p class="answer"></p>
+            <p x-show="open" class="mt-3 text-gray-500">
+              Yes, call our offices at any time and you will get immediate
+              assistance.
+            </p>
+            <hr class="mt-5" />
           </div>
-          <hr />
         </section>
       </main>
       <div class="mt-5 text-center">
