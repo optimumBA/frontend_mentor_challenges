@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/frontend_mentor_challenges.iml" filepath="$PROJECT_DIR$/.idea/frontend_mentor_challenges.iml" />
+      <module fileurl="file://$PROJECT_DIR$/frontend_mentor_challenges.iml" filepath="$PROJECT_DIR$/frontend_mentor_challenges.iml" />
     </modules>
   </component>
 </project>
