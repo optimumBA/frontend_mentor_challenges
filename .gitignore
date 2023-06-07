@@ -10,3 +10,5 @@
 # Screenshots made during the tests
 /screenshots/**/*
 !/screenshots/.gitkeep
+
+.idea
