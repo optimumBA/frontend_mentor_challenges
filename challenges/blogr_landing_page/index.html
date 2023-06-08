@@ -40,28 +40,33 @@
   </head>
   <body class="m-0 text-center text-[16px]">
     <!--Header Container-->
-    <div>
+    <div
+      class="to-lightRed from-veryLightRedTwo sticky top-0 left-0 z-50 w-full bg-gradient-to-r p-6 text-center"
+    >
       <!-- header -->
-      <div>
+      <div class="relative z-50">
         <!-- nav -->
-        <div>
+        <div class="mt-7 flex items-center justify-between">
           <!-- for mobile-->
           <img src="images/logo.svg" alt="" />
-          <div>
+          <div class="md:hidden">
             <img src="images/icon-hamburger.svg" alt="hamburger" />
             <img src="images/icon-close.svg" alt="close hamburger" />
           </div>
           <!-- for desktop-->
-          <div>
+          <div class="hidden w-full md:block">
             <!-- nav container -->
             <div>
-              <nav>
-                <ul>
-                  <li class="relative">
+              <div></div>
+              <div></div>
+              <nav class="flex items-center justify-between text-white">
+                <ul class="ml-24 flex gap-16">
+                  <li class="flex">
                     <a href="#">Product</a>
                     <img
                       src="images/icon-arrow-light.svg"
                       alt="drop down arrow"
+                      class="mt-2 ml-2 h-[7px]"
                     />
                     <template>
                       <ul>
@@ -73,11 +78,12 @@
                       </ul>
                     </template>
                   </li>
-                  <li>
+                  <li class="flex">
                     <a href="#">Company</a
                     ><img
                       src="images/icon-arrow-light.svg"
                       alt="drop down arrow"
+                      class="mt-2 ml-2 h-[7px]"
                     />
                     <template>
                       <ul>
@@ -89,11 +95,12 @@
                     </template>
                   </li>
 
-                  <li>
+                  <li class="flex">
                     <a href="#">Connect</a
                     ><img
                       src="images/icon-arrow-light.svg"
                       alt="drop down arrow"
+                      class="mt-2 ml-2 h-[7px]"
                     />
                     <template>
                       <ul>
@@ -104,7 +111,16 @@
                     </template>
                   </li>
                 </ul>
-                <div><button>Login</button><button>Sign Up</button></div>
+                <div class="flex">
+                  <button class="rounded-full px-4 py-3 font-bold text-white">
+                    Login
+                  </button>
+                  <button
+                    class="text-lightRed rounded-full bg-white px-4 py-3 font-bold"
+                  >
+                    Sign Up
+                  </button>
+                </div>
               </nav>
             </div>
           </div>
