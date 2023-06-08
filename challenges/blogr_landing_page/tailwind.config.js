@@ -20,8 +20,8 @@ module.exports = {
         veryDarkDesaturatedBlue: 'hsl(237, 23%, 32%)',
       },
       fontFamily: {
-        Overpass: ['Overpass', 'sans-serif'],
-        Ubuntu: ['Ubuntu', 'sans-serif'],
+        overpass: ['Overpass', 'sans-serif'],
+        ubuntu: ['Ubuntu', 'sans-serif'],
       },
     },
   },
