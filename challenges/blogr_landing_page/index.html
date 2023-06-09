@@ -51,7 +51,11 @@
           <img src="images/logo.svg" alt="" />
           <div class="md:hidden">
             <img src="images/icon-hamburger.svg" alt="hamburger" />
-            <img src="images/icon-close.svg" alt="close hamburger" />
+            <img
+              src="images/icon-close.svg"
+              alt="close hamburger"
+              class="hidden"
+            />
           </div>
           <!-- for desktop-->
           <div class="hidden w-full md:block">
@@ -170,10 +174,15 @@
         </template>
       </div>
     </div>
+    <!-- <img
+      src="images/bg-pattern-intro-desktop.svg"
+      alt=""
+      class="absolute z-10"
+    /> -->
     <div
       class="to-lightRed from-veryLightRedTwo left-0 w-full rounded-bl-[84px] bg-gradient-to-r p-6 text-center"
     >
-      <div class="mt-14">
+      <div class="relative z-20 mt-14">
         <h1 class="text-3xl text-white md:text-5xl">
           <span class="block md:inline-block">A modern</span> publishing
           platform
@@ -183,7 +192,7 @@
           <span class="block md:inline-block">online brand</span>
         </p>
       </div>
-      <div class="mt-10">
+      <div class="relative z-20 mt-10">
         <button class="text-lightRed rounded-full bg-white px-4 py-3 font-bold">
           Start for free
         </button>
@@ -233,25 +242,35 @@
           </p>
         </div>
       </section>
-      <section class="mt-14">
+      <section class="relative">
         <img
-          class="hidden md:block"
-          src="images/bg-pattern-circles.svg"
+          src="images/illustration-phones.svg"
           alt=""
+          class="absolute top-[-150px] z-20"
         />
-        <img src="images/illustration-phones.svg" alt="" />
-        <div>
-          <h2 class="text-veryDarkBlue py-4 text-3xl">
-            State of the Art Infrastructure
-          </h2>
-          <p class="mt-2 px-10 text-gray-500">
-            With reliability and speed in mind, worldwide data centers provide
-            the backbone for ultra-fast connectivity. This ensures your site
-            will load instantly, no matter where your readers are, keeping your
-            site competitive.
-          </p>
+        <div
+          class="bg-veryDarkGrayBlueTwo relative mt-48 overflow-hidden rounded-tr-[84px] rounded-bl-[84px]"
+        >
+          <img
+            class="absolute z-10 mx-auto -mt-[30%]"
+            src="images/bg-pattern-circles.svg"
+            alt=""
+            style="width: 180%; left: -10%; right: -10%"
+          />
+          <div class="relative z-30 mt-[200px] mb-20">
+            <h2 class="py-4 text-3xl text-white">
+              State of the Art Infrastructure
+            </h2>
+            <p class="text-grayishBlue mt-2 px-10">
+              With reliability and speed in mind, worldwide data centers provide
+              the backbone for ultra-fast connectivity. This ensures your site
+              will load instantly, no matter where your readers are, keeping
+              your site competitive.
+            </p>
+          </div>
         </div>
       </section>
+
       <section>
         <img
           src="images/illustration-laptop-mobile.svg"
@@ -309,7 +328,7 @@
           <li><a href="#">Careers</a></li>
         </ul>
       </div>
-      <div class="mt-9">
+      <div class="mt-9 mb-10">
         <h3>Connect</h3>
         <ul class="text-grayishBlue mt-6 space-y-1">
           <li><a href="#">Contact</a></li>
