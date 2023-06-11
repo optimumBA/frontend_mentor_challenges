@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="//unpkg.com/alpinejs" defer></script>
+    <script src="//unpkg.com/alpinejs" defer></script>
     <title>
       Blogr landing page &bullet; Frontend Mentor Challenges &bullet; Optimum BH
       Internship
@@ -36,6 +37,9 @@
   <body class="font-overpass m-0 text-center text-[16px]">
     <!--Header Container-->
     <div
+      x-data="{
+      open: false
+    }"
       class="to-lightRed from-veryLightRedTwo sticky top-0 left-0 z-50 w-full bg-gradient-to-r p-6 text-center"
     >
       <!-- header -->
@@ -44,12 +48,16 @@
         <div class="mt-7 flex items-center justify-between">
           <!-- for mobile-->
           <img src="images/logo.svg" alt="" />
-          <div class="md:hidden">
-            <img src="images/icon-hamburger.svg" alt="hamburger" />
+          <div @click="open = !open" class="md:hidden">
             <img
+              x-show="!open"
+              src="images/icon-hamburger.svg"
+              alt="hamburger"
+            />
+            <img
+              x-show="open"
               src="images/icon-close.svg"
               alt="close hamburger"
-              class="hidden"
             />
           </div>
           <!-- for desktop-->
