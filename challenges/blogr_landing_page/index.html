@@ -13,11 +13,6 @@
       defer
       src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
     ></script>
-    <!-- <style>
-      html {
-        overflow-x: hidden;
-      }
-    </style> -->
     <link
       rel="apple-touch-icon"
       sizes="180x180"
@@ -64,7 +59,7 @@
               <div></div>
               <div></div>
               <nav class="flex items-center justify-between text-white">
-                <ul class="font-ubuntu ml-24 flex gap-16">
+                <ul class="font-ubuntu ml-24 flex gap-6">
                   <li class="flex">
                     <a href="#">Product</a>
                     <img
@@ -192,7 +187,7 @@
           <span class="block md:inline-block">online brand</span>
         </p>
       </div>
-      <div class="relative z-20 mt-10">
+      <div class="relative z-20 mt-10 md:mb-20">
         <button class="text-lightRed rounded-full bg-white px-4 py-3 font-bold">
           Start for free
         </button>
@@ -204,45 +199,53 @@
       </div>
     </div>
     <!--Body Sections -->
-    <main>
+    <main class="overflow-x-hidden">
       <section>
-        <h1 class="text-veryDarkBlue mt-24 py-8 text-3xl">
+        <h1 class="text-veryDarkBlue mt-24 py-8 text-3xl font-semibold md:pb-0">
           Designed for the future
         </h1>
-        <div>
+        <div class="relative md:text-left lg:flex">
+          <div class="md:ml-11 md:w-[80%]">
+            <img
+              src="images/illustration-editor-mobile.svg"
+              alt=""
+              class="mx-auto block md:hidden"
+            />
+            <h2
+              class="text-veryDarkBlue mt-6 py-8 text-3xl md:ml-10 md:text-xl"
+            >
+              Introducing an
+              <span class="block md:inline-block">extensible editor</span>
+            </h2>
+            <p class="mt-2 px-10 text-gray-500 md:w-[61.5%]">
+              Blogr features an exceedingly intuitive interface which lets you
+              focus on one thing: creating content. The editor supports
+              management of multiple blogs and allows easy manipulation of
+              embeds such as images, videos, and Markdown Extensibility with
+              plugins and themes provide easy ways to add functionality or
+              change the looks of a blog.
+            </p>
+            <h2
+              class="text-veryDarkBlue mt-6 py-8 text-3xl md:ml-10 md:text-xl"
+            >
+              Robust content
+              <span class="block md:inline-block">management</span>
+            </h2>
+            <p class="mt-2 px-10 text-gray-500 md:w-[61%]">
+              Flexible content management enables users to easily move through
+              posts. Increase the usability of your blog by adding customized
+              categories, sections, format, or flow. With this functionality,
+              you're in full control.
+            </p>
+          </div>
           <img
             src="images/illustration-editor-desktop.svg"
             alt=""
-            class="hidden md:block"
+            class="absolute right-[-15%] hidden h-[700px] overflow-clip md:block"
           />
-          <img
-            src="images/illustration-editor-mobile.svg"
-            alt=""
-            class="block md:hidden"
-          />
-          <h2 class="text-veryDarkBlue mt-6 py-8 text-3xl">
-            Introducing an <span class="block">extensible editor</span>
-          </h2>
-          <p class="mt-2 px-10 text-gray-500">
-            Blogr features an exceedingly intuitive interface which lets you
-            focus on one thing: creating content. The editor supports management
-            of multiple blogs and allows easy manipulation of embeds such as
-            images, videos, and Markdown Extensibility with plugins and themes
-            provide easy ways to add functionality or change the looks of a
-            blog.
-          </p>
-          <h2 class="text-veryDarkBlue mt-6 py-8 text-3xl">
-            Robust content <span class="block md:inline-block">management</span>
-          </h2>
-          <p class="mt-2 px-10 text-gray-500">
-            Flexible content management enables users to easily move through
-            posts. Increase the usability of your blog by adding customized
-            categories, sections, format, or flow. With this functionality,
-            you're in full control.
-          </p>
         </div>
       </section>
-      <section class="relative">
+      <section class="relative md:mt-[400px]">
         <img
           src="images/illustration-phones.svg"
           alt=""
@@ -252,13 +255,14 @@
           class="bg-veryDarkGrayBlueTwo relative mt-48 overflow-hidden rounded-tr-[84px] rounded-bl-[84px]"
         >
           <img
-            class="absolute z-10 mx-auto -mt-[30%]"
+            class="absolute left-[-10%] z-10 mx-auto -mt-[30%] w-[180%] md:left-[-35%] md:top-[-110%]"
             src="images/bg-pattern-circles.svg"
             alt=""
-            style="width: 180%; left: -10%; right: -10%"
           />
-          <div class="relative z-30 mt-[200px] mb-20">
-            <h2 class="py-4 text-3xl text-white">
+          <div
+            class="relative z-30 mt-[200px] mb-20 md:ml-[550px] md:mt-[100px] md:w-[50%] md:text-left"
+          >
+            <h2 class="py-4 text-3xl text-white md:ml-10 md:text-xl">
               State of the Art Infrastructure
             </h2>
             <p class="text-grayishBlue mt-2 px-10">
@@ -271,7 +275,7 @@
         </div>
       </section>
 
-      <section>
+      <section class="md:mb-[260px] lg:flex">
         <img
           src="images/illustration-laptop-mobile.svg"
           alt=""
@@ -280,36 +284,44 @@
         <img
           src="images/illustration-laptop-desktop.svg"
           alt=""
-          class="hidden md:block"
+          class="absolute left-[-15%] hidden md:mt-8 md:block md:h-[450px] lg:mt-20 lg:h-[600px]"
         />
-        <div>
-          <h2 class="text-veryDarkBlue mt-10 py-8 text-3xl">
-            Free, open, simple
-          </h2>
-          <p class="mt-2 px-10 text-gray-500">
-            Blogr is a free and open source application backed by a large
-            community of helpful developers. It supports features such as code
-            syntax highlighting, RSS feeds, social media integration,
-            third-party commenting tools, and works seamlessly with Google
-            Analytics. The architecture is clean and is relatively easy to
-            learn.
-          </p>
-        </div>
-        <div>
-          <h2 class="text-veryDarkBlue mt-6 py-6 text-3xl">Powerful tooling</h2>
-          <p class="mt-2 px-10 text-gray-500">
-            Batteries included. We built a simple and straightforward CLI tool
-            that makes customization and deployment a breeze, but capable of
-            producing even the most complicated sites.
-          </p>
+        <div class="md:ml-[50%] md:mt-32 md:w-[530px] md:text-left">
+          <div>
+            <h2 class="text-veryDarkBlue mt-10 py-8 text-3xl md:text-xl">
+              Free, open, simple
+            </h2>
+            <p class="mt-2 px-10 text-gray-500 md:pl-0">
+              Blogr is a free and open source application backed by a large
+              community of helpful developers. It supports features such as code
+              syntax highlighting, RSS feeds, social media integration,
+              third-party commenting tools, and works seamlessly with Google
+              Analytics. The architecture is clean and is relatively easy to
+              learn.
+            </p>
+          </div>
+          <div>
+            <h2 class="text-veryDarkBlue mt-6 py-6 text-3xl md:text-xl">
+              Powerful tooling
+            </h2>
+            <p class="mt-2 px-10 text-gray-500 md:pl-0">
+              Batteries included. We built a simple and straightforward CLI tool
+              that makes customization and deployment a breeze, but capable of
+              producing even the most complicated sites.
+            </p>
+          </div>
         </div>
       </section>
     </main>
     <footer
-      class="font-ubuntu bg-veryDarkBlackBlue mt-20 flex flex-col rounded-tr-[84px] p-6 text-center text-white"
+      class="font-ubuntu bg-veryDarkBlackBlue mt-20 flex flex-col rounded-tr-[84px] p-6 text-center text-white md:flex-row md:justify-around md:px-11"
     >
-      <img src="images/logo.svg" alt="" class="mx-auto my-8 w-20" />
-      <div class="mt-5">
+      <img
+        src="images/logo.svg"
+        alt=""
+        class="mx-auto my-8 w-20 md:mx-0 md:h-9"
+      />
+      <div class="mt-5 md:mt-8">
         <h3>Product</h3>
         <ul class="text-grayishBlue mt-6 space-y-1">
           <li><a href="#">Overview</a></li>
