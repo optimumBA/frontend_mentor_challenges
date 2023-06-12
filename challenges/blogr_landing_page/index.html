@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="//unpkg.com/alpinejs" defer></script>
+
     <title>
       Blogr landing page &bullet; Frontend Mentor Challenges &bullet; Optimum BH
       Internship
@@ -37,11 +37,11 @@
     <!--Header Container-->
     <div
       x-data="{
-      open: false,
-      product: false, 
-      company: false, 
-      connect: false
-    }"
+        open: false,
+        product: false,
+        company: false,
+        connect: false
+      }"
       class="to-lightRed from-veryLightRedTwo sticky top-0 left-0 z-50 w-full bg-gradient-to-r p-6 text-center"
     >
       <!-- header -->
@@ -50,7 +50,11 @@
         <div class="mt-7 flex items-center justify-between">
           <!-- for mobile-->
           <img src="images/logo.svg" alt="" />
-          <div @click="open = !open" class="md:hidden">
+          <div
+            id="mobile-menu-toggle"
+            @click="open = !open"
+            class="ml-[60%] md:hidden"
+          >
             <img
               x-show="!open"
               src="images/icon-hamburger.svg"
@@ -155,7 +159,7 @@
                     Login
                   </button>
                   <button
-                    class="text-lightRed hover:bg-veryLightRedTwo ml-3 rounded-full bg-white px-4 py-3 font-bold"
+                    class="text-lightRed hover:bg-veryLightRedTwo rounded-full bg-white px-4 py-3 font-bold"
                   >
                     Sign Up
                   </button>
@@ -258,32 +262,36 @@
               alt=""
               class="mx-auto block md:hidden"
             />
-            <h2
-              class="text-veryDarkBlue mt-6 py-8 text-3xl md:ml-10 md:text-xl"
-            >
-              Introducing an
-              <span class="block md:inline-block">extensible editor</span>
-            </h2>
-            <p class="mt-2 px-10 text-gray-500 md:w-[61.5%]">
-              Blogr features an exceedingly intuitive interface which lets you
-              focus on one thing: creating content. The editor supports
-              management of multiple blogs and allows easy manipulation of
-              embeds such as images, videos, and Markdown Extensibility with
-              plugins and themes provide easy ways to add functionality or
-              change the looks of a blog.
-            </p>
-            <h2
-              class="text-veryDarkBlue mt-6 py-8 text-3xl md:ml-10 md:text-xl"
-            >
-              Robust content
-              <span class="block md:inline-block">management</span>
-            </h2>
-            <p class="mt-2 px-10 text-gray-500 md:w-[61%]">
-              Flexible content management enables users to easily move through
-              posts. Increase the usability of your blog by adding customized
-              categories, sections, format, or flow. With this functionality,
-              you're in full control.
-            </p>
+            <div>
+              <h2
+                class="text-veryDarkBlue mt-6 py-8 text-3xl md:ml-10 md:text-xl"
+              >
+                Introducing an
+                <span class="block md:inline-block">extensible editor</span>
+              </h2>
+              <p class="mt-2 px-10 text-gray-500 md:w-[61.5%]">
+                Blogr features an exceedingly intuitive interface which lets you
+                focus on one thing: creating content. The editor supports
+                management of multiple blogs and allows easy manipulation of
+                embeds such as images, videos, and Markdown Extensibility with
+                plugins and themes provide easy ways to add functionality or
+                change the looks of a blog.
+              </p>
+            </div>
+            <div>
+              <h2
+                class="text-veryDarkBlue mt-6 py-8 text-3xl md:ml-10 md:text-xl"
+              >
+                Robust content
+                <span class="block md:inline-block">management</span>
+              </h2>
+              <p class="mt-2 px-10 text-gray-500 md:w-[61%]">
+                Flexible content management enables users to easily move through
+                posts. Increase the usability of your blog by adding customized
+                categories, sections, format, or flow. With this functionality,
+                you're in full control.
+              </p>
+            </div>
           </div>
           <img
             src="images/illustration-editor-desktop.svg"
