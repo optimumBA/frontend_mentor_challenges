@@ -37,7 +37,10 @@
     <!--Header Container-->
     <div
       x-data="{
-      open: false
+      open: false,
+      product: false, 
+      company: false, 
+      connect: false
     }"
       class="to-lightRed from-veryLightRedTwo sticky top-0 left-0 z-50 w-full bg-gradient-to-r p-6 text-center"
     >
@@ -67,52 +70,80 @@
               <div></div>
               <nav class="flex items-center justify-between text-white">
                 <ul class="font-ubuntu ml-24 flex gap-6">
-                  <li class="flex">
-                    <a href="#">Product</a>
-                    <img
-                      src="images/icon-arrow-light.svg"
-                      alt="drop down arrow"
-                      class="mt-2 ml-2 h-[7px]"
-                    />
-                    <template>
-                      <ul>
-                        <li><a href="#">Overview</a></li>
-                        <li><a href="#">Pricing</a></li>
-                        <li><a href="#">Marketplace</a></li>
-                        <li><a href="#">Features</a></li>
-                        <li><a href="#">Integrations</a></li>
+                  <li>
+                    <a
+                      @click="product = !product; company = false; connect = false"
+                      class="flex hover:underline"
+                      href="#"
+                      >Product
+                      <img
+                        src="images/icon-arrow-light.svg"
+                        alt="drop down arrow"
+                        class="mt-2 ml-2 h-[7px]"
+                    /></a>
+                    <template x-if="product">
+                      <ul
+                        class="absolute top-11 left-44 w-28 space-y-1 bg-white py-3 pl-3 text-left text-black shadow-lg"
+                      >
+                        <li>
+                          <a class="hover:font-bold" href="#">Overview</a>
+                        </li>
+                        <li><a class="hover:font-bold" href="#">Pricing</a></li>
+                        <li>
+                          <a class="hover:font-bold" href="#">Marketplace</a>
+                        </li>
+                        <li>
+                          <a class="hover:font-bold" href="#">Features</a>
+                        </li>
+                        <li>
+                          <a class="hover:font-bold" href="#">Integrations</a>
+                        </li>
                       </ul>
                     </template>
                   </li>
-                  <li class="flex">
-                    <a href="#">Company</a
-                    ><img
-                      src="images/icon-arrow-light.svg"
-                      alt="drop down arrow"
-                      class="mt-2 ml-2 h-[7px]"
-                    />
-                    <template>
-                      <ul>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Team</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Careers</a></li>
+                  <li>
+                    <a
+                      class="flex hover:underline"
+                      href="#"
+                      @click="product = false; company = !company; connect = false"
+                      >Company<img
+                        src="images/icon-arrow-light.svg"
+                        alt="drop down arrow"
+                        class="mt-2 ml-2 h-[7px]"
+                    /></a>
+                    <template x-if="company">
+                      <ul
+                        class="absolute top-11 left-72 w-28 space-y-1 bg-white py-3 pl-3 text-left text-black shadow-lg"
+                      >
+                        <li><a class="hover:font-bold" href="#">About</a></li>
+                        <li><a class="hover:font-bold" href="#">Team</a></li>
+                        <li><a class="hover:font-bold" href="#">Blog</a></li>
+                        <li><a class="hover:font-bold" href="#">Careers</a></li>
                       </ul>
                     </template>
                   </li>
 
-                  <li class="flex">
-                    <a href="#">Connect</a
-                    ><img
-                      src="images/icon-arrow-light.svg"
-                      alt="drop down arrow"
-                      class="mt-2 ml-2 h-[7px]"
-                    />
-                    <template>
-                      <ul>
-                        <li><a href="#">Contact</a></li>
-                        <li><a href="#">Newsletter</a></li>
-                        <li><a href="#">LinkedIn</a></li>
+                  <li>
+                    <a
+                      class="flex hover:underline"
+                      href="#"
+                      @click="product = false; company = false; connect = !connect"
+                      >Connect<img
+                        src="images/icon-arrow-light.svg"
+                        alt="drop down arrow"
+                        class="mt-2 ml-2 h-[7px]"
+                    /></a>
+                    <template x-if="connect">
+                      <ul
+                        class="absolute top-11 left-[390px] w-28 space-y-1 bg-white py-3 pl-3 text-left text-black shadow-lg"
+                      >
+                        <li><a class="hover:font-bold" href="#">Contact</a></li>
+                        <li>
+                          <a class="hover:font-bold" href="#">Newsletter</a>
+                        </li>
+                        <li>
+                          <a class="hover:font-bold" href="#">LinkedIn</a>
+                        </li>
                       </ul>
                     </template>
                   </li>
