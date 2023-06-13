@@ -167,15 +167,32 @@
               </nav>
             </div>
           </div>
+          <!--  nav -->
         </div>
-        <template>
-          <div>
-            <ul>
-              <li class="relative">
-                <a href="#">Product</a>
-                <img src="images/icon-arrow-light.svg" alt="drop down arrow" />
-                <template>
-                  <ul>
+        <!--mobile modal shown by hamburger-->
+        <template x-if="open">
+          <div
+            class="absolute ml-2 mt-3 w-[95%] rounded-[6px] bg-white shadow-xl md:hidden"
+          >
+            <ul class="space-y-4">
+              <li class="relative p-2 text-gray-500">
+                <a
+                  @click="product = !product; company = false; connect=false;"
+                  class="block w-full font-bold"
+                  href="#"
+                  >Product</a
+                >
+                <div class="absolute top-4 right-4 bottom-0 flex h-full">
+                  <img
+                    class="h-2 w-3"
+                    src="images/icon-arrow-light.svg"
+                    alt=""
+                  />
+                </div>
+                <template x-if="product">
+                  <ul
+                    class="mt-2 flex flex-col gap-2 rounded-[6px] bg-gray-200 text-sm"
+                  >
                     <li><a href="#">Overview</a></li>
                     <li><a href="#">Pricing</a></li>
                     <li><a href="#">Marketplace</a></li>
@@ -184,11 +201,24 @@
                   </ul>
                 </template>
               </li>
-              <li>
-                <a href="#">Company</a
-                ><img src="images/icon-arrow-light.svg" alt="drop down arrow" />
-                <template>
-                  <ul>
+              <li class="relative p-2 text-gray-500">
+                <a
+                  @click="product = false; company = !company; connect=false;"
+                  class="block w-full font-bold"
+                  href="#"
+                  >Company</a
+                >
+                <div class="absolute top-4 right-4 bottom-0 flex h-full">
+                  <img
+                    class="h-2 w-3"
+                    src="images/icon-arrow-light.svg"
+                    alt=""
+                  />
+                </div>
+                <template x-if="company">
+                  <ul
+                    class="mt-2 flex flex-col gap-2 rounded-[6px] bg-gray-200 text-sm"
+                  >
                     <li><a href="#">About</a></li>
                     <li><a href="#">Team</a></li>
                     <li><a href="#">Blog</a></li>
@@ -196,12 +226,18 @@
                   </ul>
                 </template>
               </li>
-
-              <li>
-                <a href="#">Connect</a
-                ><img src="images/icon-arrow-light.svg" alt="drop down arrow" />
-                <template>
-                  <ul>
+              <li class="relative p-2 text-gray-500">
+                <a
+                  @click="product = false; company = false; connect= !connect;"
+                  class="block w-full font-bold"
+                  href="#"
+                  >Connect</a
+                >
+                <img class="h-2 w-3" src="images/icon-arrow-light.svg" alt="" />
+                <template x-if="connect">
+                  <ul
+                    class="mt-2 flex flex-col gap-2 rounded-[6px] bg-gray-200 text-sm"
+                  >
                     <li><a href="#">Contact</a></li>
                     <li><a href="#">Newsletter</a></li>
                     <li><a href="#">LinkedIn</a></li>
@@ -209,6 +245,18 @@
                 </template>
               </li>
             </ul>
+            <div class="ml-[80px] mb-7 flex flex-col">
+              <button
+                class="hover:text-lightRed w-[140px] rounded-full px-4 py-3 font-bold text-gray-600 hover:bg-white"
+              >
+                Login
+              </button>
+              <button
+                class="to-lightRed from-veryLightRedTwo hover:bg-veryLightRedTwo ml-3 w-[140px] rounded-full bg-gradient-to-r px-4 py-3 font-bold text-white"
+              >
+                Sign Up
+              </button>
+            </div>
           </div>
         </template>
       </div>
