@@ -4,10 +4,15 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>
       Blogr landing page &bullet; Frontend Mentor Challenges &bullet; Optimum BH
       Internship
     </title>
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
     <link
       rel="apple-touch-icon"
       sizes="180x180"
@@ -28,36 +33,570 @@
     <link rel="manifest" href="../site.webmanifest" />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="m-0">
+  <body class="font-overpass m-0 text-center text-[16px]">
+    <!--Header Container-->
     <div
-      class="flex h-[100vh] w-full flex-col place-content-center text-center"
+      x-data="{
+        open: false,
+        product: false,
+        company: false,
+        connect: false
+      }"
+      class="to-lightRed from-veryLightRedTwo sticky top-0 left-0 z-50 w-full bg-gradient-to-r p-6 text-center"
     >
-      <div>
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://www.frontendmentor.io/challenges/blogr-landing-page-EX2RLAApP"
-          target="_blank"
-          >Frontend Mentor challenge</a
-        >
-      </div>
-      <div>
-        for
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA"
-          target="_blank"
-          >Optimum BH</a
-        >
-        Internship.
-      </div>
+      <!-- header -->
+      <div class="relative z-50">
+        <!-- nav -->
+        <div class="mt-7 flex items-center">
+          <!-- for mobile-->
+          <img src="images/logo.svg" alt="" />
+          <div
+            id="mobile-menu-toggle"
+            @click="open = !open"
+            class="ml-[60%] md:hidden"
+          >
+            <img
+              x-show="!open"
+              src="images/icon-hamburger.svg"
+              alt="hamburger"
+            />
+            <img
+              x-show="open"
+              src="images/icon-close.svg"
+              alt="close hamburger"
+              class="mr-0"
+            />
+          </div>
+          <!-- desktop nav -->
+          <div
+            class=""
+            x-data="{desktop: open === false && window.innerWidth >= 768}"
+          >
+            <div
+              id="navContainer"
+              x-data="{product: false, company: false, connect: false}"
+              class="hidden w-full md:block"
+            >
+              <div
+                x-on:resize.window="window.innerWidth <= 375 && $refs.desktopNav ? $refs.desktopNav.remove() : ''"
+              ></div>
+              <div
+                x-on:resize.window="window.innerWidth > 375  ? printNav : ''"
+              ></div>
+              <!-- desktop nav shown by default and removed depending on the vw-->
+              <nav
+                x-ref="desktopNav"
+                class="flex items-center text-white md:space-x-24 lg:space-x-72"
+              >
+                <ul class="font-ubuntu ml-24 flex gap-16">
+                  <li class="relative">
+                    <a
+                      @click="product = !product; company = false; connect = false"
+                      class="flex hover:underline"
+                      href="#"
+                      >Product
+                      <img
+                        src="images/icon-arrow-light.svg"
+                        alt="drop down arrow"
+                        class="mt-2 ml-2 h-[7px]"
+                    /></a>
+                    <template x-if="product">
+                      <ul
+                        class="absolute top-11 w-28 space-y-1 bg-white py-3 pl-3 text-left text-black shadow-lg"
+                      >
+                        <li>
+                          <a class="hover:font-bold" href="#">Overview</a>
+                        </li>
+                        <li><a class="hover:font-bold" href="#">Pricing</a></li>
+                        <li>
+                          <a class="hover:font-bold" href="#">Marketplace</a>
+                        </li>
+                        <li>
+                          <a class="hover:font-bold" href="#">Features</a>
+                        </li>
+                        <li>
+                          <a class="hover:font-bold" href="#">Integrations</a>
+                        </li>
+                      </ul>
+                    </template>
+                  </li>
+                  <li>
+                    <a
+                      class="flex hover:underline"
+                      href="#"
+                      @click="product = false; company = !company; connect = false"
+                      >Company<img
+                        src="images/icon-arrow-light.svg"
+                        alt="drop down arrow"
+                        class="mt-2 ml-2 h-[7px]"
+                    /></a>
+                    <template x-if="company">
+                      <ul
+                        class="absolute top-11 w-28 space-y-1 bg-white py-3 pl-3 text-left text-black shadow-lg"
+                      >
+                        <li><a class="hover:font-bold" href="#">About</a></li>
+                        <li><a class="hover:font-bold" href="#">Team</a></li>
+                        <li><a class="hover:font-bold" href="#">Blog</a></li>
+                        <li><a class="hover:font-bold" href="#">Careers</a></li>
+                      </ul>
+                    </template>
+                  </li>
 
-      <div class="mt-3">
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA/frontend_mentor_challenges/tree/blogr_landing_page/challenges/blogr_landing_page"
-          >Source code</a
-        >
+                  <li>
+                    <a
+                      class="flex hover:underline"
+                      href="#"
+                      @click="product = false; company = false; connect = !connect"
+                      >Connect<img
+                        src="images/icon-arrow-light.svg"
+                        alt="drop down arrow"
+                        class="mt-2 ml-2 h-[7px]"
+                    /></a>
+                    <template x-if="connect">
+                      <ul
+                        class="absolute top-11 w-28 space-y-1 bg-white py-3 pl-3 text-left text-black shadow-lg"
+                      >
+                        <li><a class="hover:font-bold" href="#">Contact</a></li>
+                        <li>
+                          <a class="hover:font-bold" href="#">Newsletter</a>
+                        </li>
+                        <li>
+                          <a class="hover:font-bold" href="#">LinkedIn</a>
+                        </li>
+                      </ul>
+                    </template>
+                  </li>
+                </ul>
+                <div class="flex">
+                  <button
+                    class="hover:text-lightRed w-[100px] rounded-full px-4 py-3 font-bold text-white hover:bg-white"
+                  >
+                    Login
+                  </button>
+                  <button
+                    class="text-lightRed hover:bg-veryLightRedTwo w-[100px] rounded-full bg-white px-4 py-3 font-bold"
+                  >
+                    Sign Up
+                  </button>
+                </div>
+              </nav>
+            </div>
+          </div>
+          <!--  nav -->
+        </div>
+        <!--mobile modal shown by hamburger-->
+        <template x-if="open">
+          <div
+            class="absolute ml-2 mt-3 w-[95%] rounded-[6px] bg-white shadow-xl md:hidden"
+          >
+            <ul class="space-y-4">
+              <li class="relative p-2 text-gray-500">
+                <a
+                  @click="product = !product; company = false; connect=false;"
+                  class="block w-full font-bold"
+                  href="#"
+                  >Product</a
+                >
+                <div class="absolute top-4 right-4 bottom-0 flex h-full">
+                  <img
+                    class="h-2 w-3"
+                    src="images/icon-arrow-light.svg"
+                    alt=""
+                  />
+                </div>
+                <template x-if="product">
+                  <ul
+                    class="mt-2 flex flex-col gap-2 rounded-[6px] bg-gray-200 text-sm"
+                  >
+                    <li><a href="#">Overview</a></li>
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="#">Marketplace</a></li>
+                    <li><a href="#">Features</a></li>
+                    <li><a href="#">Integrations</a></li>
+                  </ul>
+                </template>
+              </li>
+              <li class="relative p-2 text-gray-500">
+                <a
+                  @click="product = false; company = !company; connect=false;"
+                  class="block w-full font-bold"
+                  href="#"
+                  >Company</a
+                >
+                <div class="absolute top-4 right-4 bottom-0 flex h-full">
+                  <img
+                    class="h-2 w-3"
+                    src="images/icon-arrow-light.svg"
+                    alt=""
+                  />
+                </div>
+                <template x-if="company">
+                  <ul
+                    class="mt-2 flex flex-col gap-2 rounded-[6px] bg-gray-200 text-sm"
+                  >
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Team</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Careers</a></li>
+                  </ul>
+                </template>
+              </li>
+              <li class="relative p-2 text-gray-500">
+                <a
+                  @click="product = false; company = false; connect= !connect;"
+                  class="block w-full font-bold"
+                  href="#"
+                  >Connect</a
+                >
+                <img class="h-2 w-3" src="images/icon-arrow-light.svg" alt="" />
+                <template x-if="connect">
+                  <ul
+                    class="mt-2 flex flex-col gap-2 rounded-[6px] bg-gray-200 text-sm"
+                  >
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Newsletter</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                  </ul>
+                </template>
+              </li>
+            </ul>
+            <div class="ml-[30%] mb-7 flex flex-col">
+              <button
+                class="hover:text-lightRed w-[140px] rounded-full px-4 py-3 font-bold text-gray-600 hover:bg-white"
+              >
+                Login
+              </button>
+              <button
+                class="to-lightRed from-veryLightRedTwo hover:bg-veryLightRedTwo ml-3 w-[140px] rounded-full bg-gradient-to-r px-4 py-3 font-bold text-white"
+              >
+                Sign Up
+              </button>
+            </div>
+          </div>
+        </template>
       </div>
     </div>
+    <img
+      src="images/bg-pattern-intro-mobile.svg"
+      alt=""
+      class="absolute z-10 block md:hidden lg:top-[-300px]"
+    />
+    <img
+      src="images/bg-pattern-intro-desktop.svg"
+      alt=""
+      class="absolute z-10 hidden md:block lg:top-[-200px]"
+    />
+    <div
+      class="to-lightRed from-veryLightRedTwo left-0 w-full rounded-bl-[84px] bg-gradient-to-r p-6 pb-[100px] text-center"
+    >
+      <div class="relative z-20 mt-14">
+        <h1 class="text-3xl text-white md:text-5xl">
+          A modern publishing platform
+        </h1>
+        <p class="mt-3 text-white md:mt-5">
+          Grow your audience and build your online brand
+        </p>
+      </div>
+      <div class="relative z-20 mt-10 md:mb-20">
+        <button
+          class="text-lightRed hover:bg-veryLightRed rounded-full bg-white px-4 py-3 font-bold hover:text-white"
+        >
+          Start for Free
+        </button>
+        <button
+          class="hover:text-lightRed ml-3 rounded-full border-[1px] px-4 py-3 font-bold text-white hover:bg-white"
+        >
+          Learn More
+        </button>
+      </div>
+    </div>
+    <div class="relative z-20 h-[150px] bg-white p-6 pt-[70px] text-center">
+      <h1 class="text-2xl font-bold text-gray-700">Designed for the future</h1>
+    </div>
+    <main class="relative z-20 overflow-x-hidden bg-white">
+      <section class="">
+        <div class="relative md:text-left lg:flex">
+          <div class="md:ml-11 md:w-[80%]">
+            <img
+              src="images/illustration-editor-mobile.svg"
+              alt=""
+              class="mx-auto block md:hidden"
+            />
+            <div>
+              <h2
+                class="text-veryDarkBlue mt-6 py-8 text-3xl md:ml-10 md:text-xl"
+              >
+                Introducing an
+                <span class="block md:inline-block">extensible editor</span>
+              </h2>
+              <p class="mt-2 px-10 text-gray-500 md:w-[61.5%]">
+                Blogr features an exceedingly intuitive interface which lets you
+                focus on one thing: creating content. The editor supports
+                management of multiple blogs and allows easy manipulation of
+                embeds such as images, videos, and Markdown Extensibility with
+                plugins and themes provide easy ways to add functionality or
+                change the looks of a blog.
+              </p>
+            </div>
+            <div>
+              <h2
+                class="text-veryDarkBlue mt-6 py-8 text-3xl md:ml-10 md:text-xl"
+              >
+                Robust content
+                <span class="block md:inline-block">management</span>
+              </h2>
+              <p class="mt-2 px-10 text-gray-500 md:w-[61%]">
+                Flexible content management enables users to easily move through
+                posts. Increase the usability of your blog by adding customized
+                categories, sections, format, or flow. With this functionality,
+                you're in full control.
+              </p>
+            </div>
+          </div>
+          <img
+            src="images/illustration-editor-desktop.svg"
+            alt=""
+            class="absolute right-[-15%] hidden overflow-clip md:mt-[-400px] md:block md:h-[450px] lg:mt-0 lg:h-[700px]"
+          />
+        </div>
+      </section>
+      <section class="relative md:mt-[400px]">
+        <img
+          src="images/illustration-phones.svg"
+          alt=""
+          class="absolute top-[-110px] z-20"
+        />
+        <div
+          class="bg-veryDarkGrayBlueTwo relative mt-48 overflow-hidden rounded-tr-[84px] rounded-bl-[84px]"
+        >
+          <img
+            class="absolute left-[-10%] z-10 mx-auto -mt-[30%] w-[180%] md:left-[-35%] md:top-[-110%]"
+            src="images/bg-pattern-circles.svg"
+            alt=""
+          />
+          <div
+            class="relative z-30 mt-[250px] mb-20 md:ml-[550px] md:mt-[100px] md:w-[50%] md:text-left"
+          >
+            <h2 class="py-4 text-3xl text-white md:ml-10 md:text-xl">
+              State of the Art Infrastructure
+            </h2>
+            <p class="text-grayishBlue mt-2 px-10">
+              With reliability and speed in mind, worldwide data centers provide
+              the backbone for ultra-fast connectivity. This ensures your site
+              will load instantly, no matter where your readers are, keeping
+              your site competitive.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="md:mb-[260px] lg:flex">
+        <img
+          src="images/illustration-laptop-mobile.svg"
+          alt=""
+          class="block md:hidden"
+        />
+        <img
+          src="images/illustration-laptop-desktop.svg"
+          alt=""
+          class="absolute left-[-15%] hidden md:mt-8 md:block md:h-[450px] lg:mt-20 lg:h-[600px]"
+        />
+        <div class="md:ml-[50%] md:mt-32 md:w-[530px] md:text-left">
+          <div>
+            <h2 class="text-veryDarkBlue mt-10 py-8 text-3xl md:text-xl">
+              Free, open, simple
+            </h2>
+            <p class="mt-2 px-10 text-gray-500 md:pl-0">
+              Blogr is a free and open source application backed by a large
+              community of helpful developers. It supports features such as code
+              syntax highlighting, RSS feeds, social media integration,
+              third-party commenting tools, and works seamlessly with Google
+              Analytics. The architecture is clean and is relatively easy to
+              learn.
+            </p>
+          </div>
+          <div>
+            <h2 class="text-veryDarkBlue mt-6 py-6 text-3xl md:text-xl">
+              Powerful tooling
+            </h2>
+            <p class="mt-2 px-10 text-gray-500 md:pl-0">
+              Batteries included. We built a simple and straightforward CLI tool
+              that makes customization and deployment a breeze, but capable of
+              producing even the most complicated sites.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <div class="bg-veryDarkBlackBlue rounded-tr-[84px]">
+      <footer
+        class="font-ubuntu mt-20 flex flex-col p-6 text-center text-white md:flex-row md:justify-around md:px-11"
+      >
+        <img
+          src="images/logo.svg"
+          alt=""
+          class="mx-auto my-8 w-20 md:mx-0 md:h-9"
+        />
+        <div class="mt-5 md:mt-8">
+          <h3>Product</h3>
+          <ul class="text-grayishBlue mt-6 space-y-1">
+            <li><a href="#">Overview</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">Marketplace</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Integrations</a></li>
+          </ul>
+        </div>
+        <div class="mt-9">
+          <h3>Company</h3>
+          <ul class="text-grayishBlue mt-6 space-y-1">
+            <li><a href="#">About</a></li>
+            <li><a href="#">Team</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Careers</a></li>
+          </ul>
+        </div>
+        <div class="mt-9 mb-10">
+          <h3>Connect</h3>
+          <ul class="text-grayishBlue mt-6 space-y-1">
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Newsletter</a></li>
+            <li><a href="#">LinkedIn</a></li>
+          </ul>
+        </div>
+      </footer>
+
+      <div class="flex w-full flex-col place-content-center text-center">
+        <div>
+          <a
+            class="text-optimum-blue hover:text-optimum-darkblue"
+            href="https://www.frontendmentor.io/challenges/blogr-landing-page-EX2RLAApP"
+            target="_blank"
+            >Frontend Mentor challenge</a
+          >
+        </div>
+        <div class="text-white">
+          for
+          <a
+            class="text-optimum-blue hover:text-optimum-darkblue"
+            href="https://github.com/optimumBA"
+            target="_blank"
+            >Optimum BH</a
+          >
+          Internship.
+        </div>
+
+        <div class="mt-3">
+          <a
+            class="text-optimum-blue hover:text-optimum-darkblue"
+            href="https://github.com/rowah/frontend_mentor_challenges/tree/blogr_landing_page/challenges/blogr_landing_page"
+            >Source code</a
+          >
+        </div>
+      </div>
+    </div>
+    <script>
+      function printNav() {
+        const navCon = document.getElementById('navContainer')
+        navCon.innerHTML = `
+        <nav
+                x-ref="desktopNav"
+                class="flex items-center text-white md:space-x-24 lg:space-x-72"
+              >
+                <ul class="font-ubuntu ml-24 flex gap-16">
+                  <li class="relative">
+                    <a
+                      @click="product = !product; company = false; connect = false"
+                      class="flex hover:underline"
+                      href="#"
+                      >Product
+                      <img
+                        src="images/icon-arrow-light.svg"
+                        alt="drop down arrow"
+                        class="mt-2 ml-2 h-[7px]"
+                    /></a>
+                    <template x-if="product">
+                      <ul
+                        class="absolute top-11 w-28 space-y-1 bg-white py-3 pl-3 text-left text-black shadow-lg"
+                      >
+                        <li>
+                          <a class="hover:font-bold" href="#">Overview</a>
+                        </li>
+                        <li><a class="hover:font-bold" href="#">Pricing</a></li>
+                        <li>
+                          <a class="hover:font-bold" href="#">Marketplace</a>
+                        </li>
+                        <li>
+                          <a class="hover:font-bold" href="#">Features</a>
+                        </li>
+                        <li>
+                          <a class="hover:font-bold" href="#">Integrations</a>
+                        </li>
+                      </ul>
+                    </template>
+                  </li>
+                  <li>
+                    <a
+                      class="flex hover:underline"
+                      href="#"
+                      @click="product = false; company = !company; connect = false"
+                      >Company<img
+                        src="images/icon-arrow-light.svg"
+                        alt="drop down arrow"
+                        class="mt-2 ml-2 h-[7px]"
+                    /></a>
+                    <template x-if="company">
+                      <ul
+                        class="absolute top-11 w-28 space-y-1 bg-white py-3 pl-3 text-left text-black shadow-lg"
+                      >
+                        <li><a class="hover:font-bold" href="#">About</a></li>
+                        <li><a class="hover:font-bold" href="#">Team</a></li>
+                        <li><a class="hover:font-bold" href="#">Blog</a></li>
+                        <li><a class="hover:font-bold" href="#">Careers</a></li>
+                      </ul>
+                    </template>
+                  </li>
+
+                  <li>
+                    <a
+                      class="flex hover:underline"
+                      href="#"
+                      @click="product = false; company = false; connect = !connect"
+                      >Connect<img
+                        src="images/icon-arrow-light.svg"
+                        alt="drop down arrow"
+                        class="mt-2 ml-2 h-[7px]"
+                    /></a>
+                    <template x-if="connect">
+                      <ul
+                        class="absolute top-11 w-28 space-y-1 bg-white py-3 pl-3 text-left text-black shadow-lg"
+                      >
+                        <li><a class="hover:font-bold" href="#">Contact</a></li>
+                        <li>
+                          <a class="hover:font-bold" href="#">Newsletter</a>
+                        </li>
+                        <li>
+                          <a class="hover:font-bold" href="#">LinkedIn</a>
+                        </li>
+                      </ul>
+                    </template>
+                  </li>
+                </ul>
+                <div class="flex">
+                  <button
+                    class="hover:text-lightRed w-[100px] rounded-full px-4 py-3 font-bold text-white hover:bg-white"
+                  >
+                    Login
+                  </button>
+                  <button
+                    class="text-lightRed hover:bg-veryLightRedTwo w-[100px] rounded-full bg-white px-4 py-3 font-bold"
+                  >
+                    Sign Up
+                  </button>
+                </div>
+              </nav>
+        `
+      }
+    </script>
   </body>
 </html>
