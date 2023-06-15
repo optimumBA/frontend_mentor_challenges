@@ -8,6 +8,10 @@
       Interactive pricing component &bullet; Frontend Mentor Challenges &bullet;
       Optimum BH Internship
     </title>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
     <link
       rel="apple-touch-icon"
       sizes="180x180"
@@ -28,12 +32,80 @@
     <link rel="manifest" href="../site.webmanifest" />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="m-0">
-    Simple, traffic-based pricing Sign-up for our 30-day trial. No credit card
-    required. Pageviews $ /month Monthly Billing Yearly Billing 25% discount
-    Unlimited websites 100% data ownership Email reports Start my trial
+  <body class="text-grayishBlue bg-veryPaleBlue m-0 items-center">
+    <header class="">
+      <div class="z-10">
+        <img class="relative h-[50vh]" src="images/bg-pattern.svg" alt="" />
+        <img
+          class="absolute top-9 left-[29%] md:left-[45%]"
+          src="images/pattern-circles.svg"
+          alt=""
+        />
+      </div>
+      <div
+        class="absolute top-16 ml-[10%] flex flex-col items-center justify-center text-center md:ml-[30%] lg:ml-[35%]"
+      >
+        <h1 class="text-darkDesaturatedBlue text-2xl font-bold">
+          Simple, traffic-based pricing
+        </h1>
+        <p class="mt-2 ml-[-18px] w-[60%] text-sm">
+          Sign-up for our 30-day trial. No credit card required.
+        </p>
+      </div>
+    </header>
+    <main
+      class="shadow-lightGrayishBlueOne relative top-[-130px] ml-[5%] w-[90%] space-y-6 rounded-md bg-white py-8 text-center shadow-xl md:ml-[20%] md:w-[60%] lg:ml-[30%] lg:w-[40%]"
+    >
+      <h1 class="md:ml-[-50%]">100K PAGEVIEWS</h1>
+      <div class="cursor-pointer">
+        <input
+          class="range-lg bg-strongCyan h-3 w-4/5 cursor-pointer rounded-full px-8"
+          type="range"
+          id="price-slider"
+        />
+        <img
+          class="relative top-[-20px] mx-auto"
+          src="images/icon-slider.svg"
+          alt=""
+        />
+      </div>
+      <div
+        class="flex items-center justify-center md:absolute md:left-[58%] md:top-[1%]"
+      >
+        <h2 class="text-darkDesaturatedBlue text-3xl font-bold">$16.00</h2>
+        <span>/month</span>
+      </div>
+      <div class="flex items-center justify-center space-x-3 text-xs">
+        <span>Monthly Billing</span>
+        <input type="checkbox" name="" id="" />
+        <span>Yearly Billing</span>
+        <span class="text-lightRed bg-lightGrayishRed">-25%</span>
+      </div>
+      <hr />
+
+      <ul class="space-y-2">
+        <li class="flex items-center justify-center gap-4">
+          <img class="block w-[12px]" src="images/icon-check.svg" alt="" />
+          <p>Unlimited websites</p>
+        </li>
+        <li class="flex items-center justify-center gap-4">
+          <img class="block w-[12px]" src="images/icon-check.svg" alt="" />
+          <p>100% data ownership</p>
+        </li>
+        <li class="flex items-center justify-center gap-4">
+          <img class="block w-[12px]" src="images/icon-check.svg" alt="" />
+          <p>Email report</p>
+        </li>
+      </ul>
+      <button
+        class="mt-8 rounded-full bg-slate-700 py-3 px-8 font-bold text-slate-300"
+      >
+        Start my trial
+      </button>
+    </main>
+
     <div
-      class="flex h-[100vh] w-full flex-col place-content-center text-center"
+      class="mt-[-80px] flex w-full flex-col place-content-center text-center"
     >
       <div>
         <a
@@ -57,7 +129,7 @@
       <div class="mt-3">
         <a
           class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA/frontend_mentor_challenges/tree/interactive_pricing_component/challenges/interactive_pricing_component"
+          href="https://github.com/rowah/frontend_mentor_challenges/tree/interactive_pricing_component/challenges/interactive_pricing_component"
           >Source code</a
         >
       </div>

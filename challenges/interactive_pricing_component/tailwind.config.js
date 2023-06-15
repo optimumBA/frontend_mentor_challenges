@@ -10,7 +10,7 @@ module.exports = {
         lightGrayishRed: 'hsl(14, 92%, 95%)', //Discount Text
         lightRed: 'hsl(15, 100%, 70%)', //discount text
         paleBlue: 'hsl(226, 100%, 87%)', //CTA Text
-        white: 'hsl (0, 0%, 100%)', //Pricing Component Background
+        //whitePCB: 'hsl (0, 0%, 100%)', //Pricing Component Background
         veryPaleBlue: 'hsl(230, 100%, 99%)', //Main Background
         lightGrayishBlueOne: 'hsl(224, 65%, 95%)', //Empty Slider Bar
         lightGrayishBlueTwo: 'hsl(223, 50%, 87%)', //Toggle Background
