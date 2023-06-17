@@ -43,7 +43,7 @@
         />
       </div>
       <div
-        class="absolute top-16 ml-[10%] flex flex-col items-center justify-center text-center md:ml-[30%] lg:ml-[35%]"
+        class="absolute top-16 ml-[2.5%] flex flex-col items-center justify-center text-center md:ml-[30%] lg:ml-[35%]"
       >
         <h1 class="text-darkDesaturatedBlue text-2xl font-bold">
           Simple, traffic-based pricing
@@ -54,35 +54,56 @@
       </div>
     </header>
     <main
+      x-data="app"
       class="shadow-lightGrayishBlueOne relative top-[-130px] ml-[5%] w-[90%] space-y-6 rounded-md bg-white py-8 text-center shadow-xl md:ml-[20%] md:w-[60%] lg:ml-[30%] lg:w-[40%]"
     >
-      <h1 class="md:ml-[-50%]">100K PAGEVIEWS</h1>
-      <div class="cursor-pointer">
+      <h1
+        class="md:ml-[-50%]"
+        x-text="getPageViews(getIndex(data))+ ' PAGEVIEWS'"
+      ></h1>
+      <div class="relative">
         <input
-          class="range-lg bg-strongCyan h-3 w-4/5 cursor-pointer rounded-full px-8"
+          class="range-lg bg-softCyan h-3 w-4/5 cursor-pointer appearance-none rounded-full px-8"
           type="range"
+          name="price"
+          min="1"
+          max="5"
           id="price-slider"
-        />
-        <img
-          class="relative top-[-20px] mx-auto"
-          src="images/icon-slider.svg"
-          alt=""
+          x-model="data"
         />
       </div>
       <div
         class="flex items-center justify-center md:absolute md:left-[58%] md:top-[1%]"
       >
-        <h2 class="text-darkDesaturatedBlue text-3xl font-bold">$16.00</h2>
+        <h2
+          class="text-darkDesaturatedBlue text-3xl font-bold"
+          x-text="getPrice(getIndex(data))"
+        ></h2>
         <span>/month</span>
       </div>
       <div class="flex items-center justify-center space-x-3 text-xs">
         <span>Monthly Billing</span>
-        <input type="checkbox" name="" id="" />
-        <span>Yearly Billing</span>
-        <span class="text-lightRed bg-lightGrayishRed">-25%</span>
-      </div>
-      <hr />
+        <a href="#" id="yearly-billing-toggle">
+          <label class="relative inline-flex cursor-pointer items-center">
+            <input
+              type="checkbox"
+              value=""
+              class="peer sr-only"
+              @click="yearly = !yearly"
+            />
+            <div
+              class="bg-lightGrayishBlueTwo after:border-lightGrayishBlueTwo peer-checked:bg-darkDesaturatedBlue h-6 w-11 rounded-full after:absolute after:top-[2px] after:left-[2px] after:h-5 after:w-5 after:rounded-full after:border after:bg-white after:transition-all after:content-[''] peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:outline-none"
+            ></div>
+          </label>
+        </a>
 
+        <span>Yearly Billing</span>
+        <span
+          class="bg-lightGrayishRed text-lightRed rounded-full p-[3px] px-2 font-bold"
+          >25% discount
+        </span>
+      </div>
+      <hr class="my-12" />
       <ul class="space-y-2">
         <li class="flex items-center justify-center gap-4">
           <img class="block w-[12px]" src="images/icon-check.svg" alt="" />
@@ -98,7 +119,7 @@
         </li>
       </ul>
       <button
-        class="mt-8 rounded-full bg-slate-700 py-3 px-8 font-bold text-slate-300"
+        class="bg-darkDesaturatedBlue text-paleBlue mt-8 mb-8 rounded-full py-3 px-8 font-bold"
       >
         Start my trial
       </button>

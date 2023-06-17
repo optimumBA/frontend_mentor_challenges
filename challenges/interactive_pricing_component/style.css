@@ -3,3 +3,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  #price-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    background: softCyan;
+    background-image: url('../images/icon-slider.svg');
+    filter: drop-shadow(3px 20px 24px strongCyan);
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+  }
+
+  #price-slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: softCyan;
+    cursor: pointer;
+  }
+}
