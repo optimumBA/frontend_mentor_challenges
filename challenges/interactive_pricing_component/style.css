@@ -1,3 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  #price-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    background: #11d8c5;
+    background-image: url('./images/icon-slider.svg');
+    filter: drop-shadow(3px 20px 24px #11d8c5);
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+  }
+
+  /* Pseudo-class variant for 'active' state when slider is grabbed */
+  #price-slider::-webkit-slider-thumb:active {
+    background-color: #0f9e8d;
+    cursor: grab;
+  }
+
+  #price-slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+  }
+
+  /* Pseudo-class variant for 'active' state when slider is grabbed */
+  #price-slider::-moz-range-thumb:active {
+    background-color: #f6ad55;
+    cursor: grab;
+  }
+}
