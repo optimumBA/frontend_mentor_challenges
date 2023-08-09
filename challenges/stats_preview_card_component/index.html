@@ -17,7 +17,7 @@
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="../images/favicon-32x32.png"
+      href="images/favicon-32x32.png"
     />
     <link
       rel="icon"
@@ -25,39 +25,107 @@
       sizes="16x16"
       href="../images/favicon-16x16.png"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap"
+      rel="stylesheet"
+    />
     <link rel="manifest" href="../site.webmanifest" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body class="m-0">
-    <div
-      class="flex h-[100vh] w-full flex-col place-content-center text-center"
-    >
-      <div>
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://www.frontendmentor.io/challenges/stats-preview-card-component-8JqbgoU62"
-          target="_blank"
-          >Frontend Mentor challenge</a
-        >
-      </div>
-      <div>
-        for
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA"
-          target="_blank"
-          >Optimum BH</a
-        >
-        Internship.
+    <main class="bg-very-dark-blue flex flex-col items-center justify-center">
+      <div
+        class="bg-dark-desaturated-blue mx-auto mt-12 w-3/4 overflow-hidden rounded-xl shadow-md"
+      >
+        <div class="flex flex-col place-content-center">
+          <div class="relative">
+            <img
+              class="h-full w-full object-cover"
+              src="images/image-header-mobile.jpg"
+              alt="Three people in a business meeting"
+            />
+            <img
+              class="hidden h-full w-full object-cover"
+              src="images/image-header-desktop.jpg"
+              alt="Three people in a business meeting"
+            />
+            <div class="bg-soft-violet absolute inset-0 opacity-50"></div>
+          </div>
+
+          <div class="m-6 flex flex-col text-center">
+            <h1 class="text-white_heading-stats text-2xl font-bold">
+              Get <span class="text-soft-violet">insights</span> that help your
+              business grow.
+            </h1>
+            <p class="text-slightly-transparent-white-main my-4 text-base">
+              Discover the benefits of data analytics and make better decisions
+              regarding revenue, customer experience, and overall efficiency.
+            </p>
+
+            <div class="flex flex-col text-center">
+              <div class="py-2">
+                <span class="text-white_heading-stats block text-xl font-bold"
+                  >10k+</span
+                >
+                <span
+                  class="text-slightly-transparent-white-main text-sm uppercase"
+                  >companies</span
+                >
+              </div>
+              <div class="py-2">
+                <span class="text-white_heading-stats block text-xl font-bold"
+                  >314</span
+                >
+                <span
+                  class="text-slightly-transparent-white-main text-sm uppercase"
+                  >templates</span
+                >
+              </div>
+              <div class="py-2">
+                <span class="text-white_heading-stats block text-xl font-bold"
+                  >12m+</span
+                >
+                <span class="text-slightly-transparent-white-main text-sm"
+                  >queries</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div class="mt-3">
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA/frontend_mentor_challenges/tree/stats_preview_card_component/challenges/stats_preview_card_component"
-          >Source code</a
-        >
+      <div
+        class="text-white_heading-stats my-8 flex w-full flex-col place-content-center text-center"
+      >
+        <div>
+          <a
+            class="text-optimum-blue hover:text-optimum-darkblue"
+            href="https://www.frontendmentor.io/challenges/stats-preview-card-component-8JqbgoU62"
+            target="_blank"
+            >Frontend Mentor challenge</a
+          >
+        </div>
+        <div>
+          for
+          <a
+            class="text-optimum-blue hover:text-optimum-darkblue"
+            href="https://github.com/optimumBA"
+            target="_blank"
+            >Optimum BH</a
+          >
+          Internship.
+        </div>
+
+        <div class="mt-3">
+          <a
+            class="text-optimum-blue hover:text-optimum-darkblue"
+            href="https://github.com/lgmfred/frontend_mentor_challenges/tree/stats_preview_card_component/challenges/stats_preview_card_component"
+            >Source code</a
+          >
+        </div>
       </div>
-    </div>
+    </main>
   </body>
 </html>
