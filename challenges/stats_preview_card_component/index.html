@@ -35,59 +35,73 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body class="m-0">
-    <main class="bg-very-dark-blue flex flex-col items-center justify-center">
+    <main
+      class="bg-very-dark-blue flex min-h-[100vh] w-full flex-col items-center justify-center"
+    >
       <div
-        class="bg-dark-desaturated-blue mx-auto mt-12 w-3/4 overflow-hidden rounded-xl shadow-md"
+        class="bg-dark-desaturated-blue mx-auto mt-12 w-4/5 overflow-hidden rounded-xl shadow-md"
       >
-        <div class="flex flex-col place-content-center">
-          <div class="relative">
+        <div class="flex flex-col place-content-center lg:flex-row">
+          <div class="relative order-first lg:order-last lg:w-1/2">
             <img
-              class="h-full w-full object-cover"
+              class="h-full w-full object-cover lg:hidden"
               src="images/image-header-mobile.jpg"
               alt="Three people in a business meeting"
             />
             <img
-              class="hidden h-full w-full object-cover"
+              class="hidden h-full w-full object-cover lg:block"
               src="images/image-header-desktop.jpg"
               alt="Three people in a business meeting"
             />
             <div class="bg-soft-violet absolute inset-0 opacity-50"></div>
           </div>
 
-          <div class="m-6 flex flex-col text-center">
-            <h1 class="text-white_heading-stats text-2xl font-bold">
+          <div
+            class="flex flex-col p-6 text-center lg:w-1/2 lg:place-content-center lg:p-12 lg:text-left"
+          >
+            <h1
+              class="text-white_heading-stats text-3xl font-bold sm:text-4xl md:text-5xl lg:text-4xl"
+            >
               Get <span class="text-soft-violet">insights</span> that help your
               business grow.
             </h1>
-            <p class="text-slightly-transparent-white-main my-4 text-base">
+            <p
+              class="text-slightly-transparent-white-main my-4 text-base sm:text-xl md:text-2xl lg:my-8 lg:text-lg"
+            >
               Discover the benefits of data analytics and make better decisions
               regarding revenue, customer experience, and overall efficiency.
             </p>
 
-            <div class="flex flex-col text-center">
-              <div class="py-2">
-                <span class="text-white_heading-stats block text-xl font-bold"
+            <div
+              class="lg: mt-4 flex flex-col text-center lg:flex-row lg:place-content-start lg:text-left"
+            >
+              <div class="py-2 lg:pr-4">
+                <span
+                  class="text-white_heading-stats block text-xl font-bold md:text-2xl lg:text-xl"
                   >10k+</span
                 >
                 <span
-                  class="text-slightly-transparent-white-main text-sm uppercase"
+                  class="text-slightly-transparent-white-main text-sm uppercase sm:text-lg lg:text-sm"
                   >companies</span
                 >
               </div>
-              <div class="py-2">
-                <span class="text-white_heading-stats block text-xl font-bold"
+              <div class="py-2 lg:px-4">
+                <span
+                  class="text-white_heading-stats block text-xl font-bold md:text-2xl lg:text-xl"
                   >314</span
                 >
                 <span
-                  class="text-slightly-transparent-white-main text-sm uppercase"
+                  class="text-slightly-transparent-white-main text-sm uppercase sm:text-lg lg:text-sm"
                   >templates</span
                 >
               </div>
-              <div class="py-2">
-                <span class="text-white_heading-stats block text-xl font-bold"
-                  >12m+</span
+              <div class="py-2 lg:px-4">
+                <span
+                  class="text-white_heading-stats block text-xl font-bold md:text-2xl lg:text-xl"
+                  >12<span class="uppercase">m</span>+</span
                 >
-                <span class="text-slightly-transparent-white-main text-sm"
+                <span
+                  class="text-slightly-transparent-white-main text-sm uppercase sm:text-lg lg:text-sm"
                   >queries</span
                 >
               </div>
