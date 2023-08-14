@@ -29,14 +29,16 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body class="font-red-hat-display text-ve m-0">
-    <main class="bg-pale-blue flex min-h-[100vh] flex-col place-content-center">
+    <main
+      class="bg-pale-blue pattern-bg-mobile sm:pattern-bg-desktop flex min-h-[100vh] flex-col place-content-center"
+    >
       <div
-        class="mx-auto flex w-80 flex-col overflow-hidden rounded-xl bg-white text-center"
+        class="mx-auto mt-12 flex w-72 flex-col place-content-center overflow-hidden rounded-xl bg-white text-center"
       >
         <img src="images/illustration-hero.svg" alt="Illustration hero" />
         <div class="p-4">
-          <h2 class="text-dark-blue m-4 text-lg font-bold">Order Summary</h2>
-          <p class="text-desaturated-blue text-base">
+          <h2 class="text-dark-blue mt-3 text-lg font-bold">Order Summary</h2>
+          <p class="text-desaturated-blue my-2 text-base">
             You can now listen to millions of songs, audiobooks, and podcasts on
             any device anywhere you like!
           </p>
@@ -55,12 +57,12 @@
             >
           </div>
           <a
-            class="bg-bright-blue my-2 block cursor-pointer rounded-lg py-2 px-8 text-sm font-bold text-white"
+            class="bg-bright-blue focus:bg-desaturated-blue active:bg-desaturated-blue hover:bg-desaturated-blue my-2 block cursor-pointer rounded-lg py-2 px-8 text-sm font-bold text-white drop-shadow-2xl"
             href="#"
             >Proceed to Payment</a
           >
           <a
-            class="text-desaturated-blue my-4 block cursor-pointer text-sm font-bold"
+            class="text-desaturated-blue mt-2 inline-block cursor-pointer p-3 text-sm font-bold"
             href="#"
             >Cancel Order</a
           >
