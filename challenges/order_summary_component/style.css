@@ -1,3 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .pattern-bg-mobile {
+    background-image: url('images/pattern-background-mobile.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  .pattern-bg-desktop {
+    background-image: url('images/pattern-background-desktop.svg');
+    background-repeat: no-repeat;
+    background-size: 100% 45%;
+  }
+}
