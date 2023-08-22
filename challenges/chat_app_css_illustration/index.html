@@ -28,85 +28,125 @@
     <link rel="manifest" href="../site.webmanifest" />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="m-0 bg-red-600">
-    <main class="flex flex-col bg-light-grayish-violet font-rubik">
-      <div>
+  <body class="m-0">
+    <main
+      class="bg-light-grayish-violet font-rubik flex min-h-[100vh] flex-col"
+    >
+      <!-- Top background gradient -->
+      <div class="mt-16 flex flex-col lg:flex-row">
         <!-- Phone Screen div -->
         <div
-          class="mx-auto w-72 overflow-hidden rounded-3xl border-8 border-white"
+          class="mx-auto w-64 overflow-hidden rounded-3xl border-[10px] border-white lg:ml-auto lg:mr-28"
         >
           <!-- Header of phone screen -->
-          <div class="p-2 bg-gradient-to-r from-light-violet to-light-magenta">
-            <div class="mx-auto -mt-3 w-1/2 rounded-full bg-white p-2"></div>
-            <div class="flex justify-start items-center">
+          <div class="from-light-violet to-light-magenta bg-gradient-to-r p-3">
+            <div class="mx-auto -mt-3 w-1/2 rounded-b-xl bg-white p-2"></div>
+            <div class="mt-3 flex items-center justify-start">
               <img
                 class="h-6 w-6"
                 src="images/chevron-left.svg"
                 alt="Go Back Icon"
               />
               <img
-                class="h-6 rounded-full border border-white"
+                class="h-6 rounded-full border-2 border-white"
                 src="images/avatar.jpg"
                 alt="Samuel Green's Avatar"
               />
               <div class="ml-2 flex flex-col justify-start text-white">
                 <h3 class="text-xs font-medium">Samuel Green</h3>
-                <p class="text-[8px] font-normal text-pale-violet">Available to Walk</p>
+                <p class="text-pale-violet text-[8px] font-normal">
+                  Available to Walk
+                </p>
               </div>
               <img
-              class="h-4"
-              src="images/ellipsis-vertical.svg"
-              alt="More options icon">
+                class="ml-auto mr-2 h-4"
+                src="images/ellipsis-vertical.svg"
+                alt="More options icon"
+              />
             </div>
           </div>
           <!-- Body of phone screen -->
-          <div class="p-2">
-            <p class="text-moderate-violet">That sounds great. I’d be happy with that.</p>
-            <p class="text-moderate-violet">Could you send over some pictures of your dog, please?</p>
-            <div class="flex justify-end">
+          <div class="p-2 text-[8px]">
+            <p
+              class="text-moderate-violet bg-left-text-bg my-1 w-32 rounded-xl rounded-bl-sm p-2"
+            >
+              That sounds great. I’d be happy with that.
+            </p>
+            <p
+              class="text-moderate-violet bg-left-text-bg my-1 w-32 rounded-xl rounded-bl-sm p-2"
+            >
+              Could you send over some pictures of your dog, please?
+            </p>
+            <div class="m-0 flex justify-end">
               <img
-                class="m-1 h-11 rounded-md"
+                class="h-10 rounded-md"
                 src="images/dog-image-1.jpg"
                 alt="Dog image 1"
               />
               <img
-                class="m-1 h-11 rounded-md"
+                class="ml-2 h-10 rounded-md"
                 src="images/dog-image-2.jpg"
                 alt="Dog image 2"
               />
               <img
-                class="m-1 h-11 rounded-md"
+                class="ml-2 h-10 rounded-md"
                 src="images/dog-image-3.jpg"
                 alt="Dog image 3"
               />
             </div>
-            <p class="text-desaturated-dark-violet">Here are a few pictures. She’s a happy girl!</p>
-            <p class="text-desaturated-dark-violet">Can you make it?</p>
-            <p class="text-moderate-violet">
+            <p
+              class="text-desaturated-dark-violet my-1 ml-auto w-32 rounded-xl rounded-br-sm bg-white p-2"
+            >
+              Here are a few pictures. She’s a happy girl!
+            </p>
+            <p
+              class="text-desaturated-dark-violet my-1 ml-auto max-w-fit rounded-xl rounded-br-sm bg-white p-2"
+            >
+              Can you make it?
+            </p>
+            <p
+              class="text-moderate-violet bg-left-text-bg w-32 rounded-xl rounded-bl-sm p-2"
+            >
               She looks so happy! The time we discussed works. How long shall I
               take her out for?
             </p>
-            <p class="my-2 text-white border border-very-light-magenta bg-gradient-to-r from-light-magenta to-light-violet">
-              30 minute walk <span class="font-bold">$29</span>
+            <p
+              class="border-very-light-magenta from-light-magenta to-light-violet my-1 flex w-40 place-content-between rounded-xl rounded-bl-sm border bg-gradient-to-r py-2 pl-6 pr-4 text-white"
+            >
+              <span>30 minute walk</span>
+              <span class="font-medium">$29</span>
             </p>
-            <p class="my-2 text-white border border-very-light-magenta bg-gradient-to-r from-light-magenta to-light-violet">
-              1 hour walk <span class="font-bold">$49</span>
+            <p
+              class="border-very-light-magenta from-light-magenta to-light-violet my-1 flex w-40 place-content-between rounded-xl rounded-bl-sm border bg-gradient-to-r py-2 pl-6 pr-4 text-white"
+            >
+              <span>1 hour walk</span>
+              <span class="font-medium">$49</span>
             </p>
 
-            <div class="flex place-content-between items-center text-xs px-2 py-3 rounded-full bg-white">
+            <div
+              class="mt-4 flex w-full place-content-between items-center rounded-full bg-white py-1 pl-4 pr-1 text-[9px]"
+            >
               <p class="text-grayish-blue">Type a message…</p>
               <img
-                class="h-5 w-5 rounded-full bg-very-dark-desaturated-violet"
+                class="bg-very-dark-desaturated-violet h-6 w-6 rounded-full"
                 src="images/chevron-right.svg"
                 alt="send Message Icon"
               />
             </div>
           </div>
         </div>
-        <!-- Somple booking -->
-        <div class="my-16 text-center">
-          <h2 class="font text-4xl font-medium text-very-dark-desaturated-violet">Simple booking</h2>
-          <p class="m-6 text-base text-dark-grayish-violet">
+        <!-- Simple booking -->
+        <div
+          class="mt-16 flex flex-col text-center lg:mt-0 lg:ml-8 lg:w-1/2 lg:place-content-center lg:text-left"
+        >
+          <h2
+            class="font text-very-dark-desaturated-violet text-4xl font-medium"
+          >
+            Simple booking
+          </h2>
+          <p
+            class="text-dark-grayish-violet m-6 p-3 text-base lg:ml-0 lg:max-w-md lg:p-0"
+          >
             Stay in touch with our dog walkers through the chat interface. This
             makes it easy to discuss arrangements and make bookings. Once the
             walk has been completed you can rate your walker and book again all
@@ -116,7 +156,7 @@
       </div>
 
       <!-- Credits -->
-      <div class="flex w-full flex-col place-content-center text-center">
+      <div class="mt-16 flex w-full flex-col place-content-center text-center">
         <div>
           <a
             class="text-optimum-blue hover:text-optimum-darkblue"
