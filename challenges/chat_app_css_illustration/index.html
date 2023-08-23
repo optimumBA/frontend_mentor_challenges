@@ -28,15 +28,18 @@
     <link rel="manifest" href="../site.webmanifest" />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="m-0">
+  <body class="bg-light-grayish-violet m-0">
     <main
-      class="bg-light-grayish-violet font-rubik flex min-h-[100vh] flex-col"
+      class="font-rubik relative flex min-h-screen flex-col place-content-center overflow-hidden"
     >
       <!-- Top background gradient -->
+      <div
+        class="from-light-magenta to-light-violet lg:left absolute right-1/2 top-0 z-[-1] h-[47%] w-96 rounded-b-full bg-gradient-to-b lg:-left-12 lg:h-[70vh] lg:w-80"
+      ></div>
       <div class="mt-16 flex flex-col lg:flex-row">
-        <!-- Phone Screen div -->
+        <!-- Phone Screen -->
         <div
-          class="mx-auto w-64 overflow-hidden rounded-3xl border-[10px] border-white lg:ml-auto lg:mr-28"
+          class="bg-light-grayish-violet mx-auto w-64 overflow-hidden rounded-3xl border-[10px] border-white lg:ml-auto lg:mr-28"
         >
           <!-- Header of phone screen -->
           <div class="from-light-violet to-light-magenta bg-gradient-to-r p-3">
@@ -145,7 +148,7 @@
             Simple booking
           </h2>
           <p
-            class="text-dark-grayish-violet m-6 p-3 text-base lg:ml-0 lg:max-w-md lg:p-0"
+            class="text-dark-grayish-violet m-4 p-3 text-base lg:ml-0 lg:max-w-md lg:p-0"
           >
             Stay in touch with our dog walkers through the chat interface. This
             makes it easy to discuss arrangements and make bookings. Once the
@@ -184,6 +187,10 @@
           >
         </div>
       </div>
+      <!-- Bottom background gradient -->
+      <div
+        class="bg-left-text-bg absolute left-[50vw] top-[62vh] bottom-0 z-[-1] w-96 rounded-t-full lg:left-[80vw] lg:top-[25vh]"
+      ></div>
     </main>
   </body>
 </html>
