@@ -27,37 +27,231 @@
     />
     <link rel="manifest" href="../site.webmanifest" />
     <link rel="stylesheet" href="style.css" />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
   </head>
-  <body class="m-0">
-    <div
-      class="flex h-[100vh] w-full flex-col place-content-center text-center"
+  <body class="font-kumbh-sans m-0 text-xs">
+    <main
+      class="from-soft-violet to-soft-blue flex min-h-full flex-col place-content-center bg-gradient-to-b"
     >
-      <div>
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://www.frontendmentor.io/challenges/faq-accordion-card-XlyjD0Oam"
-          target="_blank"
-          >Frontend Mentor challenge</a
+      <div class="mt-36">
+        <div
+          class="mx-auto flex w-4/5 flex-col rounded-2xl bg-white p-4 pt-2 pb-8"
         >
-      </div>
-      <div>
-        for
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA"
-          target="_blank"
-          >Optimum BH</a
-        >
-        Internship.
-      </div>
+          <div class="flex flex-col">
+            <img
+              class="-mt-32"
+              src="images/illustration-woman-online-mobile.svg"
+              alt="Mobile illustration woman online"
+            />
+            <img
+              class="-mt-20"
+              src="images/bg-pattern-mobile.svg"
+              alt="Mobile background pattern SVG"
+            />
+          </div>
+          <div class="py-4">
+            <h2
+              class="text-very-dark-desaturated-blue my-4 text-center text-2xl font-bold"
+            >
+              FAQ
+            </h2>
+            <!-- First Question -->
+            <div
+              x-data="{ open: false }"
+              @click="open = ! open"
+              class="border-b py-4"
+            >
+              <div class="flex items-center justify-between">
+                <h3
+                  :style="open && { 'font-weight': 'bold', 'padding-left': '2px' }"
+                  class="text-very-dark-grayish-blue"
+                >
+                  How many team members can I invite?
+                </h3>
+                <img
+                  :style="open && { transform: 'rotate(180deg)' }"
+                  class="h-full"
+                  src="images/icon-arrow-down.svg"
+                  alt="Arrow down icon"
+                />
+              </div>
+              <div
+                x-cloak
+                x-show="open"
+                @click.outside="open = false"
+                class="text-dark-grayish-blue py-2"
+              >
+                <p>
+                  You can invite up to 2 additional users on the Free plan.
+                  There is no limit on team members for the Premium plan.
+                </p>
+              </div>
+            </div>
+            <!-- Second Question -->
+            <div
+              x-data="{ open: false }"
+              @click="open = ! open"
+              class="border-b py-4"
+            >
+              <div class="flex items-center justify-between">
+                <h3
+                  :style="open && { 'font-weight': 'bold', 'padding-left': '2px' }"
+                  class="text-very-dark-grayish-blue"
+                >
+                  What is the maximum file upload size?
+                </h3>
+                <img
+                  :style="open && { transform: 'rotate(180deg)' }"
+                  class="h-full"
+                  src="images/icon-arrow-down.svg"
+                  alt="Arrow down icon"
+                />
+              </div>
+              <div
+                x-cloak
+                x-show="open"
+                @click.outside="open = false"
+                class="text-dark-grayish-blue py-2"
+              >
+                <p>
+                  No more than 2GB. All files in your account must fit your
+                  allotted storage space.
+                </p>
+              </div>
+            </div>
+            <!-- Third Question -->
+            <div
+              x-data="{ open: false }"
+              @click="open = ! open"
+              class="border-b py-4"
+            >
+              <div class="flex items-center justify-between">
+                <h3
+                  :style="open && { 'font-weight': 'bold', 'padding-left': '2px' }"
+                  class="text-very-dark-grayish-blue"
+                >
+                  How do I reset my password?
+                </h3>
+                <img
+                  :style="open && { transform: 'rotate(180deg)' }"
+                  class="h-full"
+                  src="images/icon-arrow-down.svg"
+                  alt="Arrow down icon"
+                />
+              </div>
+              <div
+                x-cloak
+                x-show="open"
+                @click.outside="open = false"
+                class="text-dark-grayish-blue py-2"
+              >
+                <p>
+                  Click “Forgot password” from the login page or “Change
+                  password” from your profile page. A reset link will be emailed
+                  to you.
+                </p>
+              </div>
+            </div>
+            <!-- Fourth Question -->
+            <div
+              x-data="{ open: false }"
+              @click="open = ! open"
+              class="border-b py-4"
+            >
+              <div class="flex items-center justify-between">
+                <h3
+                  :style="open && { 'font-weight': 'bold', 'padding-left': '2px' }"
+                  class="text-very-dark-grayish-blue"
+                >
+                  Do you provide additional support?
+                </h3>
+                <img
+                  :style="open && { transform: 'rotate(180deg)' }"
+                  class="h-full"
+                  src="images/icon-arrow-down.svg"
+                  alt="Arrow down icon"
+                />
+              </div>
+              <div
+                x-cloak
+                x-show="open"
+                @click.outside="open = false"
+                class="text-dark-grayish-blue py-2"
+              >
+                <p>
+                  Yes! Send us a message and we’ll process your request no
+                  questions asked.
+                </p>
+              </div>
+            </div>
 
-      <div class="mt-3">
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA/frontend_mentor_challenges/tree/faq_accordion_card/challenges/faq_accordion_card"
-          >Source code</a
-        >
+            <!-- Fifth Question -->
+            <div
+              x-data="{ open: false }"
+              @click="open = ! open"
+              class="border-b py-4"
+            >
+              <div class="flex items-center justify-between">
+                <h3
+                  :style="open && { 'font-weight': 'bold', 'padding-left': '2px' }"
+                  class="text-very-dark-grayish-blue"
+                >
+                  Do you provide additional support?
+                </h3>
+                <img
+                  :style="open && { transform: 'rotate(180deg)' }"
+                  class="h-full"
+                  src="images/icon-arrow-down.svg"
+                  alt="Arrow down icon"
+                />
+              </div>
+              <div
+                x-cloak
+                x-show="open"
+                @click.outside="open = false"
+                class="text-dark-grayish-blue py-2"
+              >
+                <p>
+                  Chat and email support is available 24/7. Phone lines are open
+                  during normal business hours.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+      <!--Optimum Credits -->
+      <div class="mt-12 flex w-full flex-col place-content-center text-center">
+        <div>
+          <a
+            class="text-optimum-blue hover:text-optimum-darkblue"
+            href="https://www.frontendmentor.io/challenges/faq-accordion-card-XlyjD0Oam"
+            target="_blank"
+            >Frontend Mentor challenge</a
+          >
+        </div>
+        <div>
+          for
+          <a
+            class="text-optimum-blue hover:text-optimum-darkblue"
+            href="https://github.com/optimumBA"
+            target="_blank"
+            >Optimum BH</a
+          >
+          Internship.
+        </div>
+
+        <div class="mt-3">
+          <a
+            class="text-optimum-blue hover:text-optimum-darkblue"
+            href="https://github.com/lgmfred/frontend_mentor_challenges/tree/faq_accordion_card/challenges/faq_accordion_card"
+            >Source code</a
+          >
+        </div>
+      </div>
+    </main>
   </body>
 </html>
