@@ -15,6 +15,10 @@ module.exports = {
       fontFamily: {
         'kumbh-sans': ['Kumbh Sans', 'sans-serif'],
       },
+      backgroundImage: {
+        'mobile-img-bg': "url('images/bg-pattern-mobile.svg')",
+        'desktop-img-bg': "url('images/bg-pattern-desktop.svg')",
+      },
     },
   },
   plugins: [],
