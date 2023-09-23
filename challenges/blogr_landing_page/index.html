@@ -27,24 +27,40 @@
     />
     <link rel="manifest" href="../site.webmanifest" />
     <link rel="stylesheet" href="style.css" />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
   </head>
-  <body class="m-0">
-    <main>
+  <body x-data="{ isSideNavOpen: false }" class="m-0">
+    <main class="flex flex-col gap-16">
       <!-- bg-gradient-to-r from-very-light-red to-light-red -->
-      <header class="from-very-light-red to-light-red bg-gradient-to-r">
-        <img src="images/logo.svg" alt="Blogr logo" />
-        <nav>
+      <header
+        class="from-very-light-red to-light-red text-white-text rounded-bl-[100px] bg-gradient-to-r"
+      >
+        <div class="flex items-center justify-between p-8">
+          <img src="images/logo.svg" alt="Blogr logo" />
+          <!-- Burger and close icons  -->
+          <div
+            @click="isSideNavOpen = ! isSideNavOpen"
+            id="mobile-menu-toggle"
+            class="lg:hidden"
+          >
+            <img
+              x-show="! isSideNavOpen"
+              src="images/icon-hamburger.svg"
+              alt="Hamburger icon"
+            />
+            <img
+              x-show="isSideNavOpen"
+              src="images/icon-close.svg"
+              alt="Close icon"
+            />
+          </div>
+        </div>
+        <nav class="hidden lg:block">
           <div>
             <div>
-              <!-- Burger and close icons  -->
-              <div>
-                <img src="images/icon-hamburger.svg" alt="Hamburger icon" />
-                <img
-                  class="hidden"
-                  src="images/icon-close.svg"
-                  alt="Close icon"
-                />
-              </div>
               <!-- Main nav items -->
               <div>
                 <div>
@@ -119,18 +135,26 @@
             </div>
           </div>
         </nav>
-        <div>
-          <h2>A modern publishing platform</h2>
+        <div class="flex flex-col gap-4 text-center">
+          <h2 class="p-4 text-3xl font-bold">A modern publishing platform</h2>
           <p>Grow your audience and build your online brand</p>
-          <div>
-            <a href="#">Start for Free</a>
-            <a href="#">Learn More</a>
+          <div class="mt-10 mb-40 flex justify-center gap-4">
+            <a
+              class="bg-white-text text-light-red-CTA-text rounded-3xl border py-2 px-4 font-bold"
+              href="#"
+              >Start for Free</a
+            >
+            <a
+              class="border-white-text rounded-3xl border py-2 px-4 font-bold"
+              href="#"
+              >Learn More</a
+            >
           </div>
         </div>
       </header>
       <!-- Main body -->
-      <section>
-        <h3>Designed for the future</h3>
+      <section class="mb-40 flex flex-col gap-8 text-center">
+        <h3 class="text-2xl font-bold">Designed for the future</h3>
         <img
           class="lg:hidden"
           src="images/illustration-editor-mobile.svg"
@@ -141,16 +165,17 @@
           src="images/illustration-editor-desktop.svg"
           alt="Illustration editor desktop"
         />
-        <h3>Introducing an extensible editor</h3>
-        <p>
+        <h3 class="text-2xl font-semibold">Introducing an extensible editor</h3>
+        <p class="p-4">
           Blogr features an exceedingly intuitive interface which lets you focus
           on one thing: creating content. The editor supports management of
           multiple blogs and allows easy manipulation of embeds such as images,
           videos, and Markdown. Extensibility with plugins and themes provide
           easy ways to add functionality or change the looks of a blog.
         </p>
-        <h3>Robust content management</h3>
-        <p>
+
+        <h3 class="text-2xl font-semibold">Robust content management</h3>
+        <p class="p-4">
           Flexible content management enables users to easily move through
           posts. Increase the usability of your blog by adding customized
           categories, sections, format, or flow. With this functionality, you’re
@@ -158,22 +183,22 @@
         </p>
       </section>
       <section
-        class="from-very-dark-gray-blue to-very-dark-desaturated-blue bg-gradient-to-r"
+        class="text-white-text from-very-dark-gray-blue to-very-dark-desaturated-blue flex flex-col gap-8 rounded-tr-[100px] rounded-bl-[100px] bg-gradient-to-r pb-24 text-center"
       >
         <img
-          class="lg:hidden"
+          class="-mt-40"
           src="images/illustration-phones.svg"
           alt="Illustration phones"
         />
-        <h3>State of the Art Infrastructure</h3>
-        <p>
+        <h3 class="text-2xl font-bold">State of the Art Infrastructure</h3>
+        <p class="p-4">
           With reliability and speed in mind, worldwide data centers provide the
           backbone for ultra-fast connectivity. This ensures your site will load
           instantly, no matter where your readers are, keeping your site
           competitive.
         </p>
       </section>
-      <section>
+      <section class="flex flex-col gap-8 text-center">
         <img
           class="lg:hidden"
           src="images/illustration-laptop-mobile.svg"
@@ -184,8 +209,8 @@
           src="images/illustration-laptop-desktop.svg"
           alt="Illustration laptop desktop"
         />
-        <h3>Free, open, simple</h3>
-        <p>
+        <h3 class="text-2xl font-bold">Free, open, simple</h3>
+        <p class="p-4">
           Blogr is a free and open source application backed by a large
           community of helpful developers. It supports features such as code
           syntax highlighting, RSS feeds, social media integration, third-party
@@ -193,41 +218,45 @@
           architecture is clean and is relatively easy to learn.
         </p>
 
-        <h3>Powerful tooling</h3>
-        <p>
+        <h3 class="text-2xl font-semibold">Powerful tooling</h3>
+        <p class="p-4">
           Batteries included. We built a simple and straightforward CLI tool
           that makes customization and deployment a breeze, but capable of
           producing even the most complicated sites.
         </p>
       </section>
-      <footer class="bg-very-dark-black-blue">
-        <img src="images/logo.svg" alt="Blogr logo" />
-        <div>
-          <h3>Product</h3>
-          <ul>
-            <li>Overview</li>
-            <li>Pricing</li>
-            <li>Marketplace</li>
-            <li>Features</li>
-            <li>Integrations</li>
-          </ul>
-        </div>
-        <div>
-          <h3>Company</h3>
-          <ul>
-            <li>About</li>
-            <li>Team</li>
-            <li>Blog</li>
-            <li>Careers</li>
-          </ul>
-        </div>
-        <div>
-          <h3>Connect</h3>
-          <ul>
-            <li>Contact</li>
-            <li>Newsletter</li>
-            <li>LinkedIn</li>
-          </ul>
+      <footer
+        class="text-white-text bg-very-dark-black-blue flex flex-col items-center gap-10 rounded-tr-[100px] p-8 text-center"
+      >
+        <div class="flex flex-col gap-8">
+          <img src="images/logo.svg" alt="Blogr logo" />
+          <div class="flex flex-col gap-2">
+            <h3 class="text-lg font-bold">Product</h3>
+            <ul>
+              <li>Overview</li>
+              <li>Pricing</li>
+              <li>Marketplace</li>
+              <li>Features</li>
+              <li>Integrations</li>
+            </ul>
+          </div>
+          <div class="flex flex-col gap-2">
+            <h3 class="text-lg font-bold">Company</h3>
+            <ul>
+              <li>About</li>
+              <li>Team</li>
+              <li>Blog</li>
+              <li>Careers</li>
+            </ul>
+          </div>
+          <div class="flex flex-col gap-2">
+            <h3 class="text-lg font-bold">Connect</h3>
+            <ul>
+              <li>Contact</li>
+              <li>Newsletter</li>
+              <li>LinkedIn</li>
+            </ul>
+          </div>
         </div>
         <!-- Challenge credits -->
         <div class="flex w-full flex-col place-content-center text-center">
@@ -260,5 +289,88 @@
         </div>
       </footer>
     </main>
+    <nav
+      x-show="isSideNavOpen"
+      class="absolute top-20 bottom-0 right-0 left-0 m-auto flex h-[420px] w-80 flex-col rounded-md bg-white shadow-md"
+    >
+      <ul class="mx-auto my-6 flex flex-col gap-4">
+        <li x-data="{ isMenuItemOpen: false }" class="flex flex-col">
+          <div
+            @click="isMenuItemOpen = ! isMenuItemOpen"
+            class="flex items-center justify-center gap-2 font-bold"
+          >
+            <h3>Product</h3>
+            <img
+              :style="isMenuItemOpen && { transform: 'rotate(180deg)' }"
+              src="images/icon-arrow-dark.svg"
+              alt="Icon arrow dark"
+            />
+          </div>
+          <ul x-show="isMenuItemOpen" @click.outside="isMenuItemOpen = false">
+            <li @click="isMenuItemOpen = false"><a href="#">Overview</a></li>
+            <li @click="isMenuItemOpen = false"><a href="#">Pricing</a></li>
+            <li @click="isMenuItemOpen = false"><a href="#">Marketplace</a></li>
+            <li @click="isMenuItemOpen = false"><a href="#">Features</a></li>
+            <li @click="isMenuItemOpen = false">
+              <a href="#">Integrations</a>
+            </li>
+          </ul>
+        </li>
+
+        <li x-data="{ isMenuItemOpen: false }" class="flex flex-col">
+          <div
+            @click="isMenuItemOpen = ! isMenuItemOpen"
+            class="flex items-center justify-center gap-2 font-bold"
+          >
+            <h3>Company</h3>
+            <img
+              :style="isMenuItemOpen && { transform: 'rotate(180deg)' }"
+              src="images/icon-arrow-dark.svg"
+              alt="Icon arrow dark"
+            />
+          </div>
+          <ul x-show="isMenuItemOpen" @click.outside="isMenuItemOpen = false">
+            <li @click="isMenuItemOpen = false"><a href="#">About</a></li>
+            <li @click="isMenuItemOpen = false"><a href="#">Team</a></li>
+            <li @click="isMenuItemOpen = false"><a href="#">Blog</a></li>
+            <li @click="isMenuItemOpen = false"><a href="#">Careers</a></li>
+          </ul>
+        </li>
+
+        <li x-data="{ isMenuItemOpen: false }" class="flex flex-col">
+          <div
+            @click="isMenuItemOpen = ! isMenuItemOpen"
+            class="flex items-center justify-center gap-2 font-bold"
+          >
+            <h3>Connect</h3>
+            <img
+              :style="isMenuItemOpen && { transform: 'rotate(180deg)' }"
+              src="images/icon-arrow-dark.svg"
+              alt="Icon arrow dark"
+            />
+          </div>
+          <ul
+            x-show="isMenuItemOpen"
+            @click.outside="isMenuItemOpen = false"
+            class="bg-grayish-blue mt-4 flex flex-col items-center gap-2 rounded-md py-4 px-16 text-sm font-bold"
+          >
+            <li @click="isMenuItemOpen = false"><a href="#">Contact</a></li>
+            <li @click="isMenuItemOpen = false"><a href="#">Newsletter</a></li>
+            <li @click="isMenuItemOpen = false"><a href="#">LinkedIn</a></li>
+          </ul>
+        </li>
+      </ul>
+      <!-- login and signup -->
+      <div
+        class="mx-auto flex flex-col items-center gap-4 border-t pt-4 font-bold"
+      >
+        <h3 class="">Login</h3>
+        <a
+          class="text-white-text from-very-light-red to-light-red rounded-3xl bg-gradient-to-r px-6 py-2"
+          href="#"
+          >Sign Up</a
+        >
+      </div>
+    </nav>
   </body>
 </html>
