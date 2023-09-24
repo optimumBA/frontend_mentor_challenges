@@ -27,36 +27,41 @@
     />
     <link rel="manifest" href="../site.webmanifest" />
     <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body class="m-0">
+  <body
+    class="m-0 flex flex-col lg:flex lg:flex-row items-center justify-center py-10"
+    style="background-color: hsl(233, 47%, 7%)"
+  >
     <div
-      class="flex h-[100vh] w-full flex-col place-content-center text-center"
+      class="h-[650px] w-80 rounded-lg"
+      style="background-color: hsl(244, 38%, 16%)"
     >
       <div>
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://www.frontendmentor.io/challenges/stats-preview-card-component-8JqbgoU62"
-          target="_blank"
-          >Frontend Mentor challenge</a
-        >
+        <img
+          src="/challenges/images/image-header-mobile.jpg"
+          alt=""
+          class="rounded-t-lg"
+        />
       </div>
-      <div>
-        for
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA"
-          target="_blank"
-          >Optimum BH</a
-        >
-        Internship.
+      <div class="py-4 text-center text-white">
+        <h1 class="px-10 text-2xl font-bold">
+          Get
+          <span class="" style="color: hsl(277, 64%, 61%)">insights</span> that
+          help your business grow.
+        </h1>
+        <p class="px-10 pt-2 text-sm text-gray-500">
+          Discover the benefits of data analytics and make better decisions
+          regarding revenue, customer experience, and overall efficiency.
+        </p>
       </div>
-
-      <div class="mt-3">
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA/frontend_mentor_challenges/tree/stats_preview_card_component/challenges/stats_preview_card_component"
-          >Source code</a
-        >
+      <div class="flex flex-col items-center uppercase text-white">
+        <h2 class="text-xl font-bold">10K+</h2>
+        <span class="pb-3 text-xs text-gray-500">companies</span>
+        <h3 class="text-xl font-bold">314</h3>
+        <span class="pb-3 text-xs text-gray-500">templates</span>
+        <h4 class="text-xl font-bold">12m+</h4>
+        <span class="text-xs text-gray-500">queries</span>
       </div>
     </div>
   </body>
