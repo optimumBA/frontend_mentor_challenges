@@ -27,25 +27,56 @@
     />
     <link rel="manifest" href="../site.webmanifest" />
     <link rel="stylesheet" href="style.css" />
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body class="flex flex-col items-center justify-center bg-blue-200 py-10">
-    <div class="w-80 rounded-2xl bg-white">
-      <div class="rounded-lg p-4">
-        <img
-          src="/challenges/images/image-qr-code.png"
-          alt=""
-          class="rounded-2xl"
-        />
+  <body class="font-outfit m-0">
+    <div
+      class="flex h-screen  flex-col items-center justify-center bg-blue-100 py-40"
+    >
+      <div class="w-80 rounded-xl bg-white">
+        <div class="rounded-lg p-4">
+          <img src="../images/image-qr-code.png" alt="" class="rounded-lg" />
+        </div>
+        <div class="px-6 text-center">
+          <h2 class="text-lg font-bold text-gray-900">
+            Improve your front-end skills by building projects
+          </h2>
+          <p class="px-2 py-6 text-sm text-gray-400">
+            Scan the QR code to visit Frontend Mentor and take your coding
+            skills to the next level
+          </p>
+        </div>
       </div>
-      <div class="p-5 text-center">
-        <h1 class="pb-4 text-xl font-extrabold">
-          Improve your front-end skills by building projects
-        </h1>
-        <p>
-          Scan the QR code to visit Frontend Mentor and take your coding skills
-          to the next level
-        </p>
+      <div class="flex h-[100vh] flex-col place-content-center text-center mt-6">
+        <div>
+          <a
+            class="text-optimum-blue hover:text-optimum-darkblue"
+            href="https://www.frontendmentor.io/challenges/qr-code-component-iux_sIO_H"
+            target="_blank"
+            >Frontend Mentor challenge</a
+          >
+        </div>
+        <div>
+          for
+          <a
+            class="text-optimum-blue hover:text-optimum-darkblue"
+            href="https://github.com/optimumBA"
+            target="_blank"
+            >Optimum BH</a
+          >
+          Internship.
+        </div>
+
+        <div class="mt-3">
+          <a
+            class="text-optimum-blue hover:text-optimum-darkblue"
+            href="https://github.com/ngumokenneth/frontend_mentor_challenges/tree/qr_code_component/challenges/qr_code_component"
+            >Source code</a
+          >
+        </div>
       </div>
     </div>
   </body>
