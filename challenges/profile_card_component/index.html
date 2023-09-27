@@ -27,43 +27,47 @@
     />
     <link rel="manifest" href="../site.webmanifest" />
     <link rel="stylesheet" href="style.css" />
-    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
   </head>
-  <body class="m-0 ">
+  <body class="m-0">
     <div
-      class="relative flex h-screen justify-center py-20"
+      class="relative flex flex-col items-center h-screen justify-center py-20"
       style="background-color: hsl(185, 75%, 39%)"
     >
-      <div class="">
+      <div>
         <img
           src="/challenges/profile_card_component/images/image-victor.jpg"
           alt=""
         />
       </div>
-      <div class="h-[370px] w-72 rounded-xl bg-white">
+      <div class="h-[350px] w-72 rounded-xl bg-white">
         <div>
           <img
-            src="/challenges/images/bg-pattern-card.svg"
-            alt=""
             class="rounded-t-lg"
+            src="../profile_card_component/images/bg-pattern-card.svg"
+            alt="background card's pattern"
           />
         </div>
         <div class="relative -top-10 flex flex-col items-center">
           <img
-            src="/challenges/images/image-victor.jpg"
+            src="../profile_card_component/images/image-victor.jpg"
             alt=""
-            class="h-20 w-20 rounded-full"
+            class="h-20 w-20 rounded-full ring-4 ring-white"
           />
-          <p class="pt-4 font-bold">
+          <p
+            class="pt-4 font-extrabold text-lg"
+            style="color: hsl(229, 23%, 23%)"
+          >
             Victor Crest
             <span class="font-normal" style="color: hsl(0, 0%, 59%)">26</span>
           </p>
-          <p style="color: hsl(0, 0%, 59%)">London</p>
+          <p class="text-sm text-gray-400 pt-2" style="color: hsl(0, 0%, 59%)">
+            London
+          </p>
         </div>
-        <hr />
-        <div class="flex justify-center gap-6 py-5 text-center">
+        <div class="flex border-t -mt-3"></div>
+        <div class="flex justify-center gap-9 text-center py-6">
           <div>
-            <p class="text-lg font-extrabold" style="color: hsl(229, 23%, 23%)">
+            <p class="text-xl font-extrabold" style="color: hsl(229, 23%, 23%)">
               80K
             </p>
             <p class="text-sm font-light" style="color: hsl(0, 0%, 59%)">
@@ -71,7 +75,7 @@
             </p>
           </div>
           <div>
-            <p class="text-lg font-extrabold" style="color: hsl(229, 23%, 23%)">
+            <p class="text-xl font-extrabold" style="color: hsl(229, 23%, 23%)">
               803K
             </p>
             <p class="text-sm font-light" style="color: hsl(0, 0%, 59%)">
@@ -79,13 +83,35 @@
             </p>
           </div>
           <div>
-            <p class="text-lg font-extrabold" style="color: hsl(229, 23%, 23%)">
+            <p class="text-xl font-extrabold" style="color: hsl(229, 23%, 23%)">
               1.4K
             </p>
             <p class="text-sm font-light" style="color: hsl(0, 0%, 59%)">
               photos
             </p>
           </div>
+        </div>
+      </div>
+      <div
+        class="flex h-[100vh] w-full flex-col place-content-center text-center py-4 text-sm"
+      >
+        <div>Front-end development challenges</div>
+        <div>
+          by
+          <a
+            class="text-optimum-blue hover:text-optimum-darkblue"
+            href="https://www.frontendmentor.io"
+            target="_blank"
+            >Frontend Mentor</a
+          >
+        </div>
+
+        <div class="mt-3">
+          <a
+            class="text-optimum-blue hover:text-optimum-darkblue"
+            href="https://github.com/ngumokenneth/frontend_mentor_challenges"
+            >Source code</a
+          >
         </div>
       </div>
     </div>
