@@ -36,15 +36,17 @@
     class="font-kumbh-sans from-soft-violet to-soft-blue m-0 flex min-h-screen flex-col place-content-center bg-gradient-to-b text-xs"
   >
     <div
-      class="mx-auto mt-36 flex w-[300px] flex-col rounded-2xl bg-white lg:relative lg:max-h-[450px] lg:w-[700px] lg:flex-row"
+      class="mx-auto mt-36 flex w-[300px] flex-col rounded-2xl bg-white lg:relative lg:my-0 lg:h-[400px] lg:w-[750px] lg:flex-row"
     >
       <img
         src="images/illustration-box-desktop.svg"
         alt="Desktop illustration box"
-        class="absolute hidden lg:block"
+        class="absolute z-10 hidden h-[125px] -translate-x-1/2 translate-y-[137%] lg:block"
       />
+      <!-- lg:bg-desktop-img-bg lg:bg-center lg:bg-clip-content   lg:bg-center lg:bg-cover -->
+      <!-- style="background-size: 150%; background-position: 95% center;" -->
       <div
-        class="bg-mobile-img-bg lg:bg-desktop-img-bg bg-clip-content bg-top bg-no-repeat lg:flex lg:w-1/2 lg:flex-col lg:place-content-center lg:overflow-hidden lg:bg-cover"
+        class="bg-mobile-img-bg lg:pattern-bg-desktop bg-top bg-no-repeat lg:flex lg:w-1/2 lg:flex-col lg:place-content-center lg:overflow-hidden"
       >
         <!-- Mobile Images -->
         <img
@@ -56,10 +58,12 @@
         <img
           src="images/illustration-woman-online-desktop.svg"
           alt="Desktop illustration woman online"
-          class="hidden lg:block"
+          class="hidden h-[70%] -translate-x-[64px] lg:block"
         />
       </div>
-      <div class="-translate-y-[50px] p-4 lg:p-0">
+      <div
+        class="-translate-y-[50px] p-4 lg:flex lg:w-[302px] lg:translate-y-0 lg:flex-col lg:place-content-center lg:p-0"
+      >
         <h2
           class="text-very-dark-desaturated-blue my-4 text-center text-2xl font-bold lg:text-left"
         >
@@ -67,17 +71,17 @@
         </h2>
         <!-- First Question -->
         <div
-          x-data="{ open: false }"
+          x-data="{ open: true }"
           @click="open = ! open"
           class="border-b py-4"
         >
           <div class="flex items-center justify-between">
-            <h3
+            <a
               :style="open && { 'font-weight': 'bold', 'padding-left': '2px' }"
-              class="text-very-dark-grayish-blue"
+              class="question"
             >
               How many team members can I invite?
-            </h3>
+            </a>
             <img
               :style="open && { transform: 'rotate(180deg)' }"
               class="h-full"
@@ -85,17 +89,10 @@
               alt="Arrow down icon"
             />
           </div>
-          <div
-            x-cloak
-            x-show="open"
-            @click.outside="open = false"
-            class="text-dark-grayish-blue py-2 text-[12px]"
-          >
-            <p>
-              You can invite up to 2 additional users on the Free plan. There is
-              no limit on team members for the Premium plan.
-            </p>
-          </div>
+          <p x-cloak x-show="open" @click.outside="open = false" class="answer">
+            You can invite up to 2 additional users on the Free plan. There is
+            no limit on team members for the Premium plan.
+          </p>
         </div>
         <!-- Second Question -->
         <div
@@ -104,12 +101,12 @@
           class="border-b py-4"
         >
           <div class="flex items-center justify-between">
-            <h3
+            <a
               :style="open && { 'font-weight': 'bold', 'padding-left': '2px' }"
-              class="text-very-dark-grayish-blue"
+              class="question"
             >
               What is the maximum file upload size?
-            </h3>
+            </a>
             <img
               :style="open && { transform: 'rotate(180deg)' }"
               class="h-full"
@@ -117,17 +114,10 @@
               alt="Arrow down icon"
             />
           </div>
-          <div
-            x-cloak
-            x-show="open"
-            @click.outside="open = false"
-            class="text-dark-grayish-blue py-2 text-[12px]"
-          >
-            <p>
-              No more than 2GB. All files in your account must fit your allotted
-              storage space.
-            </p>
-          </div>
+          <p x-cloak x-show="open" @click.outside="open = false" class="answer">
+            No more than 2GB. All files in your account must fit your allotted
+            storage space.
+          </p>
         </div>
         <!-- Third Question -->
         <div
@@ -136,12 +126,12 @@
           class="border-b py-4"
         >
           <div class="flex items-center justify-between">
-            <h3
+            <a
               :style="open && { 'font-weight': 'bold', 'padding-left': '2px' }"
-              class="text-very-dark-grayish-blue"
+              class="question"
             >
               How do I reset my password?
-            </h3>
+            </a>
             <img
               :style="open && { transform: 'rotate(180deg)' }"
               class="h-full"
@@ -149,17 +139,10 @@
               alt="Arrow down icon"
             />
           </div>
-          <div
-            x-cloak
-            x-show="open"
-            @click.outside="open = false"
-            class="text-dark-grayish-blue py-2 text-[12px]"
-          >
-            <p>
-              Click “Forgot password” from the login page or “Change password”
-              from your profile page. A reset link will be emailed to you.
-            </p>
-          </div>
+          <p x-cloak x-show="open" @click.outside="open = false" class="answer">
+            Click “Forgot password” from the login page or “Change password”
+            from your profile page. A reset link will be emailed to you.
+          </p>
         </div>
         <!-- Fourth Question -->
         <div
@@ -168,12 +151,12 @@
           class="border-b py-4"
         >
           <div class="flex items-center justify-between">
-            <h3
+            <a
               :style="open && { 'font-weight': 'bold', 'padding-left': '2px' }"
-              class="text-very-dark-grayish-blue"
+              class="question"
             >
               Can I cancel my subscription?
-            </h3>
+            </a>
             <img
               :style="open && { transform: 'rotate(180deg)' }"
               class="h-full"
@@ -181,17 +164,10 @@
               alt="Arrow down icon"
             />
           </div>
-          <div
-            x-cloak
-            x-show="open"
-            @click.outside="open = false"
-            class="text-dark-grayish-blue py-2 text-[12px]"
-          >
-            <p>
-              Yes! Send us a message and we’ll process your request no questions
-              asked.
-            </p>
-          </div>
+          <p x-cloak x-show="open" @click.outside="open = false" class="answer">
+            Yes! Send us a message and we’ll process your request no questions
+            asked.
+          </p>
         </div>
 
         <!-- Fifth Question -->
@@ -201,12 +177,12 @@
           class="border-b py-4"
         >
           <div class="flex items-center justify-between">
-            <h3
+            <a
               :style="open && { 'font-weight': 'bold', 'padding-left': '2px' }"
-              class="text-very-dark-grayish-blue"
+              class="question"
             >
               Do you provide additional support?
-            </h3>
+            </a>
             <img
               :style="open && { transform: 'rotate(180deg)' }"
               class="h-full"
@@ -214,22 +190,15 @@
               alt="Arrow down icon"
             />
           </div>
-          <div
-            x-cloak
-            x-show="open"
-            @click.outside="open = false"
-            class="text-dark-grayish-blue py-2 text-[12px]"
-          >
-            <p>
-              Chat and email support is available 24/7. Phone lines are open
-              during normal business hours.
-            </p>
-          </div>
+          <p x-cloak x-show="open" @click.outside="open = false" class="answer">
+            Chat and email support is available 24/7. Phone lines are open
+            during normal business hours.
+          </p>
         </div>
       </div>
     </div>
     <!--Optimum Credits -->
-    <div class="mt-12 flex w-full flex-col place-content-center text-center">
+    <div class="mt-8 flex w-full flex-col place-content-center text-center">
       <div>
         <a
           class="text-optimum-blue hover:text-optimum-darkblue"

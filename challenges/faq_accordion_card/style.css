@@ -4,6 +4,22 @@
 @tailwind components;
 @tailwind utilities;
 
-[x-cloak] {
-  display: none !important;
+@layer components {
+  [x-cloak] {
+    display: none !important;
+  }
+
+  .pattern-bg-desktop {
+    background-image: url('images/bg-pattern-desktop.svg');
+    background-size: 193%;
+    background-position: right 63px bottom -110px;
+  }
+
+  .question {
+    @apply text-very-dark-grayish-blue cursor-pointer lg:text-[15px] lg:hover:text-[#F47B56];
+  }
+
+  .answer {
+    @apply text-dark-grayish-blue py-2 text-[12px] lg:text-[14px];
+  }
 }
