@@ -29,48 +29,63 @@
     <link rel="stylesheet" href="style.css" />
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body class="m-0">
-    <div class="flex flex-col items-center justify-center bg-blue-600 py-20">
+  <body
+    class="m-0 flex h-screen flex-col items-center justify-center overflow-hidden bg-blue-600 py-20"
+  >
+    <div>
       <div
-        class="h-[570px] w-[260px] rounded-lg bg-gray-900 text-center text-white"
+        class="mx-auto flex w-[260px] flex-col rounded-lg bg-gray-900 text-center text-white lg:h-auto lg:w-9/12 lg:flex-row lg:items-center lg:justify-between"
       >
-        <div>
+        <div class="lg:hidden xl:hidden">
           <img
             src="../images/image-header-mobile.jpg"
             alt="header image"
             class="rounded-t-lg"
           />
         </div>
-
-        <div class="px-8 text-center">
-          <h1 class="pt-6 text-xl font-bold">
-            Get <span class="text-purple-900">insights</span> that help your
-            business grow.
-          </h1>
-          <p class="pt-3 text-xs">
-            Discover the benefits of data analytics and make better decisions
-            regarding revenue, customer experience, and overall efficiency.
-          </p>
+        <div class="hidden lg:order-last lg:block">
+          <img
+            src="../images/image-header-desktop.jpg"
+            alt=""
+            class="rounded-r-lg"
+          />
         </div>
 
-        <div class="py-6">
-          <div class="pb-3">
-            <h2 class="text-lg font-bold">
-              10k+
-              <span class="block text-xs font-light uppercase">companies</span>
-            </h2>
-          </div>
-          <div class="pb-3">
-            <h2 class="text-lg font-bold">
-              314
-              <span class="block text-xs font-light uppercase">templates</span>
-            </h2>
-          </div>
+        <div class="mx-auto w-9/12 lg:w-4/12 lg:text-left">
           <div>
-            <h2 class="text-lg font-bold">
-              12m+
-              <span class="block text-xs font-light uppercase">queries</span>
-            </h2>
+            <h1 class="pt-6 text-xl font-bold lg:text-3xl">
+              Get <span class="text-purple-900">insights</span> that help your
+              business grow.
+            </h1>
+            <p class="pt-3 text-xs">
+              Discover the benefits of data analytics and make better decisions
+              regarding revenue, customer experience, and overall efficiency.
+            </p>
+          </div>
+
+          <div class="flex-row py-6 lg:flex lg:gap-5">
+            <div class="pb-3">
+              <h2 class="text-lg font-bold">
+                10k+
+                <span class="block text-xs font-light uppercase"
+                  >companies</span
+                >
+              </h2>
+            </div>
+            <div class="pb-3">
+              <h2 class="text-lg font-bold">
+                314
+                <span class="block text-xs font-light uppercase"
+                  >templates</span
+                >
+              </h2>
+            </div>
+            <div>
+              <h2 class="text-lg font-bold">
+                12m+
+                <span class="block text-xs font-light uppercase">queries</span>
+              </h2>
+            </div>
           </div>
         </div>
       </div>
