@@ -29,106 +29,57 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body class="m-0">
-    <div
-      class="relative h-screen flex flex-col py-20 items-center"
-      style="background-color: hsl(185, 75%, 39%)"
-    >
-      <div>
-        <img
-          src="/challenges/profile_card_component/images/image-victor.jpg"
-          alt=""
-        />
-      </div>
-      <div class="h-[350px] w-72 rounded-xl bg-white">
+    <div class="bg-blue-400 h-screen flex justify-center py-24">
+      <img
+        src="../profile_card_component/images/bg-pattern-top.svg"
+        alt=""
+        class=" absolute -left-64 -top-52"
+      />
+
+      <div class="bg-white z-20 rounded-xl">
         <div>
           <img
-            class="rounded-t-lg"
             src="../profile_card_component/images/bg-pattern-card.svg"
-            alt="background card's pattern"
-          />
-        </div>
-        <div class="relative -top-10 flex flex-col items-center">
-          <img
-            src="../profile_card_component/images/image-victor.jpg"
             alt=""
-            class="h-20 w-20 rounded-full ring-4 ring-white"
+            class="w-full rounded-t-xl"
           />
-          <p
-            class="text-dark-desaturated-blue pt-4 text-lg font-extrabold"
-            style="color: hsl(229, 23%, 23%)"
-          >
-            Victor Crest
-            <span class="tex-dark-gray font-normal">26</span>
-          </p>
-          <p class="pt-2 text-sm text-gray-400" style="color: hsl(0, 0%, 59%)">
-            London
-          </p>
-        </div>
-        <div class="-mt-3 flex border-t"></div>
-        <div class="flex justify-center gap-9 py-6 text-center">
-          <div>
-            <p class="text-xl font-extrabold" style="color: hsl(229, 23%, 23%)">
-              80K
-            </p>
-            <p class="text-sm font-light" style="color: hsl(0, 0%, 59%)">
-              Followers
-            </p>
+          <div class="flex justify-center">
+            <img
+              src="../profile_card_component/images/image-victor.jpg"
+              alt=""
+              class="rounded-full -mt-12 ring-4 ring-white"
+            />
           </div>
-          <div>
-            <p class="text-xl font-extrabold" style="color: hsl(229, 23%, 23%)">
-              803K
+          <div class="flex flex-col items-center py-6">
+            <p class="font-bold">
+              Victor Crest <span class="font-normal text-gray-600">26</span>
             </p>
-            <p class="text-sm font-light" style="color: hsl(0, 0%, 59%)">
-              Likes
-            </p>
+            <span class="text-sm text-gray-600">London</span>
           </div>
-          <div>
-            <p class="text-xl font-extrabold" style="color: hsl(229, 23%, 23%)">
-              1.4K
-            </p>
-            <p class="text-sm font-light" style="color: hsl(0, 0%, 59%)">
-              photos
-            </p>
-          </div>
-        </div>
-      </div>
-      <div
-        class="flex h-[100vh] w-full flex-col place-content-center text-center py-9"
-      >
-        <div>
-          <a
-            href="https://www.frontendmentor.io/challenges/profile-card-component-cfArpWshJ"
-            >Frontend Mentor challenge</a
-          >
-        </div>
-        <div>
-          by
-          <a
-            class="text-optimum-blue hover:text-optimum-darkblue"
-            href="https://www.frontendmentor.io"
-            target="_blank"
-            >Frontend Mentor</a
-          >
-        </div>
-        <div>
-          for
-          <a
-            class="text-optimum-blue hover:text-optimum-darkblue"
-            href="https://github.com/optimumBA"
-            target="_blank"
-            >Optimum BH</a
-          >
-          Internship.
         </div>
 
-        <div class="mt-3">
-          <a
-            class="text-optimum-blue hover:text-optimum-darkblue"
-            href="https://github.com/ngumokenneth/frontend_mentor_challenges/tree/profile_card_component/challenges/profile_card_component"
-            >Source code</a
-          >
+        <hr />
+        <div class="flex gap-14 justify-center text-center py-6">
+          <div>
+            <p class="font-extrabold">80K</p>
+            <span class="text-xs text-gray-600">Followers</span>
+          </div>
+          <div>
+            <p class="font-extrabold">803K</p>
+            <span class="text-xs text-gray-600">Likes</span>
+          </div>
+          <div>
+            <p class="font-extrabold">1.4K</p>
+            <span class="text-xs text-gray-600">Photos</span>
+          </div>
         </div>
       </div>
+
+      <!-- <img
+        src="../profile_card_component/images/bg-pattern-bottom.svg"
+        alt=""
+        class="bg-red-700 absolute -left-40 top-80"
+      /> -->
     </div>
   </body>
 </html>
