@@ -45,7 +45,7 @@ describe('QR code component', () => {
     await expect($('body')).toHaveTextContaining('Source code')
     await expect($('=Source code')).toHaveHrefContaining('https://github.com')
     await expect($('=Source code')).toHaveHrefContaining(
-      '/frontend_mentor_challenges/tree/qr_code_component/challenges/qr_code_component'
+      'https://github.com/sule12/frontend_mentor_challenges/tree/qr_code_component/challenges/qr_code_component'
     )
 
     await expect($('body')).toHaveTextContaining(
