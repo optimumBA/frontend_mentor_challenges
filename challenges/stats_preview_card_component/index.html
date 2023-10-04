@@ -31,47 +31,87 @@
   </head>
   <body class="m-0">
     <div
-      class="flex h-screen flex-col place-content-center items-center justify-center bg-blue-600"
+      class="bg-very-dark-blue flex h-screen flex-col place-content-center items-center justify-center"
     >
-      <div class="flex w-7/12 flex-col justify-center bg-blue-300 lg:flex-row h-fu">
-        <div class="bg-red-600 lg:order-last w-full">
-          <img
-            src="../images/image-header-mobile.jpg"
-            alt="three ladies in a meeting" class="h-full object-fill"
-          />
-        </div>
+      <div
+        class="bg-dark-desaturated-blue flex w-9/12 flex-col justify-center overflow-hidden rounded-lg lg:flex-row"
+      >
+        <img
+          src="../images/image-header-mobile.jpg"
+          alt="ladies in a meeting"
+          class="h-full rounded-r lg:hidden"
+        />
+        <img
+          src="../images/image-header-desktop.jpg"
+          alt="ladies having a meeting"
+          class="hidden lg:visible lg:order-last lg:block lg:w-5/12"
+        />
         <div
-          class="flex flex-col items-center justify-center px-8 py-4 text-center lg:w-7/12 lg:items-start lg:text-left"
+          class="flex flex-col items-center justify-center px-3 py-4 text-center lg:items-start lg:text-left"
         >
-          <div>
-            <h1 class="text-2xl font-bold">
-              Get insights that help your business grow.
+          <div class="lg:px-24">
+            <h1 class="text-2xl font-bold text-white">
+              Get <span class="text-soft-violet">insights</span> that help your
+              business grow.
             </h1>
-            <h2 class="py-3 text-xs">
+            <h2 class="text-slightly-transparent-white py-3 text-sm lg:text-xs">
               Discover the benefits of data analytics and make better decisions
               regarding revenue, customer experience, and overall efficiency.
             </h2>
           </div>
-          <div class="py-8 lg:flex lg:gap-6">
-            <div>
-              <p class="text-xl font-bold">10k+</p>
-              <span class="text-xs font-bold uppercase text-white"
+          <div class="justify-between py-10 lg:flex lg:gap-6 lg:px-24">
+            <div class="py-3">
+              <p class="text-xl font-bold text-white">10k+</p>
+              <span
+                class="text-slightly-transparent-white text-xs font-light uppercase"
                 >companies</span
               >
             </div>
-            <div>
-              <p class="text-xl font-bold">314</p>
-              <span class="text-xs font-bold uppercase text-white"
+            <div class="py-3">
+              <p class="text-xl font-bold text-white">314</p>
+              <span
+                class="text-slightly-transparent-white text-xs font-light uppercase"
                 >templates</span
               >
             </div>
-            <div>
-              <p class="text-xl font-bold">12m+</p>
-              <span class="text-xs font-bold uppercase text-white"
+            <div class="text- py-3">
+              <p class="text-xl font-bold text-white">12m+</p>
+              <span
+                class="text-slightly-transparent-white text-xs font-light uppercase"
                 >queries</span
               >
             </div>
           </div>
+        </div>
+      </div>
+      <div
+        class="mt-4 flex flex-col place-content-center text-center text-white"
+      >
+        <div>
+          <a
+            class="text-optimum-blue hover:text-optimum-darkblue"
+            href="https://www.frontendmentor.io/challenges/stats-preview-card-component-8JqbgoU62"
+            target="_blank"
+            >Frontend Mentor challenge</a
+          >
+        </div>
+        <div>
+          for
+          <a
+            class="text-optimum-blue hover:text-optimum-darkblue"
+            href="https://github.com/optimumBA"
+            target="_blank"
+            >Optimum BH</a
+          >
+          Internship.
+        </div>
+
+        <div class="mt-3">
+          <a
+            class="text-optimum-blue hover:text-optimum-darkblue"
+            href="https://github.com/ngumokenneth/frontend_mentor_challenges/tree/stats_preview_card_component/challenges/stats_preview_card_component"
+            >Source code</a
+          >
         </div>
       </div>
     </div>
