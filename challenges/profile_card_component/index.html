@@ -29,57 +29,91 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body class="m-0">
-    <div class="bg-blue-400 h-screen flex justify-center py-24">
-      <img
-        src="../profile_card_component/images/bg-pattern-top.svg"
-        alt=""
-        class=" absolute -left-64 -top-52"
-      />
-
-      <div class="bg-white z-20 rounded-xl">
-        <div>
+    <div
+      class="bg-dark-cyan flex h-screen items-center justify-center overflow-hidden"
+    >
+      <div class="absolute z-40 flex flex-col justify-center">
+        <div class="flex flex-col items-center rounded-lg bg-white">
           <img
             src="../profile_card_component/images/bg-pattern-card.svg"
-            alt=""
-            class="w-full rounded-t-xl"
+            alt="card's parttern"
+            class="rounded-t-lg"
           />
-          <div class="flex justify-center">
+          <div>
             <img
               src="../profile_card_component/images/image-victor.jpg"
-              alt=""
-              class="rounded-full -mt-12 ring-4 ring-white"
+              alt="victor's image"
+              class="-mt-12 rounded-full"
             />
+            <div class="my-6 flex flex-col items-center">
+              <p class="text-dark-desaturated-blue text-lg font-bold">
+                Victor Crest <span class="text-dark-gray font-normal">26</span>
+              </p>
+              <span class="text-dark-gray bg-white text-sm">London</span>
+            </div>
           </div>
-          <div class="flex flex-col items-center py-6">
-            <p class="font-bold">
-              Victor Crest <span class="font-normal text-gray-600">26</span>
-            </p>
-            <span class="text-sm text-gray-600">London</span>
+
+          <div class="flex border-t">
+            ken
+            <hr />
+          </div>
+          <div class="my-8 flex gap-12 text-center">
+            <div>
+              <p class="text-dark-desaturated-blue text-lg font-bold">80k</p>
+              <span class="text-dark-gray text-xs">Followers</span>
+            </div>
+            <div>
+              <p class="text-dark-desaturated-blue text-lg font-bold">803k</p>
+              <span class="text-dark-gray text-xs">Likes</span>
+            </div>
+            <div>
+              <p class="text-dark-desaturated-blue text-lg font-bold">1.4k</p>
+              <span class="text-dark-gray text-xs">Photos</span>
+            </div>
           </div>
         </div>
+        <div class="mt-8 flex flex-col place-content-center text-center">
+          <div>Front-end development challenges</div>
+          <div>
+            by
+            <a
+              class="text-optimum-blue hover:text-optimum-darkblue"
+              href="https://www.frontendmentor.io/challenges/profile-card-component-cfArpWshJ"
+              target="_blank"
+              >Frontend Mentor challenge</a
+            >
+          </div>
+          <div>
+            for
+            <a
+              class="text-optimum-blue hover:text-optimum-darkblue"
+              href="https://github.com/optimumBA"
+              target="_blank"
+              >Optimum BH</a
+            >
+            Internship.
+          </div>
 
-        <hr />
-        <div class="flex gap-14 justify-center text-center py-6">
-          <div>
-            <p class="font-extrabold">80K</p>
-            <span class="text-xs text-gray-600">Followers</span>
-          </div>
-          <div>
-            <p class="font-extrabold">803K</p>
-            <span class="text-xs text-gray-600">Likes</span>
-          </div>
-          <div>
-            <p class="font-extrabold">1.4K</p>
-            <span class="text-xs text-gray-600">Photos</span>
+          <div class="mt-3">
+            <a
+              class="text-optimum-blue hover:text-optimum-darkblue"
+              href="https://github.com/ngumokenneth/frontend_mentor_challenges/tree/profile_card_component/challenges/profile_card_component"
+              >Source code</a
+            >
           </div>
         </div>
       </div>
 
-      <!-- <img
+      <img
+        src="../profile_card_component/images/bg-pattern-top.svg"
+        alt=""
+        class="relative bottom-72 right-16 lg:bottom-96"
+      />
+      <img
         src="../profile_card_component/images/bg-pattern-bottom.svg"
         alt=""
-        class="bg-red-700 absolute -left-40 top-80"
-      /> -->
+        class="lg:left-18 relative left-10 top-60 lg:top-96"
+      />
     </div>
   </body>
 </html>
