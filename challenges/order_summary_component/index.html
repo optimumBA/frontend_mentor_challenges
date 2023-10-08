@@ -28,50 +28,54 @@
     <link rel="manifest" href="../site.webmanifest" />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="m-0 bg-red-600">
+  <body class="bg-pale-blue m-0">
     <div
-      class="flex h-[100vh] w-full flex-col place-content-center text-center"
+      class="absolute z-10 flex h-[100vh] w-full flex-col place-content-center text-center"
     >
       <div
-        class="mx-auto flex w-72 flex-col items-center overflow-hidden rounded-lg bg-white lg:w-3/12"
+        class="mx-auto flex w-80 flex-col items-center overflow-hidden rounded-lg bg-white lg:w-3/12"
       >
         <div>
           <img src="/./images/illustration-hero.svg" alt="hero illustration" />
         </div>
-        <div class="p-4">
-          <h1 class="text-xl font-bold">Order Summary</h1>
-          <p class="pt-3 text-sm">
-            You can now listen to millions of songs, audiobooks, and podcasts on
-            any device anywhere you like!
-          </p>
-        </div>
-
-        <div
-          class="mx-auto flex items-center space-x-4 rounded-lg bg-blue-300 px-2 py-2"
-        >
-          <img src="/./images/icon-music.svg" alt="music icon" />
-
-          <div>
-            <h2 class="font-bold">
-              Annual Plan
-              <span class="block font-normal text-gray-300">$59.99/year</span>
-            </h2>
+        <div class="mx-4">
+          <div class="p-4">
+            <h1 class="text-dark-blue text-xl font-bold">Order Summary</h1>
+            <p class="pt-3 text-sm">
+              You can now listen to millions of songs, audiobooks, and podcasts
+              on any device anywhere you like!
+            </p>
           </div>
-          <a
-            href="#"
-            class="cursor-pointer text-blue-600 underline hover:no-underline active:no-underline"
-            >Change</a
+          <div
+            class="bg-pale-blue mx-auto flex items-center justify-between rounded-lg p-2"
           >
-        </div>
+            <img src="/./images/icon-music.svg" alt="music icon" />
+            <div class="flex items-center">
+              <h2 class="font-bold">
+                Annual Plan
+                <span class="text-desaturated-blue block font-normal"
+                  >$59.99/year</span
+                >
+              </h2>
+            </div>
 
-        <a href="#" class="mt-4 bg-blue-700 font-bold text-white"
-          >Proceed to Payment</a
-        >
+            <a
+              href="#"
+              class="text-bright-blue cursor-pointer px-4 underline hover:no-underline active:no-underline"
+              >Change</a
+            >
+          </div>
+          <div class="bg-bright-blue mt-4 w-full rounded-lg py-3">
+            <a href="#" class="mt-4 w-full font-bold text-white"
+              >Proceed to Payment</a
+            >
+          </div>
+        </div>
 
         <button class="py-6 font-bold text-gray-400">Cancel Order</button>
       </div>
 
-      <div>
+      <div class="mt-4">
         <a
           class="text-optimum-blue hover:text-optimum-darkblue"
           href="https://www.frontendmentor.io/challenges/order-summary-component-QlPmajDUj"
@@ -98,5 +102,10 @@
         >
       </div>
     </div>
+    <img
+      src="../images/pattern-background-desktop.svg"
+      alt="background-pattern"
+      class="relative"
+    />
   </body>
 </html>
