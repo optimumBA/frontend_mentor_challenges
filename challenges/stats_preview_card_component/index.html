@@ -31,58 +31,57 @@
   </head>
   <body class="m-0">
     <div
-      class="bg-very-dark-blue flex h-screen flex-col items-center justify-center"
+      class="bg-very-dark-blue flex flex-col items-center justify-center lg:h-screen"
     >
       <div
-        class="bg-dark-desaturated-blue flex w-9/12 flex-col justify-center overflow-hidden rounded-lg lg:flex-row"
+        class="grid w-9/12 grid-cols-1 overflow-hidden rounded-lg bg-white lg:grid-cols-3"
       >
-        <img
-          src="../images/image-header-mobile.jpg"
-          alt="ladies in a meeting"
-          class="h-full rounded-r lg:hidden"
-        />
-        <img
-          src="../images/image-header-desktop.jpg"
-          alt="ladies having a meeting"
-          class="hidden lg:visible lg:order-last lg:block lg:w-5/12"
-        />
-
         <div
-          class="flex flex-col items-center justify-center px-3 py-4 text-center lg:items-start lg:text-left"
+          class="bg-dark-desaturated-blue col-span-2 flex flex-col items-center text-center text-white lg:items-start lg:text-left"
         >
-          <div class="lg:px-24">
-            <h1 class="text-2xl font-bold text-white">
-              Get <span class="text-soft-violet">insights</span> that help your
-              business grow.
-            </h1>
-            <h2 class="text-slightly-transparent-white py-3 text-sm lg:text-xs">
-              Discover the benefits of data analytics and make better decisions
-              regarding revenue, customer experience, and overall efficiency.
-            </h2>
-          </div>
-          <div class="justify-between py-10 lg:flex lg:gap-6 lg:px-24">
-            <div class="py-3">
-              <p class="text-xl font-bold text-white">10k+</p>
-              <span
-                class="text-slightly-transparent-white text-xs font-light uppercase"
-                >companies</span
-              >
+          <div class="lg:mx-12 lg:w-8/12">
+            <div class="py-4 px-2">
+              <h1 class="text-2xl font-bold lg:text-3xl">
+                Get <span class="text-soft-violet">insights</span> that help
+                your business grow.
+              </h1>
+              <p class="pt-3 text-sm">
+                Discover the benefits of data analytics and make better
+                decisions regarding revenue, customer experience, and overall
+                efficiency.
+              </p>
             </div>
-            <div class="py-3">
-              <p class="text-xl font-bold text-white">314</p>
-              <span
-                class="text-slightly-transparent-white text-xs font-light uppercase"
-                >templates</span
-              >
-            </div>
-            <div class="text- py-3">
-              <p class="text-xl font-bold text-white">12m+</p>
-              <span
-                class="text-slightly-transparent-white text-xs font-light uppercase"
-                >queries</span
-              >
+            <div class="flex flex-col py-6 lg:flex-row lg:gap-14">
+              <div class="text-xl font-bold">
+                10k+
+                <span class="block text-xs font-normal uppercase"
+                  >companies</span
+                >
+              </div>
+              <div class="py-4 text-xl font-bold lg:py-0">
+                314<span class="block text-xs font-normal uppercase"
+                  >templates</span
+                >
+              </div>
+              <div class="text-xl font-bold">
+                12m+
+                <span class="block text-xs font-normal uppercase">queries</span>
+              </div>
             </div>
           </div>
+        </div>
+        <div class="relative order-first lg:order-last">
+          <img
+            src="../images/image-header-mobile.jpg"
+            alt="three ladies at work"
+            class="h-full object-cover lg:hidden xl:hidden"
+          />
+          <img
+            src="../images/image-header-desktop.jpg"
+            alt="three ladies at work"
+            class="hidden h-full object-cover lg:block"
+          />
+          <div class="bg-soft-violet/30 absolute inset-y-0 h-full w-full"></div>
         </div>
       </div>
       <div
