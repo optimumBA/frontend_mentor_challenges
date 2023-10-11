@@ -28,53 +28,105 @@
     <link rel="manifest" href="../site.webmanifest" />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="m-0">
-    <div>
-      <h2>
-        Simple, traffic-based pricing
-      </h2>
-      <p>
-        Sign-up for our 30-day trial. No credit card required. 
-      </p>
-    </div>
-    <div> 
-      <div>
-        <span>350K </span>
-        <span>Pageviews</span>
-      </div>
-      <input
-      id="price-slider"
-      type="range"
-      name="price"
-      min=1
-      max=5
-      >
-      <div>
-        <span>$61.75 </span>
-        <span>/month</span>
-      </div>
-
-      <div>
-        <div>
-          <p>Monthly Billing</p>
-          <input type="text" name="" id="">
-        </div>
-        <div></div>
-      </div>
-    
-      
-      Yearly Billing 25% discount
-    
-      Unlimited websites
-      100% data ownership
-      Email reports
-    
-      Start my trial
-    </div>
-
-    <div
-      class="flex w-full flex-col place-content-center text-center"
+  <body
+    class="font-manrope text-grayish-blue bg-very-pale-blue m-0 box-border bg-[url('images/bg-pattern.svg')] bg-no-repeat p-0"
+  >
+    <section
+      class="pattern-circles mx-auto mt-16 flex flex-col justify-center bg-[url('images/pattern-circles.svg')] bg-center bg-no-repeat py-8 text-center lg:py-10"
     >
+      <h1 class="text-dark-desaturated-blue text-2xl font-bold">
+        Simple, traffic-based pricing
+      </h1>
+      <p class="mt-3 px-20">
+        Sign-up for our 30-day trial. No credit card required.
+      </p>
+    </section>
+    <section
+      class="mx-auto mt-10 max-h-[500px] max-w-[320px] rounded-lg bg-white text-center shadow-xl backdrop-blur-md lg:max-w-[500px]"
+    >
+      <div
+        class="lg:grid lg:h-[140px] lg:grid-cols-2 lg:grid-rows-3 lg:gap-8 lg:pt-5"
+      >
+        <div class="flex items-center justify-center lg:col-start-1">
+          <span class="py-8 text-sm font-extrabold tracking-widest lg:p-0">
+            100K PAGEVIEWS
+          </span>
+        </div>
+        <input
+          type="range"
+          min="1"
+          max="5"
+          step="1"
+          value="3"
+          class="range mx-auto lg:col-span-2"
+          id="price-slider"
+        />
+        <div
+          class="text-dark-desaturated-blue my-6 flex items-center justify-center gap-2 text-3xl font-extrabold lg:col-start-2 lg:row-start-1"
+        >
+          $16.00<span class="text-grayish-blue text-lg font-normal"
+            >/ month</span
+          >
+        </div>
+        <!-- <div
+          class="text-dark-desaturated-blue my-6 flex text-3xl font-extrabold lg:col-start-2 lg:row-start-1"
+        >
+          <div id="price-output" class="flex">$16.00</div>
+          <span class="text-grayish-blue text-lg font-normal">/ month</span>
+        </div> -->
+      </div>
+
+      <div class="mb-6 flex items-center justify-center gap-2 text-xs">
+        <p>Monthly Billing</p>
+        <label class="switch">
+          <input type="checkbox" id="yearly-billing-toggle" />
+          <div class="slider round"></div>
+        </label>
+
+        <!-- <label class="relative flex items-center justify-between p-2 text-xl">
+          <input
+            type="checkbox"
+            class="absolute appearance-none rounded-md"
+            id="yearly-billing-toggle"
+          />
+          <span
+            class="bg-light-grayish-blue-toggle peer-checked:bg-strong-cyan ml-0 flex h-5 w-10 flex-shrink-0 items-center rounded-full p-1 duration-300 ease-in-out after:h-5 after:w-5 after:rounded-full after:bg-slate-50 after:shadow-md after:duration-300 group-hover:after:translate-x-1 peer-checked:after:translate-x-6"
+          ></span>
+        </label> -->
+
+        <p>Yearly Billing</p>
+        <div class="text-light-red bg-light-grayish-red ml-2 rounded-3xl p-1">
+          -25% <span class="hidden lg:inline">discount</span>
+        </div>
+      </div>
+
+      <hr />
+
+      <div
+        class="flex flex-col items-center justify-center gap-6 text-xs lg:flex-row"
+      >
+        <ul class="mt-8 flex flex-col items-center justify-center gap-2 lg:m-0">
+          <li class="flex items-center justify-center">
+            <img src="images/icon-check.svg" class="mr-3 h-3" />Unlimited
+            websites
+          </li>
+          <li class="flex items-center justify-center">
+            <img src="images/icon-check.svg" class="mr-3 h-3" />100% data
+            ownership
+          </li>
+          <li class="flex items-center justify-center">
+            <img src="images/icon-check.svg" class="mr-3 h-3" />Email reports
+          </li>
+        </ul>
+        <button
+          class="bg-dark-desaturated-blue text-light-grayish-blue-toggle mb-8 rounded-3xl py-3 px-10 text-xs font-extrabold active:text-white lg:mb-0 lg:h-10"
+        >
+          Start my trial
+        </button>
+      </div>
+    </section>
+
+    <div class="flex w-full flex-col place-content-center text-center">
       <div>
         <a
           class="text-optimum-blue hover:text-optimum-darkblue"
@@ -97,7 +149,7 @@
       <div class="mt-3">
         <a
           class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA/frontend_mentor_challenges/tree/interactive_pricing_component/challenges/interactive_pricing_component"
+          href="https://github.com/lgmfred/frontend_mentor_challenges/tree/interactive_pricing_component/challenges/interactive_pricing_component"
           >Source code</a
         >
       </div>
