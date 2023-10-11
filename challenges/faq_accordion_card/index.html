@@ -74,8 +74,8 @@
 
           <div class="flex w-72 flex-col text-xs">
             <div
-              x-data="{open: false}"
-              @click="open = !open"
+              x-data="{open: true}"
+              @click="open = open"
               class="flex flex-col py-3"
             >
               <div class="relative flex w-full items-center bg-white">
@@ -87,7 +87,12 @@
                   class="absolute right-0 flex"
                 />
               </div>
-              <p x-cloak x-show="open" class="py-2 pr-8">
+              <p
+                x-cloak
+                x-show="open"
+                @click.outside="open = false"
+                class="py-2 pr-8"
+              >
                 You can invite up to 2 additional users on the Free plan. There
                 is no limit on team members for the Premium plan.
               </p>
@@ -107,7 +112,12 @@
                   class="absolute right-0 flex"
                 />
               </div>
-              <p x-cloak x-show="open" class="py-2 pr-8">
+              <p
+                x-cloak
+                x-show="open"
+                @click.outside="open = false"
+                class="py-2 pr-8"
+              >
                 No more than 2GB. All files in your account must fit your
                 allotted storage space.
               </p>
@@ -127,7 +137,12 @@
                   class="absolute right-0 flex"
                 />
               </div>
-              <p x-cloak x-show="open" class="py-2 pr-8">
+              <p
+                x-cloak
+                x-show="open"
+                @click.outside="open = false"
+                class="py-2 pr-8"
+              >
                 Click “Forgot password” from the login page or “Change password”
                 from your profile page. A reset link will be emailed to you.
               </p>
@@ -147,7 +162,12 @@
                   class="absolute right-0 flex"
                 />
               </div>
-              <p x-cloak x-show="open" class="py-2 pr-8">
+              <p
+                x-cloak
+                x-show="open"
+                @click.outside="open = false"
+                class="py-2 pr-8"
+              >
                 Yes! Send us a message and we’ll process your request no
                 questions asked.
               </p>
@@ -167,7 +187,12 @@
                   class="absolute right-0 flex"
                 />
               </div>
-              <p x-cloak x-show="open" class="py-2 pr-8">
+              <p
+                x-cloak
+                x-show="open"
+                @click.outside="open = false"
+                class="py-2 pr-8"
+              >
                 Chat and email support is available 24/7. Phone lines are open
                 during normal business hours.
               </p>
