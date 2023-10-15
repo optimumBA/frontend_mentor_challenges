@@ -32,17 +32,14 @@
       src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
     ></script>
   </head>
-  <body
-    x-data="{ isSideNavOpen: false, product: false, company: false, connect: false }"
-    class="font-overpass my-0 text-[16px]"
-  >
+  <body x-data="{ isSideNavOpen: false }" class="font-overpass m-0 text-[16px]">
     <main class="flex flex-col gap-16">
       <!-- bg-gradient-to-r from-very-light-red to-light-red -->
       <header
-        class="font-ubuntu from-very-light-red to-light-red text-white-text place-content-center rounded-bl-[100px] bg-gradient-to-r bg-cover bg-no-repeat lg:flex lg:flex-col"
+        class="font-ubuntu from-very-light-red to-light-red text-white-text place-content-center rounded-bl-[100px] bg-gradient-to-r bg-cover bg-no-repeat md:flex md:flex-col"
       >
         <div
-          class="h-full bg-[url('images/bg-pattern-intro-mobile.svg')] bg-cover bg-center bg-no-repeat px-5 pt-10 lg:bg-[url('images/bg-pattern-intro-desktop.svg')]"
+          class="bg-[url('images/bg-pattern-intro-mobile.svg')] bg-cover bg-center bg-no-repeat px-5 pt-10 md:bg-[url('images/bg-pattern-intro-desktop.svg')]"
         >
           <div class="flex items-center justify-between">
             <img src="images/logo.svg" alt="Blogr logo" />
@@ -50,7 +47,7 @@
             <div
               @click="isSideNavOpen = ! isSideNavOpen"
               id="mobile-menu-toggle"
-              class="lg:hidden"
+              class="md:hidden"
             >
               <img
                 x-show="! isSideNavOpen"
@@ -64,162 +61,168 @@
               />
             </div>
             <!-- Main nav items -->
-            <nav class="hidden gap-96 lg:flex lg:place-content-center">
-              <ul class="flex items-center gap-8">
-                <li x-data="{ isMenuItemOpen: false }" class="relative">
-                  <div
-                    @click="isMenuItemOpen = ! isMenuItemOpen"
-                    class="flex items-center justify-center gap-2 font-bold"
-                  >
-                    <h3
-                      :style="isMenuItemOpen && { 'text-decoration': 'underline' }"
+            <template
+              x-init="isSideNavOpen = window.innerWidth > 768"
+              x-if="isSideNavOpen"
+              @resize.window="isSideNavOpen = window.innerWidth > 768"
+            >
+              <nav class="hidden md:flex md:place-content-center">
+                <ul class=" relative flex items-center gap-8">
+                  <li x-data="{ isMenuItemOpen: false }" class="relative">
+                    <div
+                      @click="isMenuItemOpen = ! isMenuItemOpen"
+                      class="flex items-center justify-center gap-2 font-bold"
                     >
-                      Product
-                    </h3>
-                    <img
-                      :style="isMenuItemOpen && { transform: 'rotate(180deg)' }"
-                      src="images/icon-arrow-light.svg"
-                      alt="Icon arrow light"
-                    />
-                  </div>
-                  <div
-                    x-show="isMenuItemOpen"
-                    @click.outside="isMenuItemOpen = false"
-                    class="absolute top-8 -ml-4 flex flex-col gap-2 rounded-sm bg-white p-4 pr-8 text-black"
-                  >
-                    <a
-                      @click="isMenuItemOpen = false"
-                      href="#"
-                      class="hover:font-semibold"
-                      >Overview</a
+                      <h3
+                        :style="isMenuItemOpen && { 'text-decoration': 'underline' }"
+                      >
+                        Product
+                      </h3>
+                      <img
+                        :style="isMenuItemOpen && { transform: 'rotate(180deg)' }"
+                        src="images/icon-arrow-light.svg"
+                        alt="Icon arrow light"
+                      />
+                    </div>
+                    <div
+                      x-show="isMenuItemOpen"
+                      @click.outside="isMenuItemOpen = false"
+                      class="absolute top-8 -ml-4 flex flex-col gap-2 rounded-sm bg-white p-4 pr-8 text-black"
                     >
-                    <a
-                      @click="isMenuItemOpen = false"
-                      href="#"
-                      class="hover:font-semibold"
-                      >Pricing</a
+                      <a
+                        @click="isMenuItemOpen = false"
+                        href="#"
+                        class="hover:font-semibold"
+                        >Overview</a
+                      >
+                      <a
+                        @click="isMenuItemOpen = false"
+                        href="#"
+                        class="hover:font-semibold"
+                        >Pricing</a
+                      >
+                      <a
+                        @click="isMenuItemOpen = false"
+                        href="#"
+                        class="hover:font-semibold"
+                        >Marketplace</a
+                      >
+                      <a
+                        @click="isMenuItemOpen = false"
+                        href="#"
+                        class="hover:font-semibold"
+                        >Features</a
+                      >
+                      <a
+                        @click="isMenuItemOpen = false"
+                        href="#"
+                        class="hover:font-semibold"
+                        >Integrations</a
+                      >
+                    </div>
+                    <!-- <ul
+                      x-show="isMenuItemOpen"
+                      @click.outside="isMenuItemOpen = false"
+                      class="absolute top-8 -ml-4 flex flex-col gap-2 rounded-sm bg-white p-4 pr-8 text-black"
                     >
-                    <a
-                      @click="isMenuItemOpen = false"
-                      href="#"
-                      class="hover:font-semibold"
-                      >Marketplace</a
-                    >
-                    <a
-                      @click="isMenuItemOpen = false"
-                      href="#"
-                      class="hover:font-semibold"
-                      >Features</a
-                    >
-                    <a
-                      @click="isMenuItemOpen = false"
-                      href="#"
-                      class="hover:font-semibold"
-                      >Integrations</a
-                    >
-                  </div>
-                  <!-- <ul
-                    x-show="isMenuItemOpen"
-                    @click.outside="isMenuItemOpen = false"
-                    class="absolute top-8 -ml-4 flex flex-col gap-2 rounded-sm bg-white p-4 pr-8 text-black"
-                  >
-                    <li @click="isMenuItemOpen = false">
-                      <a href="#" class="hover:font-semibold">Overview</a>
-                    </li>
-                    <li @click="isMenuItemOpen = false">
-                      <a href="#" class="hover:font-semibold">Pricing</a>
-                    </li>
-                    <li @click="isMenuItemOpen = false">
-                      <a href="#" class="hover:font-semibold">Marketplace</a>
-                    </li>
-                    <li @click="isMenuItemOpen = false">
-                      <a href="#" class="hover:font-semibold">Features</a>
-                    </li>
-                    <li @click="isMenuItemOpen = false">
-                      <a href="#" class="hover:font-semibold">Integrations</a>
-                    </li>
-                  </ul> -->
-                </li>
+                      <li @click="isMenuItemOpen = false">
+                        <a href="#" class="hover:font-semibold">Overview</a>
+                      </li>
+                      <li @click="isMenuItemOpen = false">
+                        <a href="#" class="hover:font-semibold">Pricing</a>
+                      </li>
+                      <li @click="isMenuItemOpen = false">
+                        <a href="#" class="hover:font-semibold">Marketplace</a>
+                      </li>
+                      <li @click="isMenuItemOpen = false">
+                        <a href="#" class="hover:font-semibold">Features</a>
+                      </li>
+                      <li @click="isMenuItemOpen = false">
+                        <a href="#" class="hover:font-semibold">Integrations</a>
+                      </li>
+                    </ul> -->
+                  </li>
 
-                <li x-data="{ isMenuItemOpen: false }" class="relative">
-                  <div
-                    @click="isMenuItemOpen = ! isMenuItemOpen"
-                    class="flex items-center justify-center gap-2 font-bold"
-                  >
-                    <h3
-                      :style="isMenuItemOpen && { 'text-decoration': 'underline' }"
+                  <li x-data="{ isMenuItemOpen: false }" class="relative">
+                    <div
+                      @click="isMenuItemOpen = ! isMenuItemOpen"
+                      class="flex items-center justify-center gap-2 font-bold"
                     >
-                      Company
-                    </h3>
-                    <img
-                      :style="isMenuItemOpen && { transform: 'rotate(180deg)' }"
-                      src="images/icon-arrow-light.svg"
-                      alt="Icon arrow light"
-                    />
-                  </div>
-                  <ul
-                    x-show="isMenuItemOpen"
-                    @click.outside="isMenuItemOpen = false"
-                    class="absolute top-8 -ml-4 flex flex-col gap-2 rounded-sm bg-white p-4 pr-8 text-black"
-                  >
-                    <li @click="isMenuItemOpen = false">
-                      <a href="#" class="hover:font-semibold">About</a>
-                    </li>
-                    <li @click="isMenuItemOpen = false">
-                      <a href="#" class="hover:font-semibold">Team</a>
-                    </li>
-                    <li @click="isMenuItemOpen = false">
-                      <a href="#" class="hover:font-semibold">Blog</a>
-                    </li>
-                    <li @click="isMenuItemOpen = false">
-                      <a href="#" class="hover:font-semibold">Careers</a>
-                    </li>
-                  </ul>
-                </li>
+                      <h3
+                        :style="isMenuItemOpen && { 'text-decoration': 'underline' }"
+                      >
+                        Company
+                      </h3>
+                      <img
+                        :style="isMenuItemOpen && { transform: 'rotate(180deg)' }"
+                        src="images/icon-arrow-light.svg"
+                        alt="Icon arrow light"
+                      />
+                    </div>
+                    <ul
+                      x-show="isMenuItemOpen"
+                      @click.outside="isMenuItemOpen = false"
+                      class="absolute top-8 -ml-4 flex flex-col gap-2 rounded-sm bg-white p-4 pr-8 text-black"
+                    >
+                      <li @click="isMenuItemOpen = false">
+                        <a href="#" class="hover:font-semibold">About</a>
+                      </li>
+                      <li @click="isMenuItemOpen = false">
+                        <a href="#" class="hover:font-semibold">Team</a>
+                      </li>
+                      <li @click="isMenuItemOpen = false">
+                        <a href="#" class="hover:font-semibold">Blog</a>
+                      </li>
+                      <li @click="isMenuItemOpen = false">
+                        <a href="#" class="hover:font-semibold">Careers</a>
+                      </li>
+                    </ul>
+                  </li>
 
-                <li x-data="{ isMenuItemOpen: false }" class="relative">
-                  <div
-                    @click="isMenuItemOpen = ! isMenuItemOpen"
-                    class="flex items-center justify-center gap-2 font-bold"
-                  >
-                    <h3
-                      :style="isMenuItemOpen && { 'text-decoration': 'underline' }"
+                  <li x-data="{ isMenuItemOpen: false }" class="relative">
+                    <div
+                      @click="isMenuItemOpen = ! isMenuItemOpen"
+                      class="flex items-center justify-center gap-2 font-bold"
                     >
-                      Connect
-                    </h3>
-                    <img
-                      :style="isMenuItemOpen && { transform: 'rotate(180deg)' }"
-                      src="images/icon-arrow-light.svg"
-                      alt="Icon arrow light"
-                    />
-                  </div>
-                  <ul
-                    x-show="isMenuItemOpen"
-                    @click.outside="isMenuItemOpen = false"
-                    class="absolute top-8 -ml-4 flex flex-col gap-2 rounded-sm bg-white p-4 pr-8 text-black"
-                  >
-                    <li @click="isMenuItemOpen = false">
-                      <a href="#" class="hover:font-semibold">Contact</a>
-                    </li>
-                    <li @click="isMenuItemOpen = false">
-                      <a href="#" class="hover:font-semibold">Newsletter</a>
-                    </li>
-                    <li @click="isMenuItemOpen = false">
-                      <a href="#" class="hover:font-semibold">LinkedIn</a>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-              <!-- login and signup -->
-              <div class="flex gap-8">
-                <a href="#" class="rounded-3xl py-2 px-4 font-bold">Login</a>
-                <a
-                  href="#"
-                  class="bg-white-text hover:bg-very-light-red text-light-red-CTA-text hover:text-white-text hover:border-very-light-red rounded-3xl border py-2 px-4 font-bold"
-                  >Sign Up</a
-                >
-              </div>
-            </nav>
+                      <h3
+                        :style="isMenuItemOpen && { 'text-decoration': 'underline' }"
+                      >
+                        Connect
+                      </h3>
+                      <img
+                        :style="isMenuItemOpen && { transform: 'rotate(180deg)' }"
+                        src="images/icon-arrow-light.svg"
+                        alt="Icon arrow light"
+                      />
+                    </div>
+                    <ul
+                      x-show="isMenuItemOpen"
+                      @click.outside="isMenuItemOpen = false"
+                      class="absolute top-8 -ml-4 flex flex-col gap-2 rounded-sm bg-white p-4 pr-8 text-black"
+                    >
+                      <li @click="isMenuItemOpen = false">
+                        <a href="#" class="hover:font-semibold">Contact</a>
+                      </li>
+                      <li @click="isMenuItemOpen = false">
+                        <a href="#" class="hover:font-semibold">Newsletter</a>
+                      </li>
+                      <li @click="isMenuItemOpen = false">
+                        <a href="#" class="hover:font-semibold">LinkedIn</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
+            </template>
+            <!-- login and signup -->
+            <div class="hidden gap-8 md:flex">
+              <a href="#" class="rounded-3xl py-2 px-4 font-bold">Login</a>
+              <a
+                href="#"
+                class="bg-white-text hover:bg-very-light-red text-light-red-CTA-text hover:text-white-text hover:border-very-light-red rounded-3xl border py-2 px-4 font-bold"
+                >Sign Up</a
+              >
+            </div>
           </div>
 
           <div class="flex flex-col gap-4 text-center">
@@ -243,14 +246,14 @@
       <!-- Main body -->
       <section class="mb-40 flex flex-col gap-8 text-center">
         <h3 class="text-2xl font-bold">Designed for the future</h3>
-        <div class="flex flex-col lg:flex-row-reverse lg:items-center">
+        <div class="flex flex-col md:flex-row-reverse md:items-center">
           <img
-            class="lg:hidden"
+            class="md:hidden"
             src="images/illustration-editor-mobile.svg"
             alt="Illustration edit-266pxor mobile"
           />
           <img
-            class="hidden flex-1 overflow-hidden lg:block"
+            class="hidden flex-1 overflow-hidden md:block"
             src="images/illustration-editor-desktop.svg"
             alt="Illustration editor desktop"
           />
@@ -295,12 +298,12 @@
       </section>
       <section class="flex flex-col gap-8 text-center">
         <img
-          class="lg:hidden"
+          class="md:hidden"
           src="images/illustration-laptop-mobile.svg"
           alt="Illustration laptop mobile"
         />
         <img
-          class="hidden lg:block"
+          class="hidden md:block"
           src="images/illustration-laptop-desktop.svg"
           alt="Illustration laptop desktop"
         />
@@ -323,36 +326,36 @@
       <footer
         class="text-white-text bg-very-dark-black-blue flex flex-col items-center gap-10 rounded-tr-[100px] p-8 text-center"
       >
-        <div class="flex flex-col gap-8 lg:w-4/5 lg:flex-row lg:gap-40">
-          <img src="images/logo.svg" alt="Blogr logo" class="lg:h-[100%]" />
-          <div class="flex flex-col gap-8 lg:flex-row lg:gap-40">
-            <div class="flex flex-col gap-2">
-              <h3 class="text-lg font-bold">Product</h3>
-              <ul>
-                <li>Overview</li>
-                <li>Pricing</li>
-                <li>Marketplace</li>
-                <li>Features</li>
-                <li>Integrations</li>
-              </ul>
-            </div>
-            <div class="flex flex-col gap-2">
-              <h3 class="text-lg font-bold">Company</h3>
-              <ul>
-                <li>About</li>
-                <li>Team</li>
-                <li>Blog</li>
-                <li>Careers</li>
-              </ul>
-            </div>
-            <div class="flex flex-col gap-2">
-              <h3 class="text-lg font-bold">Connect</h3>
-              <ul>
-                <li>Contact</li>
-                <li>Newsletter</li>
-                <li>LinkedIn</li>
-              </ul>
-            </div>
+        <div
+          class="flex flex-col place-content-between gap-8 md:w-4/5 md:flex-grow md:flex-row"
+        >
+          <img src="images/logo.svg" alt="Blogr logo" class="md:h-[100%]" />
+          <div class="flex flex-col gap-2">
+            <h3 class="text-lg font-bold">Product</h3>
+            <ul>
+              <li>Overview</li>
+              <li>Pricing</li>
+              <li>Marketplace</li>
+              <li>Features</li>
+              <li>Integrations</li>
+            </ul>
+          </div>
+          <div class="flex flex-col gap-2">
+            <h3 class="text-lg font-bold">Company</h3>
+            <ul>
+              <li>About</li>
+              <li>Team</li>
+              <li>Blog</li>
+              <li>Careers</li>
+            </ul>
+          </div>
+          <div class="flex flex-col gap-2">
+            <h3 class="text-lg font-bold">Connect</h3>
+            <ul>
+              <li>Contact</li>
+              <li>Newsletter</li>
+              <li>LinkedIn</li>
+            </ul>
           </div>
         </div>
         <!-- Challenge credits -->
@@ -386,113 +389,116 @@
         </div>
       </footer>
     </main>
-    <nav
-      x-show="isSideNavOpen"
-      class="absolute top-24 right-0 left-0 mx-auto flex w-80 flex-col rounded-md bg-white shadow-md"
-    >
-      <div class="mx-auto w-60">
-        <ul class="mx-auto my-6 flex flex-col gap-4">
-          <li x-data="{ isMenuItemOpen: false }" class="flex flex-col">
-            <div
-              @click="isMenuItemOpen = ! isMenuItemOpen"
-              class="flex items-center justify-center gap-2 font-bold"
-            >
-              <h3>Product</h3>
-              <img
-                :style="isMenuItemOpen && { transform: 'rotate(180deg)' }"
-                src="images/icon-arrow-dark.svg"
-                alt="Icon arrow dark"
-              />
-            </div>
-            <div
-              x-show="isMenuItemOpen"
-              @click.outside="isMenuItemOpen = false"
-              class="mt-4 flex flex-col items-center gap-2 rounded-md bg-gray-200 py-4 px-16 text-xs font-bold"
-            >
-              <a @click="isMenuItemOpen = false" href="#">Overview</a>
-              <a @click="isMenuItemOpen = false" href="#">Pricing</a>
-              <a @click="isMenuItemOpen = false" href="#">Marketplace</a>
-              <a @click="isMenuItemOpen = false" href="#">Features</a>
-              <a @click="isMenuItemOpen = false" href="#">Integrations</a>
-            </div>
-            <!-- <ul
-              x-show="isMenuItemOpen"
-              @click.outside="isMenuItemOpen = false"
-              class="mt-4 flex flex-col items-center gap-2 rounded-md bg-gray-200 py-4 px-16 text-xs font-bold"
-            >
-              <li @click="isMenuItemOpen = false"><a href="#">Overview</a></li>
-              <li @click="isMenuItemOpen = false"><a href="#">Pricing</a></li>
-              <li @click="isMenuItemOpen = false">
-                <a href="#">Marketplace</a>
-              </li>
-              <li @click="isMenuItemOpen = false"><a href="#">Features</a></li>
-              <li @click="isMenuItemOpen = false">
-                <a href="#">Integrations</a>
-              </li>
-            </ul> -->
-          </li>
+    <!-- <template x-if="isSideNavOpen">
+      <nav
+        class="absolute top-24 right-0 left-0 mx-auto flex w-80 flex-col rounded-md bg-white shadow-md"
+      >
+        <div class="mx-auto w-60">
+          <ul class="mx-auto my-6 flex flex-col gap-4">
+            <li x-data="{ isMenuItemOpen: false }" class="flex flex-col">
+              <div
+                @click="isMenuItemOpen = ! isMenuItemOpen"
+                class="flex items-center justify-center gap-2 font-bold"
+              >
+                <h3>Product</h3>
+                <img
+                  :style="isMenuItemOpen && { transform: 'rotate(180deg)' }"
+                  src="images/icon-arrow-dark.svg"
+                  alt="Icon arrow dark"
+                />
+              </div>
+              <div
+                x-show="isMenuItemOpen"
+                @click.outside="isMenuItemOpen = false"
+                class="mt-4 flex flex-col items-center gap-2 rounded-md bg-gray-200 py-4 px-16 text-xs font-bold"
+              >
+                <a @click="isMenuItemOpen = false" href="#">Overview</a>
+                <a @click="isMenuItemOpen = false" href="#">Pricing</a>
+                <a @click="isMenuItemOpen = false" href="#">Marketplace</a>
+                <a @click="isMenuItemOpen = false" href="#">Features</a>
+                <a @click="isMenuItemOpen = false" href="#">Integrations</a>
+              </div> -->
+    <!-- <ul
+                x-show="isMenuItemOpen"
+                @click.outside="isMenuItemOpen = false"
+                class="mt-4 flex flex-col items-center gap-2 rounded-md bg-gray-200 py-4 px-16 text-xs font-bold"
+              >
+                <li @click="isMenuItemOpen = false"><a href="#">Overview</a></li>
+                <li @click="isMenuItemOpen = false"><a href="#">Pricing</a></li>
+                <li @click="isMenuItemOpen = false">
+                  <a href="#">Marketplace</a>
+                </li>
+                <li @click="isMenuItemOpen = false"><a href="#">Features</a></li>
+                <li @click="isMenuItemOpen = false">
+                  <a href="#">Integrations</a>
+                </li>
+              </ul> -->
+    <!-- </li>
 
-          <li x-data="{ isMenuItemOpen: false }" class="flex flex-col">
-            <div
-              @click="isMenuItemOpen = ! isMenuItemOpen"
-              class="flex items-center justify-center gap-2 font-bold"
-            >
-              <h3>Company</h3>
-              <img
-                :style="isMenuItemOpen && { transform: 'rotate(180deg)' }"
-                src="images/icon-arrow-dark.svg"
-                alt="Icon arrow dark"
-              />
-            </div>
-            <ul
-              x-show="isMenuItemOpen"
-              @click.outside="isMenuItemOpen = false"
-              class="mt-4 flex flex-col items-center gap-2 rounded-md bg-gray-200 py-4 px-16 text-xs font-bold"
-            >
-              <li @click="isMenuItemOpen = false"><a href="#">About</a></li>
-              <li @click="isMenuItemOpen = false"><a href="#">Team</a></li>
-              <li @click="isMenuItemOpen = false"><a href="#">Blog</a></li>
-              <li @click="isMenuItemOpen = false"><a href="#">Careers</a></li>
-            </ul>
-          </li>
+            <li x-data="{ isMenuItemOpen: false }" class="flex flex-col">
+              <div
+                @click="isMenuItemOpen = ! isMenuItemOpen"
+                class="flex items-center justify-center gap-2 font-bold"
+              >
+                <h3>Company</h3>
+                <img
+                  :style="isMenuItemOpen && { transform: 'rotate(180deg)' }"
+                  src="images/icon-arrow-dark.svg"
+                  alt="Icon arrow dark"
+                />
+              </div>
+              <ul
+                x-show="isMenuItemOpen"
+                @click.outside="isMenuItemOpen = false"
+                class="mt-4 flex flex-col items-center gap-2 rounded-md bg-gray-200 py-4 px-16 text-xs font-bold"
+              >
+                <li @click="isMenuItemOpen = false"><a href="#">About</a></li>
+                <li @click="isMenuItemOpen = false"><a href="#">Team</a></li>
+                <li @click="isMenuItemOpen = false"><a href="#">Blog</a></li>
+                <li @click="isMenuItemOpen = false"><a href="#">Careers</a></li>
+              </ul>
+            </li>
 
-          <li x-data="{ isMenuItemOpen: false }" class="flex flex-col">
-            <div
-              @click="isMenuItemOpen = ! isMenuItemOpen"
-              class="flex items-center justify-center gap-2 font-bold"
-            >
-              <h3>Connect</h3>
-              <img
-                :style="isMenuItemOpen && { transform: 'rotate(180deg)' }"
-                src="images/icon-arrow-dark.svg"
-                alt="Icon arrow dark"
-              />
-            </div>
-            <ul
-              x-show="isMenuItemOpen"
-              @click.outside="isMenuItemOpen = false"
-              class="mt-4 flex flex-col items-center gap-2 rounded-md bg-gray-200 py-4 px-16 text-xs font-bold"
-            >
-              <li @click="isMenuItemOpen = false"><a href="#">Contact</a></li>
-              <li @click="isMenuItemOpen = false">
-                <a href="#">Newsletter</a>
-              </li>
-              <li @click="isMenuItemOpen = false"><a href="#">LinkedIn</a></li>
-            </ul>
-          </li>
-        </ul>
-        <!-- login and signup -->
-        <div
-          class="mx-auto flex flex-col items-center gap-4 border-t p-8 font-bold"
-        >
-          <h3 class="">Login</h3>
-          <a
-            class="text-white-text from-very-light-red to-light-red rounded-3xl bg-gradient-to-r px-6 py-2"
-            href="#"
-            >Sign Up</a
+            <li x-data="{ isMenuItemOpen: false }" class="flex flex-col">
+              <div
+                @click="isMenuItemOpen = ! isMenuItemOpen"
+                class="flex items-center justify-center gap-2 font-bold"
+              >
+                <h3>Connect</h3>
+                <img
+                  :style="isMenuItemOpen && { transform: 'rotate(180deg)' }"
+                  src="images/icon-arrow-dark.svg"
+                  alt="Icon arrow dark"
+                />
+              </div>
+              <ul
+                x-show="isMenuItemOpen"
+                @click.outside="isMenuItemOpen = false"
+                class="mt-4 flex flex-col items-center gap-2 rounded-md bg-gray-200 py-4 px-16 text-xs font-bold"
+              >
+                <li @click="isMenuItemOpen = false"><a href="#">Contact</a></li>
+                <li @click="isMenuItemOpen = false">
+                  <a href="#">Newsletter</a>
+                </li>
+                <li @click="isMenuItemOpen = false">
+                  <a href="#">LinkedIn</a>
+                </li>
+              </ul>
+            </li>
+          </ul> -->
+    <!-- login and signup -->
+    <!-- <div
+            class="mx-auto flex flex-col items-center gap-4 border-t p-8 font-bold"
           >
+            <h3 class="">Login</h3>
+            <a
+              class="text-white-text from-very-light-red to-light-red rounded-3xl bg-gradient-to-r px-6 py-2"
+              href="#"
+              >Sign Up</a
+            >
+          </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+    </template> -->
   </body>
 </html>
