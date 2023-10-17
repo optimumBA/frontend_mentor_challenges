@@ -27,9 +27,217 @@
     />
     <link rel="manifest" href="../site.webmanifest" />
     <link rel="stylesheet" href="style.css" />
+    <script src="//unpkg.com/alpinejs" defer></script>
   </head>
   <body class="m-0">
-    <div
+    <div class="flex justify-center bg-blue-600">
+      <div
+        class="relative flex flex-col items-center overflow-hidden bg-white text-center"
+      >
+        <div
+          class="from-very-light-red to-light-red relative flex items-center justify-center rounded-bl-[100px] bg-gradient-to-r"
+        >
+          <div
+            class="absolute top-8 lg:top-40 flex w-full items-center bg-indigo-500 text-white"
+          >
+            <nav class="items-center gap-1 lg:gap-10 lg:mx-24 flex">
+              <img src="/images/logo.svg" alt="logo" />
+              <div x-data="{open: false}">
+                <h1 @click="open = !open" class="font-bold">Product</h1>
+                <ul x-show="open">
+                  <li>Overview</li>
+                  <li>Pricing</li>
+                  <li>Marketplace</li>
+                  <li>Features</li>
+                  <li>Integrations</li>
+                </ul>
+              </div>
+              <div>Company</div>
+              <div>connect</div>
+            </nav>
+            <div class="float-left flex gap-5">
+              <button>Login</button>
+              <button
+                class="text-light-red w-32 rounded-3xl bg-white px-4 py-2"
+              >
+                Sign Up
+              </button>
+            </div>
+          </div>
+          <div class="absolute z-10 flex flex-col items-center">
+            <div class=" text-center text-white">
+              <h1 class="font-overpass px-11 text-3xl font-semibold">
+                A modern publishing platform
+              </h1>
+              <p class="font-overpass px-8 py-3 text-sm">
+                Grow your audience and build your online brand
+              </p>
+            </div>
+            <div class="flex justify-center gap-3 p-3 text-sm font-bold">
+              <button class="w-32 rounded-3xl bg-white p-2">
+                Start for Free
+              </button>
+              <button class="w-32 rounded-3xl border-2 p-2">Learn More</button>
+            </div>
+          </div>
+          <div>
+            <img
+              src="../images/bg-pattern-intro-mobile.svg"
+              alt="background pattern"
+              class="relative lg:hidden"
+            />
+            <img
+              src="../images/bg-pattern-intro-desktop.svg"
+              alt=""
+              class="hidden lg:block"
+            />
+          </div>
+        </div>
+
+        <section class="w-full grid-cols-2 items-center py-8 lg:grid">
+          <div class="top-36 col-span-2 mt-8 py-8 lg:relative lg:py-16">
+            <h2 class="text-2xl font-semibold">Designed for the future</h2>
+          </div>
+          <div class="flex justify-center lg:order-last">
+            <img
+              src="../images/illustration-editor-mobile.svg"
+              alt="illustration image"
+              class="py-4 lg:hidden"
+            />
+            <img
+              src="../images/illustration-editor-desktop.svg"
+              alt="illustration image"
+              class="-right-64 order-last hidden translate-x-44 lg:block"
+            />
+          </div>
+          <div>
+            <div class="font-overpass mx-14 lg:mx-20 lg:text-left">
+              <h3 class="py-4 text-2xl font-semibold">
+                Introducing an extensible editor
+              </h3>
+              <p class="py-4 text-sm">
+                Blogr features an exceedingly intuitive interface which lets you
+                focus on one thing: creating content. The editor supports
+                management of multiple blogs and allows easy manipulation of
+                embeds such as images, videos, and Markdown. Extensibility with
+                plugins and themes provide easy ways to add functionality or
+                change the looks of a blog.
+              </p>
+              <h3 class="py-4 text-2xl font-semibold">
+                Robust content management
+              </h3>
+              <p class="text-sm">
+                Flexible content management enables users to easily move through
+                posts. Increase the usability of your blog by adding customized
+                categories, sections, format, or flow. With this functionality,
+                you’re in full control.
+              </p>
+            </div>
+          </div>
+        </section>
+        <section class="font-overpass mt-48 w-full text-white lg:mt-0">
+          <div
+            class="bg-very-dark-gray-blue h-[550px] overflow-hidden rounded-tr-[50px] rounded-bl-[50px] lg:h-[400px]"
+          >
+            <img
+              src="../images/bg-pattern-circles.svg"
+              alt="circle patterns"
+              class="relative -top-24 w-[900px] lg:-top-60 lg:-left-44 lg:w-[700px]"
+            />
+            <div
+              class="absolute bottom-[1400px] items-center lg:bottom-[700px] lg:mx-10 lg:flex"
+            >
+              <img src="../images/illustration-phones.svg" alt="phones image" />
+              <div class="lg:text-left">
+                <h4 class="px-8 pb-3 text-3xl font-semibold">
+                  State of the Art Infrastructure
+                </h4>
+                <p class="px-14 pb-8 text-sm lg:mr-12 lg:px-8">
+                  With reliability and speed in mind, worldwide data centers
+                  provide the backbone for ultra-fast connectivity. This ensures
+                  your site will load instantly, no matter where your readers
+                  are, keeping your site competitive.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="w-full grid-cols-2 items-center py-8 lg:grid">
+          <div class="flex justify-center lg:order-last">
+            <img
+              src="../images/illustration-laptop-mobile.svg"
+              alt="illustration image"
+              class="py-4 lg:hidden"
+            />
+            <img
+              src="../images/illustration-laptop-desktop.svg"
+              alt="illustration image"
+              class="hidden w-[950px] -translate-x-44 lg:block"
+            />
+          </div>
+          <div class="lg:order-last">
+            <div class="font-overpass lg:text-left">
+              <h3 class="py-4 px-8 text-2xl font-semibold">
+                Free, open, simple
+              </h3>
+              <p class="py-4 px-8 text-sm">
+                Blogr is a free and open source application backed by a large
+                community of helpful developers. It supports features such as
+                code syntax highlighting, RSS feeds, social media integration,
+                third-party commenting tools, and works seamlessly with Google
+                Analytics. The architecture is clean and is relatively easy to
+                learn.
+              </p>
+              <h3 class="py-4 px-8 text-2xl font-semibold">Powerful tooling</h3>
+              <p class="px-8 text-sm">
+                Batteries included. We built a simple and straightforward CLI
+                tool that makes customization and deployment a breeze, but
+                capable of producing even the most complicated sites.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="w-full">
+          <div
+            class="bg-very-dark-black-blue font-overpass text-app-white flex flex-col items-center rounded-tr-[50px] py-16 text-sm lg:flex-row lg:items-start lg:justify-around lg:text-left"
+          >
+            <div class="my-10 lg:my-3">
+              <img src="../images/logo.svg" alt="company logo" />
+            </div>
+            <div>
+              <ul>
+                <li class="my-3 font-semibold">Product</li>
+                <li>Overview</li>
+                <li>Pricing</li>
+                <li>Marketplace</li>
+                <li>Features</li>
+                <li>Integrations</li>
+              </ul>
+            </div>
+            <div>
+              <ul>
+                <li class="my-3 font-semibold">Company</li>
+                <li>About</li>
+                <li>Team</li>
+                <li>Blog</li>
+                <li>Careers</li>
+              </ul>
+            </div>
+            <div>
+              <ul>
+                <li class="my-3 font-semibold">Connect</li>
+                <li>Contact</li>
+                <li>Newsletter</li>
+                <li>LinkedIn</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <!-- <div
       class="flex h-[100vh] w-full flex-col place-content-center text-center"
     >
       <div>
@@ -54,10 +262,10 @@
       <div class="mt-3">
         <a
           class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA/frontend_mentor_challenges/tree/blogr_landing_page/challenges/blogr_landing_page"
+          href="https://github.com/ngumokenneth/frontend_mentor_challenges/tree/blogr_landing_page/challenges/blogr_landing_page"
           >Source code</a
         >
       </div>
-    </div>
+    </div> -->
   </body>
 </html>
