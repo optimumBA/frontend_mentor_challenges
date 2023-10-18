@@ -28,51 +28,57 @@
     <link rel="manifest" href="../site.webmanifest" />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="bg-pale-blue m-0">
+  <body class="bg-pale-blue font-red-hat m-0">
     <div
       class="absolute z-10 flex h-[100vh] w-full flex-col place-content-center text-center"
     >
       <div
-        class="mx-auto flex w-80 flex-col items-center overflow-hidden rounded-lg bg-white lg:w-3/12"
+        class="mx-auto flex w-[330px] flex-col items-center overflow-hidden rounded-2xl bg-white lg:w-[380px]"
       >
         <div>
-          <img src="/./images/illustration-hero.svg" alt="hero illustration" />
+          <img src="/images/illustration-hero.svg" alt="hero illustration" />
         </div>
-        <div class="mx-4">
+        <div class="mx-3">
           <div class="p-4">
             <h1 class="text-dark-blue text-xl font-bold">Order Summary</h1>
-            <p class="pt-3 text-sm">
+            <p class="text-desaturated-blue px-5 pt-3 text-sm lg:mx-3">
               You can now listen to millions of songs, audiobooks, and podcasts
               on any device anywhere you like!
             </p>
           </div>
-          <div
-            class="bg-pale-blue mx-auto flex items-center justify-between rounded-lg p-2"
-          >
-            <img src="/./images/icon-music.svg" alt="music icon" />
-            <div class="flex items-center">
-              <h2 class="font-bold">
-                Annual Plan
-                <span class="text-desaturated-blue block font-normal"
-                  >$59.99/year</span
-                >
-              </h2>
-            </div>
 
-            <a
-              href="#"
-              class="text-bright-blue cursor-pointer px-4 underline hover:no-underline active:no-underline"
-              >Change</a
+          <div>
+            <div
+              class="bg-very-pale-blue mx-5 flex items-center rounded-lg py-1"
             >
+              <img src="/images/icon-music.svg" alt="music icon" />
+              <div class="relative flex items-center px-4">
+                <h2 class="text-dark-blue text-sm font-bold">
+                  Annual Plan
+                  <span class="text-desaturated-blue block font-normal"
+                    >$59.99/year</span
+                  >
+                </h2>
+                <a
+                  href="#"
+                  class="text-bright-blue absolute -right-20 cursor-pointer text-xs underline hover:no-underline active:no-underline lg:-right-32"
+                  >Change</a
+                >
+              </div>
+            </div>
           </div>
-          <div class="bg-bright-blue mt-4 w-full rounded-lg py-3">
-            <a href="#" class="mt-4 w-full font-bold text-white"
-              >Proceed to Payment</a
-            >
-          </div>
+          <a
+            href="#"
+            class="bg-bright-blue mx-5 my-3 block rounded-lg py-3 font-bold text-white"
+            >Proceed to Payment</a
+          >
         </div>
 
-        <button class="py-6 font-bold text-gray-400">Cancel Order</button>
+        <div>
+          <button class="py-3 text-sm font-bold text-gray-400">
+            Cancel Order
+          </button>
+        </div>
       </div>
 
       <div class="mt-4">
@@ -97,15 +103,20 @@
       <div class="mt-3">
         <a
           class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/ngumkenneth/frontend_mentor_challenges/tree/order_summary_component/challenges/order_summary_component"
+          href="https://github.com/ngumokenneth/frontend_mentor_challenges/tree/order_summary_component/challenges/order_summary_component"
           >Source code</a
         >
       </div>
     </div>
     <img
+      src="../images/pattern-background-mobile.svg"
+      alt="background pattern"
+      class="lg:hidden"
+    />
+    <img
       src="../images/pattern-background-desktop.svg"
       alt="background-pattern"
-      class="relative"
+      class="relative hidden lg:block"
     />
   </body>
 </html>
