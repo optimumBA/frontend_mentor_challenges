@@ -44,15 +44,15 @@
               <img src="/images/logo.svg" alt="logo" />
               <div x-data="{open: false}">
                 <h1 @click="open = !open" class="font-bold">Product</h1>
-                <ul x-show="open">
+                <ul x-show="open" x-bind:class="open ? 'absolute' : '' 'bg-white' ">
                   <li>Overview</li>
                   <li>Pricing</li>
                   <li>Marketplace</li>
                   <li>Features</li>
-                  <li>Integrations</li>
+                  <li>Integrations</li> 
                 </ul>
               </div>
-              <div>Company</div>
+              <div >Company</div>
               <div>connect</div>
             </nav>
             <div class="float-left flex gap-5">
