@@ -12,6 +12,9 @@ module.exports = {
         'slightly-transparent-whites': 'hsla(0, 0%, 100%, 0.75)',
         'slightly-transparent-white': 'hsla(0, 0%, 100%, 0.6)',
       },
+      fontFamily: {
+        inter: ['Inter', 'sans-serif'],
+      },
     },
   },
   plugins: [],
