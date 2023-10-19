@@ -29,68 +29,342 @@
     <link rel="stylesheet" href="style.css" />
     <script src="//unpkg.com/alpinejs" defer></script>
   </head>
-  <body class="m-0">
+  <body class="font-overpass m-0">
     <div class="flex justify-center bg-blue-600">
-      <div
-        class="relative flex flex-col items-center overflow-hidden bg-white text-center"
-      >
+      <div class="relative overflow-hidden bg-white text-center">
+        <!-- header -->
         <div
-          class="from-very-light-red to-light-red relative flex items-center justify-center rounded-bl-[100px] bg-gradient-to-r"
+          class="from-very-light-red to-light-red h-[500px] rounded-bl-[10%] bg-gradient-to-r text-white"
         >
           <div
-            class="absolute top-8 lg:top-40 flex w-full items-center bg-indigo-500 text-white"
+            class="relative mx-auto hidden w-11/12 justify-between py-10 lg:flex xl:flex"
           >
-            <nav class="items-center gap-1 lg:gap-10 lg:mx-24 flex">
-              <img src="/images/logo.svg" alt="logo" />
-              <div x-data="{open: false}">
-                <h1 @click="open = !open" class="font-bold">Product</h1>
-                <ul x-show="open" x-bind:class="open ? 'absolute' : '' 'bg-white' ">
-                  <li>Overview</li>
-                  <li>Pricing</li>
-                  <li>Marketplace</li>
-                  <li>Features</li>
-                  <li>Integrations</li> 
+            <nav class="z-30 flex items-center gap-x-10">
+              <div>
+                <img src="../images/logo.svg" alt="Blogr logo" />
+              </div>
+              <div>
+                <ul class="flex flex-row gap-x-6">
+                  <li x-data="{open: false}" x-on:click="open = ! open">
+                    <a href="#" class="flex items-center gap-2">
+                      <span>Products</span>
+                      <svg
+                        :class="{'rotate-180' : open = open}"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="10"
+                        height="7"
+                      >
+                        <path
+                          fill="none"
+                          stroke="#FFF"
+                          stroke-width="2"
+                          opacity=".75"
+                          d="M1 1l4 4 4-4"
+                        />
+                      </svg>
+                    </a>
+                    <ul
+                      x-show="open"
+                      x-on:click.outside="open = false"
+                      class="absolute rounded-lg bg-white px-4 text-black"
+                    >
+                      <li class="hover:cursor-pointer hover:font-bold">
+                        Overview
+                      </li>
+                      <li class="hover:cursor-pointer hover:font-bold">
+                        Pricing
+                      </li>
+                      <li class="hover:cursor-pointer hover:font-bold">
+                        Marketplace
+                      </li>
+                      <li class="hover:cursor-pointer hover:font-bold">
+                        Features
+                      </li>
+                      <li class="hover:cursor-pointer hover:font-bold">
+                        Integrations
+                      </li>
+                    </ul>
+                  </li>
+                  <li x-data="{open: false}" x-on:click="open =! open">
+                    <a href="#" class="flex items-center gap-2">
+                      <span>Company</span>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="10"
+                        height="7"
+                      >
+                        <path
+                          fill="none"
+                          stroke="#FFF"
+                          stroke-width="2"
+                          opacity=".75"
+                          d="M1 1l4 4 4-4"
+                        />
+                      </svg>
+                    </a>
+                    <ul
+                      x-show="open"
+                      x-on:click.outside="open = false"
+                      class="absolute rounded-lg bg-white px-4 text-black"
+                    >
+                      <li class="hover:cursor-pointer hover:font-bold">
+                        About
+                      </li>
+                      <li class="hover:cursor-pointer hover:font-bold">Team</li>
+                      <li class="hover:cursor-pointer hover:font-bold">Blog</li>
+                      <li class="hover:cursor-pointer hover:font-bold">
+                        Careers
+                      </li>
+                    </ul>
+                  </li>
+                  <li x-data="{open: false}" x-on:click="open =! open">
+                    <a href="#" class="flex items-center gap-2">
+                      <span>Connect</span>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="10"
+                        height="7"
+                      >
+                        <path
+                          fill="none"
+                          stroke="#FFF"
+                          stroke-width="2"
+                          opacity=".75"
+                          d="M1 1l4 4 4-4"
+                        />
+                      </svg>
+                    </a>
+                    <ul
+                      x-show="open"
+                      x-on:click.outside="open = false"
+                      class="absolute rounded-lg bg-white px-4 text-black"
+                    >
+                      <li class="hover:cursor-pointer hover:font-bold">
+                        Contact
+                      </li>
+                      <li class="hover:cursor-pointer hover:font-bold">
+                        Newsletter
+                      </li>
+                      <li class="hover:cursor-pointer hover:font-bold">
+                        LinkedIn
+                      </li>
+                    </ul>
+                  </li>
                 </ul>
               </div>
-              <div >Company</div>
-              <div>connect</div>
             </nav>
-            <div class="float-left flex gap-5">
-              <button>Login</button>
+            <div>
+              <button class="px-3 font-semibold">login</button>
               <button
-                class="text-light-red w-32 rounded-3xl bg-white px-4 py-2"
+                class="hover:bg-very-light-red text-light-red rounded-3xl bg-white px-3 py-1 font-semibold hover:text-white"
               >
-                Sign Up
+                sign up
               </button>
             </div>
           </div>
-          <div class="absolute z-10 flex flex-col items-center">
-            <div class=" text-center text-white">
-              <h1 class="font-overpass px-11 text-3xl font-semibold">
+
+          <!-- mobile navigation -->
+          <div x-data="{menu: false}" class="relative z-50 lg:hidden">
+            <div class="mx-10 py-10">
+              <div class="flex items-center justify-between">
+                <img src="../images/logo.svg" alt="Blogr logo" />
+                <div>
+                  <button x-on:click="menu= true">
+                    <img
+                      :class=" {'hidden' : menu = menu}"
+                      src="../images/icon-hamburger.svg"
+                      alt=""
+                    />
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div
+              x-show="menu"
+              class="text-very-dark-blue mx-10 rounded-xl bg-gray-100"
+            >
+              <button x-on:click="menu= false" class="absolute top-8 right-0">
+                <img
+                  class="mt-2 mr-10"
+                  src="../images/icon-close.svg"
+                  alt="close icon"
+                  class="h-full"
+                />
+              </button>
+              <nav class="relative z-30">
+                <ul>
+                  <li
+                    x-data="{open: false}"
+                    x-on:click="open =! open"
+                    class="py-3 font-semibold"
+                  >
+                    <a href="#" class="flex items-center justify-center gap-2"
+                      ><span>Product</span
+                      ><svg
+                        :class="{'rotate-180' : open = open}"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="10"
+                        height="7"
+                      >
+                        <path
+                          fill="none"
+                          stroke="#ef4444"
+                          stroke-width="2"
+                          opacity=".75"
+                          d="M1 1l4 4 4-4"
+                        /></svg
+                    ></a>
+                    <ul
+                      x-show="open"
+                      x-on:click.outside="open = false"
+                      class="mx-auto w-8/12 rounded-lg bg-gray-100 py-4 px-4"
+                    >
+                      <li
+                        class="hover:font-semi-bold hover:cursor-pointer hover:text-black"
+                      >
+                        Overview
+                      </li>
+                      <li class="py-2 hover:cursor-pointer hover:font-bold">
+                        Pricing
+                      </li>
+                      <li class="pb-3 hover:cursor-pointer hover:font-bold">
+                        Marketplace
+                      </li>
+                      <li class="pb-3 hover:cursor-pointer hover:font-bold">
+                        Features
+                      </li>
+                      <li class="hover:cursor-pointer hover:font-bold">
+                        Integrations
+                      </li>
+                    </ul>
+                  </li>
+                  <li
+                    x-data="{open: false}"
+                    x-on:click="open =! open"
+                    class="py-3 font-semibold"
+                    class="pb-3 font-semibold"
+                  >
+                    <a class="flex items-center justify-center gap-2" href="#"
+                      ><span>Company</span
+                      ><svg
+                        :class="{'rotate-180' : open = open}"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="10"
+                        height="7"
+                      >
+                        <path
+                          fill="none"
+                          stroke="#ef4444"
+                          stroke-width="2"
+                          opacity=".75"
+                          d="M1 1l4 4 4-4"
+                        /></svg
+                    ></a>
+                    <ul
+                      x-show="open"
+                      x-on:click.outside="open = false"
+                      class="mx-auto w-8/12 rounded-lg bg-gray-100 py-4 px-4"
+                      class="rounded-lg bg-white px-4"
+                    >
+                      <li class="hover:cursor-pointer hover:font-bold">
+                        About
+                      </li>
+                      <li class="hover:cursor-pointer hover:font-bold">Team</li>
+                      <li class="hover:cursor-pointer hover:font-bold">Blog</li>
+                      <li class="hover:cursor-pointer hover:font-bold">
+                        Careers
+                      </li>
+                    </ul>
+                  </li>
+                  <li
+                    x-data="{open: false}"
+                    x-on:click="open =! open"
+                    class="py-3 font-semibold"
+                    class="pb-3 font-semibold"
+                  >
+                    <a class="flex items-center justify-center gap-2" href="#"
+                      ><span>connect</span
+                      ><svg
+                        :class="{'rotate-180' : open = open}"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="10"
+                        height="7"
+                      >
+                        <path
+                          fill="none"
+                          stroke="#ef4444"
+                          stroke-width="2"
+                          opacity=".75"
+                          d="M1 1l4 4 4-4"
+                        /></svg
+                    ></a>
+                    <ul
+                      x-show="open"
+                      x-on:click.outside="open = false"
+                      class="mx-auto w-8/12 rounded-lg bg-gray-100 py-4 px-4"
+                      class="rounded-lg bg-white px-4"
+                    >
+                      <li class="hover:cursor-pointer hover:font-bold">
+                        Contact
+                      </li>
+                      <li class="hover:cursor-pointer hover:font-bold">
+                        Newsletter
+                      </li>
+                      <li class="hover:cursor-pointer hover:font-bold">
+                        LinkedIn
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
+              <div class="border-2 border-gray-400"></div>
+              <div class="flex flex-col items-center">
+                <button class="py-3 font-semibold">Login</button>
+                <button
+                  class="from-very-light-red to-light-red mb-3 w-28 rounded-2xl bg-gradient-to-r py-1 font-semibold"
+                >
+                  Sign Up
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- hero section -->
+          <div class="w-full">
+            <div
+              class="absolute -top-44 flex w-full items-center justify-center lg:-top-60"
+            >
+              <img
+                src="../images/bg-pattern-intro-mobile.svg"
+                alt=""
+                class="h-[1000px] object-cover object-center mix-blend-overlay lg:hidden"
+              />
+              <img
+                src="../images/bg-pattern-intro-desktop.svg"
+                alt="background pattern"
+                class="hidden object-cover object-center mix-blend-overlay lg:block"
+              />
+            </div>
+            <div class="h-full py-7 pt-40">
+              <h1 class="text-2xl font-semibold">
                 A modern publishing platform
               </h1>
-              <p class="font-overpass px-8 py-3 text-sm">
+              <p class="py-2 text-xs font-light">
                 Grow your audience and build your online brand
               </p>
             </div>
-            <div class="flex justify-center gap-3 p-3 text-sm font-bold">
-              <button class="w-32 rounded-3xl bg-white p-2">
+            <div>
+              <button
+                class="text-light-red rounded-3xl bg-white px-3 py-1 text-center font-semibold"
+              >
                 Start for Free
               </button>
-              <button class="w-32 rounded-3xl border-2 p-2">Learn More</button>
+              <button
+                class="hover:text-light-red rounded-3xl border-2 border-white px-5 font-semibold text-white hover:bg-white"
+              >
+                Learn More
+              </button>
             </div>
-          </div>
-          <div>
-            <img
-              src="../images/bg-pattern-intro-mobile.svg"
-              alt="background pattern"
-              class="relative lg:hidden"
-            />
-            <img
-              src="../images/bg-pattern-intro-desktop.svg"
-              alt=""
-              class="hidden lg:block"
-            />
           </div>
         </div>
 
