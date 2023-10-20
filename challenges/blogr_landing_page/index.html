@@ -30,18 +30,18 @@
     <script src="//unpkg.com/alpinejs" defer></script>
   </head>
   <body class="font-overpass m-0">
-    <div class="flex justify-center bg-blue-600">
+    <div class="flex flex-col justify-center">
       <div class="relative overflow-hidden bg-white text-center">
         <!-- header -->
         <div
-          class="from-very-light-red to-light-red h-[500px] rounded-bl-[10%] bg-gradient-to-r text-white"
+          class="from-very-light-red to-light-red h-[500px] rounded-bl-[10%] bg-gradient-to-r text-white lg:h-[600px]"
         >
           <div
             class="relative mx-auto hidden w-11/12 justify-between py-10 lg:flex xl:flex"
           >
             <nav class="z-30 flex items-center gap-x-10">
               <div>
-                <img src="../images/logo.svg" alt="Blogr logo" />
+                <img src="images/logo.svg" alt="Blogr logo" />
               </div>
               <div>
                 <ul class="flex flex-row gap-x-6">
@@ -67,22 +67,14 @@
                       x-show="open"
                       x-on:click.outside="open = false"
                       class="absolute rounded-lg bg-white px-4 text-black"
+                      x-data="{products: ['Overview', 'Pricing', 'Marketplace', 'Integrations']}"
                     >
-                      <li class="hover:cursor-pointer hover:font-bold">
-                        Overview
-                      </li>
-                      <li class="hover:cursor-pointer hover:font-bold">
-                        Pricing
-                      </li>
-                      <li class="hover:cursor-pointer hover:font-bold">
-                        Marketplace
-                      </li>
-                      <li class="hover:cursor-pointer hover:font-bold">
-                        Features
-                      </li>
-                      <li class="hover:cursor-pointer hover:font-bold">
-                        Integrations
-                      </li>
+                      <template x-for="product in products">
+                        <li
+                          x-text="product"
+                          class="hover:cursor-pointer hover:font-bold"
+                        ></li>
+                      </template>
                     </ul>
                   </li>
                   <li x-data="{open: false}" x-on:click="open =! open">
@@ -106,15 +98,14 @@
                       x-show="open"
                       x-on:click.outside="open = false"
                       class="absolute rounded-lg bg-white px-4 text-black"
+                      x-data="{items: ['Team', 'Blog', 'Careers']}"
                     >
-                      <li class="hover:cursor-pointer hover:font-bold">
-                        About
-                      </li>
-                      <li class="hover:cursor-pointer hover:font-bold">Team</li>
-                      <li class="hover:cursor-pointer hover:font-bold">Blog</li>
-                      <li class="hover:cursor-pointer hover:font-bold">
-                        Careers
-                      </li>
+                      <template x-for="item in items">
+                        <li
+                          x-text="item"
+                          class="hover:cursor-pointer hover:font-bold"
+                        ></li>
+                      </template>
                     </ul>
                   </li>
                   <li x-data="{open: false}" x-on:click="open =! open">
@@ -138,16 +129,14 @@
                       x-show="open"
                       x-on:click.outside="open = false"
                       class="absolute rounded-lg bg-white px-4 text-black"
+                      x-data="{items: ['Contacts', 'Newsletter', 'LinkedIn']}"
                     >
-                      <li class="hover:cursor-pointer hover:font-bold">
-                        Contact
-                      </li>
-                      <li class="hover:cursor-pointer hover:font-bold">
-                        Newsletter
-                      </li>
-                      <li class="hover:cursor-pointer hover:font-bold">
-                        LinkedIn
-                      </li>
+                      <template x-for="item in items">
+                        <li
+                          x-text="item"
+                          class="hover:cursor-pointer hover:font-bold"
+                        ></li>
+                      </template>
                     </ul>
                   </li>
                 </ul>
@@ -167,12 +156,12 @@
           <div x-data="{menu: false}" class="relative z-50 lg:hidden">
             <div class="mx-10 py-10">
               <div class="flex items-center justify-between">
-                <img src="../images/logo.svg" alt="Blogr logo" />
-                <div>
+                <img src="images/logo.svg" alt="Blogr logo" />
+                <div id="mobile-menu-toggle">
                   <button x-on:click="menu= true">
                     <img
                       :class=" {'hidden' : menu = menu}"
-                      src="../images/icon-hamburger.svg"
+                      src="images/icon-hamburger.svg"
                       alt=""
                     />
                   </button>
@@ -180,152 +169,141 @@
               </div>
             </div>
 
-            <div
-              x-show="menu"
-              class="text-very-dark-blue mx-10 rounded-xl bg-gray-100"
-            >
-              <button x-on:click="menu= false" class="absolute top-8 right-0">
-                <img
-                  class="mt-2 mr-10"
-                  src="../images/icon-close.svg"
-                  alt="close icon"
-                  class="h-full"
-                />
-              </button>
-              <nav class="relative z-30">
-                <ul>
-                  <li
-                    x-data="{open: false}"
-                    x-on:click="open =! open"
-                    class="py-3 font-semibold"
-                  >
-                    <a href="#" class="flex items-center justify-center gap-2"
-                      ><span>Product</span
-                      ><svg
-                        :class="{'rotate-180' : open = open}"
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="10"
-                        height="7"
-                      >
-                        <path
-                          fill="none"
-                          stroke="#ef4444"
-                          stroke-width="2"
-                          opacity=".75"
-                          d="M1 1l4 4 4-4"
-                        /></svg
-                    ></a>
-                    <ul
-                      x-show="open"
-                      x-on:click.outside="open = false"
-                      class="mx-auto w-8/12 rounded-lg bg-gray-100 py-4 px-4"
-                    >
-                      <li
-                        class="hover:font-semi-bold hover:cursor-pointer hover:text-black"
-                      >
-                        Overview
-                      </li>
-                      <li class="py-2 hover:cursor-pointer hover:font-bold">
-                        Pricing
-                      </li>
-                      <li class="pb-3 hover:cursor-pointer hover:font-bold">
-                        Marketplace
-                      </li>
-                      <li class="pb-3 hover:cursor-pointer hover:font-bold">
-                        Features
-                      </li>
-                      <li class="hover:cursor-pointer hover:font-bold">
-                        Integrations
-                      </li>
-                    </ul>
-                  </li>
-                  <li
-                    x-data="{open: false}"
-                    x-on:click="open =! open"
-                    class="py-3 font-semibold"
-                    class="pb-3 font-semibold"
-                  >
-                    <a class="flex items-center justify-center gap-2" href="#"
-                      ><span>Company</span
-                      ><svg
-                        :class="{'rotate-180' : open = open}"
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="10"
-                        height="7"
-                      >
-                        <path
-                          fill="none"
-                          stroke="#ef4444"
-                          stroke-width="2"
-                          opacity=".75"
-                          d="M1 1l4 4 4-4"
-                        /></svg
-                    ></a>
-                    <ul
-                      x-show="open"
-                      x-on:click.outside="open = false"
-                      class="mx-auto w-8/12 rounded-lg bg-gray-100 py-4 px-4"
-                      class="rounded-lg bg-white px-4"
-                    >
-                      <li class="hover:cursor-pointer hover:font-bold">
-                        About
-                      </li>
-                      <li class="hover:cursor-pointer hover:font-bold">Team</li>
-                      <li class="hover:cursor-pointer hover:font-bold">Blog</li>
-                      <li class="hover:cursor-pointer hover:font-bold">
-                        Careers
-                      </li>
-                    </ul>
-                  </li>
-                  <li
-                    x-data="{open: false}"
-                    x-on:click="open =! open"
-                    class="py-3 font-semibold"
-                    class="pb-3 font-semibold"
-                  >
-                    <a class="flex items-center justify-center gap-2" href="#"
-                      ><span>connect</span
-                      ><svg
-                        :class="{'rotate-180' : open = open}"
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="10"
-                        height="7"
-                      >
-                        <path
-                          fill="none"
-                          stroke="#ef4444"
-                          stroke-width="2"
-                          opacity=".75"
-                          d="M1 1l4 4 4-4"
-                        /></svg
-                    ></a>
-                    <ul
-                      x-show="open"
-                      x-on:click.outside="open = false"
-                      class="mx-auto w-8/12 rounded-lg bg-gray-100 py-4 px-4"
-                      class="rounded-lg bg-white px-4"
-                    >
-                      <li class="hover:cursor-pointer hover:font-bold">
-                        Contact
-                      </li>
-                      <li class="hover:cursor-pointer hover:font-bold">
-                        Newsletter
-                      </li>
-                      <li class="hover:cursor-pointer hover:font-bold">
-                        LinkedIn
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-              </nav>
-              <div class="border-2 border-gray-400"></div>
-              <div class="flex flex-col items-center">
-                <button class="py-3 font-semibold">Login</button>
-                <button
-                  class="from-very-light-red to-light-red mb-3 w-28 rounded-2xl bg-gradient-to-r py-1 font-semibold"
-                >
-                  Sign Up
+            <div class="flex justify-center">
+              <div
+                x-show="menu"
+                class="text-very-dark-blue w-7/12 rounded-xl bg-gray-100"
+              >
+                <button x-on:click="menu= false" class="absolute top-8 right-0">
+                  <img
+                    class="mt-2 mr-10"
+                    src="images/icon-close.svg"
+                    alt="close icon"
+                    class="h-full"
+                  />
                 </button>
+                <nav class="relative z-30">
+                  <ul>
+                    <li
+                      x-data="{open: false}"
+                      x-on:click="open =! open"
+                      class="py-3 font-semibold"
+                    >
+                      <a
+                        x-data="{products: ['Overview', 'Pricing', 'Marketplace', 'Integrations']}"
+                        href="#"
+                        class="flex items-center justify-center gap-2"
+                        ><span>Product</span
+                        ><svg
+                          :class="{'rotate-180' : open = open}"
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="10"
+                          height="7"
+                        >
+                          <path
+                            fill="none"
+                            stroke="#ef4444"
+                            stroke-width="2"
+                            opacity=".75"
+                            d="M1 1l4 4 4-4"
+                          /></svg
+                      ></a>
+                      <ul
+                        x-show="open"
+                        x-on:click.outside="open = false"
+                        class="absolute rounded-lg bg-white px-4 text-black"
+                      >
+                        <template x-for="product in products">
+                          <li
+                            x-text="product"
+                            class="hover:cursor-pointer hover:font-bold"
+                          ></li>
+                        </template>
+                      </ul>
+                    </li>
+                    <li
+                      x-data="{open: false}"
+                      x-on:click="open =! open"
+                      class="py-3 font-semibold"
+                      class="pb-3 font-semibold"
+                    >
+                      <a class="flex items-center justify-center gap-2" href="#"
+                        ><span>Company</span
+                        ><svg
+                          :class="{'rotate-180' : open = open}"
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="10"
+                          height="7"
+                        >
+                          <path
+                            fill="none"
+                            stroke="#ef4444"
+                            stroke-width="2"
+                            opacity=".75"
+                            d="M1 1l4 4 4-4"
+                          /></svg
+                      ></a>
+                      <ul
+                        x-show="open"
+                        x-on:click.outside="open = false"
+                        class="absolute rounded-lg bg-white px-4 text-black"
+                        x-data="{items: ['Team', 'Blog', 'Careers']}"
+                      >
+                        <template x-for="item in items">
+                          <li
+                            x-text="item"
+                            class="hover:cursor-pointer hover:font-bold"
+                          ></li>
+                        </template>
+                      </ul>
+                    </li>
+                    <li
+                      x-data="{open: false}"
+                      x-on:click="open =! open"
+                      class="py-3 font-semibold"
+                      class="pb-3 font-semibold"
+                    >
+                      <a class="flex items-center justify-center gap-2" href="#"
+                        ><span>connect</span
+                        ><svg
+                          :class="{'rotate-180' : open = open}"
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="10"
+                          height="7"
+                        >
+                          <path
+                            fill="none"
+                            stroke="#ef4444"
+                            stroke-width="2"
+                            opacity=".75"
+                            d="M1 1l4 4 4-4"
+                          /></svg
+                      ></a>
+                      <ul
+                        x-show="open"
+                        x-on:click.outside="open = false"
+                        class="absolute rounded-lg bg-white px-4 text-black"
+                        x-data="{items: ['Contacts', 'Newsletter', 'LinkedIn']}"
+                      >
+                        <template x-for="item in items">
+                          <li
+                            x-text="item"
+                            class="hover:cursor-pointer hover:font-bold"
+                          ></li>
+                        </template>
+                      </ul>
+                    </li>
+                  </ul>
+                </nav>
+                <div class="border-2 border-gray-400"></div>
+                <div class="flex flex-col items-center">
+                  <button class="py-3 font-semibold">Login</button>
+                  <button
+                    class="from-very-light-red to-light-red mb-3 w-28 rounded-2xl bg-gradient-to-r py-1 font-semibold"
+                  >
+                    Sign Up
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -335,17 +313,17 @@
               class="absolute -top-44 flex w-full items-center justify-center lg:-top-60"
             >
               <img
-                src="../images/bg-pattern-intro-mobile.svg"
+                src="images/bg-pattern-intro-mobile.svg"
                 alt=""
                 class="h-[1000px] object-cover object-center mix-blend-overlay lg:hidden"
               />
               <img
-                src="../images/bg-pattern-intro-desktop.svg"
+                src="images/bg-pattern-intro-desktop.svg"
                 alt="background pattern"
-                class="hidden object-cover object-center mix-blend-overlay lg:block"
+                class="hidden h-[1500px] object-cover object-center mix-blend-overlay lg:block"
               />
             </div>
-            <div class="h-full py-7 pt-40">
+            <div class="h-full py-7 pt-28">
               <h1 class="text-2xl font-semibold">
                 A modern publishing platform
               </h1>
@@ -374,12 +352,12 @@
           </div>
           <div class="flex justify-center lg:order-last">
             <img
-              src="../images/illustration-editor-mobile.svg"
+              src="images/illustration-editor-mobile.svg"
               alt="illustration image"
               class="py-4 lg:hidden"
             />
             <img
-              src="../images/illustration-editor-desktop.svg"
+              src="images/illustration-editor-desktop.svg"
               alt="illustration image"
               class="-right-64 order-last hidden translate-x-44 lg:block"
             />
@@ -414,14 +392,14 @@
             class="bg-very-dark-gray-blue h-[550px] overflow-hidden rounded-tr-[50px] rounded-bl-[50px] lg:h-[400px]"
           >
             <img
-              src="../images/bg-pattern-circles.svg"
+              src="images/bg-pattern-circles.svg"
               alt="circle patterns"
               class="relative -top-24 w-[900px] lg:-top-60 lg:-left-44 lg:w-[700px]"
             />
             <div
-              class="absolute bottom-[1400px] items-center lg:bottom-[700px] lg:mx-10 lg:flex"
+              class="absolute bottom-[1500px] items-center lg:bottom-[800px] lg:mx-10 lg:flex"
             >
-              <img src="../images/illustration-phones.svg" alt="phones image" />
+              <img src="images/illustration-phones.svg" alt="phones image" />
               <div class="lg:text-left">
                 <h4 class="px-8 pb-3 text-3xl font-semibold">
                   State of the Art Infrastructure
@@ -439,12 +417,12 @@
         <section class="w-full grid-cols-2 items-center py-8 lg:grid">
           <div class="flex justify-center lg:order-last">
             <img
-              src="../images/illustration-laptop-mobile.svg"
+              src="images/illustration-laptop-mobile.svg"
               alt="illustration image"
               class="py-4 lg:hidden"
             />
             <img
-              src="../images/illustration-laptop-desktop.svg"
+              src="images/illustration-laptop-desktop.svg"
               alt="illustration image"
               class="hidden w-[950px] -translate-x-44 lg:block"
             />
@@ -474,12 +452,12 @@
 
         <section class="w-full">
           <div
-            class="bg-very-dark-black-blue font-overpass text-app-white flex flex-col items-center rounded-tr-[50px] py-16 text-sm lg:flex-row lg:items-start lg:justify-around lg:text-left"
+            class="bg-very-dark-black-blue font-overpass text-app-white flex grid-cols-4 flex-col items-center rounded-tr-[50px] py-16 text-sm lg:grid lg:flex-row lg:items-start lg:justify-around lg:text-left"
           >
-            <div class="my-10 lg:my-3">
-              <img src="../images/logo.svg" alt="company logo" />
+            <div class="my-10 flex justify-center lg:my-3">
+              <img src="images/logo.svg" alt="company logo" />
             </div>
-            <div>
+            <div class="flex justify-center">
               <ul>
                 <li class="my-3 font-semibold">Product</li>
                 <li>Overview</li>
@@ -489,7 +467,7 @@
                 <li>Integrations</li>
               </ul>
             </div>
-            <div>
+            <div class="flex justify-center">
               <ul>
                 <li class="my-3 font-semibold">Company</li>
                 <li>About</li>
@@ -498,7 +476,7 @@
                 <li>Careers</li>
               </ul>
             </div>
-            <div>
+            <div class="flex justify-center">
               <ul>
                 <li class="my-3 font-semibold">Connect</li>
                 <li>Contact</li>
@@ -507,39 +485,38 @@
               </ul>
             </div>
           </div>
+          <div
+            class="bg-very-dark-black-blue flex w-full flex-col place-content-center text-center"
+          >
+            <div>
+              <a
+                class="text-optimum-blue hover:text-optimum-darkblue"
+                href="https://www.frontendmentor.io/challenges/blogr-landing-page-EX2RLAApP"
+                target="_blank"
+                >Frontend Mentor challenge</a
+              >
+            </div>
+            <div>
+              for
+              <a
+                class="text-optimum-blue hover:text-optimum-darkblue"
+                href="https://github.com/optimumBA"
+                target="_blank"
+                >Optimum BH</a
+              >
+              Internship.
+            </div>
+
+            <div class="mt-3">
+              <a
+                class="text-optimum-blue hover:text-optimum-darkblue"
+                href="https://github.com/ngumokenneth/frontend_mentor_challenges/tree/blogr_landing_page/challenges/blogr_landing_page"
+                >Source code</a
+              >
+            </div>
+          </div>
         </section>
       </div>
     </div>
-
-    <!-- <div
-      class="flex h-[100vh] w-full flex-col place-content-center text-center"
-    >
-      <div>
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://www.frontendmentor.io/challenges/blogr-landing-page-EX2RLAApP"
-          target="_blank"
-          >Frontend Mentor challenge</a
-        >
-      </div>
-      <div>
-        for
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA"
-          target="_blank"
-          >Optimum BH</a
-        >
-        Internship.
-      </div>
-
-      <div class="mt-3">
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/ngumokenneth/frontend_mentor_challenges/tree/blogr_landing_page/challenges/blogr_landing_page"
-          >Source code</a
-        >
-      </div>
-    </div> -->
   </body>
 </html>
