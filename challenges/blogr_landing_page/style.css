@@ -4,3 +4,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.nav {
+  @apply absolute top-24 right-0 left-0 mx-auto flex w-80 flex-col rounded-md bg-white shadow-md md:static md:w-full md:bg-transparent md:shadow-none;
+}
+
+.nav_div_ul {
+  @apply text-very-dark-grayish-blue md:text-white-text mx-auto my-6 flex flex-col items-center gap-4 md:mx-0 md:my-0 md:flex-row;
+}
+
+.menu_item {
+  @apply flex items-center justify-center gap-2 font-bold;
+}
+.nav_dropdown_ul {
+  @apply md:bg-white-text md:text-very-dark-grayish-blue mt-4 flex flex-col items-center gap-2 rounded-md bg-gray-200 py-4 px-16 text-xs font-bold md:absolute md:top-8 md:mt-0 md:-ml-4 md:items-start md:p-4 md:pr-8 md:font-normal;
+}
+
+.nav_dropdown_ul li {
+  @apply hover:font-semibold;
+}

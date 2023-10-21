@@ -32,8 +32,11 @@
       src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
     ></script>
   </head>
-  <body x-data="{ isSideNavOpen: false }" class="font-overpass m-0 text-[16px]">
-    <main class="flex flex-col gap-16">
+  <body
+    x-data="{ isSideNavOpen: false }"
+    class="font-overpass m-0 h-screen text-[16px]"
+  >
+    <main class="flex h-screen flex-col gap-16">
       <!-- Header section -->
       <header
         class="font-ubuntu from-very-light-red to-light-red text-white-text place-content-center rounded-bl-[100px] bg-gradient-to-r bg-cover bg-no-repeat md:flex md:flex-col"
@@ -41,7 +44,7 @@
         <div
           class="bg-[url('images/bg-pattern-intro-mobile.svg')] bg-cover bg-center bg-no-repeat px-5 pt-10 md:bg-[url('images/bg-pattern-intro-desktop.svg')]"
         >
-          <div class="flex items-center justify-between">
+          <div class="flex items-center justify-between md:gap-16">
             <img src="images/logo.svg" alt="Blogr logo" />
             <!-- Burger and close icons  -->
             <div
@@ -68,19 +71,15 @@
             >
               <nav
                 x-data="{ openClose, navStateArray: [ false, false, false ] }"
-                class="absolute top-24 right-0 left-0 mx-auto flex w-80 flex-col rounded-md bg-white shadow-md md:static md:bg-transparent"
+                class="nav"
               >
-                <div class="mx-auto flex w-60 flex-col md:flex-row">
-                  <!-- flex items-center gap-8 -->
-                  <ul
-                    class="text-very-dark-grayish-blue md:text-white-text mx-auto my-6 flex flex-col gap-4 md:flex-row"
-                  >
-                    <li class="flex flex-col">
-                      <div
-                        @click="openClose(0)"
-                        class="flex items-center justify-center gap-2 font-bold"
-                      >
-                        <a>Product</a>
+                <div
+                  class="mx-auto flex w-60 flex-col md:w-full md:flex-row md:items-center md:justify-between"
+                >
+                  <ul class="nav_div_ul">
+                    <li class="flex flex-col md:relative">
+                      <div @click="openClose(0)" class="menu_item">
+                        <a class="md:hover:underline">Product</a>
                         <img
                           :style="navStateArray[0] && { transform: 'rotate(180deg)' }"
                           class="md:hidden"
@@ -95,10 +94,7 @@
                         />
                       </div>
                       <template x-if="navStateArray[0]">
-                        <ul
-                          x-ref="product"
-                          class="mt-4 flex flex-col items-center gap-2 rounded-md bg-gray-200 py-4 px-16 text-xs font-bold"
-                        >
+                        <ul x-ref="product" class="nav_dropdown_ul">
                           <li @click="openClose(0)">
                             <a href="#">Overview</a>
                           </li>
@@ -118,12 +114,9 @@
                       </template>
                     </li>
 
-                    <li class="flex flex-col">
-                      <div
-                        @click="openClose(1)"
-                        class="flex items-center justify-center gap-2 font-bold"
-                      >
-                        <a>Company</a>
+                    <li class="flex flex-col md:relative">
+                      <div @click="openClose(1)" class="menu_item">
+                        <a class="md:hover:underline">Company</a>
                         <img
                           :style="navStateArray[1] && { transform: 'rotate(180deg)' }"
                           class="md:hidden"
@@ -138,10 +131,7 @@
                         />
                       </div>
                       <template x-if="navStateArray[1]">
-                        <ul
-                          x-ref="company"
-                          class="mt-4 flex flex-col items-center gap-2 rounded-md bg-gray-200 py-4 px-16 text-xs font-bold"
-                        >
+                        <ul x-ref="company" class="nav_dropdown_ul">
                           <li @click="openClose(1)">
                             <a href="#">About</a>
                           </li>
@@ -158,12 +148,9 @@
                       </template>
                     </li>
 
-                    <li class="flex flex-col">
-                      <div
-                        @click="openClose(2)"
-                        class="flex items-center justify-center gap-2 font-bold"
-                      >
-                        <a>Connect</a>
+                    <li class="flex flex-col md:relative">
+                      <div @click="openClose(2)" class="menu_item">
+                        <a class="md:hover:underline">Connect</a>
                         <img
                           :style="navStateArray[2] && { transform: 'rotate(180deg)' }"
                           class="md:hidden"
@@ -178,10 +165,7 @@
                         />
                       </div>
                       <template x-if="navStateArray[2]">
-                        <ul
-                          x-ref="connect"
-                          class="mt-4 flex flex-col items-center gap-2 rounded-md bg-gray-200 py-4 px-16 text-xs font-bold"
-                        >
+                        <ul x-ref="connect" class="nav_dropdown_ul">
                           <li @click="openClose(2)">
                             <a href="#">Contact</a>
                           </li>
@@ -197,11 +181,13 @@
                   </ul>
                   <!-- login and signup -->
                   <div
-                    class="mx-auto flex flex-col items-center gap-4 border-t p-8 font-bold md:flex-row md:border-none"
+                    class="mx-auto flex flex-col items-center gap-4 border-t p-8 font-bold md:mx-0 md:flex-row md:border-none md:p-0"
                   >
-                    <h3 class="">Login</h3>
+                    <h3 class="text-very-dark-grayish-blue md:text-white-text">
+                      Login
+                    </h3>
                     <a
-                      class="text-white-text from-very-light-red to-light-red rounded-3xl bg-gradient-to-r px-6 py-2"
+                      class="text-white-text from-very-light-red to-light-red md:bg-white-text md:text-light-red-CTA-text md:hover:bg-very-light-red md:hover:text-white-text rounded-3xl bg-gradient-to-r px-6 py-2 md:bg-none"
                       href="#"
                       >Sign Up</a
                     >
@@ -211,10 +197,10 @@
             </template>
           </div>
 
-          <div class="flex flex-col gap-4 text-center">
-            <h2 class="p-4 text-3xl font-bold">A modern publishing platform</h2>
-            <p>Grow your audience and build your online brand</p>
-            <div class="mt-10 mb-20 flex justify-center gap-4">
+          <div class="mt-24 flex flex-col gap-4 text-center">
+            <h2 class="text-3xl">A modern publishing platform</h2>
+            <h4 class="mx-6">Grow your audience and build your online brand</h4>
+            <div class="mt-10 mb-36 flex justify-center gap-4">
               <a
                 class="bg-white-text hover:bg-very-light-red text-light-red-CTA-text hover:text-white-text rounded-3xl border py-2 px-4 font-bold hover:border-0"
                 href="#"
@@ -231,23 +217,25 @@
       </header>
       <!-- Main body -->
       <section class="mb-40 flex flex-col gap-8 text-center">
-        <h3 class="text-2xl font-bold">Designed for the future</h3>
+        <h3 class="text-very-dark-blue text-2xl font-bold">
+          Designed for the future
+        </h3>
         <div class="flex flex-col md:flex-row-reverse md:items-center">
           <img
             class="md:hidden"
             src="images/illustration-editor-mobile.svg"
-            alt="Illustration edit-266pxor mobile"
+            alt="Illustration box mobile"
           />
           <img
             class="hidden flex-1 overflow-hidden md:block"
             src="images/illustration-editor-desktop.svg"
             alt="Illustration editor desktop"
           />
-          <div class="flex-1">
-            <h3 class="text-2xl font-semibold">
+          <div class="mt-8 flex-1">
+            <h3 class="text-very-dark-blue mx-12 text-2xl font-semibold">
               Introducing an extensible editor
             </h3>
-            <p class="p-4">
+            <p class="text-very-dark-grayish-blue mx-6 p-4">
               Blogr features an exceedingly intuitive interface which lets you
               focus on one thing: creating content. The editor supports
               management of multiple blogs and allows easy manipulation of
@@ -256,8 +244,10 @@
               change the looks of a blog.
             </p>
 
-            <h3 class="text-2xl font-semibold">Robust content management</h3>
-            <p class="p-4">
+            <h3 class="text-very-dark-blue mx-12 text-2xl font-semibold">
+              Robust content management
+            </h3>
+            <p class="text-very-dark-grayish-blue mx-6 p-4">
               Flexible content management enables users to easily move through
               posts. Increase the usability of your blog by adding customized
               categories, sections, format, or flow. With this functionality,
@@ -267,20 +257,28 @@
         </div>
       </section>
       <section
-        class="text-white-text from-very-dark-gray-blue to-very-dark-desaturated-blue flex flex-col gap-8 rounded-tr-[100px] rounded-bl-[100px] bg-gradient-to-r pb-24 text-center"
+        class="text-white-text from-very-dark-gray-blue to-very-dark-desaturated-blue flex flex-col rounded-tr-[100px] rounded-bl-[100px] bg-gradient-to-r pb-24 text-center md:flex-row"
       >
-        <img
-          class="-mt-40"
-          src="images/illustration-phones.svg"
-          alt="Illustration phones"
-        />
-        <h3 class="text-2xl font-bold">State of the Art Infrastructure</h3>
-        <p class="p-4">
-          With reliability and speed in mind, worldwide data centers provide the
-          backbone for ultra-fast connectivity. This ensures your site will load
-          instantly, no matter where your readers are, keeping your site
-          competitive.
-        </p>
+        <div
+          class="w-full bg-[url('images/bg-pattern-circles.svg')] bg-cover bg-bottom bg-no-repeat"
+        >
+          <img
+            class="-mt-44"
+            src="images/illustration-phones.svg"
+            alt="Illustration phones"
+          />
+        </div>
+        <div class="">
+          <h3 class="mx-12 text-2xl font-bold">
+            State of the Art Infrastructure
+          </h3>
+          <p class="mx-6 p-4">
+            With reliability and speed in mind, worldwide data centers provide
+            the backbone for ultra-fast connectivity. This ensures your site
+            will load instantly, no matter where your readers are, keeping your
+            site competitive.
+          </p>
+        </div>
       </section>
       <section class="flex flex-col gap-8 text-center">
         <img
@@ -293,8 +291,10 @@
           src="images/illustration-laptop-desktop.svg"
           alt="Illustration laptop desktop"
         />
-        <h3 class="text-2xl font-bold">Free, open, simple</h3>
-        <p class="p-4">
+        <h3 class="text-very-dark-blue text-2xl font-bold">
+          Free, open, simple
+        </h3>
+        <p class="text-very-dark-grayish-blue mx-4 p-4">
           Blogr is a free and open source application backed by a large
           community of helpful developers. It supports features such as code
           syntax highlighting, RSS feeds, social media integration, third-party
@@ -302,8 +302,10 @@
           architecture is clean and is relatively easy to learn.
         </p>
 
-        <h3 class="text-2xl font-semibold">Powerful tooling</h3>
-        <p class="p-4">
+        <h3 class="text-very-dark-blue text-2xl font-semibold">
+          Powerful tooling
+        </h3>
+        <p class="text-very-dark-grayish-blue mx-6 p-4">
           Batteries included. We built a simple and straightforward CLI tool
           that makes customization and deployment a breeze, but capable of
           producing even the most complicated sites.
