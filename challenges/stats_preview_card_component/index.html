@@ -28,35 +28,51 @@
     <link rel="manifest" href="../site.webmanifest" />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="m-0">
-    <div
-      class="flex h-[100vh] w-full flex-col place-content-center text-center"
-    >
-      <div>
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://www.frontendmentor.io/challenges/stats-preview-card-component-8JqbgoU62"
-          target="_blank"
-          >Frontend Mentor challenge</a
-        >
-      </div>
-      <div>
-        for
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA"
-          target="_blank"
-          >Optimum BH</a
-        >
-        Internship.
-      </div>
-
-      <div class="mt-3">
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA/frontend_mentor_challenges/tree/stats_preview_card_component/challenges/stats_preview_card_component"
-          >Source code</a
-        >
+  <body>
+    <div class="flex h-screen items-center justify-center bg-black">
+      <div class="bg-zinc-800">
+        <div class="m-20 mt-20 flex flex-col-reverse md:m-0 md:flex-row">
+          <!--Content-->
+          <div
+            class="w-full items-center rounded-md rounded-l-xl bg-[#1A1939] pl-10 pr-10 md:w-[460px]"
+          >
+            <h2 class="mt-8 text-center text-3xl font-bold text-white">
+              Get <span class="text-[#AC5CDF]">insights </span>that help your
+              business grow.
+            </h2>
+            <p class="mt-8 text-center text-gray-400">
+              Discover the benefits of data analytics and make better decisions
+              regarding revenue, customer experience, and overall efficiency.
+            </p>
+            <div
+              class="mt-20 flex flex-col items-center space-y-4 md:flex-row md:justify-evenly md:space-x-3 md:space-y-0"
+            >
+              <div>
+                <h2 class="text-2xl font-bold text-white">10K+</h2>
+                <p class="text-gray-400">COMPANIES</p>
+              </div>
+              <div>
+                <h2 class="text-2xl font-bold text-white">314</h2>
+                <p class="text-gray-400">TEMPLATES</p>
+              </div>
+              <div>
+                <h2 class="text-2xl font-bold text-white">12M+</h2>
+                <p class="text-gray-400">QUERIES</p>
+              </div>
+            </div>
+          </div>
+          <div class="relative md:relative">
+            <div
+              class="overlay absolute h-full w-full rounded-[0px_10px_10px_0px] bg-[#ac5cdf63]"
+            ></div>
+            <img
+              class="rounded-r-xl"
+              src="./image-header-desktop.jpg"
+              alt=""
+              class="object-fit"
+            />
+          </div>
+        </div>
       </div>
     </div>
   </body>
