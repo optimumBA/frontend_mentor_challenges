@@ -29,35 +29,17 @@
     <script src="//unpkg.com/alpinejs" defer></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css" />
-    <style>
-      #price-slider::-webkit-slider-thumb {
-        appearance: none;
-        border-radius: 50%;
-        width: 45px;
-        height: 45px;
-        background-color: aqua;
-        background-image: url('../images/icon-slider.svg');
-        filter: drop-shadow(4px 20px 24px aqua);
-        cursor: pointer;
-      }
-      #price-slider::-moz-range-thumb {
-        width: 30px;
-        height: 30px;
-        background: aqua;
-        cursor: pointer;
-      }
-    </style>
   </head>
   <body class="m-0">
     <div
-      class="font-m font-manrope bg-very-pale-blue flex h-screen flex-col items-center"
+      class="font-m font-manrope bg-very-pale-blue flex flex-col items-center"
     >
       <img
-        src="../images/bg-pattern.svg"
+        src="images/bg-pattern.svg"
         alt="background-pattern"
         class="h-[350px] lg:hidden"
       />
-      <img src="../images/bg-pattern.svg" alt="" class="hidden lg:block" />
+      <img src="images/bg-pattern.svg" alt="" class="hidden lg:block" />
       <div
         class="absolute top-20 flex w-full flex-col items-center justify-center"
       >
@@ -67,29 +49,33 @@
             Sign-up for our 30-day trial. No credit card required.
           </p>
         </div>
-        <img
-          src="../images/pattern-circles.svg"
-          alt="circle patterns"
-          class=""
-        />
+        <img src="images/pattern-circles.svg" alt="circle patterns" class="" />
       </div>
       <div
         x-data="app"
-        class="absolute top-64 flex w-8/12 flex-col items-center justify-center rounded-lg bg-gray-100 p-4 lg:w-4/12"
+        class="relative -top-24 flex w-11/12 flex-col items-center justify-center rounded-lg bg-white p-4 lg:w-6/12"
       >
         <div class="grid w-full grid-cols-1 gap-y-3 lg:grid-cols-2">
           <div
-            class="order-first flex items-center justify-center gap-x-2 lg:justify-start"
+            class="order-first mt-6 flex items-center justify-center gap-x-2 lg:justify-start"
           >
-            <p x-text="getPageViews(getIndex(data)) + ' PAGEVIEWS' "></p>
+            <p
+              class="text-dark-desaturated-blue text-base"
+              x-text="getPageViews(getIndex(data)) + ' PAGEVIEWS' "
+            ></p>
           </div>
 
           <div
             class="order-last flex justify-center lg:-order-1 lg:justify-end"
           >
-            <div class="flex items-center text-3xl font-bold">
-              <h3 x-text="getPrice(getIndex(data))"></h3>
-              <span class="text-sm font-normal"> / month</span>
+            <div class="mt-6 flex items-center font-bold">
+              <h3
+                class="text-dark-desaturated-blue text-3xl"
+                x-text="getPrice(getIndex(data))"
+              ></h3>
+              <span class="text-dark-desaturated-blue text-xs font-normal"
+                >/ month</span
+              >
             </div>
           </div>
 
@@ -105,8 +91,8 @@
             />
           </div>
         </div>
-        <div class="my-2 flex items-center text-xs">
-          <div class="flex items-center">
+        <div class="my-6 flex items-center text-xs">
+          <div class="text-dark-desaturated-blue flex items-center">
             <p class="mr-2 text-xs">Monthly Billing</p>
             <a href="#" id="yearly-billing-toggle">
               <label class="relative inline-flex cursor-pointer items-center">
@@ -117,87 +103,101 @@
                   x-on:click="yearly = !yearly"
                 />
                 <div
-                  class="peer h-6 w-11 rounded-full bg-gray-200 after:absolute after:top-[2px] after:left-[2px] after:h-5 after:w-5 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-blue-600 peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:border-gray-600 dark:bg-gray-700 dark:peer-focus:ring-blue-800"
+                  class="peer first-letter: dark:peer-focus:strong-cyan peer-checked:bg-light-grayish-blue h-6 w-11 rounded-full bg-gray-200 after:absolute after:top-[2px] after:left-[2px] after:h-5 after:w-5 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] after:hover:cursor-pointer peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:border-gray-600 dark:bg-gray-700"
                 ></div>
                 <span
                   class="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300"
                 ></span>
               </label>
             </a>
-            <div class="flex">
-              <p class="ml-2 text-xs">Yearly Billing</p>
-              <p class="bg-light-red mx-2 rounded-3xl px-3 lg:block">
-                <span class="lg:hidden">-</span>25%
+            <div class="my-3 flex">
+              <p class="text-xs">Yearly Billing</p>
+              <p
+                class="bg-light-grayish-red text-light-red mx-3 flex rounded-3xl px-3 text-sm lg:block"
+              >
+                <span class="text-light-red lg:hidden">-</span>25%
+                <span class="text-light-red hidden lg:inline-block"
+                  >discount</span
+                >
               </p>
-              <span class="hidden lg:block">discount</span>
             </div>
           </div>
         </div>
 
-        <div class="mt-3 flex w-full items-center border-t-4"></div>
-        <div class="flex flex-col justify-center text-xs">
-          <div class="flex items-center py-2">
-            <img
-              src="../images/icon-check.svg"
-              alt="check icon"
-              class="h-full"
-            />
-            <p>Unlimited websites</p>
+        <hr class="h-4 w-full" />
+
+        <div
+          class="flex w-full flex-col items-center text-sm lg:flex-row lg:justify-between"
+        >
+          <div
+            class="text-dark-desaturated-blue flex flex-col items-center lg:items-start"
+          >
+            <div class="flex items-center py-2">
+              <img
+                src="images/icon-check.svg"
+                alt="check icon"
+                class="h-full"
+              />
+              <p class="px-2">Unlimited websites</p>
+            </div>
+            <div class="flex items-center py-2">
+              <img
+                src="images/icon-check.svg"
+                alt="check icon"
+                class="h-full"
+              />
+              <p class="px-2">100% data ownership</p>
+            </div>
+            <div class="flex items-center py-2">
+              <img
+                src="images/icon-check.svg"
+                alt="check icon"
+                class="h-full"
+              />
+              <p class="px-2">Email reports</p>
+            </div>
           </div>
-          <div class="flex items-center py-2">
-            <img
-              src="../images/icon-check.svg"
-              alt="check icon"
-              class="h-full"
-            />
-            <p>100% data ownership</p>
+          <div class="pt-4">
+            <button
+              class="bg-dark-desaturated-blue rounded-3xl px-8 py-2 text-white"
+            >
+              Start my trial
+            </button>
           </div>
-          <div class="flex items-center py-2">
-            <img
-              src="../images/icon-check.svg"
-              alt="check icon"
-              class="h-full"
-            />
-            <p>Email reports</p>
-          </div>
+        </div>
+      </div>
+      <div
+        class="relative bottom-20 flex w-full flex-col place-content-center text-center"
+      >
+        <div>
+          <a
+            class="text-optimum-blue hover:text-optimum-darkblue"
+            href="https://www.frontendmentor.io/challenges/interactive-pricing-component-t0m8PIyY8"
+            target="_blank"
+            >Frontend Mentor challenge</a
+          >
         </div>
         <div>
-          <button
-            class="bg-dark-desaturated-blue rounded-3xl px-8 py-2 text-white"
+          for
+          <a
+            class="text-optimum-blue hover:text-optimum-darkblue"
+            href="https://github.com/optimumBA"
+            target="_blank"
+            >Optimum BH</a
           >
-            Start my trial
-          </button>
+          Internship.
+        </div>
+
+        <div class="mt-3">
+          <a
+            class="text-optimum-blue hover:text-optimum-darkblue"
+            href="https://github.com/ngumokenneth/frontend_mentor_challenges/tree/interactive_pricing_component/challenges/interactive_pricing_component"
+            >Source code</a
+          >
         </div>
       </div>
     </div>
-    <div class="mt-10 flex w-full flex-col place-content-center text-center">
-      <div>
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://www.frontendmentor.io/challenges/interactive-pricing-component-t0m8PIyY8"
-          target="_blank"
-          >Frontend Mentor challenge</a
-        >
-      </div>
-      <div>
-        for
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA"
-          target="_blank"
-          >Optimum BH</a
-        >
-        Internship.
-      </div>
 
-      <div class="mt-3">
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA/frontend_mentor_challenges/tree/interactive_pricing_component/challenges/interactive_pricing_component"
-          >Source code</a
-        >
-      </div>
-    </div>
     <script>
       document.addEventListener('alpine:init', () => {
         Alpine.data('app', () => ({
