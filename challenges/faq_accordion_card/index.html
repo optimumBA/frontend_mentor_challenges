@@ -39,31 +39,31 @@
       <div
         class="relative flex flex-col items-center rounded-2xl bg-white lg:flex-row"
       >
-        <div class="flex flex-col items-center justify-center">
+        <div class="flex flex-col items-center justify-center overflow-hidden">
           <img
-            src="../images/illustration-woman-online-mobile.svg"
+            src="images/illustration-woman-online-mobile.svg"
             alt="illustration of a woman online"
             class="absolute -top-24 w-52 lg:hidden"
           />
           <img
-            src="../images/bg-pattern-mobile.svg"
+            src="images/bg-pattern-mobile.svg"
             alt="background pattern"
             class="lg:hidden"
           />
           <img
-            src="../images/illustration-woman-online-desktop.svg"
+            src="images/illustration-woman-online-desktop.svg"
             alt="woman online illustration"
             class="hidden w-64 -translate-x-8 lg:block"
           />
           <img
-            src="../images/bg-pattern-desktop.svg"
+            src="images/bg-pattern-desktop.svg"
             alt="background pattern"
             class="absolute -top-4 -left-24 hidden w-80 lg:block"
           />
           <img
-            src="../images/illustration-box-desktop.svg"
+            src="images/illustration-box-desktop.svg"
             alt="box image"
-            class="absolute -left-10 bottom-16 hidden w-24 lg:block"
+            class="absolute -left-12 bottom-24 hidden w-28 lg:block"
           />
         </div>
 
@@ -78,10 +78,14 @@
               @click="open = open"
               class="flex flex-col py-3"
             >
-              <div class="relative flex w-full items-center bg-white">
-                <a href="#">How many team members can I invite?</a>
+              <div
+                class="hover:text-soft-red relative flex w-full items-center bg-white"
+              >
+                <a href="#" :class="{  'font-bold' : open=open}"
+                  >How many team members can I invite?</a
+                >
                 <img
-                  src="../images/icon-arrow-down.svg"
+                  src="images/icon-arrow-down.svg"
                   alt="down arrow icon"
                   :class="{'rotate-180': open = open}"
                   class="absolute right-0 flex"
@@ -103,10 +107,14 @@
               @click="open = !open"
               class="flex flex-col py-3"
             >
-              <div class="relative flex w-full items-center bg-white">
-                <a href="#">What is the maximum file upload size?</a>
+              <div
+                class="hover:text-soft-red relative flex w-full items-center bg-white"
+              >
+                <a href="#" :class="{  'font-bold' : open=open}"
+                  >What is the maximum file upload size?</a
+                >
                 <img
-                  src="../images/icon-arrow-down.svg"
+                  src="images/icon-arrow-down.svg"
                   alt="down arrow icon"
                   :class="{'rotate-180': open = open}"
                   class="absolute right-0 flex"
@@ -128,10 +136,14 @@
               @click="open = !open"
               class="flex flex-col py-3"
             >
-              <div class="relative flex w-full items-center bg-white">
-                <a href="#">How do I reset my password?</a>
+              <div
+                class="hover:text-soft-red relative flex w-full items-center bg-white"
+              >
+                <a href="#" :class="{  'font-bold' : open=open}"
+                  >How do I reset my password?</a
+                >
                 <img
-                  src="../images/icon-arrow-down.svg"
+                  src="images/icon-arrow-down.svg"
                   alt="down arrow icon"
                   :class="{'rotate-180': open = open}"
                   class="absolute right-0 flex"
@@ -153,10 +165,14 @@
               @click="open = !open"
               class="flex flex-col py-3"
             >
-              <div class="relative flex w-full items-center bg-white">
-                <a href="#">Can I cancel my subscription?</a>
+              <div
+                class="hover:text-soft-red relative flex w-full items-center bg-white"
+              >
+                <a href="#" :class="{  'font-bold' : open=open}"
+                  >Can I cancel my subscription?</a
+                >
                 <img
-                  src="../images/icon-arrow-down.svg"
+                  src="images/icon-arrow-down.svg"
                   alt="down arrow icon"
                   :class="{'rotate-180': open = open}"
                   class="absolute right-0 flex"
@@ -178,10 +194,14 @@
               @click="open = !open"
               class="flex flex-col py-3"
             >
-              <div class="relative flex w-full items-center bg-white">
-                <a href="#">Do you provide additional support?</a>
+              <div
+                class="hover:text-soft-red relative flex w-full items-center bg-white"
+              >
+                <a href="#" :class="{  'font-bold' : open=open}"
+                  >Do you provide additional support?</a
+                >
                 <img
-                  src="../images/icon-arrow-down.svg"
+                  src="images/icon-arrow-down.svg"
                   alt="down arrow icon"
                   :class="{'rotate-180': open = open}"
                   class="absolute right-0 flex"
