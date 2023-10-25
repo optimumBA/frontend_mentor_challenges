@@ -233,7 +233,7 @@
             return this.app.get(this.range).monthlyPrice.toFixed(2)
           },
           getDiscount() {
-            return (this.app.calculateYearlyPrice())
+            return this.app.calculateYearlyPrice()
           },
           getFinalPrice(val) {
             if (this.yearly) {
@@ -244,7 +244,6 @@
           },
         }))
       })
-      
     </script>
   </body>
 </html>
