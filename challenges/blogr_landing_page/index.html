@@ -42,7 +42,7 @@
         class="font-ubuntu from-very-light-red to-light-red text-white-text place-content-center rounded-bl-[100px] bg-gradient-to-r bg-cover bg-no-repeat md:flex md:flex-col"
       >
         <div
-          class="bg-[url('images/bg-pattern-intro-mobile.svg')] bg-cover bg-center bg-no-repeat px-5 pt-10 md:bg-[url('images/bg-pattern-intro-desktop.svg')]"
+          class="bg-[url('images/bg-pattern-intro-mobile.svg')] bg-cover bg-center bg-no-repeat px-5 pt-10 md:mx-20 md:bg-[url('images/bg-pattern-intro-desktop.svg')]"
         >
           <div class="flex items-center justify-between md:gap-16">
             <img src="images/logo.svg" alt="Blogr logo" />
@@ -50,7 +50,7 @@
             <div
               @click="isSideNavOpen = ! isSideNavOpen"
               id="mobile-menu-toggle"
-              class="md:hidden"
+              class="mr-4 md:hidden"
             >
               <img
                 x-show="! isSideNavOpen"
@@ -198,7 +198,7 @@
           </div>
 
           <div class="mt-24 flex flex-col gap-4 text-center">
-            <h2 class="text-3xl">A modern publishing platform</h2>
+            <h2 class="px-7 text-3xl">A modern publishing platform</h2>
             <h4 class="mx-6">Grow your audience and build your online brand</h4>
             <div class="mt-10 mb-36 flex justify-center gap-4">
               <a
@@ -216,23 +216,27 @@
         </div>
       </header>
       <!-- Main body -->
-      <section class="mb-40 flex flex-col gap-8 text-center">
-        <h3 class="text-very-dark-blue text-2xl font-bold">
+      <section class="mb-20 flex flex-col gap-8 text-center">
+        <h3 class="text-very-dark-blue text-2xl font-bold md:mt-10">
           Designed for the future
         </h3>
-        <div class="flex flex-col md:flex-row-reverse md:items-center">
+        <div
+          class="flex flex-col overflow-hidden md:flex-row-reverse md:items-center"
+        >
           <img
             class="md:hidden"
             src="images/illustration-editor-mobile.svg"
             alt="Illustration box mobile"
           />
           <img
-            class="hidden flex-1 overflow-hidden md:block"
+            class="hidden flex-1 overflow-hidden md:-mr-40 md:block"
             src="images/illustration-editor-desktop.svg"
             alt="Illustration editor desktop"
           />
-          <div class="mt-8 flex-1">
-            <h3 class="text-very-dark-blue mx-12 text-2xl font-semibold">
+          <div class="mt-8 flex-1 md:m-20 md:mb-0 md:text-left">
+            <h3
+              class="text-very-dark-blue mx-12 text-2xl font-semibold md:mx-10"
+            >
               Introducing an extensible editor
             </h3>
             <p class="text-very-dark-grayish-blue mx-6 p-4">
@@ -244,7 +248,9 @@
               change the looks of a blog.
             </p>
 
-            <h3 class="text-very-dark-blue mx-12 text-2xl font-semibold">
+            <h3
+              class="text-very-dark-blue mx-12 text-2xl font-semibold md:mx-10"
+            >
               Robust content management
             </h3>
             <p class="text-very-dark-grayish-blue mx-6 p-4">
@@ -257,67 +263,87 @@
         </div>
       </section>
       <section
-        class="text-white-text from-very-dark-gray-blue to-very-dark-desaturated-blue flex flex-col rounded-tr-[100px] rounded-bl-[100px] bg-gradient-to-r pb-24 text-center md:flex-row"
+        class="font-overpass text-white-text mt-20 w-full text-center md:mt-0"
       >
         <div
-          class="w-full bg-[url('images/bg-pattern-circles.svg')] bg-cover bg-bottom bg-no-repeat"
+          class="bg-very-dark-gray-blue h-[548px] overflow-hidden rounded-tr-[100px] rounded-bl-[100px] md:h-[402px]"
         >
           <img
-            class="-mt-44"
-            src="images/illustration-phones.svg"
-            alt="Illustration phones"
+            src="images/bg-pattern-circles.svg"
+            class="relative -top-24 w-[900px] md:-top-60 md:-left-44 md:w-[700px]"
           />
-        </div>
-        <div class="">
-          <h3 class="mx-12 text-2xl font-bold">
-            State of the Art Infrastructure
-          </h3>
-          <p class="mx-6 p-4">
-            With reliability and speed in mind, worldwide data centers provide
-            the backbone for ultra-fast connectivity. This ensures your site
-            will load instantly, no matter where your readers are, keeping your
-            site competitive.
-          </p>
+          <div
+            class="absolute -translate-y-[558px] items-center md:mx-10 md:flex md:-translate-y-[776px]"
+          >
+            <img
+              src="images/illustration-phones.svg"
+              alt="Illustration phones"
+            />
+            <div class="md:mr-20 md:text-left">
+              <h3 class="mx-10 text-2xl font-bold">
+                State of the Art Infrastructure
+              </h3>
+              <p class="mx-6 p-4">
+                With reliability and speed in mind, worldwide data centers
+                provide the backbone for ultra-fast connectivity. This ensures
+                your site will load instantly, no matter where your readers are,
+                keeping your site competitive.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
-      <section class="flex flex-col gap-8 text-center">
+
+      <section
+        class="flex flex-col gap-8 text-center md:flex-row md:items-center md:text-left"
+      >
         <img
           class="md:hidden"
           src="images/illustration-laptop-mobile.svg"
           alt="Illustration laptop mobile"
         />
         <img
-          class="hidden md:block"
+          class="hidden w-[60%] -translate-x-48 md:block"
           src="images/illustration-laptop-desktop.svg"
           alt="Illustration laptop desktop"
         />
-        <h3 class="text-very-dark-blue text-2xl font-bold">
-          Free, open, simple
-        </h3>
-        <p class="text-very-dark-grayish-blue mx-4 p-4">
-          Blogr is a free and open source application backed by a large
-          community of helpful developers. It supports features such as code
-          syntax highlighting, RSS feeds, social media integration, third-party
-          commenting tools, and works seamlessly with Google Analytics. The
-          architecture is clean and is relatively easy to learn.
-        </p>
-
-        <h3 class="text-very-dark-blue text-2xl font-semibold">
-          Powerful tooling
-        </h3>
-        <p class="text-very-dark-grayish-blue mx-6 p-4">
-          Batteries included. We built a simple and straightforward CLI tool
-          that makes customization and deployment a breeze, but capable of
-          producing even the most complicated sites.
-        </p>
+        <div class="md:-translate-x-32">
+          <div>
+            <h3 class="text-very-dark-blue text-2xl font-bold">
+              Free, open, simple
+            </h3>
+            <p class="text-very-dark-grayish-blue mx-4 p-4 md:mx-0 md:px-0">
+              Blogr is a free and open source application backed by a large
+              community of helpful developers. It supports features such as code
+              syntax highlighting, RSS feeds, social media integration,
+              third-party commenting tools, and works seamlessly with Google
+              Analytics. The architecture is clean and is relatively easy to
+              learn.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-very-dark-blue text-2xl font-semibold">
+              Powerful tooling
+            </h3>
+            <p class="text-very-dark-grayish-blue mx-6 p-4 md:mx-0 md:px-0">
+              Batteries included. We built a simple and straightforward CLI tool
+              that makes customization and deployment a breeze, but capable of
+              producing even the most complicated sites.
+            </p>
+          </div>
+        </div>
       </section>
       <footer
-        class="text-white-text bg-very-dark-black-blue flex flex-col items-center gap-10 rounded-tr-[100px] p-8 text-center"
+        class="text-white-text bg-very-dark-black-blue my-0 flex h-auto flex-col items-center gap-10 rounded-tr-[100px] p-8 text-center"
       >
         <div
           class="flex flex-col place-content-between gap-8 md:w-4/5 md:flex-grow md:flex-row"
         >
-          <img src="images/logo.svg" alt="Blogr logo" class="md:h-[100%]" />
+          <img
+            src="images/logo.svg"
+            alt="Blogr logo"
+            class="md:h-min md:w-auto"
+          />
           <div class="flex flex-col gap-2">
             <h3 class="text-lg font-bold">Product</h3>
             <ul>
@@ -370,7 +396,7 @@
           <div class="mt-3">
             <a
               class="text-optimum-blue hover:text-optimum-darkblue"
-              href="https://github.com/optimumBA/frontend_mentor_challenges/tree/blogr_landing_page/challenges/blogr_landing_page"
+              href="https://github.com/lgmfred/frontend_mentor_challenges/tree/blogr_landing_page/challenges/blogr_landing_page"
               >Source code</a
             >
           </div>
