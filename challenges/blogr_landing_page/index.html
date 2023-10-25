@@ -27,37 +27,392 @@
     />
     <link rel="manifest" href="../site.webmanifest" />
     <link rel="stylesheet" href="style.css" />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
   </head>
-  <body class="m-0">
-    <div
-      class="flex h-[100vh] w-full flex-col place-content-center text-center"
-    >
-      <div>
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://www.frontendmentor.io/challenges/blogr-landing-page-EX2RLAApP"
-          target="_blank"
-          >Frontend Mentor challenge</a
+  <body
+    x-data="{ isSideNavOpen: false }"
+    class="font-overpass m-0 h-screen text-[16px]"
+  >
+    <main class="flex h-screen flex-col gap-16">
+      <!-- Header section -->
+      <header
+        class="font-ubuntu from-very-light-red to-light-red text-white-text place-content-center rounded-bl-[100px] bg-gradient-to-r bg-cover bg-no-repeat md:flex md:flex-col"
+      >
+        <div
+          class="bg-[url('images/bg-pattern-intro-mobile.svg')] bg-cover bg-center bg-no-repeat px-5 pt-10 md:mx-20 md:bg-[url('images/bg-pattern-intro-desktop.svg')]"
         >
-      </div>
-      <div>
-        for
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA"
-          target="_blank"
-          >Optimum BH</a
-        >
-        Internship.
-      </div>
+          <div class="flex items-center justify-between md:gap-16">
+            <img src="images/logo.svg" alt="Blogr logo" />
+            <!-- Burger and close icons  -->
+            <div
+              @click="isSideNavOpen = ! isSideNavOpen"
+              id="mobile-menu-toggle"
+              class="mr-4 md:hidden"
+            >
+              <img
+                x-show="! isSideNavOpen"
+                src="images/icon-hamburger.svg"
+                alt="Hamburger icon"
+              />
+              <img
+                x-show="isSideNavOpen"
+                src="images/icon-close.svg"
+                alt="Close icon"
+              />
+            </div>
+            <!-- Main nav items -->
+            <template
+              x-init="isSideNavOpen = window.innerWidth > 768"
+              @resize.window="isSideNavOpen = window.innerWidth > 768"
+              x-if="isSideNavOpen"
+            >
+              <nav
+                x-data="{ openClose, navStateArray: [ false, false, false ] }"
+                class="nav"
+              >
+                <div
+                  class="mx-auto flex w-60 flex-col md:w-full md:flex-row md:items-center md:justify-between"
+                >
+                  <ul class="nav_div_ul">
+                    <li class="flex flex-col md:relative">
+                      <div @click="openClose(0)" class="menu_item">
+                        <a class="md:hover:underline">Product</a>
+                        <img
+                          :style="navStateArray[0] && { transform: 'rotate(180deg)' }"
+                          class="md:hidden"
+                          src="images/icon-arrow-dark.svg"
+                          alt="Icon arrow dark"
+                        />
+                        <img
+                          :style="navStateArray[0] && { transform: 'rotate(180deg)' }"
+                          class="hidden md:block"
+                          src="images/icon-arrow-light.svg"
+                          alt="Icon arrow light"
+                        />
+                      </div>
+                      <template x-if="navStateArray[0]">
+                        <ul x-ref="product" class="nav_dropdown_ul">
+                          <li @click="openClose(0)">
+                            <a href="#">Overview</a>
+                          </li>
+                          <li @click="openClose(0)">
+                            <a href="#">Pricing</a>
+                          </li>
+                          <li @click="openClose(0)">
+                            <a href="#">Marketplace</a>
+                          </li>
+                          <li @click="openClose(0)">
+                            <a href="#">Features</a>
+                          </li>
+                          <li @click="openClose(0)">
+                            <a href="#">Integrations</a>
+                          </li>
+                        </ul>
+                      </template>
+                    </li>
 
-      <div class="mt-3">
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA/frontend_mentor_challenges/tree/blogr_landing_page/challenges/blogr_landing_page"
-          >Source code</a
+                    <li class="flex flex-col md:relative">
+                      <div @click="openClose(1)" class="menu_item">
+                        <a class="md:hover:underline">Company</a>
+                        <img
+                          :style="navStateArray[1] && { transform: 'rotate(180deg)' }"
+                          class="md:hidden"
+                          src="images/icon-arrow-dark.svg"
+                          alt="Icon arrow dark"
+                        />
+                        <img
+                          :style="navStateArray[1] && { transform: 'rotate(180deg)' }"
+                          class="hidden md:block"
+                          src="images/icon-arrow-light.svg"
+                          alt="Icon arrow light"
+                        />
+                      </div>
+                      <template x-if="navStateArray[1]">
+                        <ul x-ref="company" class="nav_dropdown_ul">
+                          <li @click="openClose(1)">
+                            <a href="#">About</a>
+                          </li>
+                          <li @click="openClose(1)">
+                            <a href="#">Team</a>
+                          </li>
+                          <li @click="openClose(1)">
+                            <a href="#">Blog</a>
+                          </li>
+                          <li @click="openClose(1)">
+                            <a href="#">Careers</a>
+                          </li>
+                        </ul>
+                      </template>
+                    </li>
+
+                    <li class="flex flex-col md:relative">
+                      <div @click="openClose(2)" class="menu_item">
+                        <a class="md:hover:underline">Connect</a>
+                        <img
+                          :style="navStateArray[2] && { transform: 'rotate(180deg)' }"
+                          class="md:hidden"
+                          src="images/icon-arrow-dark.svg"
+                          alt="Icon arrow dark"
+                        />
+                        <img
+                          :style="navStateArray[2] && { transform: 'rotate(180deg)' }"
+                          class="hidden md:block"
+                          src="images/icon-arrow-light.svg"
+                          alt="Icon arrow light"
+                        />
+                      </div>
+                      <template x-if="navStateArray[2]">
+                        <ul x-ref="connect" class="nav_dropdown_ul">
+                          <li @click="openClose(2)">
+                            <a href="#">Contact</a>
+                          </li>
+                          <li @click="openClose(2)">
+                            <a href="#">Newsletter</a>
+                          </li>
+                          <li @click="openClose(2)">
+                            <a href="#">LinkedIn</a>
+                          </li>
+                        </ul>
+                      </template>
+                    </li>
+                  </ul>
+                  <!-- login and signup -->
+                  <div
+                    class="mx-auto flex flex-col items-center gap-4 border-t p-8 font-bold md:mx-0 md:flex-row md:border-none md:p-0"
+                  >
+                    <h3 class="text-very-dark-grayish-blue md:text-white-text">
+                      Login
+                    </h3>
+                    <a
+                      class="text-white-text from-very-light-red to-light-red md:bg-white-text md:text-light-red-CTA-text md:hover:bg-very-light-red md:hover:text-white-text rounded-3xl bg-gradient-to-r px-6 py-2 md:bg-none"
+                      href="#"
+                      >Sign Up</a
+                    >
+                  </div>
+                </div>
+              </nav>
+            </template>
+          </div>
+
+          <div class="mt-24 flex flex-col gap-4 text-center">
+            <h2 class="px-7 text-3xl">A modern publishing platform</h2>
+            <h4 class="mx-6">Grow your audience and build your online brand</h4>
+            <div class="mt-10 mb-36 flex justify-center gap-4">
+              <a
+                class="bg-white-text hover:bg-very-light-red text-light-red-CTA-text hover:text-white-text rounded-3xl border py-2 px-4 font-bold hover:border-0"
+                href="#"
+                >Start for Free</a
+              >
+              <a
+                class="border-white-text hover:text-light-red-CTA-text hover:bg-white-text rounded-3xl border py-2 px-4 font-bold"
+                href="#"
+                >Learn More</a
+              >
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- Main body -->
+      <section class="mb-20 flex flex-col gap-8 text-center">
+        <h3 class="text-very-dark-blue text-2xl font-bold md:mt-10">
+          Designed for the future
+        </h3>
+        <div
+          class="flex flex-col overflow-hidden md:flex-row-reverse md:items-center"
         >
-      </div>
-    </div>
+          <img
+            class="md:hidden"
+            src="images/illustration-editor-mobile.svg"
+            alt="Illustration box mobile"
+          />
+          <img
+            class="hidden flex-1 overflow-hidden md:-mr-40 md:block"
+            src="images/illustration-editor-desktop.svg"
+            alt="Illustration editor desktop"
+          />
+          <div class="mt-8 flex-1 md:m-20 md:mb-0 md:text-left">
+            <h3
+              class="text-very-dark-blue mx-12 text-2xl font-semibold md:mx-10"
+            >
+              Introducing an extensible editor
+            </h3>
+            <p class="text-very-dark-grayish-blue mx-6 p-4">
+              Blogr features an exceedingly intuitive interface which lets you
+              focus on one thing: creating content. The editor supports
+              management of multiple blogs and allows easy manipulation of
+              embeds such as images, videos, and Markdown. Extensibility with
+              plugins and themes provide easy ways to add functionality or
+              change the looks of a blog.
+            </p>
+
+            <h3
+              class="text-very-dark-blue mx-12 text-2xl font-semibold md:mx-10"
+            >
+              Robust content management
+            </h3>
+            <p class="text-very-dark-grayish-blue mx-6 p-4">
+              Flexible content management enables users to easily move through
+              posts. Increase the usability of your blog by adding customized
+              categories, sections, format, or flow. With this functionality,
+              you’re in full control.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section
+        class="font-overpass text-white-text mt-20 w-full text-center md:mt-0"
+      >
+        <div
+          class="bg-very-dark-gray-blue h-[548px] overflow-hidden rounded-tr-[100px] rounded-bl-[100px] md:h-[402px]"
+        >
+          <img
+            src="images/bg-pattern-circles.svg"
+            class="relative -top-24 w-[900px] md:-top-60 md:-left-44 md:w-[700px]"
+          />
+          <div
+            class="absolute -translate-y-[558px] items-center md:mx-10 md:flex md:-translate-y-[776px]"
+          >
+            <img
+              src="images/illustration-phones.svg"
+              alt="Illustration phones"
+            />
+            <div class="md:mr-20 md:text-left">
+              <h3 class="mx-10 text-2xl font-bold">
+                State of the Art Infrastructure
+              </h3>
+              <p class="mx-6 p-4">
+                With reliability and speed in mind, worldwide data centers
+                provide the backbone for ultra-fast connectivity. This ensures
+                your site will load instantly, no matter where your readers are,
+                keeping your site competitive.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="flex flex-col gap-8 text-center md:flex-row md:items-center md:text-left"
+      >
+        <img
+          class="md:hidden"
+          src="images/illustration-laptop-mobile.svg"
+          alt="Illustration laptop mobile"
+        />
+        <img
+          class="hidden w-[60%] -translate-x-48 md:block"
+          src="images/illustration-laptop-desktop.svg"
+          alt="Illustration laptop desktop"
+        />
+        <div class="md:-translate-x-32">
+          <div>
+            <h3 class="text-very-dark-blue text-2xl font-bold">
+              Free, open, simple
+            </h3>
+            <p class="text-very-dark-grayish-blue mx-4 p-4 md:mx-0 md:px-0">
+              Blogr is a free and open source application backed by a large
+              community of helpful developers. It supports features such as code
+              syntax highlighting, RSS feeds, social media integration,
+              third-party commenting tools, and works seamlessly with Google
+              Analytics. The architecture is clean and is relatively easy to
+              learn.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-very-dark-blue text-2xl font-semibold">
+              Powerful tooling
+            </h3>
+            <p class="text-very-dark-grayish-blue mx-6 p-4 md:mx-0 md:px-0">
+              Batteries included. We built a simple and straightforward CLI tool
+              that makes customization and deployment a breeze, but capable of
+              producing even the most complicated sites.
+            </p>
+          </div>
+        </div>
+      </section>
+      <footer
+        class="text-white-text bg-very-dark-black-blue my-0 flex h-auto flex-col items-center gap-10 rounded-tr-[100px] p-8 text-center"
+      >
+        <div
+          class="flex flex-col place-content-between gap-8 md:w-4/5 md:flex-grow md:flex-row"
+        >
+          <img
+            src="images/logo.svg"
+            alt="Blogr logo"
+            class="md:h-min md:w-auto"
+          />
+          <div class="flex flex-col gap-2">
+            <h3 class="text-lg font-bold">Product</h3>
+            <ul>
+              <li><a href="">Overview</a></li>
+              <li><a href="">Pricing</a></li>
+              <li><a href="">Marketplace</a></li>
+              <li><a href="">Features</a></li>
+              <li><a href="">Integrations</a></li>
+            </ul>
+          </div>
+          <div class="flex flex-col gap-2">
+            <h3 class="text-lg font-bold">Company</h3>
+            <ul>
+              <li><a href="">About</a></li>
+              <li><a href="">Team</a></li>
+              <li><a href="">Blog</a></li>
+              <li><a href="">Careers</a></li>
+            </ul>
+          </div>
+          <div class="flex flex-col gap-2">
+            <h3 class="text-lg font-bold">Connect</h3>
+            <ul>
+              <li><a href="">Contact</a></li>
+              <li><a href="">Newsletter</a></li>
+              <li><a href="">LinkedIn</a></li>
+            </ul>
+          </div>
+        </div>
+        <!-- Challenge credits -->
+        <div class="flex w-full flex-col place-content-center text-center">
+          <div>
+            <a
+              class="text-optimum-blue hover:text-optimum-darkblue"
+              href="https://www.frontendmentor.io/challenges/blogr-landing-page-EX2RLAApP"
+              target="_blank"
+              >Frontend Mentor challenge</a
+            >
+          </div>
+          <div>
+            for
+            <a
+              class="text-optimum-blue hover:text-optimum-darkblue"
+              href="https://github.com/optimumBA"
+              target="_blank"
+              >Optimum BH</a
+            >
+            Internship.
+          </div>
+
+          <div class="mt-3">
+            <a
+              class="text-optimum-blue hover:text-optimum-darkblue"
+              href="https://github.com/lgmfred/frontend_mentor_challenges/tree/blogr_landing_page/challenges/blogr_landing_page"
+              >Source code</a
+            >
+          </div>
+        </div>
+      </footer>
+    </main>
+    <script>
+      function openClose(index) {
+        for (let i = 0; i < this.navStateArray.length; i++) {
+          if (i === index) {
+            this.navStateArray[i] = !this.navStateArray[i]
+          } else {
+            this.navStateArray[i] = false
+          }
+        }
+      }
+    </script>
   </body>
 </html>
