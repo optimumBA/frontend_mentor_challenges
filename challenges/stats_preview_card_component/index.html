@@ -27,36 +27,94 @@
     />
     <link rel="manifest" href="../site.webmanifest" />
     <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body class="m-0">
+  <body class="bg-very-dark-blue m-0">
     <div
-      class="flex h-[100vh] w-full flex-col place-content-center text-center"
+      class="font-inter flex flex-col items-center justify-center lg:h-screen"
     >
-      <div>
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://www.frontendmentor.io/challenges/stats-preview-card-component-8JqbgoU62"
-          target="_blank"
-          >Frontend Mentor challenge</a
+      <div
+        class="flex w-8/12 flex-col overflow-hidden rounded-lg bg-white lg:flex-row"
+      >
+        <div
+          class="bg-dark-desaturated-blue col-span-2 flex flex-col items-center text-center text-white lg:items-start lg:justify-center lg:text-left"
         >
+          <div class="lg:w-10/12">
+            <div class="py-4 px-6">
+              <h1 class="text-xl font-bold lg:text-3xl">
+                Get <span class="text-soft-violet">insights</span> that help
+                your business grow.
+              </h1>
+              <p class="pt-3 text-xs lg:pr-10">
+                Discover the benefits of data analytics and make better
+                decisions regarding revenue, customer experience, and overall
+                efficiency.
+              </p>
+            </div>
+            <div class="flex flex-col py-6 lg:flex-row lg:gap-12 lg:px-6">
+              <div class="text-xl font-bold">
+                10k+
+                <span class="block text-xs font-light uppercase"
+                  >companies</span
+                >
+              </div>
+              <div class="py-4 text-xl font-bold lg:py-0">
+                314<span class="block text-xs font-light uppercase"
+                  >templates</span
+                >
+              </div>
+              <div class="text-xl font-bold">
+                12m+
+                <span class="block pb-4 text-xs font-light uppercase"
+                  >queries</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="relative order-first lg:order-last lg:w-10/12">
+          <img
+            src="/images/image-header-mobile.jpg"
+            alt="three ladies at work"
+            class="h-full w-full lg:hidden xl:hidden"
+          />
+          <img
+            src="/images/image-header-desktop.jpg"
+            alt="three ladies at work"
+            class="hidden lg:block"
+          />
+          <div class="bg-soft-violet/40 absolute inset-y-0 h-full w-full"></div>
+        </div>
       </div>
-      <div>
-        for
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA"
-          target="_blank"
-          >Optimum BH</a
-        >
-        Internship.
-      </div>
+      <div
+        class="mt-4 flex flex-col place-content-center text-center text-white"
+      >
+        <div>
+          <a
+            class="text-optimum-blue hover:text-optimum-darkblue"
+            href="https://www.frontendmentor.io/challenges/stats-preview-card-component-8JqbgoU62"
+            target="_blank"
+            >Frontend Mentor challenge</a
+          >
+        </div>
+        <div>
+          for
+          <a
+            class="text-optimum-blue hover:text-optimum-darkblue"
+            href="https://github.com/optimumBA"
+            target="_blank"
+            >Optimum BH</a
+          >
+          Internship.
+        </div>
 
-      <div class="mt-3">
-        <a
-          class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA/frontend_mentor_challenges/tree/stats_preview_card_component/challenges/stats_preview_card_component"
-          >Source code</a
-        >
+        <div class="mt-3">
+          <a
+            class="text-optimum-blue hover:text-optimum-darkblue"
+            href="https://github.com/ngumokenneth/frontend_mentor_challenges/tree/stats_preview_card_component/challenges/stats_preview_card_component"
+            >Source code</a
+          >
+        </div>
       </div>
     </div>
   </body>
