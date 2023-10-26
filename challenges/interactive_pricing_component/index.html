@@ -44,58 +44,44 @@
     <section
       class="mx-auto mt-10 max-h-[500px] max-w-[320px] rounded-lg bg-white text-center shadow-xl backdrop-blur-md lg:max-w-[500px]"
     >
-      <div
-        class="lg:grid lg:h-[140px] lg:grid-cols-2 lg:grid-rows-3 lg:gap-8 lg:pt-5"
-      >
-        <div class="flex items-center justify-center lg:col-start-1">
-          <span class="py-8 text-sm font-extrabold tracking-widest lg:p-0">
-            100K PAGEVIEWS
-          </span>
+      <div class="grid w-full grid-cols-1 gap-y-3 lg:grid-cols-2">
+        <div class="order-first mt-8 flex items-center justify-center gap-x-2">
+          <span class="text-sm font-extrabold">100K PAGEVIEWS</span>
         </div>
-        <input
-          type="range"
-          min="1"
-          max="5"
-          step="1"
-          value="3"
-          class="range mx-auto lg:col-span-2"
-          id="price-slider"
-        />
+        <div class="col-span-2 my-4 grid items-center">
+          <input
+            type="range"
+            min="1"
+            max="5"
+            step="1"
+            value="3"
+            class="range bg-light-grayish-blue-toggle appearance-none mx-auto lg:col-span-2"
+            id="price-slider"
+          />
+        </div>
         <div
-          class="text-dark-desaturated-blue my-6 flex items-center justify-center gap-2 text-3xl font-extrabold lg:col-start-2 lg:row-start-1"
+          class="order-last flex items-center justify-center gap-2 lg:-order-1 lg:mt-8"
         >
-          $16.00<span class="text-grayish-blue text-lg font-normal"
-            >/ month</span
+          <span class="text-dark-desaturated-blue text-3xl font-extrabold"
+            >$16.00</span
           >
-        </div>
-        <!-- <div
-          class="text-dark-desaturated-blue my-6 flex text-3xl font-extrabold lg:col-start-2 lg:row-start-1"
-        >
-          <div id="price-output" class="flex">$16.00</div>
           <span class="text-grayish-blue text-lg font-normal">/ month</span>
-        </div> -->
+        </div>
       </div>
 
-      <div class="mb-6 flex items-center justify-center gap-2 text-xs">
-        <p>Monthly Billing</p>
-        <label class="switch">
-          <input type="checkbox" id="yearly-billing-toggle" />
-          <div class="slider round"></div>
+      <div class="my-8 flex items-center justify-center gap-2 text-xs">
+        <span class="text-xs font-medium">Monthly Billing</span>
+        <label class="relative inline-flex cursor-pointer items-center">
+          <input type="checkbox" value="" class="peer sr-only" />
+          <div
+            class="peer bg-light-grayish-blue-toggle peer-checked:bg-strong-cyan h-5 w-9 rounded-full after:absolute after:top-[2px] after:left-[2px] after:h-4 after:w-4 after:rounded-full after:border after:bg-white after:transition-all after:content-[''] peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:outline-none"
+          ></div>
         </label>
 
-        <!-- <label class="relative flex items-center justify-between p-2 text-xl">
-          <input
-            type="checkbox"
-            class="absolute appearance-none rounded-md"
-            id="yearly-billing-toggle"
-          />
-          <span
-            class="bg-light-grayish-blue-toggle peer-checked:bg-strong-cyan ml-0 flex h-5 w-10 flex-shrink-0 items-center rounded-full p-1 duration-300 ease-in-out after:h-5 after:w-5 after:rounded-full after:bg-slate-50 after:shadow-md after:duration-300 group-hover:after:translate-x-1 peer-checked:after:translate-x-6"
-          ></span>
-        </label> -->
-
-        <p>Yearly Billing</p>
-        <div class="text-light-red bg-light-grayish-red ml-2 rounded-3xl p-1">
+        <span class="text-xs font-medium">Yearly Billing</span>
+        <div
+          class="text-light-red bg-light-grayish-red inline rounded-3xl py-[1px] px-[2px]"
+        >
           -25% <span class="hidden lg:inline">discount</span>
         </div>
       </div>
@@ -105,7 +91,9 @@
       <div
         class="flex flex-col items-center justify-center gap-6 text-xs lg:flex-row"
       >
-        <ul class="mt-8 flex flex-col items-center justify-center gap-2 lg:m-0">
+        <ul
+          class="mt-8 flex flex-col items-center justify-center gap-2 lg:mb-8"
+        >
           <li class="flex items-center justify-center">
             <img src="images/icon-check.svg" class="mr-3 h-3" />Unlimited
             websites
@@ -126,7 +114,7 @@
       </div>
     </section>
 
-    <div class="flex w-full flex-col place-content-center text-center">
+    <div class="mt-12 flex w-full flex-col place-content-center text-center">
       <div>
         <a
           class="text-optimum-blue hover:text-optimum-darkblue"

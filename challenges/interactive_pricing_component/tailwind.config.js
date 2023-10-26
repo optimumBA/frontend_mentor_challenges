@@ -7,7 +7,7 @@ module.exports = {
         'optimum-darkblue': '#0389e1',
         'soft-cyan': 'hsl(174, 77%, 80%)',
         'strong-cyan': 'hsl(174, 86%, 45%)',
-        'light-grayish-Red': 'hsl(14, 92%, 95%)',
+        'light-grayish-red': 'hsl(14, 92%, 95%)',
         'light-red': 'hsl(15, 100%, 70%)',
         'Pale-blue': 'hsl(226, 100%, 87%)',
         white: 'hsl(0, 0%, 100%)',
