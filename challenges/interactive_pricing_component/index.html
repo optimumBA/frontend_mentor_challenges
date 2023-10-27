@@ -71,7 +71,8 @@
             <div class="mt-6 flex items-center font-bold">
               <h3
                 class="text-dark-desaturated-blue text-3xl"
-                x-text="app.getPrice()"
+                x-text="yearly ? getYearlyPrice : getPrice"
+                
               ></h3>
               <span class="text-dark-desaturated-blue text-xs font-normal"
                 >/ month</span
@@ -206,13 +207,6 @@
           pageviews: ['10K', '50K', '100K', '500K', '1M'],
           monthlyPrice: ['$8.00', '$12.00', '$16.00', '$24.00', '$36.00'],
 
-          calculateYearlyPrice() {
-            return this.monthlyPrice.map((price) => {
-              let originalPrice = parseFloat(price.replace('$', ''))
-              let discountedPrice = originalPrice * 0.75
-              return `$${discountedPrice.toFixed(2)}`
-            })
-          },
           getIndex(val) {
             if (val == 1) {
               return 0
@@ -229,19 +223,18 @@
           getPageViews(val) {
             return this.pageviews[val]
           },
+          
           getPrice() {
-            return this.app.get(this.range).monthlyPrice.toFixed(2)
-          },
-          getDiscount() {
-            return this.app.calculateYearlyPrice()
-          },
-          getFinalPrice(val) {
-            if (this.yearly) {
-              return this.getDiscount[val]
-            } else {
-              return this.getPrice[val]
-            }
-          },
+            const index = parseInt(this.data) -1;
+            return this.monthlyPrice[index];
+          },  
+
+          getYearlyPrice() {
+            const index = parseInt(this.data) -1;
+            const monthlyPrice = parseFloat(this.monthlyPrice[index].slice(1));
+            const getYearlyPrice = monthlyPrice * 12 * 0.75;
+            return `$${yearlyPrice.toFixed(2)}`;
+          }
         }))
       })
     </script>
