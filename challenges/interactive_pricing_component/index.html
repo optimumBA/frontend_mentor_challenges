@@ -29,39 +29,8 @@
     <link rel="stylesheet" href="style.css" />
     <script
       defer
-      src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.1/dist/cdn.min.js"
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
     ></script>
-    <script>
-      function priceCalculator() {
-        return {
-          pageViews: 100000,
-          monthlyPrice: 16,
-          yearlyBilling: false,
-
-          switchPlan(index = 3) {
-            const views = [10000, 50000, 100000, 500000, 1000000]
-            const prices = {
-              10000: 8,
-              50000: 12,
-              100000: 16,
-              500000: 24,
-              1000000: 36,
-            }
-
-            this.pageViews = views[parseInt(index, 10) - 1] || 100000
-            this.monthlyPrice = prices[this.pageViews]
-
-            this.yearlyBilling ? (this.monthlyPrice *= 0.75) : this.monthlyPrice
-          },
-
-          formatViews(int) {
-            if (int >= 1e6) return int / 1e6 + 'M'
-            if (int >= 1e3) return int / 1e3 + 'K'
-            return int.toString()
-          },
-        }
-      }
-    </script>
   </head>
   <body
     class="font-manrope text-grayish-blue bg-very-pale-blue m-0 box-border bg-[url('images/bg-pattern.svg')] bg-no-repeat p-0"
@@ -77,27 +46,26 @@
       </p>
     </section>
     <section
-      x-data="priceCalculator()"
+      x-data="pricing"
       class="mx-auto mt-10 max-h-[500px] max-w-[320px] rounded-lg bg-white text-center shadow-xl backdrop-blur-md lg:max-w-[500px]"
     >
       <div class="grid w-full grid-cols-1 gap-y-3 lg:grid-cols-2">
-        <div class="order-first mt-8 flex items-center justify-center gap-x-2">
+        <div
+          class="order-first mt-8 flex items-center justify-center gap-x-2 text-sm font-extrabold"
+        >
           <span
-            x-text="formatViews(pageViews) + ' PAGEVIEWS'"
-            class="text-sm font-extrabold"
+            x-text="getPageViews(viewsArray, inputValue) + ' PAGEVIEWS'"
           ></span>
         </div>
+
         <div class="col-span-2 my-4 grid items-center">
           <input
-            x-model="pageViews monthlyPrice"
-            @change="switchPlan($event.target.value)"
-            x-ref="priceslider"
+            x-model="inputValue"
             id="price-slider"
             type="range"
             min="1"
             max="5"
             step="1"
-            value="3"
             class="range bg-light-grayish-blue-toggle mx-auto appearance-none lg:col-span-2"
           />
         </div>
@@ -105,7 +73,7 @@
           class="order-last flex items-center justify-center gap-2 lg:-order-1 lg:mt-8"
         >
           <span
-            x-text="'$' + (monthlyPrice / 1).toFixed(2)"
+            x-text="'$' + getPrice(monthlyRates, viewsArray, inputValue)"
             class="text-dark-desaturated-blue text-3xl font-extrabold"
           ></span>
           <span class="text-grayish-blue text-lg font-normal">/ month</span>
@@ -114,24 +82,28 @@
 
       <div class="my-8 flex items-center justify-center gap-2 text-xs">
         <span class="text-xs font-medium">Monthly Billing</span>
-        <label class="relative inline-flex cursor-pointer items-center">
-          <input
-            x-model="yearlyBilling"
-            @change="switchPlan($refs.priceslider.value)"
-            id="yearly-billing-toggle"
-            type="checkbox"
-            class="peer sr-only"
-          />
-          <div
-            class="peer bg-light-grayish-blue-toggle peer-checked:bg-strong-cyan h-5 w-9 rounded-full after:absolute after:top-[2px] after:left-[2px] after:h-4 after:w-4 after:rounded-full after:border after:bg-white after:transition-all after:content-[''] peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:outline-none"
-          ></div>
-        </label>
-
+        <a
+          href="#"
+          id="yearly-billing-toggle"
+          class="flex items-center justify-center"
+        >
+          <label class="relative inline-flex cursor-pointer items-center">
+            <input
+              @click="yearlyBilling = !yearlyBilling"
+              type="checkbox"
+              class="peer sr-only"
+            />
+            <div
+              class="peer bg-light-grayish-blue-toggle peer-checked:bg-strong-cyan h-5 w-9 rounded-full after:absolute after:top-[2px] after:left-[2px] after:h-4 after:w-4 after:rounded-full after:border after:bg-white after:transition-all after:content-[''] peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:outline-none"
+            ></div>
+          </label>
+        </a>
         <span class="text-xs font-medium">Yearly Billing</span>
         <div
-          class="text-light-red bg-light-grayish-red inline rounded-3xl py-[1px] px-[2px]"
+          class="text-light-red bg-light-grayish-red inline rounded-3xl py-[2px] px-[4px]"
         >
-          -25% <span class="hidden lg:inline">discount</span>
+          <span class="lg:hidden">-</span>25%
+          <span class="hidden lg:inline">discount</span>
         </div>
       </div>
 
@@ -195,5 +167,37 @@
         >
       </div>
     </div>
+    <script>
+      document.addEventListener('alpine:init', () => {
+        Alpine.data('pricing', () => ({
+          inputValue: '3',
+          yearlyBilling: false,
+          viewsArray: [10000, 50000, 100000, 500000, 1000000],
+          monthlyRates: {
+            10000: 8,
+            50000: 12,
+            100000: 16,
+            500000: 24,
+            1000000: 36,
+          },
+
+          getPageViews(viewsArray, inputValue) {
+            const views = viewsArray[parseInt(inputValue, 10) - 1] || 10000
+            if (views >= 1e6) return views / 1e6 + 'M'
+            if (views >= 1e3) return views / 1e3 + 'K'
+            return views.toString()
+          },
+
+          getPrice(monthlyRates, viewsArray, inputValue) {
+            const monthlyView =
+              viewsArray[parseInt(inputValue, 10) - 1] || 10000
+            const monthlyPrice = this.yearlyBilling
+              ? monthlyRates[monthlyView] * 0.75
+              : monthlyRates[monthlyView]
+            return (monthlyPrice / 1).toFixed(2)
+          },
+        }))
+      })
+    </script>
   </body>
 </html>
