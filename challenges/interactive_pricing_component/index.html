@@ -27,6 +27,54 @@
     />
     <link rel="manifest" href="../site.webmanifest" />
     <link rel="stylesheet" href="style.css" />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.1/dist/cdn.min.js"
+    ></script>
+    <script>
+      function priceCalculator() {
+        return {
+          pageViews: 100000,
+          monthlyPrice: 16,
+          yearlyBilling: false,
+
+          applyDiscount() {
+            const prices = {
+              10000: 8,
+              50000: 12,
+              100000: 16,
+              500000: 24,
+              1000000: 36,
+            }
+            this.yearlyBilling
+              ? prices[this.pageViews] * 0.75
+              : prices[this.pageViews]
+          },
+
+          switchPlan(index = 3) {
+            const views = [10000, 50000, 100000, 500000, 1000000]
+            const prices = {
+              10000: 8,
+              50000: 12,
+              100000: 16,
+              500000: 24,
+              1000000: 36,
+            }
+
+            this.pageViews = views[parseInt(index, 10) - 1] || 100000
+            this.monthlyPrice = prices[this.pageViews]
+
+            this.yearlyBilling ? (this.monthlyPrice *= 0.75) : this.monthlyPrice
+          },
+
+          formatViews(int) {
+            if (int >= 1e6) return int / 1e6 + 'M'
+            if (int >= 1e3) return int / 1e3 + 'K'
+            return int.toString()
+          },
+        }
+      }
+    </script>
   </head>
   <body
     class="font-manrope text-grayish-blue bg-very-pale-blue m-0 box-border bg-[url('images/bg-pattern.svg')] bg-no-repeat p-0"
@@ -42,29 +90,36 @@
       </p>
     </section>
     <section
+      x-data="priceCalculator()"
       class="mx-auto mt-10 max-h-[500px] max-w-[320px] rounded-lg bg-white text-center shadow-xl backdrop-blur-md lg:max-w-[500px]"
     >
       <div class="grid w-full grid-cols-1 gap-y-3 lg:grid-cols-2">
         <div class="order-first mt-8 flex items-center justify-center gap-x-2">
-          <span class="text-sm font-extrabold">100K PAGEVIEWS</span>
+          <span
+            x-text="formatViews(pageViews) + ' PAGEVIEWS'"
+            class="text-sm font-extrabold"
+          ></span>
         </div>
         <div class="col-span-2 my-4 grid items-center">
           <input
+            x-model="pageViews monthlyPrice"
+            @change="switchPlan($event.target.value)"
+            id="price-slider"
             type="range"
             min="1"
             max="5"
             step="1"
             value="3"
-            class="range bg-light-grayish-blue-toggle appearance-none mx-auto lg:col-span-2"
-            id="price-slider"
+            class="range bg-light-grayish-blue-toggle mx-auto appearance-none lg:col-span-2"
           />
         </div>
         <div
           class="order-last flex items-center justify-center gap-2 lg:-order-1 lg:mt-8"
         >
-          <span class="text-dark-desaturated-blue text-3xl font-extrabold"
-            >$16.00</span
-          >
+          <span
+            x-text="'$' + (monthlyPrice / 1).toFixed(2)"
+            class="text-dark-desaturated-blue text-3xl font-extrabold"
+          ></span>
           <span class="text-grayish-blue text-lg font-normal">/ month</span>
         </div>
       </div>
@@ -72,7 +127,14 @@
       <div class="my-8 flex items-center justify-center gap-2 text-xs">
         <span class="text-xs font-medium">Monthly Billing</span>
         <label class="relative inline-flex cursor-pointer items-center">
-          <input type="checkbox" value="" class="peer sr-only" />
+          <input
+            x-model="yearlyBilling"
+            @change="applyDiscount()"
+            id="yearly-billing-toggle"
+            type="checkbox"
+            class="peer sr-only"
+            :value="yearlyBilling"
+          />
           <div
             class="peer bg-light-grayish-blue-toggle peer-checked:bg-strong-cyan h-5 w-9 rounded-full after:absolute after:top-[2px] after:left-[2px] after:h-4 after:w-4 after:rounded-full after:border after:bg-white after:transition-all after:content-[''] peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:outline-none"
           ></div>
@@ -89,21 +151,25 @@
       <hr />
 
       <div
-        class="flex flex-col items-center justify-center gap-6 text-xs lg:flex-row"
+        class="flex flex-col items-center justify-center gap-6 text-xs lg:flex-row lg:justify-around"
       >
         <ul
-          class="mt-8 flex flex-col items-center justify-center gap-2 lg:mb-8"
+          class="mt-8 flex flex-col items-center gap-2 lg:mb-8 lg:items-start"
         >
-          <li class="flex items-center justify-center">
-            <img src="images/icon-check.svg" class="mr-3 h-3" />Unlimited
-            websites
+          <li class="flex items-center gap-3">
+            <img src="images/icon-check.svg" class="h-3" /><span
+              >Unlimited websites</span
+            >
           </li>
-          <li class="flex items-center justify-center">
-            <img src="images/icon-check.svg" class="mr-3 h-3" />100% data
-            ownership
+          <li class="flex items-center gap-3">
+            <img src="images/icon-check.svg" class="h-3" /><span
+              >100% data ownership</span
+            >
           </li>
-          <li class="flex items-center justify-center">
-            <img src="images/icon-check.svg" class="mr-3 h-3" />Email reports
+          <li class="flex items-center gap-3">
+            <img src="images/icon-check.svg" class="h-3" /><span
+              >Email reports</span
+            >
           </li>
         </ul>
         <button
