@@ -62,6 +62,7 @@
           <input
             x-model="inputValue"
             id="price-slider"
+            :style="{ background: colorSlider(inputValue) }"
             type="range"
             min="1"
             max="5"
@@ -195,6 +196,17 @@
               ? monthlyRates[monthlyView] * 0.75
               : monthlyRates[monthlyView]
             return (monthlyPrice / 1).toFixed(2)
+          },
+
+          colorSlider(inputValue) {
+            let value = ((parseInt(inputValue, 10) - 1) / (5 - 1)) * 100
+            return (
+              'linear-gradient(to right, hsl(174, 77%, 80%) 0%, hsl(174, 77%, 80%) ' +
+              value +
+              '%, hsl(224, 65%, 95%) ' +
+              value +
+              '%, hsl(224, 65%, 95%) 100%)'
+            )
           },
         }))
       })

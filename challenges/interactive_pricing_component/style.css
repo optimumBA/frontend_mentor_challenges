@@ -45,13 +45,4 @@
     cursor: pointer;
     box-shadow: 0px 7px 10px 8px hsl(174, 77%, 80%);
   }
-
-  .range::-moz-range-thub:active {
-    background-color: #f6ad55;
-    cursor: grab;
-  }
-
-  .range::-webkit-slider-thumb:active {
-    background-color: hsl(174, 65%, 45%);
-  }
 }
