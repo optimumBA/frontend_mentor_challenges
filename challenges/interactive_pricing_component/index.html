@@ -38,19 +38,6 @@
           monthlyPrice: 16,
           yearlyBilling: false,
 
-          applyDiscount() {
-            const prices = {
-              10000: 8,
-              50000: 12,
-              100000: 16,
-              500000: 24,
-              1000000: 36,
-            }
-            this.yearlyBilling
-              ? prices[this.pageViews] * 0.75
-              : prices[this.pageViews]
-          },
-
           switchPlan(index = 3) {
             const views = [10000, 50000, 100000, 500000, 1000000]
             const prices = {
@@ -104,6 +91,7 @@
           <input
             x-model="pageViews monthlyPrice"
             @change="switchPlan($event.target.value)"
+            x-ref="priceslider"
             id="price-slider"
             type="range"
             min="1"
@@ -129,11 +117,10 @@
         <label class="relative inline-flex cursor-pointer items-center">
           <input
             x-model="yearlyBilling"
-            @change="applyDiscount()"
+            @change="switchPlan($refs.priceslider.value)"
             id="yearly-billing-toggle"
             type="checkbox"
             class="peer sr-only"
-            :value="yearlyBilling"
           />
           <div
             class="peer bg-light-grayish-blue-toggle peer-checked:bg-strong-cyan h-5 w-9 rounded-full after:absolute after:top-[2px] after:left-[2px] after:h-4 after:w-4 after:rounded-full after:border after:bg-white after:transition-all after:content-[''] peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:outline-none"
