@@ -33,15 +33,15 @@
       class="absolute z-10 flex h-[100vh] w-full flex-col place-content-center text-center"
     >
       <div
-        class="mx-auto flex w-[330px] flex-col items-center overflow-hidden rounded-2xl bg-white lg:w-[380px]"
+        class="shadow-desaturated-blue mx-auto flex w-[290px] flex-col items-center overflow-hidden rounded-2xl bg-white drop-shadow-2xl lg:w-[350px]"
       >
         <div>
-          <img src="/images/illustration-hero.svg" alt="hero illustration" />
+          <img src="images/illustration-hero.svg" alt="hero illustration" />
         </div>
         <div class="mx-3">
           <div class="p-4">
             <h1 class="text-dark-blue text-xl font-bold">Order Summary</h1>
-            <p class="text-desaturated-blue px-5 pt-3 text-sm lg:mx-3">
+            <p class="text-desaturated-blue pt-3 text-sm lg:mx-3">
               You can now listen to millions of songs, audiobooks, and podcasts
               on any device anywhere you like!
             </p>
@@ -51,9 +51,9 @@
             <div
               class="bg-very-pale-blue mx-5 flex items-center rounded-lg py-1"
             >
-              <img src="/images/icon-music.svg" alt="music icon" />
+              <img class="pl-2" src="images/icon-music.svg" alt="music icon" />
               <div class="relative flex items-center px-4">
-                <h2 class="text-dark-blue text-sm font-bold">
+                <h2 class="text-dark-blue text-xs font-bold">
                   Annual Plan
                   <span class="text-desaturated-blue block font-normal"
                     >$59.99/year</span
@@ -61,21 +61,23 @@
                 </h2>
                 <a
                   href="#"
-                  class="text-bright-blue absolute -right-20 cursor-pointer text-xs underline hover:no-underline active:no-underline lg:-right-32"
+                  class="text-bright-blue absolute -right-12 cursor-pointer text-xs underline hover:no-underline active:no-underline lg:-right-24"
                   >Change</a
                 >
               </div>
             </div>
           </div>
-          <a
-            href="#"
-            class="bg-bright-blue mx-5 my-3 block rounded-lg py-3 font-bold text-white"
-            >Proceed to Payment</a
-          >
+          <div class="py-3">
+            <a
+              href="#"
+              class="bg-bright-blue shadow-desaturated-blue mx-5 my-3 block rounded-lg py-2 font-bold text-white shadow-2xl"
+              >Proceed to Payment</a
+            >
+          </div>
         </div>
 
         <div>
-          <button class="py-3 text-sm font-bold text-gray-400">
+          <button class="py-4 text-sm font-bold text-gray-400">
             Cancel Order
           </button>
         </div>
@@ -109,12 +111,12 @@
       </div>
     </div>
     <img
-      src="/images/pattern-background-mobile.svg"
+      src="images/pattern-background-mobile.svg"
       alt="background pattern"
       class="lg:hidden"
     />
     <img
-      src="/images/pattern-background-desktop.svg"
+      src="images/pattern-background-desktop.svg"
       alt="background-pattern"
       class="relative hidden lg:block"
     />
