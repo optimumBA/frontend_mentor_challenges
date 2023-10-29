@@ -27,7 +27,10 @@
     />
     <link rel="manifest" href="../site.webmanifest" />
     <link rel="stylesheet" href="style.css" />
-    <script src="//unpkg.com/alpinejs" defer></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
   </head>
   <body class="font-overpass m-0">
     <div class="flex flex-col justify-center">
@@ -39,7 +42,7 @@
           <div
             class="relative mx-auto hidden w-11/12 justify-between py-10 lg:flex xl:flex"
           >
-            <nav class="z-30 flex items-center gap-x-10">
+            <nav class="relative z-40 flex items-center gap-x-10">
               <div>
                 <img src="images/logo.svg" alt="Blogr logo" />
               </div>
@@ -320,7 +323,7 @@
               <img
                 src="images/bg-pattern-intro-desktop.svg"
                 alt="background pattern"
-                class="hidden h-[1500px] object-cover object-center mix-blend-overlay lg:block"
+                class="z-0 hidden h-[1500px] object-cover object-center mix-blend-overlay lg:block"
               />
             </div>
             <div class="h-full py-7 pt-28">
