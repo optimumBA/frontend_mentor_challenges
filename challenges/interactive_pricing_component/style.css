@@ -1,3 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Kumbh+Sans:wght@400;700&family=Manrope:wght@600;800&family=Outfit:wght@400;700&family=Overpass:wght@300;600&family=Red+Hat+Display:wght@500;700;800&family=Ubuntu:ital,wght@0,700;1,400&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  #price-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    background: #11d8c5;
+    background-image: url(images/icon-slider.svg);
+
+    filter: drop-shadow(3px 20px 24px #11d8c5);
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    box-shadow: -405px 0 0 400px #00ffff;
+  }
+  price-slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+  }
+
+  #price-slider::-moz-range-thumb:active {
+    background-color: #f6ad55;
+    cursor: grab;
+  }
+}
