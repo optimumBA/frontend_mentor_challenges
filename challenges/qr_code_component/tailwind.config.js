@@ -12,7 +12,6 @@ module.exports = {
       },
       fontFamily: {
         outfit: ['Outfit', 'sans-serif'],
-
       },
     },
   },
