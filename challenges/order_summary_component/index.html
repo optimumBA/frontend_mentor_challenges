@@ -26,13 +26,70 @@
       href="../images/favicon-16x16.png"
     />
     <link rel="manifest" href="../site.webmanifest" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="m-0">
+  <body class="bg-pale-blue font-red-hat m-0">
     <div
-      class="flex h-[100vh] w-full flex-col place-content-center text-center"
+      class="absolute z-10 flex h-[100vh] w-full flex-col place-content-center text-center"
     >
-      <div>
+      <div
+        class="shadow-desaturated-blue drop-shadow-2x1 mx-auto flex w-[290px] flex-col items-center overflow-hidden rounded-2xl bg-white lg:w-[350px]"
+      >
+        <div>
+          <img src="images/illustration-hero.svg" alt="hero illustration" />
+        </div>
+        <div class="mx-3">
+          <div class="p-4">
+            <h1 class="text-dark-blue text-xl font-bold">Order Summary</h1>
+            <p class="text-desaturated-blue pt-3 text-sm lg:mx-3">
+              You can now listen to millions of songs, audiobooks, and podcasts
+              on any device anywhere you like!
+            </p>
+          </div>
+
+          <div>
+            <div
+              class="bg-very-pale-blue mx-5 flex items-center rounded-lg py-1"
+            >
+              <img class="pl-2" src="images/icon-music.svg" alt="music icon" />
+              <div class="relative flex items-center px-4">
+                <h2 class="text-dark-blue text-xs font-bold">
+                  Annual Plan
+                  <span class="text-desaturated-blue block font-normal"
+                    >$59.99/year</span
+                  >
+                </h2>
+                <a
+                  href="#"
+                  class="text-bright-blue absolute -right-12 cursor-pointer text-xs underline hover:no-underline active:no-underline lg:-right-24"
+                  >Change</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="py-3">
+            <a
+              href="#"
+              class="bg-bright-blue shadow-desaturated-blue mx-5 my-3 block rounded-lg py-2 font-bold text-white shadow-2xl"
+              >Proceed to Payment</a
+            >
+          </div>
+        </div>
+
+        <div>
+          <button class="py-4 text-sm font-bold text-gray-400">
+            Cancel Order
+          </button>
+        </div>
+      </div>
+
+      <div class="mt-4">
         <a
           class="text-optimum-blue hover:text-optimum-darkblue"
           href="https://www.frontendmentor.io/challenges/order-summary-component-QlPmajDUj"
@@ -54,10 +111,20 @@
       <div class="mt-3">
         <a
           class="text-optimum-blue hover:text-optimum-darkblue"
-          href="https://github.com/optimumBA/frontend_mentor_challenges/tree/order_summary_component/challenges/order_summary_component"
+          href="https://github.com/akinyiv/frontend_mentor_challenges/tree/order_summary_component/challenges/order_summary_component"
           >Source code</a
         >
       </div>
     </div>
+    <img
+      src="images/pattern-background-mobile.svg"
+      alt="background pattern"
+      class="w-full lg:hidden"
+    />
+    <img
+      src="images/pattern-background-desktop.svg"
+      alt="background-pattern"
+      class="relative hidden lg:block"
+    />
   </body>
 </html>
