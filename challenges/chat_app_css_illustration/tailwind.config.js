@@ -21,9 +21,6 @@ module.exports = {
       fontFamily: {
         base: ['Rubik', 'sans-serif'],
       },
-      borderWidth: {
-        thin: '.5px',
-      },
     },
   },
   plugins: [],

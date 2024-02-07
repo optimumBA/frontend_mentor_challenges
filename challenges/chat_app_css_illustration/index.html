@@ -27,16 +27,22 @@
     />
     <link rel="manifest" href="../site.webmanifest" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body class="m-0">
+  <body class="relative m-0 bg-white lg:h-screen">
     <div
-      class="bg-light-grayish-violet flex flex-col items-center justify-center overflow-hidden py-4 lg:h-screen lg:flex-row"
+      class="flex flex-col items-center justify-center overflow-hidden py-4 lg:h-screen lg:flex-row"
     >
       <div
         class="from-light-violet to-light-magenta relative right-40 top-0 h-[750px] w-72 rounded-b-full bg-gradient-to-t lg:right-96 lg:top-0 lg:h-[900px] lg:w-[550px]"
       ></div>
       <div
-        class="relative left-40 top-0 h-[750px] w-72 rounded-t-full bg-gray-200 lg:left-[300px] lg:top-28 lg:h-[750px] lg:w-[500px]"
+        class="bg-light-grayish-violet relative left-40 top-0 h-[750px] w-72 rounded-t-full lg:left-[300px] lg:top-28 lg:h-[750px] lg:w-[500px]"
       ></div>
 
       <div
@@ -147,16 +153,31 @@
               </p>
 
               <div
-                class="from-light-magenta to-light-violet relative mt-2 flex w-48 rounded-lg rounded-bl-sm bg-gradient-to-r py-2 text-white"
+                class="from-light-magenta to-light-violet my-1.5 mt-2 flex w-48 justify-between rounded-lg rounded-bl-sm bg-gradient-to-r p-2"
               >
-                <p class="px-8">30 minute walk</p>
-                <p class="absolute left-40 font-bold">$29</p>
+                <div class="flex items-center gap-3">
+                  <div
+                    class="border-very-light-magenta h-4 w-4 rounded-full border-2"
+                  ></div>
+                  <p class="text-[0.6rem] text-white">30 minute walk</p>
+                </div>
+                <div>
+                  <h4 class="px-4 text-sm font-bold text-white">$29</h4>
+                </div>
               </div>
+
               <div
-                class="from-light-magenta to-light-violet relative mt-2 flex w-48 rounded-lg rounded-bl-sm bg-gradient-to-r py-2 text-white"
+                class="from-light-magenta to-light-violet my-1.5 mt-2 flex w-48 justify-between rounded-lg rounded-bl-sm bg-gradient-to-r p-2"
               >
-                <p class="px-8">1 hour walk</p>
-                <p class="absolute left-40 font-bold">$49</p>
+                <div class="flex items-center gap-3">
+                  <div
+                    class="border-very-light-magenta h-4 w-4 rounded-full border-2"
+                  ></div>
+                  <p class="text-[0.6rem] text-white">1 hour walk</p>
+                </div>
+                <div>
+                  <h4 class="px-4 text-sm font-bold text-white">$49</h4>
+                </div>
               </div>
             </div>
             <div class="text-grayish-blue relative px-2 py-3">
